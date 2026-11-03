@@ -48,6 +48,8 @@ func _run() -> void:
 
 	if _path == "green":
 		await _green_path()
+	elif _path == "mixed":
+		await _mixed_path()
 	else:
 		await _sand_path()
 
@@ -58,12 +60,22 @@ func _run() -> void:
 
 func _green_path() -> void:
 	await _wait_room("GrandpaRoom")
+	await _click("Door")  # must not leave before Choice 1
+	await _check_still_in("GrandpaRoom")
 	await _click("Mirror")
 	_answers = [true]
 	await _click("BasketProp")
 	_expect(Globals.chose_truth and Globals.mirror_broken and Globals.basket_taken, "Choice 1 green")
 	await _click("Door")
 
+	await _wait_room("Yard")
+	# The Gate before the briefing: no intro, and the right exit does nothing.
+	await _click("ExitRight")
+	await _wait_room("Gate")
+	_expect(not Globals.gate_intro_done, "no Gate intro before the briefing")
+	await _click("ExitRight")
+	await _check_still_in("Gate")
+	await _click("ExitLeft")
 	await _wait_room("Yard")
 	_answers = [true]
 	await _click("Jad")
@@ -77,6 +89,7 @@ func _green_path() -> void:
 	await _click("ExitRight")
 
 	await _wait_room("Gate")
+	_expect(Globals.gate_intro_done, "Gate intro after the briefing")
 	await _click("ExitRight")
 
 	await _wait_room("MeadowFork")
@@ -112,6 +125,57 @@ func _green_path() -> void:
 	await _step("back to title", func(): R.current.call("_on_back_pressed"))
 	await _wait_room("Title")
 	_expect(not Globals.briefed and Globals.blossoms == 0, "reset after the end screen")
+
+
+## Choice 1 sand (hide the mirror), then green at Choice 2 and Choice 3: the needs_mirror
+## branch without trampled flowers.
+func _mixed_path() -> void:
+	await _wait_room("GrandpaRoom")
+	_answers = [false]
+	await _click("BasketProp")
+	await _click("Door")
+	await _wait_room("Yard")
+	await _click("Jad")
+	await _click("ExitRight")
+	await _wait_room("Gate")
+	await _click("ExitRight")
+	await _wait_room("MeadowFork")
+	_answers = [true]
+	await _click("ExitRight")
+	await _wait_room("BigTree")
+	await _click("Shahd")
+	_expect(Globals.met_shahd and not Globals.told_to_fix, "met Shahd straight away")
+	await _click("SunSpot")
+	_expect(Globals.needs_mirror, "needs the mirror")
+	await _click("ExitRight")
+	await _check_still_in("BigTree")
+	await _click("ExitLeft")
+	await _wait_room("MeadowFork")
+	await _click("ExitLeft")
+	await _wait_room("Gate")
+	await _click("ExitLeft")
+	await _wait_room("Yard")
+	await _click("Jad")
+	_expect(Globals.confessed and _has("HandMirror") and Globals.wilts == 0, "late confession")
+	await _click("ExitRight")
+	await _wait_room("Gate")
+	await _click("ExitRight")
+	await _wait_room("MeadowFork")
+	await _click("ExitRight")
+	await _wait_room("BigTree")
+	await _use("HandMirror", "SunSpot")
+	_expect(Globals.flowers_open, "flowers open")
+	_answers = [true]
+	await _click("ExitRight")
+	await _wait_room("FoxRock")
+	await _wait_idle()
+	_expect(Globals.fox_done, "Choice 3 green")
+	await _click("ExitRight")
+	await _wait_room("End")
+	_log_heart()
+	await _wait_idle()
+	await _step("back to title", func(): R.current.call("_on_back_pressed"))
+	await _wait_room("Title")
 
 
 func _sand_path() -> void:

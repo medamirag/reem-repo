@@ -6,6 +6,12 @@ extends PopochiuHotspot
 
 #region Virtual ####################################################################################
 func _on_click() -> void:
+	# Not in game_spec.md (Decisions to review): the door does nothing until Choice 1 has been
+	# answered. Leaving before picking up the basket would skip the mirror story, and without
+	# it Reem could never get the HandMirror the BigTree needs (the game would be stuck).
+	if not (Globals.chose_truth or Globals.mirror_hidden):
+		return
+
 	G.block()
 	await C.player.walk(to_global(walk_to_point))
 	G.unblock()

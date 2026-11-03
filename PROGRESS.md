@@ -92,4 +92,6 @@ real screenshots, tools/playtest.gd (automatic playthrough: `godot --headless --
 
 Status (updated as rooms are finished):
 - [x] Yard (commit c58909c)
-- [ ] Gate  - [ ] MeadowFork  - [ ] BigTree  - [ ] FoxRock  - [ ] End screen  - [ ] Reem walk rig
+- [x] Gate, MeadowFork, BigTree, FoxRock, End screen (commit b0347bc); playtest green/sand/mixed all pass
+- [ ] Reem walk rig (next)
+- [ ] Final PROGRESS write-up (decisions, known problems, test checklist)

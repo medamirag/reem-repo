@@ -71,3 +71,8 @@ The user ran the headless check and found one real bug: all 13 audio_cues/*.tres
 User re-ran the headless check after the fix: clean pass, only the standard "leaked at exit" lines on --quit-after (expected, harmless), no SCRIPT ERROR or Parse Error lines.
 
 Still blocked on my end: git add -A / git commit. The user is able to run commands, so git commit should be done by the user for now.
+
+## Session 3 (2026-11-03)
+- User ran the headless check: no script/parse errors, only harmless "leaked at exit" messages from --quit-after.
+- From the user's first play-test screenshot, fixed: heart tree drawn huge over the door (TextureRect needed expand_mode = 1 to respect its 80x140 box); English "Can't INTERACT with it" system text (game/gui/gui_commands.gd now does nothing silently on clicks with no action); Reem herself was clickable and blocked clicks on the basket behind her (clickable = false).
+- Waiting for: user to re-test GrandpaRoom and say whether the intro lines, basket pickup, mirror fall and Choice 1 worked.

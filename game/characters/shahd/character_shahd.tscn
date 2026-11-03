@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" uid="uid://cwtpncpx24dm7" path="res://addons/popochiu/engine/objects/character/popochiu_character.tscn" id="1"]
+[ext_resource type="Script" path="res://game/characters/shahd/character_shahd.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/shahd_body.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/shahd_wings.png" id="4"]
+
+[node name="CharacterShahd" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "Shahd"
+description = ""
+cursor = 8
+text_color = Color(0.21, 0.11, 0.05, 1)
+flips_when = 0
+dialog_pos = Vector2(0, -170)
+interaction_polygon = PackedVector2Array(-70, -110, 70, -110, 70, 10, -70, 10)
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3")
+offset = Vector2(0, -255)
+scale = Vector2(0.18, 0.18)
+flip_h = true
+
+[node name="Wings" type="Sprite2D" parent="Sprite2D"]
+show_behind_parent = true
+position = Vector2(30, -440)
+texture = ExtResource("4")
+flip_h = true
+
+[node name="InteractionPolygon" parent="." index="3"]
+polygon = PackedVector2Array(-70, -110, 70, -110, 70, 10, -70, 10)

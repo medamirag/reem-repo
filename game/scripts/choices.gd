@@ -24,3 +24,9 @@ func ask_two(green_text: String, sand_text: String) -> bool:
 	G.unblock()
 
 	return is_green
+
+
+## Shows the popup with a single green button labelled `green_text` and waits until it is
+## clicked (game_spec.md Yard: "a choice with one button").
+func ask_one(green_text: String) -> void:
+	await ask_two(green_text, "")

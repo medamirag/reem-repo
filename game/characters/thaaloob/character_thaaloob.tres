@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/characters/thaaloob/character_thaaloob_state.gd" id="1"]
+
+[resource]
+resource_name = "Thaaloob"
+script = ExtResource("1")
+script_name = "Thaaloob"
+scene = "res://game/characters/thaaloob/character_thaaloob.tscn"

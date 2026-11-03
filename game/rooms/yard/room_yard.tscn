@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/yard/room_yard.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg2_yard.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://game/characters/jad/character_jad.tscn" id="7"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/fg2_yard_fg.png" id="8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
+agent_radius = 0.0
+
+[node name="RoomYard" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "Yard"
+width = 1920
+height = 1080
+entry_points = {
+"": Vector2(0.15, 0.8),
+"GrandpaRoom": Vector2(0.15, 0.8),
+"Gate": Vector2(0.92, 0.82)
+}
+footstep_cue = "sfx_steps_grass"
+ambience_cue = "amb_farm"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_Path")
+
+[node name="Well" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "Well"
+description = ""
+cursor = 10
+position = Vector2(681, 529)
+interaction_polygon = PackedVector2Array(-163, -205, 163, -205, 163, 205, -163, 205)
+walk_to_point = Vector2(10, 335)
+
+[node name="InteractionPolygon" parent="Hotspots/Well" index="0"]
+polygon = PackedVector2Array(-163, -205, 163, -205, 163, 205, -163, 205)
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+description = ""
+cursor = 4
+position = Vector2(125, 497)
+interaction_polygon = PackedVector2Array(-125, -259, 125, -259, 125, 259, -125, 259)
+walk_to_point = Vector2(-10, 356)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-125, -259, 125, -259, 125, 259, -125, 259)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+description = ""
+cursor = 6
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-9, 48)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="CharacterJad" parent="Characters" instance=ExtResource("7")]
+position = Vector2(1517, 767)
+walk_to_point = Vector2(-260, 110)
+
+[node name="Foreground" type="Sprite2D" parent="."]
+z_index = 100
+centered = false
+texture = ExtResource("8")

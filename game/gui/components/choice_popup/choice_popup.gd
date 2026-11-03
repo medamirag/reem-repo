@@ -43,6 +43,8 @@ func setup(green_text: String, sand_text: String) -> void:
 func _show_texts() -> void:
 	green_label.text = "[center]%s[/center]" % _green_text
 	sand_label.text = "[center]%s[/center]" % _sand_text
+	# A choice with only one button (Yard: «عندي شيءٌ أقولُه لك») passes an empty sand text.
+	sand_button.visible = not _sand_text.is_empty()
 
 
 func _on_green_pressed() -> void:

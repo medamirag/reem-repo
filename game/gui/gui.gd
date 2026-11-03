@@ -38,6 +38,9 @@ func _on_system_text_hidden() -> void:
 # Called when the mouse enters (hovers) a `clickable`.
 func _on_mouse_entered_clickable(clickable: PopochiuClickable) -> void:
 	super(clickable)
+	# No hover text in this game: Popochiu's hover text is English ("Use X with Y") and the
+	# players are young children who read Arabic only (game_spec.md: Arabic only).
+	G.show_hover_text()
 
 
 # Called when the mouse exits a `clickable`.
@@ -48,6 +51,9 @@ func _on_mouse_exited_clickable(clickable: PopochiuClickable) -> void:
 # Called when the mouse enters (hovers) an `inventory_item`.
 func _on_mouse_entered_inventory_item(inventory_item: PopochiuInventoryItem) -> void:
 	super(inventory_item)
+	# No hover text in this game: Popochiu's hover text is English ("Use X with Y") and the
+	# players are young children who read Arabic only (game_spec.md: Arabic only).
+	G.show_hover_text()
 
 
 # Called when the mouse exits an `inventory_item`.

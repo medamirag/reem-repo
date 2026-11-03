@@ -1,35 +1,32 @@
 @tool
-extends PopochiuRoom
+extends ReemRoom
 ## Station 1, room 1: GrandpaRoom (game_spec.md). Reem wakes up, notices the mirror, picks up
-## the basket (which makes the mirror fall and crack), and makes Choice 1.
+## the basket (which makes the mirror fall and crack), and makes Choice 1. The blue door leads
+## to the Yard.
+##
+## Shared behavior (background/foreground fitting, where Reem appears, heart tree, ambience,
+## footsteps) comes from ReemRoom. The Mirror, BasketProp and Door have their own scripts.
 
 const Data := preload('room_grandpa_room_state.gd')
 
-## Starting point for Reem, as a fraction of the screen (game_spec.md: x 0.20, y 0.88). A
-## starting point — adjust freely.
-@export var reem_screen_position := Vector2(0.20, 0.88)
-## Reem's height on screen, as a fraction of the screen height (game_spec.md 3: about 42%).
-@export var reem_height_ratio := 0.42
-## This room's floor is terracotta tile, so footsteps use sfx_steps_tile (game_spec.md 4.6).
-@export var footstep_cue := "sfx_steps_tile"
-
 var state: Data = load("res://game/rooms/grandpa_room/room_grandpa_room.tres")
-
-@onready var _background: Sprite2D = $Background
-## game_spec.md 5: the foreground layer (fg1_room_fg) drawn on top of everything, not clickable.
-@onready var _foreground: Sprite2D = $Foreground
 
 
 #region Virtual ####################################################################################
-func _on_room_entered() -> void:
-	RoomHelpers.fit_background(_background, width, height)
-	RoomHelpers.fit_background(_foreground, width, height)
-	RoomHelpers.place_player(width, height, reem_screen_position, reem_height_ratio)
-	Globals.ensure_heart_tree()
-	Globals.play_ambience("amb_farm")
+func _setup_room() -> void:
+	# Coming back from the Yard: put things the way the child left them.
+	var basket := get_prop("BasketProp")
+	if basket and Globals.basket_taken:
+		basket.hide()
+
+	var mirror := get_prop("Mirror")
+	if mirror and Globals.mirror_broken:
+		mirror.call("show_fallen")
+		if Globals.mirror_hidden:
+			mirror.hide()
 
 
-func _on_room_transition_finished() -> void:
+func _on_room_started() -> void:
 	if state.visited_times != 1:
 		return
 
@@ -40,17 +37,9 @@ func _on_room_transition_finished() -> void:
 	# the child knows it matters.
 	var mirror := get_prop("Mirror")
 	if mirror:
-		C.player.face_direction(mirror.global_position)
+		RoomHelpers.face(C.player, mirror.global_position.x < C.player.global_position.x)
 
 	await Lines.say("reem_s1_003")
-
-
-func _on_room_exited() -> void:
-	pass
-
-
-func _on_restore_from_savegame() -> void:
-	pass
 
 
 #endregion

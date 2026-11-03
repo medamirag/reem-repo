@@ -12,6 +12,14 @@ signal heart_changed(grew: bool)
 
 const HEART_TREE_SCENE := "res://game/gui/components/heart_tree/heart_tree.tscn"
 
+
+func _ready() -> void:
+	# Automatic playtest (tools/playtest.gd), only when the game is started with
+	#   godot --headless --path . -- --playtest
+	# Never active in a normal run.
+	if not Engine.is_editor_hint() and "--playtest" in OS.get_cmdline_user_args():
+		add_child(load("res://tools/playtest.gd").new())
+
 #region Heart tree (game_spec.md 4.3) #################################################################
 ## Good deeds.
 var blossoms := 0

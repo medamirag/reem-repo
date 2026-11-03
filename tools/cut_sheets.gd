@@ -5,8 +5,10 @@ extends SceneTree
 ## specks smaller than MIN_AREA, numbers the pieces left to right then top to bottom, and saves
 ## each one as its own PNG under res://assets/cut/<sheet_name>/.
 ##
-## Run with:
-##   godot --headless --script res://tools/cut_sheets.gd
+## Run with (all sheets below):
+##   godot --headless --path . --script res://tools/cut_sheets.gd
+## or only some sheets:
+##   godot --headless --path . --script res://tools/cut_sheets.gd -- res://assets/art/characters/bees/bees_sheet.png
 ##
 ## After running, open res://assets/cut/<sheet_name>/ and rename the numbered pieces you need
 ## using the clear names from the table in game_spec.md section 2. This script only numbers them;
@@ -28,11 +30,17 @@ const SHEETS := [
 	"res://assets/art/characters/bees/bees_sheet.png",
 	"res://assets/art/ui/ui_inventory.png",
 	"res://assets/art/ui/ui_dialogue.png",
+	"res://assets/art/characters/grandpa/grandpa_bench.png",
+	"res://assets/art/characters/reem/reem_parts.png",
 ]
 
 
 func _init() -> void:
-	for sheet_path in SHEETS:
+	var sheets: Array = Array(OS.get_cmdline_user_args())
+	if sheets.is_empty():
+		sheets = SHEETS
+
+	for sheet_path in sheets:
 		_cut_sheet(sheet_path)
 
 	print("Done. Check res://assets/cut/<sheet_name>/ and rename the pieces you need.")
@@ -54,6 +62,11 @@ func _cut_sheet(sheet_path: String) -> void:
 	var h := image.get_height()
 	var visited := PackedByteArray()
 	visited.resize(w * h)
+	# Which region each pixel belongs to (0 = none), so a piece only keeps its own pixels even
+	# when another piece pokes into its bounding box.
+	var labels := PackedInt32Array()
+	labels.resize(w * h)
+	var next_label := 0
 
 	var boxes := [] # Array of Rect2i, one per connected region.
 
@@ -74,6 +87,8 @@ func _cut_sheet(sheet_path: String) -> void:
 			var area := 0
 			var stack: Array[Vector2i] = [Vector2i(x, y)]
 			visited[idx] = 1
+			next_label += 1
+			labels[idx] = next_label
 
 			while not stack.is_empty():
 				var p: Vector2i = stack.pop_back()
@@ -83,7 +98,7 @@ func _cut_sheet(sheet_path: String) -> void:
 				min_y = mini(min_y, p.y)
 				max_y = maxi(max_y, p.y)
 
-				for d in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
+				for d: Vector2i in [Vector2i(1, 0), Vector2i(-1, 0), Vector2i(0, 1), Vector2i(0, -1)]:
 					var np := p + d
 					if np.x < 0 or np.x >= w or np.y < 0 or np.y >= h:
 						continue
@@ -92,25 +107,37 @@ func _cut_sheet(sheet_path: String) -> void:
 						continue
 					visited[nidx] = 1
 					if image.get_pixel(np.x, np.y).a8 > ALPHA_THRESHOLD:
+						labels[nidx] = next_label
 						stack.append(np)
 
 			if area >= MIN_AREA:
-				boxes.append(Rect2i(min_x, min_y, max_x - min_x + 1, max_y - min_y + 1))
+				boxes.append({
+					rect = Rect2i(min_x, min_y, max_x - min_x + 1, max_y - min_y + 1),
+					label = next_label,
+				})
 
 	# Number left to right, then top to bottom: sort by the box's vertical band first (using a
 	# generous band height so pieces roughly on the same row stay together), then by x.
 	var band_height: int = maxi(1, h / 8)
-	boxes.sort_custom(func(a: Rect2i, b: Rect2i) -> bool:
-		var band_a := a.position.y / band_height
-		var band_b := b.position.y / band_height
+	boxes.sort_custom(func(a: Dictionary, b: Dictionary) -> bool:
+		var ra: Rect2i = a.rect
+		var rb: Rect2i = b.rect
+		var band_a := ra.position.y / band_height
+		var band_b := rb.position.y / band_height
 		if band_a != band_b:
 			return band_a < band_b
-		return a.position.x < b.position.x
+		return ra.position.x < rb.position.x
 	)
 
 	var n := 1
-	for box in boxes:
+	for entry: Dictionary in boxes:
+		var box: Rect2i = entry.rect
 		var piece: Image = image.get_region(box)
+		# Clear pixels that belong to other regions (or to no region: faint halo pixels).
+		for py in box.size.y:
+			for px in box.size.x:
+				if labels[(box.position.y + py) * w + box.position.x + px] != entry.label:
+					piece.set_pixel(px, py, Color(0, 0, 0, 0))
 		var out_path := "%s/%02d.png" % [out_dir, n]
 		piece.save_png(ProjectSettings.globalize_path(out_path))
 		print("%s -> %s  (%d x %d at %d,%d)" % [

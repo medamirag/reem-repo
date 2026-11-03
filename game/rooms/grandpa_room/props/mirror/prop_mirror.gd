@@ -11,9 +11,17 @@ const CRACKED_TEXTURE := preload("res://assets/cut/mirror_states/mirror_cracked.
 @export var wobble_degrees := 6.0
 @export var wobble_time := 0.5
 @export var fall_time := 0.35
-## Where the mirror lands on the floor, in the room's local coordinates. A starting point —
-## nudge it in the editor so it looks right against the background.
-@export var fall_target := Vector2(620, 910)
+## Where the mirror lands, in the room's local coordinates: on the floor just below the wall
+## peg, leaning against the wall (user's request). A starting point: nudge it in the Inspector.
+@export var fall_target := Vector2(800, 790)
+## How big the cracked mirror is once it has fallen, compared with the mirror on the peg
+## (user's request: about 20% smaller).
+@export var fallen_scale_ratio := 0.8
+
+# The mirror's size on the peg, read from the scene when the room loads. A constant rather
+# than a plain variable on purpose: Popochiu saves and restores a prop's script variables when
+# Reem leaves and re-enters a room, and this one must never change.
+@onready var _SCALE_ON_PEG: Vector2 = scale
 
 
 #region Virtual ####################################################################################
@@ -78,11 +86,20 @@ func break_mirror() -> void:
 	fall.tween_property(self, "position", fall_target, fall_time) \
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
 	fall.tween_property(self, "rotation_degrees", 18.0, fall_time)
+	fall.tween_property(self, "scale", _SCALE_ON_PEG * fallen_scale_ratio, fall_time)
 	await fall.finished
 
 	A.sfx_mirror_crack.play()
+	show_fallen()
+
+
+## Shows the mirror already fallen and cracked at [member fall_target], without animation. Used
+## at the end of [method break_mirror] and when Reem comes back into the room later.
+func show_fallen() -> void:
 	texture = CRACKED_TEXTURE
 	rotation_degrees = 0.0
+	position = fall_target
+	scale = _SCALE_ON_PEG * fallen_scale_ratio
 
 
 #endregion

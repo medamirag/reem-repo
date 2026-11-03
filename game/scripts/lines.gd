@@ -14,6 +14,8 @@ const LINES_PATH := "res://game_data/lines.json"
 const PAUSE_AFTER_LINE := 0.3
 
 var _lines := {}
+## Every line ID said so far in this run (used by the automatic playtest, tools/playtest.gd).
+var said := {}
 var _voice: AudioStreamPlayer = null
 
 
@@ -53,22 +55,26 @@ func say(line_id: String) -> void:
 		push_error("[Lines] There is no line with the id '%s' in %s" % [line_id, LINES_PATH])
 		return
 
+	said[line_id] = true
 	var line: Dictionary = _lines[line_id]
 	var speaker := str(line.get("speaker", ""))
 	var text := str(line.get("text", ""))
-	var character := C.get_character(speaker)
 
-	if character == null:
-		# Lines spoken off screen (jad_s1_031, jad_s2_071) have no character in the room.
-		push_warning("[Lines] No character named '%s' for line '%s'" % [speaker, line_id])
-		return
+	# The speaker talks above their head only if they are standing in the current room. Lines
+	# spoken off screen (jad_s1_031 in the Gate, jad_s2_071 on the end screen) are shown in a
+	# narration box at the bottom of the screen instead (game_spec.md 4.1).
+	var character: PopochiuCharacter = null
+	if is_instance_valid(R.current) and R.current.has_character(speaker):
+		character = C.get_character(speaker)
 
 	var voice_length := _start_voice(str(line.get("audio", "")))
 
-	# Runs on its own: closes the line once the voice is done, unless the player clicked first.
-	_close_line_after(character, voice_length)
-
-	await character.say(text)
+	if character == null:
+		await _say_offscreen(text, voice_length)
+	else:
+		# Runs on its own: closes the line once the voice is done, unless the player clicked first.
+		_close_line_after(character, voice_length)
+		await character.say(text)
 
 	if _voice.playing:
 		_voice.stop()
@@ -112,6 +118,30 @@ func _start_voice(audio_path: String) -> float:
 	_voice.play()
 
 	return stream.get_length()
+
+
+# Shows `text` in a box at the bottom of the screen (no character speaks it), until the voice
+# ends or the child clicks. Lives on its own CanvasLayer, so it also works on screens that hide
+# Popochiu's GUI (the end screen).
+func _say_offscreen(text: String, voice_length: float) -> void:
+	var layer := CanvasLayer.new()
+	layer.layer = 50
+	add_child(layer)
+
+	var box := NarrationBox.new()
+	box.setup(text)
+	layer.add_child(box)
+
+	var finished := [false]
+	var finish := func() -> void:
+		finished[0] = true
+	box.clicked.connect(finish)
+	get_tree().create_timer(voice_length + PAUSE_AFTER_LINE).timeout.connect(finish)
+
+	while not finished[0]:
+		await get_tree().process_frame
+
+	layer.queue_free()
 
 
 func _close_line_after(character: PopochiuCharacter, voice_length: float) -> void:

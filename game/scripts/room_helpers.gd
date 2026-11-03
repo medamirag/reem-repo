@@ -34,3 +34,13 @@ static func place_player(
 	var texture_height := sprite.texture.get_size().y
 	sprite.scale = Vector2.ONE * (room_height * height_ratio / texture_height)
 	sprite.offset = Vector2(0, -texture_height / 2.0)
+
+
+## Turns `character` to look left (`look_left` true) or right, the same way Popochiu flips a
+## character when it walks (PopochiuCharacter._flip_left_right, which respects flips_when).
+static func face(character: PopochiuCharacter, look_left: bool) -> void:
+	if not is_instance_valid(character):
+		return
+
+	character._flip_left_right(look_left, not look_left)
+	character.face_direction(character.global_position + (Vector2.LEFT if look_left else Vector2.RIGHT))

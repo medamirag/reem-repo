@@ -6,7 +6,7 @@
 [node name="Door" instance=ExtResource("1")]
 script = ExtResource("2")
 script_name = "Door"
-description = "Door"
+description = ""
 cursor = 1
 position = Vector2(1786, 572)
 interaction_polygon = PackedVector2Array(-96, -400, 96, -400, 96, 400, -96, 400)

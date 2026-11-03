@@ -15,6 +15,10 @@ const TALK_PULSE_SCALE := 1.04
 const TALK_PULSE_TIME := 0.18
 const GRAB_TIME := 0.6
 
+## Walk with legs and arms that move (ReemWalkRig, built from reem_parts.png). Untick to go back
+## to the simple version: reem_base.png with a gentle bob.
+@export var use_walk_rig := true
+
 var state: Data = load("res://game/characters/reem/character_reem.tres")
 
 var _sprite: Sprite2D
@@ -23,6 +27,7 @@ var _bob_tween: Tween
 var _talk_tween: Tween
 ## Name of the footstep AudioCueSound currently looping, so it can be stopped again.
 var _footstep_cue := ""
+var _rig: ReemWalkRig
 
 
 #region Godot #######################################################################################
@@ -36,6 +41,17 @@ func _ready() -> void:
 
 	if is_instance_valid(_sprite):
 		_sprite_base_offset_y = _sprite.offset.y
+
+	if use_walk_rig:
+		_rig = ReemWalkRig.new()
+		_rig.name = "WalkRig"
+		_rig.hide()
+		add_child(_rig)
+		# Popochiu frees a character's children that it does not own when Reem leaves a room
+		# (PopochiuRoom.exit_room), so the rig must belong to Reem to survive room changes.
+		_rig.owner = self
+
+
 
 
 #endregion
@@ -104,7 +120,13 @@ func _play_grab() -> void:
 # everywhere else), looping while walking, stopping when stopped. Each room says which one it
 # wants through its own `footstep_cue` export (room_template default is "sfx_steps_grass").
 func _on_movement_started() -> void:
-	_start_bob()
+	if is_instance_valid(_rig):
+		_rig.match_picture(_sprite)
+		_sprite.hide()
+		_rig.show()
+		_rig.set_walking(true)
+	else:
+		_start_bob()
 
 	_footstep_cue = "sfx_steps_grass"
 	if is_instance_valid(R.current) and "footstep_cue" in R.current:
@@ -116,7 +138,12 @@ func _on_movement_started() -> void:
 
 
 func _on_movement_ended() -> void:
-	_stop_bob()
+	if is_instance_valid(_rig):
+		_rig.set_walking(false)
+		_rig.hide()
+		_sprite.show()
+	else:
+		_stop_bob()
 
 	var cue: PopochiuAudioCue = A.get(_footstep_cue)
 	if cue:

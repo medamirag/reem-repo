@@ -82,6 +82,7 @@ func _green_path() -> void:
 	_expect(Globals.briefed and Globals.confessed and _has("HandMirror") and _has("Lantern") \
 		and _has("Notebook"), "briefing + confession")
 	await _click("Jad")
+	await _shot_walking(Vector2(300, 870))
 	await _click_item("Notebook")
 	await _click("Well")
 	_expect(_has("WateringCan"), "well gives the watering can")
@@ -346,6 +347,8 @@ func _wait_room(room_name: String) -> void:
 	):
 		await get_tree().process_frame
 	_log("entered %s" % room_name)
+	if is_instance_valid(R.current) and R.current.has_player:
+		_expect(C.player.get_node_or_null("WalkRig") != null, "walk rig present in " + room_name)
 	await _wait_idle()
 	await _shot(room_name)
 	_step_name = ""
@@ -376,6 +379,16 @@ func _wait_idle() -> void:
 		if is_instance_valid(R.current) and "started" in R.current and not R.current.started:
 			busy = true
 		quiet_frames = 0 if busy else quiet_frames + 1
+
+
+## Screenshot of Reem in the middle of a walk (to check the walk rig), only with --shots.
+func _shot_walking(target: Vector2) -> void:
+	if _shots_dir.is_empty():
+		return
+	C.player.walk(target)
+	await get_tree().create_timer(0.5).timeout
+	await _shot("walking")
+	await _wait_idle()
 
 
 func _check_still_in(room_name: String) -> void:

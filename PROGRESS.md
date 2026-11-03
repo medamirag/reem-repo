@@ -77,4 +77,7 @@ Still blocked on my end: git add -A / git commit. The user is able to run comman
 - From the user's first play-test screenshot, fixed: heart tree drawn huge over the door (TextureRect needed expand_mode = 1 to respect its 80x140 box); English "Can't INTERACT with it" system text (game/gui/gui_commands.gd now does nothing silently on clicks with no action); Reem herself was clickable and blocked clicks on the basket behind her (clickable = false).
 - Basket click froze: Popochiu grab() waits for a "grab" animation signal Reem never emits. Reem now overrides _play_grab() with a 0.6 s bend tween that emits grab_done. Reem now stands left of the basket (BasketProp.reem_stand_offset).
 - reem_pickup.png not usable as-is (dark glow background + acorn baked in). Asked user.
-- Waiting for: user to re-test GrandpaRoom (intro lines, basket, mirror fall, Choice 1).
+- Choice 1 crashed ("Invalid assignment of property 'text' ... on Nil"): ChoicePopup.setup() wrote to @onready labels before the popup was in the tree. setup() now stores the texts; _ready() writes them. Fixed and pushed.
+- GrandpaRoom was missing its foreground layer (game_spec.md 5: every room has fg* on top). Added Foreground Sprite2D (fg1_room_fg, z_index 100), fitted like the background.
+- Waiting for: user to re-test GrandpaRoom start to finish: intro lines (text + voice), basket, mirror fall, Choice 1 both ways, foreground plant/cushion in front. Also open questions: reem_pickup.png (a: keep bend tween, b: user supplies clean PNG, c: auto cut-out) and where the cracked mirror should land.
+- Next after confirmation: commit "GrandpaRoom done", then Yard (game_spec.md Station 1, room 2).

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cfml3lrhiixmi" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/grandpa_room/room_grandpa_room.gd" id="2"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" path="res://game/rooms/grandpa_room/props/mirror/prop_mirror.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://game/rooms/grandpa_room/props/basket_prop/prop_basket_prop.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://game/rooms/grandpa_room/hotspots/door/hotspot_door.tscn" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/fg1_room_fg.png" id="9"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_floor"]
 agent_radius = 0.0
@@ -42,3 +44,8 @@ visible = false
 
 [node name="CharacterReem" parent="Characters" instance=ExtResource("5")]
 position = Vector2(384, 950)
+
+[node name="Foreground" type="Sprite2D" parent="."]
+z_index = 100
+centered = false
+texture = ExtResource("9")

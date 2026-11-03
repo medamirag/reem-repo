@@ -16,11 +16,14 @@ const Data := preload('room_grandpa_room_state.gd')
 var state: Data = load("res://game/rooms/grandpa_room/room_grandpa_room.tres")
 
 @onready var _background: Sprite2D = $Background
+## game_spec.md 5: the foreground layer (fg1_room_fg) drawn on top of everything, not clickable.
+@onready var _foreground: Sprite2D = $Foreground
 
 
 #region Virtual ####################################################################################
 func _on_room_entered() -> void:
 	RoomHelpers.fit_background(_background, width, height)
+	RoomHelpers.fit_background(_foreground, width, height)
 	RoomHelpers.place_player(width, height, reem_screen_position, reem_height_ratio)
 	Globals.ensure_heart_tree()
 	Globals.play_ambience("amb_farm")

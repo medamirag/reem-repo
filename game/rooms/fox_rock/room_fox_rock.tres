@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rooms/fox_rock/room_fox_rock_state.gd" id="1"]
+
+[resource]
+resource_name = "FoxRock"
+script = ExtResource("1")
+script_name = "FoxRock"
+scene = "res://game/rooms/fox_rock/room_fox_rock.tscn"
+visited_times = 0

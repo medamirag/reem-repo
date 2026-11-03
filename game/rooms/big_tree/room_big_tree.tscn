@@ -1,0 +1,156 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/big_tree/room_big_tree.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg5_tree_bees.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="6"]
+[ext_resource type="Texture2D" path="res://assets/cut/flowers_states/flowers_closed.tres" id="7"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="8"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="9"]
+[ext_resource type="PackedScene" path="res://game/characters/shahd/character_shahd.tscn" id="10"]
+[ext_resource type="Script" path="res://game/scripts/wandering_bee.gd" id="11"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/bee_small_1.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/bee_small_1_wings.png" id="13"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/bee_small_2.png" id="14"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/bee_small_2_wings.png" id="15"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/fg5_tree_bees_fg.png" id="16"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
+agent_radius = 0.0
+
+[node name="RoomBigTree" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "BigTree"
+width = 1920
+height = 1080
+entry_points = {
+"": Vector2(0.05, 0.82),
+"MeadowFork": Vector2(0.05, 0.82),
+"FoxRock": Vector2(0.95, 0.82)
+}
+footstep_cue = "sfx_steps_grass"
+ambience_cue = "amb_meadow"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 832, 1882, 832, 1882, 950, 38, 950)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_Path")
+
+[node name="FlowersShade" parent="Props" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "FlowersShade"
+description = ""
+cursor = 10
+texture = ExtResource("7")
+position = Vector2(518, 691)
+scale = Vector2(0.35, 0.35)
+interaction_polygon = PackedVector2Array(-338, -227, 338, -227, 338, 227, -338, 227)
+walk_to_point = Vector2(0, 520)
+
+[node name="InteractionPolygon" parent="Props/FlowersShade" index="2"]
+polygon = PackedVector2Array(-338, -227, 338, -227, 338, 227, -338, 227)
+
+[node name="SunSpot" parent="Hotspots" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "SunSpot"
+description = ""
+cursor = 10
+position = Vector2(1200, 734)
+interaction_polygon = PackedVector2Array(-144, -64, 144, -64, 144, 64, -144, 64)
+walk_to_point = Vector2(-48, 130)
+
+[node name="InteractionPolygon" parent="Hotspots/SunSpot" index="0"]
+polygon = PackedVector2Array(-144, -64, 144, -64, 144, 64, -144, 64)
+
+[node name="Hives" parent="Hotspots" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "Hives"
+description = ""
+cursor = 5
+position = Vector2(1613, 561)
+interaction_polygon = PackedVector2Array(-269, -129, 269, -129, 269, 129, -269, 129)
+walk_to_point = Vector2(-77, 303)
+
+[node name="InteractionPolygon" parent="Hotspots/Hives" index="0"]
+polygon = PackedVector2Array(-269, -129, 269, -129, 269, 129, -269, 129)
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "ExitLeft"
+description = ""
+cursor = 4
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "ExitRight"
+description = ""
+cursor = 6
+position = Vector2(1881, 869)
+interaction_polygon = PackedVector2Array(-38, -156, 38, -156, 38, 156, -38, 156)
+walk_to_point = Vector2(-9, 17)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -156, 38, -156, 38, 156, -38, 156)
+
+[node name="BeamStart" type="Marker2D" parent="Markers"]
+position = Vector2(1152, 670)
+
+[node name="CharacterShahd" parent="Characters" instance=ExtResource("10")]
+position = Vector2(1517, 410)
+walk_to_point = Vector2(-140, 450)
+
+[node name="BeeSmall1" type="Node2D" parent="."]
+position = Vector2(1420, 430)
+script = ExtResource("11")
+phase = 0.0
+
+[node name="Body" type="Sprite2D" parent="BeeSmall1"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("12")
+
+[node name="Wings" type="Sprite2D" parent="BeeSmall1/Body"]
+show_behind_parent = true
+position = Vector2(-20, -170)
+texture = ExtResource("13")
+
+[node name="BeeSmall2" type="Node2D" parent="."]
+position = Vector2(1700, 420)
+script = ExtResource("11")
+phase = 2.5
+
+[node name="Body" type="Sprite2D" parent="BeeSmall2"]
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("14")
+
+[node name="Wings" type="Sprite2D" parent="BeeSmall2/Body"]
+show_behind_parent = true
+position = Vector2(-20, -170)
+texture = ExtResource("15")
+
+[node name="Beam" type="Line2D" parent="."]
+visible = false
+z_index = 50
+width = 26.0
+default_color = Color(1, 0.93, 0.55, 0.85)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Foreground" type="Sprite2D" parent="."]
+z_index = 100
+centered = false
+texture = ExtResource("16")

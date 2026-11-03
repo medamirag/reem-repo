@@ -7,8 +7,6 @@ extends ReemRoom
 ## Exits: the house door (left) → GrandpaRoom; right edge → Gate.
 
 const Data := preload('room_yard_state.gd')
-## game_spec.md Yard: the one-button choice after the briefing, when chose_truth is true.
-const CONFESS_LABEL := "عندي شيءٌ أقولُه لك"
 
 var state: Data = load("res://game/rooms/yard/room_yard.tres")
 
@@ -71,7 +69,7 @@ func _briefing() -> void:
 
 ## Choice 1 was green: Reem tells Grandpa about the mirror right after the briefing.
 func _confess_truth() -> void:
-	await Choices.ask_one(CONFESS_LABEL)
+	await Choices.ask_one(Labels.CONFESS)
 	await Lines.say("reem_s1_021a")
 	await Lines.say("jad_s1_022a")
 	await Lines.say("jad_s1_023")

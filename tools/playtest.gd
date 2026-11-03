@@ -51,10 +51,6 @@ func _run() -> void:
 	else:
 		await _sand_path()
 
-	_log("heart: blossoms=%d wilts=%d end picture=%s" % [
-		Globals.blossoms, Globals.wilts, Globals.end_heart_picture()
-	])
-	_log("flags: %s" % _flags())
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
@@ -100,10 +96,10 @@ func _green_path() -> void:
 	await _use("HandMirror", "SunSpot")
 	_expect(Globals.flowers_open and _has("HoneyJar"), "mirror opens the flowers")
 	await _click("Shahd")
+	_answers = [true]  # Thaaloob asks as soon as the room opens
 	await _click("ExitRight")
 
 	await _wait_room("FoxRock")
-	_answers = [true]
 	await _wait_idle()
 	if not Globals.fox_done:
 		await _click("Thaaloob")
@@ -111,6 +107,7 @@ func _green_path() -> void:
 	await _click("ExitRight")
 
 	await _wait_room("End")
+	_log_heart()
 	await _wait_idle()
 	await _step("back to title", func(): R.current.call("_on_back_pressed"))
 	await _wait_room("Title")
@@ -179,10 +176,10 @@ func _sand_path() -> void:
 	await _wait_room("BigTree")
 	await _use("HandMirror", "FlowersShade")
 	_expect(Globals.flowers_open and _has("HoneyJar"), "mirror opens the flowers")
+	_answers = [false]  # Thaaloob asks as soon as the room opens
 	await _click("ExitRight")
 
 	await _wait_room("FoxRock")
-	_answers = [false]
 	await _wait_idle()
 	if not Globals.traded:
 		await _click("Thaaloob")
@@ -197,6 +194,7 @@ func _sand_path() -> void:
 	await _click("ExitRight")
 
 	await _wait_room("End")
+	_log_heart()
 	await _wait_idle()
 	await _step("back to title", func(): R.current.call("_on_back_pressed"))
 	await _wait_room("Title")
@@ -338,6 +336,13 @@ func _answer_choices() -> void:
 				child.call_deferred("_on_sand_pressed")
 
 
+func _log_heart() -> void:
+	_log("heart at the end: blossoms=%d wilts=%d picture=%s" % [
+		Globals.blossoms, Globals.wilts, Globals.end_heart_picture()
+	])
+	_log("flags at the end: %s" % _flags())
+
+
 func _has(item_name: String) -> bool:
 	return is_instance_valid(C.player) and C.player.has_inventory_item(item_name)
 
@@ -371,6 +376,8 @@ func _fail(message: String) -> void:
 	_log("FAIL: " + message)
 	_log("ABORTED %s" % _path)
 	get_tree().quit(1)
+	# Stop here: never return to the scenario that called this.
+	await get_tree().create_timer(3600.0).timeout
 
 
 func _log(message: String) -> void:

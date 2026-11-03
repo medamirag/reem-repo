@@ -4,6 +4,9 @@ extends PopochiuCharacter
 ## Shared behavior of the characters Reem talks to (Jad, Thaaloob, Shahd), game_spec.md 3:
 ## - a small, soft scale pulse while speaking,
 ## - clicks are handled by the room script (ReemRoom._on_object_clicked), like props.
+##
+## To make a character look the other way, give its Sprite2D a negative scale.x (not flip_h:
+## Popochiu resets flip_h when the character is added to a room).
 
 const TALK_PULSE_SCALE := 1.04
 const TALK_PULSE_TIME := 0.18

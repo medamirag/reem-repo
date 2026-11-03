@@ -17,8 +17,7 @@ interaction_polygon = PackedVector2Array(-136, -453, 136, -453, 136, 0, -136, 0)
 [node name="Sprite2D" parent="." index="2"]
 texture = ExtResource("3")
 offset = Vector2(0, -627.0)
-scale = Vector2(0.3617, 0.3617)
-flip_h = true
+scale = Vector2(-0.3617, 0.3617)
 
 [node name="InteractionPolygon" parent="." index="3"]
 polygon = PackedVector2Array(-136, -453, 136, -453, 136, 0, -136, 0)

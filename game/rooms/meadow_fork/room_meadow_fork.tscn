@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/meadow_fork/room_meadow_fork.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg4_fork.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="6"]
+[ext_resource type="Texture2D" path="res://assets/cut/flowers_states/flowers_open.tres" id="7"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="8"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/fg4_fork_fg.png" id="10"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
+agent_radius = 0.0
+
+[node name="RoomMeadowFork" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "MeadowFork"
+width = 1920
+height = 1080
+entry_points = {
+"": Vector2(0.06, 0.8),
+"Gate": Vector2(0.06, 0.8),
+"BigTree": Vector2(0.94, 0.79)
+}
+footstep_cue = "sfx_steps_grass"
+ambience_cue = "amb_meadow"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 810, 1882, 788, 1882, 907, 38, 929)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_Path")
+
+[node name="Sign" parent="Props" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "Sign"
+description = ""
+cursor = 5
+position = Vector2(580, 562)
+interaction_polygon = PackedVector2Array(-120, -60, 120, -60, 120, 200, -120, 200)
+walk_to_point = Vector2(170, 262)
+
+[node name="InteractionPolygon" parent="Props/Sign" index="2"]
+polygon = PackedVector2Array(-120, -60, 120, -60, 120, 200, -120, 200)
+
+[node name="FlowersFork" parent="Props" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "FlowersFork"
+description = ""
+cursor = 10
+texture = ExtResource("7")
+position = Vector2(1267, 648)
+scale = Vector2(0.4, 0.4)
+interaction_polygon = PackedVector2Array(-340, -268, 340, -268, 340, 268, -340, 268)
+walk_to_point = Vector2(0, 440)
+
+[node name="InteractionPolygon" parent="Props/FlowersFork" index="2"]
+polygon = PackedVector2Array(-340, -268, 340, -268, 340, 268, -340, 268)
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "ExitLeft"
+description = ""
+cursor = 4
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 27)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "ExitRight"
+description = ""
+cursor = 6
+position = Vector2(1881, 837)
+interaction_polygon = PackedVector2Array(-38, -189, 38, -189, 38, 189, -38, 189)
+walk_to_point = Vector2(-9, 16)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -189, 38, -189, 38, 189, -38, 189)
+
+[node name="ChoiceSpot" type="Marker2D" parent="Markers"]
+position = Vector2(960, 864)
+
+[node name="AcrossFlowers" type="Marker2D" parent="Markers"]
+position = Vector2(1267, 713)
+
+[node name="FlowersFarSide" type="Marker2D" parent="Markers"]
+position = Vector2(1901, 756)
+
+[node name="SignText" type="RichTextLabel" parent="Props/Sign"]
+offset_left = -105.0
+offset_top = -46.0
+offset_right = 105.0
+offset_bottom = 46.0
+mouse_filter = 2
+bbcode_enabled = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="Foreground" type="Sprite2D" parent="."]
+z_index = 100
+centered = false
+texture = ExtResource("10")

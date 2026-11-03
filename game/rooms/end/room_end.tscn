@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/end/room_end.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/ui/to_be_continued.png" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+bg_color = Color(0.86, 0.68, 0.38, 0.95)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.93, 0.75, 0.45, 0.95)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.72, 0.55, 0.28, 0.95)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+
+[node name="RoomEnd" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "End"
+has_player = false
+hide_gui = true
+width = 1920
+height = 1080
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="BigHeart" type="Sprite2D" parent="."]
+position = Vector2(960, 430)
+
+[node name="ContinuedLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 360.0
+offset_top = 640.0
+offset_right = 1560.0
+offset_bottom = 870.0
+mouse_filter = 2
+clip_contents = false
+bbcode_enabled = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+offset_left = 660.0
+offset_top = 885.0
+offset_right = 1260.0
+offset_bottom = 995.0
+theme_override_colors/font_color = Color(0.3, 0.17, 0.05, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")

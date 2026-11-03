@@ -18,14 +18,12 @@ interaction_polygon = PackedVector2Array(-70, -110, 70, -110, 70, 10, -70, 10)
 [node name="Sprite2D" parent="." index="2"]
 texture = ExtResource("3")
 offset = Vector2(0, -255)
-scale = Vector2(0.18, 0.18)
-flip_h = true
+scale = Vector2(-0.18, 0.18)
 
 [node name="Wings" type="Sprite2D" parent="Sprite2D"]
 show_behind_parent = true
 position = Vector2(30, -440)
 texture = ExtResource("4")
-flip_h = true
 
 [node name="InteractionPolygon" parent="." index="3"]
 polygon = PackedVector2Array(-70, -110, 70, -110, 70, 10, -70, 10)

@@ -20,7 +20,9 @@ func _ready() -> void:
 	super()
 
 	_title_label.add_theme_font_override("normal_font", ArabicText.get_font())
-	_title_label.add_theme_font_size_override("normal_font", TITLE_FONT_SIZE)
+	_title_label.add_theme_font_size_override("normal_font_size", TITLE_FONT_SIZE)
+	_title_label.add_theme_color_override("font_outline_color", Color(0.35, 0.18, 0.05))
+	_title_label.add_theme_constant_override("outline_size", 16)
 	ArabicText.make_rtl(_title_label)
 
 	_start_button.add_theme_font_override("font", ArabicText.get_font())

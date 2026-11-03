@@ -110,6 +110,13 @@ var traded := false
 var stone_wiped := false
 var mirror_recovered := false
 
+# Not in game_spec.md 4.5's list: small "already happened" markers the rooms need to play
+# something only once (game_spec.md: "On first entering after briefed", "First click on the
+# right exit", "On first entering (or first click on Thaaloob)").
+var gate_intro_done := false
+var fork_choice_done := false
+var fox_intro_done := false
+
 
 ## Puts every flag and counter back to how a new game starts. Used by the end screen's
 ## «العودة إلى البداية» button.
@@ -132,8 +139,28 @@ func reset() -> void:
 	traded = false
 	stone_wiped = false
 	mirror_recovered = false
+	gate_intro_done = false
+	fork_choice_done = false
+	fox_intro_done = false
 	notebook_hint = Callable()
 	heart_changed.emit(false)
+
+
+## Everything a new game needs (end screen «العودة إلى البداية»): the flags above, the
+## inventory, and Popochiu's memory of every room (how many times it was visited, where its
+## props and characters were), so each room plays its first-visit lines again.
+func new_game() -> void:
+	reset()
+	if is_instance_valid(C.player):
+		await I.clean_inventory(C.player)
+		C.player.last_room = ""
+	for room_state: PopochiuRoomData in R.rooms_states.values():
+		room_state.visited_times = 0
+		room_state.props.clear()
+		room_state.hotspots.clear()
+		room_state.walkable_areas.clear()
+		room_state.regions.clear()
+		room_state.characters.clear()
 
 
 #endregion

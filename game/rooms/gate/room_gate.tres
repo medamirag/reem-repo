@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/rooms/gate/room_gate_state.gd" id="1"]
+
+[resource]
+resource_name = "Gate"
+script = ExtResource("1")
+script_name = "Gate"
+scene = "res://game/rooms/gate/room_gate.tscn"
+visited_times = 0

@@ -75,4 +75,6 @@ Still blocked on my end: git add -A / git commit. The user is able to run comman
 ## Session 3 (2026-11-03)
 - User ran the headless check: no script/parse errors, only harmless "leaked at exit" messages from --quit-after.
 - From the user's first play-test screenshot, fixed: heart tree drawn huge over the door (TextureRect needed expand_mode = 1 to respect its 80x140 box); English "Can't INTERACT with it" system text (game/gui/gui_commands.gd now does nothing silently on clicks with no action); Reem herself was clickable and blocked clicks on the basket behind her (clickable = false).
-- Waiting for: user to re-test GrandpaRoom and say whether the intro lines, basket pickup, mirror fall and Choice 1 worked.
+- Basket click froze: Popochiu grab() waits for a "grab" animation signal Reem never emits. Reem now overrides _play_grab() with a 0.6 s bend tween that emits grab_done. Reem now stands left of the basket (BasketProp.reem_stand_offset).
+- reem_pickup.png not usable as-is (dark glow background + acorn baked in). Asked user.
+- Waiting for: user to re-test GrandpaRoom (intro lines, basket, mirror fall, Choice 1).

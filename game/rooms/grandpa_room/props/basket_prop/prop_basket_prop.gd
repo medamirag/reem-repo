@@ -6,13 +6,18 @@ extends PopochiuProp
 const CHOICE1_GREEN := "أُخبِرُ جدّي بالحقيقة"  # game_spec.md short label (GrandpaRoom Choice 1, green)
 const CHOICE1_SAND := "أُخبّئُ المرآة"  # game_spec.md short label (GrandpaRoom Choice 1, sand)
 
+## Where Reem stands when she picks the basket up, relative to the basket, in room pixels.
+## Negative x = to the left of the basket. A starting point: adjust in the Inspector.
+@export var reem_stand_offset := Vector2(-170, 20)
+
 #region Virtual ####################################################################################
 func _on_click() -> void:
 	if Globals.basket_taken:
 		E.command_fallback()
 		return
 
-	await C.player.walk_to_clicked()
+	# Stand just left of the basket instead of on top of it (room pixels, adjustable).
+	await C.player.walk_to_clicked(reem_stand_offset)
 	await C.player.face_clicked()
 	await C.player.grab()
 	await Lines.say("reem_s1_004")

@@ -13,6 +13,7 @@ const BOB_HEIGHT := 6.0
 const BOB_HZ := 4.0
 const TALK_PULSE_SCALE := 1.04
 const TALK_PULSE_TIME := 0.18
+const GRAB_TIME := 0.6
 
 var state: Data = load("res://game/characters/reem/character_reem.tres")
 
@@ -78,6 +79,25 @@ func _play_talk() -> void:
 func _play_idle() -> void:
 	super()
 	_stop_talk_pulse()
+
+
+# Popochiu's grab() plays a "grab" animation and waits for `grab_done`, which only an
+# AnimationPlayer would emit. Reem has no such animation, so without this override grab()
+# waits forever and the basket click freezes. Simple version: a short bend-down (squash)
+# lasting about GRAB_TIME seconds (game_spec.md 3: pickup pose for about 0.6 s), then done.
+# reem_pickup.png is not used yet: it has a dark glowing background and an acorn baked in.
+func _play_grab() -> void:
+	if not is_instance_valid(_sprite):
+		grab_done.emit.call_deferred()
+		return
+
+	var base_scale := _sprite.scale
+	var bent := Vector2(base_scale.x * 1.04, base_scale.y * 0.9)
+	var tween := create_tween()
+	tween.tween_property(_sprite, "scale", bent, GRAB_TIME / 2.0)
+	tween.tween_property(_sprite, "scale", base_scale, GRAB_TIME / 2.0)
+	await tween.finished
+	grab_done.emit()
 
 
 # game_spec.md 4.6: footsteps while walking (sfx_steps_tile on tile floors, sfx_steps_grass

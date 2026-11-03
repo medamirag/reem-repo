@@ -81,3 +81,15 @@ Still blocked on my end: git add -A / git commit. The user is able to run comman
 - GrandpaRoom was missing its foreground layer (game_spec.md 5: every room has fg* on top). Added Foreground Sprite2D (fg1_room_fg, z_index 100), fitted like the background.
 - Waiting for: user to re-test GrandpaRoom start to finish: intro lines (text + voice), basket, mirror fall, Choice 1 both ways, foreground plant/cushion in front. Also open questions: reem_pickup.png (a: keep bend tween, b: user supplies clean PNG, c: auto cut-out) and where the cracked mirror should land.
 - Next after confirmation: commit "GrandpaRoom done", then Yard (game_spec.md Station 1, room 2).
+
+## Session 4 (2026-11-03): building the whole MVP without stopping (user's instruction)
+User: "Build everything left, in order, never wait for me; decisions go under Decisions to review."
+User answers: pick-up = keep the bend-down motion; cracked mirror = land just below the peg, close
+to the wall, 20% smaller (done: Mirror.fall_target / fallen_scale_ratio).
+
+Tools now available in the cloud session: Godot 4.7.2 Linux binary (headless checks), Xvfb for
+real screenshots, tools/playtest.gd (automatic playthrough: `godot --headless --path . -- --playtest --path=green|sand`).
+
+Status (updated as rooms are finished):
+- [x] Yard (commit c58909c)
+- [ ] Gate  - [ ] MeadowFork  - [ ] BigTree  - [ ] FoxRock  - [ ] End screen  - [ ] Reem walk rig

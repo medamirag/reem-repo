@@ -42,4 +42,11 @@ func _on_room_started() -> void:
 	await Lines.say("reem_s1_003")
 
 
+## The door only leads out once Choice 1 is answered (see hotspot_door.gd).
+func is_exit_open(exit_name: String) -> bool:
+	if exit_name == "Door":
+		return Globals.chose_truth or Globals.mirror_hidden
+	return true
+
+
 #endregion

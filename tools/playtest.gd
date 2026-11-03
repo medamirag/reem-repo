@@ -44,6 +44,10 @@ func _process(_delta: float) -> void:
 func _run() -> void:
 	_log("start, path = %s" % _path)
 	await _wait_room("Title")
+	var frames: SpriteFrames = PopochiuUtils.cursor.main_cursor.sprite_frames
+	for anim in ["use", "active", "talk", "look", "left", "right"]:
+		var tex := frames.get_frame_texture(anim, 0)
+		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
 	await _step("start button", func(): R.current.call("_on_start_pressed"))
 
 	if _path == "green":
@@ -83,6 +87,8 @@ func _green_path() -> void:
 		and _has("Notebook"), "briefing + confession")
 	await _click("Jad")
 	await _shot_walking(Vector2(300, 870))
+	await _shot_talking("jad_s1_019")
+	await _shot_talking("reem_s1_020")
 	await _click_item("Notebook")
 	await _click("Well")
 	_expect(_has("WateringCan"), "well gives the watering can")
@@ -106,6 +112,7 @@ func _green_path() -> void:
 	await _click("Shahd")
 	_expect(Globals.met_shahd, "met Shahd")
 	await _click("Hives")
+	await _shot_talking("bee_s2_021")
 	await _click_item("Notebook")
 	await _use("HandMirror", "SunSpot")
 	_expect(Globals.flowers_open and _has("HoneyJar"), "mirror opens the flowers")
@@ -118,6 +125,7 @@ func _green_path() -> void:
 	if not Globals.fox_done:
 		await _click("Thaaloob")
 	_expect(Globals.fox_done and _has("HandMirror"), "Choice 3 green")
+	await _shot_talking("fox_s2_055a")
 	await _click("ExitRight")
 
 	await _wait_room("End")
@@ -379,6 +387,17 @@ func _wait_idle() -> void:
 		if is_instance_valid(R.current) and "started" in R.current and not R.current.started:
 			busy = true
 		quiet_frames = 0 if busy else quiet_frames + 1
+
+
+## Screenshot while a line is being spoken (to check the moving mouth), only with --shots.
+func _shot_talking(line_id: String) -> void:
+	if _shots_dir.is_empty():
+		return
+	Lines.say(line_id)
+	for wait in [0.3, 0.45]:
+		await get_tree().create_timer(wait).timeout
+		await _shot("talking_" + line_id)
+	await _wait_idle()
 
 
 ## Screenshot of Reem in the middle of a walk (to check the walk rig), only with --shots.

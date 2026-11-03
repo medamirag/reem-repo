@@ -1,6 +1,6 @@
 # PROGRESS - ReemGame
 
-Last updated: 2026-11-03 (session 4). Branch: `claude/eloquent-mayer-iq1fbv`.
+Last updated: 2026-11-03 (session 5). Branch: `claude/eloquent-mayer-iq1fbv`.
 
 ## Where things stand
 
@@ -33,6 +33,32 @@ All of this ran in the cloud session with the same Godot 4.7.2 (Linux build):
 Run the playtest yourself on Windows (optional; prints lines starting with [PLAYTEST]):
 `"C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --headless --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --path=green`
 (also `--path=sand` and `--path=mixed`). Every line should say `ok`, and the last line `DONE`.
+
+## Session 5 (user feedback after reading the build)
+
+User asked for: mouths that move when talking; the basket near the mirror (it made no sense
+that taking a basket from the floor made the mirror fall); clickable arrows showing where to
+go; a cursor that shows what can be clicked. All done, all three playtests still pass.
+- **Mouths:** `game/scripts/talking_mouth.gd` (node "Mouth" under each character's Sprite2D).
+  While a character speaks, an open mouth flashes over the mouth drawn in their picture about
+  7 times a second. Reem, Grandpa and Thaaloob use the open mouth from reem_face.png; Shahd
+  (whose body picture has no mouth) shows her closed mouth from bees_sheet all the time and the
+  open one while talking. Position/size of each mouth: select Sprite2D/Mouth in the character
+  scene (position, Open Scale).
+- **Basket:** now hangs on the wall right under the mirror, its handle tucked behind the
+  mirror's frame (`prop_basket_prop.tscn`: position 800, 458). Reem walks under it, reaches up
+  (a short stretch) and takes it; then the mirror wobbles and falls. This changes game_spec.md
+  ("on the floor ... x 0.30, y 0.83") on the user's request.
+- **Exit arrows:** `game/scripts/exit_arrow.gd`, added by ReemRoom to every exit (`exit_arrows`
+  on each room; GrandpaRoom's is the Door). White arrow, dark outline, slides gently in its
+  direction, clicking it uses the exit. It only shows while the exit works (Door after Choice 1,
+  Gate right after the briefing, BigTree right once the flowers are open, FoxRock right once
+  fox_done).
+- **Cursors:** cursors.png cut into 5 pictures (assets/cut/cursors/, small copies 84 px tall)
+  and put into Popochiu's cursor (game/gui/gui.gd `CURSORS`): pointing hand = use, open hand =
+  pick up (basket, well), speech bubble = talk (characters), eye = look (mirror, sign, hives),
+  curved arrow = exits (mirrored for left exits). The normal arrow and the hourglass are
+  Popochiu's own.
 
 ## What was built (session 4)
 
@@ -95,7 +121,8 @@ Positions are starting points; all are exported or named nodes, so they are easy
 6. **Three extra "already happened" flags** in Globals (not in spec 4.5): gate_intro_done,
    fork_choice_done, fox_intro_done.
 7. **Hover text is switched off** everywhere (Popochiu's is English).
-8. **Pick-up:** bend-down motion (user's decision). Note: reem_pickup.png is actually clean
+8. **Pick-up:** bend-down motion (user's decision; used at the well). The basket uses a
+   reach-up stretch instead, since it now hangs on the wall. Note: reem_pickup.png is actually clean
    (transparent background; the "dark glow" I saw earlier was hidden color in transparent
    pixels), only the acorn is drawn in. It could be used later with the acorn cut away.
 9. **Walk rig:** used only while walking; standing and talking use reem_base.png. Built from
@@ -108,6 +135,11 @@ Positions are starting points; all are exported or named nodes, so they are easy
 11. GrandpaRoom: coming back from the Yard, Reem appears by the door (x 0.85, y 0.88), partly
     behind the foreground cushion (that cushion is part of fg1_room_fg).
 12. Inventory: Popochiu's own SimpleClick bar at the top (from session 2), not the ui_inventory art.
+13. Mouths: one open-mouth picture flashing over each character's drawn mouth (no lip sync to
+    the actual words). Grandpa's and the fox's own mouth sheets (beard/muzzle pieces) were cut
+    (assets/cut/grandpa_face, fox_face) but not used: they would replace the whole beard/muzzle
+    and did not line up as well.
+14. Exit arrows are drawn by code (no arrow art in the assets), 140 px long.
 
 ## Known problems
 
@@ -124,16 +156,20 @@ Positions are starting points; all are exported or named nodes, so they are easy
 ## Test checklist for the whole game
 
 Press **F5**. Play it twice: once choosing every **green** button, once every **sand** button.
-Everywhere: Arabic text connected and right to left, a voice with every line, footsteps while
-walking (tile indoors, grass outside), Reem's legs and arms move while she walks, clicking
-something that has nothing to do does nothing.
+Everywhere: Arabic text connected and right to left, a voice with every line, the speaker's
+mouth opens and closes while they talk, footsteps while walking (tile indoors, grass outside),
+Reem's legs and arms move while she walks, the cursor changes over things you can click
+(hand, open hand, speech bubble, eye, arrow), a white arrow at every exit that is open (click
+the arrow to go), clicking something that has nothing to do does nothing.
 
 **Play 1: all green**
 1. Title: big Arabic title, button «ابدأ». Click it.
-2. GrandpaRoom: Reem says 2 lines, turns to the mirror, says a 3rd. Click the door: nothing
-   happens yet. Click the mirror: she repeats the 3rd line. Click the basket: she walks next
-   to it, bends down, speaks, basket in the top bar (pickup sound), the mirror wobbles, falls
-   below the peg and cracks (crack sound). 2 more lines. Two wooden buttons appear.
+2. GrandpaRoom: Reem says 2 lines (her mouth moves while she talks), turns to the mirror,
+   says a 3rd. No arrow on the door yet, and clicking the door does nothing. Click the mirror
+   (eye cursor): she repeats the 3rd line. The basket hangs under the mirror; click it (open
+   hand cursor): she walks under it, reaches up, speaks, basket in the top bar (pickup sound),
+   the mirror wobbles, falls below the peg and cracks (crack sound). 2 more lines. Two wooden
+   buttons appear. After the choice, an arrow appears on the door.
 3. **Choice 1 green** «أُخبِرُ جدّي بالحقيقة»: her line; the cracked mirror stays.
 4. Door: door sound, Yard. Reem appears in front of the house door.
 5. (Optional) Walk right to the Gate before talking to Grandpa: no lines there, and the right

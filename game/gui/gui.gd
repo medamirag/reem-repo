@@ -2,6 +2,31 @@
 extends "res://addons/popochiu/engine/objects/gui/templates/simple_click_high_res/simple_click_high_res_gui.gd"
 
 
+## The game's own cursor pictures (res://assets/art/ui/cursors.png, game_spec.md 2), used when
+## the mouse is over something that can be clicked. Key = the Popochiu cursor type (the
+## `cursor` set on each prop, hotspot and character).
+const CURSORS := {
+	"use": "res://assets/cut/cursors/cursor_use_small.png",
+	"active": "res://assets/cut/cursors/cursor_pickup_small.png",
+	"talk": "res://assets/cut/cursors/cursor_talk_small.png",
+	"look": "res://assets/cut/cursors/cursor_look_small.png",
+	"search": "res://assets/cut/cursors/cursor_look_small.png",
+	"right": "res://assets/cut/cursors/cursor_exit_small.png",
+	"up": "res://assets/cut/cursors/cursor_exit_small.png",
+	"down": "res://assets/cut/cursors/cursor_exit_small.png",
+	"left": "res://assets/cut/cursors/cursor_exit_left_small.png",
+}
+
+
+#region Godot ######################################################################################
+func _ready() -> void:
+	# Must happen before super(): Popochiu copies these frames into its cursor in _ready().
+	_install_cursors()
+	super()
+
+
+#endregion
+
 #region Virtual ####################################################################################
 # Called when the GUI is blocked and should not handle input events.
 func _on_blocked(props := { blocking = true }) -> void:
@@ -91,6 +116,29 @@ func _on_inventory_item_selected(item: PopochiuInventoryItem) -> void:
 # Called by `PopochiuCursor` to get the name of the cursor texture to show.
 func _get_cursor_name() -> String:
 	return super()
+
+
+#endregion
+
+
+#region Private ####################################################################################
+## Replaces the pictures of the cursor types listed in CURSORS. The normal arrow and the
+## hourglass ("wait") stay Popochiu's own.
+func _install_cursors() -> void:
+	var cursor := get_node_or_null("Cursor") as AnimatedSprite2D
+	if cursor == null or cursor.sprite_frames == null:
+		return
+
+	var frames: SpriteFrames = cursor.sprite_frames.duplicate()
+	for anim: String in CURSORS:
+		var texture: Texture2D = load(CURSORS[anim])
+		if texture == null:
+			continue
+		if not frames.has_animation(anim):
+			frames.add_animation(anim)
+		frames.clear(anim)
+		frames.add_frame(anim, texture)
+	cursor.sprite_frames = frames
 
 
 #endregion

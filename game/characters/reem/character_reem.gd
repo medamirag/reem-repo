@@ -90,11 +90,19 @@ func _on_item_used(_item: PopochiuInventoryItem) -> void:
 func _play_talk() -> void:
 	super()
 	_start_talk_pulse()
+	_set_mouth_talking(true)
 
 
 func _play_idle() -> void:
 	super()
 	_stop_talk_pulse()
+	_set_mouth_talking(false)
+
+
+func _set_mouth_talking(value: bool) -> void:
+	var mouth := get_node_or_null("Sprite2D/Mouth") as TalkingMouth
+	if mouth:
+		mouth.talking = value
 
 
 # Popochiu's grab() plays a "grab" animation and waits for `grab_done`, which only an
@@ -114,6 +122,23 @@ func _play_grab() -> void:
 	tween.tween_property(_sprite, "scale", base_scale, GRAB_TIME / 2.0)
 	await tween.finished
 	grab_done.emit()
+
+
+## Reaching up for something above her head (the basket under the mirror): she stretches up a
+## little for about GRAB_TIME seconds, then stands normally again.
+func reach_up() -> void:
+	if not is_instance_valid(_sprite):
+		await get_tree().process_frame
+		return
+
+	var base_scale := _sprite.scale
+	var stretched := Vector2(base_scale.x * 0.97, base_scale.y * 1.08)
+	var tween := create_tween()
+	tween.tween_property(_sprite, "scale", stretched, GRAB_TIME / 2.0) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(_sprite, "scale", base_scale, GRAB_TIME / 2.0) \
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	await tween.finished
 
 
 # game_spec.md 4.6: footsteps while walking (sfx_steps_tile on tile floors, sfx_steps_grass

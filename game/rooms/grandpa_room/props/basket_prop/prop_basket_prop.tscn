@@ -8,11 +8,12 @@
 script = ExtResource("2")
 script_name = "BasketProp"
 description = ""
-cursor = 10
+cursor = 1
 texture = ExtResource("3")
-position = Vector2(576, 896)
-scale = Vector2(0.18, 0.18)
-interaction_polygon = PackedVector2Array(-440, -440, 440, -440, 440, 440, -440, 440)
+z_index = -1
+position = Vector2(800, 458)
+scale = Vector2(0.17, 0.17)
+interaction_polygon = PackedVector2Array(-440, -210, 440, -210, 440, 440, -440, 440)
 
 [node name="InteractionPolygon" parent="." index="2"]
-polygon = PackedVector2Array(-440, -440, 440, -440, 440, 440, -440, 440)
+polygon = PackedVector2Array(-440, -210, 440, -210, 440, 440, -440, 440)

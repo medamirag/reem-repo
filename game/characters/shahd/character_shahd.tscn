@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cwtpncpx24dm7" path="res://addons/popochiu/engine/objects/character/popochiu_character.tscn" id="1"]
 [ext_resource type="Script" path="res://game/characters/shahd/character_shahd.gd" id="2"]
 [ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/shahd_body.png" id="3"]
 [ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/shahd_wings.png" id="4"]
 [ext_resource type="Script" path="res://game/characters/shahd/shahd_hover.gd" id="5"]
+[ext_resource type="Script" path="res://game/scripts/talking_mouth.gd" id="6"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/mouth_open.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/cut/bees_sheet/mouth_closed.png" id="8"]
 
 [node name="CharacterShahd" instance=ExtResource("1")]
 script = ExtResource("2")
@@ -31,3 +34,11 @@ polygon = PackedVector2Array(-70, -110, 70, -110, 70, 10, -70, 10)
 
 [node name="Hover" type="Node" parent="."]
 script = ExtResource("5")
+
+[node name="Mouth" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(172, -203)
+script = ExtResource("6")
+open_texture = ExtResource("7")
+closed_texture = ExtResource("8")
+closed_scale = 0.55
+open_scale = 0.6

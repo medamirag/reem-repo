@@ -2,7 +2,7 @@
 class_name NpcCharacter
 extends PopochiuCharacter
 ## Shared behavior of the characters Reem talks to (Jad, Thaaloob, Shahd), game_spec.md 3:
-## - a small, soft scale pulse while speaking,
+## - a small, soft scale pulse and a moving mouth while speaking,
 ## - clicks are handled by the room script (ReemRoom._on_object_clicked), like props.
 ##
 ## To make a character look the other way, give its Sprite2D a negative scale.x (not flip_h:
@@ -41,10 +41,19 @@ func _on_item_used(item: PopochiuInventoryItem) -> void:
 
 func _play_talk() -> void:
 	_start_talk_pulse()
+	_set_mouth_talking(true)
 
 
 func _play_idle() -> void:
 	_stop_talk_pulse()
+	_set_mouth_talking(false)
+
+
+## The mouth (a TalkingMouth under Sprite2D) opens and closes while speaking.
+func _set_mouth_talking(value: bool) -> void:
+	var mouth := get_node_or_null("Sprite2D/Mouth") as TalkingMouth
+	if mouth:
+		mouth.talking = value
 
 
 func _play_walk(_target_pos: Vector2) -> void:

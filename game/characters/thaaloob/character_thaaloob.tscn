@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cwtpncpx24dm7" path="res://addons/popochiu/engine/objects/character/popochiu_character.tscn" id="1"]
 [ext_resource type="Script" path="res://game/characters/thaaloob/character_thaaloob.gd" id="2"]
 [ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="3"]
+[ext_resource type="Script" path="res://game/scripts/talking_mouth.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/cut/reem_face/mouth_open.png" id="5"]
 
 [node name="CharacterThaaloob" instance=ExtResource("1")]
 script = ExtResource("2")
@@ -21,3 +23,9 @@ scale = Vector2(-0.3617, 0.3617)
 
 [node name="InteractionPolygon" parent="." index="3"]
 polygon = PackedVector2Array(-136, -453, 136, -453, 136, 0, -136, 0)
+
+[node name="Mouth" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(115, -852)
+script = ExtResource("4")
+open_texture = ExtResource("5")
+open_scale = 0.3

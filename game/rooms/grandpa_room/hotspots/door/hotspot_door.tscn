@@ -7,7 +7,7 @@
 script = ExtResource("2")
 script_name = "Door"
 description = ""
-cursor = 1
+cursor = 6
 position = Vector2(1786, 572)
 interaction_polygon = PackedVector2Array(-96, -400, 96, -400, 96, 400, -96, 400)
 walk_to_point = Vector2(-130, 330)

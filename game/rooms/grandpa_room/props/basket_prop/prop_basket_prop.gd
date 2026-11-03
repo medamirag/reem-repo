@@ -1,14 +1,14 @@
 @tool
 extends PopochiuProp
-## The basket on the floor under the mirror. game_spec.md GrandpaRoom, "Click BasketProp":
-## picks it up, which makes the mirror fall and break, then offers Choice 1.
+## The basket, hanging on the wall right under Grandpa's mirror with its handle tucked behind
+## the mirror's frame (user's request: the basket must be near the mirror, so it makes sense
+## that taking it brings the mirror down; game_spec.md had it on the floor). game_spec.md
+## GrandpaRoom, "Click BasketProp": Reem reaches up and takes it, which makes the mirror fall and
+## break, then Choice 1.
 
-const CHOICE1_GREEN := "أُخبِرُ جدّي بالحقيقة"  # game_spec.md short label (GrandpaRoom Choice 1, green)
-const CHOICE1_SAND := "أُخبّئُ المرآة"  # game_spec.md short label (GrandpaRoom Choice 1, sand)
-
-## Where Reem stands when she picks the basket up, relative to the basket, in room pixels.
-## Negative x = to the left of the basket. A starting point: adjust in the Inspector.
-@export var reem_stand_offset := Vector2(-170, 20)
+## Where Reem stands when she takes the basket, relative to the basket, in room pixels: on the
+## floor just below it, a little to the left. A starting point: adjust in the Inspector.
+@export var reem_stand_offset := Vector2(-100, 420)
 
 #region Virtual ####################################################################################
 func _on_click() -> void:
@@ -16,10 +16,10 @@ func _on_click() -> void:
 		E.command_fallback()
 		return
 
-	# Stand just left of the basket instead of on top of it (room pixels, adjustable).
 	await C.player.walk_to_clicked(reem_stand_offset)
 	await C.player.face_clicked()
-	await C.player.grab()
+	# The basket hangs above her head: she reaches up instead of bending down.
+	await C.player.reach_up()
 	await Lines.say("reem_s1_004")
 
 	await C.player.add_to_inventory(I.Basket)
@@ -36,7 +36,7 @@ func _on_click() -> void:
 	await Lines.say("reem_s1_005")
 	await Lines.say("reem_s1_006")
 
-	var went_green: bool = await Choices.ask_two(CHOICE1_GREEN, CHOICE1_SAND)
+	var went_green: bool = await Choices.ask_two(Labels.CHOICE1_GREEN, Labels.CHOICE1_SAND)
 
 	if went_green:
 		await Lines.say("reem_s1_007a")

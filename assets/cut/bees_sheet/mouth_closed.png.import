@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dihhghs22hpu4"
-path="res://.godot/imported/05.png-9f0af2cb8a2b45529a691001c95341a5.ctex"
+uid="uid://cwcivteadca1n"
+path="res://.godot/imported/mouth_closed.png-ba3d639a984eb10d0c240575a6915383.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cut/bees_sheet/05.png"
-dest_files=["res://.godot/imported/05.png-9f0af2cb8a2b45529a691001c95341a5.ctex"]
+source_file="res://assets/cut/bees_sheet/mouth_closed.png"
+dest_files=["res://.godot/imported/mouth_closed.png-ba3d639a984eb10d0c240575a6915383.ctex"]
 
 [params]
 

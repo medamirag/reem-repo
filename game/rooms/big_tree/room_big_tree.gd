@@ -54,6 +54,10 @@ func _on_item_used_on(obj: PopochiuClickable, item: PopochiuInventoryItem) -> vo
 	await _open_flowers()
 
 
+func is_exit_open(exit_name: String) -> bool:
+	return exit_name != "ExitRight" or Globals.flowers_open
+
+
 #endregion
 
 #region Private ####################################################################################

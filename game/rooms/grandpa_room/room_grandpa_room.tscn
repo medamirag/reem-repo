@@ -24,6 +24,9 @@ entry_points = {
 "Yard": Vector2(0.85, 0.88)
 }
 footstep_cue = "sfx_steps_tile"
+exit_arrows = {
+"Door": "right"
+}
 ambience_cue = "amb_farm"
 
 [node name="Background" type="Sprite2D" parent="."]

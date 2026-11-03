@@ -30,6 +30,10 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 				await leave_through(obj, "End")
 
 
+func is_exit_open(exit_name: String) -> bool:
+	return exit_name != "ExitRight" or Globals.fox_done
+
+
 #endregion
 
 #region Private ####################################################################################

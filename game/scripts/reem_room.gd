@@ -24,6 +24,9 @@ extends PopochiuRoom
 @export var footstep_cue := "sfx_steps_grass"
 ## Ambience that loops quietly in this room (game_spec.md 4.6).
 @export var ambience_cue := "amb_farm"
+## Exit hotspots that get a big arrow (user's request), and which way each arrow points
+## ("left", "right" or "up").
+@export var exit_arrows := {"ExitLeft": "left", "ExitRight": "right"}
 
 ## True once the room's start sequence (_on_room_started) has finished. Read by the automatic
 ## playtest (tools/playtest.gd).
@@ -50,6 +53,7 @@ func _on_room_entered() -> void:
 	Globals.play_ambience(ambience_cue)
 	Globals.notebook_hint = Callable()
 
+	_add_exit_arrows()
 	_setup_room()
 
 
@@ -70,6 +74,12 @@ func _on_restore_from_savegame() -> void:
 ## every time the room is entered, before it becomes visible.
 func _setup_room() -> void:
 	pass
+
+
+## Override: false while the exit hotspot `exit_name` does not lead anywhere yet (its arrow is
+## hidden then). Rooms whose exits are locked until something happens override this.
+func is_exit_open(_exit_name: String) -> bool:
+	return true
 
 
 ## Override: what happens once the room is visible (first-time lines, ...).
@@ -98,6 +108,42 @@ func object_clicked(obj: PopochiuClickable) -> void:
 ## Called by RoomProp / RoomHotspot / NpcCharacter. Not meant to be overridden.
 func item_used_on(obj: PopochiuClickable, item: PopochiuInventoryItem) -> void:
 	await _on_item_used_on(obj, item)
+
+
+## Puts an ExitArrow in every hotspot listed in `exit_arrows`: at the screen edge for exits on
+## the edge, otherwise in the middle of the hotspot. Grows the hotspot if needed so a click
+## anywhere on the arrow uses the exit.
+func _add_exit_arrows() -> void:
+	const EDGE_MARGIN := 95.0
+	for exit_name: String in exit_arrows:
+		var hotspot := get_hotspot(exit_name)
+		if hotspot == null or hotspot.has_node("ExitArrow"):
+			continue
+
+		var arrow := ExitArrow.new()
+		arrow.name = "ExitArrow"
+		arrow.direction = exit_arrows[exit_name]
+		arrow.exit_name = exit_name
+		var at := hotspot.position
+		if at.x < EDGE_MARGIN * 1.5:
+			at.x = EDGE_MARGIN
+		elif at.x > width - EDGE_MARGIN * 1.5:
+			at.x = width - EDGE_MARGIN
+		arrow.position = at - hotspot.position
+		hotspot.add_child(arrow)
+
+		var shape := hotspot.get_node_or_null("InteractionPolygon") as CollisionPolygon2D
+		if shape:
+			var area := Rect2(shape.polygon[0], Vector2.ZERO)
+			for point in shape.polygon:
+				area = area.expand(point)
+			var needed := arrow.get_click_rect()
+			needed.position += arrow.position
+			area = area.merge(needed)
+			shape.polygon = PackedVector2Array([
+				area.position, Vector2(area.end.x, area.position.y), area.end,
+				Vector2(area.position.x, area.end.y),
+			])
 
 
 ## Converts a fraction of the screen into room pixels.

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx6p6pyqhks0a"
-path="res://.godot/imported/04.png-da7c2edf94eb61b8e26a99cc7589707a.ctex"
+uid="uid://drn7cvrr1p14v"
+path="res://.godot/imported/10.png-4843a2e6b24ee89e7abd658e538ce547.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cut/bees_sheet/04.png"
-dest_files=["res://.godot/imported/04.png-da7c2edf94eb61b8e26a99cc7589707a.ctex"]
+source_file="res://assets/cut/fox_face/10.png"
+dest_files=["res://.godot/imported/10.png-4843a2e6b24ee89e7abd658e538ce547.ctex"]
 
 [params]
 

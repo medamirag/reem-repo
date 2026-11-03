@@ -1,0 +1,410 @@
+{
+ "reem_s1_001": {
+  "speaker": "Reem",
+  "tone": "calm, just woken up",
+  "text": "الحمدُ للهِ الذي أحيانا بعدَما أماتَنا، وإليهِ النُّشور.",
+  "audio": "res://assets/audio/lines/reem_s1_001.mp3"
+ },
+ "reem_s1_002": {
+  "speaker": "Reem",
+  "tone": "cheerful",
+  "text": "صباحٌ جميلٌ في مزرعةِ جدّي!",
+  "audio": "res://assets/audio/lines/reem_s1_002.mp3"
+ },
+ "reem_s1_003": {
+  "speaker": "Reem",
+  "tone": "dreamy, fond",
+  "text": "مرآةُ جدّي… يقولُ إنّها هديّةٌ من جدّتي، رحِمَها الله.",
+  "audio": "res://assets/audio/lines/reem_s1_003.mp3"
+ },
+ "reem_s1_004": {
+  "speaker": "Reem",
+  "tone": "ordinary",
+  "text": "سآخذُ السَّلّةَ، سأحتاجُها اليوم.",
+  "audio": "res://assets/audio/lines/reem_s1_004.mp3"
+ },
+ "reem_s1_005": {
+  "speaker": "Reem",
+  "tone": "a little startled",
+  "text": "أوه، لا! انشرَخَتْ مرآةُ جدّي!",
+  "audio": "res://assets/audio/lines/reem_s1_005.mp3"
+ },
+ "reem_s1_006": {
+  "speaker": "Reem",
+  "tone": "whispering, worried",
+  "text": "ماذا أفعلُ؟ جدّي يحبُّها كثيراً…",
+  "audio": "res://assets/audio/lines/reem_s1_006.mp3"
+ },
+ "reem_s1_007a": {
+  "speaker": "Reem",
+  "tone": "gently determined",
+  "text": "يجبُ أن أخبرَ جدّي. الصِّدقُ أحسن.",
+  "audio": "res://assets/audio/lines/reem_s1_007a.mp3"
+ },
+ "reem_s1_007b": {
+  "speaker": "Reem",
+  "tone": "whispering, hesitant",
+  "text": "سأضعُها هنا خلفَ الوسادة… لن يعرفَ أحد.",
+  "audio": "res://assets/audio/lines/reem_s1_007b.mp3"
+ },
+ "reem_s1_010": {
+  "speaker": "Reem",
+  "tone": "cheerful",
+  "text": "السَّلامُ عليكم يا جدّي!",
+  "audio": "res://assets/audio/lines/reem_s1_010.mp3"
+ },
+ "jad_s1_011": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "وعليكمُ السَّلامُ ورحمةُ اللهِ وبركاتُه يا ريم. صباحُ الخير يا حبيبتي.",
+  "audio": "res://assets/audio/lines/jad_s1_011.mp3"
+ },
+ "reem_s1_012": {
+  "speaker": "Reem",
+  "tone": "caring",
+  "text": "صباحُ النّور يا جدّي. كيفَ حالُ قدمِك؟",
+  "audio": "res://assets/audio/lines/reem_s1_012.mp3"
+ },
+ "jad_s1_013": {
+  "speaker": "Jad",
+  "tone": "calm, content",
+  "text": "الحمدُ للهِ على كلِّ حال. التوى كاحلي أمس، ولن أستطيعَ المشيَ إلى التلِّ اليوم.",
+  "audio": "res://assets/audio/lines/jad_s1_013.mp3"
+ },
+ "reem_s1_014": {
+  "speaker": "Reem",
+  "tone": "surprised",
+  "text": "لكنَّ اليومَ مهرجانُ الفوانيس! وأنتَ مَن يُشعِلُ الفانوسَ الكبيرَ كلَّ عام!",
+  "audio": "res://assets/audio/lines/reem_s1_014.mp3"
+ },
+ "jad_s1_015": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "لهذا أحتاجُ مساعدتَكِ يا ريم. خُذي هذا الفانوسَ الصغير، ففيه شُعلةُ المهرجان، وأوصِليه إلى قمّةِ التلِّ قبلَ الغروب.",
+  "audio": "res://assets/audio/lines/jad_s1_015.mp3"
+ },
+ "reem_s1_016": {
+  "speaker": "Reem",
+  "tone": "enthusiastic",
+  "text": "إن شاءَ اللهُ يا جدّي، سأوصِلُه!",
+  "audio": "res://assets/audio/lines/reem_s1_016.mp3"
+ },
+ "jad_s1_017": {
+  "speaker": "Jad",
+  "tone": "wise",
+  "text": "وخُذي دفتري أيضاً. كتبتُ فيه أسرارَ الوادي، فإذا حِرتِ في شيءٍ فانظري فيه.",
+  "audio": "res://assets/audio/lines/jad_s1_017.mp3"
+ },
+ "reem_s1_018": {
+  "speaker": "Reem",
+  "tone": "grateful",
+  "text": "جزاكَ اللهُ خيراً يا جدّي.",
+  "audio": "res://assets/audio/lines/reem_s1_018.mp3"
+ },
+ "jad_s1_019": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "وإيّاكِ يا ابنتي. وخُذي إبريقَ السَّقي من عندِ البئر، فقد تحتاجينَه في الطريق.",
+  "audio": "res://assets/audio/lines/jad_s1_019.mp3"
+ },
+ "reem_s1_020": {
+  "speaker": "Reem",
+  "tone": "ordinary",
+  "text": "بئرُ جدّي، ماؤها باردٌ عَذْب. وهذا إبريقُ السَّقي، سآخذُه.",
+  "audio": "res://assets/audio/lines/reem_s1_020.mp3"
+ },
+ "reem_s1_021a": {
+  "speaker": "Reem",
+  "tone": "ashamed",
+  "text": "يا جدّي… أنا آسفة. أخذتُ السَّلّةَ فوقعتْ مرآتُكَ وانشرَخَت. لم أقصِد.",
+  "audio": "res://assets/audio/lines/reem_s1_021a.mp3"
+ },
+ "jad_s1_022a": {
+  "speaker": "Jad",
+  "tone": "tender, proud",
+  "text": "بارَكَ اللهُ فيكِ يا ريم على صدقِكِ. المرآةُ تُصلَح، أمّا الصِّدقُ فلا يُشترى بمال.",
+  "audio": "res://assets/audio/lines/jad_s1_022a.mp3"
+ },
+ "jad_s1_023": {
+  "speaker": "Jad",
+  "tone": "calm",
+  "text": "قالَ رسولُ اللهِ صلّى اللهُ عليهِ وسلّم: «إنَّ الصِّدْقَ يَهْدِي إلى البِرّ».",
+  "audio": "res://assets/audio/lines/jad_s1_023.mp3"
+ },
+ "jad_s1_024": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "خُذي هذه المرآةَ الصغيرة، كانت لي وأنا صغير. لعلَّها تنفعُكِ في الطريق.",
+  "audio": "res://assets/audio/lines/jad_s1_024.mp3"
+ },
+ "reem_s1_021b": {
+  "speaker": "Reem",
+  "tone": "very ashamed",
+  "text": "يا جدّي… أنا آسفة. انشرَخَتْ مرآتُكَ صباحاً، وخبّأتُها لأنّي خِفتُ أن تحزَن.",
+  "audio": "res://assets/audio/lines/reem_s1_021b.mp3"
+ },
+ "jad_s1_022b": {
+  "speaker": "Jad",
+  "tone": "tender",
+  "text": "أشكُرُكِ لأنّكِ عُدتِ وقُلتِ الحقيقةَ يا ريم. كلُّنا نخطئ، والرُّجوعُ عن الخطأِ شجاعة.",
+  "audio": "res://assets/audio/lines/jad_s1_022b.mp3"
+ },
+ "jad_s1_023b": {
+  "speaker": "Jad",
+  "tone": "gently asking",
+  "text": "أخبريني، أيُّهما كانَ أثقلَ على قلبِكِ: انشراخُ المرآة، أم إخفاءُ الحقيقة؟",
+  "audio": "res://assets/audio/lines/jad_s1_023b.mp3"
+ },
+ "reem_s1_024b": {
+  "speaker": "Reem",
+  "tone": "sincere",
+  "text": "إخفاءُ الحقيقة يا جدّي… لن أفعلَها مرّةً أخرى، إن شاءَ الله.",
+  "audio": "res://assets/audio/lines/reem_s1_024b.mp3"
+ },
+ "reem_s1_030": {
+  "speaker": "Reem",
+  "tone": "reassured",
+  "text": "بِسْمِ الله، توكّلتُ على الله، ولا حولَ ولا قوّةَ إلّا بالله.",
+  "audio": "res://assets/audio/lines/reem_s1_030.mp3"
+ },
+ "jad_s1_031": {
+  "speaker": "Jad",
+  "tone": "calling from a distance",
+  "text": "في حِفظِ اللهِ يا ريم! وتذكّري: امشي على الطريق، ولا تدوسي الزَّرع.",
+  "audio": "res://assets/audio/lines/jad_s1_031.mp3"
+ },
+ "reem_s1_032": {
+  "speaker": "Reem",
+  "tone": "calling back cheerfully",
+  "text": "إن شاءَ الله، في أمانِ اللهِ يا جدّي!",
+  "audio": "res://assets/audio/lines/reem_s1_032.mp3"
+ },
+ "reem_s2_001": {
+  "speaker": "Reem",
+  "tone": "amazed",
+  "text": "ما شاءَ الله! ما أجملَ هذا الحقل!",
+  "audio": "res://assets/audio/lines/reem_s2_001.mp3"
+ },
+ "reem_s2_002": {
+  "speaker": "Reem",
+  "tone": "reading a sign",
+  "text": "اللافتةُ تقول: «من فضلِكَ، امشِ على الطريق».",
+  "audio": "res://assets/audio/lines/reem_s2_002.mp3"
+ },
+ "reem_s2_003": {
+  "speaker": "Reem",
+  "tone": "thinking",
+  "text": "الطريقُ طويلٌ يدورُ حولَ الحقل… والشمسُ ترتفع.",
+  "audio": "res://assets/audio/lines/reem_s2_003.mp3"
+ },
+ "reem_s2_004a": {
+  "speaker": "Reem",
+  "tone": "reassured",
+  "text": "سأمشي على الطريق، كما أوصاني جدّي.",
+  "audio": "res://assets/audio/lines/reem_s2_004a.mp3"
+ },
+ "reem_s2_004b": {
+  "speaker": "Reem",
+  "tone": "in a hurry",
+  "text": "سأقطعُ الحقلَ بسرعة… لن يحدثَ شيء.",
+  "audio": "res://assets/audio/lines/reem_s2_004b.mp3"
+ },
+ "bee_s2_010b": {
+  "speaker": "Shahd",
+  "tone": "upset but polite",
+  "text": "مهلاً يا صغيرة! لقد دُستِ زهورَنا في طرفِ الحقل. من أينَ سنجمعُ الرَّحيق؟",
+  "audio": "res://assets/audio/lines/bee_s2_010b.mp3"
+ },
+ "reem_s2_011b": {
+  "speaker": "Reem",
+  "tone": "ashamed",
+  "text": "أنا آسفة، لم أفكّر في ذلك. كيفَ أُصلِحُ ما فعلتُ؟",
+  "audio": "res://assets/audio/lines/reem_s2_011b.mp3"
+ },
+ "bee_s2_012b": {
+  "speaker": "Shahd",
+  "tone": "calmer",
+  "text": "ارفعي الزهورَ المائلةَ برِفق، واسقيها بالماء.",
+  "audio": "res://assets/audio/lines/bee_s2_012b.mp3"
+ },
+ "reem_s2_013b": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "تفضَّلي أيتها الزهور، سامحيني.",
+  "audio": "res://assets/audio/lines/reem_s2_013b.mp3"
+ },
+ "bee_s2_014b": {
+  "speaker": "Shahd",
+  "tone": "pleased",
+  "text": "أحسنتِ! الاعترافُ بالخطأِ وإصلاحُه من أخلاقِ الكِرام.",
+  "audio": "res://assets/audio/lines/bee_s2_014b.mp3"
+ },
+ "reem_s2_020": {
+  "speaker": "Reem",
+  "tone": "cheerful",
+  "text": "السَّلامُ عليكم أيّتها النَّحلة!",
+  "audio": "res://assets/audio/lines/reem_s2_020.mp3"
+ },
+ "bee_s2_021": {
+  "speaker": "Shahd",
+  "tone": "lively",
+  "text": "وعليكمُ السَّلام! أنا شَهد، كبيرةُ نحلاتِ الحقل.",
+  "audio": "res://assets/audio/lines/bee_s2_021.mp3"
+ },
+ "reem_s2_022": {
+  "speaker": "Reem",
+  "tone": "caring",
+  "text": "تشرَّفتُ بمعرفتِكِ يا شَهد. لماذا تبدينَ حزينة؟",
+  "audio": "res://assets/audio/lines/reem_s2_022.mp3"
+ },
+ "bee_s2_023": {
+  "speaker": "Shahd",
+  "tone": "worried",
+  "text": "زهورُنا تحتَ الشجرةِ الكبيرة لم تتفتّح اليوم. الظِّلُّ يغطّيها، والشمسُ لا تصلُ إليها.",
+  "audio": "res://assets/audio/lines/bee_s2_023.mp3"
+ },
+ "bee_s2_024": {
+  "speaker": "Shahd",
+  "tone": "worried",
+  "text": "وبدونِ الزهورِ لا رَحيق، وبدونِ الرَّحيقِ لا عَسَل!",
+  "audio": "res://assets/audio/lines/bee_s2_024.mp3"
+ },
+ "reem_s2_025": {
+  "speaker": "Reem",
+  "tone": "thinking",
+  "text": "الشمسُ هناك… والزهورُ هنا في الظِّلّ… كيفَ أُوصِلُ إليها الضَّوء؟",
+  "audio": "res://assets/audio/lines/reem_s2_025.mp3"
+ },
+ "reem_s2_026": {
+  "speaker": "Reem",
+  "tone": "reading",
+  "text": "يكتبُ جدّي: «المرآةُ تُعيدُ ضَوءَ الشَّمسِ إلى حيثُ تشاء».",
+  "audio": "res://assets/audio/lines/reem_s2_026.mp3"
+ },
+ "reem_s2_027": {
+  "speaker": "Reem",
+  "tone": "ordinary",
+  "text": "خلايا النَّحل… أسمعُ طَنينَها من هنا.",
+  "audio": "res://assets/audio/lines/reem_s2_027.mp3"
+ },
+ "reem_s2_030": {
+  "speaker": "Reem",
+  "tone": "delighted",
+  "text": "انظري يا شَهد! وصلَ الضَّوءُ إلى الزهور!",
+  "audio": "res://assets/audio/lines/reem_s2_030.mp3"
+ },
+ "bee_s2_031": {
+  "speaker": "Shahd",
+  "tone": "very happy",
+  "text": "سبحانَ الله! تفتَّحَتْ كلُّها! جزاكِ اللهُ خيراً يا ريم!",
+  "audio": "res://assets/audio/lines/bee_s2_031.mp3"
+ },
+ "reem_s2_032": {
+  "speaker": "Reem",
+  "tone": "modest",
+  "text": "وجزاكِ خيراً. الحمدُ لله.",
+  "audio": "res://assets/audio/lines/reem_s2_032.mp3"
+ },
+ "bee_s2_033": {
+  "speaker": "Shahd",
+  "tone": "warm",
+  "text": "خُذي جرّةَ العَسَلِ هذه هديّةً منّا، فقد تنفعُكِ في طريقِك.",
+  "audio": "res://assets/audio/lines/bee_s2_033.mp3"
+ },
+ "reem_s2_041b": {
+  "speaker": "Reem",
+  "tone": "remembering, then sad",
+  "text": "مرآة! أحتاجُ مرآة… لكنّي تركتُ مرآةَ جدّي مشروخةً خلفَ الوسادة، ولم أقُلْ له شيئاً.",
+  "audio": "res://assets/audio/lines/reem_s2_041b.mp3"
+ },
+ "reem_s2_042b": {
+  "speaker": "Reem",
+  "tone": "determined",
+  "text": "يجبُ أن أعودَ وأخبرَه بالحقيقة.",
+  "audio": "res://assets/audio/lines/reem_s2_042b.mp3"
+ },
+ "fox_s2_050": {
+  "speaker": "Thaaloob",
+  "tone": "friendly, charming",
+  "text": "السَّلامُ عليكم يا صغيرةَ الوادي! إلى أينَ بهذه السُّرعة؟",
+  "audio": "res://assets/audio/lines/fox_s2_050.mp3"
+ },
+ "reem_s2_051": {
+  "speaker": "Reem",
+  "tone": "polite",
+  "text": "وعليكمُ السَّلام. أنا ذاهبةٌ إلى قمّةِ التلِّ لأوصِلَ شُعلةَ المهرجان.",
+  "audio": "res://assets/audio/lines/reem_s2_051.mp3"
+ },
+ "fox_s2_052": {
+  "speaker": "Thaaloob",
+  "tone": "exaggerated wonder",
+  "text": "ما شاءَ الله! مهمّةٌ عظيمة! لكنِ انظري إلى هذا الحجرِ العجيب، يلمعُ أكثرَ من الشَّمس! إنّه يُضيءُ الطريقَ في الليل.",
+  "audio": "res://assets/audio/lines/fox_s2_052.mp3"
+ },
+ "fox_s2_053": {
+  "speaker": "Thaaloob",
+  "tone": "sly but friendly",
+  "text": "وأنا كريمٌ اليوم! أعطيكِ إيّاهُ مقابلَ تلكَ المرآةِ الصغيرةِ فقط. ما رأيُكِ؟",
+  "audio": "res://assets/audio/lines/fox_s2_053.mp3"
+ },
+ "reem_s2_054a": {
+  "speaker": "Reem",
+  "tone": "polite but firm",
+  "text": "شكراً لكَ يا ثعلوب، لكنَّ هذه المرآةَ هديّةٌ من جدّي، وهي أمانةٌ عندي. لا أُبادِلُها دونَ إذنِه.",
+  "audio": "res://assets/audio/lines/reem_s2_054a.mp3"
+ },
+ "fox_s2_055a": {
+  "speaker": "Thaaloob",
+  "tone": "laughing, impressed",
+  "text": "ههه… فتاةٌ ذكيّة! حسناً حسناً، لا بأس. لعلَّنا نلتقي في الطريق!",
+  "audio": "res://assets/audio/lines/fox_s2_055a.mp3"
+ },
+ "reem_s2_054b": {
+  "speaker": "Reem",
+  "tone": "excited",
+  "text": "حجرٌ يُضيءُ في الليل؟ حسناً، اتَّفقنا!",
+  "audio": "res://assets/audio/lines/reem_s2_054b.mp3"
+ },
+ "reem_s2_055b": {
+  "speaker": "Reem",
+  "tone": "disappointed",
+  "text": "هذا ليسَ حجراً عجيباً… إنّه حجرٌ عاديٌّ مدهونٌ بالعَسَل!",
+  "audio": "res://assets/audio/lines/reem_s2_055b.mp3"
+ },
+ "reem_s2_056b": {
+  "speaker": "Reem",
+  "tone": "regretful, thinking",
+  "text": "أخطأتُ حينَ بادلتُ هديّةَ جدّي دونَ أن أستأذِنَه… يجبُ أن أستعيدَها.",
+  "audio": "res://assets/audio/lines/reem_s2_056b.mp3"
+ },
+ "reem_s2_057b": {
+  "speaker": "Reem",
+  "tone": "polite, honest",
+  "text": "يا ثعلوب، هذه المرآةُ أمانةٌ من جدّي، والحجرُ لم يكنْ عجيباً. أرجو أن تُعيدَها إليّ.",
+  "audio": "res://assets/audio/lines/reem_s2_057b.mp3"
+ },
+ "fox_s2_058b": {
+  "speaker": "Thaaloob",
+  "tone": "embarrassed",
+  "text": "أمم… حسناً، حسناً. خُذيها… كنتُ أمزحُ فقط!",
+  "audio": "res://assets/audio/lines/fox_s2_058b.mp3"
+ },
+ "reem_s2_059b": {
+  "speaker": "Reem",
+  "tone": "kind",
+  "text": "وهذا حجرُكَ. لكنَّ المزاحَ لا يكونُ بالكذبِ يا ثعلوب.",
+  "audio": "res://assets/audio/lines/reem_s2_059b.mp3"
+ },
+ "reem_s2_070": {
+  "speaker": "Reem",
+  "tone": "cheerful",
+  "text": "الحمدُ لله. هيّا إلى الجَدْوَل!",
+  "audio": "res://assets/audio/lines/reem_s2_070.mp3"
+ },
+ "jad_s2_071": {
+  "speaker": "Jad",
+  "tone": "narrator, warm and slow",
+  "text": "أحسنتِ يا ريم. كلُّ زهرةٍ في شجرةِ قلبِكِ عملٌ طيّب، وكلُّ غصنٍ عادَ أخضرَ خطأٌ أصلحتِه. والطريقُ ما زالَ طويلاً…",
+  "audio": "res://assets/audio/lines/jad_s2_071.mp3"
+ }
+}

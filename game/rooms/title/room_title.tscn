@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" uid="uid://cfml3lrhiixmi" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/title/room_title.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/ui/title_screen.png" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+bg_color = Color(0.86, 0.68, 0.38, 0.95)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(0.93, 0.75, 0.45, 0.95)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.72, 0.55, 0.28, 0.95)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 8
+
+[node name="RoomTitle" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "Title"
+has_player = false
+hide_gui = true
+width = 1920
+height = 1080
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="TitleLabel" type="RichTextLabel" parent="."]
+position = Vector2(260, 130)
+size = Vector2(1400, 240)
+bbcode_enabled = true
+fit_content = false
+scroll_active = false
+vertical_alignment = 1
+text = "[center]ريم ومهرجان وادي النسيم[/center]"
+
+[node name="StartButton" type="Button" parent="."]
+position = Vector2(760, 410)
+size = Vector2(400, 110)
+theme_override_colors/font_color = Color(0.3, 0.17, 0.05, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
+text = "ابدأ"

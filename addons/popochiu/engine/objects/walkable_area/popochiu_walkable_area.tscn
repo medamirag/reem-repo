@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://uvtywyf3pq1a"]
+
+[ext_resource type="Script" uid="uid://c3xqd0m4wixh6" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.gd" id="1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_c2x7b"]
+vertices = PackedVector2Array(1860, 1040, 60, 1040, 60, 870, 1860, 870)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(60, 870, 1860, 870, 1860, 1040, 60, 1040)])
+agent_radius = 0.0
+
+[node name="Floor" type="Node2D" unique_id=1917291691]
+script = ExtResource("1")
+script_name = "Floor"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(60, 870, 1860, 870, 1860, 1040, 60, 1040)])
+
+[node name="Perimeter" type="NavigationRegion2D" parent="." unique_id=815584942]
+visible = false
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_c2x7b")

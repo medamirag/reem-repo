@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="PackedScene" uid="uid://cfml3lrhiixmi" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/grandpa_room/room_grandpa_room.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg1_room.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://game/characters/reem/character_reem.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://game/rooms/grandpa_room/props/mirror/prop_mirror.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://game/rooms/grandpa_room/props/basket_prop/prop_basket_prop.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://game/rooms/grandpa_room/hotspots/door/hotspot_door.tscn" id="8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_floor"]
+agent_radius = 0.0
+
+[node name="RoomGrandpaRoom" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "GrandpaRoom"
+width = 1920
+height = 1080
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Floor" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Floor"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(60, 864, 1860, 864, 1860, 1048, 60, 1048)])
+
+[node name="Perimeter" parent="WalkableAreas/Floor" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_floor")
+
+[node name="Mirror" parent="Props" instance=ExtResource("6")]
+
+[node name="BasketProp" parent="Props" instance=ExtResource("7")]
+
+[node name="Door" parent="Hotspots" instance=ExtResource("8")]
+
+[node name="RightCushion" type="Marker2D" parent="Markers"]
+position = Vector2(1382, 920)
+visible = false
+
+[node name="CharacterReem" parent="Characters" instance=ExtResource("5")]
+position = Vector2(384, 950)

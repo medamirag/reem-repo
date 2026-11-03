@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3]
+
+[ext_resource type="Script" uid="uid://xx6t1nkiyuwa" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="1"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/amb_meadow.mp3" id="2"]
+
+[resource]
+script = ExtResource("1")
+resource_name = "amb_meadow"
+audio = ExtResource("2")
+loop = true
+can_play_simultaneous = false
+volume = -16.0
+bus = "Master"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/popochiu/engine/templates/inventory_item_state_template.gd" id="1"]
+
+[resource]
+resource_name = "Basket"
+script = ExtResource("1")
+script_name = "Basket"
+scene = "res://game/inventory_items/basket/inventory_item_basket.tscn"

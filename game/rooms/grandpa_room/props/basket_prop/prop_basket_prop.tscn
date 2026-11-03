@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" uid="uid://do1k681xt48cm" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/grandpa_room/props/basket_prop/prop_basket_prop.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/cut/handmirror_basket/basket.tres" id="3"]
+
+[node name="BasketProp" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "BasketProp"
+description = "Basket"
+cursor = 10
+texture = ExtResource("3")
+position = Vector2(576, 896)
+scale = Vector2(0.18, 0.18)
+interaction_polygon = PackedVector2Array(-440, -440, 440, -440, 440, 440, -440, 440)
+
+[node name="InteractionPolygon" parent="." index="2"]
+polygon = PackedVector2Array(-440, -440, 440, -440, 440, 440, -440, 440)

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://0qxt8jqsktq8"]
+
+[ext_resource type="PackedScene" uid="uid://cfml3lrhiixmi" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" uid="uid://b6ahkkiya0glg" path="res://game/rooms/test_arabic/room_test_arabic.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dv70hpq3d70w8" path="res://assets/art/backgrounds/bg1_room.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://game/characters/reem/character_reem.tscn" id="5"]
+
+[node name="RoomTestArabic" unique_id=1305442707 instance=ExtResource("1")]
+script = ExtResource("2")
+reem_screen_position = Vector2(0.2, 0.88)
+reem_height_ratio = 0.42
+script_name = "TestArabic"
+width = 1920
+height = 1080
+
+[node name="Floor" parent="WalkableAreas" index="0" unique_id=1917291691 instance=ExtResource("4")]
+script_name = "Floor"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(60, 870, 1860, 870, 1860, 1040, 60, 1040)])
+
+[node name="CharacterReem" parent="Characters" index="0" unique_id=6948527 instance=ExtResource("5")]
+position = Vector2(384, 950)
+
+[node name="Background" type="Sprite2D" parent="." index="6" unique_id=380678549]
+z_index = -100
+scale = Vector2(1.148325, 1.148325)
+texture = ExtResource("3")
+centered = false

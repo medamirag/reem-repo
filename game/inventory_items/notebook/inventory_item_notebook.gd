@@ -13,7 +13,8 @@ func _on_click() -> void:
 	if Globals.notebook_hint.is_valid():
 		await Globals.notebook_hint.call()
 	else:
-		E.command_fallback()
+		# No hint in this room: nothing happens (it does not become the mouse cursor either).
+		await get_tree().process_frame
 
 
 func _on_right_click() -> void:

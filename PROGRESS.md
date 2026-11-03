@@ -1,97 +1,196 @@
 # PROGRESS - ReemGame
 
-Last updated: 2026-11-03 (session 2)
-Confirmed by user: Arabic proof works. Godot moved to C:\Users\ACER\Desktop\Godot\. Art paths now match game_spec.md. Renderer set to Compatibility.
+Last updated: 2026-11-03 (session 4). Branch: `claude/eloquent-mayer-iq1fbv`.
 
-Done this session:
-- Fixed stale art paths in character_reem.tscn and room_test_arabic.tscn.
-- .gitignore added (.godot/, ReemGame_ClaudeCode.zip, ReemGame_ClaudeCode/).
-- Fixed the reported choice-alignment bug: Popochiu's dialog_menu_option template has fit_content=true on its label, which shrinks it to the text and leaves no room for bbcode alignment to do anything. Turned it off and switched to [center] in dialog_menu_option_custom.gd.
+## Where things stand
 
-Section 2 (cutting sheets): tools/cut_sheets.gd is the real automatic cutter, written but never run (see Known problems). As a stand-in, cut 9 of 10 sheets into named AtlasTexture .tres resources under res://assets/cut/<sheet>/<name>.tres, each referencing the original untouched PNG with a region rect (same as a crop, nothing physically cut). Done: mirror_states, handmirror_basket, notebook_lantern, wateringcan_honey, stone_states, flowers_states, heart_tree_states, ui_dialogue, ui_inventory. Not done: bees_sheet (not needed yet, trickiest layout).
-Crop rectangles are my own estimate read off the images, cross-checked against assets/art/log.md pixel sizes, not computed by code. 2-up/3-up sheets split evenly (1774 = 2 x 887 for most). ui_dialogue, ui_inventory, heart_tree_states are less certain. Please glance at them in Godot once; fixing a rect is a one-line edit.
+**The whole MVP from game_spec.md is built**: Title, GrandpaRoom, Yard, Gate, MeadowFork,
+BigTree, FoxRock, End screen, plus Reem's walk cycle. Nothing has been played by the user since
+the GrandpaRoom fixes. The user asked to build everything first and test it all at once:
+**next step is the user's full test (checklist at the bottom), then fixing what they report.**
 
-Section 4 (global systems):
-- 4.1 say_line: unchanged (Lines.say(id)).
-- 4.2 Choices: new popup game/gui/components/choice_popup/ + game/scripts/choices.gd (autoload Choices). await Choices.ask_two(green, sand) shows the two wooden buttons centred on screen with Arabic labels, plays sfx_ui_click, returns true for green. GrandpaRoom's Choice 1 uses this, not Popochiu's own dialog strip.
-- 4.3 Heart tree: blossoms/wilts + bloom()/wilt()/heal() added to game/popochiu_globals.gd (Globals autoload, Popochiu's own empty user-state singleton). Widget at game/gui/components/heart_tree/ shows heart_picture() top-right, pulses only on bloom(). Added to the GUI via Globals.ensure_heart_tree() called by each room, rather than hand-editing the large generated game/gui/gui.tscn.
-- 4.4 Inventory: all 7 items built as real Popochiu items (game/inventory_items/): Basket, Lantern, Notebook, WateringCan, HandMirror, HoneyJar, Stone. Each plays sfx_pickup when added. Notebook's click plays Globals.notebook_hint (a Callable, empty until a room sets it). Stone has set_dull() ready for FoxRock. Display uses Popochiu's built-in SimpleClick inventory bar (top-left) rather than a hand-built bottom bar, per the spec's "whatever fits the GUI template."
-- 4.5 State flags: every flag from the spec added to Globals as booleans, plus Globals.reset() for the end screen.
-- 4.6 Sound: all 13 cues are real AudioCueSound resources under game/audio_cues/, registered in popochiu_data.cfg, exposed as A.sfx_mirror_crack etc. Globals.play_ambience(cue_name) loops an ambience quietly, stopping the previous one. Footsteps wired on Reem: plays the current room's footstep_cue export while walking (default sfx_steps_grass; GrandpaRoom sets sfx_steps_tile).
-- Also added: gentle walking bob (~6px) and talk-pulse on Reem via plain tweens (game_spec.md section 3 "simple version" motion). This is NOT the walk cycle requested next; that needs the reem_parts rig.
+Confirmed by the user so far: Arabic text displays correctly (session 1); headless check on
+Windows had no script errors (session 3); GrandpaRoom basket/mirror/choice reached the choice
+popup (session 3, then the popup crash was fixed). User decisions: pick-up = keep the simple
+bend-down motion; cracked mirror = lands just below the peg, close to the wall, 20% smaller.
 
-Title screen: game/rooms/title/. title_screen.png background; title and start-button text in large Arabic, copied byte-for-byte out of game_spec.md (never retyped). Click goes to GrandpaRoom. No player character; Popochiu's GUI hidden (hide_gui=true).
+## What was checked, and how
 
-GrandpaRoom (game_spec.md Station 1, room 1): game/rooms/grandpa_room/. bg1_room background, floor walkable area y 0.80-0.97.
-- Mirror (prop): on first entry, after reem_s1_001/002, Reem faces it and says reem_s1_003 (your addition). Clicking it before it breaks repeats reem_s1_003.
-- BasketProp (prop): click -> walk, pick up, reem_s1_004, Basket added (sfx_pickup), prop hidden. Then Mirror wobbles ~0.5s, falls with a tween, sfx_mirror_crack, swaps to cracked picture (your addition, Mirror.break_mirror()). Then reem_s1_005, reem_s1_006, then Choice 1 via the wooden popup with the exact spec labels, centred on screen.
-  - Green: reem_s1_007a, chose_truth=true, cracked mirror stays.
-  - Sand: reem_s1_007b, Reem walks to the right cushion, mirror hidden, mirror_hidden=true, heart tree wilts.
-- Door (hotspot): goes to Yard once Yard is registered; until then, clicking safely does nothing. No changes needed when Yard is built.
-- Ambience amb_farm (quiet), footsteps sfx_steps_tile, heart tree visible top-right.
+All of this ran in the cloud session with the same Godot 4.7.2 (Linux build):
+- Import + headless run (`--quit-after 120`): no ERROR / SCRIPT ERROR except the usual
+  "leaked at exit" lines, and "Aseprite command failed" during import (Popochiu's Aseprite
+  importer, not used by this game, harmless).
+- **Automatic playthrough** `tools/playtest.gd`, three paths, each from the title screen to the
+  end screen and back to the title (new game). All pass with no errors:
+  - `green`: green at every choice. Ends with blossoms 4, wilts 0, heart_full.
+  - `sand`: sand at every choice, then fixes every mistake. Ends with blossoms 1, wilts 0, heart_1.
+  - `mixed`: hides the mirror, then green, green. Ends with blossoms 3, wilts 0, heart_full.
+  - Together they say **all 68 lines** of lines.json; also checks the door/Gate/exit locks.
+- Screenshots of every room taken with a real renderer (Xvfb) and checked by eye.
+- Not checked: sound (the cloud machine has no sound card), and anything only a person sees
+  (does it feel right, is the text easy to read on a real screen).
 
-game/scripts/room_helpers.gd: new shared helper (fit_background, place_player) used by GrandpaRoom, meant for every future room so this isn't copy-pasted each time.
+Run the playtest yourself on Windows (optional; prints lines starting with [PLAYTEST]):
+`"C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --headless --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --path=green`
+(also `--path=sand` and `--path=mixed`). Every line should say `ok`, and the last line `DONE`.
 
-Registered: project.godot main scene now points at Title. popochiu_data.cfg: rooms TestArabic/Title/GrandpaRoom, the 7 inventory items, the 13 audio cues. r.gd/c.gd/i.gd/a.gd all updated to match.
+## What was built (session 4)
+
+Shared systems (game/scripts/):
+- `reem_room.gd` (ReemRoom): base of every playable room. Fits background + foreground, puts Reem
+  at the right spot for the room she came from (`entry_points`, exported), heart tree, ambience,
+  footsteps, notebook hint, and sends clicks to the room script (`_on_object_clicked`,
+  `_on_item_used_on`). Props/hotspots use `room_prop.gd` / `room_hotspot.gd`.
+- `npc_character.gd`: Jad, Thaaloob, Shahd (talk pulse, clicks go to the room).
+- `labels.gd`: every non-dialogue Arabic text, copied out of game_spec.md by a script.
+- Off-screen lines (jad_s1_031, jad_s2_071) show in a narration box at the bottom
+  (game/gui/components/narration_box/).
+- `Choices.ask_one()` for the Yard's one-button choice.
+- `Globals.new_game()`: full reset for «العودة إلى البداية» (flags, inventory, every room's memory).
+
+Rooms (game/rooms/): grandpa_room (updated), yard, gate, meadow_fork, big_tree, fox_rock, end.
+Characters (game/characters/): jad, thaaloob, shahd (+ two wandering bees in BigTree).
+Reem's walk rig: game/characters/reem/reem_walk_rig.gd.
+
+Art cutting: tools/cut_sheets.gd now works (it had a parse error) and was run. New pieces:
+assets/cut/bees_sheet, grandpa_bench, reem_parts, reem_face. Every older `.tres` piece now uses
+the exact box found by the cutter (several hand-measured boxes were wrong: the choice buttons
+were clipped on the left, heart tree pictures had empty space).
+
+Fixes found along the way: title text was tiny (font size set under the wrong name); English
+hover text ("Use X with Y") removed; Grandpa/fox/bee faced the wrong way (Popochiu resets
+flip_h; they now use a negative scale); Shahd's wings never moved (Popochiu turns off
+per-frame processing on characters; moved to a child node).
+
+## Decisions to review
+
+Positions are starting points; all are exported or named nodes, so they are easy to move.
+1. **Positions taken from the pictures where the spec's numbers did not match them:**
+   - Walkable strips follow the visible paths: Yard and Gate y 0.76-0.89, MeadowFork 0.73-0.86,
+     BigTree 0.77-0.88, FoxRock 0.73-0.87 (spec: about 0.78/0.80-0.95, which is mostly the
+     foreground grass and flowers).
+   - Yard `Well` hotspot x 0.27-0.44, y 0.30-0.68 (spec x 0.40-0.55: the well is further left).
+   - Yard `Jad` at x 0.79, y 0.71: on the grass under the olive tree, not on the path (spec y 0.80).
+   - MeadowFork `FlowersFork` at x 0.66, y 0.60 on the open grass above the path (spec y 0.75 is
+     on the path). BigTree `FlowersShade` at x 0.27, y 0.64 in the tree's shadow (spec y 0.75).
+   - FoxRock `Thaaloob` at x 0.67, y 0.75, just right of the rock (spec x 0.45 is in front of it).
+   - BigTree `Shahd` at x 0.79, y 0.38, just above the hives.
+   - FoxRock right exit: the stream area (top right) plus the right end of the path.
+2. **Sizes:** Grandpa seated about 0.95 x Reem's height (spec "1.1 x standing, but seated");
+   Thaaloob = Reem's height; Shahd about 1/5 of Reem; small bees a bit smaller than Shahd;
+   heart tree on the end screen 440 px tall.
+3. **MeadowFork walking:** no walkable "upper path". Green: Reem walks along the main path to the
+   right exit. Sand: she walks straight across the grass, through the flowers, off to the right.
+   Before the first choice she first walks to the middle of the path (marker `ChoiceSpot`).
+4. **GrandpaRoom door does nothing until Choice 1 is answered.** Leaving before picking up the
+   basket would skip the mirror story; Reem could then never get the HandMirror (game stuck).
+5. **Things the spec does not say, chosen to keep the child moving:**
+   - BigTree, talking to Shahd after meeting her while the flowers are still closed: bee_s2_023.
+   - BigTree, clicking the flowers or the sunny spot while holding the mirror (instead of using
+     it): reem_s2_026 (Grandpa's notebook hint).
+   - FoxRock, clicking Thaaloob after Choice 3 green, or after trading but before wiping the
+     stone: nothing happens.
+   - The Stone can be clicked in any room, not only FoxRock.
+   - `sfx_door` also plays when going back into the house from the Yard.
+6. **Three extra "already happened" flags** in Globals (not in spec 4.5): gate_intro_done,
+   fork_choice_done, fox_intro_done.
+7. **Hover text is switched off** everywhere (Popochiu's is English).
+8. **Pick-up:** bend-down motion (user's decision). Note: reem_pickup.png is actually clean
+   (transparent background; the "dark glow" I saw earlier was hidden color in transparent
+   pixels), only the acorn is drawn in. It could be used later with the acorn cut away.
+9. **Walk rig:** used only while walking; standing and talking use reem_base.png. Built from
+   reem_parts + the open eye and the smile from reem_face. It has no blush and the back arm is
+   hidden behind the body. To go back to the simple bob: open
+   game/characters/reem/character_reem.tscn, select CharacterReem, untick **Use Walk Rig**.
+10. **Look of new UI:** narration box = dark brown rounded box at the bottom with light text;
+    «يتبع…» large with a brown outline; end-screen button like the title's start button;
+    title text got a brown outline. Sign text 24 px dark brown on the board.
+11. GrandpaRoom: coming back from the Yard, Reem appears by the door (x 0.85, y 0.88), partly
+    behind the foreground cushion (that cushion is part of fg1_room_fg).
+12. Inventory: Popochiu's own SimpleClick bar at the top (from session 2), not the ui_inventory art.
 
 ## Known problems
 
-Program execution was blocked for almost this entire session: every attempt to run an external program (Godot headless with any flags, Python, even in-process PowerShell Add-Type/System.Drawing) failed, while ordinary file reads/writes mostly worked (often needing a retry, and this got worse as the session went on - even plain file writes needed many retries by the end). I could not find a way around it.
+- Some Popochiu menus are still English (the settings button in the top bar and its popups:
+  save/load, history, quit). Children may open them by accident.
+- Not tested with sound; ambience levels are untested (GrandpaRoom's "very quiet" farm ambience
+  uses the same volume as the Yard).
+- Room and character scenes were written as text; when you open and save them in Godot, it may
+  add `uid=` lines. That is normal.
+- The old TestArabic room is still registered (not used). assets/art/*.import files still name
+  an old path (harmless).
+- tools/ also holds g.txt, s.txt, line143*.txt from an earlier session (not used by the game).
 
-The headless check was never run. Nothing in this session was compiled or opened in Godot. Please run it yourself, or ask me to try again next session:
-"C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --headless --path "C:\Users\ACER\Desktop\Games\reem-game" --quit-after 120
-Read the output for script/scene errors. I re-read Popochiu's source for every API used and fixed two real static-typing bugs on manual review (see below), but a first compile can still find something I missed.
+## Test checklist for the whole game
 
-Section 2's cutting used hand-measured crop rectangles instead of the real automatic cutter, for the same reason. tools/cut_sheets.gd is ready; once Godot can run again, running it headless will cut everything properly and the AtlasTexture stand-ins can be swapped for real PNGs (or just kept, they work either way).
+Press **F5**. Play it twice: once choosing every **green** button, once every **sand** button.
+Everywhere: Arabic text connected and right to left, a voice with every line, footsteps while
+walking (tile indoors, grass outside), Reem's legs and arms move while she walks, clicking
+something that has nothing to do does nothing.
 
-Git: no commit was made. git add -A, git add ., and git commit all hit the same block every time. Nothing is lost, it's all on disk, but please run or ask me to retry:
-git add -A
-git commit -m "Title screen, GrandpaRoom, and global systems"
+**Play 1: all green**
+1. Title: big Arabic title, button «ابدأ». Click it.
+2. GrandpaRoom: Reem says 2 lines, turns to the mirror, says a 3rd. Click the door: nothing
+   happens yet. Click the mirror: she repeats the 3rd line. Click the basket: she walks next
+   to it, bends down, speaks, basket in the top bar (pickup sound), the mirror wobbles, falls
+   below the peg and cracks (crack sound). 2 more lines. Two wooden buttons appear.
+3. **Choice 1 green** «أُخبِرُ جدّي بالحقيقة»: her line; the cracked mirror stays.
+4. Door: door sound, Yard. Reem appears in front of the house door.
+5. (Optional) Walk right to the Gate before talking to Grandpa: no lines there, and the right
+   exit does nothing. Come back left.
+6. Click Grandpa: long talk; Lantern then Notebook appear in the bar. Then a single green
+   button «عندي شيءٌ أقولُه لك». Click it: the confession, the HandMirror appears, the heart tree
+   (top right) gets a blossom and grows for a moment (chime).
+7. Click Grandpa again: one short line. Click the Notebook: nothing. Click the well: line +
+   WateringCan. Click the well again: nothing.
+8. Right edge: Gate. Reem prays, Grandpa's words appear in a box at the bottom (he is not on
+   screen), Reem answers. Right edge: MeadowFork.
+9. MeadowFork: Reem's first line. The sign reads «من فضلك، امشِ على الطريق»; click it: she
+   reads it. Click the Notebook: same line.
+10. Click the right edge: she walks to the middle, says a line, buttons appear.
+    **Choice 2 green** «أمشي على الطريق»: her line, blossom, she walks to the right → BigTree.
+11. BigTree: Shahd flaps above the hives, two small bees fly around. Right exit: nothing yet.
+    Click Shahd: the meeting (6 lines). Click the hives: a line. Click the Notebook: the hint.
+12. Click the HandMirror in the bar, then click the sunny grass (or the closed flowers): a soft
+    beam of light, the flowers open (sound), 4 lines, HoneyJar, blossom. Click Shahd: thanks
+    line. Right edge → FoxRock.
+13. FoxRock: Thaaloob talks right away (4 lines), buttons appear.
+    **Choice 3 green** «هذه أمانةٌ من جدّي»: 2 lines, blossom. The HandMirror stays.
+14. Click the stream (right): Reem's line → end screen: big glowing heart tree, Grandpa's words
+    in the bottom box, then «يتبع…» and «العودة إلى البداية». Click it → title screen.
 
-Two real bugs the blocked headless check would have caught, found and fixed instead on manual review: BasketProp and Choices.ask_two() both briefly called custom methods/signals through a variable typed as a plain Node2D/Control, which Godot's static type-checker would reject outright. Fixed by using the correctly-typed R.current instead of self.room, and by giving choice_popup.gd a proper class_name. I can't be fully certain there isn't a third one I didn't spot by eye, which is exactly why the headless check matters here.
+**Play 2: all sand** (start again from the title)
+1. GrandpaRoom **Choice 1 sand** «أُخبّئُ المرآة»: her line, she walks to the right cushion, the
+   mirror disappears, the heart tree wilts (sad sound).
+2. Yard: click Grandpa: the long talk, but no green button after it, no HandMirror. Click him
+   again: one short line. Take the watering can from the well.
+3. Gate (prayer and farewell), MeadowFork. Click the right edge.
+   **Choice 2 sand** «أختصرُ فوقَ الزهور»: her line, she walks across the grass through the
+   flowers, trample sound, flowers flattened, the tree wilts again → BigTree.
+4. BigTree: click Shahd: she asks Reem to fix the flowers (3 lines). Click her again: one line.
+5. Left edge → MeadowFork. Click the WateringCan, then the flattened flowers: water sound,
+   a line, flowers stand up again, the tree heals (chime).
+6. Right edge (no question this time) → BigTree. Click Shahd: "well done" + the meeting.
+7. Click the closed flowers: Reem remembers she hid the broken mirror (2 lines). Right exit: nothing.
+8. Walk back left: MeadowFork → Gate → Yard. Click Grandpa: the late confession (5 lines),
+   HandMirror, the tree heals.
+9. Back right to BigTree. Use the HandMirror on the flowers: beam, flowers open, honey, blossom.
+10. FoxRock: **Choice 3 sand** «أُبادِلُه»: her line; the HandMirror leaves the bar, a shiny
+    Stone arrives. The stream exit does nothing yet.
+11. Click the Stone in the bar: it turns dull, Reem's line, the tree wilts, another line.
+12. Click Thaaloob: 3 lines, the Stone goes, the HandMirror comes back, the tree heals.
+13. Stream → end screen (the heart tree is not glowing this time: only 1 blossom) → title.
 
-assets/art/*.import files (37 of them) still carry the old pre-move path in source_file. Harmless (Godot resolves by UID, already correct), just cosmetically stale; will self-heal on next reimport.
+What to send me after testing: anything red in Godot's Debugger tab, and for anything that
+looks or sounds wrong, the room and what you clicked (a screenshot helps).
 
-The old TestArabic test room is still registered and on disk, just no longer the main scene. Fine to delete whenever you like.
+## History (earlier sessions, short)
 
-Inventory items Lantern, Notebook, WateringCan, HandMirror, HoneyJar, Stone exist and are registered but nothing gives them to the player yet (Yard/BigTree/FoxRock, not built this session).
-
-Positions are starting points, all exported and named: reem_screen_position, reem_height_ratio, footstep_cue on each room; fall_target, wobble_degrees etc. on Mirror; the RightCushion marker's position in room_grandpa_room.tscn.
-
-## Next
-
-1. You run the headless check (command above) and tell me what it says, or ask me to try, I will retry automatically.
-2. You test GrandpaRoom, see the message in chat for exact steps.
-3. Once confirmed: commit, then the walk cycle for Reem from reem_parts (your next request).
-
-## Update: headless check passed
-
-The user ran the headless check and found one real bug: all 13 audio_cues/*.tres files used type="AudioCueSound" in the gd_resource header, which is invalid for a custom script class (not a built-in Godot type). Fixed to the format Popochiu's own tab_audio.gd actually produces: type="Resource" with script_class="AudioCueSound" as a hint, an explicit ext_resource to audio_cue_sound.gd, and script=ExtResource(...) in the [resource] block. All 13 files fixed; a.gd and popochiu_data.cfg already pointed at the right paths.
-
-User re-ran the headless check after the fix: clean pass, only the standard "leaked at exit" lines on --quit-after (expected, harmless), no SCRIPT ERROR or Parse Error lines.
-
-Still blocked on my end: git add -A / git commit. The user is able to run commands, so git commit should be done by the user for now.
-
-## Session 3 (2026-11-03)
-- User ran the headless check: no script/parse errors, only harmless "leaked at exit" messages from --quit-after.
-- From the user's first play-test screenshot, fixed: heart tree drawn huge over the door (TextureRect needed expand_mode = 1 to respect its 80x140 box); English "Can't INTERACT with it" system text (game/gui/gui_commands.gd now does nothing silently on clicks with no action); Reem herself was clickable and blocked clicks on the basket behind her (clickable = false).
-- Basket click froze: Popochiu grab() waits for a "grab" animation signal Reem never emits. Reem now overrides _play_grab() with a 0.6 s bend tween that emits grab_done. Reem now stands left of the basket (BasketProp.reem_stand_offset).
-- reem_pickup.png not usable as-is (dark glow background + acorn baked in). Asked user.
-- Choice 1 crashed ("Invalid assignment of property 'text' ... on Nil"): ChoicePopup.setup() wrote to @onready labels before the popup was in the tree. setup() now stores the texts; _ready() writes them. Fixed and pushed.
-- GrandpaRoom was missing its foreground layer (game_spec.md 5: every room has fg* on top). Added Foreground Sprite2D (fg1_room_fg, z_index 100), fitted like the background.
-- Waiting for: user to re-test GrandpaRoom start to finish: intro lines (text + voice), basket, mirror fall, Choice 1 both ways, foreground plant/cushion in front. Also open questions: reem_pickup.png (a: keep bend tween, b: user supplies clean PNG, c: auto cut-out) and where the cracked mirror should land.
-- Next after confirmation: commit "GrandpaRoom done", then Yard (game_spec.md Station 1, room 2).
-
-## Session 4 (2026-11-03): building the whole MVP without stopping (user's instruction)
-User: "Build everything left, in order, never wait for me; decisions go under Decisions to review."
-User answers: pick-up = keep the bend-down motion; cracked mirror = land just below the peg, close
-to the wall, 20% smaller (done: Mirror.fall_target / fallen_scale_ratio).
-
-Tools now available in the cloud session: Godot 4.7.2 Linux binary (headless checks), Xvfb for
-real screenshots, tools/playtest.gd (automatic playthrough: `godot --headless --path . -- --playtest --path=green|sand`).
-
-Status (updated as rooms are finished):
-- [x] Yard (commit c58909c)
-- [x] Gate, MeadowFork, BigTree, FoxRock, End screen (commit b0347bc); playtest green/sand/mixed all pass
-- [ ] Reem walk rig (next)
-- [ ] Final PROGRESS write-up (decisions, known problems, test checklist)
+- Session 1: Popochiu set up; Arabic proof (TestArabic room) confirmed by the user.
+- Session 2: title screen, GrandpaRoom, global systems (lines, choices, heart tree, inventory,
+  flags, sound), AtlasTexture cut pieces measured by hand; could not run programs that session.
+- Session 3: user's first tests of GrandpaRoom. Fixed: heart tree drawn huge, English
+  "Can't INTERACT" text, Reem blocking clicks, basket click freezing (Popochiu grab() waits for
+  an animation Reem has no: Reem now emits grab_done herself), choice popup crash, missing
+  GrandpaRoom foreground.
+- Session 4: everything above.

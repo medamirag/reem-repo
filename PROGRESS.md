@@ -1,6 +1,6 @@
 # PROGRESS - ReemGame
 
-Last updated: 2026-11-03 (session 5). Branch: `claude/eloquent-mayer-iq1fbv`.
+Last updated: 2026-11-05 (session 6). Branch: `claude/eloquent-mayer-iq1fbv`.
 
 ## Where things stand
 
@@ -33,6 +33,30 @@ All of this ran in the cloud session with the same Godot 4.7.2 (Linux build):
 Run the playtest yourself on Windows (optional; prints lines starting with [PLAYTEST]):
 `"C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --headless --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --path=green`
 (also `--path=sand` and `--path=mixed`). Every line should say `ok`, and the last line `DONE`.
+
+## Session 6 (user feedback)
+
+- **No size change while talking:** the talk pulse is gone from every character (only the
+  mouth moves now).
+- **Left and right only:** Reem's walks always keep her height (CharacterReem.walk() keeps
+  y), the walking bounce of the rig and the old bob are set to 0, and each room has one walking
+  line (both entry points at the same height). Exception: the Choice 2 sand shortcut, where
+  she walks diagonally across the grass into the flowers (see Decisions to review, 15).
+  Shahd still bobs gently while flying (she is a bee in the air).
+- **No walking "half way":** clicking empty floor does nothing (CharacterReem `can_move` =
+  false). Reem walks only when the child clicks something that has an action, or an arrow.
+- **Stuck at the bees after "walk on the path":** using the mirror needed selecting it in the
+  bar and then clicking the flowers, which children do not discover. Now one click does
+  everything (game_spec.md 1): clicking the closed flowers or the sunny grass uses the mirror
+  if Reem has it. The same for the watering can on the trampled flowers in MeadowFork.
+- **Cursor only over things that do something now:** each room says what has an action
+  (ReemRoom.has_action). Examples: the closed flowers only after meeting Shahd, the trampled
+  flowers only once Shahd asked and Reem has the watering can, the well until the can is
+  taken, the mirror until it falls, Thaaloob only when he has something to say, closed exits
+  never. Elsewhere the cursor stays the normal arrow.
+- **Basket line first:** reem_s1_004 («سآخذُ السَّلّةَ…») is now said at the start of the room,
+  right after her first three lines; taking the basket then goes straight to the mirror falling.
+- Playtest now also fails if a click makes Reem move up or down. All three paths pass.
 
 ## Session 5 (user feedback after reading the build)
 
@@ -140,6 +164,11 @@ Positions are starting points; all are exported or named nodes, so they are easy
     (assets/cut/grandpa_face, fox_face) but not used: they would replace the whole beard/muzzle
     and did not line up as well.
 14. Exit arrows are drawn by code (no arrow art in the assets), 140 px long.
+15. Choice 2 sand is the one walk that goes up the screen: Reem cuts diagonally across the
+    grass into the flowers (they are on the meadow above the path, as in bg4_fork). With
+    left/right only, there is no way to show "cutting across the flowers" differently from
+    "walking on the path". If you prefer, the flowers can be moved onto the path's edge and
+    she tramples them while walking straight right.
 
 ## Known problems
 
@@ -157,7 +186,8 @@ Positions are starting points; all are exported or named nodes, so they are easy
 
 Press **F5**. Play it twice: once choosing every **green** button, once every **sand** button.
 Everywhere: Arabic text connected and right to left, a voice with every line, the speaker's
-mouth opens and closes while they talk, footsteps while walking (tile indoors, grass outside),
+mouth opens and closes while they talk (nobody changes size), Reem only walks left/right and
+only to things you click, footsteps while walking (tile indoors, grass outside),
 Reem's legs and arms move while she walks, the cursor changes over things you can click
 (hand, open hand, speech bubble, eye, arrow), a white arrow at every exit that is open (click
 the arrow to go), clicking something that has nothing to do does nothing.
@@ -165,9 +195,10 @@ the arrow to go), clicking something that has nothing to do does nothing.
 **Play 1: all green**
 1. Title: big Arabic title, button «ابدأ». Click it.
 2. GrandpaRoom: Reem says 2 lines (her mouth moves while she talks), turns to the mirror,
-   says a 3rd. No arrow on the door yet, and clicking the door does nothing. Click the mirror
-   (eye cursor): she repeats the 3rd line. The basket hangs under the mirror; click it (open
-   hand cursor): she walks under it, reaches up, speaks, basket in the top bar (pickup sound),
+   says a 3rd, then says she will take the basket. Clicking the empty floor does nothing. No
+   arrow on the door yet, and clicking the door does nothing. Click the mirror (eye cursor):
+   she repeats the 3rd line. The basket hangs under the mirror; click it (open hand cursor):
+   she walks under it, reaches up, basket in the top bar (pickup sound),
    the mirror wobbles, falls below the peg and cracks (crack sound). 2 more lines. Two wooden
    buttons appear. After the choice, an arrow appears on the door.
 3. **Choice 1 green** «أُخبِرُ جدّي بالحقيقة»: her line; the cracked mirror stays.
@@ -187,7 +218,7 @@ the arrow to go), clicking something that has nothing to do does nothing.
     **Choice 2 green** «أمشي على الطريق»: her line, blossom, she walks to the right → BigTree.
 11. BigTree: Shahd flaps above the hives, two small bees fly around. Right exit: nothing yet.
     Click Shahd: the meeting (6 lines). Click the hives: a line. Click the Notebook: the hint.
-12. Click the HandMirror in the bar, then click the sunny grass (or the closed flowers): a soft
+12. Click the sunny grass (or the closed flowers) once: Reem uses the mirror, a soft
     beam of light, the flowers open (sound), 4 lines, HoneyJar, blossom. Click Shahd: thanks
     line. Right edge → FoxRock.
 13. FoxRock: Thaaloob talks right away (4 lines), buttons appear.
@@ -204,13 +235,13 @@ the arrow to go), clicking something that has nothing to do does nothing.
    **Choice 2 sand** «أختصرُ فوقَ الزهور»: her line, she walks across the grass through the
    flowers, trample sound, flowers flattened, the tree wilts again → BigTree.
 4. BigTree: click Shahd: she asks Reem to fix the flowers (3 lines). Click her again: one line.
-5. Left edge → MeadowFork. Click the WateringCan, then the flattened flowers: water sound,
+5. Left edge → MeadowFork. Click the flattened flowers (hand cursor): water sound,
    a line, flowers stand up again, the tree heals (chime).
 6. Right edge (no question this time) → BigTree. Click Shahd: "well done" + the meeting.
 7. Click the closed flowers: Reem remembers she hid the broken mirror (2 lines). Right exit: nothing.
 8. Walk back left: MeadowFork → Gate → Yard. Click Grandpa: the late confession (5 lines),
    HandMirror, the tree heals.
-9. Back right to BigTree. Use the HandMirror on the flowers: beam, flowers open, honey, blossom.
+9. Back right to BigTree. Click the flowers: beam, flowers open, honey, blossom.
 10. FoxRock: **Choice 3 sand** «أُبادِلُه»: her line; the HandMirror leaves the bar, a shiny
     Stone arrives. The stream exit does nothing yet.
 11. Click the Stone in the bar: it turns dull, Reem's line, the tree wilts, another line.

@@ -23,7 +23,7 @@ const FEET := Vector2(627, 1254)
 ## How far the arms swing, in degrees (opposite to the legs).
 @export var arm_swing := 16.0
 ## Up-down bounce of the whole body while walking, in reem_base pixels.
-@export var bounce := 14.0
+@export var bounce := 0.0  # user: no up-and-down movement
 
 var walking := false
 var _phase := 0.0

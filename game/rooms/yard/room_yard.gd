@@ -25,6 +25,12 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 			await leave_through(obj, "Gate")
 
 
+func has_action(obj: PopochiuClickable) -> bool:
+	if obj.script_name == "Well":
+		return not C.player.has_inventory_item("WateringCan")
+	return super(obj)
+
+
 #endregion
 
 #region Private ####################################################################################

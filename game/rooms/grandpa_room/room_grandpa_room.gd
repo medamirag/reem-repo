@@ -40,6 +40,9 @@ func _on_room_started() -> void:
 		RoomHelpers.face(C.player, mirror.global_position.x < C.player.global_position.x)
 
 	await Lines.say("reem_s1_003")
+	# User request: she says what she is about to do (take the basket) right after her first
+	# lines, before she takes it, so the child knows what to click.
+	await Lines.say("reem_s1_004")
 
 
 ## The door only leads out once Choice 1 is answered (see hotspot_door.gd).
@@ -47,6 +50,15 @@ func is_exit_open(exit_name: String) -> bool:
 	if exit_name == "Door":
 		return Globals.chose_truth or Globals.mirror_hidden
 	return true
+
+
+func has_action(obj: PopochiuClickable) -> bool:
+	match obj.script_name:
+		"Mirror":
+			return not Globals.mirror_broken
+		"BasketProp":
+			return not Globals.basket_taken
+	return super(obj)
 
 
 #endregion

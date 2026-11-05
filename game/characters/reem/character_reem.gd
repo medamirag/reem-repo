@@ -3,16 +3,14 @@ extends PopochiuCharacter
 # You can use `E.queue([])` in any of the methods in this script to trigger a sequence of events.
 # Use `await E.queue([])` to pause execution until the sequence completes.
 #
-# game_spec.md section 3 ("simple version", before the skeletal rig): while walking, a gentle
-# up-down bob (~6 px, ~4 times a second); while speaking, a small soft scale pulse. Both are done
-# here with plain tweens on the Sprite2D, since there is no walk/talk animation yet.
+# game_spec.md section 3 ("simple version"), adjusted by the user: no up-and-down bob and no
+# size pulse while speaking. Her mouth moves while she talks (TalkingMouth) and her legs and
+# arms move while she walks (ReemWalkRig).
 
 const Data := preload('character_reem_state.gd')
 
-const BOB_HEIGHT := 6.0
+const BOB_HEIGHT := 0.0  # user: no up-and-down movement
 const BOB_HZ := 4.0
-const TALK_PULSE_SCALE := 1.04
-const TALK_PULSE_TIME := 0.18
 const GRAB_TIME := 0.6
 
 ## Walk with legs and arms that move (ReemWalkRig, built from reem_parts.png). Untick to go back
@@ -24,7 +22,6 @@ var state: Data = load("res://game/characters/reem/character_reem.tres")
 var _sprite: Sprite2D
 var _sprite_base_offset_y := 0.0
 var _bob_tween: Tween
-var _talk_tween: Tween
 ## Name of the footstep AudioCueSound currently looping, so it can be stopped again.
 var _footstep_cue := ""
 var _rig: ReemWalkRig
@@ -89,13 +86,11 @@ func _on_item_used(_item: PopochiuInventoryItem) -> void:
 
 func _play_talk() -> void:
 	super()
-	_start_talk_pulse()
 	_set_mouth_talking(true)
 
 
 func _play_idle() -> void:
 	super()
-	_stop_talk_pulse()
 	_set_mouth_talking(false)
 
 
@@ -103,6 +98,12 @@ func _set_mouth_talking(value: bool) -> void:
 	var mouth := get_node_or_null("Sprite2D/Mouth") as TalkingMouth
 	if mouth:
 		mouth.talking = value
+
+
+# User request: Reem only ever moves left and right, never up or down the screen. Every walk
+# (to a prop, a character, an exit) keeps her on her current line.
+func walk(target_pos: Vector2) -> void:
+	await super(Vector2(target_pos.x, global_position.y))
 
 
 # Popochiu's grab() plays a "grab" animation and waits for `grab_done`, which only an
@@ -203,27 +204,6 @@ func _stop_bob() -> void:
 	if is_instance_valid(_sprite):
 		_sprite.offset.y = _sprite_base_offset_y
 
-
-func _start_talk_pulse() -> void:
-	if is_instance_valid(_talk_tween) and _talk_tween.is_running():
-		return
-
-	var base_scale := default_scale
-
-	_talk_tween = create_tween().set_loops()
-	_talk_tween.tween_property(
-		self, "scale", base_scale * TALK_PULSE_SCALE, TALK_PULSE_TIME
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	_talk_tween.tween_property(
-		self, "scale", base_scale, TALK_PULSE_TIME
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-
-func _stop_talk_pulse() -> void:
-	if is_instance_valid(_talk_tween):
-		_talk_tween.kill()
-
-	scale = default_scale
 
 
 #endregion

@@ -114,7 +114,7 @@ func _green_path() -> void:
 	await _click("Hives")
 	await _shot_talking("bee_s2_021")
 	await _click_item("Notebook")
-	await _use("HandMirror", "SunSpot")
+	await _click("SunSpot")  # one click uses the mirror
 	_expect(Globals.flowers_open and _has("HoneyJar"), "mirror opens the flowers")
 	await _click("Shahd")
 	_answers = [true]  # Thaaloob asks as soon as the room opens
@@ -220,7 +220,7 @@ func _sand_path() -> void:
 	await _click("ExitLeft")
 
 	await _wait_room("MeadowFork")
-	await _use("WateringCan", "FlowersFork")
+	await _click("FlowersFork")  # one click waters
 	_expect(Globals.flowers_fixed and Globals.wilts == 1, "watering fixes the flowers")
 	await _click("ExitRight")
 
@@ -291,12 +291,20 @@ func _click(obj_name: String) -> void:
 		return
 
 	_log("click %s (%s)" % [obj_name, _room_name()])
+	var room_before := _room_name()
+	var y_before: float = C.player.global_position.y if is_instance_valid(C.player) else 0.0
 	await _step("click " + obj_name, func():
 		E.clicked = obj
 		obj.last_click_button = MOUSE_BUTTON_LEFT
 		await obj.on_click()
 		E.clicked = null
 	)
+	# User rule: Reem only moves left and right (the trample shortcut leaves the room).
+	if _room_name() == room_before and is_instance_valid(C.player) and C.player.is_inside_tree() \
+			and absf(C.player.global_position.y - y_before) > 1.0:
+		_log("FAIL: Reem moved up/down when clicking %s (%.0f -> %.0f)" % [
+			obj_name, y_before, C.player.global_position.y
+		])
 	await _shot("after_" + obj_name)
 
 

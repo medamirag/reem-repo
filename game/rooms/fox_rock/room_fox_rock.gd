@@ -34,6 +34,12 @@ func is_exit_open(exit_name: String) -> bool:
 	return exit_name != "ExitRight" or Globals.fox_done
 
 
+func has_action(obj: PopochiuClickable) -> bool:
+	if obj.script_name == "Thaaloob":
+		return not Globals.fox_intro_done or (Globals.stone_wiped and not Globals.mirror_recovered)
+	return super(obj)
+
+
 #endregion
 
 #region Private ####################################################################################

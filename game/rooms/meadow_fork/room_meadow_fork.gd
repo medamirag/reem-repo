@@ -39,6 +39,10 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 		"Sign":
 			await C.player.walk_to_clicked()
 			await Lines.say("reem_s2_002")
+		"FlowersFork":
+			# One click does everything (game_spec.md 1): with the watering can, she waters.
+			if _can_water():
+				await _water(obj)
 		"ExitLeft":
 			await leave_through(obj, "Gate")
 		"ExitRight":
@@ -54,6 +58,24 @@ func _on_item_used_on(obj: PopochiuClickable, item: PopochiuInventoryItem) -> vo
 	if not (Globals.trampled and Globals.told_to_fix and not Globals.flowers_fixed):
 		return
 
+	await _water(obj)
+
+
+func has_action(obj: PopochiuClickable) -> bool:
+	if obj.script_name == "FlowersFork":
+		return _can_water()
+	return super(obj)
+
+
+#endregion
+
+#region Private ####################################################################################
+func _can_water() -> bool:
+	return Globals.trampled and Globals.told_to_fix and not Globals.flowers_fixed \
+		and C.player.has_inventory_item("WateringCan")
+
+
+func _water(obj: PopochiuClickable) -> void:
 	await C.player.walk_to_clicked()
 	A.sfx_water_pour.play()
 	await Lines.say("reem_s2_013b")
@@ -62,9 +84,6 @@ func _on_item_used_on(obj: PopochiuClickable, item: PopochiuInventoryItem) -> vo
 	Globals.heal()
 
 
-#endregion
-
-#region Private ####################################################################################
 func _write_sign() -> void:
 	var label := get_node_or_null("Props/Sign/SignText") as RichTextLabel
 	if label == null:

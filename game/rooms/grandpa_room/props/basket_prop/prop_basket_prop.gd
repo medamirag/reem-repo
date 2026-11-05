@@ -20,7 +20,7 @@ func _on_click() -> void:
 	await C.player.face_clicked()
 	# The basket hangs above her head: she reaches up instead of bending down.
 	await C.player.reach_up()
-	await Lines.say("reem_s1_004")
+	# reem_s1_004 ("I'll take the basket") is said at the start of the room instead (user request).
 
 	await C.player.add_to_inventory(I.Basket)
 	disable()

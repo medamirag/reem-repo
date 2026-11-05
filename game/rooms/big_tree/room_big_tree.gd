@@ -58,6 +58,12 @@ func is_exit_open(exit_name: String) -> bool:
 	return exit_name != "ExitRight" or Globals.flowers_open
 
 
+func has_action(obj: PopochiuClickable) -> bool:
+	if obj.script_name in ["FlowersShade", "SunSpot"]:
+		return Globals.met_shahd and not Globals.flowers_open
+	return super(obj)
+
+
 #endregion
 
 #region Private ####################################################################################
@@ -109,9 +115,8 @@ func _click_flowers_or_sun() -> void:
 		await Lines.say("reem_s2_042b")
 		Globals.needs_mirror = true
 	else:
-		# Not in game_spec.md (Decisions to review): she has the mirror but clicked instead of
-		# using it, so she reads Grandpa's notebook hint.
-		await Lines.say("reem_s2_026")
+		# One click does everything (game_spec.md 1): she uses the mirror straight away.
+		await _open_flowers()
 
 
 ## game_spec.md BigTree, "Use HandMirror on SunSpot or on FlowersShade".

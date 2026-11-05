@@ -82,6 +82,15 @@ func is_exit_open(_exit_name: String) -> bool:
 	return true
 
 
+## Override: true when clicking `obj` does something right now. When it does nothing, the
+## cursor stays the normal arrow over it (user request: only change the cursor over things that
+## have an action). By default exits follow is_exit_open() and everything else has an action.
+func has_action(obj: PopochiuClickable) -> bool:
+	if exit_arrows.has(obj.script_name):
+		return is_exit_open(obj.script_name)
+	return true
+
+
 ## Override: what happens once the room is visible (first-time lines, ...).
 func _on_room_started() -> void:
 	pass

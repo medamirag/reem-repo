@@ -10,6 +10,7 @@
 script = ExtResource("2")
 script_name = "Reem"
 clickable = false
+can_move = false
 description = "ريم"
 cursor = 8
 text_color = Color(0.21, 0.11, 0.05, 1)

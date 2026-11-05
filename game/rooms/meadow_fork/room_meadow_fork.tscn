@@ -22,7 +22,7 @@ height = 1080
 entry_points = {
 "": Vector2(0.06, 0.8),
 "Gate": Vector2(0.06, 0.8),
-"BigTree": Vector2(0.94, 0.79)
+"BigTree": Vector2(0.94, 0.8)
 }
 footstep_cue = "sfx_steps_grass"
 ambience_cue = "amb_meadow"

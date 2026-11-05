@@ -54,6 +54,8 @@ func _run() -> void:
 		await _green_path()
 	elif _path == "mixed":
 		await _mixed_path()
+	elif _path == "words":
+		await _words_path()
 	else:
 		await _sand_path()
 
@@ -134,6 +136,103 @@ func _green_path() -> void:
 	await _step("back to title", func(): R.current.call("_on_back_pressed"))
 	await _wait_room("Title")
 	_expect(not Globals.briefed and Globals.blossoms == 0, "reset after the end screen")
+
+
+## Word discovery with real mouse events: holds show words, a short click still works, no words
+## during dialogue, F2 shows the areas.
+func _words_path() -> void:
+	await _wait_room("GrandpaRoom")
+	await _hold_at(Vector2(0.15, 0.30), 0.7)
+	_expect(Globals.discovered_words.has("word_window"), "hold on the window shows its word")
+	_expect(_bubble_text() == "نَافِذَة", "bubble shows نَافِذَة (got '%s')" % _bubble_text())
+	await _shot("word_window")
+	await _hold_at(Vector2(0.20, 0.80), 0.7)
+	_expect(Globals.discovered_words.has("word_girl"), "hold on Reem shows بنت")
+	await _hold_at(Vector2(0.45, 0.62), 0.2)
+	_expect(not Globals.discovered_words.has("word_jug"), "a short press on the jug is not a hold")
+	await _hold_at(Vector2(0.416, 0.45), 0.7)
+	_expect(Globals.discovered_words.has("word_basket") and not Globals.basket_taken,
+		"holding the basket names it and does not take it")
+	_expect(Globals.discovered_words.size() == 3, "3 words discovered")
+
+	# Short click on the basket: the normal click must still happen.
+	_answers = [true]
+	await _hold_at(Vector2(0.416, 0.45), 0.1)
+	var waited := 0.0
+	while not Globals.basket_taken and waited < 20.0:
+		await get_tree().create_timer(0.25).timeout
+		waited += 0.25
+	_expect(Globals.basket_taken, "a short click on the basket still picks it up")
+	await _wait_idle()
+
+	# No words while someone is talking.
+	Lines.say("reem_s1_007a")
+	await get_tree().create_timer(0.1).timeout
+	await _hold_at(Vector2(0.47, 0.75), 0.7)
+	_expect(not Globals.discovered_words.has("word_table"), "no word during dialogue")
+	await _wait_idle()
+	await _hold_at(Vector2(0.47, 0.75), 0.7)
+	_expect(Globals.discovered_words.has("word_table"), "word after the dialogue")
+
+	_send_key(KEY_F2)
+	await get_tree().process_frame
+	_expect(Globals.word_discovery._debug, "F2 shows the areas")
+	await _shot("word_debug")
+	_send_key(KEY_F2)
+	await get_tree().process_frame
+	_expect(not Globals.word_discovery._debug, "F2 again hides them")
+
+	await _click("Door")
+	await _wait_room("Yard")
+	await _hold_at(Vector2(0.79, 0.55), 0.7)
+	_expect(Globals.discovered_words.has("word_grandfather"), "hold on Grandpa shows جدّ")
+	await _hold_at(Vector2(0.355, 0.50), 0.7)
+	_expect(Globals.discovered_words.has("word_bucket"), "the bucket wins over the well")
+	await _shot("word_bucket")
+	_log("discovered: %s" % " ".join(Globals.discovered_words.keys()))
+
+
+## Moves the mouse to `fraction` of the screen, presses, waits `seconds`, releases (real events).
+func _hold_at(fraction: Vector2, seconds: float) -> void:
+	# Room pixels -> viewport (through the camera) -> window pixels.
+	var room_pos := fraction * Vector2(R.current.width, R.current.height)
+	var window_pos := get_viewport().get_screen_transform() * (get_viewport().get_canvas_transform() * room_pos)
+	var motion := InputEventMouseMotion.new()
+	motion.position = window_pos
+	motion.global_position = window_pos
+	Input.parse_input_event(motion)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	var press := InputEventMouseButton.new()
+	press.button_index = MOUSE_BUTTON_LEFT
+	press.pressed = true
+	press.position = window_pos
+	press.global_position = window_pos
+	Input.parse_input_event(press)
+	# Real time, not game time: holds are measured in real milliseconds.
+	var until := Time.get_ticks_msec() + int(seconds * 1000.0)
+	while Time.get_ticks_msec() < until:
+		await get_tree().process_frame
+	var release := press.duplicate() as InputEventMouseButton
+	release.pressed = false
+	Input.parse_input_event(release)
+	await get_tree().process_frame
+	await get_tree().process_frame
+
+
+func _send_key(keycode: Key) -> void:
+	for pressed in [true, false]:
+		var key := InputEventKey.new()
+		key.keycode = keycode
+		key.pressed = pressed
+		Input.parse_input_event(key)
+
+
+func _bubble_text() -> String:
+	for node in Globals.word_discovery.get_children():
+		if node is PanelContainer and node.get_child_count() > 0:
+			return (node.get_child(0) as Label).text
+	return ""
 
 
 ## Choice 1 sand (hide the mirror), then green at Choice 2 and Choice 3: the needs_mirror

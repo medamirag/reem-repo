@@ -1,6 +1,6 @@
 # PROGRESS - ReemGame
 
-Last updated: 2026-11-05 (session 6). Branch: `claude/eloquent-mayer-iq1fbv`.
+Last updated: 2026-11-05 (session 7). Branch: `claude/eloquent-mayer-iq1fbv`.
 
 ## Where things stand
 
@@ -33,6 +33,36 @@ All of this ran in the cloud session with the same Godot 4.7.2 (Linux build):
 Run the playtest yourself on Windows (optional; prints lines starting with [PLAYTEST]):
 `"C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --headless --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --path=green`
 (also `--path=sand` and `--path=mixed`). Every line should say `ok`, and the last line `DONE`.
+
+## Session 7: word discovery (new feature)
+
+Press and HOLD (about 0.5 s, mouse or finger) on an object: a soft glow appears on it, its
+Arabic name shows in a bubble near it (large, connected, right to left, Cairo font) and is
+spoken. The first time each word is found, a small golden sparkle. A short click works as before.
+- **Words:** `game_data/words.json` (38 words: id, Arabic with full diacritics, rooms, audio
+  path `res://assets/audio/words/<id>.mp3`, and which props/characters/items use it).
+  **To record:** `words.md` (columns File, Voice, Tone, Text). Both are made by
+  `tools/make_words.py`: to change a word, edit that script and run
+  `python tools/make_words.py` from the project folder.
+- **Where the words are:** `game_data/word_areas.json`, one polygon per object, as fractions
+  of the screen, per room. Easy to adjust by hand; where areas overlap, the smallest wins (the
+  bucket over the well). Props, characters and inventory items use their own click shape, so
+  they need no polygon; they win over background areas.
+- **Check positions:** press **F2** in the game: every area is outlined with its id (cyan =
+  background areas, pink = props/characters). F2 again hides them.
+- **How the short click survives:** Popochiu acts as soon as the button goes down, so when a
+  press lands on something that has a word, game/scripts/word_discovery.gd keeps it; released
+  before 0.5 s, it hands the same press and release back to the game (a normal click). Moving
+  the pointer more than 40 px also turns it back into a normal click.
+- **Never during dialogue or a choice:** no words while a line is spoken, the GUI is blocked,
+  a choice is open, the room is changing, or an inventory item is selected (and not on the
+  title or end screen).
+- **No audio yet:** the files do not exist yet, so the words show without sound, no error.
+- **Count:** `Globals.discovered_words` (word id -> true), for a later reward.
+- Checked with real mouse events in the playtest (`--path=words`): hold shows the right word,
+  short press on the jug is a normal click, holding the basket names it without taking it, a
+  short click on the basket still takes it, no word during dialogue, F2 on and off, Grandpa
+  and the bucket in the Yard. green/sand/mixed still pass.
 
 ## Session 6 (user feedback)
 
@@ -164,6 +194,26 @@ Positions are starting points; all are exported or named nodes, so they are easy
     (assets/cut/grandpa_face, fox_face) but not used: they would replace the whole beard/muzzle
     and did not line up as well.
 14. Exit arrows are drawn by code (no arrow art in the assets), 140 px long.
+16. **Word discovery choices:**
+    - Words chosen from what is clearly visible: GrandpaRoom window, door, plant, cushion,
+      table, jug, shelf, prayer rug (+ mirror, basket, girl); Yard door, window, well, bucket,
+      jar, beehive, tree, sky, bird, path, grass, flower (+ grandfather); Gate gate, fence,
+      sign, tree, cloud, sky, hill, path, flower, bird; MeadowFork tree, sign, path, grass,
+      flower, rock, hill, sky, bird; BigTree tree, beehive, rock, shade, grass, path, sky,
+      bird, flower (+ bee); FoxRock rock, tree, berries, stream, flower, grass, path, sky,
+      hill, bird (+ fox). Items: lantern, notebook, watering can, mirror, basket, stone.
+      Left out as unclear for children: the Quran stand on the shelf, the wall peg, the
+      ceiling beams, the stone wall in the Yard, small pebbles; the Yard's hills (to stay at 12).
+    - Word choices: bird = عُصْفُور (what children say, rather than طائِر); the honey jar item =
+      عَسَل (honey) rather than جَرَّة, which is the big clay jar in the Yard; the hand mirror
+      and Grandpa's wall mirror share مِرْآة; the small stone item = حَجَر, the big rocks =
+      صَخْرَة; berries = تُوت; hill = تَلّ (also for the blue hills in the distance).
+    - Words are written without tanween (pausal form, like your examples شَجَرَة, بَاب).
+    - The sparkle is visual only (golden particles); no extra sound, so the word's voice is
+      clear. The discovered count is not cleared by a new game and is not saved to disk.
+    - The bubble stays 2.5 s (longer if the audio is longer), above the object, or below it
+      when there is no room above.
+    - Holding on the inventory bar's items names them too (they use their own shape).
 15. Choice 2 sand is the one walk that goes up the screen: Reem cuts diagonally across the
     grass into the flowers (they are on the meadow above the path, as in bg4_fork). With
     left/right only, there is no way to show "cutting across the flowers" differently from
@@ -247,6 +297,12 @@ the arrow to go), clicking something that has nothing to do does nothing.
 11. Click the Stone in the bar: it turns dull, Reem's line, the tree wilts, another line.
 12. Click Thaaloob: 3 lines, the Stone goes, the HandMirror comes back, the tree heals.
 13. Stream → end screen (the heart tree is not glowing this time: only 1 blossom) → title.
+
+**Word discovery** (any room): hold the mouse button (or a finger) on the window, the door,
+a tree, the sky, Grandpa, the fox... for half a second: a soft glow on it, its Arabic name in
+a bubble, a golden sparkle the first time (no sound until the word files are recorded).
+A short click on the same things still works as before. Holding during dialogue or a choice
+does nothing. Press F2 to see all the areas, F2 again to hide them.
 
 What to send me after testing: anything red in Godot's Debugger tab, and for anything that
 looks or sounds wrong, the room and what you clicked (a screenshot helps).

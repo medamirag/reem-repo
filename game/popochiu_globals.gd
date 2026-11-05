@@ -12,6 +12,12 @@ signal heart_changed(grew: bool)
 
 const HEART_TREE_SCENE := "res://game/gui/components/heart_tree/heart_tree.tscn"
 
+## Word discovery (game/scripts/word_discovery.gd).
+var word_discovery: WordDiscovery
+## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
+## cleared by a new game from the end screen, and not saved when the game is closed.
+var discovered_words := {}
+
 
 func _ready() -> void:
 	# Automatic playtest (tools/playtest.gd), only when the game is started with
@@ -19,6 +25,12 @@ func _ready() -> void:
 	# Never active in a normal run.
 	if not Engine.is_editor_hint() and "--playtest" in OS.get_cmdline_user_args():
 		add_child(load("res://tools/playtest.gd").new())
+
+	# Word discovery: hold on an object to see and hear its Arabic name (word_discovery.gd).
+	if not Engine.is_editor_hint():
+		word_discovery = WordDiscovery.new()
+		word_discovery.name = "WordDiscovery"
+		add_child(word_discovery)
 
 #region Heart tree (game_spec.md 4.3) #################################################################
 ## Good deeds.

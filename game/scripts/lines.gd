@@ -16,6 +16,8 @@ const PAUSE_AFTER_LINE := 0.3
 var _lines := {}
 ## Every line ID said so far in this run (used by the automatic playtest, tools/playtest.gd).
 var said := {}
+## True while a line is being spoken (word discovery waits until it is over).
+var busy := false
 var _voice: AudioStreamPlayer = null
 
 
@@ -56,6 +58,7 @@ func say(line_id: String) -> void:
 		return
 
 	said[line_id] = true
+	busy = true
 	var line: Dictionary = _lines[line_id]
 	var speaker := str(line.get("speaker", ""))
 	var text := str(line.get("text", ""))
@@ -78,6 +81,7 @@ func say(line_id: String) -> void:
 
 	if _voice.playing:
 		_voice.stop()
+	busy = false
 
 
 #endregion

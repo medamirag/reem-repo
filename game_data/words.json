@@ -1,0 +1,375 @@
+{
+  "word_window": {
+    "text": "نَافِذَة",
+    "rooms": [
+      "GrandpaRoom",
+      "Yard"
+    ],
+    "audio": "res://assets/audio/words/word_window.mp3",
+    "objects": []
+  },
+  "word_door": {
+    "text": "بَاب",
+    "rooms": [
+      "GrandpaRoom",
+      "Yard"
+    ],
+    "audio": "res://assets/audio/words/word_door.mp3",
+    "objects": []
+  },
+  "word_plant": {
+    "text": "نَبْتَة",
+    "rooms": [
+      "GrandpaRoom"
+    ],
+    "audio": "res://assets/audio/words/word_plant.mp3",
+    "objects": []
+  },
+  "word_cushion": {
+    "text": "وِسَادَة",
+    "rooms": [
+      "GrandpaRoom"
+    ],
+    "audio": "res://assets/audio/words/word_cushion.mp3",
+    "objects": []
+  },
+  "word_table": {
+    "text": "طَاوِلَة",
+    "rooms": [
+      "GrandpaRoom"
+    ],
+    "audio": "res://assets/audio/words/word_table.mp3",
+    "objects": []
+  },
+  "word_jug": {
+    "text": "إِبْرِيق",
+    "rooms": [
+      "GrandpaRoom"
+    ],
+    "audio": "res://assets/audio/words/word_jug.mp3",
+    "objects": []
+  },
+  "word_shelf": {
+    "text": "رَفّ",
+    "rooms": [
+      "GrandpaRoom"
+    ],
+    "audio": "res://assets/audio/words/word_shelf.mp3",
+    "objects": []
+  },
+  "word_rug": {
+    "text": "سَجَّادَة",
+    "rooms": [
+      "GrandpaRoom"
+    ],
+    "audio": "res://assets/audio/words/word_rug.mp3",
+    "objects": []
+  },
+  "word_mirror": {
+    "text": "مِرْآة",
+    "rooms": [
+      "GrandpaRoom",
+      "inventory"
+    ],
+    "audio": "res://assets/audio/words/word_mirror.mp3",
+    "objects": [
+      "prop:Mirror",
+      "item:HandMirror"
+    ]
+  },
+  "word_basket": {
+    "text": "سَلَّة",
+    "rooms": [
+      "GrandpaRoom",
+      "inventory"
+    ],
+    "audio": "res://assets/audio/words/word_basket.mp3",
+    "objects": [
+      "prop:BasketProp",
+      "item:Basket"
+    ]
+  },
+  "word_girl": {
+    "text": "بِنْت",
+    "rooms": [
+      "GrandpaRoom",
+      "Yard",
+      "Gate",
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_girl.mp3",
+    "objects": [
+      "character:Reem"
+    ]
+  },
+  "word_grandfather": {
+    "text": "جَدّ",
+    "rooms": [
+      "Yard"
+    ],
+    "audio": "res://assets/audio/words/word_grandfather.mp3",
+    "objects": [
+      "character:Jad"
+    ]
+  },
+  "word_well": {
+    "text": "بِئْر",
+    "rooms": [
+      "Yard"
+    ],
+    "audio": "res://assets/audio/words/word_well.mp3",
+    "objects": []
+  },
+  "word_bucket": {
+    "text": "دَلْو",
+    "rooms": [
+      "Yard"
+    ],
+    "audio": "res://assets/audio/words/word_bucket.mp3",
+    "objects": []
+  },
+  "word_jar": {
+    "text": "جَرَّة",
+    "rooms": [
+      "Yard"
+    ],
+    "audio": "res://assets/audio/words/word_jar.mp3",
+    "objects": []
+  },
+  "word_beehive": {
+    "text": "خَلِيَّة",
+    "rooms": [
+      "Yard",
+      "BigTree"
+    ],
+    "audio": "res://assets/audio/words/word_beehive.mp3",
+    "objects": []
+  },
+  "word_tree": {
+    "text": "شَجَرَة",
+    "rooms": [
+      "Yard",
+      "Gate",
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_tree.mp3",
+    "objects": []
+  },
+  "word_sky": {
+    "text": "سَمَاء",
+    "rooms": [
+      "Yard",
+      "Gate",
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_sky.mp3",
+    "objects": []
+  },
+  "word_bird": {
+    "text": "عُصْفُور",
+    "rooms": [
+      "Yard",
+      "Gate",
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_bird.mp3",
+    "objects": []
+  },
+  "word_path": {
+    "text": "طَرِيق",
+    "rooms": [
+      "Yard",
+      "Gate",
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_path.mp3",
+    "objects": []
+  },
+  "word_flower": {
+    "text": "زَهْرَة",
+    "rooms": [
+      "Yard",
+      "Gate",
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_flower.mp3",
+    "objects": [
+      "prop:FlowersFork",
+      "prop:FlowersShade"
+    ]
+  },
+  "word_grass": {
+    "text": "عُشْب",
+    "rooms": [
+      "Yard",
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_grass.mp3",
+    "objects": []
+  },
+  "word_gate": {
+    "text": "بَوَّابَة",
+    "rooms": [
+      "Gate"
+    ],
+    "audio": "res://assets/audio/words/word_gate.mp3",
+    "objects": []
+  },
+  "word_fence": {
+    "text": "سِيَاج",
+    "rooms": [
+      "Gate"
+    ],
+    "audio": "res://assets/audio/words/word_fence.mp3",
+    "objects": []
+  },
+  "word_sign": {
+    "text": "لَافِتَة",
+    "rooms": [
+      "Gate",
+      "MeadowFork"
+    ],
+    "audio": "res://assets/audio/words/word_sign.mp3",
+    "objects": [
+      "prop:Sign"
+    ]
+  },
+  "word_cloud": {
+    "text": "غَيْمَة",
+    "rooms": [
+      "Gate"
+    ],
+    "audio": "res://assets/audio/words/word_cloud.mp3",
+    "objects": []
+  },
+  "word_hill": {
+    "text": "تَلّ",
+    "rooms": [
+      "Gate",
+      "MeadowFork",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_hill.mp3",
+    "objects": []
+  },
+  "word_rock": {
+    "text": "صَخْرَة",
+    "rooms": [
+      "MeadowFork",
+      "BigTree",
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_rock.mp3",
+    "objects": []
+  },
+  "word_shade": {
+    "text": "ظِلّ",
+    "rooms": [
+      "BigTree"
+    ],
+    "audio": "res://assets/audio/words/word_shade.mp3",
+    "objects": []
+  },
+  "word_berries": {
+    "text": "تُوت",
+    "rooms": [
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_berries.mp3",
+    "objects": []
+  },
+  "word_stream": {
+    "text": "جَدْوَل",
+    "rooms": [
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_stream.mp3",
+    "objects": []
+  },
+  "word_fox": {
+    "text": "ثَعْلَب",
+    "rooms": [
+      "FoxRock"
+    ],
+    "audio": "res://assets/audio/words/word_fox.mp3",
+    "objects": [
+      "character:Thaaloob"
+    ]
+  },
+  "word_bee": {
+    "text": "نَحْلَة",
+    "rooms": [
+      "BigTree"
+    ],
+    "audio": "res://assets/audio/words/word_bee.mp3",
+    "objects": [
+      "character:Shahd",
+      "decor:BeeSmall1",
+      "decor:BeeSmall2"
+    ]
+  },
+  "word_lantern": {
+    "text": "فَانُوس",
+    "rooms": [
+      "inventory"
+    ],
+    "audio": "res://assets/audio/words/word_lantern.mp3",
+    "objects": [
+      "item:Lantern"
+    ]
+  },
+  "word_notebook": {
+    "text": "دَفْتَر",
+    "rooms": [
+      "inventory"
+    ],
+    "audio": "res://assets/audio/words/word_notebook.mp3",
+    "objects": [
+      "item:Notebook"
+    ]
+  },
+  "word_watering_can": {
+    "text": "مِرَشَّة",
+    "rooms": [
+      "inventory"
+    ],
+    "audio": "res://assets/audio/words/word_watering_can.mp3",
+    "objects": [
+      "item:WateringCan"
+    ]
+  },
+  "word_honey": {
+    "text": "عَسَل",
+    "rooms": [
+      "inventory"
+    ],
+    "audio": "res://assets/audio/words/word_honey.mp3",
+    "objects": [
+      "item:HoneyJar"
+    ]
+  },
+  "word_stone": {
+    "text": "حَجَر",
+    "rooms": [
+      "inventory"
+    ],
+    "audio": "res://assets/audio/words/word_stone.mp3",
+    "objects": [
+      "item:Stone"
+    ]
+  }
+}

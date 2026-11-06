@@ -47,6 +47,7 @@ func _ready() -> void:
 
 #region Virtual ####################################################################################
 func _on_room_entered() -> void:
+	Globals.clear_autosave()
 	RoomHelpers.fit_background(_background, width, height)
 	Globals.play_ambience("amb_meadow")
 

@@ -148,3 +148,12 @@ func _install_cursors() -> void:
 
 
 #endregion
+
+
+## Automatic saves and Continue must never wait for a confirmation popup.
+func _on_game_saved() -> void:
+	pass
+
+
+func _on_game_loaded(_loaded_game: Dictionary) -> void:
+	G.load_feedback_finished.emit.call_deferred()

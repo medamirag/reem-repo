@@ -2,63 +2,51 @@
 
 ## Handoff
 
-Update this section at the end of every session (rules in `AGENTS.md`). The tools take turns
-in this local folder; GitHub is only a backup.
-
-- **Who worked last:** Claude Code (builder)
+- **Who worked last:** Codex (builder)
 - **Date:** 2026-11-06
-- **Branch:** `main` (committed, pushed as backup)
-- **What was done (one-time pipeline setup):**
-  - Branches: `claude/eloquent-mayer-iq1fbv` was already fully merged into `main` (nothing to
-    merge). From now on everything is on `main` only.
-  - Queues created in `content/`: `art_queue.md` (empty, ready for the first station),
-    `voice_queue.md` (the 4 MVP voices as `done`, empty Lines table), `word_queue.md` (the 38
-    MVP words, all `done` because their mp3 files exist; no word was waiting).
-  - `tools/make_words.py` now keeps `content/word_queue.md` up to date (adds new words as
-    `todo`, never touches existing rows) and no longer writes `words.md`, which was removed.
-  - `AGENTS.md`: follow docs/PIPELINE.md and docs/ROADMAP.md; turns in the same local folder,
-    no pulling, commit at the end of every session then push as a backup; `main` only; the
-    queues; "originals are never edited, new files listed in the queues may be added"; the
-    Godot path; the "don't ask during building, note it under Decisions to review" rule.
-    `CLAUDE.md` imports `@AGENTS.md`.
-  - Roles changed at the user's request (docs/PIPELINE.md and AGENTS.md): Claude Code and
-    Codex are both builders with the same rules; only Codex generates images; only Claude
-    Desktop generates voices; whoever works next continues from this Handoff.
-- **What is next (either builder):** ROADMAP build order step 2, base game systems, starting
-  with **save/continue** (ROADMAP 3.7: autosave on every room change; the title screen offers
-  «متابعة» and «رحلة جديدة»). No code written yet; findings so far, to continue from:
-  - Use Popochiu's own save: `E.save_game(1)` / `E.load_game(1)` / `E.has_save()`
-    (`addons/popochiu/engine/popochiu.gd` ~line 386, `engine/others/popochiu_save_load.gd`).
-    It writes `user://save_1.json` with the current room, player position, every room/character/
-    inventory-item state, both inventories, and every bool/int/float/String/Array script variable
-    of `Globals` (`game/popochiu_globals.gd`). Dictionaries and Callables are NOT saved.
-  - So in `popochiu_globals.gd`: add `on_save()` / `on_load(data)` (Popochiu calls them) to save
-    `discovered_words` (a Dictionary) and, in `on_load`, set `_ambience_cue = ""` (it is a saved
-    String; otherwise `play_ambience()` thinks the old ambience is still playing) and emit
-    `heart_changed(false)` so the heart tree redraws.
-  - Autosave: when a gameplay room is entered (not Title, End or TestArabic), after
-    `_on_room_entered`; the shared room base is `game/scripts/reem_room.gd`. On loading, Popochiu
-    calls `_on_restore_from_savegame()` instead of `_on_room_transition_finished()`
-    (`engine/interfaces/i_room.gd` ~line 396), so first-visit lines are not replayed.
-  - Title (`game/rooms/title/room_title.gd`, `.tscn` has one `StartButton`): if `E.has_save()`
-    show two buttons, «متابعة» (load slot 1) and «رحلة جديدة» (`Globals.new_game()`, delete the
-    save, go to GrandpaRoom); otherwise only «ابدأ». Add the two labels to
-    `game/scripts/labels.gd` (they come from docs/ROADMAP.md 3.7).
-  - End screen: delete the save when the journey ends (decision to note), so «متابعة» does not
-    reopen a finished game.
-  - Add a `save` path to `tools/playtest.gd` that saves in the Yard, reloads, and checks the
-    flags, inventory and room.
-- Codex has no images queued and Claude Desktop has no voices queued yet.
-- **Half-finished / to check:**
-  - The user has not listened to the word recordings yet. `word_path` (طَرِيق) and `word_girl`
-    (بِنْت) measured oddly and may need re-recording (set their row to `todo` in
-    `content/word_queue.md` to have the voice studio redo them).
-  - `room_test_arabic.tscn` (old Arabic test room) has Godot editor leftovers committed: Reem's
-    node is named `CharacterReem *` and the Floor walkable polygon is gone. Only that test room.
+- **Branch:** main
+- **What was done:**
+  - Read PIPELINE, ROADMAP, game_spec and the previous handoff. Working tree was clean.
+  - Art queue has no rows: no todo images to generate and no newly completed images needing
+    words. Existing MVP word coverage remains unchanged.
+  - Built ROADMAP step 2's save/continue feature (spec: game_spec.md 9.1).
+  - ReemRoom saves slot 1 after the entry story finishes. Its restore hook marks the room
+    started without replaying its entry dialogue. Globals custom save/load includes discovered
+    words and restarts ambience correctly. Title offers Continue / New journey when slot 1
+    exists; New journey resets the story. End clears the completed journey's save.
+  - game/gui/gui.gd disables Popochiu's modal save/load notices for seamless autosaves.
+  - Fixed Popochiu save serialization in addons/popochiu/engine/others/popochiu_save_load.gd:
+    JSON.from_native/to_native preserve nested typed walkable polygons and vectors, which plain
+    JSON lost. The reader retains fallback support for old plain JSON. Also fixed its null
+    FileAccess error reporting to use the static FileAccess.get_open_error().
+  - Added tools/playtest.gd --path=save. Passes: automatic save, title Continue, restored flags,
+    basket inventory, discovered word, player position, hidden taken basket, and fresh journey.
+- **Checks:** Windows Godot 4.7.2 startup and all five playtests passed: green, sand, mixed,
+  words, save. Each reached DONE; only allowed exit-leak/resource messages remained.
+  Visual layout and sound were not checked in these headless runs. git diff --check passed.
+- **What is next:** ROADMAP step 2: settings (music off by default, voice/effects volume, text
+  size), then notebook (hints, discovered words, map, friend cards), then hotspot highlight.
+  Only after base systems: Stream station spec, queues, build, checks, then Pine Fork and so on.
+- **Half-finished:** no settings code started. Visual/sound testing of save buttons is still
+  needed by the user. Old TestArabic editor leftovers and word_path/word_girl recordings remain
+  as previously noted; assets were not modified.
+- **How to test:** reopen Godot, press F5, click Start, take the basket, choose either answer,
+  then click the blue door. Close the running game in the Yard and press F5 again. Click
+  Continue (متابعة): Reem should return to the Yard with the basket and the same story state.
+  Restart and click New journey (رحلة جديدة): the basket is back in Grandpa's room and the
+  story begins again. Progress since entering the current room saves on the next room change.
 
 ## Decisions to review
 
-Choices made without asking (newest first). Older MVP decisions are further down, under "MVP
+Choices made without asking (newest first).
+
+- **Save behavior (Codex, 2026-11-06):** autosave after entry scenes finish, so loading cannot
+  skip an unanswered entry choice. Completed MVP journeys clear the save on entering End.
+  New journey keeps discovered words, matching the previous MVP reset behavior.
+- **Popochiu compatibility fix:** native JSON conversion is required to preserve typed room
+  geometry. This is a small save/load fix in the installed plugin, not a version upgrade.
+  Silent save/load feedback avoids an English confirmation modal blocking every room change.
+ Older MVP decisions are further down, under "MVP
 decisions to review".
 
 1. **docs/PIPELINE.md** was updated (at the user's request) to the new roles and to "local

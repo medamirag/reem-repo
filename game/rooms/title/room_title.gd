@@ -8,6 +8,8 @@ const Data := preload('room_title_state.gd')
 const TITLE_FONT_SIZE := 90
 const BUTTON_FONT_SIZE := 46
 
+var _continue_button: Button
+
 var state: Data = load("res://game/rooms/title/room_title.tres")
 
 @onready var _background: Sprite2D = $Background
@@ -17,7 +19,6 @@ var state: Data = load("res://game/rooms/title/room_title.tres")
 
 #region Godot ######################################################################################
 func _ready() -> void:
-	super()
 
 	_title_label.add_theme_font_override("normal_font", ArabicText.get_font())
 	_title_label.add_theme_font_size_override("normal_font_size", TITLE_FONT_SIZE)
@@ -30,9 +31,17 @@ func _ready() -> void:
 	ArabicText.make_rtl(_start_button)
 
 	if Engine.is_editor_hint():
+		super()
 		return
 
+	_continue_button = _start_button.duplicate() as Button
+	_continue_button.name = "ContinueButton"
+	_continue_button.position.y += 130
+	_continue_button.text = Labels.CONTINUE
+	add_child(_continue_button)
+	_continue_button.pressed.connect(_on_continue_pressed)
 	_start_button.pressed.connect(_on_start_pressed)
+	super()
 
 
 #endregion
@@ -40,6 +49,10 @@ func _ready() -> void:
 #region Virtual ####################################################################################
 func _on_room_entered() -> void:
 	_fit_background()
+	if not Engine.is_editor_hint():
+		var has_autosave: bool = E.get_saves_descriptions().has(1)
+		_continue_button.visible = has_autosave
+		_start_button.text = Labels.NEW_JOURNEY if has_autosave else Labels.START
 
 
 func _on_room_transition_finished() -> void:
@@ -67,7 +80,17 @@ func _fit_background() -> void:
 
 func _on_start_pressed() -> void:
 	A.sfx_ui_click.play()
+	_start_button.disabled = true
+	_continue_button.disabled = true
+	await Globals.new_game()
 	R.goto_room("GrandpaRoom")
 
 
 #endregion
+
+
+func _on_continue_pressed() -> void:
+	_start_button.disabled = true
+	_continue_button.disabled = true
+	A.sfx_ui_click.play()
+	await E.load_game(1)

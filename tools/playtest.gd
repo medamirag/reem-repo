@@ -54,6 +54,8 @@ func _run() -> void:
 		await _green_path()
 	elif _path == "mixed":
 		await _mixed_path()
+	elif _path == "save":
+		await _save_path()
 	elif _path == "words":
 		await _words_path()
 	else:
@@ -588,3 +590,35 @@ func _log(message: String) -> void:
 
 
 #endregion
+
+
+func _save_path() -> void:
+	await _wait_room("GrandpaRoom")
+	_answers = [true]
+	await _click("BasketProp")
+	Globals.discovered_words["word_window"] = true
+	await _click("Door")
+	await _wait_room("Yard")
+	_expect(FileAccess.file_exists("user://save_1.json"), "room change autosaved")
+	var saved_position: Vector2 = C.player.global_position
+	Globals.reset()
+	Globals.discovered_words.clear()
+	await I.clean_inventory(C.player)
+	R.goto_room("Title")
+	await _wait_room("Title")
+	_expect(R.current.get_node("ContinueButton").visible, "title offers Continue")
+	await _step("continue saved journey", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("Yard")
+	_expect(Globals.chose_truth and Globals.basket_taken and Globals.mirror_broken, "saved story flags restored")
+	_expect(_has("Basket"), "saved inventory restored")
+	_expect(Globals.discovered_words.has("word_window"), "discovered words restored")
+	_expect(C.player.global_position.is_equal_approx(saved_position), "saved player position restored")
+	await _click("ExitLeft")
+	await _wait_room("GrandpaRoom")
+	_expect(not R.current.get_prop("BasketProp").visible, "taken basket remains hidden")
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("new journey", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	_expect(not Globals.basket_taken and not _has("Basket"), "new journey resets flags and inventory")
+	_expect(R.current.get_prop("BasketProp").visible, "new journey restores basket")

@@ -30,7 +30,7 @@ func get_saves_descriptions() -> Dictionary:
 			if not opened:
 				PopochiuUtils.print_error(
 					"Could not open the file %s. Error code: %s" % [
-						SAVE_GAME_PATH % i, opened.get_open_error()
+						SAVE_GAME_PATH % i, FileAccess.get_open_error()
 					]
 				)
 				return {}
@@ -43,7 +43,7 @@ func get_saves_descriptions() -> Dictionary:
 			
 			if test_json_conv.data == null: continue
 			
-			var loaded_data: Dictionary = test_json_conv.data
+			var loaded_data: Dictionary = JSON.to_native(test_json_conv.data) if test_json_conv.data.has("type") else test_json_conv.data
 			
 			saves[i] = loaded_data.description
 	
@@ -55,7 +55,7 @@ func save_game(slot := 1, description := "") -> bool:
 	if not opened:
 		PopochiuUtils.print_error(
 			"Could not open the file %s. Error code: %s" % [
-				SAVE_GAME_PATH % slot, opened.get_open_error()
+				SAVE_GAME_PATH % slot, FileAccess.get_open_error()
 			]
 		)
 		return false
@@ -108,7 +108,9 @@ func save_game(slot := 1, description := "") -> bool:
 	if data.globals.is_empty(): data.erase("globals")
 	
 	# Write the JSON -------------------------------------------------------------------------------
-	var json_string := JSON.stringify(data)
+	# Plain JSON loses Vector2 and nested typed walkable polygons. Native conversion
+	# preserves those types without enabling object/resource deserialization.
+	var json_string := JSON.stringify(JSON.from_native(data))
 	opened.store_string(json_string)
 	opened.close()
 	
@@ -120,7 +122,7 @@ func load_game(slot := 1) -> Dictionary:
 	if not opened:
 		PopochiuUtils.print_error(
 			"Could not open the file %s. Error code: %s" % [
-				SAVE_GAME_PATH % slot, opened.get_open_error()
+				SAVE_GAME_PATH % slot, FileAccess.get_open_error()
 			]
 		)
 		return {}
@@ -130,7 +132,7 @@ func load_game(slot := 1) -> Dictionary:
 	
 	var test_json_conv = JSON.new()
 	test_json_conv.parse(content)
-	var loaded_data: Dictionary = test_json_conv.data
+	var loaded_data: Dictionary = JSON.to_native(test_json_conv.data) if test_json_conv.data.has("type") else test_json_conv.data
 	var player_data = loaded_data.get("player", {})
 	
 	PopochiuUtils.i.is_restoring = true

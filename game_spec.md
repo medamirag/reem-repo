@@ -265,3 +265,24 @@ Walkable: the path, y 0.80 to 0.95.
 ## 8. Later (not in the MVP)
 
 Skeletal animation with the parts sheets and lip sync with the mouth sheets; music with a settings toggle; touch-screen tuning and Android export; the other stations of the valley.
+
+
+## 9. Base game systems (ROADMAP step 2)
+
+### 9.1 Save and continue
+
+- One automatic save, slot 1, at the end of each gameplay room's entry sequence. Saving after
+  the sequence keeps its choice and first-visit dialogue complete before recording the room.
+- Title: with a save, show the Continue and New journey labels from ROADMAP 3.7; without one,
+  show the existing Start button. Both buttons use Cairo and right-to-left Arabic.
+- Continue restores Popochiu room/character/item state, inventory, story flags, heart counters,
+  player position and discovered words. Do not repeat first-visit entry dialogue when loading.
+- New journey clears the automatic save and resets story flags, inventory and visited rooms.
+  Keep the child's discovered-word collection, matching the MVP's existing new-game behavior.
+- Entering the MVP End screen clears the automatic save; returning to Title starts fresh.
+- Autosaves and loading are silent: no confirmation popup that requires another click.
+- Saved room shapes retain Godot types through native JSON conversion. The save reader also
+  accepts the original plain JSON format; only new saves guarantee preserved shape types.
+- Changes inside a room are recorded on entering the next room, as requested by ROADMAP 3.7.
+- Automatic check: add --path=save to the existing playtest command. It checks title Continue,
+  restored room/position, story flags, inventory, words, and a clean new journey.

@@ -60,6 +60,7 @@ func _on_room_entered() -> void:
 func _on_room_transition_finished() -> void:
 	await _on_room_started()
 	started = true
+	E.save_game(1)
 
 
 func _on_room_exited() -> void:
@@ -67,7 +68,7 @@ func _on_room_exited() -> void:
 
 
 func _on_restore_from_savegame() -> void:
-	pass
+	started = true
 
 
 ## Override: put props in the state the global flags say (pictures, visibility, ...). Called

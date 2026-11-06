@@ -28,3 +28,6 @@ const CHOICE3_SAND := "أُبادِلُه"
 const TO_BE_CONTINUED := "يتبع…"
 ## End screen button
 const BACK_TO_START := "العودة إلى البداية"
+
+const CONTINUE := "متابعة"
+const NEW_JOURNEY := "رحلة جديدة"

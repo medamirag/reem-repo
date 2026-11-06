@@ -15,7 +15,7 @@ const HEART_TREE_SCENE := "res://game/gui/components/heart_tree/heart_tree.tscn"
 ## Word discovery (game/scripts/word_discovery.gd).
 var word_discovery: WordDiscovery
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
-## cleared by a new game from the end screen, and not saved when the game is closed.
+## cleared by a new game from the end screen, included in the autosave.
 var discovered_words := {}
 
 
@@ -162,6 +162,7 @@ func reset() -> void:
 ## inventory, and Popochiu's memory of every room (how many times it was visited, where its
 ## props and characters were), so each room plays its first-visit lines again.
 func new_game() -> void:
+	clear_autosave()
 	reset()
 	if is_instance_valid(C.player):
 		await I.clean_inventory(C.player)
@@ -204,3 +205,18 @@ func play_ambience(cue_name: String) -> void:
 
 
 #endregion
+
+
+func on_save() -> Dictionary:
+	return {"discovered_words": discovered_words}
+
+
+func on_load(data: Dictionary) -> void:
+	discovered_words = data.get("discovered_words", {}).duplicate()
+	play_ambience("")
+	heart_changed.emit(false)
+
+
+func clear_autosave() -> void:
+	if FileAccess.file_exists("user://save_1.json"):
+		DirAccess.remove_absolute("user://save_1.json")

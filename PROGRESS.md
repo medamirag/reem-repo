@@ -21,8 +21,34 @@ in this local folder; GitHub is only a backup.
     queues; "originals are never edited, new files listed in the queues may be added"; the
     Godot path; the "don't ask during building, note it under Decisions to review" rule.
     `CLAUDE.md` imports `@AGENTS.md`.
-- **What is next (builder):** ROADMAP build order step 2, base game systems, starting with
-  save/continue. Codex and Claude Desktop have nothing queued yet.
+  - Roles changed at the user's request (docs/PIPELINE.md and AGENTS.md): Claude Code and
+    Codex are both builders with the same rules; only Codex generates images; only Claude
+    Desktop generates voices; whoever works next continues from this Handoff.
+- **What is next (either builder):** ROADMAP build order step 2, base game systems, starting
+  with **save/continue** (ROADMAP 3.7: autosave on every room change; the title screen offers
+  «متابعة» and «رحلة جديدة»). No code written yet; findings so far, to continue from:
+  - Use Popochiu's own save: `E.save_game(1)` / `E.load_game(1)` / `E.has_save()`
+    (`addons/popochiu/engine/popochiu.gd` ~line 386, `engine/others/popochiu_save_load.gd`).
+    It writes `user://save_1.json` with the current room, player position, every room/character/
+    inventory-item state, both inventories, and every bool/int/float/String/Array script variable
+    of `Globals` (`game/popochiu_globals.gd`). Dictionaries and Callables are NOT saved.
+  - So in `popochiu_globals.gd`: add `on_save()` / `on_load(data)` (Popochiu calls them) to save
+    `discovered_words` (a Dictionary) and, in `on_load`, set `_ambience_cue = ""` (it is a saved
+    String; otherwise `play_ambience()` thinks the old ambience is still playing) and emit
+    `heart_changed(false)` so the heart tree redraws.
+  - Autosave: when a gameplay room is entered (not Title, End or TestArabic), after
+    `_on_room_entered`; the shared room base is `game/scripts/reem_room.gd`. On loading, Popochiu
+    calls `_on_restore_from_savegame()` instead of `_on_room_transition_finished()`
+    (`engine/interfaces/i_room.gd` ~line 396), so first-visit lines are not replayed.
+  - Title (`game/rooms/title/room_title.gd`, `.tscn` has one `StartButton`): if `E.has_save()`
+    show two buttons, «متابعة» (load slot 1) and «رحلة جديدة» (`Globals.new_game()`, delete the
+    save, go to GrandpaRoom); otherwise only «ابدأ». Add the two labels to
+    `game/scripts/labels.gd` (they come from docs/ROADMAP.md 3.7).
+  - End screen: delete the save when the journey ends (decision to note), so «متابعة» does not
+    reopen a finished game.
+  - Add a `save` path to `tools/playtest.gd` that saves in the Yard, reloads, and checks the
+    flags, inventory and room.
+- Codex has no images queued and Claude Desktop has no voices queued yet.
 - **Half-finished / to check:**
   - The user has not listened to the word recordings yet. `word_path` (طَرِيق) and `word_girl`
     (بِنْت) measured oddly and may need re-recording (set their row to `todo` in
@@ -35,8 +61,8 @@ in this local folder; GitHub is only a backup.
 Choices made without asking (newest first). Older MVP decisions are further down, under "MVP
 decisions to review".
 
-1. **docs/PIPELINE.md not edited:** it still says "pull first" and "GitHub is the single source
-   of truth". AGENTS.md says the local folder is the source of truth and replaces those lines.
+1. **docs/PIPELINE.md** was updated (at the user's request) to the new roles and to "local
+   folder is the source of truth, no pulling, push as a backup".
 2. **`words.md` removed:** `content/word_queue.md` replaces it as the list for the voice studio.
    The words still come from the table in `tools/make_words.py`.
 3. **art_queue.md layout:** a summary table with every column from PIPELINE.md, and the full

@@ -24,38 +24,66 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 
 | File | Voice | Tone | Text | Status |
 | --- | --- | --- | --- | --- |
-| reem_hint_briefing_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَسْأَلُ جَدِّي عَنِ الرِّحْلَة. | todo |
-| reem_hint_briefing_2 | Reem | gentle, clear, thoughtful notebook reading | جَدِّي يَجْلِسُ تَحْتَ الشَّجَرَة. | todo |
-| reem_hint_briefing_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى جَدِّي لِأَتَحَدَّثَ مَعَهُ. | todo |
-| reem_hint_yard_1 | Reem | gentle, clear, thoughtful notebook reading | أَنَا مُسْتَعِدَّةٌ لِلرِّحْلَة. | todo |
-| reem_hint_yard_2 | Reem | gentle, clear, thoughtful notebook reading | الْبَوَّابَةُ عَلَى يَمِينِ السَّاحَة. | todo |
-| reem_hint_yard_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأَذْهَبَ إِلَى الْبَوَّابَة. | todo |
-| reem_hint_path_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَنْظُرُ إِلَى الطَّرِيق. | todo |
-| reem_hint_path_2 | Reem | gentle, clear, thoughtful notebook reading | اللَّافِتَةُ تُسَاعِدُنِي عَلَى الْمَشْيِ بِرِفْقٍ. | todo |
-| reem_hint_path_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَقْرَأُ اللَّافِتَةَ، ثُمَّ أَتَّبِعُ الطَّرِيقَ نَحْوَ الْيَمِينِ. | todo |
-| reem_hint_bee_1 | Reem | gentle, clear, thoughtful notebook reading | لَعَلَّ شَهْدَ تَحْتَاجُ إِلَى مُسَاعَدَتِي. | todo |
-| reem_hint_bee_2 | Reem | gentle, clear, thoughtful notebook reading | سَأَسْأَلُ النَّحْلَةَ عَنِ الزُّهُورِ. | todo |
-| reem_hint_bee_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى شَهْدَ بِجَانِبِ خَلَايَا النَّحْلِ. | todo |
-| reem_hint_water_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي إِصْلَاحُ مَا حَدَثَ لِلزُّهُورِ. | todo |
-| reem_hint_water_2 | Reem | gentle, clear, thoughtful notebook reading | الزُّهُورُ الذَّابِلَةُ تَحْتَاجُ إِلَى الْمَاءِ. | todo |
-| reem_hint_water_3 | Reem | gentle, clear, thoughtful notebook reading | سَآخُذُ إِبْرِيقَ الرَّيِّ مِنَ الْبِئْرِ، ثُمَّ أَضْغَطُ عَلَى الزُّهُورِ الَّتِي دُسْتُهَا. | todo |
-| reem_hint_examine_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَنْظُرُ إِلَى الزُّهُورِ الْمُغْلَقَةِ. | todo |
-| reem_hint_examine_2 | Reem | gentle, clear, thoughtful notebook reading | رُبَّمَا أَحْتَاجُ إِلَى شَيْءٍ يُسَاعِدُهَا. | todo |
-| reem_hint_examine_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى الزُّهُورِ فِي الظِّلِّ لِأَعْرِفَ مَا يَنْقُصُنِي. | todo |
-| reem_hint_confess_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي أَنْ أَتَحَدَّثَ مَعَ جَدِّي بِصِدْقٍ. | todo |
-| reem_hint_confess_2 | Reem | gentle, clear, thoughtful notebook reading | جَدِّي يُسَاعِدُنِي حِينَ أُخْبِرُهُ بِمَا حَدَثَ. | todo |
-| reem_hint_confess_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَعُودُ إِلَى السَّاحَةِ وَأَضْغَطُ عَلَى جَدِّي لِأُخْبِرَهُ عَنِ الْمِرْآةِ. | todo |
-| reem_hint_mirror_1 | Reem | gentle, clear, thoughtful notebook reading | الزُّهُورُ فِي الظِّلِّ تَحْتَاجُ إِلَى الضَّوْءِ. | todo |
-| reem_hint_mirror_2 | Reem | gentle, clear, thoughtful notebook reading | الْمِرْآةُ تَعْكِسُ ضَوْءَ الشَّمْسِ. | todo |
-| reem_hint_mirror_3 | Reem | gentle, clear, thoughtful notebook reading | مَعِي مِرْآةُ جَدِّي؛ سَأَضْغَطُ عَلَى الزُّهُورِ الْمُغْلَقَةِ لِأُوَجِّهَ الضَّوْءَ إِلَيْهَا. | todo |
-| reem_hint_forward_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي أَنْ أُكْمِلَ رِحْلَتِي. | todo |
-| reem_hint_forward_2 | Reem | gentle, clear, thoughtful notebook reading | الطَّرِيقُ يَمْتَدُّ نَحْوَ الْيَمِينِ. | todo |
-| reem_hint_forward_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأُكْمِلَ الطَّرِيقَ. | todo |
-| reem_hint_stone_1 | Reem | gentle, clear, thoughtful notebook reading | هَلِ الْحَجَرُ كَمَا وَصَفَهُ ثَعْلُوبُ؟ | todo |
-| reem_hint_stone_2 | Reem | gentle, clear, thoughtful notebook reading | سَأَفْحَصُ الْحَجَرَ الَّذِي أَعْطَانِي إِيَّاهُ. | todo |
-| reem_hint_stone_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى الْحَجَرِ فِي السَّلَّةِ لِأَمْسَحَهُ. | todo |
-| reem_hint_return_stone_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي إِصْلَاحُ هَذَا الْخَطَإِ. | todo |
-| reem_hint_return_stone_2 | Reem | gentle, clear, thoughtful notebook reading | ثَعْلُوبُ مَا زَالَ بِجَانِبِ الصَّخْرَةِ. | todo |
-| reem_hint_return_stone_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى ثَعْلُوبَ لِأُعِيدَ الْحَجَرَ وَأَسْتَرِدَّ الْمِرْآةَ. | todo |
-| reem_card_shahd_name | Reem | gentle, clear, thoughtful notebook reading | شَهْد | todo |
-| reem_card_shahd_fact | Reem | gentle, clear, thoughtful notebook reading | تَجْمَعُ النَّحْلَةُ الرَّحِيقَ مِنَ الْأَزْهَارِ. | todo |
+| reem_hint_briefing_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَسْأَلُ جَدِّي عَنِ الرِّحْلَة. | problem: sample listening/settings verification pending |
+| reem_hint_briefing_2 | Reem | gentle, clear, thoughtful notebook reading | جَدِّي يَجْلِسُ تَحْتَ الشَّجَرَة. | problem: sample listening/settings verification pending |
+| reem_hint_briefing_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى جَدِّي لِأَتَحَدَّثَ مَعَهُ. | problem: sample listening/settings verification pending |
+| reem_hint_yard_1 | Reem | gentle, clear, thoughtful notebook reading | أَنَا مُسْتَعِدَّةٌ لِلرِّحْلَة. | problem: sample listening/settings verification pending |
+| reem_hint_yard_2 | Reem | gentle, clear, thoughtful notebook reading | الْبَوَّابَةُ عَلَى يَمِينِ السَّاحَة. | problem: sample listening/settings verification pending |
+| reem_hint_yard_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأَذْهَبَ إِلَى الْبَوَّابَة. | problem: sample listening/settings verification pending |
+| reem_hint_path_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَنْظُرُ إِلَى الطَّرِيق. | problem: sample listening/settings verification pending |
+| reem_hint_path_2 | Reem | gentle, clear, thoughtful notebook reading | اللَّافِتَةُ تُسَاعِدُنِي عَلَى الْمَشْيِ بِرِفْقٍ. | problem: sample listening/settings verification pending |
+| reem_hint_path_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَقْرَأُ اللَّافِتَةَ، ثُمَّ أَتَّبِعُ الطَّرِيقَ نَحْوَ الْيَمِينِ. | problem: sample listening/settings verification pending |
+| reem_hint_bee_1 | Reem | gentle, clear, thoughtful notebook reading | لَعَلَّ شَهْدَ تَحْتَاجُ إِلَى مُسَاعَدَتِي. | problem: sample listening/settings verification pending |
+| reem_hint_bee_2 | Reem | gentle, clear, thoughtful notebook reading | سَأَسْأَلُ النَّحْلَةَ عَنِ الزُّهُورِ. | problem: sample listening/settings verification pending |
+| reem_hint_bee_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى شَهْدَ بِجَانِبِ خَلَايَا النَّحْلِ. | problem: sample listening/settings verification pending |
+| reem_hint_water_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي إِصْلَاحُ مَا حَدَثَ لِلزُّهُورِ. | problem: sample listening/settings verification pending |
+| reem_hint_water_2 | Reem | gentle, clear, thoughtful notebook reading | الزُّهُورُ الذَّابِلَةُ تَحْتَاجُ إِلَى الْمَاءِ. | problem: sample listening/settings verification pending |
+| reem_hint_water_3 | Reem | gentle, clear, thoughtful notebook reading | سَآخُذُ إِبْرِيقَ الرَّيِّ مِنَ الْبِئْرِ، ثُمَّ أَضْغَطُ عَلَى الزُّهُورِ الَّتِي دُسْتُهَا. | problem: sample listening/settings verification pending |
+| reem_hint_examine_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَنْظُرُ إِلَى الزُّهُورِ الْمُغْلَقَةِ. | problem: sample listening/settings verification pending |
+| reem_hint_examine_2 | Reem | gentle, clear, thoughtful notebook reading | رُبَّمَا أَحْتَاجُ إِلَى شَيْءٍ يُسَاعِدُهَا. | problem: sample listening/settings verification pending |
+| reem_hint_examine_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى الزُّهُورِ فِي الظِّلِّ لِأَعْرِفَ مَا يَنْقُصُنِي. | problem: sample listening/settings verification pending |
+| reem_hint_confess_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي أَنْ أَتَحَدَّثَ مَعَ جَدِّي بِصِدْقٍ. | problem: sample listening/settings verification pending |
+| reem_hint_confess_2 | Reem | gentle, clear, thoughtful notebook reading | جَدِّي يُسَاعِدُنِي حِينَ أُخْبِرُهُ بِمَا حَدَثَ. | problem: sample listening/settings verification pending |
+| reem_hint_confess_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَعُودُ إِلَى السَّاحَةِ وَأَضْغَطُ عَلَى جَدِّي لِأُخْبِرَهُ عَنِ الْمِرْآةِ. | problem: sample listening/settings verification pending |
+| reem_hint_mirror_1 | Reem | gentle, clear, thoughtful notebook reading | الزُّهُورُ فِي الظِّلِّ تَحْتَاجُ إِلَى الضَّوْءِ. | problem: sample listening/settings verification pending |
+| reem_hint_mirror_2 | Reem | gentle, clear, thoughtful notebook reading | الْمِرْآةُ تَعْكِسُ ضَوْءَ الشَّمْسِ. | problem: sample listening/settings verification pending |
+| reem_hint_mirror_3 | Reem | gentle, clear, thoughtful notebook reading | مَعِي مِرْآةُ جَدِّي؛ سَأَضْغَطُ عَلَى الزُّهُورِ الْمُغْلَقَةِ لِأُوَجِّهَ الضَّوْءَ إِلَيْهَا. | problem: sample listening/settings verification pending |
+| reem_hint_forward_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي أَنْ أُكْمِلَ رِحْلَتِي. | problem: sample listening/settings verification pending |
+| reem_hint_forward_2 | Reem | gentle, clear, thoughtful notebook reading | الطَّرِيقُ يَمْتَدُّ نَحْوَ الْيَمِينِ. | problem: sample listening/settings verification pending |
+| reem_hint_forward_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأُكْمِلَ الطَّرِيقَ. | problem: sample listening/settings verification pending |
+| reem_hint_stone_1 | Reem | gentle, clear, thoughtful notebook reading | هَلِ الْحَجَرُ كَمَا وَصَفَهُ ثَعْلُوبُ؟ | problem: sample listening/settings verification pending |
+| reem_hint_stone_2 | Reem | gentle, clear, thoughtful notebook reading | سَأَفْحَصُ الْحَجَرَ الَّذِي أَعْطَانِي إِيَّاهُ. | problem: sample listening/settings verification pending |
+| reem_hint_stone_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى الْحَجَرِ فِي السَّلَّةِ لِأَمْسَحَهُ. | problem: sample listening/settings verification pending |
+| reem_hint_return_stone_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي إِصْلَاحُ هَذَا الْخَطَإِ. | problem: sample listening/settings verification pending |
+| reem_hint_return_stone_2 | Reem | gentle, clear, thoughtful notebook reading | ثَعْلُوبُ مَا زَالَ بِجَانِبِ الصَّخْرَةِ. | problem: sample listening/settings verification pending |
+| reem_hint_return_stone_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى ثَعْلُوبَ لِأُعِيدَ الْحَجَرَ وَأَسْتَرِدَّ الْمِرْآةَ. | problem: sample listening/settings verification pending |
+| reem_card_shahd_name | Reem | gentle, clear, thoughtful notebook reading | شَهْد | problem: sample listening/settings verification pending |
+| reem_card_shahd_fact | Reem | gentle, clear, thoughtful notebook reading | تَجْمَعُ النَّحْلَةُ الرَّحِيقَ مِنَ الْأَزْهَارِ. | problem: sample listening/settings verification pending |
+| reem_stream_arrive | Reem | gentle, clear, reflective | هَذَا جَدْوَلٌ جَمِيلٌ. سَأَسِيرُ عَلَى الضِّفَّةِ بِهُدُوءٍ. | problem: sample listening/settings verification pending |
+| reem_stream_ducks | Reem | gentle, clear, reflective | تُرِيدُ الْبَطَّةُ وَصِغَارُهَا الْعُبُورَ، وَلَكِنَّ الْحِجَارَةَ تَحَرَّكَتْ. | problem: sample listening/settings verification pending |
+| reem_stream_log | Reem | gentle, clear, reflective | بِسْمِ اللّٰهِ. هَذَا الْجِذْعُ خَفِيفٌ. سَأُدَحْرِجُهُ لِيَصِيرَ جِسْرًا صَغِيرًا. | problem: sample listening/settings verification pending |
+| reem_stream_thanks | Reem | gentle, clear, reflective | عَبَرَتِ الْبَطَّةُ وَصِغَارُهَا! وَتَرَكَتْ لِي رِيشَةً مُلَوَّنَةً لِلْمِهْرَجَانِ. | problem: sample listening/settings verification pending |
+| reem_stream_rabbit | Reem | gentle, clear, reflective | هَذَا أَرْنُوبُ! رَكَضَ قَبْلَ أَنْ يَسْمَعَ وَصْفَ الطَّرِيقِ. هَلْ أَتْبَعُهُ؟ | problem: sample listening/settings verification pending |
+| reem_stream_map | Reem | gentle, clear, reflective | سَأَقْرَأُ خَرِيطَةَ جَدِّي أَوَّلًا. هَا هُوَ الطَّرِيقُ إِلَى الصَّنَوْبَرِ! | problem: sample listening/settings verification pending |
+| reem_stream_lost | Reem | gentle, clear, reflective | أَيْنَ الطَّرِيقُ؟ لَقَدْ تَسَرَّعْتُ. سَأَعُودُ إِلَى الضِّفَّةِ وَأَنْظُرُ فِي الْخَرِيطَةِ. | problem: sample listening/settings verification pending |
+| reem_stream_found | Reem | gentle, clear, reflective | الْحَمْدُ لِلّٰهِ! عَرَفْتُ الطَّرِيقَ مِنَ الْخَرِيطَةِ. سَأَتَمَهَّلُ. | problem: sample listening/settings verification pending |
+| fox_stream_offer | Thaaloob | playful, sly but gentle | يَا رِيمُ، دَعِينِي أَحْمِلُ الْفَانُوسَ عَنْكِ! سَتَصِيرُ سَلَّتُكِ أَخَفَّ. | problem: sample listening/settings verification pending |
+| reem_stream_keep | Reem | gentle, clear, reflective | جَزَاكَ اللّٰهُ خَيْرًا، وَلَكِنَّ الْفَانُوسَ أَمَانَةٌ. سَأَحْمِلُهُ بِنَفْسِي. | problem: sample listening/settings verification pending |
+| fox_stream_borrow | Thaaloob | playful, sly but gentle | سَأَجْلِسُ هُنَا وَأُجَرِّبُ ضَوْءَهُ قَلِيلًا! | problem: sample listening/settings verification pending |
+| reem_stream_ask_back | Reem | gentle, clear, reflective | يَا ثَعْلُوبُ، أَحْتَاجُ إِلَى الْفَانُوسِ لِلْمِهْرَجَانِ. أَعِدْهُ إِلَيَّ مِنْ فَضْلِكَ. | problem: sample listening/settings verification pending |
+| fox_stream_return | Thaaloob | playful, sly but gentle | تَفَضَّلِي. هَا هُوَ فَانُوسُكِ. | problem: sample listening/settings verification pending |
+| reem_card_duck_name | Reem | gentle, clear, reflective | الْبَطَّةُ | problem: sample listening/settings verification pending |
+| reem_card_duck_fact | Reem | gentle, clear, reflective | يُسَاعِدُ رِيشُ الْبَطَّةِ عَلَى إِبْعَادِ الْمَاءِ عَنْ جِسْمِهَا. | problem: sample listening/settings verification pending |
+| reem_hint_stream_bridge_1 | Reem | gentle, clear, reflective | كَيْفَ تَعْبُرُ الْبَطَّةُ مَعَ صِغَارِهَا؟ | problem: sample listening/settings verification pending |
+| reem_hint_stream_bridge_2 | Reem | gentle, clear, reflective | قُرْبَ الْمَاءِ جِذْعٌ خَفِيفٌ. | problem: sample listening/settings verification pending |
+| reem_hint_stream_bridge_3 | Reem | gentle, clear, reflective | أَضْغَطُ عَلَى الْجِذْعِ لِأَصْنَعَ جِسْرًا. | problem: sample listening/settings verification pending |
+| reem_hint_stream_map_1 | Reem | gentle, clear, reflective | التَّمَهُّلُ يُسَاعِدُنِي عَلَى مَعْرِفَةِ الطَّرِيقِ. | problem: sample listening/settings verification pending |
+| reem_hint_stream_map_2 | Reem | gentle, clear, reflective | خَرِيطَةُ جَدِّي فِي دَفْتَرِي. | problem: sample listening/settings verification pending |
+| reem_hint_stream_map_3 | Reem | gentle, clear, reflective | أَضْغَطُ عَلَى أَرْنُوبَ، ثُمَّ أَخْتَارُ الْخَرِيطَةَ. | problem: sample listening/settings verification pending |
+| reem_hint_stream_lantern_1 | Reem | gentle, clear, reflective | الْفَانُوسُ أَمَانَةٌ مَعِي. | problem: sample listening/settings verification pending |
+| reem_hint_stream_lantern_2 | Reem | gentle, clear, reflective | ثَعْلُوبُ مَا زَالَ قَرِيبًا مِنِّي. | problem: sample listening/settings verification pending |
+| reem_hint_stream_lantern_3 | Reem | gentle, clear, reflective | أَضْغَطُ عَلَى ثَعْلُوبَ لِأَطْلُبَ الْفَانُوسَ. | problem: sample listening/settings verification pending |
+
+## Stream audio verification
+
+2026-11-06: Reem v3 sample generated and retained at `game/pending_audio/reem_stream_arrive.mp3`; it is not a game recording yet. Saved identity verified. The connected generator does not expose explicit numeric settings; no listening comparison can be verified in this build session. All unrecorded rows are marked problem rather than silently claiming completion. Exact text, voices and rows preserved. See AGENTS.md pending sample.

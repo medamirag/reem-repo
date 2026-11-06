@@ -53,6 +53,22 @@ func _run() -> void:
 		_log("DONE highlight")
 		get_tree().quit()
 		return
+	if _path in ["stream", "stream_sand"]:
+		await _stream_path(_path == "stream_sand")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
+	if _path == "stream_words":
+		await Globals.new_game()
+		R.goto_room("Stream")
+		await _wait_room("Stream")
+		for sample in [[Vector2(0.28, 0.62), "word_log"], [Vector2(0.396, 0.66), "word_duck"], [Vector2(0.36, 0.69), "word_duckling"], [Vector2(0.677, 0.65), "word_rabbit"], [Vector2(0.92, 0.38), "word_reed"]]:
+			await _hold_at(sample[0], 0.7)
+			_expect(Globals.discovered_words.has(sample[1]), "Stream real hold discovers " + sample[1])
+		_expect(not Globals.stream.get("bridge", false), "word holds do not solve bridge")
+		_log("DONE stream_words")
+		get_tree().quit()
+		return
 	if _path == "notebook":
 		await _notebook_path()
 		_log("DONE notebook")
@@ -79,6 +95,71 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _stream_path(wrong: bool) -> void:
+	await _step("new Stream journey", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	_answers = [true]
+	await _click("BasketProp")
+	await _click("Door")
+	await _wait_room("Yard")
+	_answers = [true]
+	await _click("Jad")
+	await _click("ExitRight")
+	await _wait_room("Gate")
+	await _click("ExitStream")
+	await _wait_room("Stream")
+	_expect(not R.current.is_exit_open("ExitRight"), "Stream exit locked before tasks")
+	_expect(Globals.notebook.hint_context() == "stream_bridge", "bridge hints")
+	await _click("Ducks")
+	var before := Globals.blossoms
+	await _click("Log")
+	_expect(Globals.stream.get("bridge") and Globals.stream.get("feather") and Globals.friend_cards.has("duck"), "ducks crossed, card and feather earned")
+	await _click("Log")
+	_expect(Globals.blossoms == before + 1, "bridge reward cannot repeat")
+	_expect(Globals.notebook.hint_context() == "stream_map", "route hints")
+	_answers = [not wrong]
+	await _click("Arnoob")
+	if wrong:
+		_expect(Globals.stream.get("lost") and Globals.wilts == 1, "rushing wilts once")
+		_answers = [false]
+		await _click("Arnoob")
+		_expect(Globals.wilts == 1, "looking around adds no penalty")
+		_answers = [true]
+		await _click("Arnoob")
+		_expect(Globals.wilts == 0, "map repairs wrong turn")
+	_expect(Globals.stream.get("route"), "route resolved")
+	_answers = [not wrong]
+	await _click("StreamFox")
+	if wrong:
+		_expect(Globals.wilts == 1 and not _has("Lantern"), "lending has visible inventory consequence")
+		_expect(not R.current.is_exit_open("ExitRight"), "cannot leave lantern behind")
+		_expect(Globals.notebook.hint_context() == "stream_lantern", "lantern repair hint")
+		# Save in the unresolved state, then reload: custody and repair must survive.
+		E.save_game(1)
+		await _click("ExitLeft")
+		await _wait_room("Gate")
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("continue Stream save", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("Gate")
+		await _click("ExitStream")
+		await _wait_room("Stream")
+		_expect(Globals.stream.get("lent") and not _has("Lantern"), "saved lantern custody")
+		await _click("StreamFox")
+		_expect(Globals.wilts == 0 and _has("Lantern"), "lantern returned and branch healed")
+	before = Globals.blossoms
+	await _click("StreamFox")
+	_expect(Globals.blossoms == before, "fox reward cannot repeat")
+	_expect(R.current.is_exit_open("ExitRight"), "Stream exit unlocked")
+	var targets: Array = Globals.word_discovery.get_room_targets()
+	_expect(targets.any(func(t): return t.word == "word_duck"), "duck word target present")
+	_expect(targets.any(func(t): return t.word == "word_rabbit"), "rabbit word target present")
+	await _click("ExitRight")
+	await _wait_room("End")
+	await Globals.new_game()
+	_expect(Globals.stream.is_empty() and not Globals.friend_cards.has("duck"), "New journey resets Stream and card")
 
 
 func _green_path() -> void:

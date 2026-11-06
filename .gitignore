@@ -27,3 +27,4 @@ mcp_config.json
 *.secrets
 *.credentials
 *.log
+__pycache__/

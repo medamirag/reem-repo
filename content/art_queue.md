@@ -10,6 +10,12 @@ Originals in `assets/` are never edited: new images are new files with the names
 
 | ID | Save as | Attach | Background | Size | Prompt | Extra check | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| bg7_stream | `assets/art/backgrounds/bg7_stream.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg7_stream below | Dry continuous foreground walking path; shallow narrow water; no characters or log. | done |
+| duck_sheet | `assets/art/characters/duck/duck_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See duck_sheet below | Three matching adult views; three ducklings in separate lower row; no overlap. | done |
+| arnoob_sheet | `assets/art/characters/arnoob/arnoob_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See arnoob_sheet below | Three identical full-body views, two ears, two arms, two feet; right-facing middle view. | done |
+| duck_family | `assets/art/characters/duck/duck_family.png` | `assets/art/characters/duck/duck_sheet.png` | transparent | 1536x1024 | See duck_family below | Real alpha; matches reference | done |
+| arnoob_base | `assets/art/characters/arnoob/arnoob_base.png` | `assets/art/characters/arnoob/arnoob_sheet.png` | transparent | 1536x1024 | See arnoob_base below | Real alpha; matches reference | done |
+| stream_log | `assets/art/items/stream_log.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1536x1024 | See stream_log below | Real alpha; matches reference | done |
 
 <!-- One section per row, in the same order:
 
@@ -27,3 +33,95 @@ Originals in `assets/` are never edited: new images are new files with the names
 STYLE: ...
 ```
 -->
+
+## bg7_stream
+
+- **Save as:** `assets/art/backgrounds/bg7_stream.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1920x1080
+- **Extra check:** Dry continuous foreground walking path; shallow narrow water; no characters or log.
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown outlines, soft textured brushwork, rounded friendly shapes, warm natural colours, simple readable silhouettes, matching the attached ReemGame reference. No text, letters, numbers, watermark, border or frame.
+A peaceful sunny morning stream in an Arab countryside valley. Wide side-view adventure background. A narrow turquoise shallow channel meanders in the middle distance between grassy banks, displaced smooth stepping stones, reeds, rounded pebbles, distant olive trees and gentle hills. Broad uninterrupted dry sandy walking path across the entire bottom 20 percent. Leave open space on the near bank for a movable log and duck family. No bridge, log, animals or people. Gentle, welcoming, no danger.
+```
+
+## duck_sheet
+
+- **Save as:** `assets/art/characters/duck/duck_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+- **Extra check:** Three matching adult views; three ducklings in separate lower row; no overlap.
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown outlines, soft textured brushwork, rounded friendly shapes, warm natural colours, simple readable silhouettes, matching the attached ReemGame reference. No text, letters, numbers, watermark, border or frame.
+Character turnaround reference sheet on plain cream. A kind mother duck, white feathers, warm brown wing tips, orange bill and two orange webbed feet, small teal neck ribbon, gentle expressive eyes. Top row: full body front, right-facing side, back, same design and size, each separated by generous empty space. Lower row: exactly three small fluffy yellow ducklings, each in right-facing side view, two feet each, generous gaps. No clothing except the ribbon; no labels or props.
+```
+
+## arnoob_sheet
+
+- **Save as:** `assets/art/characters/arnoob/arnoob_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+- **Extra check:** Three identical full-body views, two ears, two arms, two feet; right-facing middle view.
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown outlines, soft textured brushwork, rounded friendly shapes, warm natural colours, simple readable silhouettes, matching the attached ReemGame reference. No text, letters, numbers, watermark, border or frame.
+Character turnaround reference sheet on plain cream. Arnoob, a cheerful hasty small sandy-brown rabbit, cream muzzle and belly, two long upright ears, large kind dark eyes, tiny pink nose, short round tail, modest short teal waistcoat, no trousers needed on this animal. Three separate full-body views, front, right-facing side, back, consistent proportions, two arms and two feet, large clear gaps. Friendly youthful animal, no text or labels.
+```
+
+## duck_family
+
+- **Save as:** `assets/art/characters/duck/duck_family.png`
+- **Attach:** `assets/art/characters/duck/duck_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+- **Extra check:** Real alpha, full bodies, right-facing, matches reference.
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown outlines, soft textured brushwork, rounded friendly shapes, warm natural colours, simple readable silhouettes, matching the attached ReemGame reference. No text, letters, numbers, watermark, border or frame.
+Exactly one mother duck and three yellow ducklings, matching the reference sheet, full bodies in right-facing side view. Mother on the left, three smaller ducklings in a row to the right. Generous clear gaps between all four birds, all have two orange webbed feet, no overlap, no ground or shadow. Isolated game sprite sheet on real transparent background.
+```
+
+## arnoob_base
+
+- **Save as:** `assets/art/characters/arnoob/arnoob_base.png`
+- **Attach:** `assets/art/characters/arnoob/arnoob_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+- **Extra check:** Real alpha, full bodies, right-facing, matches reference.
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown outlines, soft textured brushwork, rounded friendly shapes, warm natural colours, simple readable silhouettes, matching the attached ReemGame reference. No text, letters, numbers, watermark, border or frame.
+Exactly one Arnoob rabbit matching the reference turnaround sheet, full body in right-facing side view, two upright ears, two arms, two feet, sandy-brown fur and teal waistcoat. Neutral kind expression, no ground or shadow. Isolated game sprite on real transparent background.
+```
+
+## stream_log
+
+- **Save as:** `assets/art/items/stream_log.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+- **Extra check:** Real alpha, full bodies, right-facing, matches reference.
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown outlines, soft textured brushwork, rounded friendly shapes, warm natural colours, simple readable silhouettes, matching the attached ReemGame reference. No text, letters, numbers, watermark, border or frame.
+Exactly one short light brown wooden log, horizontal side view with rounded cut ends and gentle bark texture, simple thick silhouette, no sharp splinters. A child-sized movable game prop to roll into a tiny stream bridge. No scenery, ground or shadow. Isolated on real transparent background.
+```
+
+Stream checks (2026-11-06): all six images inspected: no text/frame, consistent right-facing characters, full limbs, separated birds, real RGBA alpha confirmed for sprites. Background generated 1672×941 (16:9), not the requested 1920×1080; fitted proportionally by ReemRoom. Originals preserved.

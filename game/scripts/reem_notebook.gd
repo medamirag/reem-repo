@@ -99,6 +99,11 @@ func show_page(page: String) -> void:
 ## Contexts follow puzzle progress rather than visit count, so hints remain useful on returns.
 func hint_context() -> String:
 	match R.current.script_name:
+		"Stream":
+			if not Globals.stream.get("bridge", false): return "stream_bridge"
+			if not Globals.stream.get("route", false): return "stream_map"
+			if not Globals.stream.get("lantern_choice", false) or Globals.stream.get("lent", false): return "stream_lantern"
+			return "forward"
 		"Yard":
 			if not Globals.briefed: return "briefing"
 			if Globals.needs_mirror and not Globals.confessed: return "confess"

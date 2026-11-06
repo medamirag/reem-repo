@@ -354,3 +354,48 @@ This replaces the MVP inventory item's single immediate hint with the full noteb
 - Use interaction polygons transformed through the current camera, plus visible inventory
   rectangles. Duration and button position are exported in hotspot_highlight.gd for adjustment.
 - Reuse native drawing; no new image/voice/word queue rows. Test with --path=highlight.
+
+## 10. Stream (ROADMAP step 3, morning alternative)
+
+One room `Stream`, 1920×1080. Gate offers Meadow (existing right arrow) or Stream
+(upper arrow with Arabic label); this route choice has no heart change. Both
+routes require Grandpa's briefing. Left exit returns to Gate at any time.
+Right exit leads to PineFork once bridge, route and lantern are resolved; until
+PineFork exists it leads to the existing provisional End, explicitly temporary.
+
+Art: `bg7_stream.png` uses farm background as style reference. Shallow stream in
+the middle distance, displaced stepping stones; dry continuous foreground path
+y .80–.95. No Reem, fox, log or animals baked in. Duck family at (.44,.69), Arnoob
+at (.70,.73), Thaaloob at (.84,.76). Character turnaround sheets precede their
+derived right-facing sprites. A lightweight log beside the water at (.28,.70)
+rolls to span a narrow channel; no child walks through water. All positions editable.
+
+On first entry: `reem_stream_arrive`. Click Ducks -> `reem_stream_ducks` until
+helped. Click Log -> `reem_stream_log`, roll it into place, duck family crosses
+with a short tween, `reem_stream_thanks`; bloom once, earn duck card and coloured
+feather festival contribution. Repeated clicks never duplicate rewards.
+
+After bridge, click Arnoob or right exit: `reem_stream_rabbit`, choice Map / Follow.
+Map -> `reem_stream_map`, bloom once, route resolved. Follow ->
+`reem_stream_lost`, wilt once: background dims softly, Reem returns to the same
+safe bank, never stranded. Click Arnoob again or right exit offers repair Map /
+Look around. Map -> `reem_stream_found`, heal once, route resolved. Look around
+repeats the nudge, no additional penalty. Notebook map remains available; no timer.
+
+Then click Thaaloob or right exit: `fox_stream_offer`, choice Keep / Lend.
+Keep -> `reem_stream_keep`, bloom once. Lend -> remove Lantern,
+`fox_stream_borrow`, wilt once; fox stays visible and reachable. Click him again:
+`reem_stream_ask_back`, return Lantern, `fox_stream_return`, heal once.
+No fox friend card yet. Exit requires Lantern returned and all puzzles complete.
+
+Flags in saved Globals.stream: introduced, bridge, route, lost, lantern_choice,
+lent, feather. Reset on New journey. Dict values, inventory, earned card and heart
+survive save/load. Hints: bridge / map repair / lantern return, each three steps.
+Map adds Stream after first visit, connected to Gate. Reem narrates animal actions
+until those animals have approved saved voices; never substitute another voice.
+Duck card uses derived duck image and the fact that duck feathers help repel water.
+New word objects are identified only after finished images are inspected; add via
+tools/make_words.py and hand-edit word_areas.json. No hand edits to words.json.
+
+Checks: required four MVP paths plus Stream green and wrong/repair paths, repeated
+reward clicks, exit locks, lantern custody, card, hints, words, save/load and reset.

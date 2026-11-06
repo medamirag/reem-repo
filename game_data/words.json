@@ -1,4 +1,54 @@
 {
+  "word_duck": {
+    "text": "بَطَّة",
+    "rooms": [
+      "Stream"
+    ],
+    "audio": "res://assets/audio/words/word_duck.mp3",
+    "objects": [
+      "prop:Ducks"
+    ]
+  },
+  "word_duckling": {
+    "text": "فَرْخ",
+    "rooms": [
+      "Stream"
+    ],
+    "audio": "res://assets/audio/words/word_duckling.mp3",
+    "objects": [
+      "decor:Duckling1",
+      "decor:Duckling2",
+      "decor:Duckling3"
+    ]
+  },
+  "word_rabbit": {
+    "text": "أَرْنَب",
+    "rooms": [
+      "Stream"
+    ],
+    "audio": "res://assets/audio/words/word_rabbit.mp3",
+    "objects": [
+      "prop:Arnoob"
+    ]
+  },
+  "word_log": {
+    "text": "جِذْع",
+    "rooms": [
+      "Stream"
+    ],
+    "audio": "res://assets/audio/words/word_log.mp3",
+    "objects": [
+      "prop:Log"
+    ]
+  },
+  "word_reed": {
+    "text": "قَصَب",
+    "rooms": [
+      "Stream"
+    ],
+    "audio": "res://assets/audio/words/word_reed.mp3",
+    "objects": []
+  },
   "word_window": {
     "text": "نَافِذَة",
     "rooms": [
@@ -97,7 +147,8 @@
       "Gate",
       "MeadowFork",
       "BigTree",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_girl.mp3",
     "objects": [
@@ -154,7 +205,8 @@
       "Gate",
       "MeadowFork",
       "BigTree",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_tree.mp3",
     "objects": []
@@ -166,7 +218,8 @@
       "Gate",
       "MeadowFork",
       "BigTree",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_sky.mp3",
     "objects": []
@@ -190,7 +243,8 @@
       "Gate",
       "MeadowFork",
       "BigTree",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -202,7 +256,8 @@
       "Gate",
       "MeadowFork",
       "BigTree",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
@@ -216,7 +271,8 @@
       "Yard",
       "MeadowFork",
       "BigTree",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_grass.mp3",
     "objects": []
@@ -261,7 +317,8 @@
     "rooms": [
       "Gate",
       "MeadowFork",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_hill.mp3",
     "objects": []
@@ -271,7 +328,8 @@
     "rooms": [
       "MeadowFork",
       "BigTree",
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []
@@ -295,7 +353,8 @@
   "word_stream": {
     "text": "جَدْوَل",
     "rooms": [
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_stream.mp3",
     "objects": []
@@ -303,11 +362,13 @@
   "word_fox": {
     "text": "ثَعْلَب",
     "rooms": [
-      "FoxRock"
+      "FoxRock",
+      "Stream"
     ],
     "audio": "res://assets/audio/words/word_fox.mp3",
     "objects": [
-      "character:Thaaloob"
+      "character:Thaaloob",
+      "prop:StreamFox"
     ]
   },
   "word_bee": {

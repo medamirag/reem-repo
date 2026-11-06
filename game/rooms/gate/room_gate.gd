@@ -11,6 +11,11 @@ var state: Data = load("res://game/rooms/gate/room_gate.tres")
 
 
 #region Virtual ####################################################################################
+func _setup_room() -> void:
+	$StreamLabel.text = Globals.notebook.labels.get("stream_name", "")
+	$StreamLabel.visible = Globals.briefed
+
+
 func _on_room_started() -> void:
 	if not Globals.briefed or Globals.gate_intro_done:
 		return
@@ -28,10 +33,13 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 		"ExitRight":
 			if Globals.briefed:
 				await leave_through(obj, "MeadowFork")
+		"ExitStream":
+			if Globals.briefed:
+				await leave_through(obj, "Stream")
 
 
 func is_exit_open(exit_name: String) -> bool:
-	return exit_name != "ExitRight" or Globals.briefed
+	return exit_name not in ["ExitRight", "ExitStream"] or Globals.briefed
 
 
 #endregion

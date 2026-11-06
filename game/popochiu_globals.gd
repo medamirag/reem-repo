@@ -19,6 +19,8 @@ var notebook: ReemNotebook
 var hotspot_highlight: HotspotHighlight
 var hint_steps := {}
 var friend_cards := {}
+## Stream task flags and the feather festival contribution.
+var stream := {}
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
 ## cleared by a new game from the end screen, included in the autosave.
 var discovered_words := {}
@@ -149,6 +151,7 @@ var fox_intro_done := false
 ## Puts every flag and counter back to how a new game starts. Used by the end screen's
 ## «العودة إلى البداية» button.
 func reset() -> void:
+	stream.clear()
 	hint_steps.clear()
 	friend_cards.clear()
 	blossoms = 0
@@ -226,10 +229,11 @@ func play_ambience(cue_name: String) -> void:
 
 
 func on_save() -> Dictionary:
-	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards}
+	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream}
 
 
 func on_load(data: Dictionary) -> void:
+	stream = data.get("stream", {}).duplicate()
 	discovered_words = data.get("discovered_words", {}).duplicate()
 	hint_steps = data.get("hint_steps", {}).duplicate()
 	friend_cards = data.get("friend_cards", {}).duplicate()

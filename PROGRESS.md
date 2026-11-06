@@ -5,73 +5,58 @@
 - **Who worked last:** Codex (builder)
 - **Date:** 2026-11-06
 - **Branch:** main
-- **What was done:**
-  - Codex updated tool roles: Codex builds, identifies objects, generates art and ElevenLabs audio; Claude Code builds/identifies/queues only. Updated PIPELINE, AGENTS, queue instructions and the word-queue generator header.
-  - AGENTS now holds verified saved voice IDs for Reem, Grandpa/Jad, Thaaloob and Shahd, historical working settings, v3 expressive-line/v2 fallback policy, and mandatory registry entries for new characters. Exact historical default numeric settings are unknown; do not invent them. No audio generated or originals changed.
-  - Added credential exclusion patterns to .gitignore and a rule to keep keys outside the repo; scan of tracked/unignored text found no key values.
-  - Tree was clean; read AGENTS, PIPELINE, ROADMAP, game_spec and previous Handoff.
-  - Art queue has no rows: no todo images, no newly completed images requiring words.
-  - Built notebook (ROADMAP step 2; spec game_spec.md 9.3), committed/pushed as 8b020ad, with four pages: hints, discovered
-    words with replay, visited-room map with safe fast travel, and earned friend cards.
-  - game/scripts/reem_notebook.gd is Globals.notebook, an always-processing CanvasLayer. Open
-    from the Notebook inventory item, upper-screen button, or N after Grandpa gives it. Open
-    only at idle; pause story/input, cancel word holds; close with Back/Escape/N. Own voice
-    player uses ReemVoice. Page text uses Cairo/RTL and the selected text size; pages scroll.
-  - game_data/notebook.json holds 11 three-step hint contexts, six MVP map places/positions/
-    edges and Shahd's card. Hints follow puzzle flags, not visit counts. Map enables only visited
-    gameplay rooms; no jump to Title/End/unvisited locations. Its drawn trail is a provisional
-    map for the built rooms, to expand with stations.
-  - Added 35 lines to lines.json and matching todo rows to content/voice_queue.md: 33 hints,
-    Shahd card name and bee fact. Codex or Claude Desktop records them; missing recordings are silent
-    and do not block building. Existing 68 dialogue records verified byte-for-byte unchanged
-    in their field values. Existing word recordings/art reused; words.json unchanged.
-  - Shahd's card is earned after opening her flowers in room_big_tree.gd. Globals.friend_cards
-    and hint_steps save/load via custom hooks, reset on New journey. Existing saves with
-    flowers_open backfill Shahd. No Thaaloob card until Reem actually helps him later.
-  - Updated story playtests to open/check/close the new Notebook on inventory clicks instead
-    of waiting for the superseded direct-hint behavior. Added --path=notebook to check hints,
-    word replay, locked destinations, fast travel, card earning, save/load and New journey.
-  - Built hotspot highlight (spec game_spec.md 9.4): Globals.hotspot_highlight, implemented in
-    game/scripts/hotspot_highlight.gd. Bottom-left Arabic button or H briefly outlines current
-    actionable props/NPCs/hotspots/open exits and visible inventory. It excludes Reem, hidden/
-    inactive objects, locked exits and word-only areas. No input interception or story changes.
-    Button position and duration are exported. It clears for dialogue/choices, transitions,
-    selected-item use and overlays. Native drawing, no new art/voice/word rows.
-  - Added --path=highlight: props/NPC/hotspot targets, locked exits, changing puzzle state,
-    no story/word changes, glow expiry/repeat, selected-item use and Settings all passed.
-- **Checks for the documentation update:** diff whitespace and unchanged queue-row/Arabic checks passed; credential scan found no keys in tracked/unignored text files; representative credential paths are ignored. Initial sandboxed Godot run could not access normal logs/certificates; rerun with normal access passed startup and all four required paths (green/sand/mixed/words), each reached DONE; only allowed exit leak/resource messages remained. No audio generated; listening checks were not needed for this documentation change.
-- **Earlier feature checks:** Before highlight, Windows Godot 4.7.2 import/startup and all seven playtests passed: notebook,
-  green, sand, mixed, words, save, settings. All reached DONE; only allowed exit-leak/resource
-  messages remained. git diff --check and dialogue/queue consistency checks passed.
-  After highlight: import, dedicated highlight test, startup and all four required paths
-  (green/sand/mixed/words) passed again. Only allowed exit leaks/resources remained.
-  Headless tests cannot judge visual layout or sound; those checks remain pending.
-- **What is next:** ROADMAP step 3, Stream station. The ordered base systems are now built.
-  Write detailed Stream spec first (duck/ducklings, Arnoob, Thaaloob, log bridge, map choice,
-  lantern choice and repairs), then art/voice queues and line data; generate todo art with
-  references/checks, identify words after images exist, build/check. Expand notebook map,
-  hints and friend-card data as each station is built. Continue Pine Fork and the roadmap.
-  Codex can now record queued lines directly; no need to wait for Claude Desktop.
-- **Half-finished:** no Stream spec/code started. 35 new voice rows await
-  Codex or Claude Desktop. Notebook visual/sound testing pending; prior settings/save visual checks,
-  word_path/word_girl recording concerns and TestArabic editor leftovers remain.
-- **How to review this documentation change:** open AGENTS.md for the saved voice table and credential rules; open docs/PIPELINE.md for tool roles. No Godot clicks needed for the documentation. Continue Stream work from the existing next-step notes.
-- **How to test highlight:** reopen Godot, F5, click New journey if offered. Once the opening
-  dialogue finishes, click أين أضغط؟ at the bottom left or press H. Mirror/basket should glow;
-  the locked blue door should not. After taking the basket and answering the choice, the
-  door should glow instead. Settings/Notebook should hide the glow.
-- **How to test Notebook:** reopen Godot, F5; take basket, answer the choice, click blue door,
-  talk to Grandpa and finish the conversation. Press N or click دفتري near the top. Try the
-  four tabs; More reveals up to three hints. Close with Escape. Hold the Yard bucket to learn
-  its word, reopen Words and tap it to hear its recording. Map enables only visited rooms;
-  return to Grandpa's room and check the taken basket stays gone. Help Shahd open her flowers,
-  then open Friends: her picture, name and bee fact should appear. Her new narration/hint
-  recordings remain silent until Codex or Claude Desktop supplies them. Continue keeps hint/card
-  progress; New journey resets hints/cards and keeps discovered words.
+- **What was done:** Built Stream, ROADMAP step 3 first station (spec section 10).
+  Gate has a labelled upper Stream exit after briefing; the existing right meadow route stays.
+  `game/rooms/stream/` contains the Popochiu room/state/resource. Three tasks: roll log
+  and help ducklings cross, read map versus rush after Arnoob, keep versus lend lantern.
+  Wrong turn and lending each wilt once and can be repaired; all rewards are idempotent.
+  Stream state saves through Globals.stream; feather is a festival contribution; duck card
+  added to album. Notebook has three hint contexts, map node/edge, card name/fact.
+  Six queued images generated with farm/turnaround references, inspected, added at queue paths.
+  Derived sprites in `assets/cut/stream/`; no old originals edited. Background is 1672x941,
+  fitted proportionally (requested 1920x1080); sprite sheets 1536x1024, real alpha verified.
+  Inspected art: five new words (duck, duckling, rabbit, log, reeds); existing words reused.
+  Ran make_words.py: 43 total; areas in word_areas.json. Added 24 Stream lines + queue rows.
+  Original 103 dialogue records unchanged in field values. Reem narrates duck/rabbit actions
+  because only existing saved voices are authorised; no animal voice substitutes.
+- **Audio:** Saved Reem identity reverified. One v3 [warmly] sample generated (two service
+  takes), first downloaded to `game/pending_audio/reem_stream_arrive.mp3`. Not used in game.
+  Voice/pace/pronunciation/loudness comparison with original reem_s1_002 remains pending.
+  Generator exposes no explicit numeric settings; v3 schema supports stability 0/.5/1,
+  not historical .3. Details in AGENTS.md. All 59 unrecorded dialogue and five word rows
+  marked problem: sample listening/settings verification pending. No batch was approved
+  as matched, no original audio replaced. Silent text fallback works.
+- **Checks:** Stream green and wrong/repair playtests passed (including lantern custody
+  across save/load, exit locks, card/feather, hints, repeated reward prevention and New journey).
+  All four required paths (green/sand/mixed/words) passed, all reached DONE.
+  Dedicated stream_words real-mouse holds passed for all five new words after fixing
+  duckling Body node lookup and choosing an exposed reed point. Startup/import passed apart from allowed exit leaks; initial restricted import could not
+  access Godot settings, then normal-access import succeeded. Content/queue consistency,
+  unchanged original dialogue, unique vocabulary, required art existence and diff checks passed.
+- **What is next:** Build Pine Fork next (ROADMAP step 3, second station).
+  Route Stream and FoxRock into PineFork when ready. Until then Stream ends at provisional
+  End, matching the existing meadow MVP. Then Oak forest, Rock cave, Meadow lake, Honey
+  orchard, Hill slope, Waterfall path, Narrow pass, Hilltop festival. Packs remain in ROADMAP
+  order 1, 3, 2, 4, 5, 6. The full roadmap is not finished.
+- **Half-finished:** Stream visual/audio review pending; no Pine Fork content started yet.
+  Existing settings/notebook visual checks, word_path/word_girl audio concerns unchanged.
+- **How to test:** reopen Godot, F5, New journey. Take basket, choose truth, leave the blue
+  door and talk to Grandpa. Finish his conversation; go right to Gate. Click the upper arrow
+  labelled الْجَدْوَلُ. Click ducks, then the log. Click Arnoob: try following, then click him
+  again and choose the map to repair. Click Thaaloob: lend lantern, then click him again
+  to reclaim it. Press N: try hints, map, duck card. Hold ducks/rabbit/log/reeds to find words.
+  Right exit unlocks after all tasks; left exit remains available for repairs.
 
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Stream design (Codex, 2026-11-06):** Reem narrates duck/rabbit actions because the user
+  limits recordings to the four saved voices. No new animal voice is assigned. Gate route
+  selection has no moral penalty. Wrong route returns to a safe bank; fox stays reachable
+  when borrowing the lantern. Feather is a saved festival contribution, not a consumable.
+- Current repository has no original full STYLE block (only `STYLE: ...` in queue template).
+  Use a descriptive match to the inspected farm reference; preserve this choice for review.
 
 - **Voice registry (Codex, 2026-11-06):** Grandpa and Jad share the verified saved Jad voice. Preserve MVP settings as historical evidence; do not invent missing numeric defaults or reuse unrelated saved account voices for future characters. Verify supported settings and compare a sample before the next audio batch.
 

@@ -64,6 +64,21 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 
 ## ElevenLabs credentials
 
+### Pending Stream voice sample (2026-11-06)
+
+- Saved Reem ID was reverified through the connected voice list. A sample of
+  `reem_stream_arrive` was generated with `eleven_v3`, synthesis tag `[warmly]`.
+  Candidate is `res://game/pending_audio/reem_stream_arrive.mp3`; reference for
+  comparison is `res://assets/audio/lines/reem_s1_002.mp3`.
+- The connected generation call exposes no numeric voice settings. Current v3
+  schema lists stability 0 / 0.5 / 1 (default 0.5); it does not support historical
+  0.3. Similarity boost, style, speed and speaker boost are not exposed in this
+  v3 schema. No numeric value was explicitly sent or confirmed in the result.
+- Sample generation succeeded; listening comparison (voice, pace, pronunciation,
+  loudness) is **pending**, not approved. Do not describe these settings as a
+  successful matched batch. Queue rows remain `problem: sample listening/settings
+  verification pending`; no existing original recording was replaced.
+
 - Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.
 - `.gitignore` excludes local environment files, credential/config paths and generation logs. Ignore rules match paths, not contents: if a tool creates any other file containing a key, remove the credential and ignore that exact path before staging. Never force-add secrets.
 - Inspect staged changes for credentials without printing secret values before every commit. Ignore rules do not protect tracked files: remove credentials before committing. If a real key was already committed, report it and rotate it; ignoring does not remove history.

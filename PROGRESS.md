@@ -6,39 +6,52 @@
 - **Date:** 2026-11-06
 - **Branch:** main
 - **What was done:**
-  - Read PIPELINE, ROADMAP, game_spec and the previous handoff. Working tree was clean.
-  - Art queue has no rows: no todo images to generate and no newly completed images needing
-    words. Existing MVP word coverage remains unchanged.
-  - Built ROADMAP step 2's save/continue feature (spec: game_spec.md 9.1).
-  - ReemRoom saves slot 1 after the entry story finishes. Its restore hook marks the room
-    started without replaying its entry dialogue. Globals custom save/load includes discovered
-    words and restarts ambience correctly. Title offers Continue / New journey when slot 1
-    exists; New journey resets the story. End clears the completed journey's save.
-  - game/gui/gui.gd disables Popochiu's modal save/load notices for seamless autosaves.
-  - Fixed Popochiu save serialization in addons/popochiu/engine/others/popochiu_save_load.gd:
-    JSON.from_native/to_native preserve nested typed walkable polygons and vectors, which plain
-    JSON lost. The reader retains fallback support for old plain JSON. Also fixed its null
-    FileAccess error reporting to use the static FileAccess.get_open_error().
-  - Added tools/playtest.gd --path=save. Passes: automatic save, title Continue, restored flags,
-    basket inventory, discovered word, player position, hidden taken basket, and fresh journey.
-- **Checks:** Windows Godot 4.7.2 startup and all five playtests passed: green, sand, mixed,
-  words, save. Each reached DONE; only allowed exit-leak/resource messages remained.
-  Visual layout and sound were not checked in these headless runs. git diff --check passed.
-- **What is next:** ROADMAP step 2: settings (music off by default, voice/effects volume, text
-  size), then notebook (hints, discovered words, map, friend cards), then hotspot highlight.
-  Only after base systems: Stream station spec, queues, build, checks, then Pine Fork and so on.
-- **Half-finished:** no settings code started. Visual/sound testing of save buttons is still
-  needed by the user. Old TestArabic editor leftovers and word_path/word_girl recordings remain
-  as previously noted; assets were not modified.
-- **How to test:** reopen Godot, press F5, click Start, take the basket, choose either answer,
-  then click the blue door. Close the running game in the Yard and press F5 again. Click
-  Continue (متابعة): Reem should return to the Yard with the basket and the same story state.
-  Restart and click New journey (رحلة جديدة): the basket is back in Grandpa's room and the
-  story begins again. Progress since entering the current room saves on the next room change.
+  - Working tree was clean. Re-read AGENTS, PIPELINE, ROADMAP, game_spec and the handoff.
+  - Art queue still has no rows; no todo images and no newly completed images needing words.
+  - Built ROADMAP step 2's Settings, specified first in game_spec.md 9.2.
+  - game/scripts/reem_settings.gd (ReemSettings, owned by Globals.settings) creates the Arabic
+    panel and persistent Settings button. F10 and the inventory-bar gear open the same panel;
+    Back/Escape/F10 close it. It opens only at idle, pauses the story and restores the previous
+    GUI blocking state. Word holds are cancelled when opening and cannot reach the story.
+  - Preferences persist in user://reem_settings.cfg independently of journey saves. Music
+    defaults off; volumes default 100%; text sizes are 40, 48, 56. Continue/New journey do not
+    change preferences. Music has its own bus but no tracks exist, as the panel explains.
+  - Dialogue and discovered-word players route through ReemVoice. Registered Popochiu cues
+    route through ReemEffects (including ambience); future mx_ cues route through ReemMusic.
+    Cue resources change only in memory; no original assets were edited.
+  - Shared Arabic theme changes dialogue, narration and choices. Dialogue line height adapts;
+    word bubbles scale separately from 72 to 86/101 pixels. Interface labels are unspoken,
+    fully vocalized Cairo/RTL text in game_data/ui_labels.json. No new art/audio needed.
+  - Added --path=settings playtest: actual panel controls, independent volumes, config save/
+    reload, new-game preference retention, voice/effects routing, input isolation, Escape,
+    word bubble and choice text sizes. The first complete run passed.
+- **Checks:** Windows Godot 4.7.2 startup plus all six playtests passed: settings, green,
+  sand, mixed, words, save. All reached DONE; only allowed exit-leak/resource messages remain.
+  git diff --check passed. Headless runs do not verify visual layout or volume by ear.
+- **What is next:** ROADMAP step 2 notebook: up to three hint steps, discovered-words page,
+  visited map/fast travel, earned friend-card album; then hotspot highlight. Spec each feature
+  first and keep Arabic text in data files. After base systems: Stream, then Pine Fork, etc.
+- **Half-finished:** no notebook implementation started. No art/voice/word rows pending for
+  Settings. User visual/sound testing is pending. Prior word_path/word_girl audio concerns
+  and old TestArabic editor leftovers remain; originals have not been touched.
+- **How to test Settings:** reopen Godot, press F5. On the title screen click الإعدادات near
+  the upper right, or press F10. Change voice/effects sliders and text size, then click العودة.
+  Start a journey: dialogue/choices and long-press word bubbles should use the selected size.
+  Close/relaunch: preferences should remain. The existing inventory-bar gear also opens it.
+  During dialogue/choices the settings button waits until Reem is free. Escape closes the
+  panel and gameplay resumes. Listen to a spoken line and a long-press word to check voice
+  volume; use the well/basket or room ambience to check effects volume. Music remains silent
+  because the current game has no music tracks.
 
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Settings (Codex, 2026-11-06):** open only at idle to avoid interrupting a dialogue, choice
+  or transition; pause while open. Volumes cover word voices and ambience too. Text sizes are
+  40/48/56 px, while headings/control labels retain a steady size to keep the panel usable.
+  Preferences are separate from the journey save. Music is off by default, with an explicit
+  note that this MVP has no tracks. No art or recording rows are needed for unspoken controls.
 
 - **Save behavior (Codex, 2026-11-06):** autosave after entry scenes finish, so loading cannot
   skip an unanswered entry choice. Completed MVP journeys clear the save on entering End.

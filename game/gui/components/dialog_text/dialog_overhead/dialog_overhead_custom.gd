@@ -16,6 +16,13 @@ func _ready() -> void:
 	# Popochiu remembers the label's design size and reuses it as the height of a one-line
 	# dialogue. The template's 28 pixels were meant for small Latin text, so make room.
 	var default_size: Vector2 = get_meta(DFLT_SIZE)
-	default_size.y = ArabicText.LINE_HEIGHT
+	default_size.y = ArabicText.LINE_HEIGHT * ArabicText.get_theme().default_font_size / 40.0
 	set_meta(DFLT_SIZE, default_size)
 	rich_text_label.size.y = default_size.y
+
+
+func _modify_size(msg: String, target_position: Vector2) -> void:
+	var default_size: Vector2 = get_meta(DFLT_SIZE)
+	default_size.y = ArabicText.LINE_HEIGHT * ArabicText.get_theme().default_font_size / 40.0
+	set_meta(DFLT_SIZE, default_size)
+	await super(msg, target_position)

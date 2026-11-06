@@ -59,6 +59,7 @@ func _ready() -> void:
 			_object_words[object_key] = word_id
 
 	_voice = AudioStreamPlayer.new()
+	_voice.bus = ReemSettings.VOICE_BUS
 	add_child(_voice)
 
 	_debug_view = _DebugView.new()
@@ -151,6 +152,8 @@ func _to_window(event: InputEventMouseButton) -> InputEventMouseButton:
 ## a narration, a room change, or while an inventory item is selected.
 ## Why a hold would be refused right now ("" = it would work). For debugging and the playtest.
 func why_not() -> String:
+	if Globals.settings.is_open:
+		return "settings open"
 	if not is_instance_valid(R.current):
 		return "no room"
 	if not (R.current is ReemRoom):
@@ -167,6 +170,8 @@ func why_not() -> String:
 
 
 func _can_hold() -> bool:
+	if Globals.settings.is_open:
+		return false
 	if Engine.is_editor_hint() or not is_instance_valid(R.current):
 		return false
 	if not (R.current is ReemRoom) or not E.in_room or not R.current.is_current:
@@ -357,7 +362,7 @@ func _make_bubble(text: String) -> PanelContainer:
 	label.text = text
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.add_theme_font_override("font", ArabicText.get_font())
-	label.add_theme_font_size_override("font_size", WORD_FONT_SIZE)
+	label.add_theme_font_size_override("font_size", roundi(WORD_FONT_SIZE * Globals.settings.text_size / 40.0))
 	label.add_theme_color_override("font_color", Color(0.25, 0.14, 0.04))
 	ArabicText.make_rtl(label)
 	bubble.add_child(label)
@@ -477,3 +482,11 @@ class _DebugView extends Node2D:
 			var at := poly[0] + Vector2(6, 22)
 			draw_string_outline(font, at, label, HORIZONTAL_ALIGNMENT_LEFT, -1, 26, 8, Color.BLACK)
 			draw_string(font, at, label, HORIZONTAL_ALIGNMENT_LEFT, -1, 26, color)
+
+
+## Cancel an unfinished hold rather than replaying a story click after closing Settings.
+func cancel_for_overlay() -> void:
+	_pressing = false
+	_shown = false
+	_voice.stop()
+	_clear_shown()

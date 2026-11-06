@@ -14,12 +14,18 @@ const HEART_TREE_SCENE := "res://game/gui/components/heart_tree/heart_tree.tscn"
 
 ## Word discovery (game/scripts/word_discovery.gd).
 var word_discovery: WordDiscovery
+var settings: ReemSettings
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
 ## cleared by a new game from the end screen, included in the autosave.
 var discovered_words := {}
 
 
 func _ready() -> void:
+	if not Engine.is_editor_hint():
+		settings = ReemSettings.new()
+		settings.name = "Settings"
+		add_child(settings)
+
 	# Automatic playtest (tools/playtest.gd), only when the game is started with
 	#   godot --headless --path . -- --playtest
 	# Never active in a normal run.

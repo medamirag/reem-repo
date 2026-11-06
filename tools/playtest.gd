@@ -48,6 +48,11 @@ func _run() -> void:
 	for anim in ["use", "active", "talk", "look", "left", "right"]:
 		var tex := frames.get_frame_texture(anim, 0)
 		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
+	if _path == "settings":
+		await _settings_path()
+		_log("DONE settings")
+		get_tree().quit()
+		return
 	await _step("start button", func(): R.current.call("_on_start_pressed"))
 
 	if _path == "green":
@@ -622,3 +627,55 @@ func _save_path() -> void:
 	await _wait_room("GrandpaRoom")
 	_expect(not Globals.basket_taken and not _has("Basket"), "new journey resets flags and inventory")
 	_expect(R.current.get_prop("BasketProp").visible, "new journey restores basket")
+
+
+## Tests real settings controls, persisted preferences, and a story hold behind the modal.
+func _settings_path() -> void:
+	var prefs := Globals.settings
+	var original := [prefs.music_enabled, prefs.voice_volume, prefs.effects_volume, prefs.text_size]
+	var title_blocked: bool = G.is_blocked
+	prefs.open_button.pressed.emit()
+	_expect(prefs.is_open and get_tree().paused, "settings opens on Title and pauses story")
+	prefs.music_control.button_pressed = true
+	prefs.voice_control.value = 25
+	prefs.effects_control.value = 75
+	prefs.text_control.select(2)
+	prefs.text_control.item_selected.emit(2)
+	_expect(not AudioServer.is_bus_mute(AudioServer.get_bus_index(ReemSettings.MUSIC_BUS)), "music toggle controls its own bus")
+	_expect(is_equal_approx(db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(ReemSettings.VOICE_BUS))), 0.25), "voice volume applies independently")
+	_expect(is_equal_approx(db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(ReemSettings.EFFECTS_BUS))), 0.75), "effects volume applies independently")
+	_expect(ArabicText.get_theme().default_font_size == 56, "larger story text selected")
+	var config := ConfigFile.new()
+	_expect(config.load(ReemSettings.CONFIG_PATH) == OK and config.get_value("text", "size") == 56, "settings saved immediately")
+	prefs.text_size = 40
+	prefs.load_preferences()
+	_expect(prefs.text_size == 56 and prefs.music_enabled, "preferences reload from disk")
+	await _shot("settings")
+	prefs.close_button.pressed.emit()
+	_expect(not prefs.is_open and not get_tree().paused and G.is_blocked == title_blocked, "closing Settings preserves Title blocking")
+	await _step("start with preferences", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	_expect(prefs.text_size == 56, "new journey keeps preferences")
+	_expect(Lines._voice.bus == ReemSettings.VOICE_BUS and Globals.word_discovery._voice.bus == ReemSettings.VOICE_BUS, "dialogue and word voices use voice bus")
+	_expect(A.sfx_pickup.bus == ReemSettings.EFFECTS_BUS and A.amb_farm.bus == ReemSettings.EFFECTS_BUS, "effects and ambience use effects bus")
+	prefs.open_settings()
+	await _hold_at(Vector2(0.416, 0.45), 0.7)
+	_expect(not Globals.basket_taken and Globals.discovered_words.is_empty(), "settings consumes holds without changing story")
+	_send_key(KEY_ESCAPE)
+	await get_tree().process_frame
+	_expect(not prefs.is_open and not get_tree().paused and not G.is_blocked, "Escape restores playable room")
+	await _hold_at(Vector2(0.15, 0.30), 0.7)
+	var bubble_label: Label = Globals.word_discovery._shown_nodes[1].get_child(0)
+	_expect(bubble_label.get_theme_font_size("font_size") == 101, "word bubble scales with text preference")
+	var popup: ChoicePopup = Choices.ChoicePopupScene.instantiate()
+	popup.setup(Labels.CHOICE1_GREEN, Labels.CHOICE1_SAND)
+	G.gui.add_child(popup)
+	_expect(popup.green_label.get_theme_font_size("normal_font_size") == 56, "choice labels use larger Arabic text")
+	popup.queue_free()
+	await get_tree().process_frame
+	prefs.music_enabled = original[0]
+	prefs.voice_volume = original[1]
+	prefs.effects_volume = original[2]
+	prefs.text_size = original[3]
+	prefs._apply()
+	prefs.save_preferences()

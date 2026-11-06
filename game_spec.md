@@ -286,3 +286,25 @@ Skeletal animation with the parts sheets and lip sync with the mouth sheets; mus
 - Changes inside a room are recorded on entering the next room, as requested by ROADMAP 3.7.
 - Automatic check: add --path=save to the existing playtest command. It checks title Continue,
   restored room/position, story flags, inventory, words, and a clean new journey.
+
+
+### 9.2 Settings
+
+- A persistent Arabic Settings button is available on Title, End and idle gameplay screens;
+  F10 opens it too. The existing inventory-bar gear opens this same panel.
+- Open only when no dialogue, choice, scripted action or room transition is running. Pause
+  the scene while the panel is open. Close by its large Back button or Escape/F10, and restore
+  the previous GUI blocking state. Touch/mouse input cannot reach the story behind the panel.
+- Controls: music on/off (off by default), voice volume 0–100%, effects volume 0–100%,
+  and story text size normal/large/larger (40/48/56 px at the 1920×1080 design size).
+- Voice volume controls dialogue and discovered-word recordings. Effects volume controls all
+  existing effects and ambience. Music uses a separate bus; this MVP has no music tracks, so
+  enabling it adds no sound. Say this plainly in a small Arabic note in the panel.
+- Text size changes character dialogue, narration, choice labels and discovered-word bubbles.
+  Keep Cairo, connected RTL Arabic and all original dialogue/word text unchanged.
+- Apply changes immediately and persist separately in user://reem_settings.cfg. New journey
+  and Continue never reset preferences. Default volumes are 100%; music defaults off.
+- New interface labels are stored in game_data/ui_labels.json, with full diacritics. These are
+  unspoken controls; no voice or art queue rows are needed for this feature.
+- Test: --path=settings exercises the actual controls, independent voice/effects buses, word
+  playback routing, larger Arabic text, blocked story input, persistence and reopening.

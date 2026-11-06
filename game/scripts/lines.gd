@@ -27,6 +27,7 @@ func _ready() -> void:
 		return
 
 	_voice = AudioStreamPlayer.new()
+	_voice.bus = ReemSettings.VOICE_BUS
 	_voice.name = "Voice"
 	add_child(_voice)
 

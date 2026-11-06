@@ -17,11 +17,15 @@ Update this section at the end of every session (rules in `AGENTS.md`).
     `mixed`, `words`) end in `DONE` with no script errors.
 - **What is next:** the user's full test in Godot (checklist at the bottom), including holding
   on objects to hear the words; then fix what they report.
-- **Half-finished / not committed:**
-  - `assets/audio/words/` (38 mp3 files) is not committed yet: the user wants to listen first.
-    `word_path` (طَرِيق) and `word_girl` (بِنْت) measured oddly and may need re-recording.
-  - `game/rooms/test_arabic/room_test_arabic.tscn` has an uncommitted change from before this
-    session (not made by an agent in this session). Ask the user whether to keep it.
+  - Committed at the user's request: `assets/audio/words/` (38 mp3 + their `.import` files)
+    and an older editor change to `game/rooms/test_arabic/room_test_arabic.tscn`.
+- **Half-finished / to check:**
+  - The user has not listened to the word recordings yet. `word_path` (طَرِيق) and `word_girl`
+    (بِنْت) measured oddly and may need re-recording.
+  - The committed `room_test_arabic.tscn` change looks like Godot editor leftovers: Reem's node
+    is named `CharacterReem *` with `EDITOR_TMP_COPY_OF`, the Floor walkable polygon was
+    removed, and the background moved. Only the Arabic test room is affected; if Reem cannot
+    walk there, revert that file to the commit before 2026-11-06.
 
 Last updated: 2026-11-06. Branch: `main`. (The word-discovery work from session 7 is on main.)
 

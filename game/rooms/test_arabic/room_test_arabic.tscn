@@ -13,16 +13,19 @@ reem_height_ratio = 0.42
 script_name = "TestArabic"
 width = 1920
 height = 1080
+metadata/_edit_horizontal_guides_ = [-149.0]
 
 [node name="Floor" parent="WalkableAreas" index="0" unique_id=1917291691 instance=ExtResource("4")]
-script_name = "Floor"
-interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(60, 870, 1860, 870, 1860, 1040, 60, 1040)])
 
-[node name="CharacterReem" parent="Characters" index="0" unique_id=6948527 instance=ExtResource("5")]
+[node name="CharacterReem *" parent="Characters" index="0" unique_id=6948527 instance=ExtResource("5")]
 position = Vector2(384, 950)
+input_pickable = false
+use_walk_rig = true
+metadata/EDITOR_TMP_COPY_OF = "Reem"
 
 [node name="Background" type="Sprite2D" parent="." index="6" unique_id=380678549]
 z_index = -100
+position = Vector2(-7, -373.00003)
 scale = Vector2(1.148325, 1.148325)
 texture = ExtResource("3")
 centered = false

@@ -1,6 +1,29 @@
 # PROGRESS - ReemGame
 
-Last updated: 2026-11-05 (session 7). Branch: `claude/eloquent-mayer-iq1fbv`.
+## Handoff
+
+Update this section at the end of every session (rules in `AGENTS.md`).
+
+- **Who worked last:** Claude (Claude Code)
+- **Date:** 2026-11-06
+- **Branch:** `main` (pushed)
+- **What was done:**
+  - `AGENTS.md` is now the shared rules file for Claude Code and Codex: all the rules from
+    the old `CLAUDE.md`, the start/end-of-session rule, and the checks for Windows and a Linux
+    cloud session. `CLAUDE.md` only contains `@AGENTS.md`.
+  - The 38 word recordings (Reem's voice, made from `words.md` with ElevenLabs in the
+    `Reem_MVP_Audio` folder) were copied into `assets/audio/words/`.
+  - Checks on Windows: headless run, `--import`, and all four playtest paths (`green`, `sand`,
+    `mixed`, `words`) end in `DONE` with no script errors.
+- **What is next:** the user's full test in Godot (checklist at the bottom), including holding
+  on objects to hear the words; then fix what they report.
+- **Half-finished / not committed:**
+  - `assets/audio/words/` (38 mp3 files) is not committed yet: the user wants to listen first.
+    `word_path` (طَرِيق) and `word_girl` (بِنْت) measured oddly and may need re-recording.
+  - `game/rooms/test_arabic/room_test_arabic.tscn` has an uncommitted change from before this
+    session (not made by an agent in this session). Ask the user whether to keep it.
+
+Last updated: 2026-11-06. Branch: `main`. (The word-discovery work from session 7 is on main.)
 
 ## Where things stand
 

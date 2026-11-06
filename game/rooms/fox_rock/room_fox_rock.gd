@@ -3,7 +3,7 @@ extends ReemRoom
 ## Station 2, room 6: FoxRock (game_spec.md). Thaaloob the fox offers a "magic" shining stone in
 ## exchange for Grandpa's hand mirror (Choice 3). Green: Reem refuses (Bloom). Sand: she trades;
 ## wiping the stone in the inventory shows it is just a pebble covered in honey (Wilt), and she
-## asks Thaaloob for the mirror back (Heal). Exits: left → BigTree; right, the stream → End,
+## asks Thaaloob for the mirror back (Heal). Exits: left → BigTree; right → PineFork,
 ## only when fox_done.
 
 const Data := preload('room_fox_rock_state.gd')
@@ -27,7 +27,7 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 		"ExitRight":
 			if Globals.fox_done:
 				await Lines.say("reem_s2_070")
-				await leave_through(obj, "End")
+				await leave_through(obj, "PineFork")
 
 
 func is_exit_open(exit_name: String) -> bool:

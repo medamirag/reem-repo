@@ -5,51 +5,88 @@
 - **Who worked last:** Codex (builder)
 - **Date:** 2026-11-06
 - **Branch:** main
-- **What was done:** Built Stream, ROADMAP step 3 first station (spec section 10).
-  Gate has a labelled upper Stream exit after briefing; the existing right meadow route stays.
-  `game/rooms/stream/` contains the Popochiu room/state/resource. Three tasks: roll log
-  and help ducklings cross, read map versus rush after Arnoob, keep versus lend lantern.
-  Wrong turn and lending each wilt once and can be repaired; all rewards are idempotent.
-  Stream state saves through Globals.stream; feather is a festival contribution; duck card
-  added to album. Notebook has three hint contexts, map node/edge, card name/fact.
-  Six queued images generated with farm/turnaround references, inspected, added at queue paths.
-  Derived sprites in `assets/cut/stream/`; no old originals edited. Background is 1672x941,
-  fitted proportionally (requested 1920x1080); sprite sheets 1536x1024, real alpha verified.
-  Inspected art: five new words (duck, duckling, rabbit, log, reeds); existing words reused.
-  Ran make_words.py: 43 total; areas in word_areas.json. Added 24 Stream lines + queue rows.
-  Original 103 dialogue records unchanged in field values. Reem narrates duck/rabbit actions
-  because only existing saved voices are authorised; no animal voice substitutes.
-- **Audio:** Saved Reem identity reverified. One v3 [warmly] sample generated (two service
-  takes), first downloaded to `game/pending_audio/reem_stream_arrive.mp3`. Not used in game.
-  Voice/pace/pronunciation/loudness comparison with original reem_s1_002 remains pending.
-  Generator exposes no explicit numeric settings; v3 schema supports stability 0/.5/1,
-  not historical .3. Details in AGENTS.md. All 59 unrecorded dialogue and five word rows
-  marked problem: sample listening/settings verification pending. No batch was approved
-  as matched, no original audio replaced. Silent text fallback works.
-- **Checks:** Stream green and wrong/repair playtests passed (including lantern custody
-  across save/load, exit locks, card/feather, hints, repeated reward prevention and New journey).
-  All four required paths (green/sand/mixed/words) passed, all reached DONE.
-  Dedicated stream_words real-mouse holds passed for all five new words after fixing
-  duckling Body node lookup and choosing an exposed reed point. Startup/import passed apart from allowed exit leaks; initial restricted import could not
-  access Godot settings, then normal-access import succeeded. Content/queue consistency,
-  unchanged original dialogue, unique vocabulary, required art existence and diff checks passed.
-- **What is next:** Build Pine Fork next (ROADMAP step 3, second station).
-  Route Stream and FoxRock into PineFork when ready. Until then Stream ends at provisional
-  End, matching the existing meadow MVP. Then Oak forest, Rock cave, Meadow lake, Honey
-  orchard, Hill slope, Waterfall path, Narrow pass, Hilltop festival. Packs remain in ROADMAP
-  order 1, 3, 2, 4, 5, 6. The full roadmap is not finished.
-- **Half-finished:** Stream visual/audio review pending; no Pine Fork content started yet.
-  Existing settings/notebook visual checks, word_path/word_girl audio concerns unchanged.
-- **How to test:** reopen Godot, F5, New journey. Take basket, choose truth, leave the blue
-  door and talk to Grandpa. Finish his conversation; go right to Gate. Click the upper arrow
-  labelled الْجَدْوَلُ. Click ducks, then the log. Click Arnoob: try following, then click him
-  again and choose the map to repair. Click Thaaloob: lend lantern, then click him again
-  to reclaim it. Press N: try hints, map, duck card. Hold ducks/rabbit/log/reeds to find words.
-  Right exit unlocks after all tasks; left exit remains available for repairs.
+- **What was done:** Stream committed and pushed as 65346a1; then built Pine Fork.
+  Specs are sections 10–11 of game_spec.md. Both meadow/FoxRock and Stream now
+  join PineFork. Gate has a labelled upper Stream exit after Grandpa's briefing.
+  Stream: log bridge/duckling crossing, map versus rushing, entrusted lantern versus
+  lending it, safe repairs, duck card and saved coloured feather festival contribution.
+  PineFork: Thaaloob's skip-help promise, kind response or wrong promise/wilt,
+  native sign with drooping leaf, repair from sign/fox, three morally neutral routes.
+  Cave is always allowed after the conversation. Left returns to saved arrival branch.
+  All rewards guarded; Globals.stream/pine save, load and reset with New journey.
+  Files: game/rooms/stream/, game/rooms/pine_fork/, Globals, notebook map/hints/card.
+  Seven art rows generated/inspected at exact queued paths; original images untouched.
+  Both new backgrounds are 1672x941, proportionally fitted; requested 1920x1080.
+  Sprite sheets 1536x1024; real alpha verified; derived sprites assets/cut/stream/.
+  40 new dialogue/hint/card lines added this session (24 Stream, 16 Pine); existing
+  text unchanged. Reem narrates duck/rabbit actions; no unapproved character voice.
+  11 new words from inspected art (including sun/olives added on second inspection),
+  existing words reused; make_words.py generated 49 total words, hand-edited areas.
+  Added tools/check_content.py: read-only table/queue/text/area/art/notebook checks.
+- **Audio:** Reem saved identity reverified. One v3 [warmly] sample generated
+  (two service takes), first downloaded to game/pending_audio/reem_stream_arrive.mp3.
+  Not used by the game. Comparison with original reem_s1_002 for voice/pace/Arabic/
+  loudness remains pending. Connected generator exposes no explicit numeric settings;
+  v3 schema accepts stability 0/.5/1, not historical .3. See AGENTS.md and sample README.
+  75 unrecorded dialogue rows and 11 word rows are problem: sample listening/settings
+  verification pending. No matched batch or successful numeric defaults claimed.
+- **Checks:** Stream kind/wrong-repair, save/load/custody, card/feather, hints, locks,
+  no duplicate rewards and New journey passed. Pine kind/wrong/repair, saved promise,
+  visible leaf consequence and all four word holds passed. Required green/sand/mixed/
+  words passed with Pine integration. Stream-to-Pine regression passed. After the rendered run exposed a silent-line
+  race, Lines now waits for visible text before closing, gives missing recordings readable
+  time, and guards against old skip timers closing the next line. Final startup, pine, pine_sand, stream_words, green, sand, mixed and words all
+  passed and reached DONE (startup clean apart from allowed exit leaks). Focused
+  dialogue_timing passed: readable silent text, manual skip, old-timer isolation and completion.
+  Content check passed: 143 lines, 49 words. Original dialogue values preserved.
+  Import passed with permitted exit leaks; normal Godot folder access required.
+- **Backup:** Stream 65346a1 was pushed. Pine Fork and dialogue timing are included in
+  the final session commit, to be pushed immediately after committing.
+- **What is next:** ROADMAP step 3: Oak forest, then Rock cave, Meadow lake, Honey
+  orchard, Hill slope, Waterfall path, Narrow pass, Hilltop festival with endings.
+  PineFork routes target OakForest/RockCave/MeadowLake if registered; otherwise
+  provisional MVP End. Replace these boundaries as stations are built. Expand map,
+  hints, cards, festival contributions, word areas and tests for each station.
+  Packs remain in ROADMAP order 1, 3, 2, 4, 5, 6; none started. Full roadmap unfinished.
+- **Half-finished:** no partial station code. Oak forest has not started; the roadmap remains
+  incomplete. Audio batch matching remains pending.
+  Rendered station_shots passed after fix; backgrounds, actors, bridge, connected Arabic
+  choices and notebook hint inspected. Pine route labels received cream panels for contrast and final static rendered
+  screenshots confirmed all three labels readable. Both rendered checks reached DONE.
+  Screenshots: C:/Users/ACER/.codex/visualizations/2026/11/06/01a1b2e4-c076-7403-a929-7bf9c9ac3681/station-shots/.
+  Previous notebook/settings visual checks and word_path/word_girl concerns remain.
+- **How to test Stream:** reopen Godot, F5, New journey. Take basket, choose truth,
+  leave blue door, talk to Grandpa. Go right to Gate; click upper arrow labelled
+  الْجَدْوَلُ. Click ducks then log. Click Arnoob; try following then choose map on
+  the next click to repair. Click Thaaloob; lend lantern then click again to reclaim.
+  N opens hints/map/duck card; hold ducks/ducklings/log/rabbit/reeds/sun/olives for words.
+- **How to test Pine:** leave completed Stream or complete meadow/fox trade encounter.
+  Click Thaaloob. Try wrong promise; leaf on sign droops. Click sign and choose help:
+  leaf rises and branch heals. Try the three labelled arrows (currently provisional End).
+  Hold pine trunk/cone/cave/lake for words; N gives context hints and visited map travel.
 
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Silent dialogue timing (Codex, 2026-11-06):** rendered screenshots found a short-line
+  timer could expire while Popochiu still measured Arabic. Fixed in game/scripts/lines.gd
+  without changing the plugin: wait for visible dialog, serial guard on old timers, and
+  fallback reading duration max(2 seconds, text length × .055). Missing recordings remain
+  audible silence. Rendered rerun reached DONE; no matched voice batch is claimed.
+- **Editor visibility:** initial restricted process inventory showed no Godot; a later
+  normal-access check found the editor open. Did not force-close it or discard possible
+  unsaved user work. Disk files are committed source; close and reopen Godot before testing.
+
+
+- **Pine Fork (Codex, 2026-11-06):** cave route is morally neutral. The wrong
+  promise to ignore others wilts once; sign or fox offers repair, with no route penalty.
+  Sign and drooping leaf use native shapes; route labels use existing Cairo text.
+  Unbuilt OakForest/RockCave/MeadowLake exits temporarily use the existing End;
+  replace these boundaries as stations are built. Reuse fox art/voice, no early fox card.
+  Same unverified sample blocks new voice batches; 16 new lines and four words are
+  explicitly problem, not claimed recorded.
+
 
 - **Stream design (Codex, 2026-11-06):** Reem narrates duck/rabbit actions because the user
   limits recordings to the four saved voices. No new animal voice is assigned. Gate route

@@ -19,6 +19,7 @@ var said := {}
 ## True while a line is being spoken (word discovery waits until it is over).
 var busy := false
 var _voice: AudioStreamPlayer = null
+var _line_serial := 0
 
 
 #region Godot ######################################################################################
@@ -59,6 +60,8 @@ func say(line_id: String) -> void:
 		return
 
 	said[line_id] = true
+	_line_serial += 1
+	var serial := _line_serial
 	busy = true
 	var line: Dictionary = _lines[line_id]
 	var speaker := str(line.get("speaker", ""))
@@ -72,12 +75,15 @@ func say(line_id: String) -> void:
 		character = C.get_character(speaker)
 
 	var voice_length := _start_voice(str(line.get("audio", "")))
+	# Unrecorded text must remain readable, rather than vanish after 0.3 seconds.
+	if voice_length <= 0.0:
+		voice_length = maxf(2.0, text.length() * 0.055)
 
 	if character == null:
 		await _say_offscreen(text, voice_length)
 	else:
 		# Runs on its own: closes the line once the voice is done, unless the player clicked first.
-		_close_line_after(character, voice_length)
+		_close_line_after(character, voice_length, serial)
 		await character.say(text)
 
 	if _voice.playing:
@@ -149,11 +155,17 @@ func _say_offscreen(text: String, voice_length: float) -> void:
 	layer.queue_free()
 
 
-func _close_line_after(character: PopochiuCharacter, voice_length: float) -> void:
+func _close_line_after(character: PopochiuCharacter, voice_length: float, serial: int) -> void:
 	await get_tree().create_timer(voice_length + PAUSE_AFTER_LINE).timeout
+	# Popochiu measures Arabic over several rendered frames before showing the label.
+	# A very short/missing recording can finish during that preparation on a slow GPU.
+	var dialog := G.gui.get_node_or_null("DialogOverheadHighRes") as Control
+	while serial == _line_serial and is_instance_valid(character) and character.is_talking \
+			and is_instance_valid(dialog) and is_zero_approx(dialog.modulate.a):
+		await get_tree().process_frame
 
 	# If the player already clicked to skip, the character has stopped talking by now.
-	if character.is_talking:
+	if serial == _line_serial and is_instance_valid(character) and character.is_talking:
 		character.stop_talking()
 
 

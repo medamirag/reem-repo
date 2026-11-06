@@ -55,7 +55,7 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 			elif not Globals.stream.get("lantern_choice", false) or Globals.stream.get("lent", false):
 				await _lantern()
 			else:
-				await leave_through(obj, "PineFork" if R.rooms_states.has("PineFork") else "End")
+				await leave_through(obj, "PineFork")
 
 func _bridge() -> void:
 	if Globals.stream.get("bridge", false): return

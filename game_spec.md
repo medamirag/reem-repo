@@ -360,8 +360,7 @@ This replaces the MVP inventory item's single immediate hint with the full noteb
 One room `Stream`, 1920×1080. Gate offers Meadow (existing right arrow) or Stream
 (upper arrow with Arabic label); this route choice has no heart change. Both
 routes require Grandpa's briefing. Left exit returns to Gate at any time.
-Right exit leads to PineFork once bridge, route and lantern are resolved; until
-PineFork exists it leads to the existing provisional End, explicitly temporary.
+Right exit leads to PineFork once bridge, route and lantern are resolved.
 
 Art: `bg7_stream.png` uses farm background as style reference. Shallow stream in
 the middle distance, displaced stepping stones; dry continuous foreground path
@@ -399,3 +398,37 @@ tools/make_words.py and hand-edit word_areas.json. No hand edits to words.json.
 
 Checks: required four MVP paths plus Stream green and wrong/repair paths, repeated
 reward clicks, exit locks, lantern custody, card, hints, words, save/load and reset.
+
+## 11. Pine Fork (meeting 1, late morning)
+
+`PineFork`, one 1920×1080 room, dry lower path y .80–.95, three visible branching
+paths labelled Oak forest, Rock cave, Meadow lake. Reem enters left; Thaaloob at
+(.64,.78), sign at (.40,.61). Reuse original fox art/voice without redesign.
+New background `bg8_pine_fork.png` references bg1_room; no baked fox, sign text or
+people. Runtime Arabic labels use Cairo. Log all provisional route exits below.
+
+Both Stream's right exit and completed FoxRock's right exit meet here. Left exit
+returns to the arrival route saved in Globals.pine.origin. Notebook map has edges
+from both branches and enables visited destinations only.
+
+First entry `reem_pine_arrive`. Clicking fox or any forward exit before meeting
+him: `fox_pine_offer`, choice Think about others / Accept skipping help.
+Kind: `reem_pine_kind`, bloom once, meeting resolved. Tempting: `reem_pine_skip`,
+wilt once, meeting resolved; a small leaf on the sign visibly droops. No path is
+bad by itself: the cave is allowed. `fox_pine_cave` explicitly separates route
+choice from the promise to ignore others. No fox friend card.
+
+Click sign after the wrong choice: `reem_pine_repair`, choose Help when needed /
+Think a little. Help heals once and lifts sign leaf; thinking leaves it available,
+no added penalty. Clicking fox can also offer this repair. Every route remains
+available after the meeting, even with the repair pending; no game over or timer.
+Children may revisit this station through the map to heal later.
+
+Forward route hotspots: ExitOak → OakForest, ExitCave → RockCave, ExitLake →
+MeadowLake. Until each adjacent station exists, its exit goes to provisional MVP
+End; this is an implementation boundary, never a claim that valley is complete.
+Hints: meet fox / inspect sign / pick a route, three stages each. Flags saved in
+Globals.pine: introduced, met, promised, origin. Reset on New journey. All reward
+changes guarded for repeat clicks. New words identified from generated art only.
+Tests: entry from both routes, kind/wrong/repair, no repeat reward, any route allowed,
+save roundtrip, wrong promise visible on return, words, required four regressions.

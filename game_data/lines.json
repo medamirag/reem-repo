@@ -760,5 +760,101 @@
   "tone": "gentle, clear, reflective",
   "text": "أَضْغَطُ عَلَى ثَعْلُوبَ لِأَطْلُبَ الْفَانُوسَ.",
   "audio": "res://assets/audio/lines/reem_hint_stream_lantern_3.mp3"
+ },
+ "reem_pine_arrive": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "هُنَا تَلْتَقِي الطُّرُقُ عِنْدَ أَشْجَارِ الصَّنَوْبَرِ.",
+  "audio": "res://assets/audio/lines/reem_pine_arrive.mp3"
+ },
+ "fox_pine_offer": {
+  "speaker": "Thaaloob",
+  "tone": "playful, sly",
+  "text": "أَعْرِفُ طَرِيقًا سَهْلًا! لَا تَتَوَقَّفِي لِمُسَاعَدَةِ أَحَدٍ، فَلَنْ يَرَاكِ أَحَدٌ.",
+  "audio": "res://assets/audio/lines/fox_pine_offer.mp3"
+ },
+ "reem_pine_kind": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "سَأَخْتَارُ طَرِيقِي بِهُدُوءٍ، وَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ إِنْ شَاءَ اللّٰهُ.",
+  "audio": "res://assets/audio/lines/reem_pine_kind.mp3"
+ },
+ "reem_pine_skip": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "سَأُوَافِقُكَ لِأَصِلَ بِسُرْعَةٍ، وَلَنْ أَتَوَقَّفَ لِأَحَدٍ.",
+  "audio": "res://assets/audio/lines/reem_pine_skip.mp3"
+ },
+ "fox_pine_cave": {
+  "speaker": "Thaaloob",
+  "tone": "playful, sly",
+  "text": "طَرِيقُ الْكَهْفِ وَاحِدٌ مِنْ هَذِهِ الطُّرُقِ الثَّلَاثَةِ.",
+  "audio": "res://assets/audio/lines/fox_pine_cave.mp3"
+ },
+ "reem_pine_repair": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "الْوُصُولُ سَرِيعًا لَيْسَ كُلَّ شَيْءٍ. أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي.",
+  "audio": "res://assets/audio/lines/reem_pine_repair.mp3"
+ },
+ "reem_pine_fixed": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "سَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ عَلَى أَيِّ طَرِيقٍ أَخْتَارُهُ.",
+  "audio": "res://assets/audio/lines/reem_pine_fixed.mp3"
+ },
+ "reem_hint_pine_meet_1": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "ثَعْلُوبُ عِنْدَ مُفْتَرَقِ الطُّرُقِ.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_meet_1.mp3"
+ },
+ "reem_hint_pine_meet_2": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "مَاذَا يُرِيدُ أَنْ يَقُولَ لِي؟",
+  "audio": "res://assets/audio/lines/reem_hint_pine_meet_2.mp3"
+ },
+ "reem_hint_pine_meet_3": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "أَضْغَطُ عَلَى ثَعْلُوبَ لِأَسْمَعَهُ.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_meet_3.mp3"
+ },
+ "reem_hint_pine_repair_1": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_repair_1.mp3"
+ },
+ "reem_hint_pine_repair_2": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "اللَّافِتَةُ تُسَاعِدُنِي عَلَى التَّفْكِيرِ.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_repair_2.mp3"
+ },
+ "reem_hint_pine_repair_3": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "أَضْغَطُ عَلَى اللَّافِتَةِ وَأَخْتَارُ الْمُسَاعَدَةَ.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_repair_3.mp3"
+ },
+ "reem_hint_pine_route_1": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "هُنَاكَ ثَلَاثَةُ طُرُقٍ.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_route_1.mp3"
+ },
+ "reem_hint_pine_route_2": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "أَسْتَطِيعُ أَنْ أَخْتَارَ الْغَابَةَ أَوِ الْكَهْفَ أَوِ الْبُحَيْرَةَ.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_route_2.mp3"
+ },
+ "reem_hint_pine_route_3": {
+  "speaker": "Reem",
+  "tone": "gentle, reflective",
+  "text": "أَضْغَطُ عَلَى سَهْمِ الطَّرِيقِ الَّذِي أُرِيدُهُ.",
+  "audio": "res://assets/audio/lines/reem_hint_pine_route_3.mp3"
  }
 }

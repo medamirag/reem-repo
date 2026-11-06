@@ -62,11 +62,66 @@ func _run() -> void:
 		await Globals.new_game()
 		R.goto_room("Stream")
 		await _wait_room("Stream")
-		for sample in [[Vector2(0.28, 0.62), "word_log"], [Vector2(0.396, 0.66), "word_duck"], [Vector2(0.36, 0.69), "word_duckling"], [Vector2(0.677, 0.65), "word_rabbit"], [Vector2(0.92, 0.38), "word_reed"]]:
+		for sample in [[Vector2(0.28, 0.62), "word_log"], [Vector2(0.396, 0.66), "word_duck"], [Vector2(0.36, 0.69), "word_duckling"], [Vector2(0.677, 0.65), "word_rabbit"], [Vector2(0.92, 0.38), "word_reed"], [Vector2(.335,.14), "word_sun"], [Vector2(.10,.06), "word_olive"]]:
 			await _hold_at(sample[0], 0.7)
 			_expect(Globals.discovered_words.has(sample[1]), "Stream real hold discovers " + sample[1])
 		_expect(not Globals.stream.get("bridge", false), "word holds do not solve bridge")
 		_log("DONE stream_words")
+		get_tree().quit()
+		return
+	if _path in ["pine", "pine_sand"]:
+		await _pine_path(_path == "pine_sand")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
+	if _path == "station_shots":
+		await Globals.new_game()
+		R.goto_room("Stream")
+		await _wait_room("Stream")
+		await C.player.add_to_inventory(I.Notebook)
+		await C.player.add_to_inventory(I.Lantern)
+		await _click("Log")
+		await _shot("bridge_crossed")
+		await _hold_at(Vector2(.335,.14), .7)
+		await _shot("sun_word")
+		R.goto_room("PineFork")
+		await _wait_room("PineFork")
+		if "--static-shots" in OS.get_cmdline_user_args():
+			_log("DONE station_shots")
+			get_tree().quit()
+			return
+		_answers = [false]
+		await _click("Thaaloob")
+		await _shot("promise_leaf")
+		Globals.notebook.open_notebook()
+		await _shot("pine_hint")
+		Globals.notebook.close_notebook()
+		_answers = [true]
+		await _click("Sign")
+		await _shot("promise_healed")
+		_log("DONE station_shots")
+		get_tree().quit()
+		return
+	if _path == "dialogue_timing":
+		await Globals.new_game()
+		R.goto_room("PineFork")
+		await _wait_room("PineFork")
+		Lines.say("fox_stream_return")
+		await get_tree().create_timer(0.8).timeout
+		_expect(Lines.busy and C.Thaaloob.is_talking, "silent text remains readable")
+		C.Thaaloob.stop_talking()
+		await get_tree().process_frame
+		await get_tree().process_frame
+		_expect(not Lines.busy, "manual skip completes silent line")
+		Lines.say("fox_pine_offer")
+		await get_tree().create_timer(2.0).timeout
+		_expect(Lines.busy and C.Thaaloob.is_talking, "old skip timer cannot close next line")
+		await _step("wait for next silent line", func():
+			while Lines.busy:
+				await get_tree().process_frame
+		)
+		_expect(not Lines.busy, "next silent line completes")
+		_log("DONE dialogue_timing")
 		get_tree().quit()
 		return
 	if _path == "notebook":
@@ -95,6 +150,51 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _pine_path(wrong: bool) -> void:
+	await Globals.new_game()
+	Globals.pine["origin"] = "Stream"
+	R.goto_room("PineFork")
+	await _wait_room("PineFork")
+	_expect(Globals.notebook.hint_context() == "pine_meet", "Pine meeting hint")
+	_expect(not R.current.is_exit_open("ExitCave"), "Pine routes wait for conversation")
+	_answers = [not wrong]
+	await _click("Thaaloob")
+	_expect(Globals.pine.get("met") and R.current.is_exit_open("ExitCave"), "cave allowed after either choice")
+	if wrong:
+		_expect(Globals.wilts == 1 and Globals.pine.get("promised"), "promise wilts")
+		_expect(R.current.get_node("Props/Sign/Leaf").rotation > 1.0, "sign leaf droops")
+		E.save_game(1)
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore Pine promise", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("PineFork")
+		_expect(Globals.pine.get("promised") and Globals.wilts == 1, "Pine promise survives save")
+		_answers = [false]
+		await _click("Sign")
+		_expect(Globals.wilts == 1, "thinking adds no penalty")
+		_answers = [true]
+		await _click("Sign")
+		_expect(Globals.wilts == 0 and not Globals.pine.get("promised"), "Pine promise repaired")
+	var before := Globals.blossoms
+	await _click("Thaaloob")
+	await _click("Sign")
+	_expect(Globals.blossoms == before and Globals.wilts == 0, "Pine reward cannot repeat")
+	for sample in [[Vector2(.21,.30),"word_pine"],[Vector2(.29,.28),"word_cone"],[Vector2(.55,.40),"word_cave"],[Vector2(.91,.45),"word_lake"]]:
+		await _hold_at(sample[0], .7)
+		_expect(Globals.discovered_words.has(sample[1]), "Pine real hold discovers " + sample[1])
+	await _click("ExitLake" if wrong else "ExitCave")
+	await _wait_room("End")
+
+
+## Remove this provisional finish as adjacent valley stations are built.
+func _finish_pine() -> void:
+	await _wait_room("PineFork")
+	_answers = [true]
+	await _click("Thaaloob")
+	await _click("ExitOak")
 
 
 func _stream_path(wrong: bool) -> void:
@@ -157,6 +257,7 @@ func _stream_path(wrong: bool) -> void:
 	_expect(targets.any(func(t): return t.word == "word_duck"), "duck word target present")
 	_expect(targets.any(func(t): return t.word == "word_rabbit"), "rabbit word target present")
 	await _click("ExitRight")
+	await _finish_pine()
 	await _wait_room("End")
 	await Globals.new_game()
 	_expect(Globals.stream.is_empty() and not Globals.friend_cards.has("duck"), "New journey resets Stream and card")
@@ -228,6 +329,7 @@ func _green_path() -> void:
 	await _shot_talking("fox_s2_055a")
 	await _click("ExitRight")
 
+	await _finish_pine()
 	await _wait_room("End")
 	_log_heart()
 	await _wait_idle()
@@ -377,6 +479,7 @@ func _mixed_path() -> void:
 	await _wait_idle()
 	_expect(Globals.fox_done, "Choice 3 green")
 	await _click("ExitRight")
+	await _finish_pine()
 	await _wait_room("End")
 	_log_heart()
 	await _wait_idle()
@@ -463,6 +566,7 @@ func _sand_path() -> void:
 		and not _has("Stone") and Globals.wilts == 0, "mirror recovered")
 	await _click("ExitRight")
 
+	await _finish_pine()
 	await _wait_room("End")
 	_log_heart()
 	await _wait_idle()

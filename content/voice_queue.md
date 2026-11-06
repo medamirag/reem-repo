@@ -84,6 +84,23 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_hint_stream_lantern_2 | Reem | gentle, clear, reflective | ثَعْلُوبُ مَا زَالَ قَرِيبًا مِنِّي. | problem: sample listening/settings verification pending |
 | reem_hint_stream_lantern_3 | Reem | gentle, clear, reflective | أَضْغَطُ عَلَى ثَعْلُوبَ لِأَطْلُبَ الْفَانُوسَ. | problem: sample listening/settings verification pending |
 
+| reem_pine_arrive | Reem | gentle, reflective | هُنَا تَلْتَقِي الطُّرُقُ عِنْدَ أَشْجَارِ الصَّنَوْبَرِ. | problem: sample listening/settings verification pending |
+| fox_pine_offer | Thaaloob | playful, sly | أَعْرِفُ طَرِيقًا سَهْلًا! لَا تَتَوَقَّفِي لِمُسَاعَدَةِ أَحَدٍ، فَلَنْ يَرَاكِ أَحَدٌ. | problem: sample listening/settings verification pending |
+| reem_pine_kind | Reem | gentle, reflective | سَأَخْتَارُ طَرِيقِي بِهُدُوءٍ، وَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ إِنْ شَاءَ اللّٰهُ. | problem: sample listening/settings verification pending |
+| reem_pine_skip | Reem | gentle, reflective | سَأُوَافِقُكَ لِأَصِلَ بِسُرْعَةٍ، وَلَنْ أَتَوَقَّفَ لِأَحَدٍ. | problem: sample listening/settings verification pending |
+| fox_pine_cave | Thaaloob | playful, sly | طَرِيقُ الْكَهْفِ وَاحِدٌ مِنْ هَذِهِ الطُّرُقِ الثَّلَاثَةِ. | problem: sample listening/settings verification pending |
+| reem_pine_repair | Reem | gentle, reflective | الْوُصُولُ سَرِيعًا لَيْسَ كُلَّ شَيْءٍ. أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي. | problem: sample listening/settings verification pending |
+| reem_pine_fixed | Reem | gentle, reflective | سَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ عَلَى أَيِّ طَرِيقٍ أَخْتَارُهُ. | problem: sample listening/settings verification pending |
+| reem_hint_pine_meet_1 | Reem | gentle, reflective | ثَعْلُوبُ عِنْدَ مُفْتَرَقِ الطُّرُقِ. | problem: sample listening/settings verification pending |
+| reem_hint_pine_meet_2 | Reem | gentle, reflective | مَاذَا يُرِيدُ أَنْ يَقُولَ لِي؟ | problem: sample listening/settings verification pending |
+| reem_hint_pine_meet_3 | Reem | gentle, reflective | أَضْغَطُ عَلَى ثَعْلُوبَ لِأَسْمَعَهُ. | problem: sample listening/settings verification pending |
+| reem_hint_pine_repair_1 | Reem | gentle, reflective | أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي. | problem: sample listening/settings verification pending |
+| reem_hint_pine_repair_2 | Reem | gentle, reflective | اللَّافِتَةُ تُسَاعِدُنِي عَلَى التَّفْكِيرِ. | problem: sample listening/settings verification pending |
+| reem_hint_pine_repair_3 | Reem | gentle, reflective | أَضْغَطُ عَلَى اللَّافِتَةِ وَأَخْتَارُ الْمُسَاعَدَةَ. | problem: sample listening/settings verification pending |
+| reem_hint_pine_route_1 | Reem | gentle, reflective | هُنَاكَ ثَلَاثَةُ طُرُقٍ. | problem: sample listening/settings verification pending |
+| reem_hint_pine_route_2 | Reem | gentle, reflective | أَسْتَطِيعُ أَنْ أَخْتَارَ الْغَابَةَ أَوِ الْكَهْفَ أَوِ الْبُحَيْرَةَ. | problem: sample listening/settings verification pending |
+| reem_hint_pine_route_3 | Reem | gentle, reflective | أَضْغَطُ عَلَى سَهْمِ الطَّرِيقِ الَّذِي أُرِيدُهُ. | problem: sample listening/settings verification pending |
+
 ## Stream audio verification
 
 2026-11-06: Reem v3 sample generated and retained at `game/pending_audio/reem_stream_arrive.mp3`; it is not a game recording yet. Saved identity verified. The connected generator does not expose explicit numeric settings; no listening comparison can be verified in this build session. All unrecorded rows are marked problem rather than silently claiming completion. Exact text, voices and rows preserved. See AGENTS.md pending sample.

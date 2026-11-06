@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/pine_fork/room_pine_fork.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg8_pine_fork.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://game/characters/thaaloob/character_thaaloob.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="8"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="9"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
+agent_radius = 0.0
+
+[sub_resource type="StyleBoxFlat" id="RouteLabel"]
+bg_color = Color(1, 0.95, 0.8, 0.93)
+content_margin_left = 12.0
+content_margin_right = 12.0
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_radius_bottom_right = 10
+
+[node name="RoomPineFork" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "PineFork"
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "Stream": Vector2(0.08, 0.82), "FoxRock": Vector2(0.08, 0.82)}
+footstep_cue = "sfx_steps_grass"
+ambience_cue = "amb_meadow"
+exit_arrows = {"ExitLeft": "left", "ExitOak": "up", "ExitCave": "up", "ExitLake": "up"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+description = ""
+cursor = 4
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 48)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+
+[node name="ExitOak" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitOak"
+position = Vector2(390, 690)
+interaction_polygon = PackedVector2Array(-95, -95, 95, -95, 95, 95, -95, 95)
+walk_to_point = Vector2(0, 196)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitOak" index="0"]
+polygon = PackedVector2Array(-95, -95, 95, -95, 95, 95, -95, 95)
+
+[node name="ExitCave" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitCave"
+position = Vector2(960, 690)
+interaction_polygon = PackedVector2Array(-95, -95, 95, -95, 95, 95, -95, 95)
+walk_to_point = Vector2(0, 196)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitCave" index="0"]
+polygon = PackedVector2Array(-95, -95, 95, -95, 95, 95, -95, 95)
+
+[node name="ExitLake" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLake"
+position = Vector2(1680, 690)
+interaction_polygon = PackedVector2Array(-95, -95, 95, -95, 95, 95, -95, 95)
+walk_to_point = Vector2(0, 196)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLake" index="0"]
+polygon = PackedVector2Array(-95, -95, 95, -95, 95, 95, -95, 95)
+
+[node name="CharacterThaaloob" parent="Characters" instance=ExtResource("7")]
+position = Vector2(1240, 835)
+walk_to_point = Vector2(-220, 51)
+
+[node name="Sign" parent="Props" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "Sign"
+position = Vector2(700, 740)
+walk_to_point = Vector2(-120, 146)
+interaction_polygon = PackedVector2Array(-120, -140, 120, -140, 120, 0, -120, 0)
+
+[node name="InteractionPolygon" parent="Props/Sign" index="2"]
+polygon = PackedVector2Array(-120, -140, 120, -140, 120, 0, -120, 0)
+
+[node name="Post" type="Polygon2D" parent="Props/Sign"]
+polygon = PackedVector2Array(-10, -80, 10, -80, 10, 0, -10, 0)
+color = Color(0.4, 0.23, 0.1, 1)
+
+[node name="Board" type="Polygon2D" parent="Props/Sign"]
+polygon = PackedVector2Array(-115, -140, 115, -140, 115, -80, -115, -80)
+color = Color(0.67, 0.43, 0.19, 1)
+
+[node name="Leaf" type="Polygon2D" parent="Props/Sign"]
+position = Vector2(0, -145)
+polygon = PackedVector2Array(0, 0, -22, -18, -15, -38, 0, -50, 15, -32, 16, -12)
+color = Color(0.35, 0.65, 0.25, 1)
+
+[node name="OakLabel" type="Label" parent="."]
+theme_override_styles/normal = SubResource("RouteLabel")
+offset_left = 240.0
+offset_top = 545.0
+offset_right = 540.0
+offset_bottom = 610.0
+mouse_filter = 2
+text_direction = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.18, 0.09, 0.02, 1)
+theme_override_font_sizes/font_size = 38
+
+[node name="CaveLabel" type="Label" parent="."]
+theme_override_styles/normal = SubResource("RouteLabel")
+offset_left = 810.0
+offset_top = 545.0
+offset_right = 1110.0
+offset_bottom = 610.0
+mouse_filter = 2
+text_direction = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.18, 0.09, 0.02, 1)
+theme_override_font_sizes/font_size = 38
+
+[node name="LakeLabel" type="Label" parent="."]
+theme_override_styles/normal = SubResource("RouteLabel")
+offset_left = 1530.0
+offset_top = 545.0
+offset_right = 1830.0
+offset_bottom = 610.0
+mouse_filter = 2
+text_direction = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.18, 0.09, 0.02, 1)
+theme_override_font_sizes/font_size = 38

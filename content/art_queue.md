@@ -16,6 +16,7 @@ Originals in `assets/` are never edited: new images are new files with the names
 | duck_family | `assets/art/characters/duck/duck_family.png` | `assets/art/characters/duck/duck_sheet.png` | transparent | 1536x1024 | See duck_family below | Real alpha; matches reference | done |
 | arnoob_base | `assets/art/characters/arnoob/arnoob_base.png` | `assets/art/characters/arnoob/arnoob_sheet.png` | transparent | 1536x1024 | See arnoob_base below | Real alpha; matches reference | done |
 | stream_log | `assets/art/items/stream_log.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1536x1024 | See stream_log below | Real alpha; matches reference | done |
+| bg8_pine_fork | `assets/art/backgrounds/bg8_pine_fork.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg8_pine_fork below | Three paths; continuous lower walking path; welcoming cave | done |
 
 <!-- One section per row, in the same order:
 
@@ -125,3 +126,19 @@ Exactly one short light brown wooden log, horizontal side view with rounded cut 
 ```
 
 Stream checks (2026-11-06): all six images inspected: no text/frame, consistent right-facing characters, full limbs, separated birds, real RGBA alpha confirmed for sprites. Background generated 1672×941 (16:9), not the requested 1920×1080; fitted proportionally by ReemRoom. Originals preserved.
+
+## bg8_pine_fork
+
+- **Save as:** `assets/art/backgrounds/bg8_pine_fork.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1920x1080
+- **Extra check:** three separate paths, no baked characters or sign, no scary darkness.
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown outlines, soft textured brushwork, rounded friendly shapes, warm natural colours, simple readable silhouettes, matching the attached ReemGame reference. No text, letters, numbers, watermark, border or frame. A peaceful late-morning pine grove crossroads in an Arab countryside valley. Wide side-view point-and-click adventure background, 1920x1080. Broad continuous dry sandy walking path across bottom 20 percent. Three clearly separate footpaths in the middle distance: left toward rounded oak trees, middle toward a welcoming small cave in smooth pale rock with a sunlit entrance, right toward a distant blue lake with reeds. Tall rounded pine trees and visible pine cones beside the foreground path. Leave an open grassy patch for a freestanding sign at left centre and a fox at right centre. No sign, animals, people, writing, dark threatening areas or scary effects.
+```
+
+Pine Fork art check (2026-11-06): no text/border/characters; three paths, friendly lit cave, pine cones and lake visible. Generated 1672×941, proportional fit. Sign/leaf and labels use native Godot shapes/text, no new bitmap. Existing fox original reused.

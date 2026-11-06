@@ -55,3 +55,9 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 ## Stream audio verification
 
 2026-11-06: Reem v3 sample generated and retained at `game/pending_audio/reem_stream_arrive.mp3`; it is not a game recording yet. Saved identity verified. The connected generator does not expose explicit numeric settings; no listening comparison can be verified in this build session. All unrecorded rows are marked problem rather than silently claiming completion. Exact text, voices and rows preserved. See AGENTS.md pending sample.
+| word_pine | Reem | clear and cheerful, saying one word to teach a child | صَنَوْبَر | problem: sample listening/settings verification pending |
+| word_cone | Reem | clear and cheerful, saying one word to teach a child | مَخْرُوط | problem: sample listening/settings verification pending |
+| word_cave | Reem | clear and cheerful, saying one word to teach a child | كَهْف | problem: sample listening/settings verification pending |
+| word_lake | Reem | clear and cheerful, saying one word to teach a child | بُحَيْرَة | problem: sample listening/settings verification pending |
+| word_sun | Reem | clear and cheerful, saying one word to teach a child | شَمْس | problem: sample listening/settings verification pending |
+| word_olive | Reem | clear and cheerful, saying one word to teach a child | زَيْتُون | problem: sample listening/settings verification pending |

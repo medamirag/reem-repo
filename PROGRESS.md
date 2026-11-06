@@ -40,8 +40,8 @@
   dialogue_timing passed: readable silent text, manual skip, old-timer isolation and completion.
   Content check passed: 143 lines, 49 words. Original dialogue values preserved.
   Import passed with permitted exit leaks; normal Godot folder access required.
-- **Backup:** Stream 65346a1 was pushed. Pine Fork and dialogue timing are included in
-  the final session commit, to be pushed immediately after committing.
+- **Backup:** Stream 65346a1 and Pine Fork/dialogue timing afa8dc4 were both committed
+  and pushed successfully to origin/main. Working folder was clean after the push.
 - **What is next:** ROADMAP step 3: Oak forest, then Rock cave, Meadow lake, Honey
   orchard, Hill slope, Waterfall path, Narrow pass, Hilltop festival with endings.
   PineFork routes target OakForest/RockCave/MeadowLake if registered; otherwise

@@ -2,32 +2,53 @@
 
 ## Handoff
 
-Update this section at the end of every session (rules in `AGENTS.md`).
+Update this section at the end of every session (rules in `AGENTS.md`). The tools take turns
+in this local folder; GitHub is only a backup.
 
-- **Who worked last:** Claude (Claude Code)
+- **Who worked last:** Claude Code (builder)
 - **Date:** 2026-11-06
-- **Branch:** `main` (pushed)
-- **What was done:**
-  - `AGENTS.md` is now the shared rules file for Claude Code and Codex: all the rules from
-    the old `CLAUDE.md`, the start/end-of-session rule, and the checks for Windows and a Linux
-    cloud session. `CLAUDE.md` only contains `@AGENTS.md`.
-  - The 38 word recordings (Reem's voice, made from `words.md` with ElevenLabs in the
-    `Reem_MVP_Audio` folder) were copied into `assets/audio/words/`.
-  - Checks on Windows: headless run, `--import`, and all four playtest paths (`green`, `sand`,
-    `mixed`, `words`) end in `DONE` with no script errors.
-- **What is next:** the user's full test in Godot (checklist at the bottom), including holding
-  on objects to hear the words; then fix what they report.
-  - Committed at the user's request: `assets/audio/words/` (38 mp3 + their `.import` files)
-    and an older editor change to `game/rooms/test_arabic/room_test_arabic.tscn`.
+- **Branch:** `main` (committed, pushed as backup)
+- **What was done (one-time pipeline setup):**
+  - Branches: `claude/eloquent-mayer-iq1fbv` was already fully merged into `main` (nothing to
+    merge). From now on everything is on `main` only.
+  - Queues created in `content/`: `art_queue.md` (empty, ready for the first station),
+    `voice_queue.md` (the 4 MVP voices as `done`, empty Lines table), `word_queue.md` (the 38
+    MVP words, all `done` because their mp3 files exist; no word was waiting).
+  - `tools/make_words.py` now keeps `content/word_queue.md` up to date (adds new words as
+    `todo`, never touches existing rows) and no longer writes `words.md`, which was removed.
+  - `AGENTS.md`: follow docs/PIPELINE.md and docs/ROADMAP.md; turns in the same local folder,
+    no pulling, commit at the end of every session then push as a backup; `main` only; the
+    queues; "originals are never edited, new files listed in the queues may be added"; the
+    Godot path; the "don't ask during building, note it under Decisions to review" rule.
+    `CLAUDE.md` imports `@AGENTS.md`.
+- **What is next (builder):** ROADMAP build order step 2, base game systems, starting with
+  save/continue. Codex and Claude Desktop have nothing queued yet.
 - **Half-finished / to check:**
   - The user has not listened to the word recordings yet. `word_path` (طَرِيق) and `word_girl`
-    (بِنْت) measured oddly and may need re-recording.
-  - The committed `room_test_arabic.tscn` change looks like Godot editor leftovers: Reem's node
-    is named `CharacterReem *` with `EDITOR_TMP_COPY_OF`, the Floor walkable polygon was
-    removed, and the background moved. Only the Arabic test room is affected; if Reem cannot
-    walk there, revert that file to the commit before 2026-11-06.
+    (بِنْت) measured oddly and may need re-recording (set their row to `todo` in
+    `content/word_queue.md` to have the voice studio redo them).
+  - `room_test_arabic.tscn` (old Arabic test room) has Godot editor leftovers committed: Reem's
+    node is named `CharacterReem *` and the Floor walkable polygon is gone. Only that test room.
 
-Last updated: 2026-11-06. Branch: `main`. (The word-discovery work from session 7 is on main.)
+## Decisions to review
+
+Choices made without asking (newest first). Older MVP decisions are further down, under "MVP
+decisions to review".
+
+1. **docs/PIPELINE.md not edited:** it still says "pull first" and "GitHub is the single source
+   of truth". AGENTS.md says the local folder is the source of truth and replaces those lines.
+2. **`words.md` removed:** `content/word_queue.md` replaces it as the list for the voice studio.
+   The words still come from the table in `tools/make_words.py`.
+3. **art_queue.md layout:** a summary table with every column from PIPELINE.md, and the full
+   prompt for each row in its own section below (like the MVP `assets.md`), because the prompts
+   are too long for a table cell.
+4. **voice_queue.md** lists the 4 MVP voices as `done` (so their descriptions are kept), and
+   records Thaaloob's special settings (`eleven_v3`, stability 0.3, style 0.5, emotion tags).
+5. **Working rules:** "stop and ask the user to test each room" became "write in PROGRESS.md how
+   to test it and move on", as docs/PIPELINE.md asks ("don't ask the user during building").
+6. **`word_path` and `word_girl` are marked `done`** in the word queue although they may need
+   re-recording; only the user can judge by listening.
+7. The old branch `claude/eloquent-mayer-iq1fbv` is left on GitHub (not deleted).
 
 ## Where things stand
 
@@ -169,7 +190,7 @@ hover text ("Use X with Y") removed; Grandpa/fox/bee faced the wrong way (Popoch
 flip_h; they now use a negative scale); Shahd's wings never moved (Popochiu turns off
 per-frame processing on characters; moved to a child node).
 
-## Decisions to review
+## MVP decisions to review (sessions 4 to 7)
 
 Positions are starting points; all are exported or named nodes, so they are easy to move.
 1. **Positions taken from the pictures where the spec's numbers did not match them:**

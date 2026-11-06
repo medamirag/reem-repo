@@ -1,7 +1,10 @@
-"""Writes game_data/words.json and words.md (the word-discovery word list) from the table
-below. Edit the table and run:  python3 tools/make_words.py   (from the project folder).
+"""Writes game_data/words.json (the word-discovery word list) from the table below, and adds
+every word that is not yet in content/word_queue.md to that queue (status "done" if its mp3
+already exists, otherwise "todo"). Existing queue rows are never changed or removed.
+Edit the table and run:  python3 tools/make_words.py   (from the project folder).
 game_data/word_areas.json (where each word is in each room) is edited by hand."""
 import json
+import os
 
 # id: (Arabic word with full diacritics, rooms, objects that are not background areas)
 #   objects: "prop:<Name>", "character:<Name>", "decor:<NodeName>" (a node in the room),
@@ -57,22 +60,36 @@ for wid, (text, rooms, objects) in WORDS.items():
         "audio": f"res://assets/audio/words/{wid}.mp3",
         "objects": objects,
     }
-with open("game_data/words.json", "w", encoding="utf-8") as f:
+with open("game_data/words.json", "w", encoding="utf-8", newline="\n") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
     f.write("\n")
 
-lines = [
-    "# Word discovery: words to record",
+QUEUE = "content/word_queue.md"
+QUEUE_HEADER = [
+    "# word_queue.md – object names to record",
     "",
-    "Hold on an object in the game for half a second: its Arabic name shows and is spoken.",
-    "One audio file per word. Save each as `assets/audio/words/<File>` (mp3).",
-    "Generated from tools/make_words.py (do not edit by hand; edit the script and run it).",
+    "Voice studio (Claude Desktop + ElevenLabs): record every row with Status `todo`, with the",
+    "saved voice in the Voice column and a model that supports Arabic. Use the Text exactly as",
+    "written (keep the diacritics); the Tone column is direction only. Save each as",
+    "`assets/audio/words/<File>.mp3`, then set Status to `done` (or `problem: <short reason>`).",
+    "Never delete rows. New rows are added by `python tools/make_words.py` (see docs/PIPELINE.md).",
     "",
-    "| File | Voice | Tone | Text |",
-    "| --- | --- | --- | --- |",
+    "| File | Voice | Tone | Text | Status |",
+    "| --- | --- | --- | --- | --- |",
 ]
+
+if os.path.exists(QUEUE):
+    with open(QUEUE, encoding="utf-8") as f:
+        queue = f.read().rstrip("\n").split("\n")
+else:
+    queue = list(QUEUE_HEADER)
+in_queue = {row.split("|")[1].strip() for row in queue if row.startswith("| word_")}
+added = 0
 for wid, (text, _, _) in WORDS.items():
-    lines.append(f"| {wid}.mp3 | Reem | {TONE} | {text} |")
-with open("words.md", "w", encoding="utf-8") as f:
-    f.write("\n".join(lines) + "\n")
-print(len(WORDS), "words")
+    if wid not in in_queue:
+        status = "done" if os.path.exists(f"assets/audio/words/{wid}.mp3") else "todo"
+        queue.append(f"| {wid} | Reem | {TONE} | {text} | {status} |")
+        added += 1
+with open(QUEUE, "w", encoding="utf-8", newline="\n") as f:
+    f.write("\n".join(queue) + "\n")
+print(len(WORDS), "words;", added, "added to", QUEUE)

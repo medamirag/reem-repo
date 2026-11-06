@@ -16,6 +16,7 @@ const HEART_TREE_SCENE := "res://game/gui/components/heart_tree/heart_tree.tscn"
 var word_discovery: WordDiscovery
 var settings: ReemSettings
 var notebook: ReemNotebook
+var hotspot_highlight: HotspotHighlight
 var hint_steps := {}
 var friend_cards := {}
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
@@ -43,6 +44,9 @@ func _ready() -> void:
 		notebook = ReemNotebook.new()
 		notebook.name = "Notebook"
 		add_child(notebook)
+		hotspot_highlight = HotspotHighlight.new()
+		hotspot_highlight.name = "HotspotHighlight"
+		add_child(hotspot_highlight)
 
 #region Heart tree (game_spec.md 4.3) #################################################################
 ## Good deeds.

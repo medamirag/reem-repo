@@ -8,7 +8,7 @@
 - **What was done:**
   - Tree was clean; read AGENTS, PIPELINE, ROADMAP, game_spec and previous Handoff.
   - Art queue has no rows: no todo images, no newly completed images requiring words.
-  - Built notebook (ROADMAP step 2; spec game_spec.md 9.3) with four pages: hints, discovered
+  - Built notebook (ROADMAP step 2; spec game_spec.md 9.3), committed/pushed as 8b020ad, with four pages: hints, discovered
     words with replay, visited-room map with safe fast travel, and earned friend cards.
   - game/scripts/reem_notebook.gd is Globals.notebook, an always-processing CanvasLayer. Open
     from the Notebook inventory item, upper-screen button, or N after Grandpa gives it. Open
@@ -28,17 +28,33 @@
   - Updated story playtests to open/check/close the new Notebook on inventory clicks instead
     of waiting for the superseded direct-hint behavior. Added --path=notebook to check hints,
     word replay, locked destinations, fast travel, card earning, save/load and New journey.
-- **Checks:** Windows Godot 4.7.2 import/startup plus all seven playtests passed: notebook,
+  - Built hotspot highlight (spec game_spec.md 9.4): Globals.hotspot_highlight, implemented in
+    game/scripts/hotspot_highlight.gd. Bottom-left Arabic button or H briefly outlines current
+    actionable props/NPCs/hotspots/open exits and visible inventory. It excludes Reem, hidden/
+    inactive objects, locked exits and word-only areas. No input interception or story changes.
+    Button position and duration are exported. It clears for dialogue/choices, transitions,
+    selected-item use and overlays. Native drawing, no new art/voice/word rows.
+  - Added --path=highlight: props/NPC/hotspot targets, locked exits, changing puzzle state,
+    no story/word changes, glow expiry/repeat, selected-item use and Settings all passed.
+- **Checks:** Before highlight, Windows Godot 4.7.2 import/startup and all seven playtests passed: notebook,
   green, sand, mixed, words, save, settings. All reached DONE; only allowed exit-leak/resource
   messages remained. git diff --check and dialogue/queue consistency checks passed.
-  Headless testing cannot judge visual layout or sound.
-- **What is next:** finish ROADMAP step 2 with hotspot highlight (button briefly shows all
-  currently clickable things). Then Stream station: write spec first, add art/voice/word queue
-  rows, generate queued images with references/checks, identify words after art, build/check.
-  Continue Pine Fork and remaining stations in roadmap order. Never wait for recordings.
-- **Half-finished:** no hotspot-highlight or Stream code started. 35 new voice rows await
+  After highlight: import, dedicated highlight test, startup and all four required paths
+  (green/sand/mixed/words) passed again. Only allowed exit leaks/resources remained.
+  Headless tests cannot judge visual layout or sound; those checks remain pending.
+- **What is next:** ROADMAP step 3, Stream station. The ordered base systems are now built.
+  Write detailed Stream spec first (duck/ducklings, Arnoob, Thaaloob, log bridge, map choice,
+  lantern choice and repairs), then art/voice queues and line data; generate todo art with
+  references/checks, identify words after images exist, build/check. Expand notebook map,
+  hints and friend-card data as each station is built. Continue Pine Fork and the roadmap.
+  Do not wait for Claude Desktop recordings.
+- **Half-finished:** no Stream spec/code started. 35 new voice rows await
   Claude Desktop. Notebook visual/sound testing pending; prior settings/save visual checks,
   word_path/word_girl recording concerns and TestArabic editor leftovers remain.
+- **How to test highlight:** reopen Godot, F5, click New journey if offered. Once the opening
+  dialogue finishes, click أين أضغط؟ at the bottom left or press H. Mirror/basket should glow;
+  the locked blue door should not. After taking the basket and answering the choice, the
+  door should glow instead. Settings/Notebook should hide the glow.
 - **How to test Notebook:** reopen Godot, F5; take basket, answer the choice, click blue door,
   talk to Grandpa and finish the conversation. Press N or click دفتري near the top. Try the
   four tabs; More reveals up to three hints. Close with Escape. Hold the Yard bucket to learn
@@ -51,6 +67,10 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Highlight (Codex, 2026-11-06):** use the room's has_action rules, a brief soft gold outline,
+  button plus H, no cooldown/cost or gameplay time limit. Put the button at the bottom left
+  so it does not crowd the top inventory/Notebook/Settings controls. Positions are exported.
 
 - **Notebook (Codex, 2026-11-06):** reuse existing art/word recordings; native drawn MVP map,
   no new bitmap art. Map shows the six built rooms and only allows visits already made.

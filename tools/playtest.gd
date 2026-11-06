@@ -48,6 +48,11 @@ func _run() -> void:
 	for anim in ["use", "active", "talk", "look", "left", "right"]:
 		var tex := frames.get_frame_texture(anim, 0)
 		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
+	if _path == "highlight":
+		await _highlight_path()
+		_log("DONE highlight")
+		get_tree().quit()
+		return
 	if _path == "notebook":
 		await _notebook_path()
 		_log("DONE notebook")
@@ -767,3 +772,47 @@ func _notebook_path() -> void:
 	await _wait_room("GrandpaRoom")
 	_expect(Globals.friend_cards.is_empty() and Globals.hint_steps.is_empty(), "new journey resets cards and hints")
 	_expect(Globals.discovered_words.has("word_bucket"), "new journey retains discovered words")
+
+
+func _highlight_ids() -> Array:
+	return Globals.hotspot_highlight.targets.map(func(target: Dictionary): return target.id)
+
+
+func _highlight_path() -> void:
+	var highlight := Globals.hotspot_highlight
+	highlight.reveal()
+	_expect(highlight.targets.is_empty(), "no highlight on title")
+	await _step("start highlight test", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	highlight.button.pressed.emit()
+	_expect(_highlight_ids().has("Mirror") and _highlight_ids().has("BasketProp"), "highlight includes actionable props")
+	_expect(not _highlight_ids().has("Reem") and not _highlight_ids().has("Door"), "highlight excludes player and locked exit")
+	_expect(not Globals.basket_taken and Globals.discovered_words.is_empty(), "highlight changes no story flags or words")
+	await _shot("hotspot_highlight")
+	highlight._remaining = 0.01
+	await get_tree().process_frame
+	await get_tree().process_frame
+	_expect(highlight.targets.is_empty(), "glow disappears without blocking play")
+	_send_key(KEY_H)
+	await get_tree().process_frame
+	_expect(not highlight.targets.is_empty(), "H repeats highlight without a cooldown")
+	I.active = I.Basket
+	await get_tree().process_frame
+	_expect(highlight.targets.is_empty(), "no highlight during item use")
+	I.active = null
+	_answers = [true]
+	await _click("BasketProp")
+	highlight.reveal()
+	_expect(not _highlight_ids().has("Mirror") and not _highlight_ids().has("BasketProp") and _highlight_ids().has("Door"), "glow follows updated puzzle state")
+	Globals.settings.open_settings()
+	await get_tree().process_frame
+	_expect(highlight.targets.is_empty(), "settings clears the glow")
+	Globals.settings.close_settings()
+	await _click("Door")
+	await _wait_room("Yard")
+	highlight.reveal()
+	_expect(_highlight_ids().has("Jad") and _highlight_ids().has("Well"), "highlight includes NPC and background hotspot")
+	await _click("ExitRight")
+	await _wait_room("Gate")
+	highlight.reveal()
+	_expect(_highlight_ids().has("ExitLeft") and not _highlight_ids().has("ExitRight"), "locked Gate exit stays unmarked")

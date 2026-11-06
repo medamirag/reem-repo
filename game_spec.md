@@ -339,3 +339,18 @@ This replaces the MVP inventory item's single immediate hint with the full noteb
 - Cairo/RTL and selected text size apply to page text. Large content scrolls. Interface labels
   live in ui_labels.json. Reused images/word audio need no queue rows; new hints/card narration
   go to voice_queue.md. Test with --path=notebook, plus the existing regression playtests.
+
+
+### 9.4 Hotspot highlight
+
+- In an idle gameplay room, a bottom-left Arabic Where can I click? button or H briefly
+  outlines actionable props, characters, open exits and visible inventory items in soft gold.
+- No story time limit, cost or cooldown. Repeating simply refreshes the visual glow.
+  It never clicks an object, reveals a word, selects an item or changes puzzle flags.
+- Exclude Reem, invisible/non-clickable objects, locked exits and targets the room marks as
+  having no action. Background word-only areas are still found by long press, not this button.
+- The glow ignores mouse/touch input. Hide it during dialogue, choices, transitions, selected
+  inventory-item use, Settings and Notebook. Never show it on Title/End/TestArabic.
+- Use interaction polygons transformed through the current camera, plus visible inventory
+  rectangles. Duration and button position are exported in hotspot_highlight.gd for adjustment.
+- Reuse native drawing; no new image/voice/word queue rows. Test with --path=highlight.

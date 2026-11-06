@@ -15,6 +15,9 @@ const HEART_TREE_SCENE := "res://game/gui/components/heart_tree/heart_tree.tscn"
 ## Word discovery (game/scripts/word_discovery.gd).
 var word_discovery: WordDiscovery
 var settings: ReemSettings
+var notebook: ReemNotebook
+var hint_steps := {}
+var friend_cards := {}
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
 ## cleared by a new game from the end screen, included in the autosave.
 var discovered_words := {}
@@ -37,6 +40,9 @@ func _ready() -> void:
 		word_discovery = WordDiscovery.new()
 		word_discovery.name = "WordDiscovery"
 		add_child(word_discovery)
+		notebook = ReemNotebook.new()
+		notebook.name = "Notebook"
+		add_child(notebook)
 
 #region Heart tree (game_spec.md 4.3) #################################################################
 ## Good deeds.
@@ -139,6 +145,8 @@ var fox_intro_done := false
 ## Puts every flag and counter back to how a new game starts. Used by the end screen's
 ## «العودة إلى البداية» button.
 func reset() -> void:
+	hint_steps.clear()
+	friend_cards.clear()
 	blossoms = 0
 	wilts = 0
 	basket_taken = false
@@ -214,11 +222,14 @@ func play_ambience(cue_name: String) -> void:
 
 
 func on_save() -> Dictionary:
-	return {"discovered_words": discovered_words}
+	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards}
 
 
 func on_load(data: Dictionary) -> void:
 	discovered_words = data.get("discovered_words", {}).duplicate()
+	hint_steps = data.get("hint_steps", {}).duplicate()
+	friend_cards = data.get("friend_cards", {}).duplicate()
+	refresh_friend_cards()
 	play_ambience("")
 	heart_changed.emit(false)
 
@@ -226,3 +237,8 @@ func on_load(data: Dictionary) -> void:
 func clear_autosave() -> void:
 	if FileAccess.file_exists("user://save_1.json"):
 		DirAccess.remove_absolute("user://save_1.json")
+
+
+func refresh_friend_cards() -> void:
+	if flowers_open:
+		friend_cards["shahd"] = true

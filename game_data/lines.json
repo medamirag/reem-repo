@@ -406,5 +406,215 @@
   "tone": "narrator, warm and slow",
   "text": "أحسنتِ يا ريم. كلُّ زهرةٍ في شجرةِ قلبِكِ عملٌ طيّب، وكلُّ غصنٍ عادَ أخضرَ خطأٌ أصلحتِه. والطريقُ ما زالَ طويلاً…",
   "audio": "res://assets/audio/lines/jad_s2_071.mp3"
+ },
+ "reem_hint_briefing_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَسْأَلُ جَدِّي عَنِ الرِّحْلَة.",
+  "audio": "res://assets/audio/lines/reem_hint_briefing_1.mp3"
+ },
+ "reem_hint_briefing_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "جَدِّي يَجْلِسُ تَحْتَ الشَّجَرَة.",
+  "audio": "res://assets/audio/lines/reem_hint_briefing_2.mp3"
+ },
+ "reem_hint_briefing_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَضْغَطُ عَلَى جَدِّي لِأَتَحَدَّثَ مَعَهُ.",
+  "audio": "res://assets/audio/lines/reem_hint_briefing_3.mp3"
+ },
+ "reem_hint_yard_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "أَنَا مُسْتَعِدَّةٌ لِلرِّحْلَة.",
+  "audio": "res://assets/audio/lines/reem_hint_yard_1.mp3"
+ },
+ "reem_hint_yard_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "الْبَوَّابَةُ عَلَى يَمِينِ السَّاحَة.",
+  "audio": "res://assets/audio/lines/reem_hint_yard_2.mp3"
+ },
+ "reem_hint_yard_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأَذْهَبَ إِلَى الْبَوَّابَة.",
+  "audio": "res://assets/audio/lines/reem_hint_yard_3.mp3"
+ },
+ "reem_hint_path_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَنْظُرُ إِلَى الطَّرِيق.",
+  "audio": "res://assets/audio/lines/reem_hint_path_1.mp3"
+ },
+ "reem_hint_path_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "اللَّافِتَةُ تُسَاعِدُنِي عَلَى الْمَشْيِ بِرِفْقٍ.",
+  "audio": "res://assets/audio/lines/reem_hint_path_2.mp3"
+ },
+ "reem_hint_path_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَقْرَأُ اللَّافِتَةَ، ثُمَّ أَتَّبِعُ الطَّرِيقَ نَحْوَ الْيَمِينِ.",
+  "audio": "res://assets/audio/lines/reem_hint_path_3.mp3"
+ },
+ "reem_hint_bee_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "لَعَلَّ شَهْدَ تَحْتَاجُ إِلَى مُسَاعَدَتِي.",
+  "audio": "res://assets/audio/lines/reem_hint_bee_1.mp3"
+ },
+ "reem_hint_bee_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَسْأَلُ النَّحْلَةَ عَنِ الزُّهُورِ.",
+  "audio": "res://assets/audio/lines/reem_hint_bee_2.mp3"
+ },
+ "reem_hint_bee_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَضْغَطُ عَلَى شَهْدَ بِجَانِبِ خَلَايَا النَّحْلِ.",
+  "audio": "res://assets/audio/lines/reem_hint_bee_3.mp3"
+ },
+ "reem_hint_water_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "يُمْكِنُنِي إِصْلَاحُ مَا حَدَثَ لِلزُّهُورِ.",
+  "audio": "res://assets/audio/lines/reem_hint_water_1.mp3"
+ },
+ "reem_hint_water_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "الزُّهُورُ الذَّابِلَةُ تَحْتَاجُ إِلَى الْمَاءِ.",
+  "audio": "res://assets/audio/lines/reem_hint_water_2.mp3"
+ },
+ "reem_hint_water_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَآخُذُ إِبْرِيقَ الرَّيِّ مِنَ الْبِئْرِ، ثُمَّ أَضْغَطُ عَلَى الزُّهُورِ الَّتِي دُسْتُهَا.",
+  "audio": "res://assets/audio/lines/reem_hint_water_3.mp3"
+ },
+ "reem_hint_examine_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَنْظُرُ إِلَى الزُّهُورِ الْمُغْلَقَةِ.",
+  "audio": "res://assets/audio/lines/reem_hint_examine_1.mp3"
+ },
+ "reem_hint_examine_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "رُبَّمَا أَحْتَاجُ إِلَى شَيْءٍ يُسَاعِدُهَا.",
+  "audio": "res://assets/audio/lines/reem_hint_examine_2.mp3"
+ },
+ "reem_hint_examine_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَضْغَطُ عَلَى الزُّهُورِ فِي الظِّلِّ لِأَعْرِفَ مَا يَنْقُصُنِي.",
+  "audio": "res://assets/audio/lines/reem_hint_examine_3.mp3"
+ },
+ "reem_hint_confess_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "يُمْكِنُنِي أَنْ أَتَحَدَّثَ مَعَ جَدِّي بِصِدْقٍ.",
+  "audio": "res://assets/audio/lines/reem_hint_confess_1.mp3"
+ },
+ "reem_hint_confess_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "جَدِّي يُسَاعِدُنِي حِينَ أُخْبِرُهُ بِمَا حَدَثَ.",
+  "audio": "res://assets/audio/lines/reem_hint_confess_2.mp3"
+ },
+ "reem_hint_confess_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَعُودُ إِلَى السَّاحَةِ وَأَضْغَطُ عَلَى جَدِّي لِأُخْبِرَهُ عَنِ الْمِرْآةِ.",
+  "audio": "res://assets/audio/lines/reem_hint_confess_3.mp3"
+ },
+ "reem_hint_mirror_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "الزُّهُورُ فِي الظِّلِّ تَحْتَاجُ إِلَى الضَّوْءِ.",
+  "audio": "res://assets/audio/lines/reem_hint_mirror_1.mp3"
+ },
+ "reem_hint_mirror_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "الْمِرْآةُ تَعْكِسُ ضَوْءَ الشَّمْسِ.",
+  "audio": "res://assets/audio/lines/reem_hint_mirror_2.mp3"
+ },
+ "reem_hint_mirror_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "مَعِي مِرْآةُ جَدِّي؛ سَأَضْغَطُ عَلَى الزُّهُورِ الْمُغْلَقَةِ لِأُوَجِّهَ الضَّوْءَ إِلَيْهَا.",
+  "audio": "res://assets/audio/lines/reem_hint_mirror_3.mp3"
+ },
+ "reem_hint_forward_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "يُمْكِنُنِي أَنْ أُكْمِلَ رِحْلَتِي.",
+  "audio": "res://assets/audio/lines/reem_hint_forward_1.mp3"
+ },
+ "reem_hint_forward_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "الطَّرِيقُ يَمْتَدُّ نَحْوَ الْيَمِينِ.",
+  "audio": "res://assets/audio/lines/reem_hint_forward_2.mp3"
+ },
+ "reem_hint_forward_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأُكْمِلَ الطَّرِيقَ.",
+  "audio": "res://assets/audio/lines/reem_hint_forward_3.mp3"
+ },
+ "reem_hint_stone_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "هَلِ الْحَجَرُ كَمَا وَصَفَهُ ثَعْلُوبُ؟",
+  "audio": "res://assets/audio/lines/reem_hint_stone_1.mp3"
+ },
+ "reem_hint_stone_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَفْحَصُ الْحَجَرَ الَّذِي أَعْطَانِي إِيَّاهُ.",
+  "audio": "res://assets/audio/lines/reem_hint_stone_2.mp3"
+ },
+ "reem_hint_stone_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَضْغَطُ عَلَى الْحَجَرِ فِي السَّلَّةِ لِأَمْسَحَهُ.",
+  "audio": "res://assets/audio/lines/reem_hint_stone_3.mp3"
+ },
+ "reem_hint_return_stone_1": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "يُمْكِنُنِي إِصْلَاحُ هَذَا الْخَطَإِ.",
+  "audio": "res://assets/audio/lines/reem_hint_return_stone_1.mp3"
+ },
+ "reem_hint_return_stone_2": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "ثَعْلُوبُ مَا زَالَ بِجَانِبِ الصَّخْرَةِ.",
+  "audio": "res://assets/audio/lines/reem_hint_return_stone_2.mp3"
+ },
+ "reem_hint_return_stone_3": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "سَأَضْغَطُ عَلَى ثَعْلُوبَ لِأُعِيدَ الْحَجَرَ وَأَسْتَرِدَّ الْمِرْآةَ.",
+  "audio": "res://assets/audio/lines/reem_hint_return_stone_3.mp3"
+ },
+ "reem_card_shahd_name": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "شَهْد",
+  "audio": "res://assets/audio/lines/reem_card_shahd_name.mp3"
+ },
+ "reem_card_shahd_fact": {
+  "speaker": "Reem",
+  "tone": "gentle, clear, thoughtful notebook reading",
+  "text": "تَجْمَعُ النَّحْلَةُ الرَّحِيقَ مِنَ الْأَزْهَارِ.",
+  "audio": "res://assets/audio/lines/reem_card_shahd_fact.mp3"
  }
 }

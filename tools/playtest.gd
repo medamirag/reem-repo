@@ -48,6 +48,11 @@ func _run() -> void:
 	for anim in ["use", "active", "talk", "look", "left", "right"]:
 		var tex := frames.get_frame_texture(anim, 0)
 		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
+	if _path == "notebook":
+		await _notebook_path()
+		_log("DONE notebook")
+		get_tree().quit()
+		return
 	if _path == "settings":
 		await _settings_path()
 		_log("DONE settings")
@@ -444,6 +449,9 @@ func _click_item(item_name: String) -> void:
 		I.clicked = item
 		item.last_click_button = MOUSE_BUTTON_LEFT
 		await item.on_click()
+		if Globals.notebook.is_open:
+			_expect(true, "Notebook inventory click opens its pages")
+			Globals.notebook.close_notebook()
 		I.active = null
 	)
 
@@ -679,3 +687,83 @@ func _settings_path() -> void:
 	prefs.text_size = original[3]
 	prefs._apply()
 	prefs.save_preferences()
+
+
+func _notebook_path() -> void:
+	var book := Globals.notebook
+	book.open_notebook()
+	_expect(not book.is_open, "notebook locked before Grandpa gives it")
+	await _step("start notebook test", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	_answers = [true]
+	await _click("BasketProp")
+	await _click("Door")
+	await _wait_room("Yard")
+	_answers = [true]
+	await _click("Jad")
+	await _hold_at(Vector2(0.355, 0.50), 0.7)
+	var item: PopochiuInventoryItem = I.get_item_instance("Notebook")
+	await item.on_click()
+	_expect(book.is_open and get_tree().paused, "inventory notebook opens and pauses story")
+	_expect(book.hint_context() == "yard", "hints follow current puzzle state")
+	var first_text: String = book.hint_label.text
+	book.more_button.pressed.emit()
+	_expect(book.hint_label.text != first_text and Globals.hint_steps.yard == 1, "second hint is clearer")
+	book.more_button.pressed.emit()
+	_expect(Globals.hint_steps.yard == 2 and book.more_button.disabled, "third hint gives answer and stops escalation")
+	book.page_buttons.words.pressed.emit()
+	_expect(book.word_buttons.has("word_bucket") and book.word_buttons.size() == 1, "words page shows only discovered words")
+	book.word_buttons.word_bucket.pressed.emit()
+	_expect(book._voice.bus == ReemSettings.VOICE_BUS and book._voice.stream != null, "word replay uses existing recording and voice volume")
+	book.page_buttons.cards.pressed.emit()
+	_expect(Globals.friend_cards.is_empty(), "cards are not given before helping")
+	book.page_buttons.map.pressed.emit()
+	_expect(book.map_buttons.MeadowFork.disabled, "unvisited map destination locked")
+	book.travel("End")
+	_expect(book.is_open and _room_name() == "Yard", "map cannot skip to ending")
+	book.travel("MeadowFork")
+	_expect(book.is_open and _room_name() == "Yard", "map rejects unvisited destination")
+	book.map_buttons.GrandpaRoom.pressed.emit()
+	await _wait_room("GrandpaRoom")
+	_expect(not book.is_open and not get_tree().paused and Globals.briefed, "map travels without resetting story")
+	await _click("Door")
+	await _wait_room("Yard")
+	await _click("ExitRight")
+	await _wait_room("Gate")
+	await _click("ExitRight")
+	await _wait_room("MeadowFork")
+	_answers = [true]
+	await _click("ExitRight")
+	await _wait_room("BigTree")
+	await _click("Shahd")
+	book.open_notebook()
+	_expect(book.hint_context() == "mirror", "mirror puzzle has its own hint context")
+	book.close_notebook()
+	await _click("SunSpot")
+	_expect(Globals.friend_cards.has("shahd"), "helping Shahd earns her card")
+	book.open_notebook()
+	book.show_page("cards")
+	_expect(book._body.get_child_count() == 4, "earned card shows picture, name, fact and replay")
+	await _shot("notebook_card")
+	book.close_notebook()
+	E.save_game(1)
+	Globals.hint_steps.clear()
+	Globals.friend_cards.clear()
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("restore notebook progress", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("BigTree")
+	_expect(Globals.hint_steps.get("yard") == 2 and Globals.friend_cards.has("shahd"), "save restores hints and friend cards")
+	book.open_notebook()
+	var old_words: int = Globals.discovered_words.size()
+	await _hold_at(Vector2(0.25, 0.75), 0.7)
+	_expect(Globals.discovered_words.size() == old_words, "notebook holds do not reach story")
+	_send_key(KEY_ESCAPE)
+	await get_tree().process_frame
+	_expect(not book.is_open and not get_tree().paused and not G.is_blocked, "Escape closes notebook and restores play")
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("new journey resets notebook", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	_expect(Globals.friend_cards.is_empty() and Globals.hint_steps.is_empty(), "new journey resets cards and hints")
+	_expect(Globals.discovered_words.has("word_bucket"), "new journey retains discovered words")

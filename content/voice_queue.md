@@ -24,3 +24,38 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 
 | File | Voice | Tone | Text | Status |
 | --- | --- | --- | --- | --- |
+| reem_hint_briefing_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَسْأَلُ جَدِّي عَنِ الرِّحْلَة. | todo |
+| reem_hint_briefing_2 | Reem | gentle, clear, thoughtful notebook reading | جَدِّي يَجْلِسُ تَحْتَ الشَّجَرَة. | todo |
+| reem_hint_briefing_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى جَدِّي لِأَتَحَدَّثَ مَعَهُ. | todo |
+| reem_hint_yard_1 | Reem | gentle, clear, thoughtful notebook reading | أَنَا مُسْتَعِدَّةٌ لِلرِّحْلَة. | todo |
+| reem_hint_yard_2 | Reem | gentle, clear, thoughtful notebook reading | الْبَوَّابَةُ عَلَى يَمِينِ السَّاحَة. | todo |
+| reem_hint_yard_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأَذْهَبَ إِلَى الْبَوَّابَة. | todo |
+| reem_hint_path_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَنْظُرُ إِلَى الطَّرِيق. | todo |
+| reem_hint_path_2 | Reem | gentle, clear, thoughtful notebook reading | اللَّافِتَةُ تُسَاعِدُنِي عَلَى الْمَشْيِ بِرِفْقٍ. | todo |
+| reem_hint_path_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَقْرَأُ اللَّافِتَةَ، ثُمَّ أَتَّبِعُ الطَّرِيقَ نَحْوَ الْيَمِينِ. | todo |
+| reem_hint_bee_1 | Reem | gentle, clear, thoughtful notebook reading | لَعَلَّ شَهْدَ تَحْتَاجُ إِلَى مُسَاعَدَتِي. | todo |
+| reem_hint_bee_2 | Reem | gentle, clear, thoughtful notebook reading | سَأَسْأَلُ النَّحْلَةَ عَنِ الزُّهُورِ. | todo |
+| reem_hint_bee_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى شَهْدَ بِجَانِبِ خَلَايَا النَّحْلِ. | todo |
+| reem_hint_water_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي إِصْلَاحُ مَا حَدَثَ لِلزُّهُورِ. | todo |
+| reem_hint_water_2 | Reem | gentle, clear, thoughtful notebook reading | الزُّهُورُ الذَّابِلَةُ تَحْتَاجُ إِلَى الْمَاءِ. | todo |
+| reem_hint_water_3 | Reem | gentle, clear, thoughtful notebook reading | سَآخُذُ إِبْرِيقَ الرَّيِّ مِنَ الْبِئْرِ، ثُمَّ أَضْغَطُ عَلَى الزُّهُورِ الَّتِي دُسْتُهَا. | todo |
+| reem_hint_examine_1 | Reem | gentle, clear, thoughtful notebook reading | سَأَنْظُرُ إِلَى الزُّهُورِ الْمُغْلَقَةِ. | todo |
+| reem_hint_examine_2 | Reem | gentle, clear, thoughtful notebook reading | رُبَّمَا أَحْتَاجُ إِلَى شَيْءٍ يُسَاعِدُهَا. | todo |
+| reem_hint_examine_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى الزُّهُورِ فِي الظِّلِّ لِأَعْرِفَ مَا يَنْقُصُنِي. | todo |
+| reem_hint_confess_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي أَنْ أَتَحَدَّثَ مَعَ جَدِّي بِصِدْقٍ. | todo |
+| reem_hint_confess_2 | Reem | gentle, clear, thoughtful notebook reading | جَدِّي يُسَاعِدُنِي حِينَ أُخْبِرُهُ بِمَا حَدَثَ. | todo |
+| reem_hint_confess_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَعُودُ إِلَى السَّاحَةِ وَأَضْغَطُ عَلَى جَدِّي لِأُخْبِرَهُ عَنِ الْمِرْآةِ. | todo |
+| reem_hint_mirror_1 | Reem | gentle, clear, thoughtful notebook reading | الزُّهُورُ فِي الظِّلِّ تَحْتَاجُ إِلَى الضَّوْءِ. | todo |
+| reem_hint_mirror_2 | Reem | gentle, clear, thoughtful notebook reading | الْمِرْآةُ تَعْكِسُ ضَوْءَ الشَّمْسِ. | todo |
+| reem_hint_mirror_3 | Reem | gentle, clear, thoughtful notebook reading | مَعِي مِرْآةُ جَدِّي؛ سَأَضْغَطُ عَلَى الزُّهُورِ الْمُغْلَقَةِ لِأُوَجِّهَ الضَّوْءَ إِلَيْهَا. | todo |
+| reem_hint_forward_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي أَنْ أُكْمِلَ رِحْلَتِي. | todo |
+| reem_hint_forward_2 | Reem | gentle, clear, thoughtful notebook reading | الطَّرِيقُ يَمْتَدُّ نَحْوَ الْيَمِينِ. | todo |
+| reem_hint_forward_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأُكْمِلَ الطَّرِيقَ. | todo |
+| reem_hint_stone_1 | Reem | gentle, clear, thoughtful notebook reading | هَلِ الْحَجَرُ كَمَا وَصَفَهُ ثَعْلُوبُ؟ | todo |
+| reem_hint_stone_2 | Reem | gentle, clear, thoughtful notebook reading | سَأَفْحَصُ الْحَجَرَ الَّذِي أَعْطَانِي إِيَّاهُ. | todo |
+| reem_hint_stone_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى الْحَجَرِ فِي السَّلَّةِ لِأَمْسَحَهُ. | todo |
+| reem_hint_return_stone_1 | Reem | gentle, clear, thoughtful notebook reading | يُمْكِنُنِي إِصْلَاحُ هَذَا الْخَطَإِ. | todo |
+| reem_hint_return_stone_2 | Reem | gentle, clear, thoughtful notebook reading | ثَعْلُوبُ مَا زَالَ بِجَانِبِ الصَّخْرَةِ. | todo |
+| reem_hint_return_stone_3 | Reem | gentle, clear, thoughtful notebook reading | سَأَضْغَطُ عَلَى ثَعْلُوبَ لِأُعِيدَ الْحَجَرَ وَأَسْتَرِدَّ الْمِرْآةَ. | todo |
+| reem_card_shahd_name | Reem | gentle, clear, thoughtful notebook reading | شَهْد | todo |
+| reem_card_shahd_fact | Reem | gentle, clear, thoughtful notebook reading | تَجْمَعُ النَّحْلَةُ الرَّحِيقَ مِنَ الْأَزْهَارِ. | todo |

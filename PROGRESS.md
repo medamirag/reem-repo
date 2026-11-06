@@ -6,46 +6,58 @@
 - **Date:** 2026-11-06
 - **Branch:** main
 - **What was done:**
-  - Working tree was clean. Re-read AGENTS, PIPELINE, ROADMAP, game_spec and the handoff.
-  - Art queue still has no rows; no todo images and no newly completed images needing words.
-  - Built ROADMAP step 2's Settings, specified first in game_spec.md 9.2.
-  - game/scripts/reem_settings.gd (ReemSettings, owned by Globals.settings) creates the Arabic
-    panel and persistent Settings button. F10 and the inventory-bar gear open the same panel;
-    Back/Escape/F10 close it. It opens only at idle, pauses the story and restores the previous
-    GUI blocking state. Word holds are cancelled when opening and cannot reach the story.
-  - Preferences persist in user://reem_settings.cfg independently of journey saves. Music
-    defaults off; volumes default 100%; text sizes are 40, 48, 56. Continue/New journey do not
-    change preferences. Music has its own bus but no tracks exist, as the panel explains.
-  - Dialogue and discovered-word players route through ReemVoice. Registered Popochiu cues
-    route through ReemEffects (including ambience); future mx_ cues route through ReemMusic.
-    Cue resources change only in memory; no original assets were edited.
-  - Shared Arabic theme changes dialogue, narration and choices. Dialogue line height adapts;
-    word bubbles scale separately from 72 to 86/101 pixels. Interface labels are unspoken,
-    fully vocalized Cairo/RTL text in game_data/ui_labels.json. No new art/audio needed.
-  - Added --path=settings playtest: actual panel controls, independent volumes, config save/
-    reload, new-game preference retention, voice/effects routing, input isolation, Escape,
-    word bubble and choice text sizes. The first complete run passed.
-- **Checks:** Windows Godot 4.7.2 startup plus all six playtests passed: settings, green,
-  sand, mixed, words, save. All reached DONE; only allowed exit-leak/resource messages remain.
-  git diff --check passed. Headless runs do not verify visual layout or volume by ear.
-- **What is next:** ROADMAP step 2 notebook: up to three hint steps, discovered-words page,
-  visited map/fast travel, earned friend-card album; then hotspot highlight. Spec each feature
-  first and keep Arabic text in data files. After base systems: Stream, then Pine Fork, etc.
-- **Half-finished:** no notebook implementation started. No art/voice/word rows pending for
-  Settings. User visual/sound testing is pending. Prior word_path/word_girl audio concerns
-  and old TestArabic editor leftovers remain; originals have not been touched.
-- **How to test Settings:** reopen Godot, press F5. On the title screen click الإعدادات near
-  the upper right, or press F10. Change voice/effects sliders and text size, then click العودة.
-  Start a journey: dialogue/choices and long-press word bubbles should use the selected size.
-  Close/relaunch: preferences should remain. The existing inventory-bar gear also opens it.
-  During dialogue/choices the settings button waits until Reem is free. Escape closes the
-  panel and gameplay resumes. Listen to a spoken line and a long-press word to check voice
-  volume; use the well/basket or room ambience to check effects volume. Music remains silent
-  because the current game has no music tracks.
+  - Tree was clean; read AGENTS, PIPELINE, ROADMAP, game_spec and previous Handoff.
+  - Art queue has no rows: no todo images, no newly completed images requiring words.
+  - Built notebook (ROADMAP step 2; spec game_spec.md 9.3) with four pages: hints, discovered
+    words with replay, visited-room map with safe fast travel, and earned friend cards.
+  - game/scripts/reem_notebook.gd is Globals.notebook, an always-processing CanvasLayer. Open
+    from the Notebook inventory item, upper-screen button, or N after Grandpa gives it. Open
+    only at idle; pause story/input, cancel word holds; close with Back/Escape/N. Own voice
+    player uses ReemVoice. Page text uses Cairo/RTL and the selected text size; pages scroll.
+  - game_data/notebook.json holds 11 three-step hint contexts, six MVP map places/positions/
+    edges and Shahd's card. Hints follow puzzle flags, not visit counts. Map enables only visited
+    gameplay rooms; no jump to Title/End/unvisited locations. Its drawn trail is a provisional
+    map for the built rooms, to expand with stations.
+  - Added 35 lines to lines.json and matching todo rows to content/voice_queue.md: 33 hints,
+    Shahd card name and bee fact. Claude Desktop records them; missing recordings are silent
+    and do not block building. Existing 68 dialogue records verified byte-for-byte unchanged
+    in their field values. Existing word recordings/art reused; words.json unchanged.
+  - Shahd's card is earned after opening her flowers in room_big_tree.gd. Globals.friend_cards
+    and hint_steps save/load via custom hooks, reset on New journey. Existing saves with
+    flowers_open backfill Shahd. No Thaaloob card until Reem actually helps him later.
+  - Updated story playtests to open/check/close the new Notebook on inventory clicks instead
+    of waiting for the superseded direct-hint behavior. Added --path=notebook to check hints,
+    word replay, locked destinations, fast travel, card earning, save/load and New journey.
+- **Checks:** Windows Godot 4.7.2 import/startup plus all seven playtests passed: notebook,
+  green, sand, mixed, words, save, settings. All reached DONE; only allowed exit-leak/resource
+  messages remained. git diff --check and dialogue/queue consistency checks passed.
+  Headless testing cannot judge visual layout or sound.
+- **What is next:** finish ROADMAP step 2 with hotspot highlight (button briefly shows all
+  currently clickable things). Then Stream station: write spec first, add art/voice/word queue
+  rows, generate queued images with references/checks, identify words after art, build/check.
+  Continue Pine Fork and remaining stations in roadmap order. Never wait for recordings.
+- **Half-finished:** no hotspot-highlight or Stream code started. 35 new voice rows await
+  Claude Desktop. Notebook visual/sound testing pending; prior settings/save visual checks,
+  word_path/word_girl recording concerns and TestArabic editor leftovers remain.
+- **How to test Notebook:** reopen Godot, F5; take basket, answer the choice, click blue door,
+  talk to Grandpa and finish the conversation. Press N or click دفتري near the top. Try the
+  four tabs; More reveals up to three hints. Close with Escape. Hold the Yard bucket to learn
+  its word, reopen Words and tap it to hear its recording. Map enables only visited rooms;
+  return to Grandpa's room and check the taken basket stays gone. Help Shahd open her flowers,
+  then open Friends: her picture, name and bee fact should appear. Her new narration/hint
+  recordings remain silent until Claude Desktop supplies them. Continue keeps hint/card
+  progress; New journey resets hints/cards and keeps discovered words.
 
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Notebook (Codex, 2026-11-06):** reuse existing art/word recordings; native drawn MVP map,
+  no new bitmap art. Map shows the six built rooms and only allows visits already made.
+  Hint steps/cards belong to the current journey; discovered words retain the MVP behavior.
+  Only Shahd earns a card now, after her flowers open; Thaaloob has not yet been helped.
+  New hints/card narration are Reem reading her notebook, queued as 35 unrecorded lines.
+
 
 - **Settings (Codex, 2026-11-06):** open only at idle to avoid interrupting a dialogue, choice
   or transition; pause while open. Volumes cover word voices and ambience too. Text sizes are
@@ -59,8 +71,8 @@ Choices made without asking (newest first).
 - **Popochiu compatibility fix:** native JSON conversion is required to preserve typed room
   geometry. This is a small save/load fix in the installed plugin, not a version upgrade.
   Silent save/load feedback avoids an English confirmation modal blocking every room change.
- Older MVP decisions are further down, under "MVP
-decisions to review".
+
+Older MVP decisions are further down, under "MVP decisions to review".
 
 1. **docs/PIPELINE.md** was updated (at the user's request) to the new roles and to "local
    folder is the source of truth, no pulling, push as a backup".
@@ -82,7 +94,7 @@ decisions to review".
 **The whole MVP from game_spec.md is built**: Title, GrandpaRoom, Yard, Gate, MeadowFork,
 BigTree, FoxRock, End screen, plus Reem's walk cycle. Nothing has been played by the user since
 the GrandpaRoom fixes. The user asked to build everything first and test it all at once:
-**next step is the user's full test (checklist at the bottom), then fixing what they report.**
+**Continue building from the current Handoff; the full visual/sound test remains pending.**
 
 Confirmed by the user so far: Arabic text displays correctly (session 1); headless check on
 Windows had no script errors (session 3); GrandpaRoom basket/mirror/choice reached the choice

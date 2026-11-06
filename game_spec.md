@@ -308,3 +308,34 @@ Skeletal animation with the parts sheets and lip sync with the mouth sheets; mus
   unspoken controls; no voice or art queue rows are needed for this feature.
 - Test: --path=settings exercises the actual controls, independent voice/effects buses, word
   playback routing, larger Arabic text, blocked story input, persistence and reopening.
+
+
+### 9.3 Notebook
+
+This replaces the MVP inventory item's single immediate hint with the full notebook pages.
+
+- Once Grandpa gives Notebook, its inventory click, a top-screen notebook button or N opens
+  four Arabic pages: hints, discovered words, valley map, friend cards. Escape/Back/N closes.
+  Open at idle only; pause gameplay, cancel unfinished word holds, and block story input.
+- Hints start with one gentle nudge; More reveals a clearer hint, then the answer. Repeat
+  replays the current hint. Select a context from room and puzzle flags; changing context
+  resets to that context's remembered step. Hint text/audio IDs are in notebook.json and
+  lines.json (Reem voice); all newly spoken hints enter voice_queue.md as todo. Missing audio
+  is silent, not a blocker. Notebook playback uses ReemVoice and stops on page change/close.
+- Words page lists only discovered IDs, copying their text/audio from words.json. Tap a word
+  to replay its existing recording. Show a friendly empty-page message before finding any.
+- Map page draws a parchment-style trail for the six built MVP rooms; labels/positions/edges
+  are data in notebook.json. Visited places are enabled; current place is marked. Unvisited
+  places are locked. Clicking a visited place closes the notebook and travels with the normal
+  Popochiu transition/autosave. Title/End/TestArabic are never travel destinations. Expand this
+  provisional MVP map when building further stations. No new bitmap map artwork is needed.
+- Album shows only earned cards: for now Shahd after helping her open the flowers, using the
+  existing shahd_body artwork and a simple fact about bees collecting flower nectar. No card
+  for Thaaloob yet: Reem has not helped him in the MVP. Later Narrow pass awards his card.
+  Card name/fact text and narration IDs are in notebook.json/lines.json and voice_queue.md.
+- Globals.friend_cards and Globals.hint_steps are dictionaries saved through the custom
+  save hooks. They reset with New journey; discovered words keep the previous behavior.
+  Existing saves with flowers_open backfill Shahd's earned card. Room visits use Popochiu.
+- Cairo/RTL and selected text size apply to page text. Large content scrolls. Interface labels
+  live in ui_labels.json. Reused images/word audio need no queue rows; new hints/card narration
+  go to voice_queue.md. Test with --path=notebook, plus the existing regression playtests.

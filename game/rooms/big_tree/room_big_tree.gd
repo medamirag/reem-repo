@@ -136,6 +136,7 @@ func _open_flowers() -> void:
 	await Lines.say("bee_s2_033")
 	await C.player.add_to_inventory(I.HoneyJar)
 	Globals.flowers_open = true
+	Globals.refresh_friend_cards()
 	Globals.bloom()
 
 

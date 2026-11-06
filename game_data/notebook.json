@@ -1,0 +1,139 @@
+{
+  "hints": {
+    "briefing": [
+      "reem_hint_briefing_1",
+      "reem_hint_briefing_2",
+      "reem_hint_briefing_3"
+    ],
+    "yard": [
+      "reem_hint_yard_1",
+      "reem_hint_yard_2",
+      "reem_hint_yard_3"
+    ],
+    "path": [
+      "reem_hint_path_1",
+      "reem_hint_path_2",
+      "reem_hint_path_3"
+    ],
+    "bee": [
+      "reem_hint_bee_1",
+      "reem_hint_bee_2",
+      "reem_hint_bee_3"
+    ],
+    "water": [
+      "reem_hint_water_1",
+      "reem_hint_water_2",
+      "reem_hint_water_3"
+    ],
+    "examine": [
+      "reem_hint_examine_1",
+      "reem_hint_examine_2",
+      "reem_hint_examine_3"
+    ],
+    "confess": [
+      "reem_hint_confess_1",
+      "reem_hint_confess_2",
+      "reem_hint_confess_3"
+    ],
+    "mirror": [
+      "reem_hint_mirror_1",
+      "reem_hint_mirror_2",
+      "reem_hint_mirror_3"
+    ],
+    "forward": [
+      "reem_hint_forward_1",
+      "reem_hint_forward_2",
+      "reem_hint_forward_3"
+    ],
+    "stone": [
+      "reem_hint_stone_1",
+      "reem_hint_stone_2",
+      "reem_hint_stone_3"
+    ],
+    "return_stone": [
+      "reem_hint_return_stone_1",
+      "reem_hint_return_stone_2",
+      "reem_hint_return_stone_3"
+    ]
+  },
+  "map": [
+    {
+      "room": "GrandpaRoom",
+      "label": "غُرْفَةُ جَدِّي",
+      "at": [
+        0.04,
+        0.22
+      ]
+    },
+    {
+      "room": "Yard",
+      "label": "السَّاحَة",
+      "at": [
+        0.36,
+        0.22
+      ]
+    },
+    {
+      "room": "Gate",
+      "label": "الْبَوَّابَة",
+      "at": [
+        0.68,
+        0.22
+      ]
+    },
+    {
+      "room": "MeadowFork",
+      "label": "مَفْرِقُ الْمَرْج",
+      "at": [
+        0.04,
+        0.66
+      ]
+    },
+    {
+      "room": "BigTree",
+      "label": "الشَّجَرَةُ الْكَبِيرَة",
+      "at": [
+        0.36,
+        0.66
+      ]
+    },
+    {
+      "room": "FoxRock",
+      "label": "صَخْرَةُ ثَعْلُوب",
+      "at": [
+        0.68,
+        0.66
+      ]
+    }
+  ],
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "cards": [
+    {
+      "id": "shahd",
+      "image": "res://assets/cut/bees_sheet/shahd_body.png",
+      "name_line": "reem_card_shahd_name",
+      "fact_line": "reem_card_shahd_fact"
+    }
+  ]
+}

@@ -152,7 +152,7 @@ func _to_window(event: InputEventMouseButton) -> InputEventMouseButton:
 ## a narration, a room change, or while an inventory item is selected.
 ## Why a hold would be refused right now ("" = it would work). For debugging and the playtest.
 func why_not() -> String:
-	if Globals.settings.is_open:
+	if Globals.settings.is_open or (is_instance_valid(Globals.notebook) and Globals.notebook.is_open):
 		return "settings open"
 	if not is_instance_valid(R.current):
 		return "no room"
@@ -170,7 +170,7 @@ func why_not() -> String:
 
 
 func _can_hold() -> bool:
-	if Globals.settings.is_open:
+	if Globals.settings.is_open or (is_instance_valid(Globals.notebook) and Globals.notebook.is_open):
 		return false
 	if Engine.is_editor_hint() or not is_instance_valid(R.current):
 		return false

@@ -1,6 +1,6 @@
 # PIPELINE.md – how new content is made, and who does what
 
-Three tools take turns in the same local folder (`C:\Users\ACER\Desktop\Games\reem-game`). Claude Code and Codex are both **builders**, with the same role and the same rules; Codex is also the only one that can generate images. Claude Desktop is the **voice studio**, the only one that generates voices. The local folder is the source of truth and GitHub is only a backup: do not pull between turns; commit at the end of every session, then push.
+Three tools take turns in the same local folder (`C:\Users\ACER\Desktop\Games\reem-game`). Claude Code and Codex are both **builders**, with the same role and the same rules; Codex can do everything: build, identify objects, generate images and ElevenLabs voices. Claude Code builds and identifies objects but cannot generate images or voices. Claude Desktop can also be the **voice studio**. The local folder is the source of truth and GitHub is only a backup: do not pull between turns; commit at the end of every session, then push.
 
 Whoever is working **continues exactly where the other stopped**, using the Handoff section at the top of `PROGRESS.md`.
 
@@ -20,11 +20,11 @@ New voices for new characters go in a "Voices" table at the top of `voice_queue.
 
 ### Claude Code and Codex (the builders)
 
-Both do exactly the same work, with the same rules (`AGENTS.md`). At the start of a session, read the Handoff in `PROGRESS.md` and continue from the exact point where the last builder stopped, whoever it was; finish a half-done step before starting a new one.
+Both do the building and object-identification work below, following `AGENTS.md`. Codex additionally generates images and voices; Claude Code queues those assets. At the start of a session, read the Handoff in `PROGRESS.md` and continue from the exact point where the last builder stopped, whoever it was; finish a half-done step before starting a new one.
 
 1. **Writes each new station before anything is drawn:** a section in `game_spec.md` (screens, props, choices, flags, line IDs), in the same detail as the MVP rooms, following the station table in `docs/ROADMAP.md`.
 2. **Fills the queues for that station:** its images in `art_queue.md` (full prompts with the STYLE block and character descriptions, and the right reference images to attach for consistency), its lines in `voice_queue.md`, and its new lines in `game_data/lines.json`.
-3. **After the images exist** (status `done`): looks at each new background and character, identifies the objects a child would recognise, adds them to `game_data/words.json`, `game_data/word_areas.json` and `content/word_queue.md` (status `todo`). Never add a word already in `words.json`.
+3. **After the images exist** (status `done`): looks at each new background and character, identifies the objects a child would recognise, adds them to the table in `tools/make_words.py` and runs `python tools/make_words.py` to update `game_data/words.json` and `content/word_queue.md` (status `todo`), then edits `game_data/word_areas.json` by hand. Never edit `words.json` by hand. Never add a word already in `words.json`.
 4. **Builds the station in Godot** using whatever art and audio exist. If audio is missing, the game shows the text without sound; if an image is missing, it uses a clearly marked placeholder. It never waits for images or voices.
 5. Moves on to the next step in the roadmap.
 
@@ -38,13 +38,14 @@ Claude Code cannot generate images: it only writes the rows in `content/art_queu
 
 Codex chooses when to generate images and when to build, so that neither waits too long; it notes in the Handoff which it did.
 
-### Claude Desktop with ElevenLabs (the voice studio, voices only)
+### Voice generation (Codex or Claude Desktop with ElevenLabs)
 
-Only Claude Desktop generates voices; the builders only write the rows.
+Codex can generate all queued voices, dialogue and words as well as build and make images. Claude Desktop can also record them on its turn. Claude Code writes rows and identifies objects but cannot generate images or voices.
 
-1. Designs any voice in the "Voices" table with status `todo`, saves it in ElevenLabs under that name, marks it `done`.
-2. Generates every row with status `todo` in `content/voice_queue.md` and `content/word_queue.md`, with the right saved voice and a model that supports Arabic, Text exactly as written, Tone as direction only. Saves to the right folder and name, marks `done`.
-3. It cannot use git: when it finishes, the user commits and pushes the new audio.
+1. Designs any voice in the "Voices" table with status `todo`, saves it in ElevenLabs under that name, records its verified name/ID and successful model/settings in the AGENTS.md registry, then marks it `done`.
+2. Generates every row with status `todo` in `content/voice_queue.md` and `content/word_queue.md`, with the exact saved voice and settings policy in AGENTS.md: `eleven_v3` for expressive lines, `eleven_multilingual_v2` if v3 fails; isolated words reuse Reem's multilingual-v2 approach. Record successful settings and fallbacks in AGENTS.md. Use Text exactly as written, Tone as direction only; v3 synthesis tags never enter displayed text. Saves to the right folder and name, marks `done`.
+3. Codex checks queue paths/statuses, commits and pushes its audio. Claude Desktop cannot use git: the user or next builder checks, commits and pushes its new audio before other work.
+4. Never write the ElevenLabs API key into any repo file. Use connected authentication or the process environment; follow AGENTS.md credential rules and exclude credential-containing local files with `.gitignore`.
 
 ## Rules for everyone
 

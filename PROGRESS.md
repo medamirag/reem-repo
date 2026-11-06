@@ -6,6 +6,9 @@
 - **Date:** 2026-11-06
 - **Branch:** main
 - **What was done:**
+  - Codex updated tool roles: Codex builds, identifies objects, generates art and ElevenLabs audio; Claude Code builds/identifies/queues only. Updated PIPELINE, AGENTS, queue instructions and the word-queue generator header.
+  - AGENTS now holds verified saved voice IDs for Reem, Grandpa/Jad, Thaaloob and Shahd, historical working settings, v3 expressive-line/v2 fallback policy, and mandatory registry entries for new characters. Exact historical default numeric settings are unknown; do not invent them. No audio generated or originals changed.
+  - Added credential exclusion patterns to .gitignore and a rule to keep keys outside the repo; scan of tracked/unignored text found no key values.
   - Tree was clean; read AGENTS, PIPELINE, ROADMAP, game_spec and previous Handoff.
   - Art queue has no rows: no todo images, no newly completed images requiring words.
   - Built notebook (ROADMAP step 2; spec game_spec.md 9.3), committed/pushed as 8b020ad, with four pages: hints, discovered
@@ -19,7 +22,7 @@
     gameplay rooms; no jump to Title/End/unvisited locations. Its drawn trail is a provisional
     map for the built rooms, to expand with stations.
   - Added 35 lines to lines.json and matching todo rows to content/voice_queue.md: 33 hints,
-    Shahd card name and bee fact. Claude Desktop records them; missing recordings are silent
+    Shahd card name and bee fact. Codex or Claude Desktop records them; missing recordings are silent
     and do not block building. Existing 68 dialogue records verified byte-for-byte unchanged
     in their field values. Existing word recordings/art reused; words.json unchanged.
   - Shahd's card is earned after opening her flowers in room_big_tree.gd. Globals.friend_cards
@@ -36,7 +39,8 @@
     selected-item use and overlays. Native drawing, no new art/voice/word rows.
   - Added --path=highlight: props/NPC/hotspot targets, locked exits, changing puzzle state,
     no story/word changes, glow expiry/repeat, selected-item use and Settings all passed.
-- **Checks:** Before highlight, Windows Godot 4.7.2 import/startup and all seven playtests passed: notebook,
+- **Checks for the documentation update:** diff whitespace and unchanged queue-row/Arabic checks passed; credential scan found no keys in tracked/unignored text files; representative credential paths are ignored. Initial sandboxed Godot run could not access normal logs/certificates; rerun with normal access passed startup and all four required paths (green/sand/mixed/words), each reached DONE; only allowed exit leak/resource messages remained. No audio generated; listening checks were not needed for this documentation change.
+- **Earlier feature checks:** Before highlight, Windows Godot 4.7.2 import/startup and all seven playtests passed: notebook,
   green, sand, mixed, words, save, settings. All reached DONE; only allowed exit-leak/resource
   messages remained. git diff --check and dialogue/queue consistency checks passed.
   After highlight: import, dedicated highlight test, startup and all four required paths
@@ -47,10 +51,11 @@
   lantern choice and repairs), then art/voice queues and line data; generate todo art with
   references/checks, identify words after images exist, build/check. Expand notebook map,
   hints and friend-card data as each station is built. Continue Pine Fork and the roadmap.
-  Do not wait for Claude Desktop recordings.
+  Codex can now record queued lines directly; no need to wait for Claude Desktop.
 - **Half-finished:** no Stream spec/code started. 35 new voice rows await
-  Claude Desktop. Notebook visual/sound testing pending; prior settings/save visual checks,
+  Codex or Claude Desktop. Notebook visual/sound testing pending; prior settings/save visual checks,
   word_path/word_girl recording concerns and TestArabic editor leftovers remain.
+- **How to review this documentation change:** open AGENTS.md for the saved voice table and credential rules; open docs/PIPELINE.md for tool roles. No Godot clicks needed for the documentation. Continue Stream work from the existing next-step notes.
 - **How to test highlight:** reopen Godot, F5, click New journey if offered. Once the opening
   dialogue finishes, click أين أضغط؟ at the bottom left or press H. Mirror/basket should glow;
   the locked blue door should not. After taking the basket and answering the choice, the
@@ -61,12 +66,14 @@
   its word, reopen Words and tap it to hear its recording. Map enables only visited rooms;
   return to Grandpa's room and check the taken basket stays gone. Help Shahd open her flowers,
   then open Friends: her picture, name and bee fact should appear. Her new narration/hint
-  recordings remain silent until Claude Desktop supplies them. Continue keeps hint/card
+  recordings remain silent until Codex or Claude Desktop supplies them. Continue keeps hint/card
   progress; New journey resets hints/cards and keeps discovered words.
 
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Voice registry (Codex, 2026-11-06):** Grandpa and Jad share the verified saved Jad voice. Preserve MVP settings as historical evidence; do not invent missing numeric defaults or reuse unrelated saved account voices for future characters. Verify supported settings and compare a sample before the next audio batch.
 
 - **Highlight (Codex, 2026-11-06):** use the room's has_action rules, a brief soft gold outline,
   button plus H, no cooldown/cost or gameplay time limit. Put the button at the bottom left

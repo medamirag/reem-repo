@@ -1,13 +1,13 @@
 # voice_queue.md – voices and dialogue lines to record
 
-Voice studio (Claude Desktop + ElevenLabs), see docs/PIPELINE.md:
+Voice studio (Codex or Claude Desktop + ElevenLabs), see docs/PIPELINE.md:
 
 1. **Voices:** design every voice in the table below with Status `todo`, save it in ElevenLabs under exactly that name, then set Status to `done`. If Voice Design refuses a child's voice, start the description with "A young woman with a bright, youthful, high-pitched voice".
-2. **Lines:** record every row with Status `todo` in the Lines table, with the saved voice named in the Voice column and a model that supports Arabic (`eleven_multilingual_v2`; Thaaloob uses `eleven_v3`, see below). Use the Text exactly as written and keep the diacritics. The Tone column is direction only: never read it aloud or add it to the text. Save each as `assets/audio/lines/<File>.mp3`, then set Status to `done` (or `problem: <short reason>`).
+2. **Lines:** record every row with Status `todo` in the Lines table, with the saved voice named in the Voice column and the model/settings policy in AGENTS.md. Use the Text exactly as written and keep the diacritics. The Tone column is direction only: never read it aloud or add it to the text. Save each as `assets/audio/lines/<File>.mp3`, then set Status to `done` (or `problem: <short reason>`).
 
 Never delete rows; change their status. The builder adds rows here and the same lines to `game_data/lines.json` at the same time.
 
-Saved settings from the MVP: Reem, Jad and Shahd use `eleven_multilingual_v2` with default settings. Thaaloob uses `eleven_v3` with stability 0.3 and style 0.5, and emotion tags in square brackets that match the Tone (for example `[playful]`, `[sly]`, `[laughs]`, `[embarrassed]`) placed before the Arabic text. This is an exception for Thaaloob only.
+Use the verified voice IDs, historical working settings and future batch records in **AGENTS.md, Saved voices and consistent recordings**. New expressive lines use `eleven_v3`, with `eleven_multilingual_v2` if v3 fails. Keep the same saved voice.
 
 ## Voices
 

@@ -10,7 +10,7 @@ You are building a 2D point-and-click adventure game for Muslim Arab children, i
 
 * **Claude Code and Codex are both builders, with the same role and the same rules** (everything in this file applies to both). They write the station specs, fill the queues, and build the game in Godot.
 * **Images: only Codex.** Codex can also generate the images in `content/art_queue.md`; Claude Code cannot, so it only writes the rows.
-* **Voices: only Claude Desktop** (with ElevenLabs) generates voices, lines and words from `content/voice_queue.md` and `content/word_queue.md`. The builders only write the rows.
+* **Voices: Codex or Claude Desktop** (with ElevenLabs) generates voices, dialogue and words from the queues. Codex can do everything: build, identify objects, generate images and voices. Claude Code builds, identifies objects and writes queue rows, but cannot generate images or voices.
 * **Whoever is working continues exactly where the other stopped**, using the Handoff at the top of `PROGRESS.md`: finish the half-done step it describes before starting anything new, and follow the same plan and naming.
 
 ## How the tools take turns
@@ -42,8 +42,31 @@ You are building a 2D point-and-click adventure game for Muslim Arab children, i
 ## Originals and new files
 
 * **Originals are never edited:** never edit, move, rename or delete anything that already exists in `res://assets/` (art, audio, fonts). Put cut pieces and anything generated from them in `res://assets/cut/` or under `res://game/`.
-* **New files listed in the queues may be added:** Codex adds the images in `content/art_queue.md` and Claude Desktop adds the audio in `content/voice_queue.md` and `content/word_queue.md`, at exactly the path and name in the queue. Once added, they are originals too.
+* **New files listed in the queues may be added:** Codex adds the images in `content/art_queue.md` and Codex or Claude Desktop adds the audio in `content/voice_queue.md` and `content/word_queue.md`, at exactly the path and name in the queue. Once added, they are originals too.
 * If a missing image or sound blocks a station, use a clearly marked placeholder under `res://game/` (never in `res://assets/`) and keep building.
+
+## Saved voices and consistent recordings
+
+Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Grandpa Sulaiman, Grandpa and Jad are the same character. Never redesign or substitute an existing character voice.
+
+| Character / game speaker | Saved voice name | Voice ID | Settings known to have worked in the MVP |
+| --- | --- | --- | --- |
+| Reem (`Reem`), including words and notebook | Reem | `YLILAzNFndW6PENMeYXD` | `eleven_multilingual_v2`, default settings; numeric values were not recorded. |
+| Grandpa Sulaiman / Grandpa / Jad (`Jad`) | Jad | `gCP17uzQRkTEVzNwqVhU` | `eleven_multilingual_v2`, default settings; numeric values were not recorded. |
+| Thaaloob (`Thaaloob`) | Thaaloob | `oBbj6AAeBj390Oj9jRV0` | `eleven_v3`, stability `0.3`, style `0.5`; tone-matching tags `[playful]`, `[sly]`, `[laughs]`, `[embarrassed]` before spoken Arabic. Other settings were not recorded. Do not use the separate saved voice named Fox. |
+| Shahd (`Shahd`) | Shahd | `hWl5pxIj5IuLzLlK07YG` | `eleven_multilingual_v2`, default settings; numeric values were not recorded. |
+
+- **New expressive lines:** use `eleven_v3`; if v3 fails, use `eleven_multilingual_v2` with the same saved voice. Clear isolated words reuse Reem's multilingual-v2 approach. Existing originals stay untouched.
+- These are historical working settings, not proof that today's v3 endpoint accepts those parameters. Check the current model/tool schema before generating. Never silently round unsupported settings or claim untested values worked. The voice-list tool returns identities, not historical generation settings.
+- Before a batch, compare a sample with that character's existing audio for voice, pace, Arabic pronunciation and loudness. Record the successful model and explicit supported settings here: stability, similarity boost, style, speed, speaker boost, tags, reference line/file and any fallback. Mark unsupported fields as such. Do not rely on changing service defaults; exact historical numeric defaults remain unknown until verified.
+- Copy spoken Arabic and diacritics from line/word data. Tone is direction only. V3 emotion tags belong only to synthesis input, never displayed Arabic or data text; omit them for v2 fallback.
+- **Every new character:** before recording dialogue, add a row here with game speaker, actual saved name, verified voice ID, successful model/settings and reference recording; add its design to the Voices queue too. Mark unverified items pending, never invent IDs or successful settings. Other saved account voices are not automatically assigned to future game characters.
+
+## ElevenLabs credentials
+
+- Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.
+- `.gitignore` excludes local environment files, credential/config paths and generation logs. Ignore rules match paths, not contents: if a tool creates any other file containing a key, remove the credential and ignore that exact path before staging. Never force-add secrets.
+- Inspect staged changes for credentials without printing secret values before every commit. Ignore rules do not protect tracked files: remove credentials before committing. If a real key was already committed, report it and rotate it; ignoring does not remove history.
 
 ## Popochiu rules
 

@@ -68,8 +68,8 @@ QUEUE = "content/word_queue.md"
 QUEUE_HEADER = [
     "# word_queue.md – object names to record",
     "",
-    "Voice studio (Claude Desktop + ElevenLabs): record every row with Status `todo`, with the",
-    "saved voice in the Voice column and a model that supports Arabic. Use the Text exactly as",
+    "Voice studio (Codex or Claude Desktop + ElevenLabs): record every row with Status `todo`, with the",
+    "saved voice in the Voice column and the model/settings policy in AGENTS.md. Use the Text exactly as",
     "written (keep the diacritics); the Tone column is direction only. Save each as",
     "`assets/audio/words/<File>.mp3`, then set Status to `done` (or `problem: <short reason>`).",
     "Never delete rows. New rows are added by `python tools/make_words.py` (see docs/PIPELINE.md).",

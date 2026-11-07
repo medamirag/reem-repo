@@ -1,0 +1,160 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/hedgehog_court/room_hedgehog_court.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg21_hedgehog_court.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/qunfood/qunfood_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://game/scripts/ramadan/dates.svg" id="10"]
+[ext_resource type="Resource" path="res://game/rooms/hedgehog_court/room_hedgehog_court.tres" id="state"]
+[ext_resource type="Texture2D" path="res://game/scripts/ramadan/lantern.svg" id="lantern"]
+
+[sub_resource type="Gradient" id="LightColor"]
+colors = PackedColorArray(1, 0.71, 0.32, 0.47, 1, 0.54, 0.2, 0)
+
+[sub_resource type="GradientTexture2D" id="Light"]
+gradient = SubResource("LightColor")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomHedgehogCourt" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "HedgehogCourt"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "RamadanLane": Vector2(0.08, 0.82), "IftarShelter": Vector2(0.92, 0.82)}
+ambience_cue = "amb_meadow"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="LanternToggle" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "LanternToggle"
+position = Vector2(1000, 846)
+interaction_polygon = PackedVector2Array(-62, -117, 62, -117, 62, 0, -62, 0)
+walk_to_point = Vector2(0, 40)
+
+[node name="InteractionPolygon" parent="Props/LanternToggle" index="2"]
+polygon = PackedVector2Array(-62, -117, 62, -117, 62, 0, -62, 0)
+
+[node name="Sprite2D" parent="Props/LanternToggle" index="0"]
+position = Vector2(0, -58.5)
+texture = ExtResource("lantern")
+scale = Vector2(1.65, 1.65)
+
+[node name="WarmLight" type="Sprite2D" parent="."]
+position = Vector2(1000, 760)
+scale = Vector2(29, 14)
+z_index = -1
+texture = SubResource("Light")
+visible = false
+
+[node name="Hedgehogs" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Hedgehogs"
+position = Vector2(525, 840)
+interaction_polygon = PackedVector2Array(-133, -200, 133, -200, 133, 0, -133, 0)
+walk_to_point = Vector2(0, 46)
+
+[node name="InteractionPolygon" parent="Props/Hedgehogs" index="2"]
+polygon = PackedVector2Array(-133, -200, 133, -200, 133, 0, -133, 0)
+
+[node name="Sprite2D" parent="Props/Hedgehogs" index="0"]
+position = Vector2(0, -100.0)
+texture = ExtResource("9")
+scale = Vector2(0.21, 0.21)
+
+[node name="YoungHedgehog" type="Sprite2D" parent="."]
+position = Vector2(640, 805)
+texture = ExtResource("9")
+scale = Vector2(0.085, 0.085)
+
+[node name="SecondYoung" type="Sprite2D" parent="."]
+position = Vector2(704, 820)
+texture = ExtResource("9")
+scale = Vector2(0.065, 0.065)
+
+[node name="DateA" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "DateA"
+position = Vector2(762, 689)
+interaction_polygon = PackedVector2Array(-55, -78, 55, -78, 55, 0, -55, 0)
+walk_to_point = Vector2(0, 197)
+
+[node name="InteractionPolygon" parent="Props/DateA" index="2"]
+polygon = PackedVector2Array(-55, -78, 55, -78, 55, 0, -55, 0)
+
+[node name="Sprite2D" parent="Props/DateA" index="0"]
+position = Vector2(0, -39.0)
+texture = ExtResource("10")
+scale = Vector2(1.3, 1.3)
+
+[node name="DateB" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "DateB"
+position = Vector2(1170, 689)
+interaction_polygon = PackedVector2Array(-55, -78, 55, -78, 55, 0, -55, 0)
+walk_to_point = Vector2(0, 197)
+
+[node name="InteractionPolygon" parent="Props/DateB" index="2"]
+polygon = PackedVector2Array(-55, -78, 55, -78, 55, 0, -55, 0)
+
+[node name="Sprite2D" parent="Props/DateB" index="0"]
+position = Vector2(0, -39.0)
+texture = ExtResource("10")
+scale = Vector2(1.3, 1.3)
+
+[node name="DateC" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "DateC"
+position = Vector2(1650, 689)
+interaction_polygon = PackedVector2Array(-55, -78, 55, -78, 55, 0, -55, 0)
+walk_to_point = Vector2(0, 197)
+
+[node name="InteractionPolygon" parent="Props/DateC" index="2"]
+polygon = PackedVector2Array(-55, -78, 55, -78, 55, 0, -55, 0)
+
+[node name="Sprite2D" parent="Props/DateC" index="0"]
+position = Vector2(0, -39.0)
+texture = ExtResource("10")
+scale = Vector2(1.3, 1.3)

@@ -215,6 +215,20 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_gull_lens_hint | Reem | gentle | نَحْتَاجُ إِلَى عَدَسَةٍ لِمِصْبَاحِ الْمَنَارَةِ. سَأَبْحَثُ فِي كَهْفِ الْمَدِّ. | done |
 | reem_gull_bird_name | Reem | warm | نَوْرَسٌ | done |
 | reem_gull_bird_fact | Reem | warm | لِلنَّوْرَسِ أَقْدَامٌ مُكْفَّفَةٌ تُسَاعِدُهُ عَلَى السِّبَاحَةِ. | done |
+| reem_ramadan_offer | Reem | warm | أَضَاءَتْ فَوَانِيسُ الْحَيِّ. هَلْ أَذْهَبُ لِأُسَاعِدَ فِي تَجْهِيزِ الْإِفْطَارِ؟ | done |
+| reem_ramadan_lane | Reem | warm | هَذِهِ لَيْلَةٌ مِنْ لَيَالِي رَمَضَانَ. سَأَحْمِلُ فَانُوسِي فِي الطَّرِيقِ. | done |
+| reem_ramadan_caller | Reem | warm | يُرِينِي الْمُسَحِّرَاتِي كَيْفَ يَكْشِفُ ضَوْءُ الْفَانُوسِ مَا فِي الظِّلِّ. | done |
+| reem_ramadan_search | Reem | warm | عِنْدَمَا أُضِيءُ الْفَانُوسَ، أَسْتَطِيعُ أَنْ أَرَى السَّلَّتَيْنِ وَالْإِبْرِيقَ. | done |
+| reem_ramadan_found | Reem | warm | وَجَدْتُ السَّلَّتَيْنِ وَالْمَاءَ. لِنَذْهَبْ إِلَى عَائِلَةِ الْقَنَافِذِ. | done |
+| reem_ramadan_court | Reem | warm | تُرِيدُ عَائِلَةُ الْقَنَافِذِ أَنْ تُفَاجِئَ مُسَافِرًا بِالْإِفْطَارِ. | done |
+| reem_ramadan_keep | Reem | gentle | أَبْقَيْتُ التَّمْرَ لِنَفْسِي، فَبَقِيَ الطَّبَقُ فَارِغًا. يُمْكِنُنِي أَنْ أُشَارِكَ. | done |
+| reem_ramadan_dates | Reem | warm | سَأَبْحَثُ عَنِ التَّمْرِ وَأَضَعُهُ فِي الطَّبَقِ لِنَأْكُلَ مَعًا. | done |
+| reem_ramadan_shared | Reem | warm | جَمَعْتُ التَّمْرَ لِلْمُسَافِرِ. شُكْرًا لَكُمْ يَا أَصْدِقَائِي. | done |
+| reem_ramadan_shelter | Reem | warm | هَذَا مَكَانٌ هَادِئٌ لِنَجْلِسَ مَعَ الْمُسَافِرِ. | done |
+| fox_ramadan_date | Thaaloob | playful | هَذِهِ آخِرُ تَمْرَةٍ! سَأَضَعُهَا مَعَ التَّمْرِ لِنَتَقَاسَمَهُ. | done |
+| reem_ramadan_feast | Reem | warm | هَا هُوَ الْمَاءُ وَالتَّمْرُ. تَفَضَّلْ، سَنُفْطِرُ مَعًا عِنْدَ الْمَغْرِبِ. | done |
+| reem_ramadan_hedgehog_name | Reem | warm | عَائِلَةُ الْقَنَافِذِ | done |
+| reem_ramadan_hedgehog_fact | Reem | warm | يَخْرُجُ الْقُنْفُذُ فِي اللَّيْلِ لِيَبْحَثَ عَنْ طَعَامِهِ. | done |
 
 ## Recording verification
 

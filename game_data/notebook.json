@@ -174,6 +174,21 @@
       "reem_gull_storm",
       "reem_gull_lens_hint",
       "reem_gull_light"
+    ],
+    "ramadan_lane": [
+      "reem_ramadan_lane",
+      "reem_ramadan_caller",
+      "reem_ramadan_search"
+    ],
+    "ramadan_dates": [
+      "reem_ramadan_court",
+      "reem_ramadan_keep",
+      "reem_ramadan_dates"
+    ],
+    "ramadan_table": [
+      "reem_ramadan_shelter",
+      "fox_ramadan_date",
+      "reem_ramadan_feast"
     ]
   },
   "map": [
@@ -328,6 +343,30 @@
         0.95,
         0.88
       ]
+    },
+    {
+      "room": "RamadanLane",
+      "label": "لَيْلَةُ رَمَضَان",
+      "at": [
+        0.03,
+        0.35
+      ]
+    },
+    {
+      "room": "HedgehogCourt",
+      "label": "سَاحَةُ الْقَنَافِذ",
+      "at": [
+        0.02,
+        0.51
+      ]
+    },
+    {
+      "room": "IftarShelter",
+      "label": "مَكَانُ الْإِفْطَار",
+      "at": [
+        0.03,
+        0.7
+      ]
     }
   ],
   "edges": [
@@ -418,6 +457,18 @@
     [
       17,
       18
+    ],
+    [
+      1,
+      19
+    ],
+    [
+      19,
+      20
+    ],
+    [
+      20,
+      21
     ]
   ],
   "cards": [
@@ -504,6 +555,12 @@
       "image": "res://assets/art/characters/gull_bird/gull_bird_base.png",
       "name_line": "reem_gull_bird_name",
       "fact_line": "reem_gull_bird_fact"
+    },
+    {
+      "id": "hedgehog_family",
+      "image": "res://assets/art/characters/qunfood/qunfood_base.png",
+      "name_line": "reem_ramadan_hedgehog_name",
+      "fact_line": "reem_ramadan_hedgehog_fact"
     }
   ]
 }

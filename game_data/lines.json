@@ -1,4 +1,88 @@
 {
+ "reem_ramadan_offer": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "أَضَاءَتْ فَوَانِيسُ الْحَيِّ. هَلْ أَذْهَبُ لِأُسَاعِدَ فِي تَجْهِيزِ الْإِفْطَارِ؟",
+  "audio": "res://assets/audio/lines/reem_ramadan_offer.mp3"
+ },
+ "reem_ramadan_lane": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذِهِ لَيْلَةٌ مِنْ لَيَالِي رَمَضَانَ. سَأَحْمِلُ فَانُوسِي فِي الطَّرِيقِ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_lane.mp3"
+ },
+ "reem_ramadan_caller": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يُرِينِي الْمُسَحِّرَاتِي كَيْفَ يَكْشِفُ ضَوْءُ الْفَانُوسِ مَا فِي الظِّلِّ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_caller.mp3"
+ },
+ "reem_ramadan_search": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "عِنْدَمَا أُضِيءُ الْفَانُوسَ، أَسْتَطِيعُ أَنْ أَرَى السَّلَّتَيْنِ وَالْإِبْرِيقَ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_search.mp3"
+ },
+ "reem_ramadan_found": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَجَدْتُ السَّلَّتَيْنِ وَالْمَاءَ. لِنَذْهَبْ إِلَى عَائِلَةِ الْقَنَافِذِ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_found.mp3"
+ },
+ "reem_ramadan_court": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تُرِيدُ عَائِلَةُ الْقَنَافِذِ أَنْ تُفَاجِئَ مُسَافِرًا بِالْإِفْطَارِ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_court.mp3"
+ },
+ "reem_ramadan_keep": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "أَبْقَيْتُ التَّمْرَ لِنَفْسِي، فَبَقِيَ الطَّبَقُ فَارِغًا. يُمْكِنُنِي أَنْ أُشَارِكَ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_keep.mp3"
+ },
+ "reem_ramadan_dates": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأَبْحَثُ عَنِ التَّمْرِ وَأَضَعُهُ فِي الطَّبَقِ لِنَأْكُلَ مَعًا.",
+  "audio": "res://assets/audio/lines/reem_ramadan_dates.mp3"
+ },
+ "reem_ramadan_shared": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "جَمَعْتُ التَّمْرَ لِلْمُسَافِرِ. شُكْرًا لَكُمْ يَا أَصْدِقَائِي.",
+  "audio": "res://assets/audio/lines/reem_ramadan_shared.mp3"
+ },
+ "reem_ramadan_shelter": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذَا مَكَانٌ هَادِئٌ لِنَجْلِسَ مَعَ الْمُسَافِرِ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_shelter.mp3"
+ },
+ "fox_ramadan_date": {
+  "speaker": "Thaaloob",
+  "tone": "playful",
+  "text": "هَذِهِ آخِرُ تَمْرَةٍ! سَأَضَعُهَا مَعَ التَّمْرِ لِنَتَقَاسَمَهُ.",
+  "audio": "res://assets/audio/lines/fox_ramadan_date.mp3"
+ },
+ "reem_ramadan_feast": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَا هُوَ الْمَاءُ وَالتَّمْرُ. تَفَضَّلْ، سَنُفْطِرُ مَعًا عِنْدَ الْمَغْرِبِ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_feast.mp3"
+ },
+ "reem_ramadan_hedgehog_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "عَائِلَةُ الْقَنَافِذِ",
+  "audio": "res://assets/audio/lines/reem_ramadan_hedgehog_name.mp3"
+ },
+ "reem_ramadan_hedgehog_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَخْرُجُ الْقُنْفُذُ فِي اللَّيْلِ لِيَبْحَثَ عَنْ طَعَامِهِ.",
+  "audio": "res://assets/audio/lines/reem_ramadan_hedgehog_fact.mp3"
+ },
  "reem_gull_board": {
   "speaker": "Reem",
   "tone": "warm",

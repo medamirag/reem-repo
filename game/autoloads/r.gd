@@ -24,6 +24,9 @@ const PRHilltopFestival := preload("res://game/rooms/hilltop_festival/room_hillt
 const PRGullShore := preload("res://game/rooms/gull_shore/room_gull_shore.gd")
 const PRTideCave := preload("res://game/rooms/tide_cave/room_tide_cave.gd")
 const PRGullLighthouse := preload("res://game/rooms/gull_lighthouse/room_gull_lighthouse.gd")
+const PRRamadanLane := preload("res://game/rooms/ramadan_lane/room_ramadan_lane.gd")
+const PRHedgehogCourt := preload("res://game/rooms/hedgehog_court/room_hedgehog_court.gd")
+const PRIftarShelter := preload("res://game/rooms/iftar_shelter/room_iftar_shelter.gd")
 # ---- classes
 
 # nodes ----
@@ -49,6 +52,9 @@ var HilltopFestival: PRHilltopFestival : get = get_HilltopFestival
 var GullShore: PRGullShore : get = get_GullShore
 var TideCave: PRTideCave : get = get_TideCave
 var GullLighthouse: PRGullLighthouse : get = get_GullLighthouse
+var RamadanLane: PRRamadanLane : get = get_RamadanLane
+var HedgehogCourt: PRHedgehogCourt : get = get_HedgehogCourt
+var IftarShelter: PRIftarShelter : get = get_IftarShelter
 # ---- nodes
 
 # functions ----
@@ -74,4 +80,7 @@ func get_HilltopFestival() -> PRHilltopFestival: return get_runtime_room("Hillto
 func get_GullShore() -> PRGullShore: return get_runtime_room("GullShore")
 func get_TideCave() -> PRTideCave: return get_runtime_room("TideCave")
 func get_GullLighthouse() -> PRGullLighthouse: return get_runtime_room("GullLighthouse")
+func get_RamadanLane() -> PRRamadanLane: return get_runtime_room("RamadanLane")
+func get_HedgehogCourt() -> PRHedgehogCourt: return get_runtime_room("HedgehogCourt")
+func get_IftarShelter() -> PRIftarShelter: return get_runtime_room("IftarShelter")
 # ---- functions

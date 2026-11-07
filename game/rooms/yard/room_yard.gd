@@ -12,8 +12,18 @@ var state: Data = load("res://game/rooms/yard/room_yard.tres")
 
 
 #region Virtual ####################################################################################
+func _setup_room() -> void:
+	$Props/RamadanEntry.visible = Globals.unlocked_packs.get("3", false)
+
+
 func _on_object_clicked(obj: PopochiuClickable) -> void:
 	match obj.script_name:
+		"RamadanEntry":
+			if not obj.visible:
+				return
+			await Lines.say("reem_ramadan_offer")
+			if await Choices.ask_two(Globals.notebook.labels["ramadan_go"], Globals.notebook.labels["ramadan_stay"]):
+				await leave_through(obj, "RamadanLane")
 		"Jad":
 			await _talk_to_jad()
 		"Well":
@@ -26,6 +36,8 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 
 
 func has_action(obj: PopochiuClickable) -> bool:
+	if obj.script_name == "RamadanEntry":
+		return obj.visible
 	if obj.script_name == "Well":
 		return not C.player.has_inventory_item("WateringCan")
 	return super(obj)

@@ -10,7 +10,7 @@ signal clicked
 const BOTTOM_MARGIN := 70
 const BOX_WIDTH := 1400
 
-var _label := RichTextLabel.new()
+var _label := Label.new()
 
 
 func _init() -> void:
@@ -38,18 +38,17 @@ func _init() -> void:
 	panel.offset_bottom = -BOTTOM_MARGIN
 	add_child(panel)
 
-	_label.bbcode_enabled = true
-	_label.fit_content = true
-	_label.scroll_active = false
+	_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_label.theme = ArabicText.get_theme()
-	_label.add_theme_color_override("default_color", Color(1, 0.97, 0.9))
+	_label.add_theme_color_override("font_color", Color(1, 0.97, 0.9))
 	ArabicText.make_rtl(_label)
 	panel.add_child(_label)
 
 
 func setup(text: String) -> void:
-	_label.text = "[center]%s[/center]" % text
+	_label.text = text
 
 
 func _gui_input(event: InputEvent) -> void:

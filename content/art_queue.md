@@ -73,6 +73,13 @@ Originals in `assets/` are never edited: new images are new files with the names
 | bg19_gull_lighthouse | `assets/art/backgrounds/bg19_gull_lighthouse.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg19_gull_lighthouse below | No lettering | done |
 | gull_bird_sheet | `assets/art/characters/gull_bird/gull_bird_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See gull_bird_sheet below | No lettering | done |
 | gull_bird_base | `assets/art/characters/gull_bird/gull_bird_base.png` | `assets/art/characters/gull_bird/gull_bird_sheet.png` | transparent | portrait | See gull_bird_base below | No lettering | done |
+| bg20_ramadan_lane | `assets/art/backgrounds/bg20_ramadan_lane.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg20_ramadan_lane below | No lettering | done |
+| bg21_hedgehog_court | `assets/art/backgrounds/bg21_hedgehog_court.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg21_hedgehog_court below | No lettering | done |
+| bg22_iftar_shelter | `assets/art/backgrounds/bg22_iftar_shelter.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg22_iftar_shelter below | No lettering | done |
+| musaharati_sheet | `assets/art/characters/musaharati/musaharati_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See musaharati_sheet below | No lettering | done |
+| musaharati_base | `assets/art/characters/musaharati/musaharati_base.png` | `assets/art/characters/musaharati/musaharati_sheet.png` | transparent | portrait | See musaharati_base below | No lettering | done |
+| traveller_sheet | `assets/art/characters/iftar_traveller/iftar_traveller_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See traveller_sheet below | No lettering | done |
+| traveller_base | `assets/art/characters/iftar_traveller/iftar_traveller_base.png` | `assets/art/characters/iftar_traveller/iftar_traveller_sheet.png` | transparent | portrait | See traveller_base below | No lettering | done |
 
 <!-- One section per row, in the same order:
 
@@ -800,3 +807,73 @@ Three separate front, right side and back views of a slightly cheeky friendly sm
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 One friendly slightly cheeky seagull from the attached sheet, standing, facing left three-quarter, two yellow webbed feet, two grey wings, white body, yellow orange-tipped beak. No scenery. Fully transparent.
+
+## bg20_ramadan_lane
+
+- **Save as:** `assets/art/backgrounds/bg20_ramadan_lane.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Side view of a quiet village lane near a farm at blue hour in Ramadan. A broad dry flat dirt path spans the bottom third. Warm stone walls, crescent moon, a few small warmly glowing windows, a wooden porch at left and three softly shadowed alcoves along the lower middle, clear for props. Gentle blue and violet night with warm gold accents, no people, letters or writing.
+
+## bg21_hedgehog_court
+
+- **Save as:** `assets/art/backgrounds/bg21_hedgehog_court.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Friendly Arab village courtyard at blue hour, dry wide continuous foreground path, date palm and low bench, warm clay wall, three shadowed recesses with empty space for separate date props, lanterns on hooks, moon, no people or animals and no text.
+
+## bg22_iftar_shelter
+
+- **Save as:** `assets/art/backgrounds/bg22_iftar_shelter.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Small welcoming open-air stone shelter at late dusk in a village. Broad dry horizontal foreground path. A low empty wooden table with woven rug behind the path, soft warm windows, crescent sky and quietly lit archway. Room for a seated traveller beside the table, no people, animals, text or writing.
+
+## musaharati_sheet
+
+- **Save as:** `assets/art/characters/musaharati/musaharati_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Front, right side and rear turnaround of an adult Arab village night caller with dark trimmed beard, soft friendly eyes, teal vest over cream thobe and white cap, holding one simple small hand drum. Plain warm cream and generous gaps, no letters or scenery.
+
+## musaharati_base
+
+- **Save as:** `assets/art/characters/musaharati/musaharati_base.png`
+- **Attach:** `assets/art/characters/musaharati/musaharati_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One standing friendly Arab night caller in his teal vest, cream thobe and white cap, matching the turnaround. One small hand drum held naturally, two arms and two feet. Isolated transparent three-quarter view facing left.
+
+## traveller_sheet
+
+- **Save as:** `assets/art/characters/iftar_traveller/iftar_traveller_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Front, profile and rear character reference sheet, gentle middle-aged Arab traveller with short grey beard, warm brown robe and muted purple scarf, one cloth travel bag, plainly dressed. No letters, background scenery or other people.
+
+## traveller_base
+
+- **Save as:** `assets/art/characters/iftar_traveller/iftar_traveller_base.png`
+- **Attach:** `assets/art/characters/iftar_traveller/iftar_traveller_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One gentle middle-aged traveller, matching the sheet exactly, seated three-quarter facing left with travel bag set beside him within one sprite. Short grey beard, warm brown robe and muted purple scarf. Isolated transparent, no table or ground.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/yard/room_yard.gd" id="2"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
 [ext_resource type="PackedScene" path="res://game/characters/jad/character_jad.tscn" id="7"]
 [ext_resource type="Texture2D" path="res://assets/art/backgrounds/fg2_yard_fg.png" id="8"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="9"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="10"]
+[ext_resource type="Texture2D" path="res://game/scripts/ramadan/lantern.svg" id="11"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
 agent_radius = 0.0
@@ -20,7 +23,8 @@ height = 1080
 entry_points = {
 "": Vector2(0.15, 0.8),
 "GrandpaRoom": Vector2(0.15, 0.8),
-"Gate": Vector2(0.92, 0.8)
+"Gate": Vector2(0.92, 0.8),
+"RamadanLane": Vector2(0.55, 0.8)
 }
 footstep_cue = "sfx_steps_grass"
 ambience_cue = "amb_farm"
@@ -76,6 +80,22 @@ polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
 [node name="CharacterJad" parent="Characters" instance=ExtResource("7")]
 position = Vector2(1517, 767)
 walk_to_point = Vector2(-260, 110)
+
+[node name="RamadanEntry" parent="Props" instance=ExtResource("9")]
+visible = false
+script = ExtResource("10")
+script_name = "RamadanEntry"
+position = Vector2(1050, 827)
+interaction_polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/RamadanEntry" index="2"]
+polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
+
+[node name="Sprite2D" parent="Props/RamadanEntry" index="0"]
+position = Vector2(0, -63)
+texture = ExtResource("11")
+scale = Vector2(1.65, 1.65)
 
 [node name="Foreground" type="Sprite2D" parent="."]
 z_index = 100

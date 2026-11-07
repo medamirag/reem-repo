@@ -1,4 +1,66 @@
 {
+  "word_crescent": {
+    "text": "هِلَال",
+    "rooms": [
+      "RamadanLane",
+      "HedgehogCourt",
+      "IftarShelter"
+    ],
+    "audio": "res://assets/audio/words/word_crescent.mp3",
+    "objects": []
+  },
+  "word_date_fruit": {
+    "text": "تَمْرَة",
+    "rooms": [
+      "HedgehogCourt",
+      "IftarShelter"
+    ],
+    "audio": "res://assets/audio/words/word_date_fruit.mp3",
+    "objects": [
+      "prop:DateA",
+      "prop:DateB",
+      "prop:DateC",
+      "prop:ServedDates"
+    ]
+  },
+  "word_drum": {
+    "text": "طَبْل",
+    "rooms": [
+      "RamadanLane"
+    ],
+    "audio": "res://assets/audio/words/word_drum.mp3",
+    "objects": []
+  },
+  "word_palm": {
+    "text": "نَخْلَة",
+    "rooms": [
+      "HedgehogCourt"
+    ],
+    "audio": "res://assets/audio/words/word_palm.mp3",
+    "objects": []
+  },
+  "word_traveller": {
+    "text": "مُسَافِر",
+    "rooms": [
+      "IftarShelter"
+    ],
+    "audio": "res://assets/audio/words/word_traveller.mp3",
+    "objects": [
+      "prop:Traveller"
+    ]
+  },
+  "word_map_hedgehog_court": {
+    "text": "سَاحَةُ الْقَنَافِذ",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_hedgehog_court.mp3",
+    "objects": []
+  },
+  "word_map_iftar_shelter": {
+    "text": "مَكَانُ الْإِفْطَار",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_iftar_shelter.mp3",
+    "objects": []
+  },
   "word_beach": {
     "text": "شَاطِئ",
     "rooms": [
@@ -463,11 +525,13 @@
   "word_hedgehog": {
     "text": "قُنْفُذ",
     "rooms": [
-      "OakForest"
+      "OakForest",
+      "HedgehogCourt"
     ],
     "audio": "res://assets/audio/words/word_hedgehog.mp3",
     "objects": [
-      "prop:Qunfood"
+      "prop:Qunfood",
+      "prop:Hedgehogs"
     ]
   },
   "word_leaf": {
@@ -596,7 +660,9 @@
     "text": "نَافِذَة",
     "rooms": [
       "GrandpaRoom",
-      "Yard"
+      "Yard",
+      "RamadanLane",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_window.mp3",
     "objects": []
@@ -605,7 +671,8 @@
     "text": "بَاب",
     "rooms": [
       "GrandpaRoom",
-      "Yard"
+      "Yard",
+      "RamadanLane"
     ],
     "audio": "res://assets/audio/words/word_door.mp3",
     "objects": []
@@ -630,19 +697,26 @@
     "text": "طَاوِلَة",
     "rooms": [
       "GrandpaRoom",
-      "HilltopFestival"
+      "HilltopFestival",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_table.mp3",
-    "objects": []
+    "objects": [
+      "prop:FoodTable"
+    ]
   },
   "word_jug": {
     "text": "إِبْرِيق",
     "rooms": [
       "GrandpaRoom",
-      "HilltopFestival"
+      "HilltopFestival",
+      "RamadanLane",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_jug.mp3",
-    "objects": []
+    "objects": [
+      "prop:WaterJug"
+    ]
   },
   "word_shelf": {
     "text": "رَفّ",
@@ -655,7 +729,8 @@
   "word_rug": {
     "text": "سَجَّادَة",
     "rooms": [
-      "GrandpaRoom"
+      "GrandpaRoom",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_rug.mp3",
     "objects": []
@@ -677,12 +752,15 @@
     "rooms": [
       "GrandpaRoom",
       "inventory",
-      "HilltopFestival"
+      "HilltopFestival",
+      "RamadanLane"
     ],
     "audio": "res://assets/audio/words/word_basket.mp3",
     "objects": [
       "prop:BasketProp",
-      "item:Basket"
+      "item:Basket",
+      "prop:BasketA",
+      "prop:BasketB"
     ]
   },
   "word_girl": {
@@ -811,7 +889,10 @@
       "HilltopFestival",
       "GullShore",
       "TideCave",
-      "GullLighthouse"
+      "GullLighthouse",
+      "RamadanLane",
+      "HedgehogCourt",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -829,7 +910,10 @@
       "MeadowLake",
       "HillSlope",
       "HilltopFestival",
-      "GullShore"
+      "GullShore",
+      "RamadanLane",
+      "HedgehogCourt",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
@@ -955,14 +1039,16 @@
       "Stream",
       "PineFork",
       "NarrowPass",
-      "GullLighthouse"
+      "GullLighthouse",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_fox.mp3",
     "objects": [
       "character:Thaaloob",
       "prop:StreamFox",
       "prop:Thaaloob",
-      "prop:IslandFox"
+      "prop:IslandFox",
+      "prop:RamadanFox"
     ]
   },
   "word_bee": {
@@ -983,14 +1069,20 @@
       "inventory",
       "HoneyOrchard",
       "HilltopFestival",
-      "GullLighthouse"
+      "GullLighthouse",
+      "Yard",
+      "RamadanLane",
+      "HedgehogCourt",
+      "IftarShelter"
     ],
     "audio": "res://assets/audio/words/word_lantern.mp3",
     "objects": [
       "item:Lantern",
       "prop:LostLanterns",
       "prop:BigLantern",
-      "prop:Lamp"
+      "prop:Lamp",
+      "prop:LanternToggle",
+      "prop:RamadanEntry"
     ]
   },
   "word_notebook": {

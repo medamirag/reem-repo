@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/scripts/ramadan/ramadan_room_state.gd" id="1"]
+[resource]
+resource_name = "IftarShelter"
+script = ExtResource("1")
+script_name = "IftarShelter"
+scene = "res://game/rooms/iftar_shelter/room_iftar_shelter.tscn"

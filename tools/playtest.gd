@@ -174,6 +174,11 @@ func _run() -> void:
 		_log("DONE gull")
 		get_tree().quit()
 		return
+	if _path == "ramadan":
+		await _ramadan_path()
+		_log("DONE ramadan")
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -250,6 +255,46 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _ramadan_path() -> void:
+	await Globals.new_game()
+	Globals.unlocked_packs["3"] = true
+	R.goto_room("Yard")
+	await _wait_room("Yard")
+	_answers = [true]
+	await _click("RamadanEntry")
+	await _wait_room("RamadanLane")
+	_expect(not R.current.get_prop("BasketA").visible, "lantern starts dark")
+	await _click("LanternToggle")
+	_expect(R.current.get_prop("BasketA").visible, "lantern reveals hidden supplies")
+	for supply in ["BasketA", "BasketB", "WaterJug"]:
+		await _click(supply)
+	_expect(Globals.ramadan.get("supplies"), "all supplies unlock the courtyard")
+	await _click("ExitRight")
+	await _wait_room("HedgehogCourt")
+	var previous_wilts := Globals.wilts
+	_answers = [false]
+	await _click("Hedgehogs")
+	_expect(Globals.wilts == previous_wilts + 1, "keeping the dates wilts")
+	Globals.reset()
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("continue Ramadan", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("HedgehogCourt")
+	_expect(Globals.ramadan.get("kept") and Globals.ramadan.get("lit"), "dates choice and lantern survive continue")
+	_answers = [true]
+	await _click("Hedgehogs")
+	for date in ["DateA", "DateB", "DateC"]:
+		await _click(date)
+	_expect(Globals.wilts == previous_wilts and Globals.friend_cards.has("hedgehog_family"), "sharing repairs and earns a card")
+	await _click("ExitRight")
+	await _wait_room("IftarShelter")
+	_expect(not R.current.get_prop("Traveller").visible, "traveller joins when meal is ready")
+	await _click("FoodTable")
+	_expect(Globals.ramadan.get("meal") and Globals.ramadan.get("shared_last") and R.current.get_prop("Traveller").visible, "shared iftar is ready")
+	await _click("ExitLeft")
+	await _wait_room("HedgehogCourt")
 
 
 func _gull_path() -> void:

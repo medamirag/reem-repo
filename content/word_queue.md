@@ -117,6 +117,13 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_tin | Reem | clear and cheerful, saying one word to teach a child | عُلْبَة | done |
 | word_map_tide_cave | Reem | clear and cheerful, saying one word to teach a child | كَهْفُ الْمَدّ | done |
 | word_map_gull_lighthouse | Reem | clear and cheerful, saying one word to teach a child | مَنَارَةُ الْجَزِيرَة | done |
+| word_crescent | Reem | clear and cheerful, saying one word to teach a child | هِلَال | done |
+| word_date_fruit | Reem | clear and cheerful, saying one word to teach a child | تَمْرَة | done |
+| word_drum | Reem | clear and cheerful, saying one word to teach a child | طَبْل | done |
+| word_palm | Reem | clear and cheerful, saying one word to teach a child | نَخْلَة | done |
+| word_traveller | Reem | clear and cheerful, saying one word to teach a child | مُسَافِر | done |
+| word_map_hedgehog_court | Reem | clear and cheerful, saying one word to teach a child | سَاحَةُ الْقَنَافِذ | done |
+| word_map_iftar_shelter | Reem | clear and cheerful, saying one word to teach a child | مَكَانُ الْإِفْطَار | done |
 
 ## Recording verification
 

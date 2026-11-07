@@ -290,13 +290,14 @@
   },
   {
     "id": "ramadan",
-    "room": "",
+    "room": "RamadanLane",
     "position": [
       0.042,
       0.89
     ],
     "neighbors": [
-      "farm"
+      "farm",
+      "hedgehog_court"
     ],
     "pack": 3,
     "name": "word_map_ramadan"
@@ -340,5 +341,32 @@
     ],
     "pack": 1,
     "name": "word_map_gull_lighthouse"
+  },
+  {
+    "id": "hedgehog_court",
+    "room": "HedgehogCourt",
+    "position": [
+      0.04,
+      0.81
+    ],
+    "neighbors": [
+      "ramadan",
+      "iftar_shelter"
+    ],
+    "pack": 3,
+    "name": "word_map_hedgehog_court"
+  },
+  {
+    "id": "iftar_shelter",
+    "room": "IftarShelter",
+    "position": [
+      0.037,
+      0.732
+    ],
+    "neighbors": [
+      "hedgehog_court"
+    ],
+    "pack": 3,
+    "name": "word_map_iftar_shelter"
   }
 ]

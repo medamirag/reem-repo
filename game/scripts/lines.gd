@@ -54,7 +54,7 @@ func get_text(line_id: String) -> String:
 
 ## Makes the line's speaker say it: Arabic text on screen and the matching audio file, together.
 ## Returns once the line is over, so lines can be chained with `await`.
-func say(line_id: String) -> void:
+func say(line_id: String, narrate := false) -> void:
 	if not _lines.has(line_id):
 		push_error("[Lines] There is no line with the id '%s' in %s" % [line_id, LINES_PATH])
 		return
@@ -71,7 +71,7 @@ func say(line_id: String) -> void:
 	# spoken off screen (jad_s1_031 in the Gate, jad_s2_071 on the end screen) are shown in a
 	# narration box at the bottom of the screen instead (game_spec.md 4.1).
 	var character: PopochiuCharacter = null
-	if is_instance_valid(R.current) and R.current.has_character(speaker):
+	if not narrate and is_instance_valid(R.current) and R.current.has_character(speaker):
 		character = C.get_character(speaker)
 
 	var voice_length := _start_voice(str(line.get("audio", "")))

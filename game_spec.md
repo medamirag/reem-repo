@@ -590,3 +590,7 @@ Open Parent Corner from Settings. An Arabic arithmetic question with two random 
 ## 29. Tree Day free event
 
 From the Farm Yard after the festival, take a signed-by-icon path to TreeDay. The new room has a broad walking lane with a young planting bed and a rabbit friend. Reem can offer water to the young tree or keep the water for later. Keeping it wilts once. Return and offer water, then click the planting bed to water the tree. The scene shows new leaves, awards a young-tree notebook card and keeps the return arrow open. Save the choice and completed watering and add the room to both maps. Reem narrates.
+
+## 30. Mother's Day free event
+
+After the festival, click a flower basket in Grandpa's Yard. MotherGarden is one quiet courtyard room. Reem can make a card for her mother or keep the flowers for herself. Keeping them leaves the card blank and wilts once. Return to the craft table and choose to share the flowers, then click the blank card to place the flower and repair. Reem reads her own note to her mother, earns a card in the notebook and can walk back to the yard. Save the choice and completed card, and add the room to both maps. Reem is the only voice.

@@ -114,6 +114,7 @@ Originals in `assets/` are never edited: new images are new files with the names
 | astronomer_sheet | `assets/art/characters/astronomer/astronomer_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See astronomer_sheet below | Check silhouette, palette and no lettering | done |
 | astronomer_base | `assets/art/characters/astronomer/astronomer_base.png` | `assets/art/characters/astronomer/astronomer_sheet.png` | transparent | portrait | See astronomer_base below | Check silhouette, palette and no lettering | done |
 | bg35_tree_day | `assets/art/backgrounds/bg35_tree_day.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg35_tree_day below | No lettering, clear walking lane | done |
+| bg36_mother_garden | `assets/art/backgrounds/bg36_mother_garden.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg36_mother_garden below | No lettering, blank card and clear walking lane | todo |
 
 <!-- One section per row, in the same order:
 
@@ -1211,3 +1212,9 @@ One friendly teal and bronze beetle matching the turnaround, exact six distinct 
 - **Save as:** `assets/art/backgrounds/bg35_tree_day.png`
 - **Reference:** `assets/art/backgrounds/bg1_room.png`
 - **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Landscape 16:9 Arab valley garden on a bright spring morning. Painted fence on left, an earthen planting bed at centre-right with a single small slightly drooped young sapling, terracotta water pitcher at far right, yellow flowers and stones around the edges, large calm ground lane across the bottom third for a walking character. No people, animals, signs, text or labels. Match the warm parchment, honey-gold, teal and soft olive palette of the attached room.
+
+## bg36_mother_garden
+
+- **Save as:** `assets/art/backgrounds/bg36_mother_garden.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Opaque 16:9 sunny Arab courtyard with a low wooden craft table centre-left, blank cream folded card on the tabletop, wicker basket of pink and yellow flowers on the right, warm sandstone walls and teal wooden window, terracotta flower pots, broad clear walking area across the bottom third. No people, animals, words, letters or symbols on the card. Match warm parchment, honey gold, teal and soft olive palette of the attached room.

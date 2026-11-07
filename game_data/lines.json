@@ -2116,5 +2116,47 @@
     "tone": "warm",
     "text": "تَحْتَاجُ الشَّتْلَةُ إِلَى الْمَاءِ وَضَوْءِ الشَّمْسِ لِتَنْمُوَ.",
     "audio": "res://assets/audio/lines/reem_tree_day_fact.mp3"
+  },
+  "reem_mother_day_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أُرِيدُ أَنْ أَصْنَعَ بِطَاقَةً لِأُمِّي.",
+    "audio": "res://assets/audio/lines/reem_mother_day_arrive.mp3"
+  },
+  "reem_mother_day_offer": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَلْ أَضَعُ زَهْرَةً عَلَى بِطَاقَةِ أُمِّي أَمْ أَحْتَفِظُ بِالزُّهُورِ؟",
+    "audio": "res://assets/audio/lines/reem_mother_day_offer.mp3"
+  },
+  "reem_mother_day_wait": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بَقِيَتِ الْبِطَاقَةُ فَارِغَةً. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهَا.",
+    "audio": "res://assets/audio/lines/reem_mother_day_wait.mp3"
+  },
+  "reem_mother_day_make": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَضَعُ زَهْرَةً عَلَى الْبِطَاقَةِ.",
+    "audio": "res://assets/audio/lines/reem_mother_day_make.mp3"
+  },
+  "reem_mother_day_done": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أُمِّي، شُكْرًا لِرِعَايَتِكِ لِي. أُحِبُّكِ.",
+    "audio": "res://assets/audio/lines/reem_mother_day_done.mp3"
+  },
+  "reem_mother_day_card": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بِطَاقَةٌ لِأُمِّي",
+    "audio": "res://assets/audio/lines/reem_mother_day_card.mp3"
+  },
+  "reem_mother_day_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يُمْكِنُنَا أَنْ نَقُولَ شُكْرًا بِكَلِمَةٍ طَيِّبَةٍ أَوْ بِبِطَاقَةٍ نَصْنَعُهَا بِأَيْدِينَا.",
+    "audio": "res://assets/audio/lines/reem_mother_day_fact.mp3"
   }
 }

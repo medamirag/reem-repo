@@ -1,4 +1,20 @@
 {
+  "word_card": {
+    "text": "بِطَاقَة",
+    "rooms": [
+      "MotherGarden"
+    ],
+    "audio": "res://assets/audio/words/word_card.mp3",
+    "objects": [
+      "prop:BlankCard"
+    ]
+  },
+  "word_map_mother_day": {
+    "text": "عِيدُ الْأُمّ",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_mother_day.mp3",
+    "objects": []
+  },
   "word_seedling": {
     "text": "شَتْلَة",
     "rooms": [
@@ -347,7 +363,8 @@
   "word_palm": {
     "text": "نَخْلَة",
     "rooms": [
-      "HedgehogCourt"
+      "HedgehogCourt",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_palm.mp3",
     "objects": []
@@ -998,7 +1015,8 @@
       "RamadanLane",
       "IftarShelter",
       "AntCity",
-      "ObservatoryDome"
+      "ObservatoryDome",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_window.mp3",
     "objects": []
@@ -1010,7 +1028,8 @@
       "Yard",
       "RamadanLane",
       "MarketGate",
-      "ObservatoryDome"
+      "ObservatoryDome",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_door.mp3",
     "objects": []
@@ -1037,7 +1056,8 @@
       "GrandpaRoom",
       "HilltopFestival",
       "IftarShelter",
-      "ObservatoryDome"
+      "ObservatoryDome",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_table.mp3",
     "objects": [
@@ -1052,7 +1072,8 @@
       "RamadanLane",
       "IftarShelter",
       "ObservatoryDome",
-      "TreeDay"
+      "TreeDay",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_jug.mp3",
     "objects": [
@@ -1095,7 +1116,8 @@
       "inventory",
       "HilltopFestival",
       "RamadanLane",
-      "MarketStalls"
+      "MarketStalls",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_basket.mp3",
     "objects": [
@@ -1252,7 +1274,8 @@
       "AntCity",
       "OwlPerch",
       "StarRidge",
-      "TreeDay"
+      "TreeDay",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -1276,7 +1299,8 @@
       "IftarShelter",
       "GiantBloom",
       "DewBank",
-      "TreeDay"
+      "TreeDay",
+      "MotherGarden"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [

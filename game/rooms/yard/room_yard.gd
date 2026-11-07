@@ -13,12 +13,16 @@ var state: Data = load("res://game/rooms/yard/room_yard.tres")
 
 #region Virtual ####################################################################################
 func _setup_room() -> void:
+	$Props/MotherDayEntry.visible = Globals.festival.get("completed", false)
 	$Props/TreeDayEntry.visible = Globals.festival.get("completed", false)
 	$Props/RamadanEntry.visible = Globals.unlocked_packs.get("3", false)
 
 
 func _on_object_clicked(obj: PopochiuClickable) -> void:
 	match obj.script_name:
+		"MotherDayEntry":
+			if obj.visible:
+				await leave_through(obj, "MotherGarden")
 		"TreeDayEntry":
 			if obj.visible:
 				await leave_through(obj, "TreeDay")
@@ -40,7 +44,7 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 
 
 func has_action(obj: PopochiuClickable) -> bool:
-	if obj.script_name in ["RamadanEntry", "TreeDayEntry"]:
+	if obj.script_name in ["RamadanEntry", "TreeDayEntry", "MotherDayEntry"]:
 		return obj.visible
 	if obj.script_name == "Well":
 		return not C.player.has_inventory_item("WateringCan")

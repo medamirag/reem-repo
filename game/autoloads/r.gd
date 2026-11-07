@@ -40,6 +40,7 @@ const PRStarRidge := preload("res://game/rooms/star_ridge/room_star_ridge.gd")
 const PRObservatoryDome := preload("res://game/rooms/observatory_dome/room_observatory_dome.gd")
 const PROwlPerch := preload("res://game/rooms/owl_perch/room_owl_perch.gd")
 const PRTreeDay := preload("res://game/rooms/tree_day/room_tree_day.gd")
+const PRMotherGarden := preload("res://game/rooms/mother_garden/room_mother_garden.gd")
 # ---- classes
 
 # nodes ----
@@ -81,6 +82,7 @@ var StarRidge: PRStarRidge : get = get_StarRidge
 var ObservatoryDome: PRObservatoryDome : get = get_ObservatoryDome
 var OwlPerch: PROwlPerch : get = get_OwlPerch
 var TreeDay: PRTreeDay : get = get_TreeDay
+var MotherGarden: PRMotherGarden : get = get_MotherGarden
 # ---- nodes
 
 # functions ----
@@ -122,4 +124,5 @@ func get_StarRidge() -> PRStarRidge: return get_runtime_room("StarRidge")
 func get_ObservatoryDome() -> PRObservatoryDome: return get_runtime_room("ObservatoryDome")
 func get_OwlPerch() -> PROwlPerch: return get_runtime_room("OwlPerch")
 func get_TreeDay() -> PRTreeDay: return get_runtime_room("TreeDay")
+func get_MotherGarden() -> PRMotherGarden: return get_runtime_room("MotherGarden")
 # ---- functions

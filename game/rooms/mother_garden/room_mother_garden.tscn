@@ -1,0 +1,75 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/mother_garden/room_mother_garden.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg36_mother_garden.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Resource" path="res://game/rooms/mother_garden/room_mother_garden.tres" id="state"]
+
+
+[ext_resource type="Texture2D" path="res://game/rooms/mother_garden/card_flower.svg" id="leaves"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomMotherGarden" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "MotherGarden"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "Yard": Vector2(0.08, 0.82), "ObservatoryDome": Vector2(0.92, 0.82)}
+exit_arrows = {"ExitLeft": "left"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="CraftTable" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "CraftTable"
+position = Vector2(907, 711)
+interaction_polygon = PackedVector2Array(-110, -175, 110, -175, 110, 0, -110, 0)
+walk_to_point = Vector2(0, 180)
+
+[node name="InteractionPolygon" parent="Props/CraftTable" index="2"]
+polygon = PackedVector2Array(-110, -175, 110, -175, 110, 0, -110, 0)
+
+[node name="BlankCard" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "BlankCard"
+position = Vector2(653, 715)
+interaction_polygon = PackedVector2Array(-108, -143, 108, -143, 108, 0, -108, 0)
+walk_to_point = Vector2(0, 176)
+
+[node name="InteractionPolygon" parent="Props/BlankCard" index="2"]
+polygon = PackedVector2Array(-108, -143, 108, -143, 108, 0, -108, 0)
+
+[node name="FlowerCard" type="Sprite2D" parent="."]
+position = Vector2(668, 648)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("leaves")
+visible = false

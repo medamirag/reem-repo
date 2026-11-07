@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=15 format=3]
 
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/yard/room_yard.gd" id="2"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" path="res://game/scripts/ramadan/lantern.svg" id="11"]
 
 [ext_resource type="Texture2D" path="res://game/rooms/tree_day/new_leaves.svg" id="tree_event"]
+
+[ext_resource type="Texture2D" path="res://game/rooms/mother_garden/card_flower.svg" id="mother_event"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
 agent_radius = 0.0
@@ -113,6 +115,22 @@ polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
 [node name="Sprite2D" parent="Props/TreeDayEntry" index="0"]
 position = Vector2(0, -63)
 texture = ExtResource("tree_event")
+scale = Vector2(0.84, 0.84)
+
+[node name="MotherDayEntry" parent="Props" instance=ExtResource("9")]
+visible = false
+script = ExtResource("10")
+script_name = "MotherDayEntry"
+position = Vector2(1632, 860)
+interaction_polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/MotherDayEntry" index="2"]
+polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
+
+[node name="Sprite2D" parent="Props/MotherDayEntry" index="0"]
+position = Vector2(0, -63)
+texture = ExtResource("mother_event")
 scale = Vector2(0.84, 0.84)
 
 [node name="Foreground" type="Sprite2D" parent="."]

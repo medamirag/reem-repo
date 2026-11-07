@@ -114,7 +114,7 @@ Originals in `assets/` are never edited: new images are new files with the names
 | astronomer_sheet | `assets/art/characters/astronomer/astronomer_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See astronomer_sheet below | Check silhouette, palette and no lettering | done |
 | astronomer_base | `assets/art/characters/astronomer/astronomer_base.png` | `assets/art/characters/astronomer/astronomer_sheet.png` | transparent | portrait | See astronomer_base below | Check silhouette, palette and no lettering | done |
 | bg35_tree_day | `assets/art/backgrounds/bg35_tree_day.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg35_tree_day below | No lettering, clear walking lane | done |
-| bg36_mother_garden | `assets/art/backgrounds/bg36_mother_garden.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg36_mother_garden below | No lettering, blank card and clear walking lane | todo |
+| bg36_mother_garden | `assets/art/backgrounds/bg36_mother_garden.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg36_mother_garden below | No lettering, blank card and clear walking lane | done |
 
 <!-- One section per row, in the same order:
 

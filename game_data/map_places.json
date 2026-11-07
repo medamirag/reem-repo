@@ -10,7 +10,8 @@
       "house",
       "gate",
       "ramadan",
-      "tree_day"
+      "tree_day",
+      "mother_day"
     ],
     "pack": 0,
     "name": "word_map_farm"
@@ -494,5 +495,18 @@
     ],
     "pack": 0,
     "name": "word_map_tree_day"
+  },
+  {
+    "id": "mother_day",
+    "room": "MotherGarden",
+    "position": [
+      0.069,
+      0.927
+    ],
+    "neighbors": [
+      "farm"
+    ],
+    "pack": 0,
+    "name": "word_map_mother_day"
   }
 ]

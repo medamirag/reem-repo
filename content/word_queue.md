@@ -163,3 +163,5 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_map_star_ridge | Reem | clear and cheerful, saying one word to teach a child | دَرْبُ النُّجُوم | done |
 | word_seedling | Reem | clear and cheerful, saying one word to teach a child | شَتْلَة | done |
 | word_map_tree_day | Reem | clear and cheerful, saying one word to teach a child | يَوْمُ الشَّجَرَة | done |
+| word_card | Reem | clear and cheerful, saying one word to teach a child | بِطَاقَة | todo |
+| word_map_mother_day | Reem | clear and cheerful, saying one word to teach a child | عِيدُ الْأُمّ | todo |

@@ -35,8 +35,8 @@
 - **Ant Kingdom:** Section 25 adds GiantBloom, DewBank and AntCity via the giant flower at MeadowFork. Reem shrinks, helps the worker with a seed, aligns a leaf bridge, sorts seeds by size and shelters from rain. Nine art files, 21 dialogue recordings and nine word recordings are installed. Both maps include all three rooms.
 - **Star Observatory:** Chapter 26 is built and pushed as c4aaa53. All nine art files, 18 dialogue recordings and eight vocabulary recordings are done. The festival mountain arrow opens Owl Perch. Listen to the bat, click the owl, then follow the four shapes from the astronomer and the three trail markers to guide the caravan. Both maps include the rooms.
 - **Star Observatory checks:** Content, Godot import and startup, stars, green, sand, mixed and words passed. The stars test checked repair, wrong-shape handling, Continue and caravan arrival. An earlier overlapping test shared the save slot and failed at Continue. The isolated rerun passed. Listening comparison remains open.
-- **Tree Day:** The garden, seven dialogue recordings and two word recordings are installed and marked done. After the festival, click the leaf in Yard, talk to Arnoob and click the seedling after offering water. Watering shows new leaves and awards the notebook card. The dedicated route passed after the finished audio import, and green passed. The other regressions are in .godot/tree-final-*.log. Tree Day was committed as d888e57.
-- **Half-finished:** Mother Garden section 30, one artwork row and seven dialogue rows are written. The background generation request has started. Check and install the art, add object words, record with saved Reem, then build the room from Yard and run the headless checks.
+- **Tree Day:** The garden, seven dialogue recordings and two word recordings are installed and marked done. After the festival, click the leaf in Yard, talk to Arnoob and click the seedling after offering water. Watering shows new leaves and awards the notebook card. Godot import and startup, the dedicated route and green, sand, mixed and words passed. Tree Day was committed as d888e57.
+- **Half-finished:** Mother Garden is built from Yard, with finished courtyard art, two new vocabulary entries, map and notebook entries, saved card choice and a dedicated mother_day test. Nine saved Reem recordings were requested. Finish retrieving them, mark the voice and word rows, import and run Godot startup, mother_day and the four standard routes.
 - **Next:** Finish the Mothers Day event, then review the remaining Cave text-rendering and listening checks.
 - **How to play Ant Kingdom:** After the festival, click the giant flower in the meadow. Help the worker and click the seed. At the dew drop, click the leaf to straighten it, then talk to the beetle. In the colony, talk to the queen, click the seeds from smallest to largest, then click the tunnel.
 - **How to play Snow Trail:** After the festival, revisit Hill slope and take the snow arrow. Talk to the goldfinch and offer the bundle, then click the shelter. Talk to white-coated Arnoob and click the three split prints from left to right. At the next room click the wooden board, then click the deer when Reem reaches the bottom.
@@ -54,6 +54,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Mothers Day:** The courtyard card begins blank. A drawn flower appears on it after Reem chooses to share, repairs the wilt and earns the notebook keepsake. The event opens from Yard after the festival. Reem reads the note herself.
 
 - **Tree Day:** The event opens from Yard after the festival. The existing Arnoob sprite and Reem narration cover the situation. A small drawn leaf overlay shows the effect of watering and serves as the notebook card. The new scene reuses familiar object words and adds the seedling and event name.
 

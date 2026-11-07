@@ -189,6 +189,11 @@ func _run() -> void:
 		_log("DONE snow")
 		get_tree().quit()
 		return
+	if _path == "mother_day":
+		await _mother_day_path()
+		_log("DONE mother_day")
+		get_tree().quit()
+		return
 	if _path == "tree_day":
 		await _tree_day_path()
 		_log("DONE tree_day")
@@ -285,6 +290,25 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _mother_day_path() -> void:
+	await Globals.new_game()
+	Globals.festival["completed"] = true
+	R.goto_room("Yard")
+	await _wait_room("Yard")
+	await _click("MotherDayEntry")
+	await _wait_room("MotherGarden")
+	var wilts := Globals.wilts
+	_answers = [false]
+	await _click("CraftTable")
+	_expect(Globals.wilts == wilts + 1 and not R.current.get_node("FlowerCard").visible, "keeping the flowers leaves the card blank")
+	_answers = [true]
+	await _click("CraftTable")
+	await _click("BlankCard")
+	_expect(Globals.wilts == wilts and Globals.friend_cards.has("mother_day") and R.current.get_node("FlowerCard").visible, "decorating the card repairs the wilt and awards the keepsake")
+	await _click("ExitLeft")
+	await _wait_room("Yard")
 
 
 func _tree_day_path() -> void:

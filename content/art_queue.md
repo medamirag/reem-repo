@@ -95,6 +95,15 @@ Originals in `assets/` are never edited: new images are new files with the names
 | snow_deer_sheet | `assets/art/characters/snow_deer/snow_deer_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See snow_deer_sheet below | No lettering | done |
 | snow_deer_base | `assets/art/characters/snow_deer/snow_deer_base.png` | `assets/art/characters/snow_deer/snow_deer_sheet.png` | transparent | square | See snow_deer_base below | No lettering | done |
 | arnoob_winter | `assets/art/characters/arnoob/arnoob_winter.png` | `assets/art/characters/arnoob/arnoob_base.png` | transparent | landscape | See arnoob_winter below | No lettering | done |
+| bg29_giant_bloom | `assets/art/backgrounds/bg29_giant_bloom.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg29_giant_bloom below | No lettering, check limbs | done |
+| bg30_dew_bank | `assets/art/backgrounds/bg30_dew_bank.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg30_dew_bank below | No lettering, check limbs | done |
+| bg31_ant_city | `assets/art/backgrounds/bg31_ant_city.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg31_ant_city below | No lettering, check limbs | done |
+| ant_worker_sheet | `assets/art/characters/ant_worker/ant_worker_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See ant_worker_sheet below | No lettering, check limbs | done |
+| ant_worker_base | `assets/art/characters/ant_worker/ant_worker_base.png` | `assets/art/characters/ant_worker/ant_worker_sheet.png` | transparent | portrait | See ant_worker_base below | No lettering, check limbs | done |
+| ant_queen_sheet | `assets/art/characters/ant_queen/ant_queen_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See ant_queen_sheet below | No lettering, check limbs | done |
+| ant_queen_base | `assets/art/characters/ant_queen/ant_queen_base.png` | `assets/art/characters/ant_queen/ant_queen_sheet.png` | transparent | portrait | See ant_queen_base below | No lettering, check limbs | done |
+| ant_beetle_sheet | `assets/art/characters/ant_beetle/ant_beetle_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See ant_beetle_sheet below | No lettering, check limbs | done |
+| ant_beetle_base | `assets/art/characters/ant_beetle/ant_beetle_base.png` | `assets/art/characters/ant_beetle/ant_beetle_sheet.png` | transparent | landscape | See ant_beetle_base below | No lettering, check limbs | done |
 
 <!-- One section per row, in the same order:
 
@@ -1042,3 +1051,93 @@ One gentle young red deer fawn from the reference sheet, chestnut fur with white
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 Arnoob in his white winter coat. Keep the exact pose, eyes, pink nose, teal vest, gold buttons and outlines of arnoob_base. Change only orange fur to warm ivory and white. Fully transparent.
+
+## bg29_giant_bloom
+
+- **Save as:** `assets/art/backgrounds/bg29_giant_bloom.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Tiny creature perspective under an enormous pink wildflower in sunny meadow. Side-view game background, broad walkable dry soil path across lower third, enormous green stems and softly textured yellow pollen, large pebbles at sides. Leave clear centre for one oversized seed and an ant. No characters, writing or scene labels.
+
+## bg30_dew_bank
+
+- **Save as:** `assets/art/backgrounds/bg30_dew_bank.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Tiny insect view of a huge round dew drop like a lake between two low dry banks, enormous blades of grass and flower stems behind it. Clear safe soil foreground across lower third, empty water surface for a separate floating leaf sprite. Soft blue, sage, gold. Side view, no characters, no writing or letters.
+
+## bg31_ant_city
+
+- **Save as:** `assets/art/backgrounds/bg31_ant_city.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Cozy tiny ant kingdom in cross section, warm ochre rounded underground chambers behind a wide dry floor. Three empty storage niches, a visible safe tunnel opening on right and a small window onto grass at upper left. Warm lantern-like light but no scary shadows, no characters, no seeds or writing.
+
+## ant_worker_sheet
+
+- **Save as:** `assets/art/characters/ant_worker/ant_worker_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Two separated three-quarter and dorsal views of a friendly small amber ant worker, head, thorax and abdomen, two short antennae, two eyes, exactly six legs (three per side), all attached to thorax, no other arms or legs. Plain warm cream turnaround, no accessories.
+
+## ant_worker_base
+
+- **Save as:** `assets/art/characters/ant_worker/ant_worker_base.png`
+- **Attach:** `assets/art/characters/ant_worker/ant_worker_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One friendly amber ant worker from the sheet, three-quarter top view, exactly six visible legs with three per side attached only to thorax, two antennae, two eyes, three body sections. Transparent, no scene or shadow.
+
+## ant_queen_sheet
+
+- **Save as:** `assets/art/characters/ant_queen/ant_queen_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Friendly rounded violet ant queen with amber highlights, three body sections and exactly six visible legs with three per side attached to thorax, two antennae and two eyes, longer abdomen. One small leaf tiara above eyes. Two separated three-quarter and dorsal views on warm cream, no other limbs.
+
+## ant_queen_base
+
+- **Save as:** `assets/art/characters/ant_queen/ant_queen_base.png`
+- **Attach:** `assets/art/characters/ant_queen/ant_queen_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One friendly violet and amber ant queen from reference, leaf tiara, exactly six legs, two antennae, two eyes, three body sections. Top three-quarter view with all legs separate. Isolated transparent, no other props.
+
+## ant_beetle_sheet
+
+- **Save as:** `assets/art/characters/ant_beetle/ant_beetle_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Kind small teal and bronze guard beetle, round wing cases with centre seam, six visible legs with three on each side, two short antennae, large warm eyes, no weapons or clothing. Two separated three-quarter and top views, plain warm cream.
+
+## ant_beetle_base
+
+- **Save as:** `assets/art/characters/ant_beetle/ant_beetle_base.png`
+- **Attach:** `assets/art/characters/ant_beetle/ant_beetle_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One friendly teal and bronze beetle matching the turnaround, exact six distinct legs with three per side, two antennae, big warm eyes. Isolated fully transparent, no scenery, props, shadow or writing.

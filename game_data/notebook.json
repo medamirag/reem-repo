@@ -219,6 +219,21 @@
       "reem_snow_tracks",
       "reem_snow_sled",
       "reem_snow_help"
+    ],
+    "ant_worker": [
+      "reem_ant_tiny",
+      "reem_ant_worker",
+      "reem_ant_carry"
+    ],
+    "ant_bridge": [
+      "reem_ant_dew",
+      "reem_ant_guard",
+      "reem_ant_bridge"
+    ],
+    "ant_order": [
+      "reem_ant_city",
+      "reem_ant_order",
+      "reem_ant_rain"
     ]
   },
   "map": [
@@ -445,6 +460,30 @@
         0.92,
         0.08
       ]
+    },
+    {
+      "room": "GiantBloom",
+      "label": "عَالَمُ النَّمْل",
+      "at": [
+        0.3,
+        0.33
+      ]
+    },
+    {
+      "room": "DewBank",
+      "label": "ضِفَّةُ النَّدَى",
+      "at": [
+        0.32,
+        0.19
+      ]
+    },
+    {
+      "room": "AntCity",
+      "label": "مَدِينَةُ النَّمْل",
+      "at": [
+        0.32,
+        0.05
+      ]
     }
   ],
   "edges": [
@@ -571,6 +610,18 @@
     [
       26,
       27
+    ],
+    [
+      3,
+      28
+    ],
+    [
+      28,
+      29
+    ],
+    [
+      29,
+      30
     ]
   ],
   "cards": [
@@ -681,6 +732,24 @@
       "image": "res://assets/art/characters/snow_deer/snow_deer_base.png",
       "name_line": "reem_snow_deer_name",
       "fact_line": "reem_snow_deer_fact"
+    },
+    {
+      "id": "ant_worker",
+      "image": "res://assets/art/characters/ant_worker/ant_worker_base.png",
+      "name_line": "reem_ant_worker_name",
+      "fact_line": "reem_ant_worker_fact"
+    },
+    {
+      "id": "ant_beetle",
+      "image": "res://assets/art/characters/ant_beetle/ant_beetle_base.png",
+      "name_line": "reem_ant_beetle_name",
+      "fact_line": "reem_ant_beetle_fact"
+    },
+    {
+      "id": "ant_queen",
+      "image": "res://assets/art/characters/ant_queen/ant_queen_base.png",
+      "name_line": "reem_ant_queen_name",
+      "fact_line": "reem_ant_queen_fact"
     }
   ]
 }

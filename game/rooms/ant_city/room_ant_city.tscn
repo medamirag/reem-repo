@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/ant_city/room_ant_city.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg31_ant_city.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/ant_queen/ant_queen_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://game/scripts/ants/seed.svg" id="10"]
+[ext_resource type="Texture2D" path="res://game/scripts/ants/rain.svg" id="11"]
+[ext_resource type="Resource" path="res://game/rooms/ant_city/room_ant_city.tres" id="state"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomAntCity" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "AntCity"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "DewBank": Vector2(0.08, 0.82)}
+ambience_cue = "amb_meadow"
+reem_height_ratio = 0.23
+exit_arrows = {"ExitLeft": "left"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Queen" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Queen"
+position = Vector2(464, 838)
+interaction_polygon = PackedVector2Array(-167, -218, 167, -218, 167, 0, -167, 0)
+walk_to_point = Vector2(0, 48)
+
+[node name="InteractionPolygon" parent="Props/Queen" index="2"]
+polygon = PackedVector2Array(-167, -218, 167, -218, 167, 0, -167, 0)
+
+[node name="Sprite2D" parent="Props/Queen" index="0"]
+position = Vector2(0, -109.0)
+texture = ExtResource("9")
+scale = Vector2(0.22, 0.22)
+
+[node name="SeedSmall" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "SeedSmall"
+position = Vector2(790, 840)
+interaction_polygon = PackedVector2Array(-60, -110, 60, -110, 60, 0, -60, 0)
+walk_to_point = Vector2(0, 46)
+
+[node name="InteractionPolygon" parent="Props/SeedSmall" index="2"]
+polygon = PackedVector2Array(-60, -110, 60, -110, 60, 0, -60, 0)
+
+[node name="Sprite2D" parent="Props/SeedSmall" index="0"]
+position = Vector2(0, -55.0)
+texture = ExtResource("10")
+scale = Vector2(1.1, 1.1)
+
+[node name="SeedMiddle" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "SeedMiddle"
+position = Vector2(985, 840)
+interaction_polygon = PackedVector2Array(-60, -110, 60, -110, 60, 0, -60, 0)
+walk_to_point = Vector2(0, 46)
+
+[node name="InteractionPolygon" parent="Props/SeedMiddle" index="2"]
+polygon = PackedVector2Array(-60, -110, 60, -110, 60, 0, -60, 0)
+
+[node name="Sprite2D" parent="Props/SeedMiddle" index="0"]
+position = Vector2(0, -55.0)
+texture = ExtResource("10")
+scale = Vector2(1.52, 1.52)
+
+[node name="SeedLarge" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "SeedLarge"
+position = Vector2(1180, 840)
+interaction_polygon = PackedVector2Array(-60, -110, 60, -110, 60, 0, -60, 0)
+walk_to_point = Vector2(0, 46)
+
+[node name="InteractionPolygon" parent="Props/SeedLarge" index="2"]
+polygon = PackedVector2Array(-60, -110, 60, -110, 60, 0, -60, 0)
+
+[node name="Sprite2D" parent="Props/SeedLarge" index="0"]
+position = Vector2(0, -55.0)
+texture = ExtResource("10")
+scale = Vector2(1.94, 1.94)
+
+[node name="Tunnel" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Tunnel"
+position = Vector2(1690, 830)
+interaction_polygon = PackedVector2Array(-122, -241, 122, -241, 122, 0, -122, 0)
+walk_to_point = Vector2(0, 56)
+
+[node name="InteractionPolygon" parent="Props/Tunnel" index="2"]
+polygon = PackedVector2Array(-122, -241, 122, -241, 122, 0, -122, 0)
+
+[node name="Rain" type="Node2D" parent="."]
+position = Vector2(181, 306)
+visible = false
+
+[node name="Body" type="Sprite2D" parent="Rain"]
+texture = ExtResource("11")
+scale = Vector2(1.6, 1.6)
+modulate = Color(1, 1, 1, 0.75)

@@ -140,6 +140,15 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_animal_track | Reem | clear and cheerful, saying one word to teach a child | أَثَرُ قَدَم | done |
 | word_map_snow_tracks | Reem | clear and cheerful, saying one word to teach a child | آثَارُ الثَّلْج | done |
 | word_map_sled_hill | Reem | clear and cheerful, saying one word to teach a child | تَلُّ اللَّوْحِ الْخَشَبِيّ | done |
+| word_ant | Reem | clear and cheerful, saying one word to teach a child | نَمْلَة | done |
+| word_ant_queen | Reem | clear and cheerful, saying one word to teach a child | مَلِكَةُ النَّمْل | done |
+| word_beetle | Reem | clear and cheerful, saying one word to teach a child | خُنْفُسَاء | done |
+| word_seed | Reem | clear and cheerful, saying one word to teach a child | بَذْرَة | done |
+| word_dewdrop | Reem | clear and cheerful, saying one word to teach a child | قَطْرَةُ مَاء | done |
+| word_tunnel | Reem | clear and cheerful, saying one word to teach a child | نَفَق | done |
+| word_rain | Reem | clear and cheerful, saying one word to teach a child | مَطَر | done |
+| word_map_dew_bank | Reem | clear and cheerful, saying one word to teach a child | ضِفَّةُ النَّدَى | done |
+| word_map_ant_city | Reem | clear and cheerful, saying one word to teach a child | مَدِينَةُ النَّمْل | done |
 
 ## Recording verification
 

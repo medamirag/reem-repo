@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/scripts/ants/ant_room_state.gd" id="1"]
+[resource]
+resource_name = "DewBank"
+script = ExtResource("1")
+script_name = "DewBank"
+scene = "res://game/rooms/dew_bank/room_dew_bank.tscn"

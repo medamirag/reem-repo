@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/meadow_fork/room_meadow_fork.gd" id="2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="8"]
 [ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="9"]
 [ext_resource type="Texture2D" path="res://assets/art/backgrounds/fg4_fork_fg.png" id="10"]
+[ext_resource type="Texture2D" path="res://game/scripts/ants/flower.svg" id="11"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
 agent_radius = 0.0
@@ -112,3 +113,19 @@ vertical_alignment = 1
 z_index = 100
 centered = false
 texture = ExtResource("10")
+
+[node name="GiantFlower" parent="Props" instance=ExtResource("5")]
+visible = false
+script = ExtResource("6")
+script_name = "GiantFlower"
+position = Vector2(1550, 814)
+interaction_polygon = PackedVector2Array(-65, -150, 65, -150, 65, 0, -65, 0)
+walk_to_point = Vector2(0, 72)
+
+[node name="InteractionPolygon" parent="Props/GiantFlower" index="2"]
+polygon = PackedVector2Array(-65, -150, 65, -150, 65, 0, -65, 0)
+
+[node name="Sprite2D" parent="Props/GiantFlower" index="0"]
+position = Vector2(0, -78)
+texture = ExtResource("11")
+scale = Vector2(2.1, 2.1)

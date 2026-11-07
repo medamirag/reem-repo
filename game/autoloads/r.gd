@@ -33,6 +33,9 @@ const PRScaleCourtyard := preload("res://game/rooms/scale_courtyard/room_scale_c
 const PRSnowEdge := preload("res://game/rooms/snow_edge/room_snow_edge.gd")
 const PRSnowTracks := preload("res://game/rooms/snow_tracks/room_snow_tracks.gd")
 const PRSledHill := preload("res://game/rooms/sled_hill/room_sled_hill.gd")
+const PRGiantBloom := preload("res://game/rooms/giant_bloom/room_giant_bloom.gd")
+const PRDewBank := preload("res://game/rooms/dew_bank/room_dew_bank.gd")
+const PRAntCity := preload("res://game/rooms/ant_city/room_ant_city.gd")
 # ---- classes
 
 # nodes ----
@@ -67,6 +70,9 @@ var ScaleCourtyard: PRScaleCourtyard : get = get_ScaleCourtyard
 var SnowEdge: PRSnowEdge : get = get_SnowEdge
 var SnowTracks: PRSnowTracks : get = get_SnowTracks
 var SledHill: PRSledHill : get = get_SledHill
+var GiantBloom: PRGiantBloom : get = get_GiantBloom
+var DewBank: PRDewBank : get = get_DewBank
+var AntCity: PRAntCity : get = get_AntCity
 # ---- nodes
 
 # functions ----
@@ -101,4 +107,7 @@ func get_ScaleCourtyard() -> PRScaleCourtyard: return get_runtime_room("ScaleCou
 func get_SnowEdge() -> PRSnowEdge: return get_runtime_room("SnowEdge")
 func get_SnowTracks() -> PRSnowTracks: return get_runtime_room("SnowTracks")
 func get_SledHill() -> PRSledHill: return get_runtime_room("SledHill")
+func get_GiantBloom() -> PRGiantBloom: return get_runtime_room("GiantBloom")
+func get_DewBank() -> PRDewBank: return get_runtime_room("DewBank")
+func get_AntCity() -> PRAntCity: return get_runtime_room("AntCity")
 # ---- functions

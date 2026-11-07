@@ -1,4 +1,130 @@
 {
+ "reem_ant_offer": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "مَا أَكْبَرَ هَذِهِ الزَّهْرَةَ! هَلْ أَقْتَرِبُ لِأَرَى مَمْلَكَةَ النَّمْلِ؟",
+  "audio": "res://assets/audio/lines/reem_ant_offer.mp3"
+ },
+ "reem_ant_tiny": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "صِرْتُ صَغِيرَةً، وَصَارَتْ حَبَّةُ الرَّمْلِ كَحَجَرٍ كَبِيرٍ.",
+  "audio": "res://assets/audio/lines/reem_ant_tiny.mp3"
+ },
+ "reem_ant_worker": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَوَقَّفَتِ النَّمْلَةُ عَنْ حَمْلِ الْبُذُورِ. لِنَحْمِلْ وَاحِدَةً مَعًا.",
+  "audio": "res://assets/audio/lines/reem_ant_worker.mp3"
+ },
+ "reem_ant_leave": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "بَقِيَتِ النَّمْلَةُ وَحْدَهَا مَعَ الْحِمْلِ الثَّقِيلِ. يُمْكِنُنِي أَنْ أُسَاعِدَهَا.",
+  "audio": "res://assets/audio/lines/reem_ant_leave.mp3"
+ },
+ "reem_ant_carry": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأَرْفَعُ طَرَفَ الْبَذْرَةِ مَعَ النَّمْلَةِ.",
+  "audio": "res://assets/audio/lines/reem_ant_carry.mp3"
+ },
+ "reem_ant_helped": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "حَمَلْنَا الْبَذْرَةَ مَعًا، وَالْآنَ تَسْتَرِيحُ النَّمْلَةُ.",
+  "audio": "res://assets/audio/lines/reem_ant_helped.mp3"
+ },
+ "reem_ant_worker_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "النَّمْلَةُ الْعَامِلَةُ",
+  "audio": "res://assets/audio/lines/reem_ant_worker_name.mp3"
+ },
+ "reem_ant_worker_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِلنَّمْلَةِ سِتُّ أَرْجُلٍ.",
+  "audio": "res://assets/audio/lines/reem_ant_worker_fact.mp3"
+ },
+ "reem_ant_dew": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "قَطْرَةُ الْمَاءِ هُنَا كَأَنَّهَا بُحَيْرَةٌ.",
+  "audio": "res://assets/audio/lines/reem_ant_dew.mp3"
+ },
+ "reem_ant_guard": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تُرِينِي الْخُنْفُسَاءُ الْوَرَقَةَ. إِذَا وَصَلَتْ إِلَى الضِّفَّتَيْنِ، صَارَتْ جِسْرًا.",
+  "audio": "res://assets/audio/lines/reem_ant_guard.mp3"
+ },
+ "fox_ant_hurry": {
+  "speaker": "Thaaloob",
+  "tone": "playful",
+  "text": "كِدْتُ أَعْبُرُ قَبْلَ أَنْ تَسْتَقِرَّ الْوَرَقَةُ! سَأَنْتَظِرُ مَعَكِ.",
+  "audio": "res://assets/audio/lines/fox_ant_hurry.mp3"
+ },
+ "reem_ant_bridge": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "اسْتَقَرَّتِ الْوَرَقَةُ، وَصَارَ لَنَا جِسْرٌ.",
+  "audio": "res://assets/audio/lines/reem_ant_bridge.mp3"
+ },
+ "reem_ant_beetle_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "الْخُنْفُسَاءُ الْحَارِسَةُ",
+  "audio": "res://assets/audio/lines/reem_ant_beetle_name.mp3"
+ },
+ "reem_ant_beetle_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَحْمِي أَغْطِيَةُ الْخُنْفُسَاءِ الصُّلْبَةُ أَجْنِحَتَهَا.",
+  "audio": "res://assets/audio/lines/reem_ant_beetle_fact.mp3"
+ },
+ "reem_ant_city": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذِهِ مَخَازِنُ النَّمْلِ. لِكُلِّ بَذْرَةٍ مَكَانٌ.",
+  "audio": "res://assets/audio/lines/reem_ant_city.mp3"
+ },
+ "reem_ant_order": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأَضَعُ الْبُذُورَ مِنَ الْأَصْغَرِ إِلَى الْأَكْبَرِ.",
+  "audio": "res://assets/audio/lines/reem_ant_order.mp3"
+ },
+ "reem_ant_try": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "لِنَنْظُرْ إِلَى حَجْمِ الْبَذْرَةِ الَّتِي تَأْتِي بَعْدَهَا.",
+  "audio": "res://assets/audio/lines/reem_ant_try.mp3"
+ },
+ "reem_ant_rain": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "بَدَأَ الْمَطَرُ فِي الْخَارِجِ. لِنَدْخُلِ النَّفَقَ مَعًا.",
+  "audio": "res://assets/audio/lines/reem_ant_rain.mp3"
+ },
+ "reem_ant_safe": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَصَلْنَا إِلَى مَكَانٍ جَافٍّ، وَالْبُذُورُ فِي مَخَازِنِهَا.",
+  "audio": "res://assets/audio/lines/reem_ant_safe.mp3"
+ },
+ "reem_ant_queen_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "مَلِكَةُ النَّمْلِ",
+  "audio": "res://assets/audio/lines/reem_ant_queen_name.mp3"
+ },
+ "reem_ant_queen_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَضَعُ مَلِكَةُ النَّمْلِ الْبَيْضَ فِي الْمُسْتَعْمَرَةِ.",
+  "audio": "res://assets/audio/lines/reem_ant_queen_fact.mp3"
+ },
  "reem_snow_offer": {
   "speaker": "Reem",
   "tone": "warm",

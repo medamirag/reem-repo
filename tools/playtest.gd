@@ -189,6 +189,11 @@ func _run() -> void:
 		_log("DONE snow")
 		get_tree().quit()
 		return
+	if _path == "ants":
+		await _ant_path()
+		_log("DONE ants")
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -265,6 +270,52 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _ant_path() -> void:
+	await Globals.new_game()
+	Globals.unlocked_packs["5"] = true
+	R.goto_room("MeadowFork")
+	await _wait_room("MeadowFork")
+	_answers = [true]
+	await _click("GiantFlower")
+	await _wait_room("GiantBloom")
+	_expect(R.current.reem_height_ratio < 0.3, "giant flower leads to a tiny Reem")
+	var previous_wilts := Globals.wilts
+	_answers = [false]
+	await _click("Worker")
+	_expect(Globals.wilts == previous_wilts + 1, "leaving the worker wilts once")
+	_answers = [true]
+	await _click("Worker")
+	await _click("HeavySeed")
+	_expect(Globals.friend_cards.has("ant_worker") and Globals.wilts == previous_wilts, "carrying the seed repairs and earns the card")
+	await _click("ExitRight")
+	await _wait_room("DewBank")
+	await _click("TinyFox")
+	await _click("Beetle")
+	_expect(not R.current.is_exit_open("ExitRight"), "guard waits for aligned leaf")
+	await _click("LeafBridge")
+	await _click("Beetle")
+	_expect(Globals.friend_cards.has("ant_beetle") and R.current.is_exit_open("ExitRight"), "aligned bridge unlocks colony")
+	await _click("ExitRight")
+	await _wait_room("AntCity")
+	await _click("Queen")
+	await _click("SeedLarge")
+	_expect(Globals.ants.get("stored", 0) == 0, "wrong seed leaves the order unchanged")
+	await _click("SeedSmall")
+	Globals.reset()
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("continue ant colony", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("AntCity")
+	_expect(Globals.ants.get("stored", 0) == 1 and Globals.ants.get("crossing"), "seed order and bridge survive continue")
+	await _click("SeedMiddle")
+	await _click("SeedLarge")
+	_expect(R.current.get_node("Rain").visible, "rain appears after seeds are stored")
+	await _click("Tunnel")
+	_expect(Globals.ants.get("safe") and Globals.friend_cards.has("ant_queen") and not R.current.get_node("Rain").visible, "tunnel shelters Reem and earns queen card")
+	await _click("ExitLeft")
+	await _wait_room("DewBank")
 
 
 func _snow_path() -> void:

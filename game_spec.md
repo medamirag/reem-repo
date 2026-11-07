@@ -558,3 +558,13 @@ At SnowEdge, a cold goldfinch waits beside an empty shelter. Reem can share a so
 At SnowTracks, Arnoob in his white winter fur points to his own paired rabbit prints and the young deer's split hoofprints. Thaaloob offers to follow his own paw prints, then helps Reem compare them. Find three deer print groups from left to right. Wrong prints leave the trail open and the current progress unchanged. Use both shape and spacing so colour is unnecessary.
 
 At SledHill, the young deer waits safely below the hill. Click the wooden board to slide down a clearly marked gentle track. The ride is a brief animation with no steering, timer or failure. At the bottom, click the deer to bring it to a sheltered spot before sunset in the story. Earn a deer card and keep the return arrow open. Save shelter help, the print sequence, slide completion and deer rescue. Reem narrates new animals pending verified saved voices. Use Thaaloob's saved voice for his cameo.
+
+## 25. Ant Kingdom (pack 5)
+
+After the festival, click the giant flower at MeadowFork. Reem becomes small beside its petals. GiantBloom, DewBank and AntCity use oversized surroundings and a smaller Reem sprite. The left exit always lets Reem retrace her route and return to normal size.
+
+At GiantBloom, an ant worker has stopped carrying seeds. Reem can leave the work to the ant or offer to carry one seed together. Leaving the whole load with the ant wilts once. Return and offer to share the load to repair. Click the seed, then the ant earns a rest and Reem earns its card.
+
+At DewBank, a drop of water is a lake. Click a floating leaf to align it with both dry banks. The beetle guard then shows the crossing and earns a card. The safe foreground remains available if the leaf is moved back. Thaaloob tries to hurry across and then helps wait for the leaf to be aligned.
+
+At AntCity, the queen asks Reem to place three seeds in order by size. Incorrect seeds leave the previous good placements intact. When the seeds are stored, gentle oversized raindrops appear outside. Click the tunnel entrance to join the colony in shelter. The queen thanks Reem and earns a card. There is no countdown or falling hazard on the walking path. Save seed help, bridge alignment, seed order, rain and shelter. Add all three rooms to both maps and use only saved voices, with Reem narrating the ants and beetle.

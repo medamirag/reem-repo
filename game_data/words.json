@@ -1,4 +1,88 @@
 {
+  "word_ant": {
+    "text": "نَمْلَة",
+    "rooms": [
+      "GiantBloom"
+    ],
+    "audio": "res://assets/audio/words/word_ant.mp3",
+    "objects": [
+      "prop:Worker"
+    ]
+  },
+  "word_ant_queen": {
+    "text": "مَلِكَةُ النَّمْل",
+    "rooms": [
+      "AntCity"
+    ],
+    "audio": "res://assets/audio/words/word_ant_queen.mp3",
+    "objects": [
+      "prop:Queen"
+    ]
+  },
+  "word_beetle": {
+    "text": "خُنْفُسَاء",
+    "rooms": [
+      "DewBank"
+    ],
+    "audio": "res://assets/audio/words/word_beetle.mp3",
+    "objects": [
+      "prop:Beetle"
+    ]
+  },
+  "word_seed": {
+    "text": "بَذْرَة",
+    "rooms": [
+      "GiantBloom",
+      "AntCity"
+    ],
+    "audio": "res://assets/audio/words/word_seed.mp3",
+    "objects": [
+      "prop:HeavySeed",
+      "prop:SeedSmall",
+      "prop:SeedMiddle",
+      "prop:SeedLarge"
+    ]
+  },
+  "word_dewdrop": {
+    "text": "قَطْرَةُ مَاء",
+    "rooms": [
+      "DewBank"
+    ],
+    "audio": "res://assets/audio/words/word_dewdrop.mp3",
+    "objects": []
+  },
+  "word_tunnel": {
+    "text": "نَفَق",
+    "rooms": [
+      "AntCity"
+    ],
+    "audio": "res://assets/audio/words/word_tunnel.mp3",
+    "objects": [
+      "prop:Tunnel"
+    ]
+  },
+  "word_rain": {
+    "text": "مَطَر",
+    "rooms": [
+      "AntCity"
+    ],
+    "audio": "res://assets/audio/words/word_rain.mp3",
+    "objects": [
+      "decor:Rain"
+    ]
+  },
+  "word_map_dew_bank": {
+    "text": "ضِفَّةُ النَّدَى",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_dew_bank.mp3",
+    "objects": []
+  },
+  "word_map_ant_city": {
+    "text": "مَدِينَةُ النَّمْل",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_ant_city.mp3",
+    "objects": []
+  },
   "word_snow": {
     "text": "ثَلْج",
     "rooms": [
@@ -688,10 +772,14 @@
   "word_leaf": {
     "text": "وَرَقَة",
     "rooms": [
-      "OakForest"
+      "OakForest",
+      "GiantBloom",
+      "DewBank"
     ],
     "audio": "res://assets/audio/words/word_leaf.mp3",
-    "objects": []
+    "objects": [
+      "prop:LeafBridge"
+    ]
   },
   "word_fern": {
     "text": "سَرَخْس",
@@ -819,7 +907,8 @@
       "GrandpaRoom",
       "Yard",
       "RamadanLane",
-      "IftarShelter"
+      "IftarShelter",
+      "AntCity"
     ],
     "audio": "res://assets/audio/words/word_window.mp3",
     "objects": []
@@ -1061,7 +1150,10 @@
       "ScaleCourtyard",
       "SnowEdge",
       "SnowTracks",
-      "SledHill"
+      "SledHill",
+      "GiantBloom",
+      "DewBank",
+      "AntCity"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -1082,12 +1174,15 @@
       "GullShore",
       "RamadanLane",
       "HedgehogCourt",
-      "IftarShelter"
+      "IftarShelter",
+      "GiantBloom",
+      "DewBank"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
       "prop:FlowersFork",
-      "prop:FlowersShade"
+      "prop:FlowersShade",
+      "prop:GiantFlower"
     ]
   },
   "word_grass": {
@@ -1172,7 +1267,9 @@
       "TideCave",
       "GullLighthouse",
       "SnowEdge",
-      "SledHill"
+      "SledHill",
+      "GiantBloom",
+      "DewBank"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []
@@ -1213,7 +1310,8 @@
       "GullLighthouse",
       "IftarShelter",
       "ScaleCourtyard",
-      "SnowTracks"
+      "SnowTracks",
+      "DewBank"
     ],
     "audio": "res://assets/audio/words/word_fox.mp3",
     "objects": [
@@ -1223,7 +1321,8 @@
       "prop:IslandFox",
       "prop:RamadanFox",
       "prop:MarketFox",
-      "prop:SnowFox"
+      "prop:SnowFox",
+      "prop:TinyFox"
     ]
   },
   "word_bee": {
@@ -1248,7 +1347,8 @@
       "Yard",
       "RamadanLane",
       "HedgehogCourt",
-      "IftarShelter"
+      "IftarShelter",
+      "AntCity"
     ],
     "audio": "res://assets/audio/words/word_lantern.mp3",
     "objects": [

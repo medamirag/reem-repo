@@ -37,6 +37,7 @@ var gull := {}
 var ramadan := {}
 var market := {}
 var snow := {}
+var ants := {}
 var repairs := 0
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
 ## cleared by a new game from the end screen, included in the autosave.
@@ -181,6 +182,7 @@ func reset() -> void:
 	ramadan.clear()
 	market.clear()
 	snow.clear()
+	ants.clear()
 	repairs = 0
 	orchard.clear()
 	lake.clear()
@@ -265,7 +267,7 @@ func play_ambience(cue_name: String) -> void:
 
 
 func on_save() -> Dictionary:
-	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak, "cave": cave, "lake": lake, "orchard": orchard, "hill": hill, "waterfall": waterfall, "narrow_pass": narrow_pass, "festival": festival, "gull": gull, "ramadan": ramadan, "market": market, "snow": snow, "map_intro_seen": map_intro_seen, "unlocked_packs": unlocked_packs}
+	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak, "cave": cave, "lake": lake, "orchard": orchard, "hill": hill, "waterfall": waterfall, "narrow_pass": narrow_pass, "festival": festival, "gull": gull, "ramadan": ramadan, "market": market, "snow": snow, "ants": ants, "map_intro_seen": map_intro_seen, "unlocked_packs": unlocked_packs}
 
 
 func on_load(data: Dictionary) -> void:
@@ -284,6 +286,7 @@ func on_load(data: Dictionary) -> void:
 	ramadan = data.get("ramadan", {}).duplicate()
 	market = data.get("market", {}).duplicate()
 	snow = data.get("snow", {}).duplicate()
+	ants = data.get("ants", {}).duplicate()
 	stream = data.get("stream", {}).duplicate()
 	discovered_words = data.get("discovered_words", {}).duplicate()
 	hint_steps = data.get("hint_steps", {}).duplicate()

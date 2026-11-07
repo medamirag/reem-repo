@@ -264,13 +264,14 @@
   },
   {
     "id": "tiny",
-    "room": "",
+    "room": "GiantBloom",
     "position": [
       0.318,
       0.621
     ],
     "neighbors": [
-      "meadow"
+      "meadow",
+      "dew_bank"
     ],
     "pack": 5,
     "name": "word_map_tiny"
@@ -424,5 +425,32 @@
     ],
     "pack": 4,
     "name": "word_map_sled_hill"
+  },
+  {
+    "id": "dew_bank",
+    "room": "DewBank",
+    "position": [
+      0.357,
+      0.606
+    ],
+    "neighbors": [
+      "tiny",
+      "ant_city"
+    ],
+    "pack": 5,
+    "name": "word_map_dew_bank"
+  },
+  {
+    "id": "ant_city",
+    "room": "AntCity",
+    "position": [
+      0.392,
+      0.664
+    ],
+    "neighbors": [
+      "dew_bank"
+    ],
+    "pack": 5,
+    "name": "word_map_ant_city"
   }
 ]

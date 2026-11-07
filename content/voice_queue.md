@@ -264,6 +264,27 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_snow_help | Reem | warm | هَيَّا نَمْشِي إِلَى الْمَأْوَى الدَّافِئِ قَبْلَ غُرُوبِ الشَّمْسِ. | done |
 | reem_snow_deer_name | Reem | warm | أَيِّلٌ صَغِيرٌ | done |
 | reem_snow_deer_fact | Reem | warm | لِصِغَارِ بَعْضِ الْأَيَائِلِ بُقَعٌ فَاتِحَةٌ عَلَى ظُهُورِهَا. | done |
+| reem_ant_offer | Reem | warm | مَا أَكْبَرَ هَذِهِ الزَّهْرَةَ! هَلْ أَقْتَرِبُ لِأَرَى مَمْلَكَةَ النَّمْلِ؟ | done |
+| reem_ant_tiny | Reem | warm | صِرْتُ صَغِيرَةً، وَصَارَتْ حَبَّةُ الرَّمْلِ كَحَجَرٍ كَبِيرٍ. | done |
+| reem_ant_worker | Reem | warm | تَوَقَّفَتِ النَّمْلَةُ عَنْ حَمْلِ الْبُذُورِ. لِنَحْمِلْ وَاحِدَةً مَعًا. | done |
+| reem_ant_leave | Reem | gentle | بَقِيَتِ النَّمْلَةُ وَحْدَهَا مَعَ الْحِمْلِ الثَّقِيلِ. يُمْكِنُنِي أَنْ أُسَاعِدَهَا. | done |
+| reem_ant_carry | Reem | warm | سَأَرْفَعُ طَرَفَ الْبَذْرَةِ مَعَ النَّمْلَةِ. | done |
+| reem_ant_helped | Reem | warm | حَمَلْنَا الْبَذْرَةَ مَعًا، وَالْآنَ تَسْتَرِيحُ النَّمْلَةُ. | done |
+| reem_ant_worker_name | Reem | warm | النَّمْلَةُ الْعَامِلَةُ | done |
+| reem_ant_worker_fact | Reem | warm | لِلنَّمْلَةِ سِتُّ أَرْجُلٍ. | done |
+| reem_ant_dew | Reem | warm | قَطْرَةُ الْمَاءِ هُنَا كَأَنَّهَا بُحَيْرَةٌ. | done |
+| reem_ant_guard | Reem | warm | تُرِينِي الْخُنْفُسَاءُ الْوَرَقَةَ. إِذَا وَصَلَتْ إِلَى الضِّفَّتَيْنِ، صَارَتْ جِسْرًا. | done |
+| fox_ant_hurry | Thaaloob | playful | كِدْتُ أَعْبُرُ قَبْلَ أَنْ تَسْتَقِرَّ الْوَرَقَةُ! سَأَنْتَظِرُ مَعَكِ. | done |
+| reem_ant_bridge | Reem | warm | اسْتَقَرَّتِ الْوَرَقَةُ، وَصَارَ لَنَا جِسْرٌ. | done |
+| reem_ant_beetle_name | Reem | warm | الْخُنْفُسَاءُ الْحَارِسَةُ | done |
+| reem_ant_beetle_fact | Reem | warm | تَحْمِي أَغْطِيَةُ الْخُنْفُسَاءِ الصُّلْبَةُ أَجْنِحَتَهَا. | done |
+| reem_ant_city | Reem | warm | هَذِهِ مَخَازِنُ النَّمْلِ. لِكُلِّ بَذْرَةٍ مَكَانٌ. | done |
+| reem_ant_order | Reem | warm | سَأَضَعُ الْبُذُورَ مِنَ الْأَصْغَرِ إِلَى الْأَكْبَرِ. | done |
+| reem_ant_try | Reem | gentle | لِنَنْظُرْ إِلَى حَجْمِ الْبَذْرَةِ الَّتِي تَأْتِي بَعْدَهَا. | done |
+| reem_ant_rain | Reem | gentle | بَدَأَ الْمَطَرُ فِي الْخَارِجِ. لِنَدْخُلِ النَّفَقَ مَعًا. | done |
+| reem_ant_safe | Reem | warm | وَصَلْنَا إِلَى مَكَانٍ جَافٍّ، وَالْبُذُورُ فِي مَخَازِنِهَا. | done |
+| reem_ant_queen_name | Reem | warm | مَلِكَةُ النَّمْلِ | done |
+| reem_ant_queen_fact | Reem | warm | تَضَعُ مَلِكَةُ النَّمْلِ الْبَيْضَ فِي الْمُسْتَعْمَرَةِ. | done |
 
 ## Recording verification
 

@@ -19,6 +19,7 @@ var state: Data = load("res://game/rooms/meadow_fork/room_meadow_fork.tres")
 #region Virtual ####################################################################################
 func _setup_room() -> void:
 	_write_sign()
+	$Props/GiantFlower.visible = Globals.unlocked_packs.get("5", false)
 
 	var flowers := get_prop("FlowersFork")
 	if Globals.trampled and not Globals.flowers_fixed:
@@ -36,6 +37,11 @@ func _on_room_started() -> void:
 
 func _on_object_clicked(obj: PopochiuClickable) -> void:
 	match obj.script_name:
+		"GiantFlower":
+			if obj.visible:
+				await Lines.say("reem_ant_offer", true)
+				if await Choices.ask_two(Globals.notebook.labels["ant_go"], Globals.notebook.labels["ant_stay"]):
+					await leave_through(obj, "GiantBloom")
 		"Sign":
 			await C.player.walk_to_clicked()
 			await Lines.say("reem_s2_002")
@@ -62,6 +68,8 @@ func _on_item_used_on(obj: PopochiuClickable, item: PopochiuInventoryItem) -> vo
 
 
 func has_action(obj: PopochiuClickable) -> bool:
+	if obj.script_name == "GiantFlower":
+		return obj.visible
 	if obj.script_name == "FlowersFork":
 		return _can_water()
 	return super(obj)

@@ -32,8 +32,10 @@
 - **Old City Market checks:** Content, headless import and startup, market, green, sand, mixed and words passed. The first market run confirmed the puzzle logic and showed the known overhead text-layout error. The rerun with plain Cairo captions was clear.
 - **Snow Trail:** Section 24 adds SnowEdge, SnowTracks and SledHill. The HillSlope snow arrow opens with pack 4. Help the goldfinch, compare three kinds of prints, ride a wooden board down the trail and bring the deer to shelter. Eight art files, seventeen dialogue recordings and eight words are installed. Both maps include the rooms.
 - **Snow Trail checks:** Content, import, startup, snow, green, sand, mixed and words passed. The first snow test caught a landing slightly above the walking line. The sled now leaves Reem on the normal path and the rerun passed.
-- **Half-finished:** Ant Kingdom has no scenes or queue rows yet.
-- **Next:** Ant Kingdom, then Star Observatory. Add each new room to the illustrated map and notebook.
+- **Ant Kingdom:** Section 25 adds GiantBloom, DewBank and AntCity via the giant flower at MeadowFork. Reem shrinks, helps the worker with a seed, aligns a leaf bridge, sorts seeds by size and shelters from rain. Nine art files, 21 dialogue recordings and nine word recordings are installed. Both maps include all three rooms.
+- **Half-finished:** Ant Kingdom's final checks are running. Star Observatory has no scenes or queue rows yet.
+- **Next:** Finish Ant Kingdom checks, then Star Observatory. Add the new rooms to the illustrated map and notebook.
+- **How to play Ant Kingdom:** After the festival, click the giant flower in the meadow. Help the worker and click the seed. At the dew drop, click the leaf to straighten it, then talk to the beetle. In the colony, talk to the queen, click the seeds from smallest to largest, then click the tunnel.
 - **How to play Snow Trail:** After the festival, revisit Hill slope and take the snow arrow. Talk to the goldfinch and offer the bundle, then click the shelter. Talk to white-coated Arnoob and click the three split prints from left to right. At the next room click the wooden board, then click the deer when Reem reaches the bottom.
 - **How to play Old City Market:** After the festival, visit Gate and take the market arrow. Click the honey stall, then go to the baker. Select three coins and click the green tick. Share bread with the cat, then visit the scale. Talk to Thaaloob, place both weights and click the tick. Show the baker, then place both weights and test again.
 - **How to play Ramadan Lantern Night:** After the festival, revisit the farm yard and click the small lantern. Choose to help, then click the lantern in the lane and find both baskets and the jug. Continue to the hedgehog family, choose to share, and find three dates. Click the table in the shelter to serve the traveller.
@@ -49,6 +51,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Ant Kingdom:** Reem's smaller scale makes the surroundings feel oversized. The worker and queen use dorsal sprites so all six legs are visible. Their first bases had occluded limbs. The empty meadow background was regenerated after the first take included a painted seed and ant. The rain stays outside the walking route and has no timer. Duration and listening comparison remain open.
 
 - **Snow Trail:** Arnoob has a separate white-fur sprite derived from his original. Tracks differ by shape and spacing. A wrong print does not change progress. The sled uses a short automatic ride along the illustration, with controls restored at the bottom. Native props show tracks, the board and the bundle. Duration and listening comparison remain open.
 

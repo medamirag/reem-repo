@@ -229,6 +229,24 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_ramadan_feast | Reem | warm | هَا هُوَ الْمَاءُ وَالتَّمْرُ. تَفَضَّلْ، سَنُفْطِرُ مَعًا عِنْدَ الْمَغْرِبِ. | done |
 | reem_ramadan_hedgehog_name | Reem | warm | عَائِلَةُ الْقَنَافِذِ | done |
 | reem_ramadan_hedgehog_fact | Reem | warm | يَخْرُجُ الْقُنْفُذُ فِي اللَّيْلِ لِيَبْحَثَ عَنْ طَعَامِهِ. | done |
+| reem_market_offer | Reem | warm | هَذَا دَرْبٌ إِلَى سُوقِ الْمَدِينَةِ. هَلْ أَذْهَبُ إِلَيْهِ؟ | done |
+| reem_market_arrive | Reem | warm | وَصَلْتُ إِلَى بَوَّابَةِ السُّوقِ. هُنَا أَسْتَطِيعُ أَنْ أَبِيعَ الْعَسَلَ. | done |
+| reem_market_sale | Reem | warm | بِعْتُ الْعَسَلَ بِخَمْسِ قِطَعٍ نَقْدِيَّةٍ. سَأَعُدُّهَا قَبْلَ أَنْ أَشْتَرِيَ. | done |
+| reem_market_baker | Reem | warm | يَقُولُ الْخَبَّازُ إِنَّ ثَمَنَ الْخُبْزِ ثَلَاثُ قِطَعٍ نَقْدِيَّةٍ. | done |
+| reem_market_count | Reem | gentle | لِنَعُدَّ الْقِطَعَ مَرَّةً أُخْرَى. ثَمَنُ الْخُبْزِ ثَلَاثُ قِطَعٍ. | done |
+| reem_market_paid | Reem | warm | دَفَعْتُ ثَلَاثَ قِطَعٍ، وَبَقِيَتْ مَعِي قِطْعَتَانِ. | done |
+| reem_market_cat | Reem | warm | تَنْظُرُ قِطَّةُ السُّوقِ إِلَى الْخُبْزِ. هَلْ أُشَارِكُهَا؟ | done |
+| reem_market_keep | Reem | gentle | بَقِيَ طَبَقُ الْقِطَّةِ فَارِغًا. أَسْتَطِيعُ أَنْ أُشَارِكَهَا. | done |
+| reem_market_share | Reem | warm | وَضَعْتُ قِطْعَةً صَغِيرَةً فِي طَبَقِهَا، وَجَلَسْنَا مَعًا. | done |
+| reem_market_cat_name | Reem | warm | قِطَّةُ السُّوقِ | done |
+| reem_market_cat_fact | Reem | warm | تُسَاعِدُ شَوَارِبُ الْقِطَّةِ فِي مَعْرِفَةِ الْأَمَاكِنِ الضَّيِّقَةِ. | done |
+| reem_market_scale | Reem | warm | هُنَا مِيزَانٌ بِكَفَّتَيْنِ. لِنَنْظُرْ كَيْفَ يَعْمَلُ. | done |
+| fox_market_offer | Thaaloob | playful | تَفَضَّلِي إِلَى مِيزَانِي! لَا حَاجَةَ إِلَى اخْتِبَارِهِ. | done |
+| reem_market_trust | Reem | gentle | مَالَتْ كَفَّةُ الْمِيزَانِ. سَأُجَرِّبُهُ بِوَزْنَيْنِ مُتَسَاوِيَيْنِ. | done |
+| reem_market_weights | Reem | warm | سَأَضَعُ وَزْنًا فِي كُلِّ كَفَّةٍ، ثُمَّ أُحَرِّكُ الْمِقْبَضَ. | done |
+| reem_market_tilt | Reem | warm | الْوَزْنَانِ مُتَسَاوِيَانِ، وَلَكِنَّ الْمِيزَانَ مَائِلٌ. سَأُرِي الْخَبَّازَ. | done |
+| fox_market_sorry | Thaaloob | embarrassed | آسِفٌ يَا رِيمُ. سَأُعِيدُ الثِّقْلَ إِلَى مَكَانِهِ الصَّحِيحِ. | done |
+| reem_market_fair | Reem | warm | الْآنَ تَسَاوَتِ الْكَفَّتَانِ. هَذَا مِيزَانٌ عَادِلٌ. | done |
 
 ## Recording verification
 

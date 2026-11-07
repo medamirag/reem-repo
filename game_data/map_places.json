@@ -9,7 +9,6 @@
     "neighbors": [
       "house",
       "gate",
-      "town",
       "ramadan"
     ],
     "pack": 0,
@@ -38,7 +37,8 @@
     "neighbors": [
       "farm",
       "meadow",
-      "stream"
+      "stream",
+      "town"
     ],
     "pack": 0,
     "name": "word_map_gate"
@@ -277,13 +277,14 @@
   },
   {
     "id": "town",
-    "room": "",
+    "room": "MarketGate",
     "position": [
       0.09,
       0.45
     ],
     "neighbors": [
-      "farm"
+      "gate",
+      "market_stalls"
     ],
     "pack": 2,
     "name": "word_map_town"
@@ -368,5 +369,32 @@
     ],
     "pack": 3,
     "name": "word_map_iftar_shelter"
+  },
+  {
+    "id": "market_stalls",
+    "room": "MarketStalls",
+    "position": [
+      0.135,
+      0.418
+    ],
+    "neighbors": [
+      "town",
+      "scale_courtyard"
+    ],
+    "pack": 2,
+    "name": "word_map_market_stalls"
+  },
+  {
+    "id": "scale_courtyard",
+    "room": "ScaleCourtyard",
+    "position": [
+      0.057,
+      0.354
+    ],
+    "neighbors": [
+      "market_stalls"
+    ],
+    "pack": 2,
+    "name": "word_map_scale_courtyard"
   }
 ]

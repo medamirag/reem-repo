@@ -99,6 +99,12 @@ func show_page(page: String) -> void:
 ## Contexts follow puzzle progress rather than visit count, so hints remain useful on returns.
 func hint_context() -> String:
 	match R.current.script_name:
+		"MarketGate":
+			return "forward" if Globals.market.get("sold", false) else "market_sale"
+		"MarketStalls":
+			return "forward" if Globals.market.get("bread", false) else "market_count"
+		"ScaleCourtyard":
+			return "forward" if Globals.market.get("fair", false) else "market_scale"
 		"RamadanLane":
 			return "forward" if Globals.ramadan.get("supplies", false) else "ramadan_lane"
 		"HedgehogCourt":

@@ -1,0 +1,189 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/scale_courtyard/room_scale_courtyard.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg25_scale_court.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/market_baker/market_baker_base.png" id="10"]
+[ext_resource type="Texture2D" path="res://game/scripts/market/weight.svg" id="11"]
+[ext_resource type="Texture2D" path="res://game/scripts/market/pay.svg" id="12"]
+[ext_resource type="Resource" path="res://game/rooms/scale_courtyard/room_scale_courtyard.tres" id="state"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomScaleCourtyard" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "ScaleCourtyard"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "MarketStalls": Vector2(0.08, 0.82)}
+ambience_cue = "amb_meadow"
+exit_arrows = {"ExitLeft": "left"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="MarketFox" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "MarketFox"
+position = Vector2(475, 833)
+interaction_polygon = PackedVector2Array(-120, -300, 120, -300, 120, 0, -120, 0)
+walk_to_point = Vector2(0, 53)
+
+[node name="InteractionPolygon" parent="Props/MarketFox" index="2"]
+polygon = PackedVector2Array(-120, -300, 120, -300, 120, 0, -120, 0)
+
+[node name="Sprite2D" parent="Props/MarketFox" index="0"]
+position = Vector2(0, -150.0)
+texture = ExtResource("9")
+scale = Vector2(0.24, 0.24)
+
+[node name="Witness" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Witness"
+position = Vector2(1530, 833)
+interaction_polygon = PackedVector2Array(-130, -316, 130, -316, 130, 0, -130, 0)
+walk_to_point = Vector2(0, 53)
+
+[node name="InteractionPolygon" parent="Props/Witness" index="2"]
+polygon = PackedVector2Array(-130, -316, 130, -316, 130, 0, -130, 0)
+
+[node name="Sprite2D" parent="Props/Witness" index="0"]
+position = Vector2(0, -158.0)
+texture = ExtResource("10")
+scale = Vector2(0.22, 0.22)
+
+[node name="LeftWeight" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "LeftWeight"
+position = Vector2(770, 845)
+interaction_polygon = PackedVector2Array(-60, -105, 60, -105, 60, 0, -60, 0)
+walk_to_point = Vector2(0, 41)
+
+[node name="InteractionPolygon" parent="Props/LeftWeight" index="2"]
+polygon = PackedVector2Array(-60, -105, 60, -105, 60, 0, -60, 0)
+
+[node name="Sprite2D" parent="Props/LeftWeight" index="0"]
+position = Vector2(0, -52.5)
+texture = ExtResource("11")
+scale = Vector2(1.15, 1.15)
+
+[node name="RightWeight" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "RightWeight"
+position = Vector2(1150, 845)
+interaction_polygon = PackedVector2Array(-60, -105, 60, -105, 60, 0, -60, 0)
+walk_to_point = Vector2(0, 41)
+
+[node name="InteractionPolygon" parent="Props/RightWeight" index="2"]
+polygon = PackedVector2Array(-60, -105, 60, -105, 60, 0, -60, 0)
+
+[node name="Sprite2D" parent="Props/RightWeight" index="0"]
+position = Vector2(0, -52.5)
+texture = ExtResource("11")
+scale = Vector2(1.15, 1.15)
+
+[node name="Lever" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Lever"
+position = Vector2(960, 825)
+interaction_polygon = PackedVector2Array(-53, -93, 53, -93, 53, 0, -53, 0)
+walk_to_point = Vector2(0, 61)
+
+[node name="InteractionPolygon" parent="Props/Lever" index="2"]
+polygon = PackedVector2Array(-53, -93, 53, -93, 53, 0, -53, 0)
+
+[node name="Sprite2D" parent="Props/Lever" index="0"]
+position = Vector2(0, -46.5)
+texture = ExtResource("12")
+scale = Vector2(1.2, 1.2)
+
+[node name="ScaleStand" type="Node2D" parent="."]
+position = Vector2(960, 617)
+
+[node name="Post" type="Polygon2D" parent="ScaleStand"]
+polygon = PackedVector2Array(-15, 0, 15, 0, 15, 163, -15, 163)
+color = Color(0.56, 0.34, 0.18, 1)
+
+[node name="Foot" type="Polygon2D" parent="ScaleStand"]
+polygon = PackedVector2Array(-87, 163, 87, 163, 104, 187, -104, 187)
+color = Color(0.46, 0.29, 0.17, 1)
+
+[node name="ScaleBeam" type="Node2D" parent="."]
+position = Vector2(960, 617)
+
+[node name="Bar" type="Polygon2D" parent="ScaleBeam"]
+polygon = PackedVector2Array(-211, -12, 211, -12, 211, 12, -211, 12)
+color = Color(0.86, 0.59, 0.29, 1)
+
+[node name="Counterweight" type="Sprite2D" parent="ScaleBeam"]
+position = Vector2(105, -25)
+texture = ExtResource("11")
+scale = Vector2(0.57, 0.57)
+
+[node name="LeftPan" type="Node2D" parent="ScaleBeam"]
+position = Vector2(-190, 0)
+
+[node name="Wire" type="Polygon2D" parent="ScaleBeam/LeftPan"]
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 83, -5, 83)
+color = Color(0.34, 0.24, 0.17, 1)
+
+[node name="Plate" type="Polygon2D" parent="ScaleBeam/LeftPan"]
+polygon = PackedVector2Array(-63, 77, 63, 77, 49, 94, -49, 94)
+color = Color(0.81, 0.57, 0.27, 1)
+
+[node name="Weight" type="Sprite2D" parent="ScaleBeam/LeftPan"]
+position = Vector2(0, 53)
+texture = ExtResource("11")
+scale = Vector2(0.8, 0.8)
+
+[node name="RightPan" type="Node2D" parent="ScaleBeam"]
+position = Vector2(190, 0)
+
+[node name="Wire" type="Polygon2D" parent="ScaleBeam/RightPan"]
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 83, -5, 83)
+color = Color(0.34, 0.24, 0.17, 1)
+
+[node name="Plate" type="Polygon2D" parent="ScaleBeam/RightPan"]
+polygon = PackedVector2Array(-63, 77, 63, 77, 49, 94, -49, 94)
+color = Color(0.81, 0.57, 0.27, 1)
+
+[node name="Weight" type="Sprite2D" parent="ScaleBeam/RightPan"]
+position = Vector2(0, 53)
+texture = ExtResource("11")
+scale = Vector2(0.8, 0.8)
+
+[node name="Apron" type="Polygon2D" parent="Props/MarketFox"]
+polygon = PackedVector2Array(-25, -152, 32, -152, 54, -44, -37, -44)
+color = Color(0.31, 0.58, 0.53, 1)
+
+[node name="ApronPocket" type="Polygon2D" parent="Props/MarketFox/Apron"]
+polygon = PackedVector2Array(-6, -99, 25, -99, 29, -72, -4, -72)
+color = Color(0.88, 0.71, 0.44, 1)

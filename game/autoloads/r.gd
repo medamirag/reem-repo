@@ -27,6 +27,9 @@ const PRGullLighthouse := preload("res://game/rooms/gull_lighthouse/room_gull_li
 const PRRamadanLane := preload("res://game/rooms/ramadan_lane/room_ramadan_lane.gd")
 const PRHedgehogCourt := preload("res://game/rooms/hedgehog_court/room_hedgehog_court.gd")
 const PRIftarShelter := preload("res://game/rooms/iftar_shelter/room_iftar_shelter.gd")
+const PRMarketGate := preload("res://game/rooms/market_gate/room_market_gate.gd")
+const PRMarketStalls := preload("res://game/rooms/market_stalls/room_market_stalls.gd")
+const PRScaleCourtyard := preload("res://game/rooms/scale_courtyard/room_scale_courtyard.gd")
 # ---- classes
 
 # nodes ----
@@ -55,6 +58,9 @@ var GullLighthouse: PRGullLighthouse : get = get_GullLighthouse
 var RamadanLane: PRRamadanLane : get = get_RamadanLane
 var HedgehogCourt: PRHedgehogCourt : get = get_HedgehogCourt
 var IftarShelter: PRIftarShelter : get = get_IftarShelter
+var MarketGate: PRMarketGate : get = get_MarketGate
+var MarketStalls: PRMarketStalls : get = get_MarketStalls
+var ScaleCourtyard: PRScaleCourtyard : get = get_ScaleCourtyard
 # ---- nodes
 
 # functions ----
@@ -83,4 +89,7 @@ func get_GullLighthouse() -> PRGullLighthouse: return get_runtime_room("GullLigh
 func get_RamadanLane() -> PRRamadanLane: return get_runtime_room("RamadanLane")
 func get_HedgehogCourt() -> PRHedgehogCourt: return get_runtime_room("HedgehogCourt")
 func get_IftarShelter() -> PRIftarShelter: return get_runtime_room("IftarShelter")
+func get_MarketGate() -> PRMarketGate: return get_runtime_room("MarketGate")
+func get_MarketStalls() -> PRMarketStalls: return get_runtime_room("MarketStalls")
+func get_ScaleCourtyard() -> PRScaleCourtyard: return get_runtime_room("ScaleCourtyard")
 # ---- functions

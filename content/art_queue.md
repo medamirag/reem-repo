@@ -80,6 +80,13 @@ Originals in `assets/` are never edited: new images are new files with the names
 | musaharati_base | `assets/art/characters/musaharati/musaharati_base.png` | `assets/art/characters/musaharati/musaharati_sheet.png` | transparent | portrait | See musaharati_base below | No lettering | done |
 | traveller_sheet | `assets/art/characters/iftar_traveller/iftar_traveller_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See traveller_sheet below | No lettering | done |
 | traveller_base | `assets/art/characters/iftar_traveller/iftar_traveller_base.png` | `assets/art/characters/iftar_traveller/iftar_traveller_sheet.png` | transparent | portrait | See traveller_base below | No lettering | done |
+| bg23_market_gate | `assets/art/backgrounds/bg23_market_gate.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg23_market_gate below | No lettering | done |
+| bg24_market_stalls | `assets/art/backgrounds/bg24_market_stalls.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg24_market_stalls below | No lettering | done |
+| bg25_scale_court | `assets/art/backgrounds/bg25_scale_court.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg25_scale_court below | No lettering | done |
+| market_baker_sheet | `assets/art/characters/market_baker/market_baker_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See market_baker_sheet below | No lettering | done |
+| market_baker_base | `assets/art/characters/market_baker/market_baker_base.png` | `assets/art/characters/market_baker/market_baker_sheet.png` | transparent | portrait | See market_baker_base below | No lettering | done |
+| market_cat_sheet | `assets/art/characters/market_cat/market_cat_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See market_cat_sheet below | No lettering | done |
+| market_cat_base | `assets/art/characters/market_cat/market_cat_base.png` | `assets/art/characters/market_cat/market_cat_sheet.png` | transparent | square | See market_cat_base below | No lettering | done |
 
 <!-- One section per row, in the same order:
 
@@ -877,3 +884,73 @@ Front, profile and rear character reference sheet, gentle middle-aged Arab trave
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 One gentle middle-aged traveller, matching the sheet exactly, seated three-quarter facing left with travel bag set beside him within one sprite. Short grey beard, warm brown robe and muted purple scarf. Isolated transparent, no table or ground.
+
+## bg23_market_gate
+
+- **Save as:** `assets/art/backgrounds/bg23_market_gate.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+A warm old walled Arab town entrance in morning sunlight, side view for 2D game. Broad dry path across lower third, round stone gate arch in background, quiet honey merchant's empty wood stall with teal awning, pots and olive trees. Leave foreground open for Reem and separate character. No people, animals, text or lettering.
+
+## bg24_market_stalls
+
+- **Save as:** `assets/art/backgrounds/bg24_market_stalls.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+A friendly old Arab market lane with an empty bakery stall, three little clay oven openings behind a low table, baskets of simple round flatbreads, warm sandstone walls, dark red and ochre fabric awnings. Side-view walking game scene with broad dry lower-third path. Leave left clear for baker, right near an empty dish for market cat. No people, animals or text.
+
+## bg25_scale_court
+
+- **Save as:** `assets/art/backgrounds/bg25_scale_court.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Small quiet stone weighing courtyard in an old Arab market, side view, broad continuous dry path along the foreground, warm gold sandstone and pale teal awning. Leave a clear empty low plinth at middle for a separately drawn moveable beam balance, two empty benches either side. No scales painted in, no people, animals, labels or text.
+
+## market_baker_sheet
+
+- **Save as:** `assets/art/characters/market_baker/market_baker_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Kind elderly Arab baker, short grey beard, rust red waistcoat, beige shirt, cream apron and simple wrapped cap. Three separated front, right profile and rear views on warm cream, two hands and two feet per view, no bakery scene or writing.
+
+## market_baker_base
+
+- **Save as:** `assets/art/characters/market_baker/market_baker_base.png`
+- **Attach:** `assets/art/characters/market_baker/market_baker_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One standing old Arab baker from the reference with matching face, apron and cap, holding one round flatbread at waist. Three-quarter facing left, two arms and two feet. Isolated transparent game sprite.
+
+## market_cat_sheet
+
+- **Save as:** `assets/art/characters/market_cat/market_cat_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Friendly small grey and white old-market cat with four paws, one tail and two green eyes. Front, right side and rear separated views on warm cream. Distinct darker grey ears and white face, no accessories, no props, no text.
+
+## market_cat_base
+
+- **Save as:** `assets/art/characters/market_cat/market_cat_base.png`
+- **Attach:** `assets/art/characters/market_cat/market_cat_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One small grey and white market cat from attached sheet with four paws and one visible tail, standing three-quarter facing left. Friendly green eyes. Fully transparent and no floor, scenery or text.

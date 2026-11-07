@@ -23,7 +23,7 @@ entry_points = {
 }
 footstep_cue = "sfx_steps_grass"
 ambience_cue = "amb_farm"
-exit_arrows = {"ExitLeft": "left", "ExitRight": "right", "ExitStream": "up"}
+exit_arrows = {"ExitLeft": "left", "ExitRight": "right", "ExitStream": "up", "ExitMarket": "up"}
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
@@ -86,3 +86,23 @@ text_direction = 2
 horizontal_alignment = 1
 theme_override_colors/font_color = Color(0.2, 0.12, 0.05, 1)
 theme_override_font_sizes/font_size = 40
+
+[node name="ExitMarket" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitMarket"
+position = Vector2(650, 740)
+interaction_polygon = PackedVector2Array(-130, -90, 130, -90, 130, 90, -130, 90)
+walk_to_point = Vector2(0, 146)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitMarket" index="0"]
+polygon = PackedVector2Array(-130, -90, 130, -90, 130, 90, -130, 90)
+
+[node name="MarketLabel" type="Label" parent="."]
+visible = false
+offset_left = 480.0
+offset_top = 605.0
+offset_right = 820.0
+offset_bottom = 670.0
+mouse_filter = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.2, 0.12, 0.05, 1)

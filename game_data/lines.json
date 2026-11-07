@@ -1,4 +1,112 @@
 {
+ "reem_market_offer": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذَا دَرْبٌ إِلَى سُوقِ الْمَدِينَةِ. هَلْ أَذْهَبُ إِلَيْهِ؟",
+  "audio": "res://assets/audio/lines/reem_market_offer.mp3"
+ },
+ "reem_market_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَصَلْتُ إِلَى بَوَّابَةِ السُّوقِ. هُنَا أَسْتَطِيعُ أَنْ أَبِيعَ الْعَسَلَ.",
+  "audio": "res://assets/audio/lines/reem_market_arrive.mp3"
+ },
+ "reem_market_sale": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بِعْتُ الْعَسَلَ بِخَمْسِ قِطَعٍ نَقْدِيَّةٍ. سَأَعُدُّهَا قَبْلَ أَنْ أَشْتَرِيَ.",
+  "audio": "res://assets/audio/lines/reem_market_sale.mp3"
+ },
+ "reem_market_baker": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَقُولُ الْخَبَّازُ إِنَّ ثَمَنَ الْخُبْزِ ثَلَاثُ قِطَعٍ نَقْدِيَّةٍ.",
+  "audio": "res://assets/audio/lines/reem_market_baker.mp3"
+ },
+ "reem_market_count": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "لِنَعُدَّ الْقِطَعَ مَرَّةً أُخْرَى. ثَمَنُ الْخُبْزِ ثَلَاثُ قِطَعٍ.",
+  "audio": "res://assets/audio/lines/reem_market_count.mp3"
+ },
+ "reem_market_paid": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "دَفَعْتُ ثَلَاثَ قِطَعٍ، وَبَقِيَتْ مَعِي قِطْعَتَانِ.",
+  "audio": "res://assets/audio/lines/reem_market_paid.mp3"
+ },
+ "reem_market_cat": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَنْظُرُ قِطَّةُ السُّوقِ إِلَى الْخُبْزِ. هَلْ أُشَارِكُهَا؟",
+  "audio": "res://assets/audio/lines/reem_market_cat.mp3"
+ },
+ "reem_market_keep": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "بَقِيَ طَبَقُ الْقِطَّةِ فَارِغًا. أَسْتَطِيعُ أَنْ أُشَارِكَهَا.",
+  "audio": "res://assets/audio/lines/reem_market_keep.mp3"
+ },
+ "reem_market_share": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَضَعْتُ قِطْعَةً صَغِيرَةً فِي طَبَقِهَا، وَجَلَسْنَا مَعًا.",
+  "audio": "res://assets/audio/lines/reem_market_share.mp3"
+ },
+ "reem_market_cat_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "قِطَّةُ السُّوقِ",
+  "audio": "res://assets/audio/lines/reem_market_cat_name.mp3"
+ },
+ "reem_market_cat_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تُسَاعِدُ شَوَارِبُ الْقِطَّةِ فِي مَعْرِفَةِ الْأَمَاكِنِ الضَّيِّقَةِ.",
+  "audio": "res://assets/audio/lines/reem_market_cat_fact.mp3"
+ },
+ "reem_market_scale": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هُنَا مِيزَانٌ بِكَفَّتَيْنِ. لِنَنْظُرْ كَيْفَ يَعْمَلُ.",
+  "audio": "res://assets/audio/lines/reem_market_scale.mp3"
+ },
+ "fox_market_offer": {
+  "speaker": "Thaaloob",
+  "tone": "playful",
+  "text": "تَفَضَّلِي إِلَى مِيزَانِي! لَا حَاجَةَ إِلَى اخْتِبَارِهِ.",
+  "audio": "res://assets/audio/lines/fox_market_offer.mp3"
+ },
+ "reem_market_trust": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "مَالَتْ كَفَّةُ الْمِيزَانِ. سَأُجَرِّبُهُ بِوَزْنَيْنِ مُتَسَاوِيَيْنِ.",
+  "audio": "res://assets/audio/lines/reem_market_trust.mp3"
+ },
+ "reem_market_weights": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأَضَعُ وَزْنًا فِي كُلِّ كَفَّةٍ، ثُمَّ أُحَرِّكُ الْمِقْبَضَ.",
+  "audio": "res://assets/audio/lines/reem_market_weights.mp3"
+ },
+ "reem_market_tilt": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "الْوَزْنَانِ مُتَسَاوِيَانِ، وَلَكِنَّ الْمِيزَانَ مَائِلٌ. سَأُرِي الْخَبَّازَ.",
+  "audio": "res://assets/audio/lines/reem_market_tilt.mp3"
+ },
+ "fox_market_sorry": {
+  "speaker": "Thaaloob",
+  "tone": "embarrassed",
+  "text": "آسِفٌ يَا رِيمُ. سَأُعِيدُ الثِّقْلَ إِلَى مَكَانِهِ الصَّحِيحِ.",
+  "audio": "res://assets/audio/lines/fox_market_sorry.mp3"
+ },
+ "reem_market_fair": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "الْآنَ تَسَاوَتِ الْكَفَّتَانِ. هَذَا مِيزَانٌ عَادِلٌ.",
+  "audio": "res://assets/audio/lines/reem_market_fair.mp3"
+ },
  "reem_ramadan_offer": {
   "speaker": "Reem",
   "tone": "warm",

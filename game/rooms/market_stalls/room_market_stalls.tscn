@@ -1,0 +1,186 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/market_stalls/room_market_stalls.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg24_market_stalls.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/market_baker/market_baker_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/market_cat/market_cat_base.png" id="10"]
+[ext_resource type="Texture2D" path="res://game/scripts/market/coin.svg" id="11"]
+[ext_resource type="Texture2D" path="res://game/scripts/market/bread.svg" id="12"]
+[ext_resource type="Texture2D" path="res://game/scripts/market/pay.svg" id="14"]
+[ext_resource type="Resource" path="res://game/rooms/market_stalls/room_market_stalls.tres" id="state"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomMarketStalls" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "MarketStalls"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "MarketGate": Vector2(0.08, 0.82), "ScaleCourtyard": Vector2(0.92, 0.82)}
+ambience_cue = "amb_meadow"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Baker" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Baker"
+position = Vector2(450, 827)
+interaction_polygon = PackedVector2Array(-140, -316, 140, -316, 140, 0, -140, 0)
+walk_to_point = Vector2(0, 59)
+
+[node name="InteractionPolygon" parent="Props/Baker" index="2"]
+polygon = PackedVector2Array(-140, -316, 140, -316, 140, 0, -140, 0)
+
+[node name="Sprite2D" parent="Props/Baker" index="0"]
+position = Vector2(0, -158.0)
+texture = ExtResource("9")
+scale = Vector2(0.22, 0.22)
+
+[node name="MarketCat" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "MarketCat"
+position = Vector2(1510, 851)
+interaction_polygon = PackedVector2Array(-130, -167, 130, -167, 130, 0, -130, 0)
+walk_to_point = Vector2(0, 35)
+
+[node name="InteractionPolygon" parent="Props/MarketCat" index="2"]
+polygon = PackedVector2Array(-130, -167, 130, -167, 130, 0, -130, 0)
+
+[node name="Sprite2D" parent="Props/MarketCat" index="0"]
+position = Vector2(0, -83.5)
+texture = ExtResource("10")
+scale = Vector2(0.17, 0.17)
+
+[node name="Coin1" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Coin1"
+position = Vector2(710, 824)
+interaction_polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/Coin1" index="2"]
+polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+
+[node name="Sprite2D" parent="Props/Coin1" index="0"]
+position = Vector2(0, -43.0)
+texture = ExtResource("11")
+scale = Vector2(0.95, 0.95)
+
+[node name="Coin2" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Coin2"
+position = Vector2(813, 824)
+interaction_polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/Coin2" index="2"]
+polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+
+[node name="Sprite2D" parent="Props/Coin2" index="0"]
+position = Vector2(0, -43.0)
+texture = ExtResource("11")
+scale = Vector2(0.95, 0.95)
+
+[node name="Coin3" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Coin3"
+position = Vector2(916, 824)
+interaction_polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/Coin3" index="2"]
+polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+
+[node name="Sprite2D" parent="Props/Coin3" index="0"]
+position = Vector2(0, -43.0)
+texture = ExtResource("11")
+scale = Vector2(0.95, 0.95)
+
+[node name="Coin4" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Coin4"
+position = Vector2(1019, 824)
+interaction_polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/Coin4" index="2"]
+polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+
+[node name="Sprite2D" parent="Props/Coin4" index="0"]
+position = Vector2(0, -43.0)
+texture = ExtResource("11")
+scale = Vector2(0.95, 0.95)
+
+[node name="Coin5" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Coin5"
+position = Vector2(1122, 824)
+interaction_polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/Coin5" index="2"]
+polygon = PackedVector2Array(-42, -86, 42, -86, 42, 0, -42, 0)
+
+[node name="Sprite2D" parent="Props/Coin5" index="0"]
+position = Vector2(0, -43.0)
+texture = ExtResource("11")
+scale = Vector2(0.95, 0.95)
+
+[node name="Pay" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Pay"
+position = Vector2(1260, 825)
+interaction_polygon = PackedVector2Array(-47, -87, 47, -87, 47, 0, -47, 0)
+walk_to_point = Vector2(0, 61)
+
+[node name="InteractionPolygon" parent="Props/Pay" index="2"]
+polygon = PackedVector2Array(-47, -87, 47, -87, 47, 0, -47, 0)
+
+[node name="Sprite2D" parent="Props/Pay" index="0"]
+position = Vector2(0, -43.5)
+texture = ExtResource("14")
+scale = Vector2(1.12, 1.12)
+
+[node name="CatBread" type="Sprite2D" parent="."]
+position = Vector2(1755, 710)
+texture = ExtResource("12")
+scale = Vector2(0.58, 0.58)

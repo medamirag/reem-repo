@@ -179,6 +179,11 @@ func _run() -> void:
 		_log("DONE ramadan")
 		get_tree().quit()
 		return
+	if _path == "market":
+		await _market_path()
+		_log("DONE market")
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -255,6 +260,61 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _market_path() -> void:
+	await Globals.new_game()
+	Globals.unlocked_packs["2"] = true
+	R.goto_room("Gate")
+	await _wait_room("Gate")
+	_answers = [true]
+	await _click("ExitMarket")
+	await _wait_room("MarketGate")
+	await _click("HoneyStall")
+	_expect(Globals.market.get("coins") == 5, "honey sale offers five coins even without inventory honey")
+	await _click("ExitRight")
+	await _wait_room("MarketStalls")
+	await _click("Baker")
+	await _click("Coin1")
+	await _click("Pay")
+	_expect(Globals.market.get("coins") == 5 and Globals.market.get("picked").is_empty(), "wrong amount returns all coins")
+	for coin in ["Coin2", "Coin3", "Coin4"]:
+		await _click(coin)
+	await _click("Pay")
+	_expect(Globals.market.get("bread") and Globals.market.get("coins") == 2, "bread costs exactly three coins")
+	var previous_wilts := Globals.wilts
+	_answers = [false]
+	await _click("MarketCat")
+	_expect(Globals.wilts == previous_wilts + 1, "keeping bread wilts once")
+	_answers = [true]
+	await _click("MarketCat")
+	_expect(Globals.friend_cards.has("market_cat") and Globals.wilts == previous_wilts, "sharing repairs and earns cat card")
+	await _click("ExitRight")
+	await _wait_room("ScaleCourtyard")
+	_answers = [false]
+	await _click("MarketFox")
+	_expect(Globals.wilts == previous_wilts + 1, "accepting the unfair deal wilts")
+	Globals.reset()
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("continue market", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("ScaleCourtyard")
+	_expect(Globals.market.get("trusted") and Globals.market.get("coins") == 2, "market payment and mistake survive continue")
+	_answers = [true]
+	await _click("MarketFox")
+	await _click("LeftWeight")
+	await _click("Lever")
+	_expect(not Globals.market.get("tested", false), "one weight cannot prove the scale")
+	await _click("RightWeight")
+	await _click("Lever")
+	_expect(Globals.market.get("tested") and R.current.get_node("ScaleBeam").rotation > 0.0, "equal weights show the unfair tilt")
+	await _click("Witness")
+	await _click("LeftWeight")
+	await _click("RightWeight")
+	await _click("Lever")
+	_expect(Globals.market.get("fair") and Globals.wilts == previous_wilts, "second experiment proves the repair and heals")
+	await _click("ExitLeft")
+	await _wait_room("MarketStalls")
 
 
 func _ramadan_path() -> void:

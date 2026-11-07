@@ -124,6 +124,14 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_traveller | Reem | clear and cheerful, saying one word to teach a child | مُسَافِر | done |
 | word_map_hedgehog_court | Reem | clear and cheerful, saying one word to teach a child | سَاحَةُ الْقَنَافِذ | done |
 | word_map_iftar_shelter | Reem | clear and cheerful, saying one word to teach a child | مَكَانُ الْإِفْطَار | done |
+| word_coin | Reem | clear and cheerful, saying one word to teach a child | قِطْعَة نَقْدِيَّة | done |
+| word_bread | Reem | clear and cheerful, saying one word to teach a child | خُبْز | done |
+| word_scale | Reem | clear and cheerful, saying one word to teach a child | مِيزَان | done |
+| word_weight | Reem | clear and cheerful, saying one word to teach a child | ثِقْل | done |
+| word_dish | Reem | clear and cheerful, saying one word to teach a child | طَبَق | done |
+| word_oven | Reem | clear and cheerful, saying one word to teach a child | فُرْن | done |
+| word_map_market_stalls | Reem | clear and cheerful, saying one word to teach a child | دَكَاكِينُ السُّوق | done |
+| word_map_scale_courtyard | Reem | clear and cheerful, saying one word to teach a child | سَاحَةُ الْمِيزَان | done |
 
 ## Recording verification
 

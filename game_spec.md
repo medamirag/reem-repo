@@ -538,3 +538,13 @@ From the farm yard after the festival, click the Ramadan lantern and choose to v
 In RamadanLane, the musaharati shows Reem how the lantern reveals two baskets and a water jug in the dark. Find both baskets to clear the path. In HedgehogCourt, the hedgehog family asks Reem to collect dates for a traveller. Reem can keep them for herself or share. Keeping wilts once and leaves the tray empty. Turn the lantern back on, find the dates and share them to repair the choice. In IftarShelter, set the dates and water together to make a surprise iftar. Thaaloob offers to keep the last date, then returns it to the shared tray. The traveller joins the family when the meal is ready, just before Maghrib in the story.
 
 Save the lantern state, discoveries, dates, pending choice and meal. The musaharati, hedgehog family and traveller appear through Reem narration pending verified saved voices. Use Thaaloob's saved voice. Add the new rooms to the map, progressive notebook hints, word areas and a hedgehog family card. No quoted religious text is needed.
+
+## 23. Old city market (pack 2)
+
+From Gate after the festival, choose the market road. MarketGate leads to MarketStalls and ScaleCourtyard. The left route always stays open. If Reem has no honey jar, the market gate merchant offers a small local jar for the counting exercise. Selling it places five large reusable game coins on the trade board.
+
+At MarketStalls, the baker offers bread for three coins. Use the three coin slots to choose the exact count. Paying the wrong number returns every coin and lets Reem try again. The market cat asks to share bread. Keeping it visibly leaves the cat's dish empty and wilts once. Return and choose to share to repair. Earn a market cat card and keep two coins after the trade.
+
+At ScaleCourtyard, Thaaloob disguises himself as a merchant. His scale tilts even when both pans hold the same one-unit weight. Reem can accept his first deal or test the scale. Accepting wilts once and can be repaired. Place an identical weight on each pan and use the balance lever. The unfair tilt is visible. Show it to the baker, and Thaaloob puts the counterweight back in its marked centre position. Repeat the experiment to show a fair balance. The stall stays open after repair, with no lost coins.
+
+Save the honey sale, coin count, bread, cat choice, test weights and fair scale. Add all three places to the maps. Reem narrates the old baker and merchant pending approved saved voices. Use saved Thaaloob. Include object vocabulary for coin, bread, cat, scales and weights.

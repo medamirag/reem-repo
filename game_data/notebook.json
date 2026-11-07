@@ -189,6 +189,21 @@
       "reem_ramadan_shelter",
       "fox_ramadan_date",
       "reem_ramadan_feast"
+    ],
+    "market_sale": [
+      "reem_market_arrive",
+      "reem_market_arrive",
+      "reem_market_sale"
+    ],
+    "market_count": [
+      "reem_market_baker",
+      "reem_market_count",
+      "reem_market_paid"
+    ],
+    "market_scale": [
+      "reem_market_scale",
+      "reem_market_weights",
+      "reem_market_tilt"
     ]
   },
   "map": [
@@ -367,6 +382,30 @@
         0.03,
         0.7
       ]
+    },
+    {
+      "room": "MarketGate",
+      "label": "بَلْدَةُ السُّوق",
+      "at": [
+        0.13,
+        0.55
+      ]
+    },
+    {
+      "room": "MarketStalls",
+      "label": "دَكَاكِينُ السُّوق",
+      "at": [
+        0.14,
+        0.68
+      ]
+    },
+    {
+      "room": "ScaleCourtyard",
+      "label": "سَاحَةُ الْمِيزَان",
+      "at": [
+        0.13,
+        0.81
+      ]
     }
   ],
   "edges": [
@@ -469,6 +508,18 @@
     [
       20,
       21
+    ],
+    [
+      2,
+      22
+    ],
+    [
+      22,
+      23
+    ],
+    [
+      23,
+      24
     ]
   ],
   "cards": [
@@ -561,6 +612,12 @@
       "image": "res://assets/art/characters/qunfood/qunfood_base.png",
       "name_line": "reem_ramadan_hedgehog_name",
       "fact_line": "reem_ramadan_hedgehog_fact"
+    },
+    {
+      "id": "market_cat",
+      "image": "res://assets/art/characters/market_cat/market_cat_base.png",
+      "name_line": "reem_market_cat_name",
+      "fact_line": "reem_market_cat_fact"
     }
   ]
 }

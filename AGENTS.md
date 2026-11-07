@@ -95,6 +95,11 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 - Reem narrates the musaharati, hedgehog family and traveller. Reem used the saved voice with `eleven_v3` and `[warmly]` or `[gently]`. Thaaloob used his saved voice with `eleven_v3` and `[playful]`. Reem recorded the words in `eleven_multilingual_v2` without tags.
 - No fallback or numeric settings were used. The existing reference files are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`. Listening comparison remains open.
 
+### Old City Market batch
+
+- Reem narrates the merchant, baker and market cat using her saved voice on `eleven_v3` with `[warmly]` or `[gently]`. Thaaloob used his saved voice on `eleven_v3` with `[playful]` and `[embarrassed]`. Reem used `eleven_multilingual_v2` with no tags for words.
+- No model fallback or numeric controls were used. Reference files remain `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`. Listening comparison remains open.
+
 ## ElevenLabs credentials
 
 - Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.

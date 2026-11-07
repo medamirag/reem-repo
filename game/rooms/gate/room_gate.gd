@@ -14,6 +14,10 @@ var state: Data = load("res://game/rooms/gate/room_gate.tres")
 func _setup_room() -> void:
 	$StreamLabel.text = Globals.notebook.labels.get("stream_name", "")
 	$StreamLabel.visible = Globals.briefed
+	$MarketLabel.text = Globals.notebook.labels["market_name"]
+	$MarketLabel.theme = ArabicText.get_theme()
+	ArabicText.make_rtl($MarketLabel)
+	$MarketLabel.visible = is_exit_open("ExitMarket")
 
 
 func _on_room_started() -> void:
@@ -36,9 +40,16 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 		"ExitStream":
 			if Globals.briefed:
 				await leave_through(obj, "Stream")
+		"ExitMarket":
+			if is_exit_open("ExitMarket"):
+				await Lines.say("reem_market_offer", true)
+				if await Choices.ask_two(Globals.notebook.labels["market_go"], Globals.notebook.labels["market_stay"]):
+					await leave_through(obj, "MarketGate")
 
 
 func is_exit_open(exit_name: String) -> bool:
+	if exit_name == "ExitMarket":
+		return Globals.unlocked_packs.get("2", false)
 	return exit_name not in ["ExitRight", "ExitStream"] or Globals.briefed
 
 

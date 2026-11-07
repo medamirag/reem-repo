@@ -1,4 +1,74 @@
 {
+  "word_coin": {
+    "text": "قِطْعَة نَقْدِيَّة",
+    "rooms": [
+      "MarketGate",
+      "MarketStalls"
+    ],
+    "audio": "res://assets/audio/words/word_coin.mp3",
+    "objects": [
+      "prop:Coin1",
+      "prop:Coin2",
+      "prop:Coin3",
+      "prop:Coin4",
+      "prop:Coin5"
+    ]
+  },
+  "word_bread": {
+    "text": "خُبْز",
+    "rooms": [
+      "MarketStalls"
+    ],
+    "audio": "res://assets/audio/words/word_bread.mp3",
+    "objects": []
+  },
+  "word_scale": {
+    "text": "مِيزَان",
+    "rooms": [
+      "ScaleCourtyard"
+    ],
+    "audio": "res://assets/audio/words/word_scale.mp3",
+    "objects": []
+  },
+  "word_weight": {
+    "text": "ثِقْل",
+    "rooms": [
+      "ScaleCourtyard"
+    ],
+    "audio": "res://assets/audio/words/word_weight.mp3",
+    "objects": [
+      "prop:LeftWeight",
+      "prop:RightWeight"
+    ]
+  },
+  "word_dish": {
+    "text": "طَبَق",
+    "rooms": [
+      "MarketStalls"
+    ],
+    "audio": "res://assets/audio/words/word_dish.mp3",
+    "objects": []
+  },
+  "word_oven": {
+    "text": "فُرْن",
+    "rooms": [
+      "MarketStalls"
+    ],
+    "audio": "res://assets/audio/words/word_oven.mp3",
+    "objects": []
+  },
+  "word_map_market_stalls": {
+    "text": "دَكَاكِينُ السُّوق",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_market_stalls.mp3",
+    "objects": []
+  },
+  "word_map_scale_courtyard": {
+    "text": "سَاحَةُ الْمِيزَان",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_scale_courtyard.mp3",
+    "objects": []
+  },
   "word_crescent": {
     "text": "هِلَال",
     "rooms": [
@@ -188,7 +258,8 @@
   "word_tent": {
     "text": "خَيْمَة",
     "rooms": [
-      "HilltopFestival"
+      "HilltopFestival",
+      "MarketStalls"
     ],
     "audio": "res://assets/audio/words/word_tent.mp3",
     "objects": []
@@ -467,11 +538,13 @@
   "word_cat": {
     "text": "قِطَّة",
     "rooms": [
-      "RockCave"
+      "RockCave",
+      "MarketStalls"
     ],
     "audio": "res://assets/audio/words/word_cat.mp3",
     "objects": [
-      "prop:Qatqoota"
+      "prop:Qatqoota",
+      "prop:MarketCat"
     ]
   },
   "word_spider": {
@@ -672,7 +745,8 @@
     "rooms": [
       "GrandpaRoom",
       "Yard",
-      "RamadanLane"
+      "RamadanLane",
+      "MarketGate"
     ],
     "audio": "res://assets/audio/words/word_door.mp3",
     "objects": []
@@ -753,7 +827,8 @@
       "GrandpaRoom",
       "inventory",
       "HilltopFestival",
-      "RamadanLane"
+      "RamadanLane",
+      "MarketStalls"
     ],
     "audio": "res://assets/audio/words/word_basket.mp3",
     "objects": [
@@ -810,7 +885,8 @@
     "text": "جَرَّة",
     "rooms": [
       "Yard",
-      "HoneyOrchard"
+      "HoneyOrchard",
+      "MarketGate"
     ],
     "audio": "res://assets/audio/words/word_jar.mp3",
     "objects": [
@@ -892,7 +968,10 @@
       "GullLighthouse",
       "RamadanLane",
       "HedgehogCourt",
-      "IftarShelter"
+      "IftarShelter",
+      "MarketGate",
+      "MarketStalls",
+      "ScaleCourtyard"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -1040,7 +1119,8 @@
       "PineFork",
       "NarrowPass",
       "GullLighthouse",
-      "IftarShelter"
+      "IftarShelter",
+      "ScaleCourtyard"
     ],
     "audio": "res://assets/audio/words/word_fox.mp3",
     "objects": [
@@ -1048,7 +1128,8 @@
       "prop:StreamFox",
       "prop:Thaaloob",
       "prop:IslandFox",
-      "prop:RamadanFox"
+      "prop:RamadanFox",
+      "prop:MarketFox"
     ]
   },
   "word_bee": {

@@ -73,6 +73,9 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_hoofprint | Reem | clear and cheerful, saying one word to teach a child | أَثَرُ حَافِر | done |
 | word_bear | Reem | clear and cheerful, saying one word to teach a child | دُبّ | done |
 | word_apple | Reem | clear and cheerful, saying one word to teach a child | تُفَّاحَة | done |
+| word_peacock | Reem | clear and cheerful, saying one word to teach a child | طَاوُوس | done |
+| word_feather | Reem | clear and cheerful, saying one word to teach a child | رِيشَة | done |
+| word_frame | Reem | clear and cheerful, saying one word to teach a child | إِطَار | done |
 
 ## Recording verification
 

@@ -107,6 +107,18 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path in ["hill", "hill_sand"]:
+		await Globals.new_game()
+		Globals.orchard["carrier"] = true
+		Globals.orchard["verified"] = true
+		R.goto_room("HoneyOrchard")
+		await _wait_room("HoneyOrchard")
+		await _click("ExitRight")
+		await _complete_hill(_path == "hill_sand", true)
+		await _wait_room("End")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -185,6 +197,34 @@ func _run() -> void:
 	get_tree().quit()
 
 
+func _complete_hill(wrong: bool, check_details := false) -> void:
+	await _wait_room("HillSlope")
+	var previous_wilts := Globals.wilts
+	_expect(not R.current.is_exit_open("ExitRight"), "hill exit waits for feathers")
+	_answers = [not wrong]
+	await _click("Tawoos")
+	if wrong:
+		_expect(Globals.hill.get("flattered") and Globals.wilts == previous_wilts + 1, "flattery wilts and display stays empty")
+		E.save_game(1)
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore hill choice", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("HillSlope")
+		_expect(Globals.hill.get("flattered"), "flattery survives save")
+		_answers = [true]
+		await _click("Tawoos")
+	if check_details:
+		await _hold_at(Vector2(970.0 / 1920, 650.0 / 1080), 0.7)
+		_expect(Globals.discovered_words.has("word_frame") and not Globals.hill.get("feathers", false), "display hold teaches without completing")
+	await _click("Display")
+	_expect(Globals.hill.get("feathers") and Globals.friend_cards.has("tawoos") and Globals.wilts == previous_wilts, "feathers and Tawoos card earned")
+	var before := Globals.blossoms
+	await _click("Display")
+	_expect(Globals.blossoms == before, "display reward cannot repeat")
+	await _click("ExitRight")
+
+
 func _complete_orchard(wrong: bool, origin: String) -> void:
 	await _wait_room("HoneyOrchard")
 	_expect(Globals.orchard.get("origin") == origin, "orchard remembers arrival branch")
@@ -211,6 +251,8 @@ func _complete_orchard(wrong: bool, origin: String) -> void:
 	_expect(Globals.wilts == previous_wilts and Globals.orchard.get("carrier") and Globals.orchard.get("verified"), "Dubb freed and evidence reported")
 	_expect(Globals.friend_cards.has("dubb") and R.current.is_exit_open("ExitWaterfall"), "Dubb card and both routes unlocked")
 	await _click("ExitWaterfall" if wrong else "ExitRight")
+	if not wrong:
+		await _complete_hill(false)
 
 
 func _complete_lake(wrong: bool, check_details := false) -> void:

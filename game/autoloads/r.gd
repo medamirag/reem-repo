@@ -17,6 +17,7 @@ const PROakForest := preload("res://game/rooms/oak_forest/room_oak_forest.gd")
 const PRRockCave := preload("res://game/rooms/rock_cave/room_rock_cave.gd")
 const PRMeadowLake := preload("res://game/rooms/meadow_lake/room_meadow_lake.gd")
 const PRHoneyOrchard := preload("res://game/rooms/honey_orchard/room_honey_orchard.gd")
+const PRHillSlope := preload("res://game/rooms/hill_slope/room_hill_slope.gd")
 # ---- classes
 
 # nodes ----
@@ -35,6 +36,7 @@ var OakForest: PROakForest : get = get_OakForest
 var RockCave: PRRockCave : get = get_RockCave
 var MeadowLake: PRMeadowLake : get = get_MeadowLake
 var HoneyOrchard: PRHoneyOrchard : get = get_HoneyOrchard
+var HillSlope: PRHillSlope : get = get_HillSlope
 # ---- nodes
 
 # functions ----
@@ -53,4 +55,5 @@ func get_OakForest() -> PROakForest: return get_runtime_room("OakForest")
 func get_RockCave() -> PRRockCave: return get_runtime_room("RockCave")
 func get_MeadowLake() -> PRMeadowLake: return get_runtime_room("MeadowLake")
 func get_HoneyOrchard() -> PRHoneyOrchard: return get_runtime_room("HoneyOrchard")
+func get_HillSlope() -> PRHillSlope: return get_runtime_room("HillSlope")
 # ---- functions

@@ -1,4 +1,34 @@
 {
+  "word_peacock": {
+    "text": "طَاوُوس",
+    "rooms": [
+      "HillSlope"
+    ],
+    "audio": "res://assets/audio/words/word_peacock.mp3",
+    "objects": [
+      "prop:Tawoos"
+    ]
+  },
+  "word_feather": {
+    "text": "رِيشَة",
+    "rooms": [
+      "HillSlope"
+    ],
+    "audio": "res://assets/audio/words/word_feather.mp3",
+    "objects": [
+      "prop:HillFeather"
+    ]
+  },
+  "word_frame": {
+    "text": "إِطَار",
+    "rooms": [
+      "HillSlope"
+    ],
+    "audio": "res://assets/audio/words/word_frame.mp3",
+    "objects": [
+      "prop:Display"
+    ]
+  },
   "word_bear": {
     "text": "دُبّ",
     "rooms": [
@@ -155,7 +185,8 @@
     "text": "شَمْس",
     "rooms": [
       "Stream",
-      "HoneyOrchard"
+      "HoneyOrchard",
+      "HillSlope"
     ],
     "audio": "res://assets/audio/words/word_sun.mp3",
     "objects": []
@@ -461,7 +492,8 @@
       "FoxRock",
       "Stream",
       "PineFork",
-      "MeadowLake"
+      "MeadowLake",
+      "HillSlope"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -476,7 +508,8 @@
       "FoxRock",
       "Stream",
       "PineFork",
-      "MeadowLake"
+      "MeadowLake",
+      "HillSlope"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
@@ -530,7 +563,8 @@
     "rooms": [
       "Gate",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "HillSlope"
     ],
     "audio": "res://assets/audio/words/word_cloud.mp3",
     "objects": []
@@ -542,7 +576,8 @@
       "MeadowFork",
       "FoxRock",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "HillSlope"
     ],
     "audio": "res://assets/audio/words/word_hill.mp3",
     "objects": []

@@ -45,6 +45,11 @@ Originals in `assets/` are never edited: new images are new files with the names
 | dubb_jar | `assets/art/items/dubb_jar.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1024x1024 | See dubb_jar below | Clear silhouette and correct background | done |
 | orchard_lanterns | `assets/art/items/orchard_lanterns.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1536x1024 | See orchard_lanterns below | Clear silhouette and correct background | done |
 
+| bg13_hill_slope | `assets/art/backgrounds/bg13_hill_slope.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg13_hill_slope below | Clear silhouette and correct background | done |
+| tawoos_sheet | `assets/art/characters/tawoos/tawoos_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See tawoos_sheet below | Clear silhouette and correct background | done |
+| tawoos_base | `assets/art/characters/tawoos/tawoos_base.png` | `assets/art/characters/tawoos/tawoos_sheet.png` | transparent | 1536x1024 | See tawoos_base below | Clear silhouette and correct background | done |
+| tawoos_feather | `assets/art/items/tawoos_feather.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1024x1024 | See tawoos_feather below | Clear silhouette and correct background | done |
+
 <!-- One section per row, in the same order:
 
 ## <ID>
@@ -473,4 +478,56 @@ STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown
 
 ```text
 STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Two unlit festival lanterns lying beside each other, one amber and one muted blue, small water drops on their metal frames, clean silhouette. Isolated transparent sprite, no ground or shadow.
+```
+
+## bg13_hill_slope
+
+- **Save as:** `assets/art/backgrounds/bg13_hill_slope.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1920x1080
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Wide gentle grassy hillside at warm sunset, rounded distant hills and lavender sky, winding trail rising far right. Continuous broad dry walking path across lower quarter. Leave clear foreground room for peacock at left and display at center. No people, animals, furniture or buildings. Style reference for brushwork only.
+```
+
+## tawoos_sheet
+
+- **Save as:** `assets/art/characters/tawoos/tawoos_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Three separated full-body turnaround views front, right-facing profile and back of a proud but kind sapphire-blue peacock with a small blue crest, teal and emerald folded tail, and exactly two legs. Plain cream background. No signs or accessories.
+```
+
+## tawoos_base
+
+- **Save as:** `assets/art/characters/tawoos/tawoos_base.png`
+- **Attach:** `assets/art/characters/tawoos/tawoos_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One full-body right-facing sapphire-blue peacock matching the turnaround, small crest, folded emerald and teal tail, two feet visible. Real alpha transparency with no ground or shadow.
+```
+
+## tawoos_feather
+
+- **Save as:** `assets/art/items/tawoos_feather.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** 1024x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One isolated peacock tail feather with teal, emerald and sapphire eye markings. Large readable silhouette, no shadow, true transparency.
 ```

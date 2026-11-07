@@ -474,3 +474,11 @@ Dubb has his head stuck in a honey jar. Click him to choose to speak softly or p
 Thaaloob says that Dubb took the lanterns. Choose to look for evidence or accuse Dubb. Accusing wilts once and has a visible consequence for Dubb. Inspect the wet lanterns at the stream to learn they fell there. Return to Dubb to correct the accusation or report the evidence. The same repair remains available after leaving and returning. Once both tasks are done, the child can choose either forward route without a heart change.
 
 Reem narrates Dubb until there is a verified saved voice. Use Thaaloob's saved voice for his own lines. Save the branch, rescue steps, accusation, evidence and lantern carrier reward. Add a map node, progressive hints and Dubb's card. Hold to teach objects such as the jar and lanterns without changing their story state.
+
+## 16. Hill slope (sunset)
+
+HillSlope branches from HoneyOrchard and leads to NarrowPass. Keep a continuous dry path below a gentle grassy hill. Tawoos waits at left. A simple frame at centre can show a folded festival lantern, a ribbon, and a coloured feather. The left arrow returns to the orchard. The right arrow opens once Tawoos gives the feathers, with provisional End until NarrowPass exists.
+
+Tawoos refuses to lend feathers because he thinks only his feathers are beautiful. Click him and choose to show what everyone made together or flatter him. Flattery wilts once and leaves the display empty. Click him again to choose the display and repair. Show the three parts by clicking the display after that choice. It visibly combines his feather with the orchard lantern and ribbon, which can be shown on every route. Tawoos lends his coloured feathers and earns his card. Heal a previous wilt or add a blossom. Extra clicks do not repeat the reward. The feathers are saved for the big lantern.
+
+Reem narrates Tawoos until a verified saved voice exists. Add progressive hints, a visited map node and vocabulary on the peacock, display and background. A word hold must not complete the display. Save the choice, pending repair and reward.

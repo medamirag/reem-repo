@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/hill_slope/room_hill_slope.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg13_hill_slope.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/tawoos/tawoos_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/items/tawoos_feather.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/art/items/orchard_lanterns.png" id="11"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomHillSlope" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "HillSlope"
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "HoneyOrchard": Vector2(0.08, 0.82), "NarrowPass": Vector2(0.92, 0.82)}
+ambience_cue = "amb_meadow"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Tawoos" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Tawoos"
+position = Vector2(470, 805)
+interaction_polygon = PackedVector2Array(-150, -295, 150, -295, 150, 0, -150, 0)
+walk_to_point = Vector2(0, 81)
+
+[node name="InteractionPolygon" parent="Props/Tawoos" index="2"]
+polygon = PackedVector2Array(-150, -295, 150, -295, 150, 0, -150, 0)
+
+[node name="Sprite2D" parent="Props/Tawoos" index="0"]
+position = Vector2(0, -147.5)
+texture = ExtResource("9")
+scale = Vector2(0.24, 0.24)
+
+[node name="Display" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Display"
+position = Vector2(970, 785)
+interaction_polygon = PackedVector2Array(-137, -178, 137, -178, 137, 0, -137, 0)
+walk_to_point = Vector2(0, 101)
+
+[node name="InteractionPolygon" parent="Props/Display" index="2"]
+polygon = PackedVector2Array(-137, -178, 137, -178, 137, 0, -137, 0)
+
+[node name="HillFeather" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "HillFeather"
+position = Vector2(1040, 746)
+interaction_polygon = PackedVector2Array(-62, -105, 62, -105, 62, 0, -62, 0)
+walk_to_point = Vector2(0, 140)
+
+[node name="InteractionPolygon" parent="Props/HillFeather" index="2"]
+polygon = PackedVector2Array(-62, -105, 62, -105, 62, 0, -62, 0)
+
+[node name="Sprite2D" parent="Props/HillFeather" index="0"]
+position = Vector2(0, -52.5)
+texture = ExtResource("10")
+scale = Vector2(0.09, 0.09)
+
+[node name="Board" type="Polygon2D" parent="Props/Display"]
+polygon = PackedVector2Array(-138, -178, 138, -178, 138, -32, -138, -32)
+color = Color(0.36, 0.23, 0.16, 1)
+
+[node name="BoardFace" type="Polygon2D" parent="Props/Display"]
+polygon = PackedVector2Array(-128, -168, 128, -168, 128, -42, -128, -42)
+color = Color(0.86, 0.65, 0.4, 1)
+
+[node name="LeftPost" type="Polygon2D" parent="Props/Display"]
+polygon = PackedVector2Array(-105, -32, -85, -32, -85, 0, -105, 0)
+color = Color(0.4, 0.24, 0.14, 1)
+
+[node name="RightPost" type="Polygon2D" parent="Props/Display"]
+polygon = PackedVector2Array(85, -32, 105, -32, 105, 0, 85, 0)
+color = Color(0.4, 0.24, 0.14, 1)
+
+[node name="Parts" type="Node2D" parent="Props/Display"]
+visible = false
+
+[node name="Lanterns" type="Sprite2D" parent="Props/Display/Parts"]
+position = Vector2(-32, -108)
+texture = ExtResource("11")
+scale = Vector2(0.09, 0.09)
+
+[node name="Ribbon" type="Polygon2D" parent="Props/Display/Parts"]
+polygon = PackedVector2Array(-105, -149, -84, -159, -50, -134, -78, -107, -90, -120, -69, -134)
+color = Color(0.73, 0.24, 0.32, 1)

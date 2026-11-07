@@ -155,6 +155,13 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_orchard_report | Reem | warm | يَا دُبُّ، وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ. لِنَحْمِلْهَا مَعًا. | done |
 | reem_orchard_dubb_name | Reem | warm | دُبٌّ | done |
 | reem_orchard_dubb_fact | Reem | warm | لِلدُّبِّ حَاسَّةُ شَمٍّ قَوِيَّةٌ. | done |
+| reem_hill_arrive | Reem | warm | بَدَأَتِ الشَّمْسُ تَغْرُبُ خَلْفَ التَّلِّ. | done |
+| reem_hill_proud | Reem | warm | لَا يُرِيدُ طَاوُوسٌ أَنْ يُعِيرَنَا رِيشَهُ. يَقُولُ إِنَّهُ الْأَجْمَلُ. | done |
+| reem_hill_flatter | Reem | warm | مَدَحْتُهُ وَحْدَهُ، وَبَقِيَ الْفَانُوسُ بِلَا زِينَةٍ. | done |
+| reem_hill_show | Reem | warm | لِنَضَعِ الرِّيشَةَ مَعَ الشَّرِيطِ وَفَانُوسِ الْمِهْرَجَانِ. | done |
+| reem_hill_gift | Reem | warm | انْظُرْ يَا طَاوُوسُ! بِعَمَلِنَا مَعًا صَارَ الْفَانُوسُ أَجْمَلَ. شُكْرًا لَكَ عَلَى الرِّيشِ. | done |
+| reem_hill_name | Reem | warm | طَاوُوسٌ | done |
+| reem_hill_fact | Reem | warm | يَبْسُطُ الطَّاوُوسُ رِيشَ ذَيْلِهِ مِثْلَ الْمِرْوَحَةِ. | done |
 
 ## Recording verification
 

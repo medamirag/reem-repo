@@ -1186,5 +1186,47 @@
   "tone": "warm",
   "text": "لِلدُّبِّ حَاسَّةُ شَمٍّ قَوِيَّةٌ.",
   "audio": "res://assets/audio/lines/reem_orchard_dubb_fact.mp3"
+ },
+ "reem_hill_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بَدَأَتِ الشَّمْسُ تَغْرُبُ خَلْفَ التَّلِّ.",
+  "audio": "res://assets/audio/lines/reem_hill_arrive.mp3"
+ },
+ "reem_hill_proud": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لَا يُرِيدُ طَاوُوسٌ أَنْ يُعِيرَنَا رِيشَهُ. يَقُولُ إِنَّهُ الْأَجْمَلُ.",
+  "audio": "res://assets/audio/lines/reem_hill_proud.mp3"
+ },
+ "reem_hill_flatter": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "مَدَحْتُهُ وَحْدَهُ، وَبَقِيَ الْفَانُوسُ بِلَا زِينَةٍ.",
+  "audio": "res://assets/audio/lines/reem_hill_flatter.mp3"
+ },
+ "reem_hill_show": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِنَضَعِ الرِّيشَةَ مَعَ الشَّرِيطِ وَفَانُوسِ الْمِهْرَجَانِ.",
+  "audio": "res://assets/audio/lines/reem_hill_show.mp3"
+ },
+ "reem_hill_gift": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "انْظُرْ يَا طَاوُوسُ! بِعَمَلِنَا مَعًا صَارَ الْفَانُوسُ أَجْمَلَ. شُكْرًا لَكَ عَلَى الرِّيشِ.",
+  "audio": "res://assets/audio/lines/reem_hill_gift.mp3"
+ },
+ "reem_hill_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "طَاوُوسٌ",
+  "audio": "res://assets/audio/lines/reem_hill_name.mp3"
+ },
+ "reem_hill_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَبْسُطُ الطَّاوُوسُ رِيشَ ذَيْلِهِ مِثْلَ الْمِرْوَحَةِ.",
+  "audio": "res://assets/audio/lines/reem_hill_fact.mp3"
  }
 }

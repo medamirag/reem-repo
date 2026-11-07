@@ -134,6 +134,11 @@
       "fox_orchard_accuse",
       "reem_orchard_look",
       "reem_orchard_wet"
+    ],
+    "hill_display": [
+      "reem_hill_proud",
+      "reem_hill_flatter",
+      "reem_hill_show"
     ]
   },
   "map": [
@@ -232,6 +237,14 @@
         0.55,
         0.72
       ]
+    },
+    {
+      "room": "HillSlope",
+      "label": "مُنْحَدَرُ التَّلِّ",
+      "at": [
+        0.74,
+        0.81
+      ]
     }
   ],
   "edges": [
@@ -290,6 +303,10 @@
     [
       10,
       11
+    ],
+    [
+      11,
+      12
     ]
   ],
   "cards": [
@@ -346,6 +363,12 @@
       "image": "res://assets/art/characters/dubb/dubb_base.png",
       "name_line": "reem_orchard_dubb_name",
       "fact_line": "reem_orchard_dubb_fact"
+    },
+    {
+      "id": "tawoos",
+      "image": "res://assets/art/characters/tawoos/tawoos_base.png",
+      "name_line": "reem_hill_name",
+      "fact_line": "reem_hill_fact"
     }
   ]
 }

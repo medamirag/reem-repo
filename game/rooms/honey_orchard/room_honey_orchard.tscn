@@ -1,0 +1,158 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/honey_orchard/room_honey_orchard.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg12_honey_orchard.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/dubb/dubb_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/items/dubb_jar.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/art/items/orchard_lanterns.png" id="11"]
+[ext_resource type="PackedScene" path="res://game/characters/thaaloob/character_thaaloob.tscn" id="12"]
+
+[sub_resource type="StyleBoxFlat" id="LabelPanel"]
+bg_color = Color(1, 0.95, 0.8, 0.93)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomHoneyOrchard" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "HoneyOrchard"
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "HillSlope": Vector2(0.92, 0.82), "WaterfallPath": Vector2(0.92, 0.82)}
+ambience_cue = "amb_meadow"
+exit_arrows = {"ExitLeft": "left", "ExitRight": "right", "ExitWaterfall": "up"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitWaterfall" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitWaterfall"
+position = Vector2(1710, 560)
+interaction_polygon = PackedVector2Array(-100, -60, 100, -60, 100, 60, -100, 60)
+walk_to_point = Vector2(0, 326)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitWaterfall" index="0"]
+polygon = PackedVector2Array(-100, -60, 100, -60, 100, 60, -100, 60)
+
+[node name="Dubb" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Dubb"
+position = Vector2(470, 790)
+z_index = 0
+interaction_polygon = PackedVector2Array(-105, -300, 105, -300, 105, 0, -105, 0)
+walk_to_point = Vector2(0, 96)
+
+[node name="Sprite2D" parent="Props/Dubb" index="0"]
+position = Vector2(0, -150.0)
+texture = ExtResource("9")
+scale = Vector2(0.25, 0.25)
+
+[node name="InteractionPolygon" parent="Props/Dubb" index="2"]
+polygon = PackedVector2Array(-105, -300, 105, -300, 105, 0, -105, 0)
+
+[node name="DubbJar" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "DubbJar"
+position = Vector2(478, 617)
+z_index = 1
+interaction_polygon = PackedVector2Array(-100, -160, 100, -160, 100, 0, -100, 0)
+walk_to_point = Vector2(0, 269)
+
+[node name="Sprite2D" parent="Props/DubbJar" index="0"]
+position = Vector2(0, -80.0)
+texture = ExtResource("10")
+scale = Vector2(0.15, 0.15)
+
+[node name="InteractionPolygon" parent="Props/DubbJar" index="2"]
+polygon = PackedVector2Array(-100, -160, 100, -160, 100, 0, -100, 0)
+
+[node name="LostLanterns" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "LostLanterns"
+position = Vector2(1490, 745)
+z_index = 0
+interaction_polygon = PackedVector2Array(-115, -140, 115, -140, 115, 0, -115, 0)
+walk_to_point = Vector2(0, 141)
+
+[node name="Sprite2D" parent="Props/LostLanterns" index="0"]
+position = Vector2(0, -70.0)
+texture = ExtResource("11")
+scale = Vector2(0.15, 0.15)
+
+[node name="InteractionPolygon" parent="Props/LostLanterns" index="2"]
+polygon = PackedVector2Array(-115, -140, 115, -140, 115, 0, -115, 0)
+
+[node name="CharacterThaaloob" parent="Characters" instance=ExtResource("12")]
+position = Vector2(910, 835)
+walk_to_point = Vector2(-220, 51)
+
+[node name="BearTear" type="Polygon2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(475, 618)
+polygon = PackedVector2Array(0, 0, 11, 17, 9, 26, 0, 29, -9, 24, -10, 16)
+color = Color(0.43, 0.75, 0.91, 1)
+
+[node name="HillLabel" type="Label" parent="."]
+theme_override_styles/normal = SubResource("LabelPanel")
+offset_left = 1580.0
+offset_top = 755.0
+offset_right = 1880.0
+offset_bottom = 817.0
+mouse_filter = 2
+text_direction = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.18, 0.09, 0.02, 1)
+theme_override_font_sizes/font_size = 38
+
+[node name="WaterfallLabel" type="Label" parent="."]
+theme_override_styles/normal = SubResource("LabelPanel")
+offset_left = 1530.0
+offset_top = 435.0
+offset_right = 1830.0
+offset_bottom = 497.0
+mouse_filter = 2
+text_direction = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.18, 0.09, 0.02, 1)
+theme_override_font_sizes/font_size = 38

@@ -71,6 +71,8 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_boat | Reem | clear and cheerful, saying one word to teach a child | قَارِب | done |
 | word_dock | Reem | clear and cheerful, saying one word to teach a child | رَصِيف | done |
 | word_hoofprint | Reem | clear and cheerful, saying one word to teach a child | أَثَرُ حَافِر | done |
+| word_bear | Reem | clear and cheerful, saying one word to teach a child | دُبّ | done |
+| word_apple | Reem | clear and cheerful, saying one word to teach a child | تُفَّاحَة | done |
 
 ## Recording verification
 

@@ -1,4 +1,22 @@
 {
+  "word_bear": {
+    "text": "دُبّ",
+    "rooms": [
+      "HoneyOrchard"
+    ],
+    "audio": "res://assets/audio/words/word_bear.mp3",
+    "objects": [
+      "prop:Dubb"
+    ]
+  },
+  "word_apple": {
+    "text": "تُفَّاحَة",
+    "rooms": [
+      "HoneyOrchard"
+    ],
+    "audio": "res://assets/audio/words/word_apple.mp3",
+    "objects": []
+  },
   "word_frog": {
     "text": "ضِفْدَع",
     "rooms": [
@@ -136,7 +154,8 @@
   "word_sun": {
     "text": "شَمْس",
     "rooms": [
-      "Stream"
+      "Stream",
+      "HoneyOrchard"
     ],
     "audio": "res://assets/audio/words/word_sun.mp3",
     "objects": []
@@ -370,10 +389,13 @@
   "word_jar": {
     "text": "جَرَّة",
     "rooms": [
-      "Yard"
+      "Yard",
+      "HoneyOrchard"
     ],
     "audio": "res://assets/audio/words/word_jar.mp3",
-    "objects": []
+    "objects": [
+      "prop:DubbJar"
+    ]
   },
   "word_beehive": {
     "text": "خَلِيَّة",
@@ -394,7 +416,8 @@
       "FoxRock",
       "Stream",
       "PineFork",
-      "MeadowLake"
+      "MeadowLake",
+      "HoneyOrchard"
     ],
     "audio": "res://assets/audio/words/word_tree.mp3",
     "objects": []
@@ -558,7 +581,8 @@
     "text": "جَدْوَل",
     "rooms": [
       "FoxRock",
-      "Stream"
+      "Stream",
+      "HoneyOrchard"
     ],
     "audio": "res://assets/audio/words/word_stream.mp3",
     "objects": []
@@ -591,11 +615,13 @@
   "word_lantern": {
     "text": "فَانُوس",
     "rooms": [
-      "inventory"
+      "inventory",
+      "HoneyOrchard"
     ],
     "audio": "res://assets/audio/words/word_lantern.mp3",
     "objects": [
-      "item:Lantern"
+      "item:Lantern",
+      "prop:LostLanterns"
     ]
   },
   "word_notebook": {

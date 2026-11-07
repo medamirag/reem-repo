@@ -464,3 +464,13 @@ Click Dafdoof to learn that his voice is gone. Offer a spoonful of honey from Ho
 Click Ghazlana to learn she went beyond where her mother asked her to stay. Follow three hoofprints along the bank in order. A wrong print leaves the current clue active. The last print leads to a safe reunion point and earns her card. The child's actions cannot send her into the water.
 
 The boat introduces itself at its dock and mentions a future trip to the sea. It stays tied until the Gull island pack is built and unlocked. Reem narrates Dafdoof, Ghazlana and the boat until they have verified saved voices. Save the reserve honey, choices, hoofprint progress, rewards and cards. Notebook hints and the map update as the station progresses. Holding a hoofprint teaches the word and never advances the search.
+
+## 15. Honey orchard (meeting 2, before sunset)
+
+HoneyOrchard accepts arrivals from OakForest, RockCave and MeadowLake. Save the branch of arrival so the left arrow returns there. A dry foreground path crosses an orchard with Dubb at the left, Thaaloob in the middle, and the missing festival lanterns beside a shallow stream at the right. The two forward routes lead to HillSlope and WaterfallPath once both tasks are resolved. Until those rooms exist their arrows use provisional End.
+
+Dubb has his head stuck in a honey jar. Click him to choose to speak softly or pull hard. Pulling hard makes him cry and wilts once. Dubb stays reachable. Speak softly to ready the repair. Then click the rim to loosen it with a small spoonful of honey. Use the honey at the orchard rim if Reem has no jar. The jar slides off, Dubb earns his card, and he offers to carry festival lanterns. Heal any earlier wilt or earn a blossom.
+
+Thaaloob says that Dubb took the lanterns. Choose to look for evidence or accuse Dubb. Accusing wilts once and has a visible consequence for Dubb. Inspect the wet lanterns at the stream to learn they fell there. Return to Dubb to correct the accusation or report the evidence. The same repair remains available after leaving and returning. Once both tasks are done, the child can choose either forward route without a heart change.
+
+Reem narrates Dubb until there is a verified saved voice. Use Thaaloob's saved voice for his own lines. Save the branch, rescue steps, accusation, evidence and lantern carrier reward. Add a map node, progressive hints and Dubb's card. Hold to teach objects such as the jar and lanterns without changing their story state.

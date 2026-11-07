@@ -39,6 +39,12 @@ Originals in `assets/` are never edited: new images are new files with the names
 | wooden_boat_sheet | `assets/art/characters/wooden_boat/wooden_boat_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See wooden_boat_sheet below | Clear silhouette and correct background | done |
 | wooden_boat_base | `assets/art/characters/wooden_boat/wooden_boat_base.png` | `assets/art/characters/wooden_boat/wooden_boat_sheet.png` | transparent | 1536x1024 | See wooden_boat_base below | Clear silhouette and correct background | done |
 
+| bg12_honey_orchard | `assets/art/backgrounds/bg12_honey_orchard.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg12_honey_orchard below | Clear silhouette and correct background | done |
+| dubb_sheet | `assets/art/characters/dubb/dubb_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See dubb_sheet below | Clear silhouette and correct background | done |
+| dubb_base | `assets/art/characters/dubb/dubb_base.png` | `assets/art/characters/dubb/dubb_sheet.png` | transparent | 1536x1024 | See dubb_base below | Clear silhouette and correct background | done |
+| dubb_jar | `assets/art/items/dubb_jar.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1024x1024 | See dubb_jar below | Clear silhouette and correct background | done |
+| orchard_lanterns | `assets/art/items/orchard_lanterns.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1536x1024 | See orchard_lanterns below | Clear silhouette and correct background | done |
+
 <!-- One section per row, in the same order:
 
 ## <ID>
@@ -402,4 +408,69 @@ STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown
 
 ```text
 STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Single full-body right-facing sprite of a small warmly smiling wooden rowboat with a blue stripe and two subtle carved eyes near the bow, no human limbs, matching reference. Real transparent background, no ground or shadow.
+```
+
+## bg12_honey_orchard
+
+- **Save as:** `assets/art/backgrounds/bg12_honey_orchard.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1920x1080
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Wide honey orchard just before sunset, rows of fruit trees with golden leaves, gentle peach and purple sky. Broad dry continuous walking path in lower quarter. Narrow shallow stream in middle distance at right with flat stones. Keep left foreground space for a bear and jar, central space for a fox. No characters, furniture, houses, jar or lanterns. Style reference only for brushwork.
+```
+
+## dubb_sheet
+
+- **Save as:** `assets/art/characters/dubb/dubb_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Three clearly separated front, right profile and rear views of a round young brown bear with cream muzzle, light belly and green neckerchief, kind eyes, two arms two legs, plain cream background.
+```
+
+## dubb_base
+
+- **Save as:** `assets/art/characters/dubb/dubb_base.png`
+- **Attach:** `assets/art/characters/dubb/dubb_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Single full-body right-facing sprite of the same young brown bear from reference with cream muzzle, light belly, green neckerchief and kind eyes. True alpha. No ground or shadow.
+```
+
+## dubb_jar
+
+- **Save as:** `assets/art/items/dubb_jar.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** 1024x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One rounded honey pot of warm terracotta, lying sideways with opening facing down-left, big enough to cover a bear cub head. A small honey drip at the rim. Isolated alpha sprite, no ground or shadow.
+```
+
+## orchard_lanterns
+
+- **Save as:** `assets/art/items/orchard_lanterns.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Two unlit festival lanterns lying beside each other, one amber and one muted blue, small water drops on their metal frames, clean silhouette. Isolated transparent sprite, no ground or shadow.
 ```

@@ -142,6 +142,19 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_lake_frog_fact | Reem | warm | يَعِيشُ كَثِيرٌ مِنَ الضَّفَادِعِ قُرْبَ الْمَاءِ. | done |
 | reem_lake_gazelle_name | Reem | warm | غَزْلَانَةُ | done |
 | reem_lake_gazelle_fact | Reem | warm | تَجْرِي الْغِزْلَانُ بِسُرْعَةٍ عَلَى أَرْجُلِهَا الطَّوِيلَةِ. | done |
+| reem_orchard_arrive | Reem | warm | وَصَلْتُ إِلَى بُسْتَانِ الْعَسَلِ. | done |
+| reem_orchard_bear | Reem | warm | عَلِقَ رَأْسُ دُبٍّ فِي الْجَرَّةِ. كَيْفَ أُسَاعِدُهُ؟ | done |
+| reem_orchard_soft | Reem | warm | لَا تَخَفْ يَا دُبُّ. سَأَضَعُ قَلِيلًا مِنَ الْعَسَلِ عَلَى حَافَّةِ الْجَرَّةِ. | done |
+| reem_orchard_hard | Reem | warm | بَكَى دُبٌّ عِنْدَمَا شَدَدْتُ الْجَرَّةَ. سَأُحَاوِلُ بِرِفْقٍ. | done |
+| reem_orchard_free | Reem | warm | خَرَجَ رَأْسُ دُبٍّ! سَيُسَاعِدُنَا فِي حَمْلِ الْفَوَانِيسِ. | done |
+| fox_orchard_accuse | Thaaloob | playful | أَنَا مُتَأَكِّدٌ أَنَّ دُبًّا أَخَذَ فَوَانِيسَ الْمِهْرَجَانِ. | done |
+| reem_orchard_look | Reem | warm | سَأَبْحَثُ عَنِ الْفَوَانِيسِ قَبْلَ أَنْ أَحْكُمَ. | done |
+| reem_orchard_blame | Reem | warm | حَزِنَ دُبٌّ عِنْدَمَا قُلْتُ إِنَّهُ أَخَذَهَا. سَأَبْحَثُ عَنْهَا. | done |
+| reem_orchard_wet | Reem | warm | هَا هِيَ الْفَوَانِيسُ! سَقَطَتْ فِي الْجَدْوَلِ، وَلَمْ يَأْخُذْهَا دُبٌّ. | done |
+| reem_orchard_sorry | Reem | warm | عُذْرًا يَا دُبُّ. وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ. | done |
+| reem_orchard_report | Reem | warm | يَا دُبُّ، وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ. لِنَحْمِلْهَا مَعًا. | done |
+| reem_orchard_dubb_name | Reem | warm | دُبٌّ | done |
+| reem_orchard_dubb_fact | Reem | warm | لِلدُّبِّ حَاسَّةُ شَمٍّ قَوِيَّةٌ. | done |
 
 ## Recording verification
 

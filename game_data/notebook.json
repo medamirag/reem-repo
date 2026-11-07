@@ -124,6 +124,16 @@
       "reem_lake_gazelle",
       "reem_lake_tracks",
       "reem_lake_reunion"
+    ],
+    "orchard_bear": [
+      "reem_orchard_bear",
+      "reem_orchard_hard",
+      "reem_orchard_soft"
+    ],
+    "orchard_evidence": [
+      "fox_orchard_accuse",
+      "reem_orchard_look",
+      "reem_orchard_wet"
     ]
   },
   "map": [
@@ -214,6 +224,14 @@
         0.81,
         0.63
       ]
+    },
+    {
+      "room": "HoneyOrchard",
+      "label": "بُسْتَانُ الْعَسَلِ",
+      "at": [
+        0.55,
+        0.72
+      ]
     }
   ],
   "edges": [
@@ -260,6 +278,18 @@
     [
       7,
       10
+    ],
+    [
+      8,
+      11
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      10,
+      11
     ]
   ],
   "cards": [
@@ -310,6 +340,12 @@
       "image": "res://assets/art/characters/ghazlana/ghazlana_base.png",
       "name_line": "reem_lake_gazelle_name",
       "fact_line": "reem_lake_gazelle_fact"
+    },
+    {
+      "id": "dubb",
+      "image": "res://assets/art/characters/dubb/dubb_base.png",
+      "name_line": "reem_orchard_dubb_name",
+      "fact_line": "reem_orchard_dubb_fact"
     }
   ]
 }

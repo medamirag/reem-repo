@@ -1108,5 +1108,83 @@
   "tone": "warm",
   "text": "تَجْرِي الْغِزْلَانُ بِسُرْعَةٍ عَلَى أَرْجُلِهَا الطَّوِيلَةِ.",
   "audio": "res://assets/audio/lines/reem_lake_gazelle_fact.mp3"
+ },
+ "reem_orchard_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَصَلْتُ إِلَى بُسْتَانِ الْعَسَلِ.",
+  "audio": "res://assets/audio/lines/reem_orchard_arrive.mp3"
+ },
+ "reem_orchard_bear": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "عَلِقَ رَأْسُ دُبٍّ فِي الْجَرَّةِ. كَيْفَ أُسَاعِدُهُ؟",
+  "audio": "res://assets/audio/lines/reem_orchard_bear.mp3"
+ },
+ "reem_orchard_soft": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لَا تَخَفْ يَا دُبُّ. سَأَضَعُ قَلِيلًا مِنَ الْعَسَلِ عَلَى حَافَّةِ الْجَرَّةِ.",
+  "audio": "res://assets/audio/lines/reem_orchard_soft.mp3"
+ },
+ "reem_orchard_hard": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بَكَى دُبٌّ عِنْدَمَا شَدَدْتُ الْجَرَّةَ. سَأُحَاوِلُ بِرِفْقٍ.",
+  "audio": "res://assets/audio/lines/reem_orchard_hard.mp3"
+ },
+ "reem_orchard_free": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "خَرَجَ رَأْسُ دُبٍّ! سَيُسَاعِدُنَا فِي حَمْلِ الْفَوَانِيسِ.",
+  "audio": "res://assets/audio/lines/reem_orchard_free.mp3"
+ },
+ "fox_orchard_accuse": {
+  "speaker": "Thaaloob",
+  "tone": "playful",
+  "text": "أَنَا مُتَأَكِّدٌ أَنَّ دُبًّا أَخَذَ فَوَانِيسَ الْمِهْرَجَانِ.",
+  "audio": "res://assets/audio/lines/fox_orchard_accuse.mp3"
+ },
+ "reem_orchard_look": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأَبْحَثُ عَنِ الْفَوَانِيسِ قَبْلَ أَنْ أَحْكُمَ.",
+  "audio": "res://assets/audio/lines/reem_orchard_look.mp3"
+ },
+ "reem_orchard_blame": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "حَزِنَ دُبٌّ عِنْدَمَا قُلْتُ إِنَّهُ أَخَذَهَا. سَأَبْحَثُ عَنْهَا.",
+  "audio": "res://assets/audio/lines/reem_orchard_blame.mp3"
+ },
+ "reem_orchard_wet": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَا هِيَ الْفَوَانِيسُ! سَقَطَتْ فِي الْجَدْوَلِ، وَلَمْ يَأْخُذْهَا دُبٌّ.",
+  "audio": "res://assets/audio/lines/reem_orchard_wet.mp3"
+ },
+ "reem_orchard_sorry": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "عُذْرًا يَا دُبُّ. وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ.",
+  "audio": "res://assets/audio/lines/reem_orchard_sorry.mp3"
+ },
+ "reem_orchard_report": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَا دُبُّ، وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ. لِنَحْمِلْهَا مَعًا.",
+  "audio": "res://assets/audio/lines/reem_orchard_report.mp3"
+ },
+ "reem_orchard_dubb_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "دُبٌّ",
+  "audio": "res://assets/audio/lines/reem_orchard_dubb_name.mp3"
+ },
+ "reem_orchard_dubb_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِلدُّبِّ حَاسَّةُ شَمٍّ قَوِيَّةٌ.",
+  "audio": "res://assets/audio/lines/reem_orchard_dubb_fact.mp3"
  }
 }

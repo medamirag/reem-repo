@@ -95,6 +95,18 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path in ["orchard", "orchard_sand"]:
+		await Globals.new_game()
+		Globals.oak["nuts"] = true
+		Globals.oak["leaves"] = true
+		R.goto_room("OakForest")
+		await _wait_room("OakForest")
+		await _click("ExitRight")
+		await _complete_orchard(_path == "orchard_sand", "OakForest")
+		await _wait_room("End")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -173,6 +185,34 @@ func _run() -> void:
 	get_tree().quit()
 
 
+func _complete_orchard(wrong: bool, origin: String) -> void:
+	await _wait_room("HoneyOrchard")
+	_expect(Globals.orchard.get("origin") == origin, "orchard remembers arrival branch")
+	var previous_wilts := Globals.wilts
+	_expect(not R.current.is_exit_open("ExitRight"), "orchard exit waits for rescue and evidence")
+	_answers = [not wrong]
+	await _click("Dubb")
+	_answers = [not wrong]
+	await _click("Thaaloob")
+	if wrong:
+		_expect(Globals.wilts == previous_wilts + 2, "pulling and accusation each wilt")
+		E.save_game(1)
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore orchard mistakes", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("HoneyOrchard")
+		_expect(Globals.orchard.get("pulled") and Globals.orchard.get("accused"), "both orchard mistakes survive save")
+		_answers = [true]
+		await _click("Dubb")
+	await _click("DubbJar")
+	await _click("LostLanterns")
+	await _click("Dubb")
+	_expect(Globals.wilts == previous_wilts and Globals.orchard.get("carrier") and Globals.orchard.get("verified"), "Dubb freed and evidence reported")
+	_expect(Globals.friend_cards.has("dubb") and R.current.is_exit_open("ExitWaterfall"), "Dubb card and both routes unlocked")
+	await _click("ExitWaterfall" if wrong else "ExitRight")
+
+
 func _complete_lake(wrong: bool, check_details := false) -> void:
 	await _wait_room("MeadowLake")
 	var prior_wilts := Globals.wilts
@@ -205,6 +245,7 @@ func _complete_lake(wrong: bool, check_details := false) -> void:
 		await _click("Print%d" % id)
 	_expect(Globals.lake.get("reunited") and Globals.friend_cards.has("dafdoof") and Globals.friend_cards.has("ghazlana"), "gazelle reunited and both cards earned")
 	await _click("ExitRight")
+	await _complete_orchard(false, "MeadowLake")
 
 
 func _cave_path(wrong: bool, has_honey: bool) -> void:
@@ -247,6 +288,7 @@ func _cave_path(wrong: bool, has_honey: bool) -> void:
 		await _click("CaveBasket")
 	_expect(Globals.wilts == 0 and Globals.friend_cards.has("qatqoota") and Globals.friend_cards.has("ankoob"), "Cave branches healthy and both cards earned")
 	await _click("ExitRight")
+	await _complete_orchard(false, "RockCave")
 	await _wait_room("End")
 
 
@@ -290,6 +332,7 @@ func _oak_path(wrong: bool) -> void:
 	await _click("Qunfood")
 	_expect(Globals.blossoms == blossoms, "Oak rewards cannot repeat")
 	await _click("ExitRight")
+	await _complete_orchard(false, "OakForest")
 	await _wait_room("End")
 
 

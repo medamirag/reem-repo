@@ -162,8 +162,15 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_hill_gift | Reem | warm | انْظُرْ يَا طَاوُوسُ! بِعَمَلِنَا مَعًا صَارَ الْفَانُوسُ أَجْمَلَ. شُكْرًا لَكَ عَلَى الرِّيشِ. | done |
 | reem_hill_name | Reem | warm | طَاوُوسٌ | done |
 | reem_hill_fact | Reem | warm | يَبْسُطُ الطَّاوُوسُ رِيشَ ذَيْلِهِ مِثْلَ الْمِرْوَحَةِ. | done |
-
-| jad_map_intro | Jad | warm | هذه خريطة الوادي يا ريم. كلما زرتِ مكاناً جديداً ظهر عليها، وإن احترتِ في طريقك فانظري إليها. | todo |
+| jad_map_intro | Jad | warm | هذه خريطة الوادي يا ريم. كلما زرتِ مكاناً جديداً ظهر عليها، وإن احترتِ في طريقك فانظري إليها. | done |
+| reem_waterfall_arrive | Reem | warm | أَسْمَعُ صَوْتَ الشَّلَّالِ مِنْ هُنَا. | done |
+| reem_waterfall_provoked | Reem | surprised | دَحْرَجَ قَرْقُورٌ ثَمَرَةً إِلَى طَرِيقِي! لِمَاذَا فَعَلَ ذَلِكَ؟ | done |
+| reem_waterfall_throw | Reem | gentle | رَمَيْتُ الثَّمَرَةَ، فَابْتَعَدَ قَرْقُورٌ. سَأَتَحَدَّثُ إِلَيْهِ بِهُدُوءٍ. | done |
+| reem_waterfall_ask | Reem | warm | قَالَ قَرْقُورٌ إِنَّهُ أَرَادَ أَنْ يَلْعَبَ مَعَ أَحَدٍ. | done |
+| reem_waterfall_roll | Reem | playful | هَيَّا نُدَحْرِجُ الثَّمَرَةَ عَلَى الْأَرْضِ مَعًا! | done |
+| reem_waterfall_gift | Reem | warm | لَعِبْنَا مَعًا! سَيُسَاعِدُنَا قَرْقُورٌ فِي تَعْلِيقِ الْفَوَانِيسِ الْعَالِيَةِ. | done |
+| reem_waterfall_name | Reem | warm | قَرْقُورٌ | done |
+| reem_waterfall_fact | Reem | warm | يَتَسَلَّقُ الْقِرْدُ الْأَغْصَانَ بِيَدَيْهِ وَقَدَمَيْهِ. | done |
 
 ## Recording verification
 

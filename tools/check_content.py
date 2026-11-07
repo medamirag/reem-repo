@@ -1,5 +1,6 @@
 """Read-only pipeline consistency check. Run from the project folder with Python."""
 import ast
+import configparser
 import json
 import re
 from pathlib import Path
@@ -72,7 +73,19 @@ def main():
     for card in book["cards"]:
         assert card["name_line"] in lines and card["fact_line"] in lines, card["id"]
         assert (ROOT / card["image"].removeprefix("res://")).is_file(), card["id"]
-    print(f"[CONTENT] ok: {len(lines)} lines, {len(words)} words, queues, areas, art and notebook")
+    places = read_json("game_data/map_places.json")
+    by_id = {place["id"]: place for place in places}
+    assert len(by_id) == len(places), "Duplicate map place ID"
+    for place in places:
+        assert place["name"] in words, place["id"]
+        assert len(place["position"]) == 2 and all(0 <= v <= 1 for v in place["position"]), place["id"]
+        assert all(place["id"] in by_id[neighbor]["neighbors"] for neighbor in place["neighbors"]), place["id"]
+    config = configparser.ConfigParser()
+    config.optionxform = str
+    config.read(ROOT / "game/popochiu_data.cfg", encoding="utf-8")
+    missing = set(config["rooms"]) - {"Title", "End", "TestArabic"} - {place["room"] for place in places}
+    assert not missing, f"Registered rooms missing from map: {sorted(missing)}"
+    print(f"[CONTENT] ok: {len(lines)} lines, {len(words)} words, queues, areas, art, notebook and map")
 
 
 if __name__ == "__main__":

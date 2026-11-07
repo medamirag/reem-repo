@@ -124,6 +124,11 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path in ["waterfall", "waterfall_sand"]:
+		await _waterfall_path(_path == "waterfall_sand")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -200,6 +205,39 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _waterfall_path(wrong: bool) -> void:
+	await Globals.new_game()
+	Globals.orchard["carrier"] = true
+	Globals.orchard["verified"] = true
+	R.goto_room("HoneyOrchard")
+	await _wait_room("HoneyOrchard")
+	await _click("ExitWaterfall")
+	await _wait_room("WaterfallPath")
+	var previous_wilts := Globals.wilts
+	_expect(not R.current.is_exit_open("ExitRight"), "waterfall exit waits for Qarqoor")
+	_answers = [not wrong]
+	await _click("Qarqoor")
+	if wrong:
+		_expect(Globals.waterfall.get("threw") and Globals.wilts == previous_wilts + 1, "throwing the fruit wilts once")
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore waterfall choice", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("WaterfallPath")
+		_expect(Globals.waterfall.get("threw"), "waterfall mistake survives save")
+		_answers = [true]
+		await _click("Qarqoor")
+	await _hold_at(Vector2(840.0 / 1920, 869.0 / 1080), 0.7)
+	_expect(Globals.discovered_words.has("word_fruit") and not Globals.waterfall.get("lantern_hanger", false), "fruit hold teaches without playing")
+	await _click("Fruit")
+	_expect(Globals.waterfall.get("lantern_hanger") and Globals.friend_cards.has("qarqoor") and Globals.wilts == previous_wilts, "playing earns lantern help and repairs earlier choice")
+	var previous_blossoms := Globals.blossoms
+	await _click("Fruit")
+	_expect(Globals.blossoms == previous_blossoms, "lantern reward cannot repeat")
+	await _click("ExitRight")
+	await _wait_room("End")
 
 
 func _complete_hill(wrong: bool, check_details := false) -> void:

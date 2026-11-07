@@ -139,6 +139,11 @@
       "reem_hill_proud",
       "reem_hill_flatter",
       "reem_hill_show"
+    ],
+    "waterfall_game": [
+      "reem_waterfall_provoked",
+      "reem_waterfall_ask",
+      "reem_waterfall_roll"
     ]
   },
   "map": [
@@ -245,6 +250,14 @@
         0.74,
         0.81
       ]
+    },
+    {
+      "room": "WaterfallPath",
+      "label": "دَرْبُ الشَّلَّال",
+      "at": [
+        0.37,
+        0.84
+      ]
     }
   ],
   "edges": [
@@ -307,6 +320,10 @@
     [
       11,
       12
+    ],
+    [
+      11,
+      13
     ]
   ],
   "cards": [
@@ -369,6 +386,12 @@
       "image": "res://assets/art/characters/tawoos/tawoos_base.png",
       "name_line": "reem_hill_name",
       "fact_line": "reem_hill_fact"
+    },
+    {
+      "id": "qarqoor",
+      "image": "res://assets/art/characters/qarqoor/qarqoor_base.png",
+      "name_line": "reem_waterfall_name",
+      "fact_line": "reem_waterfall_fact"
     }
   ]
 }

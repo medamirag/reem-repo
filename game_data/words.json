@@ -1,4 +1,32 @@
 {
+  "word_waterfall": {
+    "text": "شَلَّال",
+    "rooms": [
+      "WaterfallPath"
+    ],
+    "audio": "res://assets/audio/words/word_waterfall.mp3",
+    "objects": []
+  },
+  "word_monkey": {
+    "text": "قِرْد",
+    "rooms": [
+      "WaterfallPath"
+    ],
+    "audio": "res://assets/audio/words/word_monkey.mp3",
+    "objects": [
+      "prop:Qarqoor"
+    ]
+  },
+  "word_fruit": {
+    "text": "ثَمَرَة",
+    "rooms": [
+      "WaterfallPath"
+    ],
+    "audio": "res://assets/audio/words/word_fruit.mp3",
+    "objects": [
+      "prop:Fruit"
+    ]
+  },
   "word_map_farm": {
     "text": "سَاحَةُ الْمَزْرَعَة",
     "rooms": [],
@@ -318,7 +346,8 @@
     "rooms": [
       "Stream",
       "HoneyOrchard",
-      "HillSlope"
+      "HillSlope",
+      "WaterfallPath"
     ],
     "audio": "res://assets/audio/words/word_sun.mp3",
     "objects": []
@@ -580,7 +609,8 @@
       "Stream",
       "PineFork",
       "MeadowLake",
-      "HoneyOrchard"
+      "HoneyOrchard",
+      "WaterfallPath"
     ],
     "audio": "res://assets/audio/words/word_tree.mp3",
     "objects": []
@@ -625,7 +655,8 @@
       "Stream",
       "PineFork",
       "MeadowLake",
-      "HillSlope"
+      "HillSlope",
+      "WaterfallPath"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -723,7 +754,8 @@
       "Stream",
       "PineFork",
       "RockCave",
-      "MeadowLake"
+      "MeadowLake",
+      "WaterfallPath"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []

@@ -69,6 +69,12 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 - The connected generation call exposes no numeric controls. Stability, similarity, style, speed and speaker boost values were neither sent nor verified. Historical Thaaloob stability 0.3 is not an offered value in the connected v3 schema. No numeric substitution was made.
 - Sample approval covered Reem's Stream take. The full set and Thaaloob's new takes were checked for file delivery and import, with listening review still open.
 
+### Valley map and Waterfall Path batch
+
+- Map introduction used saved Jad with `eleven_v3` and the synthesis-only tag `[warmly]`. Existing reference is `res://assets/audio/lines/jad_s1_015.mp3`.
+- Waterfall dialogue used saved Reem with `eleven_v3` and synthesis-only tags `[warmly]`, `[gently]`, `[playful]` and `[surprised]`. Reem's reference remains `res://assets/audio/lines/reem_s1_002.mp3`. Map names and Waterfall words used saved Reem with `eleven_multilingual_v2` and no tags.
+- No model fallback. The connected tool exposed no stability, similarity boost, style, speed or speaker boost controls. The delivered files were checked against the queues. Listening comparison for pace, pronunciation and loudness remains open.
+
 ## ElevenLabs credentials
 
 - Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.

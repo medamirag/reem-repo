@@ -55,6 +55,10 @@ Originals in `assets/` are never edited: new images are new files with the names
 | map_fog | `assets/art/ui/map_fog.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See map_fog below | No lettering | done |
 | map_check | `assets/art/ui/map_check.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See map_check below | No lettering | done |
 | map_button | `assets/art/ui/map_button.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See map_button below | No lettering | done |
+| bg14_waterfall_path | `assets/art/backgrounds/bg14_waterfall_path.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg14_waterfall_path below | No lettering | done |
+| qarqoor_sheet | `assets/art/characters/qarqoor/qarqoor_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See qarqoor_sheet below | No lettering | done |
+| qarqoor_base | `assets/art/characters/qarqoor/qarqoor_base.png` | `assets/art/characters/qarqoor/qarqoor_sheet.png` | transparent | portrait | See qarqoor_base below | No lettering | done |
+| qarqoor_fruit | `assets/art/items/qarqoor_fruit.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See qarqoor_fruit below | No lettering | done |
 
 <!-- One section per row, in the same order:
 
@@ -602,3 +606,43 @@ STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown
 ```text
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Small rolled parchment treasure-map icon with two rolled edges, no marks or lettering, single isolated icon on true alpha.
 ```
+
+## bg14_waterfall_path
+
+- **Save as:** `assets/art/backgrounds/bg14_waterfall_path.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+A sunset forest path beside a small waterfall in the middle distance, continuous broad dry flat dirt foreground across the lower third for a 2D side view walking game. Waterfall and shallow blue pool behind the path at centre-right. Left a small low leaning tree beside a mossy rock, and ground clear for the monkey and one separate fruit sprite. Warm coral light, green foliage, soft blue pool. No furniture, people, animals or fruit on the foreground trail.
+
+## qarqoor_sheet
+
+- **Save as:** `assets/art/characters/qarqoor/qarqoor_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Standalone character turnaround reference sheet on plain warm cream. Qarqoor is a cheerful young golden-brown monkey with pale peach face, round ears, a sweeping curved tail, five simple digits on each hand, large warm eyes, and no clothing. Show front, profile facing right, and back with generous gaps. Each has two arms, two legs, one tail. Gentle smile.
+
+## qarqoor_base
+
+- **Save as:** `assets/art/characters/qarqoor/qarqoor_base.png`
+- **Attach:** `assets/art/characters/qarqoor/qarqoor_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Standalone fully transparent game sprite of Qarqoor, using the reference sheet only for design. One cheerful young golden-brown monkey facing left three-quarter, pale peach face, round ears, one curved tail, two arms and two legs. Feet visible on a shared baseline. No scenery or shadow.
+
+## qarqoor_fruit
+
+- **Save as:** `assets/art/items/qarqoor_fruit.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Standalone transparent sprite, one small round golden orange fruit with a green leaf. Smooth recognizable round silhouette that can roll. No scenery, ground, basket or shadows.

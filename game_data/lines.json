@@ -1,4 +1,52 @@
 {
+ "reem_waterfall_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "أَسْمَعُ صَوْتَ الشَّلَّالِ مِنْ هُنَا.",
+  "audio": "res://assets/audio/lines/reem_waterfall_arrive.mp3"
+ },
+ "reem_waterfall_provoked": {
+  "speaker": "Reem",
+  "tone": "surprised",
+  "text": "دَحْرَجَ قَرْقُورٌ ثَمَرَةً إِلَى طَرِيقِي! لِمَاذَا فَعَلَ ذَلِكَ؟",
+  "audio": "res://assets/audio/lines/reem_waterfall_provoked.mp3"
+ },
+ "reem_waterfall_throw": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "رَمَيْتُ الثَّمَرَةَ، فَابْتَعَدَ قَرْقُورٌ. سَأَتَحَدَّثُ إِلَيْهِ بِهُدُوءٍ.",
+  "audio": "res://assets/audio/lines/reem_waterfall_throw.mp3"
+ },
+ "reem_waterfall_ask": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "قَالَ قَرْقُورٌ إِنَّهُ أَرَادَ أَنْ يَلْعَبَ مَعَ أَحَدٍ.",
+  "audio": "res://assets/audio/lines/reem_waterfall_ask.mp3"
+ },
+ "reem_waterfall_roll": {
+  "speaker": "Reem",
+  "tone": "playful",
+  "text": "هَيَّا نُدَحْرِجُ الثَّمَرَةَ عَلَى الْأَرْضِ مَعًا!",
+  "audio": "res://assets/audio/lines/reem_waterfall_roll.mp3"
+ },
+ "reem_waterfall_gift": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لَعِبْنَا مَعًا! سَيُسَاعِدُنَا قَرْقُورٌ فِي تَعْلِيقِ الْفَوَانِيسِ الْعَالِيَةِ.",
+  "audio": "res://assets/audio/lines/reem_waterfall_gift.mp3"
+ },
+ "reem_waterfall_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "قَرْقُورٌ",
+  "audio": "res://assets/audio/lines/reem_waterfall_name.mp3"
+ },
+ "reem_waterfall_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَتَسَلَّقُ الْقِرْدُ الْأَغْصَانَ بِيَدَيْهِ وَقَدَمَيْهِ.",
+  "audio": "res://assets/audio/lines/reem_waterfall_fact.mp3"
+ },
  "jad_map_intro": {
   "speaker": "Jad",
   "tone": "warm",

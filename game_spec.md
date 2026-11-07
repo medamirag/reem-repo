@@ -485,6 +485,8 @@ Reem narrates Tawoos until a verified saved voice exists. Add progressive hints,
 
 ## 17. Waterfall path (sunset)
 
+Use dialogue IDs reem_waterfall_arrive, reem_waterfall_provoked, reem_waterfall_throw, reem_waterfall_ask, reem_waterfall_roll and reem_waterfall_gift. The card uses reem_waterfall_name and reem_waterfall_fact. Persist the introduced, provoked, threw, ready and lantern_hanger flags.
+
 WaterfallPath branches from HoneyOrchard and rejoins HillSlope at NarrowPass. Keep Reem on the dry foreground trail. The waterfall and its pool remain behind the path. Qarqoor waits by a low tree beside one fallen fruit. The left arrow goes back to HoneyOrchard. The right arrow opens after Qarqoor agrees to hang the high festival lanterns, with provisional End until NarrowPass exists.
 
 On the first click, Qarqoor rolls a fruit onto the path to provoke Reem. Offer a choice to stay calm and ask why, or throw it back. Throwing back moves the fruit aside, wilts once, and keeps Qarqoor reachable. Reem can return and ask him calmly. He admits he wanted someone to play with. Click the fallen fruit to roll it gently back as a game. Qarqoor agrees to climb and hang the lanterns. Heal a prior wilt or add a blossom once. A word hold on the fruit must not advance the game.

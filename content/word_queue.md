@@ -76,28 +76,31 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_peacock | Reem | clear and cheerful, saying one word to teach a child | طَاوُوس | done |
 | word_feather | Reem | clear and cheerful, saying one word to teach a child | رِيشَة | done |
 | word_frame | Reem | clear and cheerful, saying one word to teach a child | إِطَار | done |
-| word_map_farm | Reem | clear and cheerful, saying one word to teach a child | سَاحَةُ الْمَزْرَعَة | todo |
-| word_map_house | Reem | clear and cheerful, saying one word to teach a child | بَيْتُ الْجَدّ | todo |
-| word_map_gate | Reem | clear and cheerful, saying one word to teach a child | بَوَّابَةُ الْمَزْرَعَة | todo |
-| word_map_meadow | Reem | clear and cheerful, saying one word to teach a child | مَرْجُ الْأَزْهَار | todo |
-| word_map_tree | Reem | clear and cheerful, saying one word to teach a child | الشَّجَرَةُ الْكَبِيرَة | todo |
-| word_map_fox | Reem | clear and cheerful, saying one word to teach a child | صَخْرَةُ ثَعْلُوب | todo |
-| word_map_stream | Reem | clear and cheerful, saying one word to teach a child | جَدْوَلُ الْمَاء | todo |
-| word_map_pine | Reem | clear and cheerful, saying one word to teach a child | مُفْتَرَقُ الصَّنَوْبَر | todo |
-| word_map_oak | Reem | clear and cheerful, saying one word to teach a child | غَابَةُ الْبَلُّوط | todo |
-| word_map_cave | Reem | clear and cheerful, saying one word to teach a child | التَّلُّ الصَّخْرِيّ | todo |
-| word_map_lake | Reem | clear and cheerful, saying one word to teach a child | بُحَيْرَةُ الْوَادِي | todo |
-| word_map_orchard | Reem | clear and cheerful, saying one word to teach a child | بُسْتَانُ الْعَسَل | todo |
-| word_map_slope | Reem | clear and cheerful, saying one word to teach a child | الْمُنْحَدَرُ الْأَخْضَر | todo |
-| word_map_waterfall | Reem | clear and cheerful, saying one word to teach a child | دَرْبُ الشَّلَّال | todo |
-| word_map_pass | Reem | clear and cheerful, saying one word to teach a child | الْمَمَرُّ الضَّيِّق | todo |
-| word_map_festival | Reem | clear and cheerful, saying one word to teach a child | مِهْرَجَانُ الْقِمَّة | todo |
-| word_map_island | Reem | clear and cheerful, saying one word to teach a child | جَزِيرَةُ الْمَنَارَة | todo |
-| word_map_mountain | Reem | clear and cheerful, saying one word to teach a child | جَبَلُ الْمَرْصَد | todo |
-| word_map_tiny | Reem | clear and cheerful, saying one word to teach a child | عَالَمُ النَّمْل | todo |
-| word_map_town | Reem | clear and cheerful, saying one word to teach a child | بَلْدَةُ السُّوق | todo |
-| word_map_ramadan | Reem | clear and cheerful, saying one word to teach a child | لَيْلَةُ رَمَضَان | todo |
-| word_map_snow | Reem | clear and cheerful, saying one word to teach a child | يَوْمُ الثَّلْج | todo |
+| word_map_farm | Reem | clear and cheerful, saying one word to teach a child | سَاحَةُ الْمَزْرَعَة | done |
+| word_map_house | Reem | clear and cheerful, saying one word to teach a child | بَيْتُ الْجَدّ | done |
+| word_map_gate | Reem | clear and cheerful, saying one word to teach a child | بَوَّابَةُ الْمَزْرَعَة | done |
+| word_map_meadow | Reem | clear and cheerful, saying one word to teach a child | مَرْجُ الْأَزْهَار | done |
+| word_map_tree | Reem | clear and cheerful, saying one word to teach a child | الشَّجَرَةُ الْكَبِيرَة | done |
+| word_map_fox | Reem | clear and cheerful, saying one word to teach a child | صَخْرَةُ ثَعْلُوب | done |
+| word_map_stream | Reem | clear and cheerful, saying one word to teach a child | جَدْوَلُ الْمَاء | done |
+| word_map_pine | Reem | clear and cheerful, saying one word to teach a child | مُفْتَرَقُ الصَّنَوْبَر | done |
+| word_map_oak | Reem | clear and cheerful, saying one word to teach a child | غَابَةُ الْبَلُّوط | done |
+| word_map_cave | Reem | clear and cheerful, saying one word to teach a child | التَّلُّ الصَّخْرِيّ | done |
+| word_map_lake | Reem | clear and cheerful, saying one word to teach a child | بُحَيْرَةُ الْوَادِي | done |
+| word_map_orchard | Reem | clear and cheerful, saying one word to teach a child | بُسْتَانُ الْعَسَل | done |
+| word_map_slope | Reem | clear and cheerful, saying one word to teach a child | الْمُنْحَدَرُ الْأَخْضَر | done |
+| word_map_waterfall | Reem | clear and cheerful, saying one word to teach a child | دَرْبُ الشَّلَّال | done |
+| word_map_pass | Reem | clear and cheerful, saying one word to teach a child | الْمَمَرُّ الضَّيِّق | done |
+| word_map_festival | Reem | clear and cheerful, saying one word to teach a child | مِهْرَجَانُ الْقِمَّة | done |
+| word_map_island | Reem | clear and cheerful, saying one word to teach a child | جَزِيرَةُ الْمَنَارَة | done |
+| word_map_mountain | Reem | clear and cheerful, saying one word to teach a child | جَبَلُ الْمَرْصَد | done |
+| word_map_tiny | Reem | clear and cheerful, saying one word to teach a child | عَالَمُ النَّمْل | done |
+| word_map_town | Reem | clear and cheerful, saying one word to teach a child | بَلْدَةُ السُّوق | done |
+| word_map_ramadan | Reem | clear and cheerful, saying one word to teach a child | لَيْلَةُ رَمَضَان | done |
+| word_map_snow | Reem | clear and cheerful, saying one word to teach a child | يَوْمُ الثَّلْج | done |
+| word_waterfall | Reem | clear and cheerful, saying one word to teach a child | شَلَّال | done |
+| word_monkey | Reem | clear and cheerful, saying one word to teach a child | قِرْد | done |
+| word_fruit | Reem | clear and cheerful, saying one word to teach a child | ثَمَرَة | done |
 
 ## Recording verification
 

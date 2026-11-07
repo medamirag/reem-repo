@@ -1,4 +1,72 @@
 {
+  "word_owl": {
+    "text": "بُومَة",
+    "rooms": [
+      "OwlPerch"
+    ],
+    "audio": "res://assets/audio/words/word_owl.mp3",
+    "objects": [
+      "prop:Owl"
+    ]
+  },
+  "word_bat": {
+    "text": "خُفَّاش",
+    "rooms": [
+      "OwlPerch"
+    ],
+    "audio": "res://assets/audio/words/word_bat.mp3",
+    "objects": [
+      "prop:Bat"
+    ]
+  },
+  "word_telescope": {
+    "text": "مِقْرَاب",
+    "rooms": [
+      "ObservatoryDome"
+    ],
+    "audio": "res://assets/audio/words/word_telescope.mp3",
+    "objects": []
+  },
+  "word_mountain": {
+    "text": "جَبَل",
+    "rooms": [
+      "OwlPerch",
+      "StarRidge"
+    ],
+    "audio": "res://assets/audio/words/word_mountain.mp3",
+    "objects": []
+  },
+  "word_moon": {
+    "text": "قَمَر",
+    "rooms": [
+      "OwlPerch",
+      "StarRidge"
+    ],
+    "audio": "res://assets/audio/words/word_moon.mp3",
+    "objects": []
+  },
+  "word_astronomer": {
+    "text": "فَلَكِيّ",
+    "rooms": [
+      "ObservatoryDome"
+    ],
+    "audio": "res://assets/audio/words/word_astronomer.mp3",
+    "objects": [
+      "prop:Astronomer"
+    ]
+  },
+  "word_map_observatory_dome": {
+    "text": "قُبَّةُ الْمَرْصَد",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_observatory_dome.mp3",
+    "objects": []
+  },
+  "word_map_star_ridge": {
+    "text": "دَرْبُ النُّجُوم",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_star_ridge.mp3",
+    "objects": []
+  },
   "word_ant": {
     "text": "نَمْلَة",
     "rooms": [
@@ -127,7 +195,8 @@
     "text": "مَأْوَى",
     "rooms": [
       "SnowEdge",
-      "SledHill"
+      "SledHill",
+      "StarRidge"
     ],
     "audio": "res://assets/audio/words/word_shelter.mp3",
     "objects": [
@@ -408,7 +477,10 @@
   "word_star": {
     "text": "نَجْم",
     "rooms": [
-      "HilltopFestival"
+      "HilltopFestival",
+      "OwlPerch",
+      "ObservatoryDome",
+      "StarRidge"
     ],
     "audio": "res://assets/audio/words/word_star.mp3",
     "objects": []
@@ -908,7 +980,8 @@
       "Yard",
       "RamadanLane",
       "IftarShelter",
-      "AntCity"
+      "AntCity",
+      "ObservatoryDome"
     ],
     "audio": "res://assets/audio/words/word_window.mp3",
     "objects": []
@@ -919,7 +992,8 @@
       "GrandpaRoom",
       "Yard",
       "RamadanLane",
-      "MarketGate"
+      "MarketGate",
+      "ObservatoryDome"
     ],
     "audio": "res://assets/audio/words/word_door.mp3",
     "objects": []
@@ -945,7 +1019,8 @@
     "rooms": [
       "GrandpaRoom",
       "HilltopFestival",
-      "IftarShelter"
+      "IftarShelter",
+      "ObservatoryDome"
     ],
     "audio": "res://assets/audio/words/word_table.mp3",
     "objects": [
@@ -958,7 +1033,8 @@
       "GrandpaRoom",
       "HilltopFestival",
       "RamadanLane",
-      "IftarShelter"
+      "IftarShelter",
+      "ObservatoryDome"
     ],
     "audio": "res://assets/audio/words/word_jug.mp3",
     "objects": [
@@ -1090,7 +1166,8 @@
       "WaterfallPath",
       "SnowEdge",
       "SnowTracks",
-      "SledHill"
+      "SledHill",
+      "OwlPerch"
     ],
     "audio": "res://assets/audio/words/word_tree.mp3",
     "objects": []
@@ -1153,7 +1230,9 @@
       "SledHill",
       "GiantBloom",
       "DewBank",
-      "AntCity"
+      "AntCity",
+      "OwlPerch",
+      "StarRidge"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -1233,7 +1312,8 @@
       "Stream",
       "PineFork",
       "HillSlope",
-      "NarrowPass"
+      "NarrowPass",
+      "OwlPerch"
     ],
     "audio": "res://assets/audio/words/word_cloud.mp3",
     "objects": []
@@ -1269,7 +1349,8 @@
       "SnowEdge",
       "SledHill",
       "GiantBloom",
-      "DewBank"
+      "DewBank",
+      "OwlPerch"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []
@@ -1348,7 +1429,9 @@
       "RamadanLane",
       "HedgehogCourt",
       "IftarShelter",
-      "AntCity"
+      "AntCity",
+      "ObservatoryDome",
+      "StarRidge"
     ],
     "audio": "res://assets/audio/words/word_lantern.mp3",
     "objects": [

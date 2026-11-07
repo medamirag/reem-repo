@@ -33,7 +33,7 @@
 - **Snow Trail:** Section 24 adds SnowEdge, SnowTracks and SledHill. The HillSlope snow arrow opens with pack 4. Help the goldfinch, compare three kinds of prints, ride a wooden board down the trail and bring the deer to shelter. Eight art files, seventeen dialogue recordings and eight words are installed. Both maps include the rooms.
 - **Snow Trail checks:** Content, import, startup, snow, green, sand, mixed and words passed. The first snow test caught a landing slightly above the walking line. The sled now leaves Reem on the normal path and the rerun passed.
 - **Ant Kingdom:** Section 25 adds GiantBloom, DewBank and AntCity via the giant flower at MeadowFork. Reem shrinks, helps the worker with a seed, aligns a leaf bridge, sorts seeds by size and shelters from rain. Nine art files, 21 dialogue recordings and nine word recordings are installed. Both maps include all three rooms.
-- **Half-finished:** Star Observatory chapter 26 and art/dialogue queue rows are written. Owl Perch and Star Ridge backgrounds and the three character reference sheets are installed. The Dome background had a connection failure on its first attempt. Its second attempt and the three transparent sprites were requested. Next finish image generation and validation, then add word areas, record the saved voices, build the three Popochiu rooms, and run checks. Ant Kingdom was pushed as 9e521c3.
+- **Half-finished:** Star Observatory art is complete (nine files), and eight new vocabulary entries and room word areas are queued. The next step is to finish and verify the 18 dialogue and eight vocabulary recordings, then build OwlPerch, ObservatoryDome and StarRidge and run the Godot checks. Ant Kingdom was pushed as 9e521c3.
 - **Next:** Finish Star Observatory, then review the remaining roadmap systems and events. Add the new rooms to the illustrated map and notebook.
 - **How to play Ant Kingdom:** After the festival, click the giant flower in the meadow. Help the worker and click the seed. At the dew drop, click the leaf to straighten it, then talk to the beetle. In the colony, talk to the queen, click the seeds from smallest to largest, then click the tunnel.
 - **How to play Snow Trail:** After the festival, revisit Hill slope and take the snow arrow. Talk to the goldfinch and offer the bundle, then click the shelter. Talk to white-coated Arnoob and click the three split prints from left to right. At the next room click the wooden board, then click the deer when Reem reaches the bottom.
@@ -51,6 +51,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Star Observatory art and words:** The Dome background passed on the retry after a connection failure. Reem will narrate the new characters using her saved voice. Existing words cover the path, trees, rocks, stars, shelter and familiar furnishings. New words include the telescope, owl and bat.
 
 - **Ant Kingdom:** Reem's smaller scale makes the surroundings feel oversized. The worker and queen use dorsal sprites so all six legs are visible. Their first bases had occluded limbs. The empty meadow background was regenerated after the first take included a painted seed and ant. The rain stays outside the walking route and has no timer. Duration and listening comparison remain open.
 

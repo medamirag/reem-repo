@@ -1,0 +1,145 @@
+[gd_scene load_steps=15 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/gull_shore/room_gull_shore.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg17_gull_shore.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/gull_turtle/gull_turtle_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://game/scripts/gull_island/paper.svg" id="10"]
+[ext_resource type="Texture2D" path="res://game/scripts/gull_island/bottle.svg" id="11"]
+[ext_resource type="Texture2D" path="res://game/scripts/gull_island/tin.svg" id="12"]
+[ext_resource type="Resource" path="res://game/rooms/gull_shore/room_gull_shore.tres" id="13"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomGullShore" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "GullShore"
+state = ExtResource("13")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "MeadowLake": Vector2(0.08, 0.82), "TideCave": Vector2(0.92, 0.82)}
+ambience_cue = "amb_meadow"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Turtle" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Turtle"
+position = Vector2(595, 823)
+interaction_polygon = PackedVector2Array(-175, -190, 175, -190, 175, 0, -175, 0)
+walk_to_point = Vector2(0, 63)
+
+[node name="InteractionPolygon" parent="Props/Turtle" index="2"]
+polygon = PackedVector2Array(-175, -190, 175, -190, 175, 0, -175, 0)
+
+[node name="Sprite2D" parent="Props/Turtle" index="0"]
+position = Vector2(0, -95.0)
+texture = ExtResource("9")
+scale = Vector2(0.21, 0.21)
+
+[node name="TideRock" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "TideRock"
+position = Vector2(878, 565)
+interaction_polygon = PackedVector2Array(-83, -106, 83, -106, 83, 0, -83, 0)
+walk_to_point = Vector2(0, 321)
+
+[node name="InteractionPolygon" parent="Props/TideRock" index="2"]
+polygon = PackedVector2Array(-83, -106, 83, -106, 83, 0, -83, 0)
+
+[node name="ReturnBoat" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "ReturnBoat"
+position = Vector2(550, 618)
+interaction_polygon = PackedVector2Array(-143, -171, 143, -171, 143, 0, -143, 0)
+walk_to_point = Vector2(0, 268)
+
+[node name="InteractionPolygon" parent="Props/ReturnBoat" index="2"]
+polygon = PackedVector2Array(-143, -171, 143, -171, 143, 0, -143, 0)
+
+[node name="Paper" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Paper"
+position = Vector2(788, 866)
+interaction_polygon = PackedVector2Array(-48, -78, 48, -78, 48, 0, -48, 0)
+walk_to_point = Vector2(0, 20)
+
+[node name="InteractionPolygon" parent="Props/Paper" index="2"]
+polygon = PackedVector2Array(-48, -78, 48, -78, 48, 0, -48, 0)
+
+[node name="Sprite2D" parent="Props/Paper" index="0"]
+position = Vector2(0, -39.0)
+texture = ExtResource("10")
+scale = Vector2(0.93, 0.93)
+
+[node name="Bottle" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Bottle"
+position = Vector2(1018, 866)
+interaction_polygon = PackedVector2Array(-48, -78, 48, -78, 48, 0, -48, 0)
+walk_to_point = Vector2(0, 20)
+
+[node name="InteractionPolygon" parent="Props/Bottle" index="2"]
+polygon = PackedVector2Array(-48, -78, 48, -78, 48, 0, -48, 0)
+
+[node name="Sprite2D" parent="Props/Bottle" index="0"]
+position = Vector2(0, -39.0)
+texture = ExtResource("11")
+scale = Vector2(0.93, 0.93)
+
+[node name="Tin" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Tin"
+position = Vector2(1248, 866)
+interaction_polygon = PackedVector2Array(-48, -78, 48, -78, 48, 0, -48, 0)
+walk_to_point = Vector2(0, 20)
+
+[node name="InteractionPolygon" parent="Props/Tin" index="2"]
+polygon = PackedVector2Array(-48, -78, 48, -78, 48, 0, -48, 0)
+
+[node name="Sprite2D" parent="Props/Tin" index="0"]
+position = Vector2(0, -39.0)
+texture = ExtResource("12")
+scale = Vector2(0.93, 0.93)
+
+[node name="HighWater" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(1250, 475, 1420, 450, 1610, 423, 1920, 458, 1920, 540, 1730, 512, 1580, 541, 1390, 561, 1285, 554)
+color = Color(0.19, 0.68, 0.8, 0.65)

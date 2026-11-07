@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/scripts/gull_island/gull_room_state.gd" id="1"]
+[resource]
+resource_name = "GullShore"
+script = ExtResource("1")
+script_name = "GullShore"
+scene = "res://game/rooms/gull_shore/room_gull_shore.tscn"

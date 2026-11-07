@@ -154,6 +154,26 @@
       "reem_festival_arrive",
       "reem_festival_light",
       "reem_festival_light"
+    ],
+    "gull_tide": [
+      "reem_gull_shore",
+      "reem_gull_high",
+      "reem_gull_low"
+    ],
+    "gull_cleanup": [
+      "reem_gull_turtle",
+      "reem_gull_leave",
+      "reem_gull_collect"
+    ],
+    "gull_pattern": [
+      "reem_gull_cave",
+      "reem_gull_retry",
+      "reem_gull_pattern"
+    ],
+    "gull_lamp": [
+      "reem_gull_storm",
+      "reem_gull_lens_hint",
+      "reem_gull_light"
     ]
   },
   "map": [
@@ -284,6 +304,30 @@
         0.81,
         0.95
       ]
+    },
+    {
+      "room": "GullShore",
+      "label": "جَزِيرَةُ الْمَنَارَة",
+      "at": [
+        0.93,
+        0.61
+      ]
+    },
+    {
+      "room": "TideCave",
+      "label": "كَهْفُ الْمَدّ",
+      "at": [
+        0.91,
+        0.74
+      ]
+    },
+    {
+      "room": "GullLighthouse",
+      "label": "مَنَارَةُ الْجَزِيرَة",
+      "at": [
+        0.95,
+        0.88
+      ]
     }
   ],
   "edges": [
@@ -362,6 +406,18 @@
     [
       14,
       15
+    ],
+    [
+      10,
+      16
+    ],
+    [
+      16,
+      17
+    ],
+    [
+      17,
+      18
     ]
   ],
   "cards": [
@@ -430,6 +486,24 @@
       "image": "res://assets/art/characters/qarqoor/qarqoor_base.png",
       "name_line": "reem_waterfall_name",
       "fact_line": "reem_waterfall_fact"
+    },
+    {
+      "id": "gull_turtle",
+      "image": "res://assets/art/characters/gull_turtle/gull_turtle_base.png",
+      "name_line": "reem_gull_turtle_name",
+      "fact_line": "reem_gull_turtle_fact"
+    },
+    {
+      "id": "gull_octopus",
+      "image": "res://assets/art/characters/gull_octopus/gull_octopus_base.png",
+      "name_line": "reem_gull_octopus_name",
+      "fact_line": "reem_gull_octopus_fact"
+    },
+    {
+      "id": "gull_bird",
+      "image": "res://assets/art/characters/gull_bird/gull_bird_base.png",
+      "name_line": "reem_gull_bird_name",
+      "fact_line": "reem_gull_bird_fact"
     }
   ]
 }

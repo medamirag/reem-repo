@@ -169,6 +169,11 @@ func _run() -> void:
 		_log("DONE festival")
 		get_tree().quit()
 		return
+	if _path == "gull":
+		await _gull_path()
+		_log("DONE gull")
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -245,6 +250,60 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _gull_path() -> void:
+	await Globals.new_game()
+	Globals.unlocked_packs["1"] = true
+	Globals.lake["reserve"] = true
+	R.goto_room("MeadowLake")
+	await _wait_room("MeadowLake")
+	_answers = [true]
+	await _click("WoodenBoat")
+	await _wait_room("GullShore")
+	var previous_wilts := Globals.wilts
+	_expect(not R.current.is_exit_open("ExitRight"), "high tide blocks the cave route")
+	_answers = [false]
+	await _click("Turtle")
+	_expect(Globals.wilts == previous_wilts + 1, "leaving litter wilts")
+	_answers = [true]
+	await _click("Turtle")
+	for item in ["Paper", "Bottle", "Tin"]:
+		await _click(item)
+	_expect(Globals.friend_cards.has("gull_turtle") and Globals.wilts == previous_wilts, "clean beach earns card and repairs wilt")
+	await _click("TideRock")
+	_expect(R.current.is_exit_open("ExitRight"), "low tide opens the dry cave trail")
+	Globals.reset()
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("continue from shore", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("GullShore")
+	_expect(Globals.gull.get("clean") and Globals.gull.get("low"), "shore cleanup and tide survive continue")
+	await _click("ExitRight")
+	await _wait_room("TideCave")
+	await _click("Octopus")
+	await _click("Triangle")
+	_expect(Globals.gull.get("step") == 0, "wrong shape restarts without penalty")
+	for shape in ["Diamond", "Circle", "Triangle"]:
+		await _click(shape)
+	_expect(Globals.gull.get("lens") and Globals.friend_cards.has("gull_octopus"), "matching pattern earns lens")
+	await _click("ExitRight")
+	await _wait_room("GullLighthouse")
+	_expect(Globals.gull.get("storm"), "storm delays return boat")
+	_answers = [false]
+	await _click("Gull")
+	_answers = [true]
+	await _click("Gull")
+	await _click("IslandFox")
+	await _click("Lamp")
+	_expect(Globals.gull.get("lit") and not Globals.gull.get("storm") and Globals.friend_cards.has("gull_bird"), "lighthouse restores return route")
+	_expect(Globals.wilts == previous_wilts, "sharing shells repairs wilt")
+	await _click("ExitLeft")
+	await _wait_room("TideCave")
+	await _click("ExitLeft")
+	await _wait_room("GullShore")
+	await _click("ReturnBoat")
+	await _wait_room("MeadowLake")
 
 
 func _waterfall_path(wrong: bool) -> void:

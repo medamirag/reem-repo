@@ -1,4 +1,154 @@
 {
+ "reem_gull_board": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "الْقَارِبُ مُسْتَعِدٌّ لِيَأْخُذَنِي إِلَى جَزِيرَةِ النَّوَارِسِ.",
+  "audio": "res://assets/audio/lines/reem_gull_board.mp3"
+ },
+ "reem_gull_shore": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَصَلْنَا إِلَى الشَّاطِئِ. مَاءُ الْبَحْرِ يَعْلُو ثُمَّ يَنْخَفِضُ.",
+  "audio": "res://assets/audio/lines/reem_gull_shore.mp3"
+ },
+ "reem_gull_turtle": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "السُّلَحْفَاةُ تَرَى قِطَعًا مِنَ النُّفَايَاتِ قُرْبَ الْمَاءِ. هَلْ أَجْمَعُهَا؟",
+  "audio": "res://assets/audio/lines/reem_gull_turtle.mp3"
+ },
+ "reem_gull_leave": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "بَقِيَتِ النُّفَايَاتُ قُرْبَ الْمَاءِ. يُمْكِنُنِي أَنْ أَعُودَ وَأَجْمَعَهَا.",
+  "audio": "res://assets/audio/lines/reem_gull_leave.mp3"
+ },
+ "reem_gull_collect": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأَضَعُ النُّفَايَاتِ فِي السَّلَّةِ.",
+  "audio": "res://assets/audio/lines/reem_gull_collect.mp3"
+ },
+ "reem_gull_clean": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "أَصْبَحَ الشَّاطِئُ نَظِيفًا، وَالسُّلَحْفَاةُ سَعِيدَةٌ.",
+  "audio": "res://assets/audio/lines/reem_gull_clean.mp3"
+ },
+ "reem_gull_low": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "انْخَفَضَ الْمَاءُ، وَظَهَرَ الدَّرْبُ إِلَى الْكَهْفِ.",
+  "audio": "res://assets/audio/lines/reem_gull_low.mp3"
+ },
+ "reem_gull_high": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "ارْتَفَعَ الْمَاءُ وَغَطَّى الدَّرْبَ. سَنَنْتَظِرُ عَلَى الشَّاطِئِ.",
+  "audio": "res://assets/audio/lines/reem_gull_high.mp3"
+ },
+ "reem_gull_turtle_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سُلَحْفَاةُ الْبَحْرِ",
+  "audio": "res://assets/audio/lines/reem_gull_turtle_name.mp3"
+ },
+ "reem_gull_turtle_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَسْتَخْدِمُ السُّلَحْفَاةُ الْبَحْرِيَّةُ زَعَانِفَهَا لِلسِّبَاحَةِ.",
+  "audio": "res://assets/audio/lines/reem_gull_turtle_fact.mp3"
+ },
+ "reem_gull_cave": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَبْدُو الْبِرَكُ الصَّغِيرَةُ بِلَوْنِ السَّمَاءِ وَالصَّخْرِ وَالرَّمْلِ.",
+  "audio": "res://assets/audio/lines/reem_gull_cave.mp3"
+ },
+ "reem_gull_pattern": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يُرِينِي الْأُخْطُبُوطُ الْأَشْكَالَ. سَأَتَّبِعُ تَرْتِيبَهَا.",
+  "audio": "res://assets/audio/lines/reem_gull_pattern.mp3"
+ },
+ "reem_gull_retry": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "لِنَرَ الْأَشْكَالَ مَرَّةً أُخْرَى.",
+  "audio": "res://assets/audio/lines/reem_gull_retry.mp3"
+ },
+ "reem_gull_lens": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذِهِ عَدَسَةُ الْمَنَارَةِ. شُكْرًا لَكَ يَا أُخْطُبُوطُ!",
+  "audio": "res://assets/audio/lines/reem_gull_lens.mp3"
+ },
+ "reem_gull_octopus_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "أُخْطُبُوطٌ",
+  "audio": "res://assets/audio/lines/reem_gull_octopus_name.mp3"
+ },
+ "reem_gull_octopus_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِلْأُخْطُبُوطِ ثَمَانِيَةُ أَذْرُعٍ، وَيَسْتَطِيعُ أَنْ يُغَيِّرَ لَوْنَهُ.",
+  "audio": "res://assets/audio/lines/reem_gull_octopus_fact.mp3"
+ },
+ "reem_gull_storm": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "هَبَّتْ رِيحٌ خَفِيفَةٌ. سَيَنْتَظِرُ الْقَارِبُ حَتَّى تَضِيءَ الْمَنَارَةُ.",
+  "audio": "res://assets/audio/lines/reem_gull_storm.mp3"
+ },
+ "reem_gull_shells": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يُرِيدُ النَّوْرَسُ أَنْ يَأْخُذَ كُلَّ الْأَصْدَافِ. لِنَتْرُكْ بَعْضَهَا لِلْبَحْرِ.",
+  "audio": "res://assets/audio/lines/reem_gull_shells.mp3"
+ },
+ "reem_gull_pile": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "تَدَحْرَجَتِ الْأَصْدَافُ مِنَ الْكَوْمَةِ. سَنُعِيدُ بَعْضَهَا إِلَى الشَّاطِئِ.",
+  "audio": "res://assets/audio/lines/reem_gull_pile.mp3"
+ },
+ "reem_gull_share": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَرَكْنَا بَعْضَ الْأَصْدَافِ عَلَى الشَّاطِئِ، وَفَرِحَ النَّوْرَسُ بِصَدَفَةٍ وَاحِدَةٍ.",
+  "audio": "res://assets/audio/lines/reem_gull_share.mp3"
+ },
+ "fox_gull_trade": {
+  "speaker": "Thaaloob",
+  "tone": "playful",
+  "text": "مَا أَلْمَعَ هَذِهِ الصَّدَفَةَ! كُنْتُ سَأُبَادِلُكِ بِهَا، وَلَكِنِّي سَأَتْرُكُهَا هُنَا.",
+  "audio": "res://assets/audio/lines/fox_gull_trade.mp3"
+ },
+ "reem_gull_light": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "رَكَّبْتُ الْعَدَسَةَ فَأَضَاءَتِ الْمَنَارَةُ. يَسْتَطِيعُ الْقَارِبُ أَنْ يَرَى الطَّرِيقَ.",
+  "audio": "res://assets/audio/lines/reem_gull_light.mp3"
+ },
+ "reem_gull_lens_hint": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "نَحْتَاجُ إِلَى عَدَسَةٍ لِمِصْبَاحِ الْمَنَارَةِ. سَأَبْحَثُ فِي كَهْفِ الْمَدِّ.",
+  "audio": "res://assets/audio/lines/reem_gull_lens_hint.mp3"
+ },
+ "reem_gull_bird_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "نَوْرَسٌ",
+  "audio": "res://assets/audio/lines/reem_gull_bird_name.mp3"
+ },
+ "reem_gull_bird_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِلنَّوْرَسِ أَقْدَامٌ مُكْفَّفَةٌ تُسَاعِدُهُ عَلَى السِّبَاحَةِ.",
+  "audio": "res://assets/audio/lines/reem_gull_bird_fact.mp3"
+ },
  "reem_festival_arrive": {
   "speaker": "Reem",
   "tone": "warm",

@@ -237,13 +237,14 @@
   },
   {
     "id": "island",
-    "room": "",
+    "room": "GullShore",
     "position": [
-      0.92,
-      0.78
+      0.851,
+      0.824
     ],
     "neighbors": [
-      "lake"
+      "lake",
+      "tide_cave"
     ],
     "pack": 1,
     "name": "word_map_island"
@@ -312,5 +313,32 @@
     ],
     "pack": 4,
     "name": "word_map_snow"
+  },
+  {
+    "id": "tide_cave",
+    "room": "TideCave",
+    "position": [
+      0.904,
+      0.86
+    ],
+    "neighbors": [
+      "island",
+      "gull_lighthouse"
+    ],
+    "pack": 1,
+    "name": "word_map_tide_cave"
+  },
+  {
+    "id": "gull_lighthouse",
+    "room": "GullLighthouse",
+    "position": [
+      0.921,
+      0.741
+    ],
+    "neighbors": [
+      "tide_cave"
+    ],
+    "pack": 1,
+    "name": "word_map_gull_lighthouse"
   }
 ]

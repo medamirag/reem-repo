@@ -518,3 +518,15 @@ HilltopFestival opens from NarrowPass. The fairground has a dry foreground path,
 Show only the animals whose help or repair is recorded. Use the earned notebook cards, Thaaloob's rescue flag, and Shahd's flower flag. Display nuts, leaves, the bell, silk, the reed flute, coloured feathers and the feather from Stream only when their reward flags are present. Dubb brings lanterns and carries Grandpa in as a surprise. Qarqoor raises the high lanterns when present. Grandpa recognises the good deeds and repaired mistakes in short conditional lines. He invites another route based on a friend Reem did not meet.
 
 The large lantern and string lights glow when Reem lights them. The ending shows the final heart tree, including wilts that were left unresolved. Keep the last valley save so Continue returns to the finished festival, and let the child revisit stations to repair mistakes. Unlock the six pack map regions after the ceremony. Their individual entrances and stations open as their packs are built.
+
+## 21. Gull island (pack 1)
+
+After the festival, the talking boat at MeadowLake offers a trip across the water. Accept from the dock. The pack has three linked stations: GullShore, TideCave and GullLighthouse. Add all three to the illustrated map. The return boat stays reachable in every settled state.
+
+At GullShore, the old turtle explains tide marks and asks Reem to put three pieces of litter in the basket. Reem can pick up the litter or leave it. Leaving it wilts a branch and the tide still leaves the litter reachable. Collecting all three repairs the choice. The tide rock shows high or low tide. Reem can click it to wait safely for the next tide without a timer. Low tide exposes the cave route. Tapping the tied boat returns to MeadowLake unless the small storm is still active.
+
+At TideCave, the shy octopus shows three shapes beside coloured pools. Click the matching shapes in the order the octopus shows. Wrong shapes restart the attempt without a penalty. Completing the pattern earns its card and a polished lens. Both the shore and lighthouse routes remain reachable after entering the cave, regardless of tide.
+
+At GullLighthouse, the gull wants to keep all three shells. Reem can let him pile them up or leave some on the beach. The wrong choice visibly unbalances the pile and wilts once. Revisit the choice and share to repair. The storm is gentle and quiet. Fit the polished lens in the lantern to light the lighthouse. The boat returns when the light is on. The turtle, octopus and gull get earned cards. Use Reem narration pending verified saved voices. Use Thaaloob's saved voice for a short gull-side story in which he wants to trade a shiny shell and learns to leave it at the shore.
+
+Save tide, litter, pending mistakes, cave pattern, lens, lighthouse, storm and cards. The map shows the unlocked pack only after the festival. Hold on the station objects to hear their words without advancing puzzles.

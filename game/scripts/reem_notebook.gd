@@ -99,6 +99,12 @@ func show_page(page: String) -> void:
 ## Contexts follow puzzle progress rather than visit count, so hints remain useful on returns.
 func hint_context() -> String:
 	match R.current.script_name:
+		"GullShore":
+			return "gull_tide" if Globals.gull.get("clean", false) else "gull_cleanup"
+		"TideCave":
+			return "forward" if Globals.gull.get("lens", false) else "gull_pattern"
+		"GullLighthouse":
+			return "forward" if Globals.gull.get("lit", false) else "gull_lamp"
 		"HilltopFestival":
 			return "forward" if Globals.festival.get("completed", false) else "festival_light"
 		"NarrowPass":

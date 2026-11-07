@@ -104,6 +104,19 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_tail | Reem | clear and cheerful, saying one word to teach a child | ذَيْل | done |
 | word_star | Reem | clear and cheerful, saying one word to teach a child | نَجْم | done |
 | word_tent | Reem | clear and cheerful, saying one word to teach a child | خَيْمَة | done |
+| word_beach | Reem | clear and cheerful, saying one word to teach a child | شَاطِئ | done |
+| word_sea | Reem | clear and cheerful, saying one word to teach a child | بَحْر | done |
+| word_turtle | Reem | clear and cheerful, saying one word to teach a child | سُلَحْفَاة | done |
+| word_octopus | Reem | clear and cheerful, saying one word to teach a child | أُخْطُبُوط | done |
+| word_gull | Reem | clear and cheerful, saying one word to teach a child | نَوْرَس | done |
+| word_shell | Reem | clear and cheerful, saying one word to teach a child | صَدَفَة | done |
+| word_pool | Reem | clear and cheerful, saying one word to teach a child | بِرْكَة | done |
+| word_lighthouse | Reem | clear and cheerful, saying one word to teach a child | مَنَارَة | done |
+| word_bottle | Reem | clear and cheerful, saying one word to teach a child | زُجَاجَة | done |
+| word_paper | Reem | clear and cheerful, saying one word to teach a child | قِطْعَةُ وَرَق | done |
+| word_tin | Reem | clear and cheerful, saying one word to teach a child | عُلْبَة | done |
+| word_map_tide_cave | Reem | clear and cheerful, saying one word to teach a child | كَهْفُ الْمَدّ | done |
+| word_map_gull_lighthouse | Reem | clear and cheerful, saying one word to teach a child | مَنَارَةُ الْجَزِيرَة | done |
 
 ## Recording verification
 

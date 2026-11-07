@@ -1,4 +1,120 @@
 {
+  "word_beach": {
+    "text": "شَاطِئ",
+    "rooms": [
+      "GullShore"
+    ],
+    "audio": "res://assets/audio/words/word_beach.mp3",
+    "objects": []
+  },
+  "word_sea": {
+    "text": "بَحْر",
+    "rooms": [
+      "GullShore",
+      "TideCave",
+      "GullLighthouse"
+    ],
+    "audio": "res://assets/audio/words/word_sea.mp3",
+    "objects": []
+  },
+  "word_turtle": {
+    "text": "سُلَحْفَاة",
+    "rooms": [
+      "GullShore"
+    ],
+    "audio": "res://assets/audio/words/word_turtle.mp3",
+    "objects": [
+      "prop:Turtle"
+    ]
+  },
+  "word_octopus": {
+    "text": "أُخْطُبُوط",
+    "rooms": [
+      "TideCave"
+    ],
+    "audio": "res://assets/audio/words/word_octopus.mp3",
+    "objects": [
+      "prop:Octopus"
+    ]
+  },
+  "word_gull": {
+    "text": "نَوْرَس",
+    "rooms": [
+      "GullLighthouse"
+    ],
+    "audio": "res://assets/audio/words/word_gull.mp3",
+    "objects": [
+      "prop:Gull"
+    ]
+  },
+  "word_shell": {
+    "text": "صَدَفَة",
+    "rooms": [
+      "TideCave",
+      "GullLighthouse"
+    ],
+    "audio": "res://assets/audio/words/word_shell.mp3",
+    "objects": []
+  },
+  "word_pool": {
+    "text": "بِرْكَة",
+    "rooms": [
+      "GullShore",
+      "TideCave"
+    ],
+    "audio": "res://assets/audio/words/word_pool.mp3",
+    "objects": []
+  },
+  "word_lighthouse": {
+    "text": "مَنَارَة",
+    "rooms": [
+      "GullLighthouse"
+    ],
+    "audio": "res://assets/audio/words/word_lighthouse.mp3",
+    "objects": []
+  },
+  "word_bottle": {
+    "text": "زُجَاجَة",
+    "rooms": [
+      "GullShore"
+    ],
+    "audio": "res://assets/audio/words/word_bottle.mp3",
+    "objects": [
+      "prop:Bottle"
+    ]
+  },
+  "word_paper": {
+    "text": "قِطْعَةُ وَرَق",
+    "rooms": [
+      "GullShore"
+    ],
+    "audio": "res://assets/audio/words/word_paper.mp3",
+    "objects": [
+      "prop:Paper"
+    ]
+  },
+  "word_tin": {
+    "text": "عُلْبَة",
+    "rooms": [
+      "GullShore"
+    ],
+    "audio": "res://assets/audio/words/word_tin.mp3",
+    "objects": [
+      "prop:Tin"
+    ]
+  },
+  "word_map_tide_cave": {
+    "text": "كَهْفُ الْمَدّ",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_tide_cave.mp3",
+    "objects": []
+  },
+  "word_map_gull_lighthouse": {
+    "text": "مَنَارَةُ الْجَزِيرَة",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_gull_lighthouse.mp3",
+    "objects": []
+  },
   "word_star": {
     "text": "نَجْم",
     "rooms": [
@@ -256,17 +372,20 @@
   "word_boat": {
     "text": "قَارِب",
     "rooms": [
-      "MeadowLake"
+      "MeadowLake",
+      "GullShore"
     ],
     "audio": "res://assets/audio/words/word_boat.mp3",
     "objects": [
-      "prop:WoodenBoat"
+      "prop:WoodenBoat",
+      "prop:ReturnBoat"
     ]
   },
   "word_dock": {
     "text": "رَصِيف",
     "rooms": [
-      "MeadowLake"
+      "MeadowLake",
+      "GullShore"
     ],
     "audio": "res://assets/audio/words/word_dock.mp3",
     "objects": []
@@ -373,7 +492,8 @@
       "Stream",
       "HoneyOrchard",
       "HillSlope",
-      "WaterfallPath"
+      "WaterfallPath",
+      "GullShore"
     ],
     "audio": "res://assets/audio/words/word_sun.mp3",
     "objects": []
@@ -406,7 +526,8 @@
     "text": "كَهْف",
     "rooms": [
       "PineFork",
-      "RockCave"
+      "RockCave",
+      "GullShore"
     ],
     "audio": "res://assets/audio/words/word_cave.mp3",
     "objects": []
@@ -687,7 +808,10 @@
       "HillSlope",
       "WaterfallPath",
       "NarrowPass",
-      "HilltopFestival"
+      "HilltopFestival",
+      "GullShore",
+      "TideCave",
+      "GullLighthouse"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -704,7 +828,8 @@
       "PineFork",
       "MeadowLake",
       "HillSlope",
-      "HilltopFestival"
+      "HilltopFestival",
+      "GullShore"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
@@ -789,7 +914,10 @@
       "RockCave",
       "MeadowLake",
       "WaterfallPath",
-      "NarrowPass"
+      "NarrowPass",
+      "GullShore",
+      "TideCave",
+      "GullLighthouse"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []
@@ -826,13 +954,15 @@
       "FoxRock",
       "Stream",
       "PineFork",
-      "NarrowPass"
+      "NarrowPass",
+      "GullLighthouse"
     ],
     "audio": "res://assets/audio/words/word_fox.mp3",
     "objects": [
       "character:Thaaloob",
       "prop:StreamFox",
-      "prop:Thaaloob"
+      "prop:Thaaloob",
+      "prop:IslandFox"
     ]
   },
   "word_bee": {
@@ -852,13 +982,15 @@
     "rooms": [
       "inventory",
       "HoneyOrchard",
-      "HilltopFestival"
+      "HilltopFestival",
+      "GullLighthouse"
     ],
     "audio": "res://assets/audio/words/word_lantern.mp3",
     "objects": [
       "item:Lantern",
       "prop:LostLanterns",
-      "prop:BigLantern"
+      "prop:BigLantern",
+      "prop:Lamp"
     ]
   },
   "word_notebook": {

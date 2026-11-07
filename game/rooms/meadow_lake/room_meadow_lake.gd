@@ -76,10 +76,17 @@ func _help_frog() -> void:
 		await Lines.say("reem_lake_keep")
 
 func _visit_boat() -> void:
-	await Lines.say("reem_lake_boat")
 	if not C.player.has_inventory_item("HoneyJar") and not Globals.lake.get("reserve", false) and not Globals.lake.get("flute", false):
+		await Lines.say("reem_lake_boat")
 		Globals.lake["reserve"] = true
 		await Lines.say("reem_lake_reserve")
+		return
+	if Globals.unlocked_packs.get("1", false) and R.rooms_states.has("GullShore"):
+		await Lines.say("reem_gull_board")
+		if await Choices.ask_two(Globals.notebook.labels["gull_board"], Globals.notebook.labels["gull_stay"]):
+			await leave_through(get_prop("WoodenBoat"), "GullShore")
+	else:
+		await Lines.say("reem_lake_boat")
 
 func _follow_print(index: int) -> void:
 	if index != Globals.lake.get("tracks", 0) + 1:

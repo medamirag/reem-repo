@@ -21,6 +21,9 @@ const PRHillSlope := preload("res://game/rooms/hill_slope/room_hill_slope.gd")
 const PRWaterfallPath := preload("res://game/rooms/waterfall_path/room_waterfall_path.gd")
 const PRNarrowPass := preload("res://game/rooms/narrow_pass/room_narrow_pass.gd")
 const PRHilltopFestival := preload("res://game/rooms/hilltop_festival/room_hilltop_festival.gd")
+const PRGullShore := preload("res://game/rooms/gull_shore/room_gull_shore.gd")
+const PRTideCave := preload("res://game/rooms/tide_cave/room_tide_cave.gd")
+const PRGullLighthouse := preload("res://game/rooms/gull_lighthouse/room_gull_lighthouse.gd")
 # ---- classes
 
 # nodes ----
@@ -43,6 +46,9 @@ var HillSlope: PRHillSlope : get = get_HillSlope
 var WaterfallPath: PRWaterfallPath : get = get_WaterfallPath
 var NarrowPass: PRNarrowPass : get = get_NarrowPass
 var HilltopFestival: PRHilltopFestival : get = get_HilltopFestival
+var GullShore: PRGullShore : get = get_GullShore
+var TideCave: PRTideCave : get = get_TideCave
+var GullLighthouse: PRGullLighthouse : get = get_GullLighthouse
 # ---- nodes
 
 # functions ----
@@ -65,4 +71,7 @@ func get_HillSlope() -> PRHillSlope: return get_runtime_room("HillSlope")
 func get_WaterfallPath() -> PRWaterfallPath: return get_runtime_room("WaterfallPath")
 func get_NarrowPass() -> PRNarrowPass: return get_runtime_room("NarrowPass")
 func get_HilltopFestival() -> PRHilltopFestival: return get_runtime_room("HilltopFestival")
+func get_GullShore() -> PRGullShore: return get_runtime_room("GullShore")
+func get_TideCave() -> PRTideCave: return get_runtime_room("TideCave")
+func get_GullLighthouse() -> PRGullLighthouse: return get_runtime_room("GullLighthouse")
 # ---- functions

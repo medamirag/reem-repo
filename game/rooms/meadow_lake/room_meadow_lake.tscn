@@ -20,7 +20,7 @@ script = ExtResource("2")
 script_name = "MeadowLake"
 width = 1920
 height = 1080
-entry_points = {"": Vector2(0.08, 0.82), "PineFork": Vector2(0.08, 0.82), "HoneyOrchard": Vector2(0.92, 0.82)}
+entry_points = {"": Vector2(0.08, 0.82), "PineFork": Vector2(0.08, 0.82), "HoneyOrchard": Vector2(0.92, 0.82), "GullShore": Vector2(0.76, 0.82)}
 ambience_cue = "amb_meadow"
 
 [node name="Background" type="Sprite2D" parent="."]

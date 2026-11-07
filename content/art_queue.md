@@ -64,6 +64,15 @@ Originals in `assets/` are never edited: new images are new files with the names
 | bg16_hilltop_festival | `assets/art/backgrounds/bg16_hilltop_festival.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg16_hilltop_festival below | No lettering | done |
 | festival_big_lantern | `assets/art/items/festival_big_lantern.png` | `assets/art/backgrounds/bg1_room.png` | transparent | portrait | See festival_big_lantern below | No lettering | done |
 | festival_jad_seated | `assets/art/characters/grandpa/grandpa_festival_seated.png` | `assets/art/characters/grandpa/grandpa_sheet.png` | transparent | square | See festival_jad_seated below | No lettering | done |
+| bg17_gull_shore | `assets/art/backgrounds/bg17_gull_shore.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg17_gull_shore below | No lettering | done |
+| gull_turtle_sheet | `assets/art/characters/gull_turtle/gull_turtle_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See gull_turtle_sheet below | No lettering | done |
+| gull_turtle_base | `assets/art/characters/gull_turtle/gull_turtle_base.png` | `assets/art/characters/gull_turtle/gull_turtle_sheet.png` | transparent | landscape | See gull_turtle_base below | No lettering | done |
+| bg18_tide_cave | `assets/art/backgrounds/bg18_tide_cave.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg18_tide_cave below | No lettering | done |
+| gull_octopus_sheet | `assets/art/characters/gull_octopus/gull_octopus_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See gull_octopus_sheet below | No lettering | done |
+| gull_octopus_base | `assets/art/characters/gull_octopus/gull_octopus_base.png` | `assets/art/characters/gull_octopus/gull_octopus_sheet.png` | transparent | landscape | See gull_octopus_base below | No lettering | done |
+| bg19_gull_lighthouse | `assets/art/backgrounds/bg19_gull_lighthouse.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg19_gull_lighthouse below | No lettering | done |
+| gull_bird_sheet | `assets/art/characters/gull_bird/gull_bird_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See gull_bird_sheet below | No lettering | done |
+| gull_bird_base | `assets/art/characters/gull_bird/gull_bird_base.png` | `assets/art/characters/gull_bird/gull_bird_sheet.png` | transparent | portrait | See gull_bird_base below | No lettering | done |
 
 <!-- One section per row, in the same order:
 
@@ -701,3 +710,93 @@ Single large ornamental brass and warm cream parchment festival lantern, unlit, 
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 One seated Grandpa Sulaiman, warm kindly elderly Arab man from the attached turnaround, exact facial features, beard and clothing colours. Three-quarter facing left, seated with knees gently folded and hands in lap, whole figure visible. No chair or ground, isolated transparent character sprite.
+
+## bg17_gull_shore
+
+- **Save as:** `assets/art/backgrounds/bg17_gull_shore.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Bright morning at a small sandy island beach, side-on 2D walking room, broad flat dry trail in the lower third. A short empty wooden dock with a tied little boat at the far left, tide pools and water behind the foreground, distant cave entrance on the far right, blue sea, rounded reeds and shore stones. Leave open spaces on the sand for three litter props and a turtle. No characters or text.
+
+## gull_turtle_sheet
+
+- **Save as:** `assets/art/characters/gull_turtle/gull_turtle_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Three separate front, right side and rear views of a kindly old sea turtle character on plain warm cream. Real sea turtle anatomy with four flippers, small tail, sage green face and gently patterned ochre shell. Soft cartoon eyes, no accessories.
+
+## gull_turtle_base
+
+- **Save as:** `assets/art/characters/gull_turtle/gull_turtle_base.png`
+- **Attach:** `assets/art/characters/gull_turtle/gull_turtle_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Single kindly old sea turtle from the reference sheet, three-quarter facing left. Four flippers, sage green face, ochre patterned shell, warm eyes, no accessories or scenery. Isolated transparent sprite.
+
+## bg18_tide_cave
+
+- **Save as:** `assets/art/backgrounds/bg18_tide_cave.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Light cheerful tidal cave, side-on scene, rounded lavender rock with gaps for sunlight. Three small distinct shallow tide pools (teal, lavender and gold highlights) behind a wide continuous dry sandy walking trail in the lower third. No characters, symbols, traps, text or lettering.
+
+## gull_octopus_sheet
+
+- **Save as:** `assets/art/characters/gull_octopus/gull_octopus_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Two separate front and side views of a small shy friendly octopus on plain warm cream. Dusty rose body, eight gently curling arms spaced so their count is clear, two wide eyes, no clothes or accessories. Clear turnaround character reference.
+
+## gull_octopus_base
+
+- **Save as:** `assets/art/characters/gull_octopus/gull_octopus_base.png`
+- **Attach:** `assets/art/characters/gull_octopus/gull_octopus_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+A single small shy octopus using the attached design, dusty rose and lavender, eight distinct curved arms, two warm eyes, no scenery. Isolated transparent game sprite.
+
+## bg19_gull_lighthouse
+
+- **Save as:** `assets/art/backgrounds/bg19_gull_lighthouse.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Friendly hill beside the sea with a stout white and coral lighthouse in the centre. A dim blue-grey cloud bank over the sea and a small steady swell. A wide dry path across the lower third, a low stone wall and unlit accessible lamp on a low plinth just right of centre. No lightning, danger, animals or text.
+
+## gull_bird_sheet
+
+- **Save as:** `assets/art/characters/gull_bird/gull_bird_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Three separate front, right side and back views of a slightly cheeky friendly small seagull on plain warm cream. White body, grey wings, two yellow webbed feet, orange-tipped yellow beak, gentle expression and clean readable shape.
+
+## gull_bird_base
+
+- **Save as:** `assets/art/characters/gull_bird/gull_bird_base.png`
+- **Attach:** `assets/art/characters/gull_bird/gull_bird_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One friendly slightly cheeky seagull from the attached sheet, standing, facing left three-quarter, two yellow webbed feet, two grey wings, white body, yellow orange-tipped beak. No scenery. Fully transparent.

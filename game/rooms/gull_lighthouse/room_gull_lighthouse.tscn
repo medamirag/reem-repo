@@ -1,0 +1,114 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/gull_lighthouse/room_gull_lighthouse.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg19_gull_lighthouse.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/gull_bird/gull_bird_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://game/scripts/gull_island/shell.svg" id="11"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="12"]
+[ext_resource type="Resource" path="res://game/rooms/gull_lighthouse/room_gull_lighthouse.tres" id="13"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomGullLighthouse" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "GullLighthouse"
+state = ExtResource("13")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "TideCave": Vector2(0.08, 0.82)}
+ambience_cue = "amb_meadow"
+exit_arrows = {"ExitLeft": "left"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Gull" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Gull"
+position = Vector2(650, 828)
+interaction_polygon = PackedVector2Array(-130, -234, 130, -234, 130, 0, -130, 0)
+walk_to_point = Vector2(0, 58)
+
+[node name="InteractionPolygon" parent="Props/Gull" index="2"]
+polygon = PackedVector2Array(-130, -234, 130, -234, 130, 0, -130, 0)
+
+[node name="Sprite2D" parent="Props/Gull" index="0"]
+position = Vector2(0, -117.0)
+texture = ExtResource("9")
+scale = Vector2(0.2, 0.2)
+
+[node name="Lamp" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Lamp"
+position = Vector2(1290, 720)
+interaction_polygon = PackedVector2Array(-70, -215, 70, -215, 70, 0, -70, 0)
+walk_to_point = Vector2(0, 166)
+
+[node name="InteractionPolygon" parent="Props/Lamp" index="2"]
+polygon = PackedVector2Array(-70, -215, 70, -215, 70, 0, -70, 0)
+
+[node name="IslandFox" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "IslandFox"
+position = Vector2(1450, 838)
+interaction_polygon = PackedVector2Array(-110, -280, 110, -280, 110, 0, -110, 0)
+walk_to_point = Vector2(0, 48)
+
+[node name="InteractionPolygon" parent="Props/IslandFox" index="2"]
+polygon = PackedVector2Array(-110, -280, 110, -280, 110, 0, -110, 0)
+
+[node name="Sprite2D" parent="Props/IslandFox" index="0"]
+position = Vector2(0, -140.0)
+texture = ExtResource("12")
+scale = Vector2(0.24, 0.24)
+
+[node name="ShellPile" type="Node2D" parent="."]
+position = Vector2(811, 791)
+
+[node name="Shell1" type="Sprite2D" parent="ShellPile"]
+position = Vector2(0, 0)
+texture = ExtResource("11")
+scale = Vector2(0.71, 0.71)
+
+[node name="Shell2" type="Sprite2D" parent="ShellPile"]
+position = Vector2(40, 0)
+texture = ExtResource("11")
+scale = Vector2(0.71, 0.71)
+
+[node name="Shell3" type="Sprite2D" parent="ShellPile"]
+position = Vector2(80, 0)
+texture = ExtResource("11")
+scale = Vector2(0.71, 0.71)
+
+[node name="Beam" type="Polygon2D" parent="."]
+visible = false
+z_index = 1
+polygon = PackedVector2Array(731, 149, 1920, 195, 1920, 439)
+color = Color(1, 0.9, 0.55, 0.33)

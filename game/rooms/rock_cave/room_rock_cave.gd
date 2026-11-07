@@ -103,7 +103,7 @@ func _help_kitten() -> void:
 		await Lines.say("reem_cave_mock")
 
 func _offer_web() -> void:
-	await Lines.say("reem_cave_web")
+	await Lines.say("reem_cave_web", true)
 	var try_again: bool = await _choice("cave_try", "cave_give_up")
 	Globals.cave["weaving"] = try_again
 	Globals.cave["progress"] = 0
@@ -120,7 +120,7 @@ func _choose_anchor(index: int) -> void:
 		Globals.cave["weaving"] = false
 		_reward("threads", "ankoob", "gave_up")
 		_sync_scene()
-		await Lines.say("reem_cave_thread")
+		await Lines.say("reem_cave_thread", true)
 	else:
 		queue_redraw()
 

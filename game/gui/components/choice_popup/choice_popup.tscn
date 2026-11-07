@@ -48,7 +48,7 @@ texture_normal = ExtResource("2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="GreenLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/GreenButton"]
+[node name="GreenLabel" type="Label" parent="CenterContainer/VBoxContainer/GreenButton"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -57,9 +57,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-bbcode_enabled = true
-fit_content = false
-scroll_active = false
+horizontal_alignment = 1
+autowrap_mode = 3
 vertical_alignment = 1
 
 [node name="SandButton" type="TextureButton" parent="CenterContainer/VBoxContainer"]
@@ -70,7 +69,7 @@ texture_normal = ExtResource("3")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="SandLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/SandButton"]
+[node name="SandLabel" type="Label" parent="CenterContainer/VBoxContainer/SandButton"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -79,7 +78,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-bbcode_enabled = true
-fit_content = false
-scroll_active = false
+horizontal_alignment = 1
+autowrap_mode = 3
 vertical_alignment = 1

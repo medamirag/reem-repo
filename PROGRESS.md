@@ -36,8 +36,8 @@
 - **Star Observatory:** Chapter 26 is built and pushed as c4aaa53. All nine art files, 18 dialogue recordings and eight vocabulary recordings are done. The festival mountain arrow opens Owl Perch. Listen to the bat, click the owl, then follow the four shapes from the astronomer and the three trail markers to guide the caravan. Both maps include the rooms.
 - **Star Observatory checks:** Content, Godot import and startup, stars, green, sand, mixed and words passed. The stars test checked repair, wrong-shape handling, Continue and caravan arrival. An earlier overlapping test shared the save slot and failed at Continue. The isolated rerun passed. Listening comparison remains open.
 - **Tree Day:** The garden, seven dialogue recordings and two word recordings are installed and marked done. After the festival, click the leaf in Yard, talk to Arnoob and click the seedling after offering water. Watering shows new leaves and awards the notebook card. Godot import and startup, the dedicated route and green, sand, mixed and words passed. Tree Day was committed as d888e57.
-- **Mothers Day:** Mother Garden is built and pushed as ed2239b. The courtyard, seven dialogue recordings and two vocabulary recordings are installed and marked done. The dedicated playtest reached DONE before the audio import. The final audio-backed route and regressions are running in .godot/mother-final-*.log.
-- **Next:** Verify the Mother Garden final checks and the Cave caption retests in .godot/caption-*.log. Listening comparison, the Cave spider art problem, and hands-on release checks remain.
+- **Mothers Day:** Mother Garden is built and pushed as ed2239b. The courtyard, seven dialogue recordings and two vocabulary recordings are installed and marked done. The dedicated route passed with the finished audio. Godot import, startup and green passed. Remaining regression logs are .godot/mother-final-*.log.
+- **Next:** Read .godot/choice-final-*.log for the remaining Cave and regression routes. All roadmap systems, ten valley stations, six packs and two free events are implemented. Listening comparison, Ankoob art replacement and hands-on release checks remain.
 - **How to play Ant Kingdom:** After the festival, click the giant flower in the meadow. Help the worker and click the seed. At the dew drop, click the leaf to straighten it, then talk to the beetle. In the colony, talk to the queen, click the seeds from smallest to largest, then click the tunnel.
 - **How to play Snow Trail:** After the festival, revisit Hill slope and take the snow arrow. Talk to the goldfinch and offer the bundle, then click the shelter. Talk to white-coated Arnoob and click the three split prints from left to right. At the next room click the wooden board, then click the deer when Reem reaches the bottom.
 - **How to play Old City Market:** After the festival, visit Gate and take the market arrow. Click the honey stall, then go to the baker. Select three coins and click the green tick. Share bread with the cat, then visit the scale. Talk to Thaaloob, place both weights and click the tick. Show the baker, then place both weights and test again.
@@ -54,6 +54,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Cave captions:** The two web lines use plain Cairo bottom captions. This removed the repeated errors after connecting the web. The remaining error on the offer cleared when the choice signs switched to plain Cairo labels. The first Cave rerun passed. The exact Arabic text and audio were preserved.
 
 - **Mothers Day:** The courtyard card begins blank. A drawn flower appears on it after Reem chooses to share, repairs the wilt and earns the notebook keepsake. The event opens from Yard after the festival. Reem reads the note herself.
 

@@ -9,8 +9,8 @@ signal picked(is_green: bool)
 
 @onready var green_button: TextureButton = %GreenButton
 @onready var sand_button: TextureButton = %SandButton
-@onready var green_label: RichTextLabel = %GreenLabel
-@onready var sand_label: RichTextLabel = %SandLabel
+@onready var green_label: Label = %GreenLabel
+@onready var sand_label: Label = %SandLabel
 
 # The labels only exist once the popup is in the scene tree (@onready), so setup() stores the
 # texts here and _ready() writes them.
@@ -41,8 +41,8 @@ func setup(green_text: String, sand_text: String) -> void:
 
 
 func _show_texts() -> void:
-	green_label.text = "[center]%s[/center]" % _green_text
-	sand_label.text = "[center]%s[/center]" % _sand_text
+	green_label.text = _green_text
+	sand_label.text = _sand_text
 	# A choice with only one button (Yard: «عندي شيءٌ أقولُه لك») passes an empty sand text.
 	sand_button.visible = not _sand_text.is_empty()
 

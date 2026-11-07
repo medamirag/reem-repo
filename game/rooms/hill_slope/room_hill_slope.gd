@@ -11,6 +11,10 @@ func _on_room_started() -> void:
 
 func _setup_room() -> void:
 	_sync_display()
+	$SnowLabel.text = Globals.notebook.labels["snow_name"]
+	$SnowLabel.theme = ArabicText.get_theme()
+	ArabicText.make_rtl($SnowLabel)
+	$SnowLabel.visible = is_exit_open("ExitSnow")
 
 func _on_restore_from_savegame() -> void:
 	super()
@@ -21,6 +25,8 @@ func _sync_display() -> void:
 	$Props/HillFeather.visible = Globals.hill.get("feathers", false)
 
 func is_exit_open(exit_name: String) -> bool:
+	if exit_name == "ExitSnow":
+		return Globals.unlocked_packs.get("4", false)
 	return exit_name == "ExitLeft" or Globals.hill.get("feathers", false)
 
 func has_action(obj: PopochiuClickable) -> bool:
@@ -35,6 +41,10 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 		return
 	match obj.script_name:
 		"ExitLeft": await leave_through(obj, "HoneyOrchard")
+		"ExitSnow":
+			await Lines.say("reem_snow_offer", true)
+			if await Choices.ask_two(Globals.notebook.labels["snow_go"], Globals.notebook.labels["snow_stay"]):
+				await leave_through(obj, "SnowEdge")
 		"ExitRight": await leave_through(obj, "NarrowPass" if R.rooms_states.has("NarrowPass") else "End")
 		"Tawoos": await _talk_to_tawoos()
 		"Display": await _show_display()

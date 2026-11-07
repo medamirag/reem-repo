@@ -1,4 +1,78 @@
 {
+  "word_snow": {
+    "text": "ثَلْج",
+    "rooms": [
+      "SnowEdge",
+      "SnowTracks",
+      "SledHill"
+    ],
+    "audio": "res://assets/audio/words/word_snow.mp3",
+    "objects": []
+  },
+  "word_goldfinch": {
+    "text": "حَسُّون",
+    "rooms": [
+      "SnowEdge"
+    ],
+    "audio": "res://assets/audio/words/word_goldfinch.mp3",
+    "objects": [
+      "prop:Goldfinch"
+    ]
+  },
+  "word_deer": {
+    "text": "أَيِّل",
+    "rooms": [
+      "SledHill"
+    ],
+    "audio": "res://assets/audio/words/word_deer.mp3",
+    "objects": [
+      "prop:SnowDeer"
+    ]
+  },
+  "word_board": {
+    "text": "لَوْح",
+    "rooms": [
+      "SledHill"
+    ],
+    "audio": "res://assets/audio/words/word_board.mp3",
+    "objects": [
+      "prop:Sled"
+    ]
+  },
+  "word_shelter": {
+    "text": "مَأْوَى",
+    "rooms": [
+      "SnowEdge",
+      "SledHill"
+    ],
+    "audio": "res://assets/audio/words/word_shelter.mp3",
+    "objects": [
+      "prop:BirdShelter"
+    ]
+  },
+  "word_animal_track": {
+    "text": "أَثَرُ قَدَم",
+    "rooms": [
+      "SnowTracks"
+    ],
+    "audio": "res://assets/audio/words/word_animal_track.mp3",
+    "objects": [
+      "prop:RabbitPrint",
+      "prop:FoxPrint"
+    ]
+  },
+  "word_map_snow_tracks": {
+    "text": "آثَارُ الثَّلْج",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_snow_tracks.mp3",
+    "objects": []
+  },
+  "word_map_sled_hill": {
+    "text": "تَلُّ اللَّوْحِ الْخَشَبِيّ",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_sled_hill.mp3",
+    "objects": []
+  },
   "word_coin": {
     "text": "قِطْعَة نَقْدِيَّة",
     "rooms": [
@@ -526,13 +600,17 @@
   "word_hoofprint": {
     "text": "أَثَرُ حَافِر",
     "rooms": [
-      "MeadowLake"
+      "MeadowLake",
+      "SnowTracks"
     ],
     "audio": "res://assets/audio/words/word_hoofprint.mp3",
     "objects": [
       "prop:Print1",
       "prop:Print2",
-      "prop:Print3"
+      "prop:Print3",
+      "prop:Hoof1",
+      "prop:Hoof2",
+      "prop:Hoof3"
     ]
   },
   "word_cat": {
@@ -630,7 +708,9 @@
       "HoneyOrchard",
       "HillSlope",
       "WaterfallPath",
-      "GullShore"
+      "GullShore",
+      "SnowEdge",
+      "SledHill"
     ],
     "audio": "res://assets/audio/words/word_sun.mp3",
     "objects": []
@@ -646,7 +726,10 @@
   "word_pine": {
     "text": "صَنَوْبَر",
     "rooms": [
-      "PineFork"
+      "PineFork",
+      "SnowEdge",
+      "SnowTracks",
+      "SledHill"
     ],
     "audio": "res://assets/audio/words/word_pine.mp3",
     "objects": []
@@ -703,7 +786,8 @@
   "word_rabbit": {
     "text": "أَرْنَب",
     "rooms": [
-      "Stream"
+      "Stream",
+      "SnowTracks"
     ],
     "audio": "res://assets/audio/words/word_rabbit.mp3",
     "objects": [
@@ -914,7 +998,10 @@
       "PineFork",
       "MeadowLake",
       "HoneyOrchard",
-      "WaterfallPath"
+      "WaterfallPath",
+      "SnowEdge",
+      "SnowTracks",
+      "SledHill"
     ],
     "audio": "res://assets/audio/words/word_tree.mp3",
     "objects": []
@@ -971,7 +1058,10 @@
       "IftarShelter",
       "MarketGate",
       "MarketStalls",
-      "ScaleCourtyard"
+      "ScaleCourtyard",
+      "SnowEdge",
+      "SnowTracks",
+      "SledHill"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -1080,7 +1170,9 @@
       "NarrowPass",
       "GullShore",
       "TideCave",
-      "GullLighthouse"
+      "GullLighthouse",
+      "SnowEdge",
+      "SledHill"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []
@@ -1120,7 +1212,8 @@
       "NarrowPass",
       "GullLighthouse",
       "IftarShelter",
-      "ScaleCourtyard"
+      "ScaleCourtyard",
+      "SnowTracks"
     ],
     "audio": "res://assets/audio/words/word_fox.mp3",
     "objects": [
@@ -1129,7 +1222,8 @@
       "prop:Thaaloob",
       "prop:IslandFox",
       "prop:RamadanFox",
-      "prop:MarketFox"
+      "prop:MarketFox",
+      "prop:SnowFox"
     ]
   },
   "word_bee": {

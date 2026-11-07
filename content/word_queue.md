@@ -132,6 +132,14 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_oven | Reem | clear and cheerful, saying one word to teach a child | فُرْن | done |
 | word_map_market_stalls | Reem | clear and cheerful, saying one word to teach a child | دَكَاكِينُ السُّوق | done |
 | word_map_scale_courtyard | Reem | clear and cheerful, saying one word to teach a child | سَاحَةُ الْمِيزَان | done |
+| word_snow | Reem | clear and cheerful, saying one word to teach a child | ثَلْج | done |
+| word_goldfinch | Reem | clear and cheerful, saying one word to teach a child | حَسُّون | done |
+| word_deer | Reem | clear and cheerful, saying one word to teach a child | أَيِّل | done |
+| word_board | Reem | clear and cheerful, saying one word to teach a child | لَوْح | done |
+| word_shelter | Reem | clear and cheerful, saying one word to teach a child | مَأْوَى | done |
+| word_animal_track | Reem | clear and cheerful, saying one word to teach a child | أَثَرُ قَدَم | done |
+| word_map_snow_tracks | Reem | clear and cheerful, saying one word to teach a child | آثَارُ الثَّلْج | done |
+| word_map_sled_hill | Reem | clear and cheerful, saying one word to teach a child | تَلُّ اللَّوْحِ الْخَشَبِيّ | done |
 
 ## Recording verification
 

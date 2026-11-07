@@ -22,6 +22,7 @@ width = 1920
 height = 1080
 entry_points = {"": Vector2(0.08, 0.82), "HoneyOrchard": Vector2(0.08, 0.82), "NarrowPass": Vector2(0.92, 0.82)}
 ambience_cue = "amb_meadow"
+exit_arrows = {"ExitLeft": "left", "ExitRight": "right", "ExitSnow": "up"}
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
@@ -122,3 +123,23 @@ scale = Vector2(0.09, 0.09)
 [node name="Ribbon" type="Polygon2D" parent="Props/Display/Parts"]
 polygon = PackedVector2Array(-105, -149, -84, -159, -50, -134, -78, -107, -90, -120, -69, -134)
 color = Color(0.73, 0.24, 0.32, 1)
+
+[node name="ExitSnow" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitSnow"
+position = Vector2(1370, 735)
+interaction_polygon = PackedVector2Array(-120, -83, 120, -83, 120, 83, -120, 83)
+walk_to_point = Vector2(0, 151)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitSnow" index="0"]
+polygon = PackedVector2Array(-120, -83, 120, -83, 120, 83, -120, 83)
+
+[node name="SnowLabel" type="Label" parent="."]
+visible = false
+offset_left = 1220.0
+offset_top = 600.0
+offset_right = 1520.0
+offset_bottom = 665.0
+mouse_filter = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.2, 0.12, 0.05, 1)

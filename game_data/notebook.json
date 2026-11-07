@@ -204,6 +204,21 @@
       "reem_market_scale",
       "reem_market_weights",
       "reem_market_tilt"
+    ],
+    "snow_bird": [
+      "reem_snow_edge",
+      "reem_snow_cold",
+      "reem_snow_shelter"
+    ],
+    "snow_tracks": [
+      "reem_snow_tracks",
+      "reem_snow_compare",
+      "reem_snow_rabbit"
+    ],
+    "snow_sled": [
+      "reem_snow_tracks",
+      "reem_snow_sled",
+      "reem_snow_help"
     ]
   },
   "map": [
@@ -406,6 +421,30 @@
         0.13,
         0.81
       ]
+    },
+    {
+      "room": "SnowEdge",
+      "label": "يَوْمُ الثَّلْج",
+      "at": [
+        0.91,
+        0.34
+      ]
+    },
+    {
+      "room": "SnowTracks",
+      "label": "آثَارُ الثَّلْج",
+      "at": [
+        0.9,
+        0.21
+      ]
+    },
+    {
+      "room": "SledHill",
+      "label": "تَلُّ اللَّوْحِ الْخَشَبِيّ",
+      "at": [
+        0.92,
+        0.08
+      ]
     }
   ],
   "edges": [
@@ -520,6 +559,18 @@
     [
       23,
       24
+    ],
+    [
+      12,
+      25
+    ],
+    [
+      25,
+      26
+    ],
+    [
+      26,
+      27
     ]
   ],
   "cards": [
@@ -618,6 +669,18 @@
       "image": "res://assets/art/characters/market_cat/market_cat_base.png",
       "name_line": "reem_market_cat_name",
       "fact_line": "reem_market_cat_fact"
+    },
+    {
+      "id": "goldfinch",
+      "image": "res://assets/art/characters/goldfinch/goldfinch_base.png",
+      "name_line": "reem_snow_bird_name",
+      "fact_line": "reem_snow_bird_fact"
+    },
+    {
+      "id": "snow_deer",
+      "image": "res://assets/art/characters/snow_deer/snow_deer_base.png",
+      "name_line": "reem_snow_deer_name",
+      "fact_line": "reem_snow_deer_fact"
     }
   ]
 }

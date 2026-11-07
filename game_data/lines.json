@@ -1,4 +1,106 @@
 {
+ "reem_snow_offer": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذَا دَرْبُ الثَّلْجِ. هَلْ أَسْلُكُهُ؟",
+  "audio": "res://assets/audio/lines/reem_snow_offer.mp3"
+ },
+ "reem_snow_edge": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "غَطَّى الثَّلْجُ الْأَشْجَارَ، وَبَقِيَ الدَّرْبُ وَاضِحًا.",
+  "audio": "res://assets/audio/lines/reem_snow_edge.mp3"
+ },
+ "reem_snow_cold": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "الْحَسُّونُ الصَّغِيرُ يَشْعُرُ بِالْبَرْدِ. هَلْ أُعْطِيهِ الْقِطْعَةَ الدَّافِئَةَ؟",
+  "audio": "res://assets/audio/lines/reem_snow_cold.mp3"
+ },
+ "reem_snow_keep": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "بَقِيَ الْحَسُّونُ بَارِدًا. أَسْتَطِيعُ أَنْ أَضَعَ الْقِطْعَةَ فِي مَأْوَاهُ.",
+  "audio": "res://assets/audio/lines/reem_snow_keep.mp3"
+ },
+ "reem_snow_shelter": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأَضَعُ الْقِطْعَةَ النَّاعِمَةَ فِي مَأْوَى الْحَسُّونِ.",
+  "audio": "res://assets/audio/lines/reem_snow_shelter.mp3"
+ },
+ "reem_snow_warm": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "دَخَلَ الْحَسُّونُ مَأْوَاهُ وَدَفِئَ.",
+  "audio": "res://assets/audio/lines/reem_snow_warm.mp3"
+ },
+ "reem_snow_bird_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "حَسُّونٌ",
+  "audio": "res://assets/audio/lines/reem_snow_bird_name.mp3"
+ },
+ "reem_snow_bird_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَأْكُلُ الْحَسُّونُ الْبُذُورَ بِمِنْقَارِهِ الصَّغِيرِ.",
+  "audio": "res://assets/audio/lines/reem_snow_bird_fact.mp3"
+ },
+ "reem_snow_tracks": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذِهِ آثَارُ أَقْدَامٍ عَلَى الثَّلْجِ.",
+  "audio": "res://assets/audio/lines/reem_snow_tracks.mp3"
+ },
+ "reem_snow_rabbit": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يُرِينِي أَرْنُوبٌ آثَارَ قَفَزَاتِهِ. أَمَّا الصَّغِيرُ فَلِحَوَافِرِهِ شَقٌّ فِي الْوَسَطِ.",
+  "audio": "res://assets/audio/lines/reem_snow_rabbit.mp3"
+ },
+ "fox_snow_tracks": {
+  "speaker": "Thaaloob",
+  "tone": "playful",
+  "text": "اِتَّبِعِي آثَارِي! أَوْ لِنُقَارِنْهَا أَوَّلًا بِآثَارِ حَوَافِرِ الْأَيِّلِ.",
+  "audio": "res://assets/audio/lines/fox_snow_tracks.mp3"
+ },
+ "reem_snow_compare": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "هَذَا الْأَثَرُ مُخْتَلِفٌ. سَأَبْحَثُ عَنْ أَثَرٍ فِيهِ شَقٌّ.",
+  "audio": "res://assets/audio/lines/reem_snow_compare.mp3"
+ },
+ "reem_snow_follow": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تُؤَدِّي آثَارُ الْحَوَافِرِ إِلَى أَسْفَلِ التَّلِّ.",
+  "audio": "res://assets/audio/lines/reem_snow_follow.mp3"
+ },
+ "reem_snow_sled": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "أَرَى الْأَيِّلَ أَسْفَلَ التَّلِّ. سَأَنْزَلُ عَلَى اللَّوْحِ الْخَشَبِيِّ.",
+  "audio": "res://assets/audio/lines/reem_snow_sled.mp3"
+ },
+ "reem_snow_help": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَيَّا نَمْشِي إِلَى الْمَأْوَى الدَّافِئِ قَبْلَ غُرُوبِ الشَّمْسِ.",
+  "audio": "res://assets/audio/lines/reem_snow_help.mp3"
+ },
+ "reem_snow_deer_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "أَيِّلٌ صَغِيرٌ",
+  "audio": "res://assets/audio/lines/reem_snow_deer_name.mp3"
+ },
+ "reem_snow_deer_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِصِغَارِ بَعْضِ الْأَيَائِلِ بُقَعٌ فَاتِحَةٌ عَلَى ظُهُورِهَا.",
+  "audio": "res://assets/audio/lines/reem_snow_deer_fact.mp3"
+ },
  "reem_market_offer": {
   "speaker": "Reem",
   "tone": "warm",

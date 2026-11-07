@@ -548,3 +548,13 @@ At MarketStalls, the baker offers bread for three coins. Use the three coin slot
 At ScaleCourtyard, Thaaloob disguises himself as a merchant. His scale tilts even when both pans hold the same one-unit weight. Reem can accept his first deal or test the scale. Accepting wilts once and can be repaired. Place an identical weight on each pan and use the balance lever. The unfair tilt is visible. Show it to the baker, and Thaaloob puts the counterweight back in its marked centre position. Repeat the experiment to show a fair balance. The stall stays open after repair, with no lost coins.
 
 Save the honey sale, coin count, bread, cat choice, test weights and fair scale. Add all three places to the maps. Reem narrates the old baker and merchant pending approved saved voices. Use saved Thaaloob. Include object vocabulary for coin, bread, cat, scales and weights.
+
+## 24. Snow Trail (pack 4)
+
+After the festival, take the snow trail from HillSlope. SnowEdge, SnowTracks and SledHill are three safe, walkable rooms. The left route back to the valley stays open. The winter trail is bright with soft daylight and no slippery movement on the walking path.
+
+At SnowEdge, a cold goldfinch waits beside an empty shelter. Reem can share a soft bundle or keep it. Keeping it leaves the bird shivering gently and wilts once. Offer it again to repair the choice. Click the shelter to put the bundle inside and earn the goldfinch card.
+
+At SnowTracks, Arnoob in his white winter fur points to his own paired rabbit prints and the young deer's split hoofprints. Thaaloob offers to follow his own paw prints, then helps Reem compare them. Find three deer print groups from left to right. Wrong prints leave the trail open and the current progress unchanged. Use both shape and spacing so colour is unnecessary.
+
+At SledHill, the young deer waits safely below the hill. Click the wooden board to slide down a clearly marked gentle track. The ride is a brief animation with no steering, timer or failure. At the bottom, click the deer to bring it to a sheltered spot before sunset in the story. Earn a deer card and keep the return arrow open. Save shelter help, the print sequence, slide completion and deer rescue. Reem narrates new animals pending verified saved voices. Use Thaaloob's saved voice for his cameo.

@@ -87,6 +87,14 @@ Originals in `assets/` are never edited: new images are new files with the names
 | market_baker_base | `assets/art/characters/market_baker/market_baker_base.png` | `assets/art/characters/market_baker/market_baker_sheet.png` | transparent | portrait | See market_baker_base below | No lettering | done |
 | market_cat_sheet | `assets/art/characters/market_cat/market_cat_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See market_cat_sheet below | No lettering | done |
 | market_cat_base | `assets/art/characters/market_cat/market_cat_base.png` | `assets/art/characters/market_cat/market_cat_sheet.png` | transparent | square | See market_cat_base below | No lettering | done |
+| bg26_snow_edge | `assets/art/backgrounds/bg26_snow_edge.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg26_snow_edge below | No lettering | done |
+| bg27_snow_tracks | `assets/art/backgrounds/bg27_snow_tracks.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg27_snow_tracks below | No lettering | done |
+| bg28_sled_hill | `assets/art/backgrounds/bg28_sled_hill.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg28_sled_hill below | No lettering | done |
+| goldfinch_sheet | `assets/art/characters/goldfinch/goldfinch_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See goldfinch_sheet below | No lettering | done |
+| goldfinch_base | `assets/art/characters/goldfinch/goldfinch_base.png` | `assets/art/characters/goldfinch/goldfinch_sheet.png` | transparent | square | See goldfinch_base below | No lettering | done |
+| snow_deer_sheet | `assets/art/characters/snow_deer/snow_deer_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See snow_deer_sheet below | No lettering | done |
+| snow_deer_base | `assets/art/characters/snow_deer/snow_deer_base.png` | `assets/art/characters/snow_deer/snow_deer_sheet.png` | transparent | square | See snow_deer_base below | No lettering | done |
+| arnoob_winter | `assets/art/characters/arnoob/arnoob_winter.png` | `assets/art/characters/arnoob/arnoob_base.png` | transparent | landscape | See arnoob_winter below | No lettering | done |
 
 <!-- One section per row, in the same order:
 
@@ -954,3 +962,83 @@ Friendly small grey and white old-market cat with four paws, one tail and two gr
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 One small grey and white market cat from attached sheet with four paws and one visible tail, standing three-quarter facing left. Friendly green eyes. Fully transparent and no floor, scenery or text.
+
+## bg26_snow_edge
+
+- **Save as:** `assets/art/backgrounds/bg26_snow_edge.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Bright winter forest edge in a gentle storybook style. Broad dry compacted snow path across lower third, safe flat footing, soft snowbanks, sparse spruce and sunny pale-blue sky. A small low wooden bird shelter with an empty tray at centre-right. Leave space for a small goldfinch near left. No characters, text, falling snow or dark storm.
+
+## bg27_snow_tracks
+
+- **Save as:** `assets/art/backgrounds/bg27_snow_tracks.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Side-view snowy woodland path, warm soft winter daylight, rounded pines and low pale-blue snow banks. Broad flat uninterrupted walkable lower third, snow floor clear of any footprints so separate tracks can be composited. Open space for a rabbit at left and fox at right. No characters or text.
+
+## bg28_sled_hill
+
+- **Save as:** `assets/art/backgrounds/bg28_sled_hill.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Gentle safe snowy hill with broad smooth diagonal sled trail from middle-left high ground to low right, open flat walkable snow strip along lower third, rounded snowy pines, warm late afternoon sunshine. At far right a dry tree shelter and room for a little deer. No people, animals, board, writing or hazards.
+
+## goldfinch_sheet
+
+- **Save as:** `assets/art/characters/goldfinch/goldfinch_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Three separate front, right profile and rear views of a friendly small European goldfinch. Red face patch, black and white head, warm brown body, distinctive yellow wing bars, two tiny feet and one short tail. Warm cream background and no scene or writing.
+
+## goldfinch_base
+
+- **Save as:** `assets/art/characters/goldfinch/goldfinch_base.png`
+- **Attach:** `assets/art/characters/goldfinch/goldfinch_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Single friendly small goldfinch from the reference, three-quarter facing left. Red face patch and black and white head, yellow wing bars, two small feet, no extra appendages, isolated transparent, no ground or shadow.
+
+## snow_deer_sheet
+
+- **Save as:** `assets/art/characters/snow_deer/snow_deer_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Turnaround sheet of a small young red deer fawn with soft chestnut fur, white spots along back, tall ears, no antlers, four slender legs and small hooves, one short tail. Three separate front, right profile and rear views. Warm cream, no scene, accessories or text.
+
+## snow_deer_base
+
+- **Save as:** `assets/art/characters/snow_deer/snow_deer_base.png`
+- **Attach:** `assets/art/characters/snow_deer/snow_deer_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One gentle young red deer fawn from the reference sheet, chestnut fur with white spots, four slender legs with hooves, small tail, tall ears, no antlers. Three-quarter facing left, isolated fully transparent with no scene or ground.
+
+## arnoob_winter
+
+- **Save as:** `assets/art/characters/arnoob/arnoob_winter.png`
+- **Attach:** `assets/art/characters/arnoob/arnoob_base.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Arnoob in his white winter coat. Keep the exact pose, eyes, pink nose, teal vest, gold buttons and outlines of arnoob_base. Change only orange fur to warm ivory and white. Fully transparent.

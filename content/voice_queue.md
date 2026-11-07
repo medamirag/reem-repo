@@ -247,6 +247,23 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_market_tilt | Reem | warm | الْوَزْنَانِ مُتَسَاوِيَانِ، وَلَكِنَّ الْمِيزَانَ مَائِلٌ. سَأُرِي الْخَبَّازَ. | done |
 | fox_market_sorry | Thaaloob | embarrassed | آسِفٌ يَا رِيمُ. سَأُعِيدُ الثِّقْلَ إِلَى مَكَانِهِ الصَّحِيحِ. | done |
 | reem_market_fair | Reem | warm | الْآنَ تَسَاوَتِ الْكَفَّتَانِ. هَذَا مِيزَانٌ عَادِلٌ. | done |
+| reem_snow_offer | Reem | warm | هَذَا دَرْبُ الثَّلْجِ. هَلْ أَسْلُكُهُ؟ | done |
+| reem_snow_edge | Reem | warm | غَطَّى الثَّلْجُ الْأَشْجَارَ، وَبَقِيَ الدَّرْبُ وَاضِحًا. | done |
+| reem_snow_cold | Reem | gentle | الْحَسُّونُ الصَّغِيرُ يَشْعُرُ بِالْبَرْدِ. هَلْ أُعْطِيهِ الْقِطْعَةَ الدَّافِئَةَ؟ | done |
+| reem_snow_keep | Reem | gentle | بَقِيَ الْحَسُّونُ بَارِدًا. أَسْتَطِيعُ أَنْ أَضَعَ الْقِطْعَةَ فِي مَأْوَاهُ. | done |
+| reem_snow_shelter | Reem | warm | سَأَضَعُ الْقِطْعَةَ النَّاعِمَةَ فِي مَأْوَى الْحَسُّونِ. | done |
+| reem_snow_warm | Reem | warm | دَخَلَ الْحَسُّونُ مَأْوَاهُ وَدَفِئَ. | done |
+| reem_snow_bird_name | Reem | warm | حَسُّونٌ | done |
+| reem_snow_bird_fact | Reem | warm | يَأْكُلُ الْحَسُّونُ الْبُذُورَ بِمِنْقَارِهِ الصَّغِيرِ. | done |
+| reem_snow_tracks | Reem | warm | هَذِهِ آثَارُ أَقْدَامٍ عَلَى الثَّلْجِ. | done |
+| reem_snow_rabbit | Reem | warm | يُرِينِي أَرْنُوبٌ آثَارَ قَفَزَاتِهِ. أَمَّا الصَّغِيرُ فَلِحَوَافِرِهِ شَقٌّ فِي الْوَسَطِ. | done |
+| fox_snow_tracks | Thaaloob | playful | اِتَّبِعِي آثَارِي! أَوْ لِنُقَارِنْهَا أَوَّلًا بِآثَارِ حَوَافِرِ الْأَيِّلِ. | done |
+| reem_snow_compare | Reem | gentle | هَذَا الْأَثَرُ مُخْتَلِفٌ. سَأَبْحَثُ عَنْ أَثَرٍ فِيهِ شَقٌّ. | done |
+| reem_snow_follow | Reem | warm | تُؤَدِّي آثَارُ الْحَوَافِرِ إِلَى أَسْفَلِ التَّلِّ. | done |
+| reem_snow_sled | Reem | warm | أَرَى الْأَيِّلَ أَسْفَلَ التَّلِّ. سَأَنْزَلُ عَلَى اللَّوْحِ الْخَشَبِيِّ. | done |
+| reem_snow_help | Reem | warm | هَيَّا نَمْشِي إِلَى الْمَأْوَى الدَّافِئِ قَبْلَ غُرُوبِ الشَّمْسِ. | done |
+| reem_snow_deer_name | Reem | warm | أَيِّلٌ صَغِيرٌ | done |
+| reem_snow_deer_fact | Reem | warm | لِصِغَارِ بَعْضِ الْأَيَائِلِ بُقَعٌ فَاتِحَةٌ عَلَى ظُهُورِهَا. | done |
 
 ## Recording verification
 

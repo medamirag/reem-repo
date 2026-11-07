@@ -184,6 +184,11 @@ func _run() -> void:
 		_log("DONE market")
 		get_tree().quit()
 		return
+	if _path == "snow":
+		await _snow_path()
+		_log("DONE snow")
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -260,6 +265,49 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _snow_path() -> void:
+	await Globals.new_game()
+	Globals.unlocked_packs["4"] = true
+	R.goto_room("HillSlope")
+	await _wait_room("HillSlope")
+	_answers = [true]
+	await _click("ExitSnow")
+	await _wait_room("SnowEdge")
+	var previous_wilts := Globals.wilts
+	_answers = [false]
+	await _click("Goldfinch")
+	_expect(Globals.wilts == previous_wilts + 1, "keeping the bundle wilts")
+	_answers = [true]
+	await _click("Goldfinch")
+	await _click("BirdShelter")
+	_expect(Globals.snow.get("warm") and Globals.wilts == previous_wilts and Globals.friend_cards.has("goldfinch"), "warming the bird repairs and earns a card")
+	await _click("ExitRight")
+	await _wait_room("SnowTracks")
+	await _click("Arnoob")
+	await _click("SnowFox")
+	await _click("RabbitPrint")
+	_expect(not Globals.snow.get("track", 0), "rabbit prints leave deer progress unchanged")
+	await _click("Hoof1")
+	Globals.reset()
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("continue snow tracks", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("SnowTracks")
+	_expect(Globals.snow.get("track") == 1, "hoofprint progress survives continue")
+	await _click("Hoof3")
+	_expect(Globals.snow.get("track") == 1, "out-of-order hoofprint leaves progress unchanged")
+	await _click("Hoof2")
+	await _click("Hoof3")
+	await _click("ExitRight")
+	await _wait_room("SledHill")
+	await _click("Sled")
+	_expect(Globals.snow.get("slid") and C.player.position.x > 1000.0, "sled ride reaches the bottom safely")
+	await _click("SnowDeer")
+	_expect(Globals.snow.get("rescued") and Globals.friend_cards.has("snow_deer"), "deer reaches shelter and card is earned")
+	await _click("ExitLeft")
+	await _wait_room("SnowTracks")
 
 
 func _market_path() -> void:

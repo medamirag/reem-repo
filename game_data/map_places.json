@@ -186,7 +186,8 @@
     ],
     "neighbors": [
       "orchard",
-      "pass"
+      "pass",
+      "snow"
     ],
     "pack": 0,
     "name": "word_map_slope"
@@ -229,8 +230,7 @@
     ],
     "neighbors": [
       "pass",
-      "mountain",
-      "snow"
+      "mountain"
     ],
     "pack": 0,
     "name": "word_map_festival"
@@ -305,13 +305,14 @@
   },
   {
     "id": "snow",
-    "room": "",
+    "room": "SnowEdge",
     "position": [
       0.82,
       0.1
     ],
     "neighbors": [
-      "festival"
+      "slope",
+      "snow_tracks"
     ],
     "pack": 4,
     "name": "word_map_snow"
@@ -396,5 +397,32 @@
     ],
     "pack": 2,
     "name": "word_map_scale_courtyard"
+  },
+  {
+    "id": "snow_tracks",
+    "room": "SnowTracks",
+    "position": [
+      0.758,
+      0.096
+    ],
+    "neighbors": [
+      "snow",
+      "sled_hill"
+    ],
+    "pack": 4,
+    "name": "word_map_snow_tracks"
+  },
+  {
+    "id": "sled_hill",
+    "room": "SledHill",
+    "position": [
+      0.888,
+      0.073
+    ],
+    "neighbors": [
+      "snow_tracks"
+    ],
+    "pack": 4,
+    "name": "word_map_sled_hill"
   }
 ]

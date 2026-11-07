@@ -30,8 +30,11 @@
 - **Ramadan checks:** Content, import, startup, ramadan, green, sand, mixed and words passed. The pack test covered the entrance, hidden supplies, saving and restoring the dates choice, repairing it, and serving the meal. The first run showed a text-layout error on two overhead lines. They now use a plain Cairo RTL caption and the second run was clear.
 - **Old City Market:** Section 23 connects MarketGate, MarketStalls and ScaleCourtyard from Gate after pack 2 unlocks. Sell honey for five coins, count three for bread and repair the cat choice. Identical weights reveal Thaaloob's tilted scale, and the baker helps reset the counterweight. Seven images, eighteen dialogue files and eight word files are installed and marked done. Both maps include the rooms.
 - **Old City Market checks:** Content, headless import and startup, market, green, sand, mixed and words passed. The first market run confirmed the puzzle logic and showed the known overhead text-layout error. The rerun with plain Cairo captions was clear.
-- **Half-finished:** Snow Trail has no scene or queue rows yet.
-- **Next:** Snow Trail, Ant Kingdom and Star Observatory. Add each new room to the illustrated map and notebook.
+- **Snow Trail:** Section 24 adds SnowEdge, SnowTracks and SledHill. The HillSlope snow arrow opens with pack 4. Help the goldfinch, compare three kinds of prints, ride a wooden board down the trail and bring the deer to shelter. Eight art files, seventeen dialogue recordings and eight words are installed. Both maps include the rooms.
+- **Snow Trail checks:** Content, import, startup, snow, green, sand, mixed and words passed. The first snow test caught a landing slightly above the walking line. The sled now leaves Reem on the normal path and the rerun passed.
+- **Half-finished:** Ant Kingdom has no scenes or queue rows yet.
+- **Next:** Ant Kingdom, then Star Observatory. Add each new room to the illustrated map and notebook.
+- **How to play Snow Trail:** After the festival, revisit Hill slope and take the snow arrow. Talk to the goldfinch and offer the bundle, then click the shelter. Talk to white-coated Arnoob and click the three split prints from left to right. At the next room click the wooden board, then click the deer when Reem reaches the bottom.
 - **How to play Old City Market:** After the festival, visit Gate and take the market arrow. Click the honey stall, then go to the baker. Select three coins and click the green tick. Share bread with the cat, then visit the scale. Talk to Thaaloob, place both weights and click the tick. Show the baker, then place both weights and test again.
 - **How to play Ramadan Lantern Night:** After the festival, revisit the farm yard and click the small lantern. Choose to help, then click the lantern in the lane and find both baskets and the jug. Continue to the hedgehog family, choose to share, and find three dates. Click the table in the shelter to serve the traveller.
 - **How to play Gull Island:** Finish the festival, revisit Meadow Lake and click the wooden boat. If it offers reserve honey first, click it again to take the trip. Talk to the turtle, collect the three litter pieces, then click the tide rock to reveal the cave trail. In the cave, click the octopus, then diamond, circle and triangle. At the lighthouse, talk to the gull and click the lamp to fit the lens. Return via the cave and the shore boat.
@@ -46,6 +49,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Snow Trail:** Arnoob has a separate white-fur sprite derived from his original. Tracks differ by shape and spacing. A wrong print does not change progress. The sled uses a short automatic ride along the illustration, with controls restored at the bottom. Native props show tracks, the board and the bundle. Duration and listening comparison remain open.
 
 - **Old City Market:** The honey stall can use its own jar when Reem arrives without one. An incorrect payment resets the coin selection and keeps all five coins. The pack uses reusable drawn coins, a moving scale beam and a removable merchant apron on Thaaloob. The cat choice and dishonest deal have separate repairs. Listening comparison and pack duration remain open.
 

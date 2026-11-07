@@ -30,6 +30,9 @@ const PRIftarShelter := preload("res://game/rooms/iftar_shelter/room_iftar_shelt
 const PRMarketGate := preload("res://game/rooms/market_gate/room_market_gate.gd")
 const PRMarketStalls := preload("res://game/rooms/market_stalls/room_market_stalls.gd")
 const PRScaleCourtyard := preload("res://game/rooms/scale_courtyard/room_scale_courtyard.gd")
+const PRSnowEdge := preload("res://game/rooms/snow_edge/room_snow_edge.gd")
+const PRSnowTracks := preload("res://game/rooms/snow_tracks/room_snow_tracks.gd")
+const PRSledHill := preload("res://game/rooms/sled_hill/room_sled_hill.gd")
 # ---- classes
 
 # nodes ----
@@ -61,6 +64,9 @@ var IftarShelter: PRIftarShelter : get = get_IftarShelter
 var MarketGate: PRMarketGate : get = get_MarketGate
 var MarketStalls: PRMarketStalls : get = get_MarketStalls
 var ScaleCourtyard: PRScaleCourtyard : get = get_ScaleCourtyard
+var SnowEdge: PRSnowEdge : get = get_SnowEdge
+var SnowTracks: PRSnowTracks : get = get_SnowTracks
+var SledHill: PRSledHill : get = get_SledHill
 # ---- nodes
 
 # functions ----
@@ -92,4 +98,7 @@ func get_IftarShelter() -> PRIftarShelter: return get_runtime_room("IftarShelter
 func get_MarketGate() -> PRMarketGate: return get_runtime_room("MarketGate")
 func get_MarketStalls() -> PRMarketStalls: return get_runtime_room("MarketStalls")
 func get_ScaleCourtyard() -> PRScaleCourtyard: return get_runtime_room("ScaleCourtyard")
+func get_SnowEdge() -> PRSnowEdge: return get_runtime_room("SnowEdge")
+func get_SnowTracks() -> PRSnowTracks: return get_runtime_room("SnowTracks")
+func get_SledHill() -> PRSledHill: return get_runtime_room("SledHill")
 # ---- functions

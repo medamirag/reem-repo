@@ -99,6 +99,12 @@ func show_page(page: String) -> void:
 ## Contexts follow puzzle progress rather than visit count, so hints remain useful on returns.
 func hint_context() -> String:
 	match R.current.script_name:
+		"SnowEdge":
+			return "forward" if Globals.snow.get("warm", false) else "snow_bird"
+		"SnowTracks":
+			return "forward" if Globals.snow.get("track", 0) == 3 else "snow_tracks"
+		"SledHill":
+			return "forward" if Globals.snow.get("rescued", false) else "snow_sled"
 		"MarketGate":
 			return "forward" if Globals.market.get("sold", false) else "market_sale"
 		"MarketStalls":

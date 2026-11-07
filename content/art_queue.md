@@ -104,6 +104,15 @@ Originals in `assets/` are never edited: new images are new files with the names
 | ant_queen_base | `assets/art/characters/ant_queen/ant_queen_base.png` | `assets/art/characters/ant_queen/ant_queen_sheet.png` | transparent | portrait | See ant_queen_base below | No lettering, check limbs | done |
 | ant_beetle_sheet | `assets/art/characters/ant_beetle/ant_beetle_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See ant_beetle_sheet below | No lettering, check limbs | done |
 | ant_beetle_base | `assets/art/characters/ant_beetle/ant_beetle_base.png` | `assets/art/characters/ant_beetle/ant_beetle_sheet.png` | transparent | landscape | See ant_beetle_base below | No lettering, check limbs | done |
+| bg32_owl_perch | `assets/art/backgrounds/bg32_owl_perch.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg32_owl_perch below | Check silhouette, palette and no lettering | todo |
+| bg33_observatory_dome | `assets/art/backgrounds/bg33_observatory_dome.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg33_observatory_dome below | Check silhouette, palette and no lettering | todo |
+| bg34_star_ridge | `assets/art/backgrounds/bg34_star_ridge.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg34_star_ridge below | Check silhouette, palette and no lettering | todo |
+| observatory_owl_sheet | `assets/art/characters/observatory_owl/observatory_owl_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See observatory_owl_sheet below | Check silhouette, palette and no lettering | todo |
+| observatory_owl_base | `assets/art/characters/observatory_owl/observatory_owl_base.png` | `assets/art/characters/observatory_owl/observatory_owl_sheet.png` | transparent | square | See observatory_owl_base below | Check silhouette, palette and no lettering | todo |
+| observatory_bat_sheet | `assets/art/characters/observatory_bat/observatory_bat_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See observatory_bat_sheet below | Check silhouette, palette and no lettering | todo |
+| observatory_bat_base | `assets/art/characters/observatory_bat/observatory_bat_base.png` | `assets/art/characters/observatory_bat/observatory_bat_sheet.png` | transparent | landscape | See observatory_bat_base below | Check silhouette, palette and no lettering | todo |
+| astronomer_sheet | `assets/art/characters/astronomer/astronomer_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See astronomer_sheet below | Check silhouette, palette and no lettering | todo |
+| astronomer_base | `assets/art/characters/astronomer/astronomer_base.png` | `assets/art/characters/astronomer/astronomer_sheet.png` | transparent | portrait | See astronomer_base below | Check silhouette, palette and no lettering | todo |
 
 <!-- One section per row, in the same order:
 
@@ -1141,3 +1150,57 @@ Kind small teal and bronze guard beetle, round wing cases with centre seam, six 
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 One friendly teal and bronze beetle matching the turnaround, exact six distinct legs with three per side, two antennae, big warm eyes. Isolated fully transparent, no scenery, props, shadow or writing.
+
+## bg32_owl_perch
+
+- **Save as:** `assets/art/backgrounds/bg32_owl_perch.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Welcoming dry mountain foothill at night, side-on game scene. Broad flat dry path in lower third, soft blue mountains and stars in open sky, one low oak branch at left and a broad safe ledge at right. Leave foreground open for separate owl and bat sprites. Calm with moonlight, no characters, writing or steep hazard.
+
+## bg33_observatory_dome
+
+- **Save as:** `assets/art/backgrounds/bg33_observatory_dome.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Inside a cosy old stone observatory with a brass telescope to the left and a wide dome opening onto a clear blue starry sky above centre. Broad dry flat wooden floor across lower third, empty right desk and open dark area above centre for separate interactive stars. Warm lantern glow and deep blue sky. No people, symbols, star lines or writing.
+
+## bg34_star_ridge
+
+- **Save as:** `assets/art/backgrounds/bg34_star_ridge.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Night mountain valley with a broad, continuous safe dry foreground trail and three low stone marker places, distant blue hills and soft stars, inviting shelter with warm window on the far right. No cliffs on walking ground, no characters, writing or text.
+
+## observatory_owl_sheet
+
+- **Save as:** `assets/art/characters/observatory_owl/observatory_owl_sheet.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Friendly tawny brown owl with cream breast, large round amber eyes, small ear tufts, two feet, two wings and one tail. Three separated front, right side and rear views on cream. No props, scenery or writing.
+
+## observatory_owl_base
+
+- **Save as:** `assets/art/characters/observatory_owl/observatory_owl_base.png`
+- **Reference:** `assets/art/characters/observatory_owl/observatory_owl_sheet.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Single friendly tawny owl from the reference, three-quarter facing left, two feet, two wings and amber eyes, wings relaxed. Isolated transparent, no branch or ground.
+
+## observatory_bat_sheet
+
+- **Save as:** `assets/art/characters/observatory_bat/observatory_bat_sheet.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Friendly small lavender bat, two curved wings, two ears, small pair of feet, two eyes, no sharp teeth. Two separated front and side views, warm cream, no scene or lettering.
+
+## observatory_bat_base
+
+- **Save as:** `assets/art/characters/observatory_bat/observatory_bat_base.png`
+- **Reference:** `assets/art/characters/observatory_bat/observatory_bat_sheet.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Single friendly lavender bat matching attached reference, two wings extended, two small feet, two ears, kind eyes, no sharp teeth, no props or scenery. Fully transparent.
+
+## astronomer_sheet
+
+- **Save as:** `assets/art/characters/astronomer/astronomer_sheet.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Kind elderly Arab astronomer distinct from Grandpa Sulaiman, round glasses, grey beard, indigo robe over beige shirt and tan wrapped cap. Front, right profile and rear on cream, no writing or objects.
+
+## astronomer_base
+
+- **Save as:** `assets/art/characters/astronomer/astronomer_base.png`
+- **Reference:** `assets/art/characters/astronomer/astronomer_sheet.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One standing kind elderly astronomer matching attached reference, indigo robe, round glasses, grey beard and tan cap. Three-quarter facing left, two hands and two feet, fully transparent background, no scenery.

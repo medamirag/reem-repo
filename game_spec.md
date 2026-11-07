@@ -568,3 +568,13 @@ At GiantBloom, an ant worker has stopped carrying seeds. Reem can leave the work
 At DewBank, a drop of water is a lake. Click a floating leaf to align it with both dry banks. The beetle guard then shows the crossing and earns a card. The safe foreground remains available if the leaf is moved back. Thaaloob tries to hurry across and then helps wait for the leaf to be aligned.
 
 At AntCity, the queen asks Reem to place three seeds in order by size. Incorrect seeds leave the previous good placements intact. When the seeds are stored, gentle oversized raindrops appear outside. Click the tunnel entrance to join the colony in shelter. The queen thanks Reem and earns a card. There is no countdown or falling hazard on the walking path. Save seed help, bridge alignment, seed order, rain and shelter. Add all three rooms to both maps and use only saved voices, with Reem narrating the ants and beetle.
+
+## 26. Star Observatory (pack 6)
+
+After the festival, take the mountain path beside the hilltop exit. OwlPerch, ObservatoryDome and StarRidge are three safe night rooms. The owl gives Reem a ride to the dome, shown with a short gentle lift and room transition. All returns are open from a dry path.
+
+At OwlPerch, a cheeky bat offers to help read the stars. Reem can listen or rush on without hearing him. Rushing leaves the path clue unclear and wilts once. Return and listen to repair. The bat earns a card. Then click the owl to fly to the dome and earn its card.
+
+At ObservatoryDome, the astronomer shows a fictional route of four stars. Reem clicks the marked stars in the shown sequence and a line connects each accepted point. Wrong stars leave the previous connections and example visible. Complete the route to open the ridge path. The example uses shape and arrangement without requiring a colour distinction.
+
+At StarRidge, a small lost animal caravan waits beside a safe path. Thaaloob wants to follow a bright star in the wrong direction, then helps compare the route with the dome chart. Click three safe trail markers in the same order as the map. The caravan walks to the warm shelter. All moves are untimed and none can fail permanently. Save the bat choice, owl ride, connected stars, marker progress and caravan arrival. Add map locations, hints, cards and words. Reem narrates the owl, bat and astronomer pending approved voices. Use the saved Thaaloob voice for his cameo.

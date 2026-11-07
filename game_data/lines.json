@@ -1,1970 +1,2078 @@
 {
- "reem_ant_offer": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "مَا أَكْبَرَ هَذِهِ الزَّهْرَةَ! هَلْ أَقْتَرِبُ لِأَرَى مَمْلَكَةَ النَّمْلِ؟",
-  "audio": "res://assets/audio/lines/reem_ant_offer.mp3"
- },
- "reem_ant_tiny": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "صِرْتُ صَغِيرَةً، وَصَارَتْ حَبَّةُ الرَّمْلِ كَحَجَرٍ كَبِيرٍ.",
-  "audio": "res://assets/audio/lines/reem_ant_tiny.mp3"
- },
- "reem_ant_worker": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَوَقَّفَتِ النَّمْلَةُ عَنْ حَمْلِ الْبُذُورِ. لِنَحْمِلْ وَاحِدَةً مَعًا.",
-  "audio": "res://assets/audio/lines/reem_ant_worker.mp3"
- },
- "reem_ant_leave": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "بَقِيَتِ النَّمْلَةُ وَحْدَهَا مَعَ الْحِمْلِ الثَّقِيلِ. يُمْكِنُنِي أَنْ أُسَاعِدَهَا.",
-  "audio": "res://assets/audio/lines/reem_ant_leave.mp3"
- },
- "reem_ant_carry": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأَرْفَعُ طَرَفَ الْبَذْرَةِ مَعَ النَّمْلَةِ.",
-  "audio": "res://assets/audio/lines/reem_ant_carry.mp3"
- },
- "reem_ant_helped": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "حَمَلْنَا الْبَذْرَةَ مَعًا، وَالْآنَ تَسْتَرِيحُ النَّمْلَةُ.",
-  "audio": "res://assets/audio/lines/reem_ant_helped.mp3"
- },
- "reem_ant_worker_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "النَّمْلَةُ الْعَامِلَةُ",
-  "audio": "res://assets/audio/lines/reem_ant_worker_name.mp3"
- },
- "reem_ant_worker_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِلنَّمْلَةِ سِتُّ أَرْجُلٍ.",
-  "audio": "res://assets/audio/lines/reem_ant_worker_fact.mp3"
- },
- "reem_ant_dew": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "قَطْرَةُ الْمَاءِ هُنَا كَأَنَّهَا بُحَيْرَةٌ.",
-  "audio": "res://assets/audio/lines/reem_ant_dew.mp3"
- },
- "reem_ant_guard": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تُرِينِي الْخُنْفُسَاءُ الْوَرَقَةَ. إِذَا وَصَلَتْ إِلَى الضِّفَّتَيْنِ، صَارَتْ جِسْرًا.",
-  "audio": "res://assets/audio/lines/reem_ant_guard.mp3"
- },
- "fox_ant_hurry": {
-  "speaker": "Thaaloob",
-  "tone": "playful",
-  "text": "كِدْتُ أَعْبُرُ قَبْلَ أَنْ تَسْتَقِرَّ الْوَرَقَةُ! سَأَنْتَظِرُ مَعَكِ.",
-  "audio": "res://assets/audio/lines/fox_ant_hurry.mp3"
- },
- "reem_ant_bridge": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "اسْتَقَرَّتِ الْوَرَقَةُ، وَصَارَ لَنَا جِسْرٌ.",
-  "audio": "res://assets/audio/lines/reem_ant_bridge.mp3"
- },
- "reem_ant_beetle_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "الْخُنْفُسَاءُ الْحَارِسَةُ",
-  "audio": "res://assets/audio/lines/reem_ant_beetle_name.mp3"
- },
- "reem_ant_beetle_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَحْمِي أَغْطِيَةُ الْخُنْفُسَاءِ الصُّلْبَةُ أَجْنِحَتَهَا.",
-  "audio": "res://assets/audio/lines/reem_ant_beetle_fact.mp3"
- },
- "reem_ant_city": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذِهِ مَخَازِنُ النَّمْلِ. لِكُلِّ بَذْرَةٍ مَكَانٌ.",
-  "audio": "res://assets/audio/lines/reem_ant_city.mp3"
- },
- "reem_ant_order": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأَضَعُ الْبُذُورَ مِنَ الْأَصْغَرِ إِلَى الْأَكْبَرِ.",
-  "audio": "res://assets/audio/lines/reem_ant_order.mp3"
- },
- "reem_ant_try": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "لِنَنْظُرْ إِلَى حَجْمِ الْبَذْرَةِ الَّتِي تَأْتِي بَعْدَهَا.",
-  "audio": "res://assets/audio/lines/reem_ant_try.mp3"
- },
- "reem_ant_rain": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "بَدَأَ الْمَطَرُ فِي الْخَارِجِ. لِنَدْخُلِ النَّفَقَ مَعًا.",
-  "audio": "res://assets/audio/lines/reem_ant_rain.mp3"
- },
- "reem_ant_safe": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَصَلْنَا إِلَى مَكَانٍ جَافٍّ، وَالْبُذُورُ فِي مَخَازِنِهَا.",
-  "audio": "res://assets/audio/lines/reem_ant_safe.mp3"
- },
- "reem_ant_queen_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "مَلِكَةُ النَّمْلِ",
-  "audio": "res://assets/audio/lines/reem_ant_queen_name.mp3"
- },
- "reem_ant_queen_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَضَعُ مَلِكَةُ النَّمْلِ الْبَيْضَ فِي الْمُسْتَعْمَرَةِ.",
-  "audio": "res://assets/audio/lines/reem_ant_queen_fact.mp3"
- },
- "reem_snow_offer": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذَا دَرْبُ الثَّلْجِ. هَلْ أَسْلُكُهُ؟",
-  "audio": "res://assets/audio/lines/reem_snow_offer.mp3"
- },
- "reem_snow_edge": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "غَطَّى الثَّلْجُ الْأَشْجَارَ، وَبَقِيَ الدَّرْبُ وَاضِحًا.",
-  "audio": "res://assets/audio/lines/reem_snow_edge.mp3"
- },
- "reem_snow_cold": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "الْحَسُّونُ الصَّغِيرُ يَشْعُرُ بِالْبَرْدِ. هَلْ أُعْطِيهِ الْقِطْعَةَ الدَّافِئَةَ؟",
-  "audio": "res://assets/audio/lines/reem_snow_cold.mp3"
- },
- "reem_snow_keep": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "بَقِيَ الْحَسُّونُ بَارِدًا. أَسْتَطِيعُ أَنْ أَضَعَ الْقِطْعَةَ فِي مَأْوَاهُ.",
-  "audio": "res://assets/audio/lines/reem_snow_keep.mp3"
- },
- "reem_snow_shelter": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأَضَعُ الْقِطْعَةَ النَّاعِمَةَ فِي مَأْوَى الْحَسُّونِ.",
-  "audio": "res://assets/audio/lines/reem_snow_shelter.mp3"
- },
- "reem_snow_warm": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "دَخَلَ الْحَسُّونُ مَأْوَاهُ وَدَفِئَ.",
-  "audio": "res://assets/audio/lines/reem_snow_warm.mp3"
- },
- "reem_snow_bird_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "حَسُّونٌ",
-  "audio": "res://assets/audio/lines/reem_snow_bird_name.mp3"
- },
- "reem_snow_bird_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَأْكُلُ الْحَسُّونُ الْبُذُورَ بِمِنْقَارِهِ الصَّغِيرِ.",
-  "audio": "res://assets/audio/lines/reem_snow_bird_fact.mp3"
- },
- "reem_snow_tracks": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذِهِ آثَارُ أَقْدَامٍ عَلَى الثَّلْجِ.",
-  "audio": "res://assets/audio/lines/reem_snow_tracks.mp3"
- },
- "reem_snow_rabbit": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يُرِينِي أَرْنُوبٌ آثَارَ قَفَزَاتِهِ. أَمَّا الصَّغِيرُ فَلِحَوَافِرِهِ شَقٌّ فِي الْوَسَطِ.",
-  "audio": "res://assets/audio/lines/reem_snow_rabbit.mp3"
- },
- "fox_snow_tracks": {
-  "speaker": "Thaaloob",
-  "tone": "playful",
-  "text": "اِتَّبِعِي آثَارِي! أَوْ لِنُقَارِنْهَا أَوَّلًا بِآثَارِ حَوَافِرِ الْأَيِّلِ.",
-  "audio": "res://assets/audio/lines/fox_snow_tracks.mp3"
- },
- "reem_snow_compare": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "هَذَا الْأَثَرُ مُخْتَلِفٌ. سَأَبْحَثُ عَنْ أَثَرٍ فِيهِ شَقٌّ.",
-  "audio": "res://assets/audio/lines/reem_snow_compare.mp3"
- },
- "reem_snow_follow": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تُؤَدِّي آثَارُ الْحَوَافِرِ إِلَى أَسْفَلِ التَّلِّ.",
-  "audio": "res://assets/audio/lines/reem_snow_follow.mp3"
- },
- "reem_snow_sled": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "أَرَى الْأَيِّلَ أَسْفَلَ التَّلِّ. سَأَنْزَلُ عَلَى اللَّوْحِ الْخَشَبِيِّ.",
-  "audio": "res://assets/audio/lines/reem_snow_sled.mp3"
- },
- "reem_snow_help": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَيَّا نَمْشِي إِلَى الْمَأْوَى الدَّافِئِ قَبْلَ غُرُوبِ الشَّمْسِ.",
-  "audio": "res://assets/audio/lines/reem_snow_help.mp3"
- },
- "reem_snow_deer_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "أَيِّلٌ صَغِيرٌ",
-  "audio": "res://assets/audio/lines/reem_snow_deer_name.mp3"
- },
- "reem_snow_deer_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِصِغَارِ بَعْضِ الْأَيَائِلِ بُقَعٌ فَاتِحَةٌ عَلَى ظُهُورِهَا.",
-  "audio": "res://assets/audio/lines/reem_snow_deer_fact.mp3"
- },
- "reem_market_offer": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذَا دَرْبٌ إِلَى سُوقِ الْمَدِينَةِ. هَلْ أَذْهَبُ إِلَيْهِ؟",
-  "audio": "res://assets/audio/lines/reem_market_offer.mp3"
- },
- "reem_market_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَصَلْتُ إِلَى بَوَّابَةِ السُّوقِ. هُنَا أَسْتَطِيعُ أَنْ أَبِيعَ الْعَسَلَ.",
-  "audio": "res://assets/audio/lines/reem_market_arrive.mp3"
- },
- "reem_market_sale": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بِعْتُ الْعَسَلَ بِخَمْسِ قِطَعٍ نَقْدِيَّةٍ. سَأَعُدُّهَا قَبْلَ أَنْ أَشْتَرِيَ.",
-  "audio": "res://assets/audio/lines/reem_market_sale.mp3"
- },
- "reem_market_baker": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَقُولُ الْخَبَّازُ إِنَّ ثَمَنَ الْخُبْزِ ثَلَاثُ قِطَعٍ نَقْدِيَّةٍ.",
-  "audio": "res://assets/audio/lines/reem_market_baker.mp3"
- },
- "reem_market_count": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "لِنَعُدَّ الْقِطَعَ مَرَّةً أُخْرَى. ثَمَنُ الْخُبْزِ ثَلَاثُ قِطَعٍ.",
-  "audio": "res://assets/audio/lines/reem_market_count.mp3"
- },
- "reem_market_paid": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "دَفَعْتُ ثَلَاثَ قِطَعٍ، وَبَقِيَتْ مَعِي قِطْعَتَانِ.",
-  "audio": "res://assets/audio/lines/reem_market_paid.mp3"
- },
- "reem_market_cat": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَنْظُرُ قِطَّةُ السُّوقِ إِلَى الْخُبْزِ. هَلْ أُشَارِكُهَا؟",
-  "audio": "res://assets/audio/lines/reem_market_cat.mp3"
- },
- "reem_market_keep": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "بَقِيَ طَبَقُ الْقِطَّةِ فَارِغًا. أَسْتَطِيعُ أَنْ أُشَارِكَهَا.",
-  "audio": "res://assets/audio/lines/reem_market_keep.mp3"
- },
- "reem_market_share": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَضَعْتُ قِطْعَةً صَغِيرَةً فِي طَبَقِهَا، وَجَلَسْنَا مَعًا.",
-  "audio": "res://assets/audio/lines/reem_market_share.mp3"
- },
- "reem_market_cat_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "قِطَّةُ السُّوقِ",
-  "audio": "res://assets/audio/lines/reem_market_cat_name.mp3"
- },
- "reem_market_cat_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تُسَاعِدُ شَوَارِبُ الْقِطَّةِ فِي مَعْرِفَةِ الْأَمَاكِنِ الضَّيِّقَةِ.",
-  "audio": "res://assets/audio/lines/reem_market_cat_fact.mp3"
- },
- "reem_market_scale": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هُنَا مِيزَانٌ بِكَفَّتَيْنِ. لِنَنْظُرْ كَيْفَ يَعْمَلُ.",
-  "audio": "res://assets/audio/lines/reem_market_scale.mp3"
- },
- "fox_market_offer": {
-  "speaker": "Thaaloob",
-  "tone": "playful",
-  "text": "تَفَضَّلِي إِلَى مِيزَانِي! لَا حَاجَةَ إِلَى اخْتِبَارِهِ.",
-  "audio": "res://assets/audio/lines/fox_market_offer.mp3"
- },
- "reem_market_trust": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "مَالَتْ كَفَّةُ الْمِيزَانِ. سَأُجَرِّبُهُ بِوَزْنَيْنِ مُتَسَاوِيَيْنِ.",
-  "audio": "res://assets/audio/lines/reem_market_trust.mp3"
- },
- "reem_market_weights": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأَضَعُ وَزْنًا فِي كُلِّ كَفَّةٍ، ثُمَّ أُحَرِّكُ الْمِقْبَضَ.",
-  "audio": "res://assets/audio/lines/reem_market_weights.mp3"
- },
- "reem_market_tilt": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "الْوَزْنَانِ مُتَسَاوِيَانِ، وَلَكِنَّ الْمِيزَانَ مَائِلٌ. سَأُرِي الْخَبَّازَ.",
-  "audio": "res://assets/audio/lines/reem_market_tilt.mp3"
- },
- "fox_market_sorry": {
-  "speaker": "Thaaloob",
-  "tone": "embarrassed",
-  "text": "آسِفٌ يَا رِيمُ. سَأُعِيدُ الثِّقْلَ إِلَى مَكَانِهِ الصَّحِيحِ.",
-  "audio": "res://assets/audio/lines/fox_market_sorry.mp3"
- },
- "reem_market_fair": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "الْآنَ تَسَاوَتِ الْكَفَّتَانِ. هَذَا مِيزَانٌ عَادِلٌ.",
-  "audio": "res://assets/audio/lines/reem_market_fair.mp3"
- },
- "reem_ramadan_offer": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "أَضَاءَتْ فَوَانِيسُ الْحَيِّ. هَلْ أَذْهَبُ لِأُسَاعِدَ فِي تَجْهِيزِ الْإِفْطَارِ؟",
-  "audio": "res://assets/audio/lines/reem_ramadan_offer.mp3"
- },
- "reem_ramadan_lane": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذِهِ لَيْلَةٌ مِنْ لَيَالِي رَمَضَانَ. سَأَحْمِلُ فَانُوسِي فِي الطَّرِيقِ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_lane.mp3"
- },
- "reem_ramadan_caller": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يُرِينِي الْمُسَحِّرَاتِي كَيْفَ يَكْشِفُ ضَوْءُ الْفَانُوسِ مَا فِي الظِّلِّ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_caller.mp3"
- },
- "reem_ramadan_search": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "عِنْدَمَا أُضِيءُ الْفَانُوسَ، أَسْتَطِيعُ أَنْ أَرَى السَّلَّتَيْنِ وَالْإِبْرِيقَ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_search.mp3"
- },
- "reem_ramadan_found": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَجَدْتُ السَّلَّتَيْنِ وَالْمَاءَ. لِنَذْهَبْ إِلَى عَائِلَةِ الْقَنَافِذِ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_found.mp3"
- },
- "reem_ramadan_court": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تُرِيدُ عَائِلَةُ الْقَنَافِذِ أَنْ تُفَاجِئَ مُسَافِرًا بِالْإِفْطَارِ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_court.mp3"
- },
- "reem_ramadan_keep": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "أَبْقَيْتُ التَّمْرَ لِنَفْسِي، فَبَقِيَ الطَّبَقُ فَارِغًا. يُمْكِنُنِي أَنْ أُشَارِكَ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_keep.mp3"
- },
- "reem_ramadan_dates": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأَبْحَثُ عَنِ التَّمْرِ وَأَضَعُهُ فِي الطَّبَقِ لِنَأْكُلَ مَعًا.",
-  "audio": "res://assets/audio/lines/reem_ramadan_dates.mp3"
- },
- "reem_ramadan_shared": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "جَمَعْتُ التَّمْرَ لِلْمُسَافِرِ. شُكْرًا لَكُمْ يَا أَصْدِقَائِي.",
-  "audio": "res://assets/audio/lines/reem_ramadan_shared.mp3"
- },
- "reem_ramadan_shelter": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذَا مَكَانٌ هَادِئٌ لِنَجْلِسَ مَعَ الْمُسَافِرِ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_shelter.mp3"
- },
- "fox_ramadan_date": {
-  "speaker": "Thaaloob",
-  "tone": "playful",
-  "text": "هَذِهِ آخِرُ تَمْرَةٍ! سَأَضَعُهَا مَعَ التَّمْرِ لِنَتَقَاسَمَهُ.",
-  "audio": "res://assets/audio/lines/fox_ramadan_date.mp3"
- },
- "reem_ramadan_feast": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَا هُوَ الْمَاءُ وَالتَّمْرُ. تَفَضَّلْ، سَنُفْطِرُ مَعًا عِنْدَ الْمَغْرِبِ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_feast.mp3"
- },
- "reem_ramadan_hedgehog_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "عَائِلَةُ الْقَنَافِذِ",
-  "audio": "res://assets/audio/lines/reem_ramadan_hedgehog_name.mp3"
- },
- "reem_ramadan_hedgehog_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَخْرُجُ الْقُنْفُذُ فِي اللَّيْلِ لِيَبْحَثَ عَنْ طَعَامِهِ.",
-  "audio": "res://assets/audio/lines/reem_ramadan_hedgehog_fact.mp3"
- },
- "reem_gull_board": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "الْقَارِبُ مُسْتَعِدٌّ لِيَأْخُذَنِي إِلَى جَزِيرَةِ النَّوَارِسِ.",
-  "audio": "res://assets/audio/lines/reem_gull_board.mp3"
- },
- "reem_gull_shore": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَصَلْنَا إِلَى الشَّاطِئِ. مَاءُ الْبَحْرِ يَعْلُو ثُمَّ يَنْخَفِضُ.",
-  "audio": "res://assets/audio/lines/reem_gull_shore.mp3"
- },
- "reem_gull_turtle": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "السُّلَحْفَاةُ تَرَى قِطَعًا مِنَ النُّفَايَاتِ قُرْبَ الْمَاءِ. هَلْ أَجْمَعُهَا؟",
-  "audio": "res://assets/audio/lines/reem_gull_turtle.mp3"
- },
- "reem_gull_leave": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "بَقِيَتِ النُّفَايَاتُ قُرْبَ الْمَاءِ. يُمْكِنُنِي أَنْ أَعُودَ وَأَجْمَعَهَا.",
-  "audio": "res://assets/audio/lines/reem_gull_leave.mp3"
- },
- "reem_gull_collect": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأَضَعُ النُّفَايَاتِ فِي السَّلَّةِ.",
-  "audio": "res://assets/audio/lines/reem_gull_collect.mp3"
- },
- "reem_gull_clean": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "أَصْبَحَ الشَّاطِئُ نَظِيفًا، وَالسُّلَحْفَاةُ سَعِيدَةٌ.",
-  "audio": "res://assets/audio/lines/reem_gull_clean.mp3"
- },
- "reem_gull_low": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "انْخَفَضَ الْمَاءُ، وَظَهَرَ الدَّرْبُ إِلَى الْكَهْفِ.",
-  "audio": "res://assets/audio/lines/reem_gull_low.mp3"
- },
- "reem_gull_high": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "ارْتَفَعَ الْمَاءُ وَغَطَّى الدَّرْبَ. سَنَنْتَظِرُ عَلَى الشَّاطِئِ.",
-  "audio": "res://assets/audio/lines/reem_gull_high.mp3"
- },
- "reem_gull_turtle_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سُلَحْفَاةُ الْبَحْرِ",
-  "audio": "res://assets/audio/lines/reem_gull_turtle_name.mp3"
- },
- "reem_gull_turtle_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَسْتَخْدِمُ السُّلَحْفَاةُ الْبَحْرِيَّةُ زَعَانِفَهَا لِلسِّبَاحَةِ.",
-  "audio": "res://assets/audio/lines/reem_gull_turtle_fact.mp3"
- },
- "reem_gull_cave": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَبْدُو الْبِرَكُ الصَّغِيرَةُ بِلَوْنِ السَّمَاءِ وَالصَّخْرِ وَالرَّمْلِ.",
-  "audio": "res://assets/audio/lines/reem_gull_cave.mp3"
- },
- "reem_gull_pattern": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يُرِينِي الْأُخْطُبُوطُ الْأَشْكَالَ. سَأَتَّبِعُ تَرْتِيبَهَا.",
-  "audio": "res://assets/audio/lines/reem_gull_pattern.mp3"
- },
- "reem_gull_retry": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "لِنَرَ الْأَشْكَالَ مَرَّةً أُخْرَى.",
-  "audio": "res://assets/audio/lines/reem_gull_retry.mp3"
- },
- "reem_gull_lens": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذِهِ عَدَسَةُ الْمَنَارَةِ. شُكْرًا لَكَ يَا أُخْطُبُوطُ!",
-  "audio": "res://assets/audio/lines/reem_gull_lens.mp3"
- },
- "reem_gull_octopus_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "أُخْطُبُوطٌ",
-  "audio": "res://assets/audio/lines/reem_gull_octopus_name.mp3"
- },
- "reem_gull_octopus_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِلْأُخْطُبُوطِ ثَمَانِيَةُ أَذْرُعٍ، وَيَسْتَطِيعُ أَنْ يُغَيِّرَ لَوْنَهُ.",
-  "audio": "res://assets/audio/lines/reem_gull_octopus_fact.mp3"
- },
- "reem_gull_storm": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "هَبَّتْ رِيحٌ خَفِيفَةٌ. سَيَنْتَظِرُ الْقَارِبُ حَتَّى تَضِيءَ الْمَنَارَةُ.",
-  "audio": "res://assets/audio/lines/reem_gull_storm.mp3"
- },
- "reem_gull_shells": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يُرِيدُ النَّوْرَسُ أَنْ يَأْخُذَ كُلَّ الْأَصْدَافِ. لِنَتْرُكْ بَعْضَهَا لِلْبَحْرِ.",
-  "audio": "res://assets/audio/lines/reem_gull_shells.mp3"
- },
- "reem_gull_pile": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "تَدَحْرَجَتِ الْأَصْدَافُ مِنَ الْكَوْمَةِ. سَنُعِيدُ بَعْضَهَا إِلَى الشَّاطِئِ.",
-  "audio": "res://assets/audio/lines/reem_gull_pile.mp3"
- },
- "reem_gull_share": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَرَكْنَا بَعْضَ الْأَصْدَافِ عَلَى الشَّاطِئِ، وَفَرِحَ النَّوْرَسُ بِصَدَفَةٍ وَاحِدَةٍ.",
-  "audio": "res://assets/audio/lines/reem_gull_share.mp3"
- },
- "fox_gull_trade": {
-  "speaker": "Thaaloob",
-  "tone": "playful",
-  "text": "مَا أَلْمَعَ هَذِهِ الصَّدَفَةَ! كُنْتُ سَأُبَادِلُكِ بِهَا، وَلَكِنِّي سَأَتْرُكُهَا هُنَا.",
-  "audio": "res://assets/audio/lines/fox_gull_trade.mp3"
- },
- "reem_gull_light": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "رَكَّبْتُ الْعَدَسَةَ فَأَضَاءَتِ الْمَنَارَةُ. يَسْتَطِيعُ الْقَارِبُ أَنْ يَرَى الطَّرِيقَ.",
-  "audio": "res://assets/audio/lines/reem_gull_light.mp3"
- },
- "reem_gull_lens_hint": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "نَحْتَاجُ إِلَى عَدَسَةٍ لِمِصْبَاحِ الْمَنَارَةِ. سَأَبْحَثُ فِي كَهْفِ الْمَدِّ.",
-  "audio": "res://assets/audio/lines/reem_gull_lens_hint.mp3"
- },
- "reem_gull_bird_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "نَوْرَسٌ",
-  "audio": "res://assets/audio/lines/reem_gull_bird_name.mp3"
- },
- "reem_gull_bird_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِلنَّوْرَسِ أَقْدَامٌ مُكْفَّفَةٌ تُسَاعِدُهُ عَلَى السِّبَاحَةِ.",
-  "audio": "res://assets/audio/lines/reem_gull_bird_fact.mp3"
- },
- "reem_festival_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَصَلْنَا إِلَى الْقِمَّةِ! أَصْدِقَائِي هُنَا، وَالْفَانُوسُ الْكَبِيرُ يَنْتَظِرُنَا.",
-  "audio": "res://assets/audio/lines/reem_festival_arrive.mp3"
- },
- "reem_festival_high": {
-  "speaker": "Reem",
-  "tone": "playful",
-  "text": "قَرْقُورٌ يُعَلِّقُ الْفَوَانِيسَ الْعَالِيَةَ.",
-  "audio": "res://assets/audio/lines/reem_festival_high.mp3"
- },
- "reem_festival_light": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بِسْمِ اللهِ، لِنُضِئِ الْفَانُوسَ الْكَبِيرَ.",
-  "audio": "res://assets/audio/lines/reem_festival_light.mp3"
- },
- "jad_festival_arrive": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "السَّلَامُ عَلَيْكُمْ! حَمَلَنِي دُبٌّ إِلَى الْقِمَّةِ، فَشُكْرًا لَهُ.",
-  "audio": "res://assets/audio/lines/jad_festival_arrive.mp3"
- },
- "jad_festival_thanks": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "كُلَّمَا سَاعَدْتِ صَدِيقًا يَا رِيمُ، حَمَلَ مَعَكِ شَيْئًا إِلَى الْمِهْرَجَانِ. جَزَاكِ اللهُ خَيْرًا.",
-  "audio": "res://assets/audio/lines/jad_festival_thanks.mp3"
- },
- "jad_festival_repair": {
-  "speaker": "Jad",
-  "tone": "gentle",
-  "text": "وَحِينَ أَخْطَأْتِ، عُدْتِ وَأَصْلَحْتِ خَطَأَكِ. فَرِحَ أَصْدِقَاؤُكِ بِعَوْدَتِكِ.",
-  "audio": "res://assets/audio/lines/jad_festival_repair.mp3"
- },
- "jad_festival_wilt": {
-  "speaker": "Jad",
-  "tone": "gentle",
-  "text": "مَا زَالَ هُنَاكَ مَكَانٌ تَسْتَطِيعِينَ أَنْ تَعُودِي إِلَيْهِ. سَيَفْرَحُ صَدِيقُكِ بِرُؤْيَتِكِ.",
-  "audio": "res://assets/audio/lines/jad_festival_wilt.mp3"
- },
- "jad_festival_oak": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "سَمِعْتُ أَنَّ قُنْفُذًا فِي غَابَةِ الْبَلُّوطِ يَنْتَظِرُ صَدِيقًا. هَلْ تَزُورِينَهُ فِي رِحْلَةٍ أُخْرَى؟",
-  "audio": "res://assets/audio/lines/jad_festival_oak.mp3"
- },
- "jad_festival_cave": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "عِنْدَ الْكَهْفِ قِطَّةٌ صَغِيرَةٌ تُحِبُّ ضَوْءَ الْفَانُوسِ. هَلْ تَزُورِينَهَا فِي رِحْلَةٍ أُخْرَى؟",
-  "audio": "res://assets/audio/lines/jad_festival_cave.mp3"
- },
- "jad_festival_lake": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "عِنْدَ الْبُحَيْرَةِ ضِفْدَعٌ يُحِبُّ الْغِنَاءَ. هَلْ تَسْمَعِينَ غِنَاءَهُ فِي رِحْلَةٍ أُخْرَى؟",
-  "audio": "res://assets/audio/lines/jad_festival_lake.mp3"
- },
- "jad_festival_other": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "فِي الْوَادِي دُرُوبٌ أُخْرَى. اخْتَارِي دَرْبًا جَدِيدًا فِي رِحْلَةٍ أُخْرَى.",
-  "audio": "res://assets/audio/lines/jad_festival_other.mp3"
- },
- "reem_pass_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذَا هُوَ الْمَمَرُّ إِلَى الْقِمَّةِ.",
-  "audio": "res://assets/audio/lines/reem_pass_arrive.mp3"
- },
- "fox_pass_help": {
-  "speaker": "Thaaloob",
-  "tone": "worried",
-  "text": "يَا رِيمُ، عَلِقَ ذَيْلِي بَيْنَ الصَّخْرَتَيْنِ. هَلْ تُسَاعِدِينَنِي؟",
-  "audio": "res://assets/audio/lines/fox_pass_help.mp3"
- },
- "reem_pass_leave": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "مَضَيْتُ وَبَقِيَ ثَعْلُوبٌ عَالِقًا. أَسْتَطِيعُ أَنْ أَعُودَ إِلَيْهِ.",
-  "audio": "res://assets/audio/lines/reem_pass_leave.mp3"
- },
- "reem_pass_stone": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأُدَحْرِجُ الْحَجَرَ الصَّغِيرَ بَعِيدًا عَنْ ذَيْلِكَ.",
-  "audio": "res://assets/audio/lines/reem_pass_stone.mp3"
- },
- "fox_pass_sorry": {
-  "speaker": "Thaaloob",
-  "tone": "embarrassed",
-  "text": "سَاعَدْتِنِي بَعْدَ كُلِّ مَا فَعَلْتُ. أَنَا آسِفٌ يَا رِيمُ.",
-  "audio": "res://assets/audio/lines/fox_pass_sorry.mp3"
- },
- "fox_pass_honey": {
-  "speaker": "Thaaloob",
-  "tone": "embarrassed",
-  "text": "هَذِهِ جَرَّةُ عَسَلِكِ. خُذِيهَا، فَهِيَ لَكِ.",
-  "audio": "res://assets/audio/lines/fox_pass_honey.mp3"
- },
- "fox_pass_join": {
-  "speaker": "Thaaloob",
-  "tone": "gentle",
-  "text": "هَلْ يُمْكِنُنِي أَنْ آتِيَ مَعَكِ إِلَى الْمِهْرَجَانِ؟",
-  "audio": "res://assets/audio/lines/fox_pass_join.mp3"
- },
- "reem_pass_welcome": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَامَحْتُكَ يَا ثَعْلُوبُ. تَعَالَ مَعِي، وَلْنَحْمِلِ الْفَوَانِيسَ مَعًا.",
-  "audio": "res://assets/audio/lines/reem_pass_welcome.mp3"
- },
- "reem_waterfall_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "أَسْمَعُ صَوْتَ الشَّلَّالِ مِنْ هُنَا.",
-  "audio": "res://assets/audio/lines/reem_waterfall_arrive.mp3"
- },
- "reem_waterfall_provoked": {
-  "speaker": "Reem",
-  "tone": "surprised",
-  "text": "دَحْرَجَ قَرْقُورٌ ثَمَرَةً إِلَى طَرِيقِي! لِمَاذَا فَعَلَ ذَلِكَ؟",
-  "audio": "res://assets/audio/lines/reem_waterfall_provoked.mp3"
- },
- "reem_waterfall_throw": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "رَمَيْتُ الثَّمَرَةَ، فَابْتَعَدَ قَرْقُورٌ. سَأَتَحَدَّثُ إِلَيْهِ بِهُدُوءٍ.",
-  "audio": "res://assets/audio/lines/reem_waterfall_throw.mp3"
- },
- "reem_waterfall_ask": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "قَالَ قَرْقُورٌ إِنَّهُ أَرَادَ أَنْ يَلْعَبَ مَعَ أَحَدٍ.",
-  "audio": "res://assets/audio/lines/reem_waterfall_ask.mp3"
- },
- "reem_waterfall_roll": {
-  "speaker": "Reem",
-  "tone": "playful",
-  "text": "هَيَّا نُدَحْرِجُ الثَّمَرَةَ عَلَى الْأَرْضِ مَعًا!",
-  "audio": "res://assets/audio/lines/reem_waterfall_roll.mp3"
- },
- "reem_waterfall_gift": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لَعِبْنَا مَعًا! سَيُسَاعِدُنَا قَرْقُورٌ فِي تَعْلِيقِ الْفَوَانِيسِ الْعَالِيَةِ.",
-  "audio": "res://assets/audio/lines/reem_waterfall_gift.mp3"
- },
- "reem_waterfall_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "قَرْقُورٌ",
-  "audio": "res://assets/audio/lines/reem_waterfall_name.mp3"
- },
- "reem_waterfall_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَتَسَلَّقُ الْقِرْدُ الْأَغْصَانَ بِيَدَيْهِ وَقَدَمَيْهِ.",
-  "audio": "res://assets/audio/lines/reem_waterfall_fact.mp3"
- },
- "jad_map_intro": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "هذه خريطة الوادي يا ريم. كلما زرتِ مكاناً جديداً ظهر عليها، وإن احترتِ في طريقك فانظري إليها.",
-  "audio": "res://assets/audio/lines/jad_map_intro.mp3"
- },
- "reem_s1_001": {
-  "speaker": "Reem",
-  "tone": "calm, just woken up",
-  "text": "الحمدُ للهِ الذي أحيانا بعدَما أماتَنا، وإليهِ النُّشور.",
-  "audio": "res://assets/audio/lines/reem_s1_001.mp3"
- },
- "reem_s1_002": {
-  "speaker": "Reem",
-  "tone": "cheerful",
-  "text": "صباحٌ جميلٌ في مزرعةِ جدّي!",
-  "audio": "res://assets/audio/lines/reem_s1_002.mp3"
- },
- "reem_s1_003": {
-  "speaker": "Reem",
-  "tone": "dreamy, fond",
-  "text": "مرآةُ جدّي… يقولُ إنّها هديّةٌ من جدّتي، رحِمَها الله.",
-  "audio": "res://assets/audio/lines/reem_s1_003.mp3"
- },
- "reem_s1_004": {
-  "speaker": "Reem",
-  "tone": "ordinary",
-  "text": "سآخذُ السَّلّةَ، سأحتاجُها اليوم.",
-  "audio": "res://assets/audio/lines/reem_s1_004.mp3"
- },
- "reem_s1_005": {
-  "speaker": "Reem",
-  "tone": "a little startled",
-  "text": "أوه، لا! انشرَخَتْ مرآةُ جدّي!",
-  "audio": "res://assets/audio/lines/reem_s1_005.mp3"
- },
- "reem_s1_006": {
-  "speaker": "Reem",
-  "tone": "whispering, worried",
-  "text": "ماذا أفعلُ؟ جدّي يحبُّها كثيراً…",
-  "audio": "res://assets/audio/lines/reem_s1_006.mp3"
- },
- "reem_s1_007a": {
-  "speaker": "Reem",
-  "tone": "gently determined",
-  "text": "يجبُ أن أخبرَ جدّي. الصِّدقُ أحسن.",
-  "audio": "res://assets/audio/lines/reem_s1_007a.mp3"
- },
- "reem_s1_007b": {
-  "speaker": "Reem",
-  "tone": "whispering, hesitant",
-  "text": "سأضعُها هنا خلفَ الوسادة… لن يعرفَ أحد.",
-  "audio": "res://assets/audio/lines/reem_s1_007b.mp3"
- },
- "reem_s1_010": {
-  "speaker": "Reem",
-  "tone": "cheerful",
-  "text": "السَّلامُ عليكم يا جدّي!",
-  "audio": "res://assets/audio/lines/reem_s1_010.mp3"
- },
- "jad_s1_011": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "وعليكمُ السَّلامُ ورحمةُ اللهِ وبركاتُه يا ريم. صباحُ الخير يا حبيبتي.",
-  "audio": "res://assets/audio/lines/jad_s1_011.mp3"
- },
- "reem_s1_012": {
-  "speaker": "Reem",
-  "tone": "caring",
-  "text": "صباحُ النّور يا جدّي. كيفَ حالُ قدمِك؟",
-  "audio": "res://assets/audio/lines/reem_s1_012.mp3"
- },
- "jad_s1_013": {
-  "speaker": "Jad",
-  "tone": "calm, content",
-  "text": "الحمدُ للهِ على كلِّ حال. التوى كاحلي أمس، ولن أستطيعَ المشيَ إلى التلِّ اليوم.",
-  "audio": "res://assets/audio/lines/jad_s1_013.mp3"
- },
- "reem_s1_014": {
-  "speaker": "Reem",
-  "tone": "surprised",
-  "text": "لكنَّ اليومَ مهرجانُ الفوانيس! وأنتَ مَن يُشعِلُ الفانوسَ الكبيرَ كلَّ عام!",
-  "audio": "res://assets/audio/lines/reem_s1_014.mp3"
- },
- "jad_s1_015": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "لهذا أحتاجُ مساعدتَكِ يا ريم. خُذي هذا الفانوسَ الصغير، ففيه شُعلةُ المهرجان، وأوصِليه إلى قمّةِ التلِّ قبلَ الغروب.",
-  "audio": "res://assets/audio/lines/jad_s1_015.mp3"
- },
- "reem_s1_016": {
-  "speaker": "Reem",
-  "tone": "enthusiastic",
-  "text": "إن شاءَ اللهُ يا جدّي، سأوصِلُه!",
-  "audio": "res://assets/audio/lines/reem_s1_016.mp3"
- },
- "jad_s1_017": {
-  "speaker": "Jad",
-  "tone": "wise",
-  "text": "وخُذي دفتري أيضاً. كتبتُ فيه أسرارَ الوادي، فإذا حِرتِ في شيءٍ فانظري فيه.",
-  "audio": "res://assets/audio/lines/jad_s1_017.mp3"
- },
- "reem_s1_018": {
-  "speaker": "Reem",
-  "tone": "grateful",
-  "text": "جزاكَ اللهُ خيراً يا جدّي.",
-  "audio": "res://assets/audio/lines/reem_s1_018.mp3"
- },
- "jad_s1_019": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "وإيّاكِ يا ابنتي. وخُذي إبريقَ السَّقي من عندِ البئر، فقد تحتاجينَه في الطريق.",
-  "audio": "res://assets/audio/lines/jad_s1_019.mp3"
- },
- "reem_s1_020": {
-  "speaker": "Reem",
-  "tone": "ordinary",
-  "text": "بئرُ جدّي، ماؤها باردٌ عَذْب. وهذا إبريقُ السَّقي، سآخذُه.",
-  "audio": "res://assets/audio/lines/reem_s1_020.mp3"
- },
- "reem_s1_021a": {
-  "speaker": "Reem",
-  "tone": "ashamed",
-  "text": "يا جدّي… أنا آسفة. أخذتُ السَّلّةَ فوقعتْ مرآتُكَ وانشرَخَت. لم أقصِد.",
-  "audio": "res://assets/audio/lines/reem_s1_021a.mp3"
- },
- "jad_s1_022a": {
-  "speaker": "Jad",
-  "tone": "tender, proud",
-  "text": "بارَكَ اللهُ فيكِ يا ريم على صدقِكِ. المرآةُ تُصلَح، أمّا الصِّدقُ فلا يُشترى بمال.",
-  "audio": "res://assets/audio/lines/jad_s1_022a.mp3"
- },
- "jad_s1_023": {
-  "speaker": "Jad",
-  "tone": "calm",
-  "text": "قالَ رسولُ اللهِ صلّى اللهُ عليهِ وسلّم: «إنَّ الصِّدْقَ يَهْدِي إلى البِرّ».",
-  "audio": "res://assets/audio/lines/jad_s1_023.mp3"
- },
- "jad_s1_024": {
-  "speaker": "Jad",
-  "tone": "warm",
-  "text": "خُذي هذه المرآةَ الصغيرة، كانت لي وأنا صغير. لعلَّها تنفعُكِ في الطريق.",
-  "audio": "res://assets/audio/lines/jad_s1_024.mp3"
- },
- "reem_s1_021b": {
-  "speaker": "Reem",
-  "tone": "very ashamed",
-  "text": "يا جدّي… أنا آسفة. انشرَخَتْ مرآتُكَ صباحاً، وخبّأتُها لأنّي خِفتُ أن تحزَن.",
-  "audio": "res://assets/audio/lines/reem_s1_021b.mp3"
- },
- "jad_s1_022b": {
-  "speaker": "Jad",
-  "tone": "tender",
-  "text": "أشكُرُكِ لأنّكِ عُدتِ وقُلتِ الحقيقةَ يا ريم. كلُّنا نخطئ، والرُّجوعُ عن الخطأِ شجاعة.",
-  "audio": "res://assets/audio/lines/jad_s1_022b.mp3"
- },
- "jad_s1_023b": {
-  "speaker": "Jad",
-  "tone": "gently asking",
-  "text": "أخبريني، أيُّهما كانَ أثقلَ على قلبِكِ: انشراخُ المرآة، أم إخفاءُ الحقيقة؟",
-  "audio": "res://assets/audio/lines/jad_s1_023b.mp3"
- },
- "reem_s1_024b": {
-  "speaker": "Reem",
-  "tone": "sincere",
-  "text": "إخفاءُ الحقيقة يا جدّي… لن أفعلَها مرّةً أخرى، إن شاءَ الله.",
-  "audio": "res://assets/audio/lines/reem_s1_024b.mp3"
- },
- "reem_s1_030": {
-  "speaker": "Reem",
-  "tone": "reassured",
-  "text": "بِسْمِ الله، توكّلتُ على الله، ولا حولَ ولا قوّةَ إلّا بالله.",
-  "audio": "res://assets/audio/lines/reem_s1_030.mp3"
- },
- "jad_s1_031": {
-  "speaker": "Jad",
-  "tone": "calling from a distance",
-  "text": "في حِفظِ اللهِ يا ريم! وتذكّري: امشي على الطريق، ولا تدوسي الزَّرع.",
-  "audio": "res://assets/audio/lines/jad_s1_031.mp3"
- },
- "reem_s1_032": {
-  "speaker": "Reem",
-  "tone": "calling back cheerfully",
-  "text": "إن شاءَ الله، في أمانِ اللهِ يا جدّي!",
-  "audio": "res://assets/audio/lines/reem_s1_032.mp3"
- },
- "reem_s2_001": {
-  "speaker": "Reem",
-  "tone": "amazed",
-  "text": "ما شاءَ الله! ما أجملَ هذا الحقل!",
-  "audio": "res://assets/audio/lines/reem_s2_001.mp3"
- },
- "reem_s2_002": {
-  "speaker": "Reem",
-  "tone": "reading a sign",
-  "text": "اللافتةُ تقول: «من فضلِكَ، امشِ على الطريق».",
-  "audio": "res://assets/audio/lines/reem_s2_002.mp3"
- },
- "reem_s2_003": {
-  "speaker": "Reem",
-  "tone": "thinking",
-  "text": "الطريقُ طويلٌ يدورُ حولَ الحقل… والشمسُ ترتفع.",
-  "audio": "res://assets/audio/lines/reem_s2_003.mp3"
- },
- "reem_s2_004a": {
-  "speaker": "Reem",
-  "tone": "reassured",
-  "text": "سأمشي على الطريق، كما أوصاني جدّي.",
-  "audio": "res://assets/audio/lines/reem_s2_004a.mp3"
- },
- "reem_s2_004b": {
-  "speaker": "Reem",
-  "tone": "in a hurry",
-  "text": "سأقطعُ الحقلَ بسرعة… لن يحدثَ شيء.",
-  "audio": "res://assets/audio/lines/reem_s2_004b.mp3"
- },
- "bee_s2_010b": {
-  "speaker": "Shahd",
-  "tone": "upset but polite",
-  "text": "مهلاً يا صغيرة! لقد دُستِ زهورَنا في طرفِ الحقل. من أينَ سنجمعُ الرَّحيق؟",
-  "audio": "res://assets/audio/lines/bee_s2_010b.mp3"
- },
- "reem_s2_011b": {
-  "speaker": "Reem",
-  "tone": "ashamed",
-  "text": "أنا آسفة، لم أفكّر في ذلك. كيفَ أُصلِحُ ما فعلتُ؟",
-  "audio": "res://assets/audio/lines/reem_s2_011b.mp3"
- },
- "bee_s2_012b": {
-  "speaker": "Shahd",
-  "tone": "calmer",
-  "text": "ارفعي الزهورَ المائلةَ برِفق، واسقيها بالماء.",
-  "audio": "res://assets/audio/lines/bee_s2_012b.mp3"
- },
- "reem_s2_013b": {
-  "speaker": "Reem",
-  "tone": "gentle",
-  "text": "تفضَّلي أيتها الزهور، سامحيني.",
-  "audio": "res://assets/audio/lines/reem_s2_013b.mp3"
- },
- "bee_s2_014b": {
-  "speaker": "Shahd",
-  "tone": "pleased",
-  "text": "أحسنتِ! الاعترافُ بالخطأِ وإصلاحُه من أخلاقِ الكِرام.",
-  "audio": "res://assets/audio/lines/bee_s2_014b.mp3"
- },
- "reem_s2_020": {
-  "speaker": "Reem",
-  "tone": "cheerful",
-  "text": "السَّلامُ عليكم أيّتها النَّحلة!",
-  "audio": "res://assets/audio/lines/reem_s2_020.mp3"
- },
- "bee_s2_021": {
-  "speaker": "Shahd",
-  "tone": "lively",
-  "text": "وعليكمُ السَّلام! أنا شَهد، كبيرةُ نحلاتِ الحقل.",
-  "audio": "res://assets/audio/lines/bee_s2_021.mp3"
- },
- "reem_s2_022": {
-  "speaker": "Reem",
-  "tone": "caring",
-  "text": "تشرَّفتُ بمعرفتِكِ يا شَهد. لماذا تبدينَ حزينة؟",
-  "audio": "res://assets/audio/lines/reem_s2_022.mp3"
- },
- "bee_s2_023": {
-  "speaker": "Shahd",
-  "tone": "worried",
-  "text": "زهورُنا تحتَ الشجرةِ الكبيرة لم تتفتّح اليوم. الظِّلُّ يغطّيها، والشمسُ لا تصلُ إليها.",
-  "audio": "res://assets/audio/lines/bee_s2_023.mp3"
- },
- "bee_s2_024": {
-  "speaker": "Shahd",
-  "tone": "worried",
-  "text": "وبدونِ الزهورِ لا رَحيق، وبدونِ الرَّحيقِ لا عَسَل!",
-  "audio": "res://assets/audio/lines/bee_s2_024.mp3"
- },
- "reem_s2_025": {
-  "speaker": "Reem",
-  "tone": "thinking",
-  "text": "الشمسُ هناك… والزهورُ هنا في الظِّلّ… كيفَ أُوصِلُ إليها الضَّوء؟",
-  "audio": "res://assets/audio/lines/reem_s2_025.mp3"
- },
- "reem_s2_026": {
-  "speaker": "Reem",
-  "tone": "reading",
-  "text": "يكتبُ جدّي: «المرآةُ تُعيدُ ضَوءَ الشَّمسِ إلى حيثُ تشاء».",
-  "audio": "res://assets/audio/lines/reem_s2_026.mp3"
- },
- "reem_s2_027": {
-  "speaker": "Reem",
-  "tone": "ordinary",
-  "text": "خلايا النَّحل… أسمعُ طَنينَها من هنا.",
-  "audio": "res://assets/audio/lines/reem_s2_027.mp3"
- },
- "reem_s2_030": {
-  "speaker": "Reem",
-  "tone": "delighted",
-  "text": "انظري يا شَهد! وصلَ الضَّوءُ إلى الزهور!",
-  "audio": "res://assets/audio/lines/reem_s2_030.mp3"
- },
- "bee_s2_031": {
-  "speaker": "Shahd",
-  "tone": "very happy",
-  "text": "سبحانَ الله! تفتَّحَتْ كلُّها! جزاكِ اللهُ خيراً يا ريم!",
-  "audio": "res://assets/audio/lines/bee_s2_031.mp3"
- },
- "reem_s2_032": {
-  "speaker": "Reem",
-  "tone": "modest",
-  "text": "وجزاكِ خيراً. الحمدُ لله.",
-  "audio": "res://assets/audio/lines/reem_s2_032.mp3"
- },
- "bee_s2_033": {
-  "speaker": "Shahd",
-  "tone": "warm",
-  "text": "خُذي جرّةَ العَسَلِ هذه هديّةً منّا، فقد تنفعُكِ في طريقِك.",
-  "audio": "res://assets/audio/lines/bee_s2_033.mp3"
- },
- "reem_s2_041b": {
-  "speaker": "Reem",
-  "tone": "remembering, then sad",
-  "text": "مرآة! أحتاجُ مرآة… لكنّي تركتُ مرآةَ جدّي مشروخةً خلفَ الوسادة، ولم أقُلْ له شيئاً.",
-  "audio": "res://assets/audio/lines/reem_s2_041b.mp3"
- },
- "reem_s2_042b": {
-  "speaker": "Reem",
-  "tone": "determined",
-  "text": "يجبُ أن أعودَ وأخبرَه بالحقيقة.",
-  "audio": "res://assets/audio/lines/reem_s2_042b.mp3"
- },
- "fox_s2_050": {
-  "speaker": "Thaaloob",
-  "tone": "friendly, charming",
-  "text": "السَّلامُ عليكم يا صغيرةَ الوادي! إلى أينَ بهذه السُّرعة؟",
-  "audio": "res://assets/audio/lines/fox_s2_050.mp3"
- },
- "reem_s2_051": {
-  "speaker": "Reem",
-  "tone": "polite",
-  "text": "وعليكمُ السَّلام. أنا ذاهبةٌ إلى قمّةِ التلِّ لأوصِلَ شُعلةَ المهرجان.",
-  "audio": "res://assets/audio/lines/reem_s2_051.mp3"
- },
- "fox_s2_052": {
-  "speaker": "Thaaloob",
-  "tone": "exaggerated wonder",
-  "text": "ما شاءَ الله! مهمّةٌ عظيمة! لكنِ انظري إلى هذا الحجرِ العجيب، يلمعُ أكثرَ من الشَّمس! إنّه يُضيءُ الطريقَ في الليل.",
-  "audio": "res://assets/audio/lines/fox_s2_052.mp3"
- },
- "fox_s2_053": {
-  "speaker": "Thaaloob",
-  "tone": "sly but friendly",
-  "text": "وأنا كريمٌ اليوم! أعطيكِ إيّاهُ مقابلَ تلكَ المرآةِ الصغيرةِ فقط. ما رأيُكِ؟",
-  "audio": "res://assets/audio/lines/fox_s2_053.mp3"
- },
- "reem_s2_054a": {
-  "speaker": "Reem",
-  "tone": "polite but firm",
-  "text": "شكراً لكَ يا ثعلوب، لكنَّ هذه المرآةَ هديّةٌ من جدّي، وهي أمانةٌ عندي. لا أُبادِلُها دونَ إذنِه.",
-  "audio": "res://assets/audio/lines/reem_s2_054a.mp3"
- },
- "fox_s2_055a": {
-  "speaker": "Thaaloob",
-  "tone": "laughing, impressed",
-  "text": "ههه… فتاةٌ ذكيّة! حسناً حسناً، لا بأس. لعلَّنا نلتقي في الطريق!",
-  "audio": "res://assets/audio/lines/fox_s2_055a.mp3"
- },
- "reem_s2_054b": {
-  "speaker": "Reem",
-  "tone": "excited",
-  "text": "حجرٌ يُضيءُ في الليل؟ حسناً، اتَّفقنا!",
-  "audio": "res://assets/audio/lines/reem_s2_054b.mp3"
- },
- "reem_s2_055b": {
-  "speaker": "Reem",
-  "tone": "disappointed",
-  "text": "هذا ليسَ حجراً عجيباً… إنّه حجرٌ عاديٌّ مدهونٌ بالعَسَل!",
-  "audio": "res://assets/audio/lines/reem_s2_055b.mp3"
- },
- "reem_s2_056b": {
-  "speaker": "Reem",
-  "tone": "regretful, thinking",
-  "text": "أخطأتُ حينَ بادلتُ هديّةَ جدّي دونَ أن أستأذِنَه… يجبُ أن أستعيدَها.",
-  "audio": "res://assets/audio/lines/reem_s2_056b.mp3"
- },
- "reem_s2_057b": {
-  "speaker": "Reem",
-  "tone": "polite, honest",
-  "text": "يا ثعلوب، هذه المرآةُ أمانةٌ من جدّي، والحجرُ لم يكنْ عجيباً. أرجو أن تُعيدَها إليّ.",
-  "audio": "res://assets/audio/lines/reem_s2_057b.mp3"
- },
- "fox_s2_058b": {
-  "speaker": "Thaaloob",
-  "tone": "embarrassed",
-  "text": "أمم… حسناً، حسناً. خُذيها… كنتُ أمزحُ فقط!",
-  "audio": "res://assets/audio/lines/fox_s2_058b.mp3"
- },
- "reem_s2_059b": {
-  "speaker": "Reem",
-  "tone": "kind",
-  "text": "وهذا حجرُكَ. لكنَّ المزاحَ لا يكونُ بالكذبِ يا ثعلوب.",
-  "audio": "res://assets/audio/lines/reem_s2_059b.mp3"
- },
- "reem_s2_070": {
-  "speaker": "Reem",
-  "tone": "cheerful",
-  "text": "الحمدُ لله. هيّا إلى الجَدْوَل!",
-  "audio": "res://assets/audio/lines/reem_s2_070.mp3"
- },
- "jad_s2_071": {
-  "speaker": "Jad",
-  "tone": "narrator, warm and slow",
-  "text": "أحسنتِ يا ريم. كلُّ زهرةٍ في شجرةِ قلبِكِ عملٌ طيّب، وكلُّ غصنٍ عادَ أخضرَ خطأٌ أصلحتِه. والطريقُ ما زالَ طويلاً…",
-  "audio": "res://assets/audio/lines/jad_s2_071.mp3"
- },
- "reem_hint_briefing_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَسْأَلُ جَدِّي عَنِ الرِّحْلَة.",
-  "audio": "res://assets/audio/lines/reem_hint_briefing_1.mp3"
- },
- "reem_hint_briefing_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "جَدِّي يَجْلِسُ تَحْتَ الشَّجَرَة.",
-  "audio": "res://assets/audio/lines/reem_hint_briefing_2.mp3"
- },
- "reem_hint_briefing_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَضْغَطُ عَلَى جَدِّي لِأَتَحَدَّثَ مَعَهُ.",
-  "audio": "res://assets/audio/lines/reem_hint_briefing_3.mp3"
- },
- "reem_hint_yard_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "أَنَا مُسْتَعِدَّةٌ لِلرِّحْلَة.",
-  "audio": "res://assets/audio/lines/reem_hint_yard_1.mp3"
- },
- "reem_hint_yard_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "الْبَوَّابَةُ عَلَى يَمِينِ السَّاحَة.",
-  "audio": "res://assets/audio/lines/reem_hint_yard_2.mp3"
- },
- "reem_hint_yard_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأَذْهَبَ إِلَى الْبَوَّابَة.",
-  "audio": "res://assets/audio/lines/reem_hint_yard_3.mp3"
- },
- "reem_hint_path_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَنْظُرُ إِلَى الطَّرِيق.",
-  "audio": "res://assets/audio/lines/reem_hint_path_1.mp3"
- },
- "reem_hint_path_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "اللَّافِتَةُ تُسَاعِدُنِي عَلَى الْمَشْيِ بِرِفْقٍ.",
-  "audio": "res://assets/audio/lines/reem_hint_path_2.mp3"
- },
- "reem_hint_path_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَقْرَأُ اللَّافِتَةَ، ثُمَّ أَتَّبِعُ الطَّرِيقَ نَحْوَ الْيَمِينِ.",
-  "audio": "res://assets/audio/lines/reem_hint_path_3.mp3"
- },
- "reem_hint_bee_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "لَعَلَّ شَهْدَ تَحْتَاجُ إِلَى مُسَاعَدَتِي.",
-  "audio": "res://assets/audio/lines/reem_hint_bee_1.mp3"
- },
- "reem_hint_bee_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَسْأَلُ النَّحْلَةَ عَنِ الزُّهُورِ.",
-  "audio": "res://assets/audio/lines/reem_hint_bee_2.mp3"
- },
- "reem_hint_bee_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَضْغَطُ عَلَى شَهْدَ بِجَانِبِ خَلَايَا النَّحْلِ.",
-  "audio": "res://assets/audio/lines/reem_hint_bee_3.mp3"
- },
- "reem_hint_water_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "يُمْكِنُنِي إِصْلَاحُ مَا حَدَثَ لِلزُّهُورِ.",
-  "audio": "res://assets/audio/lines/reem_hint_water_1.mp3"
- },
- "reem_hint_water_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "الزُّهُورُ الذَّابِلَةُ تَحْتَاجُ إِلَى الْمَاءِ.",
-  "audio": "res://assets/audio/lines/reem_hint_water_2.mp3"
- },
- "reem_hint_water_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَآخُذُ إِبْرِيقَ الرَّيِّ مِنَ الْبِئْرِ، ثُمَّ أَضْغَطُ عَلَى الزُّهُورِ الَّتِي دُسْتُهَا.",
-  "audio": "res://assets/audio/lines/reem_hint_water_3.mp3"
- },
- "reem_hint_examine_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَنْظُرُ إِلَى الزُّهُورِ الْمُغْلَقَةِ.",
-  "audio": "res://assets/audio/lines/reem_hint_examine_1.mp3"
- },
- "reem_hint_examine_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "رُبَّمَا أَحْتَاجُ إِلَى شَيْءٍ يُسَاعِدُهَا.",
-  "audio": "res://assets/audio/lines/reem_hint_examine_2.mp3"
- },
- "reem_hint_examine_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَضْغَطُ عَلَى الزُّهُورِ فِي الظِّلِّ لِأَعْرِفَ مَا يَنْقُصُنِي.",
-  "audio": "res://assets/audio/lines/reem_hint_examine_3.mp3"
- },
- "reem_hint_confess_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "يُمْكِنُنِي أَنْ أَتَحَدَّثَ مَعَ جَدِّي بِصِدْقٍ.",
-  "audio": "res://assets/audio/lines/reem_hint_confess_1.mp3"
- },
- "reem_hint_confess_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "جَدِّي يُسَاعِدُنِي حِينَ أُخْبِرُهُ بِمَا حَدَثَ.",
-  "audio": "res://assets/audio/lines/reem_hint_confess_2.mp3"
- },
- "reem_hint_confess_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَعُودُ إِلَى السَّاحَةِ وَأَضْغَطُ عَلَى جَدِّي لِأُخْبِرَهُ عَنِ الْمِرْآةِ.",
-  "audio": "res://assets/audio/lines/reem_hint_confess_3.mp3"
- },
- "reem_hint_mirror_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "الزُّهُورُ فِي الظِّلِّ تَحْتَاجُ إِلَى الضَّوْءِ.",
-  "audio": "res://assets/audio/lines/reem_hint_mirror_1.mp3"
- },
- "reem_hint_mirror_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "الْمِرْآةُ تَعْكِسُ ضَوْءَ الشَّمْسِ.",
-  "audio": "res://assets/audio/lines/reem_hint_mirror_2.mp3"
- },
- "reem_hint_mirror_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "مَعِي مِرْآةُ جَدِّي؛ سَأَضْغَطُ عَلَى الزُّهُورِ الْمُغْلَقَةِ لِأُوَجِّهَ الضَّوْءَ إِلَيْهَا.",
-  "audio": "res://assets/audio/lines/reem_hint_mirror_3.mp3"
- },
- "reem_hint_forward_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "يُمْكِنُنِي أَنْ أُكْمِلَ رِحْلَتِي.",
-  "audio": "res://assets/audio/lines/reem_hint_forward_1.mp3"
- },
- "reem_hint_forward_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "الطَّرِيقُ يَمْتَدُّ نَحْوَ الْيَمِينِ.",
-  "audio": "res://assets/audio/lines/reem_hint_forward_2.mp3"
- },
- "reem_hint_forward_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأُكْمِلَ الطَّرِيقَ.",
-  "audio": "res://assets/audio/lines/reem_hint_forward_3.mp3"
- },
- "reem_hint_stone_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "هَلِ الْحَجَرُ كَمَا وَصَفَهُ ثَعْلُوبُ؟",
-  "audio": "res://assets/audio/lines/reem_hint_stone_1.mp3"
- },
- "reem_hint_stone_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَفْحَصُ الْحَجَرَ الَّذِي أَعْطَانِي إِيَّاهُ.",
-  "audio": "res://assets/audio/lines/reem_hint_stone_2.mp3"
- },
- "reem_hint_stone_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَضْغَطُ عَلَى الْحَجَرِ فِي السَّلَّةِ لِأَمْسَحَهُ.",
-  "audio": "res://assets/audio/lines/reem_hint_stone_3.mp3"
- },
- "reem_hint_return_stone_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "يُمْكِنُنِي إِصْلَاحُ هَذَا الْخَطَإِ.",
-  "audio": "res://assets/audio/lines/reem_hint_return_stone_1.mp3"
- },
- "reem_hint_return_stone_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "ثَعْلُوبُ مَا زَالَ بِجَانِبِ الصَّخْرَةِ.",
-  "audio": "res://assets/audio/lines/reem_hint_return_stone_2.mp3"
- },
- "reem_hint_return_stone_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "سَأَضْغَطُ عَلَى ثَعْلُوبَ لِأُعِيدَ الْحَجَرَ وَأَسْتَرِدَّ الْمِرْآةَ.",
-  "audio": "res://assets/audio/lines/reem_hint_return_stone_3.mp3"
- },
- "reem_card_shahd_name": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "شَهْد",
-  "audio": "res://assets/audio/lines/reem_card_shahd_name.mp3"
- },
- "reem_card_shahd_fact": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, thoughtful notebook reading",
-  "text": "تَجْمَعُ النَّحْلَةُ الرَّحِيقَ مِنَ الْأَزْهَارِ.",
-  "audio": "res://assets/audio/lines/reem_card_shahd_fact.mp3"
- },
- "reem_stream_arrive": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "هَذَا جَدْوَلٌ جَمِيلٌ. سَأَسِيرُ عَلَى الضِّفَّةِ بِهُدُوءٍ.",
-  "audio": "res://assets/audio/lines/reem_stream_arrive.mp3"
- },
- "reem_stream_ducks": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "تُرِيدُ الْبَطَّةُ وَصِغَارُهَا الْعُبُورَ، وَلَكِنَّ الْحِجَارَةَ تَحَرَّكَتْ.",
-  "audio": "res://assets/audio/lines/reem_stream_ducks.mp3"
- },
- "reem_stream_log": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "بِسْمِ اللّٰهِ. هَذَا الْجِذْعُ خَفِيفٌ. سَأُدَحْرِجُهُ لِيَصِيرَ جِسْرًا صَغِيرًا.",
-  "audio": "res://assets/audio/lines/reem_stream_log.mp3"
- },
- "reem_stream_thanks": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "عَبَرَتِ الْبَطَّةُ وَصِغَارُهَا! وَتَرَكَتْ لِي رِيشَةً مُلَوَّنَةً لِلْمِهْرَجَانِ.",
-  "audio": "res://assets/audio/lines/reem_stream_thanks.mp3"
- },
- "reem_stream_rabbit": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "هَذَا أَرْنُوبُ! رَكَضَ قَبْلَ أَنْ يَسْمَعَ وَصْفَ الطَّرِيقِ. هَلْ أَتْبَعُهُ؟",
-  "audio": "res://assets/audio/lines/reem_stream_rabbit.mp3"
- },
- "reem_stream_map": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "سَأَقْرَأُ خَرِيطَةَ جَدِّي أَوَّلًا. هَا هُوَ الطَّرِيقُ إِلَى الصَّنَوْبَرِ!",
-  "audio": "res://assets/audio/lines/reem_stream_map.mp3"
- },
- "reem_stream_lost": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "أَيْنَ الطَّرِيقُ؟ لَقَدْ تَسَرَّعْتُ. سَأَعُودُ إِلَى الضِّفَّةِ وَأَنْظُرُ فِي الْخَرِيطَةِ.",
-  "audio": "res://assets/audio/lines/reem_stream_lost.mp3"
- },
- "reem_stream_found": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "الْحَمْدُ لِلّٰهِ! عَرَفْتُ الطَّرِيقَ مِنَ الْخَرِيطَةِ. سَأَتَمَهَّلُ.",
-  "audio": "res://assets/audio/lines/reem_stream_found.mp3"
- },
- "fox_stream_offer": {
-  "speaker": "Thaaloob",
-  "tone": "playful, sly but gentle",
-  "text": "يَا رِيمُ، دَعِينِي أَحْمِلُ الْفَانُوسَ عَنْكِ! سَتَصِيرُ سَلَّتُكِ أَخَفَّ.",
-  "audio": "res://assets/audio/lines/fox_stream_offer.mp3"
- },
- "reem_stream_keep": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "جَزَاكَ اللّٰهُ خَيْرًا، وَلَكِنَّ الْفَانُوسَ أَمَانَةٌ. سَأَحْمِلُهُ بِنَفْسِي.",
-  "audio": "res://assets/audio/lines/reem_stream_keep.mp3"
- },
- "fox_stream_borrow": {
-  "speaker": "Thaaloob",
-  "tone": "playful, sly but gentle",
-  "text": "سَأَجْلِسُ هُنَا وَأُجَرِّبُ ضَوْءَهُ قَلِيلًا!",
-  "audio": "res://assets/audio/lines/fox_stream_borrow.mp3"
- },
- "reem_stream_ask_back": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "يَا ثَعْلُوبُ، أَحْتَاجُ إِلَى الْفَانُوسِ لِلْمِهْرَجَانِ. أَعِدْهُ إِلَيَّ مِنْ فَضْلِكَ.",
-  "audio": "res://assets/audio/lines/reem_stream_ask_back.mp3"
- },
- "fox_stream_return": {
-  "speaker": "Thaaloob",
-  "tone": "playful, sly but gentle",
-  "text": "تَفَضَّلِي. هَا هُوَ فَانُوسُكِ.",
-  "audio": "res://assets/audio/lines/fox_stream_return.mp3"
- },
- "reem_card_duck_name": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "الْبَطَّةُ",
-  "audio": "res://assets/audio/lines/reem_card_duck_name.mp3"
- },
- "reem_card_duck_fact": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "يُسَاعِدُ رِيشُ الْبَطَّةِ عَلَى إِبْعَادِ الْمَاءِ عَنْ جِسْمِهَا.",
-  "audio": "res://assets/audio/lines/reem_card_duck_fact.mp3"
- },
- "reem_hint_stream_bridge_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "كَيْفَ تَعْبُرُ الْبَطَّةُ مَعَ صِغَارِهَا؟",
-  "audio": "res://assets/audio/lines/reem_hint_stream_bridge_1.mp3"
- },
- "reem_hint_stream_bridge_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "قُرْبَ الْمَاءِ جِذْعٌ خَفِيفٌ.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_bridge_2.mp3"
- },
- "reem_hint_stream_bridge_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "أَضْغَطُ عَلَى الْجِذْعِ لِأَصْنَعَ جِسْرًا.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_bridge_3.mp3"
- },
- "reem_hint_stream_map_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "التَّمَهُّلُ يُسَاعِدُنِي عَلَى مَعْرِفَةِ الطَّرِيقِ.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_map_1.mp3"
- },
- "reem_hint_stream_map_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "خَرِيطَةُ جَدِّي فِي دَفْتَرِي.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_map_2.mp3"
- },
- "reem_hint_stream_map_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "أَضْغَطُ عَلَى أَرْنُوبَ، ثُمَّ أَخْتَارُ الْخَرِيطَةَ.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_map_3.mp3"
- },
- "reem_hint_stream_lantern_1": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "الْفَانُوسُ أَمَانَةٌ مَعِي.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_lantern_1.mp3"
- },
- "reem_hint_stream_lantern_2": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "ثَعْلُوبُ مَا زَالَ قَرِيبًا مِنِّي.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_lantern_2.mp3"
- },
- "reem_hint_stream_lantern_3": {
-  "speaker": "Reem",
-  "tone": "gentle, clear, reflective",
-  "text": "أَضْغَطُ عَلَى ثَعْلُوبَ لِأَطْلُبَ الْفَانُوسَ.",
-  "audio": "res://assets/audio/lines/reem_hint_stream_lantern_3.mp3"
- },
- "reem_pine_arrive": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "هُنَا تَلْتَقِي الطُّرُقُ عِنْدَ أَشْجَارِ الصَّنَوْبَرِ.",
-  "audio": "res://assets/audio/lines/reem_pine_arrive.mp3"
- },
- "fox_pine_offer": {
-  "speaker": "Thaaloob",
-  "tone": "playful, sly",
-  "text": "أَعْرِفُ طَرِيقًا سَهْلًا! لَا تَتَوَقَّفِي لِمُسَاعَدَةِ أَحَدٍ، فَلَنْ يَرَاكِ أَحَدٌ.",
-  "audio": "res://assets/audio/lines/fox_pine_offer.mp3"
- },
- "reem_pine_kind": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "سَأَخْتَارُ طَرِيقِي بِهُدُوءٍ، وَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ إِنْ شَاءَ اللّٰهُ.",
-  "audio": "res://assets/audio/lines/reem_pine_kind.mp3"
- },
- "reem_pine_skip": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "سَأُوَافِقُكَ لِأَصِلَ بِسُرْعَةٍ، وَلَنْ أَتَوَقَّفَ لِأَحَدٍ.",
-  "audio": "res://assets/audio/lines/reem_pine_skip.mp3"
- },
- "fox_pine_cave": {
-  "speaker": "Thaaloob",
-  "tone": "playful, sly",
-  "text": "طَرِيقُ الْكَهْفِ وَاحِدٌ مِنْ هَذِهِ الطُّرُقِ الثَّلَاثَةِ.",
-  "audio": "res://assets/audio/lines/fox_pine_cave.mp3"
- },
- "reem_pine_repair": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "الْوُصُولُ سَرِيعًا لَيْسَ كُلَّ شَيْءٍ. أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي.",
-  "audio": "res://assets/audio/lines/reem_pine_repair.mp3"
- },
- "reem_pine_fixed": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "سَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ عَلَى أَيِّ طَرِيقٍ أَخْتَارُهُ.",
-  "audio": "res://assets/audio/lines/reem_pine_fixed.mp3"
- },
- "reem_hint_pine_meet_1": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "ثَعْلُوبُ عِنْدَ مُفْتَرَقِ الطُّرُقِ.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_meet_1.mp3"
- },
- "reem_hint_pine_meet_2": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "مَاذَا يُرِيدُ أَنْ يَقُولَ لِي؟",
-  "audio": "res://assets/audio/lines/reem_hint_pine_meet_2.mp3"
- },
- "reem_hint_pine_meet_3": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "أَضْغَطُ عَلَى ثَعْلُوبَ لِأَسْمَعَهُ.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_meet_3.mp3"
- },
- "reem_hint_pine_repair_1": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_repair_1.mp3"
- },
- "reem_hint_pine_repair_2": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "اللَّافِتَةُ تُسَاعِدُنِي عَلَى التَّفْكِيرِ.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_repair_2.mp3"
- },
- "reem_hint_pine_repair_3": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "أَضْغَطُ عَلَى اللَّافِتَةِ وَأَخْتَارُ الْمُسَاعَدَةَ.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_repair_3.mp3"
- },
- "reem_hint_pine_route_1": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "هُنَاكَ ثَلَاثَةُ طُرُقٍ.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_route_1.mp3"
- },
- "reem_hint_pine_route_2": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "أَسْتَطِيعُ أَنْ أَخْتَارَ الْغَابَةَ أَوِ الْكَهْفَ أَوِ الْبُحَيْرَةَ.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_route_2.mp3"
- },
- "reem_hint_pine_route_3": {
-  "speaker": "Reem",
-  "tone": "gentle, reflective",
-  "text": "أَضْغَطُ عَلَى سَهْمِ الطَّرِيقِ الَّذِي أُرِيدُهُ.",
-  "audio": "res://assets/audio/lines/reem_hint_pine_route_3.mp3"
- },
- "reem_oak_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هُنَا تَنْمُو أَشْجَارُ الْبَلُّوطِ.",
-  "audio": "res://assets/audio/lines/reem_oak_arrive.mp3"
- },
- "reem_oak_search": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "نَسِيَ سِنْجُوبُ مَكَانَ ثِمَارِهِ. لِنَبْحَثْ قُرْبَ الْجُذُورِ.",
-  "audio": "res://assets/audio/lines/reem_oak_search.mp3"
- },
- "reem_oak_found": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَجَدْنَا الثِّمَارَ الثَّلَاثَ. مَاذَا نَفْعَلُ بِهَا؟",
-  "audio": "res://assets/audio/lines/reem_oak_found.mp3"
- },
- "reem_oak_share": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِنَتَقَاسَمْهَا. هَذِهِ حِصَّةٌ لِلْمِهْرَجَانِ.",
-  "audio": "res://assets/audio/lines/reem_oak_share.mp3"
- },
- "reem_oak_keep": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بَقِيَتِ الثِّمَارُ كُلُّهَا فِي كَوْمَةٍ وَاحِدَةٍ.",
-  "audio": "res://assets/audio/lines/reem_oak_keep.mp3"
- },
- "reem_oak_meet": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذَا قُنْفُوذٌ. يَقِفُ وَحْدَهُ. هَلْ أُسَلِّمُ عَلَيْهِ؟",
-  "audio": "res://assets/audio/lines/reem_oak_meet.mp3"
- },
- "reem_oak_greet": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "السَّلَامُ عَلَيْكَ يَا قُنْفُوذُ! شُكْرًا لِمُسَاعَدَتِكَ فِي جَمْعِ الْأَوْرَاقِ.",
-  "audio": "res://assets/audio/lines/reem_oak_greet.mp3"
- },
- "reem_oak_avoid": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بَقِيَ قُنْفُوذٌ وَحْدَهُ. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهِ.",
-  "audio": "res://assets/audio/lines/reem_oak_avoid.mp3"
- },
- "reem_oak_card_sinjoob": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يُخَبِّئُ السِّنْجَابُ بَعْضَ طَعَامِهِ لِيَأْكُلَهُ لَاحِقًا.",
-  "audio": "res://assets/audio/lines/reem_oak_card_sinjoob.mp3"
- },
- "reem_oak_card_qunfood": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَحْمِي الْأَشْوَاكُ جِسْمَ الْقُنْفُذِ.",
-  "audio": "res://assets/audio/lines/reem_oak_card_qunfood.mp3"
- },
- "reem_oak_sinjoob_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سِنْجُوبُ",
-  "audio": "res://assets/audio/lines/reem_oak_sinjoob_name.mp3"
- },
- "reem_oak_qunfood_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "قُنْفُوذُ",
-  "audio": "res://assets/audio/lines/reem_oak_qunfood_name.mp3"
- },
- "reem_cave_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "فِي الْكَهْفِ ظِلٌّ بَارِدٌ، وَمَعِي فَانُوسِي.",
-  "audio": "res://assets/audio/lines/reem_cave_arrive.mp3"
- },
- "reem_cave_kitten": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَخَافُ قَطْقُوطَةُ مِنَ الظَّلَامِ. هَلْ أَمْشِي مَعَهَا؟",
-  "audio": "res://assets/audio/lines/reem_cave_kitten.mp3"
- },
- "reem_cave_light": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَعَالَيْ يَا قَطْقُوطَةُ، سَنَمْشِي خُطْوَةً خُطْوَةً. سَتَدُقِّينَ جَرَسَ الْمِهْرَجَانِ!",
-  "audio": "res://assets/audio/lines/reem_cave_light.mp3"
- },
- "reem_cave_mock": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بَقِيَتْ قَطْقُوطَةُ عِنْدَ الْمَدْخَلِ. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهَا.",
-  "audio": "res://assets/audio/lines/reem_cave_mock.mp3"
- },
- "reem_cave_web": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "قَطَعَتِ الرِّيحُ خُيُوطَ عَنْكُوبٍ. لِنَصِلِ الْأَشْكَالَ كَمَا فِي الْمِثَالِ.",
-  "audio": "res://assets/audio/lines/reem_cave_web.mp3"
- },
- "reem_cave_give_up": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لَمْ تَكْتَمِلِ الشَّبَكَةُ. يُمْكِنُنِي الْمُحَاوَلَةُ مَرَّةً أُخْرَى.",
-  "audio": "res://assets/audio/lines/reem_cave_give_up.mp3"
- },
- "reem_cave_thread": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "اكْتَمَلَتِ الشَّبَكَةُ! شُكْرًا لَكَ يَا عَنْكُوبُ عَلَى خُيُوطِ الْفَوَانِيسِ.",
-  "audio": "res://assets/audio/lines/reem_cave_thread.mp3"
- },
- "fox_cave_praise": {
-  "speaker": "Thaaloob",
-  "tone": "playful",
-  "text": "يَا رِيمُ، مَا أَجْمَلَ صَوْتَكِ! ضَعِي سَلَّتَكِ هُنَا وَغَنِّي لَنَا.",
-  "audio": "res://assets/audio/lines/fox_cave_praise.mp3"
- },
- "reem_cave_keep": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "شُكْرًا يَا ثَعْلُوبُ. سَأُبْقِي سَلَّتِي قُرْبِي.",
-  "audio": "res://assets/audio/lines/reem_cave_keep.mp3"
- },
- "reem_cave_stolen": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "أَخَذَ ثَعْلُوبُ جَرَّةَ الْعَسَلِ! سَأَرْفَعُ سَلَّتِي.",
-  "audio": "res://assets/audio/lines/reem_cave_stolen.mp3"
- },
- "reem_cave_empty": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "فَتَّشَ ثَعْلُوبُ فِي سَلَّتِي. سَأَرْفَعُهَا وَأُبْقِيهَا قُرْبِي.",
-  "audio": "res://assets/audio/lines/reem_cave_empty.mp3"
- },
- "reem_cave_repair": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَلَّتِي مَعِي مِنْ جَدِيدٍ.",
-  "audio": "res://assets/audio/lines/reem_cave_repair.mp3"
- },
- "reem_cave_cat_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "قَطْقُوطَةُ",
-  "audio": "res://assets/audio/lines/reem_cave_cat_name.mp3"
- },
- "reem_cave_cat_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تُسَاعِدُ شَوَارِبُ الْقِطَّةِ عَلَى الإِحْسَاسِ بِمَا حَوْلَهَا.",
-  "audio": "res://assets/audio/lines/reem_cave_cat_fact.mp3"
- },
- "reem_cave_spider_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "عَنْكُوبُ",
-  "audio": "res://assets/audio/lines/reem_cave_spider_name.mp3"
- },
- "reem_cave_spider_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِلْعَنْكَبُوتِ ثَمَانِي أَرْجُلٍ.",
-  "audio": "res://assets/audio/lines/reem_cave_spider_fact.mp3"
- },
- "reem_lake_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "مَاءُ الْبُحَيْرَةِ هَادِئٌ. سَأَمْشِي عَلَى الضِّفَّةِ.",
-  "audio": "res://assets/audio/lines/reem_lake_arrive.mp3"
- },
- "reem_lake_frog": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "فَقَدَ دَفْدُوفُ صَوْتَهُ. قَلِيلٌ مِنَ الْعَسَلِ مَعَ مَاءٍ دَافِئٍ قَدْ يُسَاعِدُهُ.",
-  "audio": "res://assets/audio/lines/reem_lake_frog.mp3"
- },
- "reem_lake_need_honey": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لَيْسَ مَعِي عَسَلٌ. لِنَسْأَلِ الْقَارِبَ عِنْدَ الرَّصِيفِ.",
-  "audio": "res://assets/audio/lines/reem_lake_need_honey.mp3"
- },
- "reem_lake_boat": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَقُولُ الْقَارِبُ إِنَّهُ سَيَأْخُذُنِي إِلَى الْبَحْرِ يَوْمًا مَا.",
-  "audio": "res://assets/audio/lines/reem_lake_boat.mp3"
- },
- "reem_lake_reserve": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لَدَى الْقَارِبِ مِلْعَقَةٌ مِنَ الْعَسَلِ لِدَفْدُوفَ.",
-  "audio": "res://assets/audio/lines/reem_lake_reserve.mp3"
- },
- "reem_lake_share": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "عَادَ صَوْتُ دَفْدُوفَ! أَهْدَانِي مِزْمَارًا مِنَ الْقَصَبِ.",
-  "audio": "res://assets/audio/lines/reem_lake_share.mp3"
- },
- "reem_lake_keep": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بَقِيَ دَفْدُوفُ صَامِتًا. يُمْكِنُنِي أَنْ أُشَارِكَهُ الْعَسَلَ.",
-  "audio": "res://assets/audio/lines/reem_lake_keep.mp3"
- },
- "reem_lake_gazelle": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "ابْتَعَدَتْ غَزْلَانَةُ عَنِ الْمَكَانِ الَّذِي حَدَّدَتْهُ أُمُّهَا. لِنَتْبَعْ آثَارَ خُطَاهَا.",
-  "audio": "res://assets/audio/lines/reem_lake_gazelle.mp3"
- },
- "reem_lake_tracks": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَذَا أَثَرُ حَافِرٍ. لِنَبْحَثْ عَنِ الْأَثَرِ التَّالِي عَلَى الضِّفَّةِ.",
-  "audio": "res://assets/audio/lines/reem_lake_tracks.mp3"
- },
- "reem_lake_reunion": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَجَدْنَا أُمَّ غَزْلَانَةَ! سَتَبْقَى قُرْبَهَا هَذِهِ الْمَرَّةَ.",
-  "audio": "res://assets/audio/lines/reem_lake_reunion.mp3"
- },
- "reem_lake_frog_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "دَفْدُوفُ",
-  "audio": "res://assets/audio/lines/reem_lake_frog_name.mp3"
- },
- "reem_lake_frog_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَعِيشُ كَثِيرٌ مِنَ الضَّفَادِعِ قُرْبَ الْمَاءِ.",
-  "audio": "res://assets/audio/lines/reem_lake_frog_fact.mp3"
- },
- "reem_lake_gazelle_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "غَزْلَانَةُ",
-  "audio": "res://assets/audio/lines/reem_lake_gazelle_name.mp3"
- },
- "reem_lake_gazelle_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "تَجْرِي الْغِزْلَانُ بِسُرْعَةٍ عَلَى أَرْجُلِهَا الطَّوِيلَةِ.",
-  "audio": "res://assets/audio/lines/reem_lake_gazelle_fact.mp3"
- },
- "reem_orchard_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "وَصَلْتُ إِلَى بُسْتَانِ الْعَسَلِ.",
-  "audio": "res://assets/audio/lines/reem_orchard_arrive.mp3"
- },
- "reem_orchard_bear": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "عَلِقَ رَأْسُ دُبٍّ فِي الْجَرَّةِ. كَيْفَ أُسَاعِدُهُ؟",
-  "audio": "res://assets/audio/lines/reem_orchard_bear.mp3"
- },
- "reem_orchard_soft": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لَا تَخَفْ يَا دُبُّ. سَأَضَعُ قَلِيلًا مِنَ الْعَسَلِ عَلَى حَافَّةِ الْجَرَّةِ.",
-  "audio": "res://assets/audio/lines/reem_orchard_soft.mp3"
- },
- "reem_orchard_hard": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بَكَى دُبٌّ عِنْدَمَا شَدَدْتُ الْجَرَّةَ. سَأُحَاوِلُ بِرِفْقٍ.",
-  "audio": "res://assets/audio/lines/reem_orchard_hard.mp3"
- },
- "reem_orchard_free": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "خَرَجَ رَأْسُ دُبٍّ! سَيُسَاعِدُنَا فِي حَمْلِ الْفَوَانِيسِ.",
-  "audio": "res://assets/audio/lines/reem_orchard_free.mp3"
- },
- "fox_orchard_accuse": {
-  "speaker": "Thaaloob",
-  "tone": "playful",
-  "text": "أَنَا مُتَأَكِّدٌ أَنَّ دُبًّا أَخَذَ فَوَانِيسَ الْمِهْرَجَانِ.",
-  "audio": "res://assets/audio/lines/fox_orchard_accuse.mp3"
- },
- "reem_orchard_look": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "سَأَبْحَثُ عَنِ الْفَوَانِيسِ قَبْلَ أَنْ أَحْكُمَ.",
-  "audio": "res://assets/audio/lines/reem_orchard_look.mp3"
- },
- "reem_orchard_blame": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "حَزِنَ دُبٌّ عِنْدَمَا قُلْتُ إِنَّهُ أَخَذَهَا. سَأَبْحَثُ عَنْهَا.",
-  "audio": "res://assets/audio/lines/reem_orchard_blame.mp3"
- },
- "reem_orchard_wet": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "هَا هِيَ الْفَوَانِيسُ! سَقَطَتْ فِي الْجَدْوَلِ، وَلَمْ يَأْخُذْهَا دُبٌّ.",
-  "audio": "res://assets/audio/lines/reem_orchard_wet.mp3"
- },
- "reem_orchard_sorry": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "عُذْرًا يَا دُبُّ. وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ.",
-  "audio": "res://assets/audio/lines/reem_orchard_sorry.mp3"
- },
- "reem_orchard_report": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَا دُبُّ، وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ. لِنَحْمِلْهَا مَعًا.",
-  "audio": "res://assets/audio/lines/reem_orchard_report.mp3"
- },
- "reem_orchard_dubb_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "دُبٌّ",
-  "audio": "res://assets/audio/lines/reem_orchard_dubb_name.mp3"
- },
- "reem_orchard_dubb_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِلدُّبِّ حَاسَّةُ شَمٍّ قَوِيَّةٌ.",
-  "audio": "res://assets/audio/lines/reem_orchard_dubb_fact.mp3"
- },
- "reem_hill_arrive": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "بَدَأَتِ الشَّمْسُ تَغْرُبُ خَلْفَ التَّلِّ.",
-  "audio": "res://assets/audio/lines/reem_hill_arrive.mp3"
- },
- "reem_hill_proud": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لَا يُرِيدُ طَاوُوسٌ أَنْ يُعِيرَنَا رِيشَهُ. يَقُولُ إِنَّهُ الْأَجْمَلُ.",
-  "audio": "res://assets/audio/lines/reem_hill_proud.mp3"
- },
- "reem_hill_flatter": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "مَدَحْتُهُ وَحْدَهُ، وَبَقِيَ الْفَانُوسُ بِلَا زِينَةٍ.",
-  "audio": "res://assets/audio/lines/reem_hill_flatter.mp3"
- },
- "reem_hill_show": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "لِنَضَعِ الرِّيشَةَ مَعَ الشَّرِيطِ وَفَانُوسِ الْمِهْرَجَانِ.",
-  "audio": "res://assets/audio/lines/reem_hill_show.mp3"
- },
- "reem_hill_gift": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "انْظُرْ يَا طَاوُوسُ! بِعَمَلِنَا مَعًا صَارَ الْفَانُوسُ أَجْمَلَ. شُكْرًا لَكَ عَلَى الرِّيشِ.",
-  "audio": "res://assets/audio/lines/reem_hill_gift.mp3"
- },
- "reem_hill_name": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "طَاوُوسٌ",
-  "audio": "res://assets/audio/lines/reem_hill_name.mp3"
- },
- "reem_hill_fact": {
-  "speaker": "Reem",
-  "tone": "warm",
-  "text": "يَبْسُطُ الطَّاوُوسُ رِيشَ ذَيْلِهِ مِثْلَ الْمِرْوَحَةِ.",
-  "audio": "res://assets/audio/lines/reem_hill_fact.mp3"
- }
+  "reem_ant_offer": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "مَا أَكْبَرَ هَذِهِ الزَّهْرَةَ! هَلْ أَقْتَرِبُ لِأَرَى مَمْلَكَةَ النَّمْلِ؟",
+    "audio": "res://assets/audio/lines/reem_ant_offer.mp3"
+  },
+  "reem_ant_tiny": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "صِرْتُ صَغِيرَةً، وَصَارَتْ حَبَّةُ الرَّمْلِ كَحَجَرٍ كَبِيرٍ.",
+    "audio": "res://assets/audio/lines/reem_ant_tiny.mp3"
+  },
+  "reem_ant_worker": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَوَقَّفَتِ النَّمْلَةُ عَنْ حَمْلِ الْبُذُورِ. لِنَحْمِلْ وَاحِدَةً مَعًا.",
+    "audio": "res://assets/audio/lines/reem_ant_worker.mp3"
+  },
+  "reem_ant_leave": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "بَقِيَتِ النَّمْلَةُ وَحْدَهَا مَعَ الْحِمْلِ الثَّقِيلِ. يُمْكِنُنِي أَنْ أُسَاعِدَهَا.",
+    "audio": "res://assets/audio/lines/reem_ant_leave.mp3"
+  },
+  "reem_ant_carry": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَرْفَعُ طَرَفَ الْبَذْرَةِ مَعَ النَّمْلَةِ.",
+    "audio": "res://assets/audio/lines/reem_ant_carry.mp3"
+  },
+  "reem_ant_helped": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "حَمَلْنَا الْبَذْرَةَ مَعًا، وَالْآنَ تَسْتَرِيحُ النَّمْلَةُ.",
+    "audio": "res://assets/audio/lines/reem_ant_helped.mp3"
+  },
+  "reem_ant_worker_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "النَّمْلَةُ الْعَامِلَةُ",
+    "audio": "res://assets/audio/lines/reem_ant_worker_name.mp3"
+  },
+  "reem_ant_worker_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِلنَّمْلَةِ سِتُّ أَرْجُلٍ.",
+    "audio": "res://assets/audio/lines/reem_ant_worker_fact.mp3"
+  },
+  "reem_ant_dew": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قَطْرَةُ الْمَاءِ هُنَا كَأَنَّهَا بُحَيْرَةٌ.",
+    "audio": "res://assets/audio/lines/reem_ant_dew.mp3"
+  },
+  "reem_ant_guard": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تُرِينِي الْخُنْفُسَاءُ الْوَرَقَةَ. إِذَا وَصَلَتْ إِلَى الضِّفَّتَيْنِ، صَارَتْ جِسْرًا.",
+    "audio": "res://assets/audio/lines/reem_ant_guard.mp3"
+  },
+  "fox_ant_hurry": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "كِدْتُ أَعْبُرُ قَبْلَ أَنْ تَسْتَقِرَّ الْوَرَقَةُ! سَأَنْتَظِرُ مَعَكِ.",
+    "audio": "res://assets/audio/lines/fox_ant_hurry.mp3"
+  },
+  "reem_ant_bridge": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "اسْتَقَرَّتِ الْوَرَقَةُ، وَصَارَ لَنَا جِسْرٌ.",
+    "audio": "res://assets/audio/lines/reem_ant_bridge.mp3"
+  },
+  "reem_ant_beetle_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "الْخُنْفُسَاءُ الْحَارِسَةُ",
+    "audio": "res://assets/audio/lines/reem_ant_beetle_name.mp3"
+  },
+  "reem_ant_beetle_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَحْمِي أَغْطِيَةُ الْخُنْفُسَاءِ الصُّلْبَةُ أَجْنِحَتَهَا.",
+    "audio": "res://assets/audio/lines/reem_ant_beetle_fact.mp3"
+  },
+  "reem_ant_city": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذِهِ مَخَازِنُ النَّمْلِ. لِكُلِّ بَذْرَةٍ مَكَانٌ.",
+    "audio": "res://assets/audio/lines/reem_ant_city.mp3"
+  },
+  "reem_ant_order": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَضَعُ الْبُذُورَ مِنَ الْأَصْغَرِ إِلَى الْأَكْبَرِ.",
+    "audio": "res://assets/audio/lines/reem_ant_order.mp3"
+  },
+  "reem_ant_try": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "لِنَنْظُرْ إِلَى حَجْمِ الْبَذْرَةِ الَّتِي تَأْتِي بَعْدَهَا.",
+    "audio": "res://assets/audio/lines/reem_ant_try.mp3"
+  },
+  "reem_ant_rain": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "بَدَأَ الْمَطَرُ فِي الْخَارِجِ. لِنَدْخُلِ النَّفَقَ مَعًا.",
+    "audio": "res://assets/audio/lines/reem_ant_rain.mp3"
+  },
+  "reem_ant_safe": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَصَلْنَا إِلَى مَكَانٍ جَافٍّ، وَالْبُذُورُ فِي مَخَازِنِهَا.",
+    "audio": "res://assets/audio/lines/reem_ant_safe.mp3"
+  },
+  "reem_ant_queen_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "مَلِكَةُ النَّمْلِ",
+    "audio": "res://assets/audio/lines/reem_ant_queen_name.mp3"
+  },
+  "reem_ant_queen_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَضَعُ مَلِكَةُ النَّمْلِ الْبَيْضَ فِي الْمُسْتَعْمَرَةِ.",
+    "audio": "res://assets/audio/lines/reem_ant_queen_fact.mp3"
+  },
+  "reem_snow_offer": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذَا دَرْبُ الثَّلْجِ. هَلْ أَسْلُكُهُ؟",
+    "audio": "res://assets/audio/lines/reem_snow_offer.mp3"
+  },
+  "reem_snow_edge": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "غَطَّى الثَّلْجُ الْأَشْجَارَ، وَبَقِيَ الدَّرْبُ وَاضِحًا.",
+    "audio": "res://assets/audio/lines/reem_snow_edge.mp3"
+  },
+  "reem_snow_cold": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "الْحَسُّونُ الصَّغِيرُ يَشْعُرُ بِالْبَرْدِ. هَلْ أُعْطِيهِ الْقِطْعَةَ الدَّافِئَةَ؟",
+    "audio": "res://assets/audio/lines/reem_snow_cold.mp3"
+  },
+  "reem_snow_keep": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "بَقِيَ الْحَسُّونُ بَارِدًا. أَسْتَطِيعُ أَنْ أَضَعَ الْقِطْعَةَ فِي مَأْوَاهُ.",
+    "audio": "res://assets/audio/lines/reem_snow_keep.mp3"
+  },
+  "reem_snow_shelter": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَضَعُ الْقِطْعَةَ النَّاعِمَةَ فِي مَأْوَى الْحَسُّونِ.",
+    "audio": "res://assets/audio/lines/reem_snow_shelter.mp3"
+  },
+  "reem_snow_warm": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "دَخَلَ الْحَسُّونُ مَأْوَاهُ وَدَفِئَ.",
+    "audio": "res://assets/audio/lines/reem_snow_warm.mp3"
+  },
+  "reem_snow_bird_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "حَسُّونٌ",
+    "audio": "res://assets/audio/lines/reem_snow_bird_name.mp3"
+  },
+  "reem_snow_bird_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَأْكُلُ الْحَسُّونُ الْبُذُورَ بِمِنْقَارِهِ الصَّغِيرِ.",
+    "audio": "res://assets/audio/lines/reem_snow_bird_fact.mp3"
+  },
+  "reem_snow_tracks": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذِهِ آثَارُ أَقْدَامٍ عَلَى الثَّلْجِ.",
+    "audio": "res://assets/audio/lines/reem_snow_tracks.mp3"
+  },
+  "reem_snow_rabbit": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يُرِينِي أَرْنُوبٌ آثَارَ قَفَزَاتِهِ. أَمَّا الصَّغِيرُ فَلِحَوَافِرِهِ شَقٌّ فِي الْوَسَطِ.",
+    "audio": "res://assets/audio/lines/reem_snow_rabbit.mp3"
+  },
+  "fox_snow_tracks": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "اِتَّبِعِي آثَارِي! أَوْ لِنُقَارِنْهَا أَوَّلًا بِآثَارِ حَوَافِرِ الْأَيِّلِ.",
+    "audio": "res://assets/audio/lines/fox_snow_tracks.mp3"
+  },
+  "reem_snow_compare": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "هَذَا الْأَثَرُ مُخْتَلِفٌ. سَأَبْحَثُ عَنْ أَثَرٍ فِيهِ شَقٌّ.",
+    "audio": "res://assets/audio/lines/reem_snow_compare.mp3"
+  },
+  "reem_snow_follow": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تُؤَدِّي آثَارُ الْحَوَافِرِ إِلَى أَسْفَلِ التَّلِّ.",
+    "audio": "res://assets/audio/lines/reem_snow_follow.mp3"
+  },
+  "reem_snow_sled": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أَرَى الْأَيِّلَ أَسْفَلَ التَّلِّ. سَأَنْزَلُ عَلَى اللَّوْحِ الْخَشَبِيِّ.",
+    "audio": "res://assets/audio/lines/reem_snow_sled.mp3"
+  },
+  "reem_snow_help": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَيَّا نَمْشِي إِلَى الْمَأْوَى الدَّافِئِ قَبْلَ غُرُوبِ الشَّمْسِ.",
+    "audio": "res://assets/audio/lines/reem_snow_help.mp3"
+  },
+  "reem_snow_deer_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أَيِّلٌ صَغِيرٌ",
+    "audio": "res://assets/audio/lines/reem_snow_deer_name.mp3"
+  },
+  "reem_snow_deer_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِصِغَارِ بَعْضِ الْأَيَائِلِ بُقَعٌ فَاتِحَةٌ عَلَى ظُهُورِهَا.",
+    "audio": "res://assets/audio/lines/reem_snow_deer_fact.mp3"
+  },
+  "reem_market_offer": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذَا دَرْبٌ إِلَى سُوقِ الْمَدِينَةِ. هَلْ أَذْهَبُ إِلَيْهِ؟",
+    "audio": "res://assets/audio/lines/reem_market_offer.mp3"
+  },
+  "reem_market_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَصَلْتُ إِلَى بَوَّابَةِ السُّوقِ. هُنَا أَسْتَطِيعُ أَنْ أَبِيعَ الْعَسَلَ.",
+    "audio": "res://assets/audio/lines/reem_market_arrive.mp3"
+  },
+  "reem_market_sale": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بِعْتُ الْعَسَلَ بِخَمْسِ قِطَعٍ نَقْدِيَّةٍ. سَأَعُدُّهَا قَبْلَ أَنْ أَشْتَرِيَ.",
+    "audio": "res://assets/audio/lines/reem_market_sale.mp3"
+  },
+  "reem_market_baker": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَقُولُ الْخَبَّازُ إِنَّ ثَمَنَ الْخُبْزِ ثَلَاثُ قِطَعٍ نَقْدِيَّةٍ.",
+    "audio": "res://assets/audio/lines/reem_market_baker.mp3"
+  },
+  "reem_market_count": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "لِنَعُدَّ الْقِطَعَ مَرَّةً أُخْرَى. ثَمَنُ الْخُبْزِ ثَلَاثُ قِطَعٍ.",
+    "audio": "res://assets/audio/lines/reem_market_count.mp3"
+  },
+  "reem_market_paid": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "دَفَعْتُ ثَلَاثَ قِطَعٍ، وَبَقِيَتْ مَعِي قِطْعَتَانِ.",
+    "audio": "res://assets/audio/lines/reem_market_paid.mp3"
+  },
+  "reem_market_cat": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَنْظُرُ قِطَّةُ السُّوقِ إِلَى الْخُبْزِ. هَلْ أُشَارِكُهَا؟",
+    "audio": "res://assets/audio/lines/reem_market_cat.mp3"
+  },
+  "reem_market_keep": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "بَقِيَ طَبَقُ الْقِطَّةِ فَارِغًا. أَسْتَطِيعُ أَنْ أُشَارِكَهَا.",
+    "audio": "res://assets/audio/lines/reem_market_keep.mp3"
+  },
+  "reem_market_share": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَضَعْتُ قِطْعَةً صَغِيرَةً فِي طَبَقِهَا، وَجَلَسْنَا مَعًا.",
+    "audio": "res://assets/audio/lines/reem_market_share.mp3"
+  },
+  "reem_market_cat_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قِطَّةُ السُّوقِ",
+    "audio": "res://assets/audio/lines/reem_market_cat_name.mp3"
+  },
+  "reem_market_cat_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تُسَاعِدُ شَوَارِبُ الْقِطَّةِ فِي مَعْرِفَةِ الْأَمَاكِنِ الضَّيِّقَةِ.",
+    "audio": "res://assets/audio/lines/reem_market_cat_fact.mp3"
+  },
+  "reem_market_scale": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هُنَا مِيزَانٌ بِكَفَّتَيْنِ. لِنَنْظُرْ كَيْفَ يَعْمَلُ.",
+    "audio": "res://assets/audio/lines/reem_market_scale.mp3"
+  },
+  "fox_market_offer": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "تَفَضَّلِي إِلَى مِيزَانِي! لَا حَاجَةَ إِلَى اخْتِبَارِهِ.",
+    "audio": "res://assets/audio/lines/fox_market_offer.mp3"
+  },
+  "reem_market_trust": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "مَالَتْ كَفَّةُ الْمِيزَانِ. سَأُجَرِّبُهُ بِوَزْنَيْنِ مُتَسَاوِيَيْنِ.",
+    "audio": "res://assets/audio/lines/reem_market_trust.mp3"
+  },
+  "reem_market_weights": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَضَعُ وَزْنًا فِي كُلِّ كَفَّةٍ، ثُمَّ أُحَرِّكُ الْمِقْبَضَ.",
+    "audio": "res://assets/audio/lines/reem_market_weights.mp3"
+  },
+  "reem_market_tilt": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "الْوَزْنَانِ مُتَسَاوِيَانِ، وَلَكِنَّ الْمِيزَانَ مَائِلٌ. سَأُرِي الْخَبَّازَ.",
+    "audio": "res://assets/audio/lines/reem_market_tilt.mp3"
+  },
+  "fox_market_sorry": {
+    "speaker": "Thaaloob",
+    "tone": "embarrassed",
+    "text": "آسِفٌ يَا رِيمُ. سَأُعِيدُ الثِّقْلَ إِلَى مَكَانِهِ الصَّحِيحِ.",
+    "audio": "res://assets/audio/lines/fox_market_sorry.mp3"
+  },
+  "reem_market_fair": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "الْآنَ تَسَاوَتِ الْكَفَّتَانِ. هَذَا مِيزَانٌ عَادِلٌ.",
+    "audio": "res://assets/audio/lines/reem_market_fair.mp3"
+  },
+  "reem_ramadan_offer": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أَضَاءَتْ فَوَانِيسُ الْحَيِّ. هَلْ أَذْهَبُ لِأُسَاعِدَ فِي تَجْهِيزِ الْإِفْطَارِ؟",
+    "audio": "res://assets/audio/lines/reem_ramadan_offer.mp3"
+  },
+  "reem_ramadan_lane": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذِهِ لَيْلَةٌ مِنْ لَيَالِي رَمَضَانَ. سَأَحْمِلُ فَانُوسِي فِي الطَّرِيقِ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_lane.mp3"
+  },
+  "reem_ramadan_caller": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يُرِينِي الْمُسَحِّرَاتِي كَيْفَ يَكْشِفُ ضَوْءُ الْفَانُوسِ مَا فِي الظِّلِّ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_caller.mp3"
+  },
+  "reem_ramadan_search": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "عِنْدَمَا أُضِيءُ الْفَانُوسَ، أَسْتَطِيعُ أَنْ أَرَى السَّلَّتَيْنِ وَالْإِبْرِيقَ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_search.mp3"
+  },
+  "reem_ramadan_found": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَجَدْتُ السَّلَّتَيْنِ وَالْمَاءَ. لِنَذْهَبْ إِلَى عَائِلَةِ الْقَنَافِذِ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_found.mp3"
+  },
+  "reem_ramadan_court": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تُرِيدُ عَائِلَةُ الْقَنَافِذِ أَنْ تُفَاجِئَ مُسَافِرًا بِالْإِفْطَارِ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_court.mp3"
+  },
+  "reem_ramadan_keep": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "أَبْقَيْتُ التَّمْرَ لِنَفْسِي، فَبَقِيَ الطَّبَقُ فَارِغًا. يُمْكِنُنِي أَنْ أُشَارِكَ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_keep.mp3"
+  },
+  "reem_ramadan_dates": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَبْحَثُ عَنِ التَّمْرِ وَأَضَعُهُ فِي الطَّبَقِ لِنَأْكُلَ مَعًا.",
+    "audio": "res://assets/audio/lines/reem_ramadan_dates.mp3"
+  },
+  "reem_ramadan_shared": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "جَمَعْتُ التَّمْرَ لِلْمُسَافِرِ. شُكْرًا لَكُمْ يَا أَصْدِقَائِي.",
+    "audio": "res://assets/audio/lines/reem_ramadan_shared.mp3"
+  },
+  "reem_ramadan_shelter": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذَا مَكَانٌ هَادِئٌ لِنَجْلِسَ مَعَ الْمُسَافِرِ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_shelter.mp3"
+  },
+  "fox_ramadan_date": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "هَذِهِ آخِرُ تَمْرَةٍ! سَأَضَعُهَا مَعَ التَّمْرِ لِنَتَقَاسَمَهُ.",
+    "audio": "res://assets/audio/lines/fox_ramadan_date.mp3"
+  },
+  "reem_ramadan_feast": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَا هُوَ الْمَاءُ وَالتَّمْرُ. تَفَضَّلْ، سَنُفْطِرُ مَعًا عِنْدَ الْمَغْرِبِ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_feast.mp3"
+  },
+  "reem_ramadan_hedgehog_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "عَائِلَةُ الْقَنَافِذِ",
+    "audio": "res://assets/audio/lines/reem_ramadan_hedgehog_name.mp3"
+  },
+  "reem_ramadan_hedgehog_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَخْرُجُ الْقُنْفُذُ فِي اللَّيْلِ لِيَبْحَثَ عَنْ طَعَامِهِ.",
+    "audio": "res://assets/audio/lines/reem_ramadan_hedgehog_fact.mp3"
+  },
+  "reem_gull_board": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "الْقَارِبُ مُسْتَعِدٌّ لِيَأْخُذَنِي إِلَى جَزِيرَةِ النَّوَارِسِ.",
+    "audio": "res://assets/audio/lines/reem_gull_board.mp3"
+  },
+  "reem_gull_shore": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَصَلْنَا إِلَى الشَّاطِئِ. مَاءُ الْبَحْرِ يَعْلُو ثُمَّ يَنْخَفِضُ.",
+    "audio": "res://assets/audio/lines/reem_gull_shore.mp3"
+  },
+  "reem_gull_turtle": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "السُّلَحْفَاةُ تَرَى قِطَعًا مِنَ النُّفَايَاتِ قُرْبَ الْمَاءِ. هَلْ أَجْمَعُهَا؟",
+    "audio": "res://assets/audio/lines/reem_gull_turtle.mp3"
+  },
+  "reem_gull_leave": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "بَقِيَتِ النُّفَايَاتُ قُرْبَ الْمَاءِ. يُمْكِنُنِي أَنْ أَعُودَ وَأَجْمَعَهَا.",
+    "audio": "res://assets/audio/lines/reem_gull_leave.mp3"
+  },
+  "reem_gull_collect": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَضَعُ النُّفَايَاتِ فِي السَّلَّةِ.",
+    "audio": "res://assets/audio/lines/reem_gull_collect.mp3"
+  },
+  "reem_gull_clean": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أَصْبَحَ الشَّاطِئُ نَظِيفًا، وَالسُّلَحْفَاةُ سَعِيدَةٌ.",
+    "audio": "res://assets/audio/lines/reem_gull_clean.mp3"
+  },
+  "reem_gull_low": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "انْخَفَضَ الْمَاءُ، وَظَهَرَ الدَّرْبُ إِلَى الْكَهْفِ.",
+    "audio": "res://assets/audio/lines/reem_gull_low.mp3"
+  },
+  "reem_gull_high": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "ارْتَفَعَ الْمَاءُ وَغَطَّى الدَّرْبَ. سَنَنْتَظِرُ عَلَى الشَّاطِئِ.",
+    "audio": "res://assets/audio/lines/reem_gull_high.mp3"
+  },
+  "reem_gull_turtle_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سُلَحْفَاةُ الْبَحْرِ",
+    "audio": "res://assets/audio/lines/reem_gull_turtle_name.mp3"
+  },
+  "reem_gull_turtle_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَسْتَخْدِمُ السُّلَحْفَاةُ الْبَحْرِيَّةُ زَعَانِفَهَا لِلسِّبَاحَةِ.",
+    "audio": "res://assets/audio/lines/reem_gull_turtle_fact.mp3"
+  },
+  "reem_gull_cave": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَبْدُو الْبِرَكُ الصَّغِيرَةُ بِلَوْنِ السَّمَاءِ وَالصَّخْرِ وَالرَّمْلِ.",
+    "audio": "res://assets/audio/lines/reem_gull_cave.mp3"
+  },
+  "reem_gull_pattern": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يُرِينِي الْأُخْطُبُوطُ الْأَشْكَالَ. سَأَتَّبِعُ تَرْتِيبَهَا.",
+    "audio": "res://assets/audio/lines/reem_gull_pattern.mp3"
+  },
+  "reem_gull_retry": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "لِنَرَ الْأَشْكَالَ مَرَّةً أُخْرَى.",
+    "audio": "res://assets/audio/lines/reem_gull_retry.mp3"
+  },
+  "reem_gull_lens": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذِهِ عَدَسَةُ الْمَنَارَةِ. شُكْرًا لَكَ يَا أُخْطُبُوطُ!",
+    "audio": "res://assets/audio/lines/reem_gull_lens.mp3"
+  },
+  "reem_gull_octopus_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أُخْطُبُوطٌ",
+    "audio": "res://assets/audio/lines/reem_gull_octopus_name.mp3"
+  },
+  "reem_gull_octopus_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِلْأُخْطُبُوطِ ثَمَانِيَةُ أَذْرُعٍ، وَيَسْتَطِيعُ أَنْ يُغَيِّرَ لَوْنَهُ.",
+    "audio": "res://assets/audio/lines/reem_gull_octopus_fact.mp3"
+  },
+  "reem_gull_storm": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "هَبَّتْ رِيحٌ خَفِيفَةٌ. سَيَنْتَظِرُ الْقَارِبُ حَتَّى تَضِيءَ الْمَنَارَةُ.",
+    "audio": "res://assets/audio/lines/reem_gull_storm.mp3"
+  },
+  "reem_gull_shells": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يُرِيدُ النَّوْرَسُ أَنْ يَأْخُذَ كُلَّ الْأَصْدَافِ. لِنَتْرُكْ بَعْضَهَا لِلْبَحْرِ.",
+    "audio": "res://assets/audio/lines/reem_gull_shells.mp3"
+  },
+  "reem_gull_pile": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "تَدَحْرَجَتِ الْأَصْدَافُ مِنَ الْكَوْمَةِ. سَنُعِيدُ بَعْضَهَا إِلَى الشَّاطِئِ.",
+    "audio": "res://assets/audio/lines/reem_gull_pile.mp3"
+  },
+  "reem_gull_share": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَرَكْنَا بَعْضَ الْأَصْدَافِ عَلَى الشَّاطِئِ، وَفَرِحَ النَّوْرَسُ بِصَدَفَةٍ وَاحِدَةٍ.",
+    "audio": "res://assets/audio/lines/reem_gull_share.mp3"
+  },
+  "fox_gull_trade": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "مَا أَلْمَعَ هَذِهِ الصَّدَفَةَ! كُنْتُ سَأُبَادِلُكِ بِهَا، وَلَكِنِّي سَأَتْرُكُهَا هُنَا.",
+    "audio": "res://assets/audio/lines/fox_gull_trade.mp3"
+  },
+  "reem_gull_light": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "رَكَّبْتُ الْعَدَسَةَ فَأَضَاءَتِ الْمَنَارَةُ. يَسْتَطِيعُ الْقَارِبُ أَنْ يَرَى الطَّرِيقَ.",
+    "audio": "res://assets/audio/lines/reem_gull_light.mp3"
+  },
+  "reem_gull_lens_hint": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "نَحْتَاجُ إِلَى عَدَسَةٍ لِمِصْبَاحِ الْمَنَارَةِ. سَأَبْحَثُ فِي كَهْفِ الْمَدِّ.",
+    "audio": "res://assets/audio/lines/reem_gull_lens_hint.mp3"
+  },
+  "reem_gull_bird_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "نَوْرَسٌ",
+    "audio": "res://assets/audio/lines/reem_gull_bird_name.mp3"
+  },
+  "reem_gull_bird_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِلنَّوْرَسِ أَقْدَامٌ مُكْفَّفَةٌ تُسَاعِدُهُ عَلَى السِّبَاحَةِ.",
+    "audio": "res://assets/audio/lines/reem_gull_bird_fact.mp3"
+  },
+  "reem_festival_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَصَلْنَا إِلَى الْقِمَّةِ! أَصْدِقَائِي هُنَا، وَالْفَانُوسُ الْكَبِيرُ يَنْتَظِرُنَا.",
+    "audio": "res://assets/audio/lines/reem_festival_arrive.mp3"
+  },
+  "reem_festival_high": {
+    "speaker": "Reem",
+    "tone": "playful",
+    "text": "قَرْقُورٌ يُعَلِّقُ الْفَوَانِيسَ الْعَالِيَةَ.",
+    "audio": "res://assets/audio/lines/reem_festival_high.mp3"
+  },
+  "reem_festival_light": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بِسْمِ اللهِ، لِنُضِئِ الْفَانُوسَ الْكَبِيرَ.",
+    "audio": "res://assets/audio/lines/reem_festival_light.mp3"
+  },
+  "jad_festival_arrive": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "السَّلَامُ عَلَيْكُمْ! حَمَلَنِي دُبٌّ إِلَى الْقِمَّةِ، فَشُكْرًا لَهُ.",
+    "audio": "res://assets/audio/lines/jad_festival_arrive.mp3"
+  },
+  "jad_festival_thanks": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "كُلَّمَا سَاعَدْتِ صَدِيقًا يَا رِيمُ، حَمَلَ مَعَكِ شَيْئًا إِلَى الْمِهْرَجَانِ. جَزَاكِ اللهُ خَيْرًا.",
+    "audio": "res://assets/audio/lines/jad_festival_thanks.mp3"
+  },
+  "jad_festival_repair": {
+    "speaker": "Jad",
+    "tone": "gentle",
+    "text": "وَحِينَ أَخْطَأْتِ، عُدْتِ وَأَصْلَحْتِ خَطَأَكِ. فَرِحَ أَصْدِقَاؤُكِ بِعَوْدَتِكِ.",
+    "audio": "res://assets/audio/lines/jad_festival_repair.mp3"
+  },
+  "jad_festival_wilt": {
+    "speaker": "Jad",
+    "tone": "gentle",
+    "text": "مَا زَالَ هُنَاكَ مَكَانٌ تَسْتَطِيعِينَ أَنْ تَعُودِي إِلَيْهِ. سَيَفْرَحُ صَدِيقُكِ بِرُؤْيَتِكِ.",
+    "audio": "res://assets/audio/lines/jad_festival_wilt.mp3"
+  },
+  "jad_festival_oak": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "سَمِعْتُ أَنَّ قُنْفُذًا فِي غَابَةِ الْبَلُّوطِ يَنْتَظِرُ صَدِيقًا. هَلْ تَزُورِينَهُ فِي رِحْلَةٍ أُخْرَى؟",
+    "audio": "res://assets/audio/lines/jad_festival_oak.mp3"
+  },
+  "jad_festival_cave": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "عِنْدَ الْكَهْفِ قِطَّةٌ صَغِيرَةٌ تُحِبُّ ضَوْءَ الْفَانُوسِ. هَلْ تَزُورِينَهَا فِي رِحْلَةٍ أُخْرَى؟",
+    "audio": "res://assets/audio/lines/jad_festival_cave.mp3"
+  },
+  "jad_festival_lake": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "عِنْدَ الْبُحَيْرَةِ ضِفْدَعٌ يُحِبُّ الْغِنَاءَ. هَلْ تَسْمَعِينَ غِنَاءَهُ فِي رِحْلَةٍ أُخْرَى؟",
+    "audio": "res://assets/audio/lines/jad_festival_lake.mp3"
+  },
+  "jad_festival_other": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "فِي الْوَادِي دُرُوبٌ أُخْرَى. اخْتَارِي دَرْبًا جَدِيدًا فِي رِحْلَةٍ أُخْرَى.",
+    "audio": "res://assets/audio/lines/jad_festival_other.mp3"
+  },
+  "reem_pass_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذَا هُوَ الْمَمَرُّ إِلَى الْقِمَّةِ.",
+    "audio": "res://assets/audio/lines/reem_pass_arrive.mp3"
+  },
+  "fox_pass_help": {
+    "speaker": "Thaaloob",
+    "tone": "worried",
+    "text": "يَا رِيمُ، عَلِقَ ذَيْلِي بَيْنَ الصَّخْرَتَيْنِ. هَلْ تُسَاعِدِينَنِي؟",
+    "audio": "res://assets/audio/lines/fox_pass_help.mp3"
+  },
+  "reem_pass_leave": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "مَضَيْتُ وَبَقِيَ ثَعْلُوبٌ عَالِقًا. أَسْتَطِيعُ أَنْ أَعُودَ إِلَيْهِ.",
+    "audio": "res://assets/audio/lines/reem_pass_leave.mp3"
+  },
+  "reem_pass_stone": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأُدَحْرِجُ الْحَجَرَ الصَّغِيرَ بَعِيدًا عَنْ ذَيْلِكَ.",
+    "audio": "res://assets/audio/lines/reem_pass_stone.mp3"
+  },
+  "fox_pass_sorry": {
+    "speaker": "Thaaloob",
+    "tone": "embarrassed",
+    "text": "سَاعَدْتِنِي بَعْدَ كُلِّ مَا فَعَلْتُ. أَنَا آسِفٌ يَا رِيمُ.",
+    "audio": "res://assets/audio/lines/fox_pass_sorry.mp3"
+  },
+  "fox_pass_honey": {
+    "speaker": "Thaaloob",
+    "tone": "embarrassed",
+    "text": "هَذِهِ جَرَّةُ عَسَلِكِ. خُذِيهَا، فَهِيَ لَكِ.",
+    "audio": "res://assets/audio/lines/fox_pass_honey.mp3"
+  },
+  "fox_pass_join": {
+    "speaker": "Thaaloob",
+    "tone": "gentle",
+    "text": "هَلْ يُمْكِنُنِي أَنْ آتِيَ مَعَكِ إِلَى الْمِهْرَجَانِ؟",
+    "audio": "res://assets/audio/lines/fox_pass_join.mp3"
+  },
+  "reem_pass_welcome": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَامَحْتُكَ يَا ثَعْلُوبُ. تَعَالَ مَعِي، وَلْنَحْمِلِ الْفَوَانِيسَ مَعًا.",
+    "audio": "res://assets/audio/lines/reem_pass_welcome.mp3"
+  },
+  "reem_waterfall_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أَسْمَعُ صَوْتَ الشَّلَّالِ مِنْ هُنَا.",
+    "audio": "res://assets/audio/lines/reem_waterfall_arrive.mp3"
+  },
+  "reem_waterfall_provoked": {
+    "speaker": "Reem",
+    "tone": "surprised",
+    "text": "دَحْرَجَ قَرْقُورٌ ثَمَرَةً إِلَى طَرِيقِي! لِمَاذَا فَعَلَ ذَلِكَ؟",
+    "audio": "res://assets/audio/lines/reem_waterfall_provoked.mp3"
+  },
+  "reem_waterfall_throw": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "رَمَيْتُ الثَّمَرَةَ، فَابْتَعَدَ قَرْقُورٌ. سَأَتَحَدَّثُ إِلَيْهِ بِهُدُوءٍ.",
+    "audio": "res://assets/audio/lines/reem_waterfall_throw.mp3"
+  },
+  "reem_waterfall_ask": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قَالَ قَرْقُورٌ إِنَّهُ أَرَادَ أَنْ يَلْعَبَ مَعَ أَحَدٍ.",
+    "audio": "res://assets/audio/lines/reem_waterfall_ask.mp3"
+  },
+  "reem_waterfall_roll": {
+    "speaker": "Reem",
+    "tone": "playful",
+    "text": "هَيَّا نُدَحْرِجُ الثَّمَرَةَ عَلَى الْأَرْضِ مَعًا!",
+    "audio": "res://assets/audio/lines/reem_waterfall_roll.mp3"
+  },
+  "reem_waterfall_gift": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لَعِبْنَا مَعًا! سَيُسَاعِدُنَا قَرْقُورٌ فِي تَعْلِيقِ الْفَوَانِيسِ الْعَالِيَةِ.",
+    "audio": "res://assets/audio/lines/reem_waterfall_gift.mp3"
+  },
+  "reem_waterfall_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قَرْقُورٌ",
+    "audio": "res://assets/audio/lines/reem_waterfall_name.mp3"
+  },
+  "reem_waterfall_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَتَسَلَّقُ الْقِرْدُ الْأَغْصَانَ بِيَدَيْهِ وَقَدَمَيْهِ.",
+    "audio": "res://assets/audio/lines/reem_waterfall_fact.mp3"
+  },
+  "jad_map_intro": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "هذه خريطة الوادي يا ريم. كلما زرتِ مكاناً جديداً ظهر عليها، وإن احترتِ في طريقك فانظري إليها.",
+    "audio": "res://assets/audio/lines/jad_map_intro.mp3"
+  },
+  "reem_s1_001": {
+    "speaker": "Reem",
+    "tone": "calm, just woken up",
+    "text": "الحمدُ للهِ الذي أحيانا بعدَما أماتَنا، وإليهِ النُّشور.",
+    "audio": "res://assets/audio/lines/reem_s1_001.mp3"
+  },
+  "reem_s1_002": {
+    "speaker": "Reem",
+    "tone": "cheerful",
+    "text": "صباحٌ جميلٌ في مزرعةِ جدّي!",
+    "audio": "res://assets/audio/lines/reem_s1_002.mp3"
+  },
+  "reem_s1_003": {
+    "speaker": "Reem",
+    "tone": "dreamy, fond",
+    "text": "مرآةُ جدّي… يقولُ إنّها هديّةٌ من جدّتي، رحِمَها الله.",
+    "audio": "res://assets/audio/lines/reem_s1_003.mp3"
+  },
+  "reem_s1_004": {
+    "speaker": "Reem",
+    "tone": "ordinary",
+    "text": "سآخذُ السَّلّةَ، سأحتاجُها اليوم.",
+    "audio": "res://assets/audio/lines/reem_s1_004.mp3"
+  },
+  "reem_s1_005": {
+    "speaker": "Reem",
+    "tone": "a little startled",
+    "text": "أوه، لا! انشرَخَتْ مرآةُ جدّي!",
+    "audio": "res://assets/audio/lines/reem_s1_005.mp3"
+  },
+  "reem_s1_006": {
+    "speaker": "Reem",
+    "tone": "whispering, worried",
+    "text": "ماذا أفعلُ؟ جدّي يحبُّها كثيراً…",
+    "audio": "res://assets/audio/lines/reem_s1_006.mp3"
+  },
+  "reem_s1_007a": {
+    "speaker": "Reem",
+    "tone": "gently determined",
+    "text": "يجبُ أن أخبرَ جدّي. الصِّدقُ أحسن.",
+    "audio": "res://assets/audio/lines/reem_s1_007a.mp3"
+  },
+  "reem_s1_007b": {
+    "speaker": "Reem",
+    "tone": "whispering, hesitant",
+    "text": "سأضعُها هنا خلفَ الوسادة… لن يعرفَ أحد.",
+    "audio": "res://assets/audio/lines/reem_s1_007b.mp3"
+  },
+  "reem_s1_010": {
+    "speaker": "Reem",
+    "tone": "cheerful",
+    "text": "السَّلامُ عليكم يا جدّي!",
+    "audio": "res://assets/audio/lines/reem_s1_010.mp3"
+  },
+  "jad_s1_011": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "وعليكمُ السَّلامُ ورحمةُ اللهِ وبركاتُه يا ريم. صباحُ الخير يا حبيبتي.",
+    "audio": "res://assets/audio/lines/jad_s1_011.mp3"
+  },
+  "reem_s1_012": {
+    "speaker": "Reem",
+    "tone": "caring",
+    "text": "صباحُ النّور يا جدّي. كيفَ حالُ قدمِك؟",
+    "audio": "res://assets/audio/lines/reem_s1_012.mp3"
+  },
+  "jad_s1_013": {
+    "speaker": "Jad",
+    "tone": "calm, content",
+    "text": "الحمدُ للهِ على كلِّ حال. التوى كاحلي أمس، ولن أستطيعَ المشيَ إلى التلِّ اليوم.",
+    "audio": "res://assets/audio/lines/jad_s1_013.mp3"
+  },
+  "reem_s1_014": {
+    "speaker": "Reem",
+    "tone": "surprised",
+    "text": "لكنَّ اليومَ مهرجانُ الفوانيس! وأنتَ مَن يُشعِلُ الفانوسَ الكبيرَ كلَّ عام!",
+    "audio": "res://assets/audio/lines/reem_s1_014.mp3"
+  },
+  "jad_s1_015": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "لهذا أحتاجُ مساعدتَكِ يا ريم. خُذي هذا الفانوسَ الصغير، ففيه شُعلةُ المهرجان، وأوصِليه إلى قمّةِ التلِّ قبلَ الغروب.",
+    "audio": "res://assets/audio/lines/jad_s1_015.mp3"
+  },
+  "reem_s1_016": {
+    "speaker": "Reem",
+    "tone": "enthusiastic",
+    "text": "إن شاءَ اللهُ يا جدّي، سأوصِلُه!",
+    "audio": "res://assets/audio/lines/reem_s1_016.mp3"
+  },
+  "jad_s1_017": {
+    "speaker": "Jad",
+    "tone": "wise",
+    "text": "وخُذي دفتري أيضاً. كتبتُ فيه أسرارَ الوادي، فإذا حِرتِ في شيءٍ فانظري فيه.",
+    "audio": "res://assets/audio/lines/jad_s1_017.mp3"
+  },
+  "reem_s1_018": {
+    "speaker": "Reem",
+    "tone": "grateful",
+    "text": "جزاكَ اللهُ خيراً يا جدّي.",
+    "audio": "res://assets/audio/lines/reem_s1_018.mp3"
+  },
+  "jad_s1_019": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "وإيّاكِ يا ابنتي. وخُذي إبريقَ السَّقي من عندِ البئر، فقد تحتاجينَه في الطريق.",
+    "audio": "res://assets/audio/lines/jad_s1_019.mp3"
+  },
+  "reem_s1_020": {
+    "speaker": "Reem",
+    "tone": "ordinary",
+    "text": "بئرُ جدّي، ماؤها باردٌ عَذْب. وهذا إبريقُ السَّقي، سآخذُه.",
+    "audio": "res://assets/audio/lines/reem_s1_020.mp3"
+  },
+  "reem_s1_021a": {
+    "speaker": "Reem",
+    "tone": "ashamed",
+    "text": "يا جدّي… أنا آسفة. أخذتُ السَّلّةَ فوقعتْ مرآتُكَ وانشرَخَت. لم أقصِد.",
+    "audio": "res://assets/audio/lines/reem_s1_021a.mp3"
+  },
+  "jad_s1_022a": {
+    "speaker": "Jad",
+    "tone": "tender, proud",
+    "text": "بارَكَ اللهُ فيكِ يا ريم على صدقِكِ. المرآةُ تُصلَح، أمّا الصِّدقُ فلا يُشترى بمال.",
+    "audio": "res://assets/audio/lines/jad_s1_022a.mp3"
+  },
+  "jad_s1_023": {
+    "speaker": "Jad",
+    "tone": "calm",
+    "text": "قالَ رسولُ اللهِ صلّى اللهُ عليهِ وسلّم: «إنَّ الصِّدْقَ يَهْدِي إلى البِرّ».",
+    "audio": "res://assets/audio/lines/jad_s1_023.mp3"
+  },
+  "jad_s1_024": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "خُذي هذه المرآةَ الصغيرة، كانت لي وأنا صغير. لعلَّها تنفعُكِ في الطريق.",
+    "audio": "res://assets/audio/lines/jad_s1_024.mp3"
+  },
+  "reem_s1_021b": {
+    "speaker": "Reem",
+    "tone": "very ashamed",
+    "text": "يا جدّي… أنا آسفة. انشرَخَتْ مرآتُكَ صباحاً، وخبّأتُها لأنّي خِفتُ أن تحزَن.",
+    "audio": "res://assets/audio/lines/reem_s1_021b.mp3"
+  },
+  "jad_s1_022b": {
+    "speaker": "Jad",
+    "tone": "tender",
+    "text": "أشكُرُكِ لأنّكِ عُدتِ وقُلتِ الحقيقةَ يا ريم. كلُّنا نخطئ، والرُّجوعُ عن الخطأِ شجاعة.",
+    "audio": "res://assets/audio/lines/jad_s1_022b.mp3"
+  },
+  "jad_s1_023b": {
+    "speaker": "Jad",
+    "tone": "gently asking",
+    "text": "أخبريني، أيُّهما كانَ أثقلَ على قلبِكِ: انشراخُ المرآة، أم إخفاءُ الحقيقة؟",
+    "audio": "res://assets/audio/lines/jad_s1_023b.mp3"
+  },
+  "reem_s1_024b": {
+    "speaker": "Reem",
+    "tone": "sincere",
+    "text": "إخفاءُ الحقيقة يا جدّي… لن أفعلَها مرّةً أخرى، إن شاءَ الله.",
+    "audio": "res://assets/audio/lines/reem_s1_024b.mp3"
+  },
+  "reem_s1_030": {
+    "speaker": "Reem",
+    "tone": "reassured",
+    "text": "بِسْمِ الله، توكّلتُ على الله، ولا حولَ ولا قوّةَ إلّا بالله.",
+    "audio": "res://assets/audio/lines/reem_s1_030.mp3"
+  },
+  "jad_s1_031": {
+    "speaker": "Jad",
+    "tone": "calling from a distance",
+    "text": "في حِفظِ اللهِ يا ريم! وتذكّري: امشي على الطريق، ولا تدوسي الزَّرع.",
+    "audio": "res://assets/audio/lines/jad_s1_031.mp3"
+  },
+  "reem_s1_032": {
+    "speaker": "Reem",
+    "tone": "calling back cheerfully",
+    "text": "إن شاءَ الله، في أمانِ اللهِ يا جدّي!",
+    "audio": "res://assets/audio/lines/reem_s1_032.mp3"
+  },
+  "reem_s2_001": {
+    "speaker": "Reem",
+    "tone": "amazed",
+    "text": "ما شاءَ الله! ما أجملَ هذا الحقل!",
+    "audio": "res://assets/audio/lines/reem_s2_001.mp3"
+  },
+  "reem_s2_002": {
+    "speaker": "Reem",
+    "tone": "reading a sign",
+    "text": "اللافتةُ تقول: «من فضلِكَ، امشِ على الطريق».",
+    "audio": "res://assets/audio/lines/reem_s2_002.mp3"
+  },
+  "reem_s2_003": {
+    "speaker": "Reem",
+    "tone": "thinking",
+    "text": "الطريقُ طويلٌ يدورُ حولَ الحقل… والشمسُ ترتفع.",
+    "audio": "res://assets/audio/lines/reem_s2_003.mp3"
+  },
+  "reem_s2_004a": {
+    "speaker": "Reem",
+    "tone": "reassured",
+    "text": "سأمشي على الطريق، كما أوصاني جدّي.",
+    "audio": "res://assets/audio/lines/reem_s2_004a.mp3"
+  },
+  "reem_s2_004b": {
+    "speaker": "Reem",
+    "tone": "in a hurry",
+    "text": "سأقطعُ الحقلَ بسرعة… لن يحدثَ شيء.",
+    "audio": "res://assets/audio/lines/reem_s2_004b.mp3"
+  },
+  "bee_s2_010b": {
+    "speaker": "Shahd",
+    "tone": "upset but polite",
+    "text": "مهلاً يا صغيرة! لقد دُستِ زهورَنا في طرفِ الحقل. من أينَ سنجمعُ الرَّحيق؟",
+    "audio": "res://assets/audio/lines/bee_s2_010b.mp3"
+  },
+  "reem_s2_011b": {
+    "speaker": "Reem",
+    "tone": "ashamed",
+    "text": "أنا آسفة، لم أفكّر في ذلك. كيفَ أُصلِحُ ما فعلتُ؟",
+    "audio": "res://assets/audio/lines/reem_s2_011b.mp3"
+  },
+  "bee_s2_012b": {
+    "speaker": "Shahd",
+    "tone": "calmer",
+    "text": "ارفعي الزهورَ المائلةَ برِفق، واسقيها بالماء.",
+    "audio": "res://assets/audio/lines/bee_s2_012b.mp3"
+  },
+  "reem_s2_013b": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "تفضَّلي أيتها الزهور، سامحيني.",
+    "audio": "res://assets/audio/lines/reem_s2_013b.mp3"
+  },
+  "bee_s2_014b": {
+    "speaker": "Shahd",
+    "tone": "pleased",
+    "text": "أحسنتِ! الاعترافُ بالخطأِ وإصلاحُه من أخلاقِ الكِرام.",
+    "audio": "res://assets/audio/lines/bee_s2_014b.mp3"
+  },
+  "reem_s2_020": {
+    "speaker": "Reem",
+    "tone": "cheerful",
+    "text": "السَّلامُ عليكم أيّتها النَّحلة!",
+    "audio": "res://assets/audio/lines/reem_s2_020.mp3"
+  },
+  "bee_s2_021": {
+    "speaker": "Shahd",
+    "tone": "lively",
+    "text": "وعليكمُ السَّلام! أنا شَهد، كبيرةُ نحلاتِ الحقل.",
+    "audio": "res://assets/audio/lines/bee_s2_021.mp3"
+  },
+  "reem_s2_022": {
+    "speaker": "Reem",
+    "tone": "caring",
+    "text": "تشرَّفتُ بمعرفتِكِ يا شَهد. لماذا تبدينَ حزينة؟",
+    "audio": "res://assets/audio/lines/reem_s2_022.mp3"
+  },
+  "bee_s2_023": {
+    "speaker": "Shahd",
+    "tone": "worried",
+    "text": "زهورُنا تحتَ الشجرةِ الكبيرة لم تتفتّح اليوم. الظِّلُّ يغطّيها، والشمسُ لا تصلُ إليها.",
+    "audio": "res://assets/audio/lines/bee_s2_023.mp3"
+  },
+  "bee_s2_024": {
+    "speaker": "Shahd",
+    "tone": "worried",
+    "text": "وبدونِ الزهورِ لا رَحيق، وبدونِ الرَّحيقِ لا عَسَل!",
+    "audio": "res://assets/audio/lines/bee_s2_024.mp3"
+  },
+  "reem_s2_025": {
+    "speaker": "Reem",
+    "tone": "thinking",
+    "text": "الشمسُ هناك… والزهورُ هنا في الظِّلّ… كيفَ أُوصِلُ إليها الضَّوء؟",
+    "audio": "res://assets/audio/lines/reem_s2_025.mp3"
+  },
+  "reem_s2_026": {
+    "speaker": "Reem",
+    "tone": "reading",
+    "text": "يكتبُ جدّي: «المرآةُ تُعيدُ ضَوءَ الشَّمسِ إلى حيثُ تشاء».",
+    "audio": "res://assets/audio/lines/reem_s2_026.mp3"
+  },
+  "reem_s2_027": {
+    "speaker": "Reem",
+    "tone": "ordinary",
+    "text": "خلايا النَّحل… أسمعُ طَنينَها من هنا.",
+    "audio": "res://assets/audio/lines/reem_s2_027.mp3"
+  },
+  "reem_s2_030": {
+    "speaker": "Reem",
+    "tone": "delighted",
+    "text": "انظري يا شَهد! وصلَ الضَّوءُ إلى الزهور!",
+    "audio": "res://assets/audio/lines/reem_s2_030.mp3"
+  },
+  "bee_s2_031": {
+    "speaker": "Shahd",
+    "tone": "very happy",
+    "text": "سبحانَ الله! تفتَّحَتْ كلُّها! جزاكِ اللهُ خيراً يا ريم!",
+    "audio": "res://assets/audio/lines/bee_s2_031.mp3"
+  },
+  "reem_s2_032": {
+    "speaker": "Reem",
+    "tone": "modest",
+    "text": "وجزاكِ خيراً. الحمدُ لله.",
+    "audio": "res://assets/audio/lines/reem_s2_032.mp3"
+  },
+  "bee_s2_033": {
+    "speaker": "Shahd",
+    "tone": "warm",
+    "text": "خُذي جرّةَ العَسَلِ هذه هديّةً منّا، فقد تنفعُكِ في طريقِك.",
+    "audio": "res://assets/audio/lines/bee_s2_033.mp3"
+  },
+  "reem_s2_041b": {
+    "speaker": "Reem",
+    "tone": "remembering, then sad",
+    "text": "مرآة! أحتاجُ مرآة… لكنّي تركتُ مرآةَ جدّي مشروخةً خلفَ الوسادة، ولم أقُلْ له شيئاً.",
+    "audio": "res://assets/audio/lines/reem_s2_041b.mp3"
+  },
+  "reem_s2_042b": {
+    "speaker": "Reem",
+    "tone": "determined",
+    "text": "يجبُ أن أعودَ وأخبرَه بالحقيقة.",
+    "audio": "res://assets/audio/lines/reem_s2_042b.mp3"
+  },
+  "fox_s2_050": {
+    "speaker": "Thaaloob",
+    "tone": "friendly, charming",
+    "text": "السَّلامُ عليكم يا صغيرةَ الوادي! إلى أينَ بهذه السُّرعة؟",
+    "audio": "res://assets/audio/lines/fox_s2_050.mp3"
+  },
+  "reem_s2_051": {
+    "speaker": "Reem",
+    "tone": "polite",
+    "text": "وعليكمُ السَّلام. أنا ذاهبةٌ إلى قمّةِ التلِّ لأوصِلَ شُعلةَ المهرجان.",
+    "audio": "res://assets/audio/lines/reem_s2_051.mp3"
+  },
+  "fox_s2_052": {
+    "speaker": "Thaaloob",
+    "tone": "exaggerated wonder",
+    "text": "ما شاءَ الله! مهمّةٌ عظيمة! لكنِ انظري إلى هذا الحجرِ العجيب، يلمعُ أكثرَ من الشَّمس! إنّه يُضيءُ الطريقَ في الليل.",
+    "audio": "res://assets/audio/lines/fox_s2_052.mp3"
+  },
+  "fox_s2_053": {
+    "speaker": "Thaaloob",
+    "tone": "sly but friendly",
+    "text": "وأنا كريمٌ اليوم! أعطيكِ إيّاهُ مقابلَ تلكَ المرآةِ الصغيرةِ فقط. ما رأيُكِ؟",
+    "audio": "res://assets/audio/lines/fox_s2_053.mp3"
+  },
+  "reem_s2_054a": {
+    "speaker": "Reem",
+    "tone": "polite but firm",
+    "text": "شكراً لكَ يا ثعلوب، لكنَّ هذه المرآةَ هديّةٌ من جدّي، وهي أمانةٌ عندي. لا أُبادِلُها دونَ إذنِه.",
+    "audio": "res://assets/audio/lines/reem_s2_054a.mp3"
+  },
+  "fox_s2_055a": {
+    "speaker": "Thaaloob",
+    "tone": "laughing, impressed",
+    "text": "ههه… فتاةٌ ذكيّة! حسناً حسناً، لا بأس. لعلَّنا نلتقي في الطريق!",
+    "audio": "res://assets/audio/lines/fox_s2_055a.mp3"
+  },
+  "reem_s2_054b": {
+    "speaker": "Reem",
+    "tone": "excited",
+    "text": "حجرٌ يُضيءُ في الليل؟ حسناً، اتَّفقنا!",
+    "audio": "res://assets/audio/lines/reem_s2_054b.mp3"
+  },
+  "reem_s2_055b": {
+    "speaker": "Reem",
+    "tone": "disappointed",
+    "text": "هذا ليسَ حجراً عجيباً… إنّه حجرٌ عاديٌّ مدهونٌ بالعَسَل!",
+    "audio": "res://assets/audio/lines/reem_s2_055b.mp3"
+  },
+  "reem_s2_056b": {
+    "speaker": "Reem",
+    "tone": "regretful, thinking",
+    "text": "أخطأتُ حينَ بادلتُ هديّةَ جدّي دونَ أن أستأذِنَه… يجبُ أن أستعيدَها.",
+    "audio": "res://assets/audio/lines/reem_s2_056b.mp3"
+  },
+  "reem_s2_057b": {
+    "speaker": "Reem",
+    "tone": "polite, honest",
+    "text": "يا ثعلوب، هذه المرآةُ أمانةٌ من جدّي، والحجرُ لم يكنْ عجيباً. أرجو أن تُعيدَها إليّ.",
+    "audio": "res://assets/audio/lines/reem_s2_057b.mp3"
+  },
+  "fox_s2_058b": {
+    "speaker": "Thaaloob",
+    "tone": "embarrassed",
+    "text": "أمم… حسناً، حسناً. خُذيها… كنتُ أمزحُ فقط!",
+    "audio": "res://assets/audio/lines/fox_s2_058b.mp3"
+  },
+  "reem_s2_059b": {
+    "speaker": "Reem",
+    "tone": "kind",
+    "text": "وهذا حجرُكَ. لكنَّ المزاحَ لا يكونُ بالكذبِ يا ثعلوب.",
+    "audio": "res://assets/audio/lines/reem_s2_059b.mp3"
+  },
+  "reem_s2_070": {
+    "speaker": "Reem",
+    "tone": "cheerful",
+    "text": "الحمدُ لله. هيّا إلى الجَدْوَل!",
+    "audio": "res://assets/audio/lines/reem_s2_070.mp3"
+  },
+  "jad_s2_071": {
+    "speaker": "Jad",
+    "tone": "narrator, warm and slow",
+    "text": "أحسنتِ يا ريم. كلُّ زهرةٍ في شجرةِ قلبِكِ عملٌ طيّب، وكلُّ غصنٍ عادَ أخضرَ خطأٌ أصلحتِه. والطريقُ ما زالَ طويلاً…",
+    "audio": "res://assets/audio/lines/jad_s2_071.mp3"
+  },
+  "reem_hint_briefing_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَسْأَلُ جَدِّي عَنِ الرِّحْلَة.",
+    "audio": "res://assets/audio/lines/reem_hint_briefing_1.mp3"
+  },
+  "reem_hint_briefing_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "جَدِّي يَجْلِسُ تَحْتَ الشَّجَرَة.",
+    "audio": "res://assets/audio/lines/reem_hint_briefing_2.mp3"
+  },
+  "reem_hint_briefing_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَضْغَطُ عَلَى جَدِّي لِأَتَحَدَّثَ مَعَهُ.",
+    "audio": "res://assets/audio/lines/reem_hint_briefing_3.mp3"
+  },
+  "reem_hint_yard_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "أَنَا مُسْتَعِدَّةٌ لِلرِّحْلَة.",
+    "audio": "res://assets/audio/lines/reem_hint_yard_1.mp3"
+  },
+  "reem_hint_yard_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "الْبَوَّابَةُ عَلَى يَمِينِ السَّاحَة.",
+    "audio": "res://assets/audio/lines/reem_hint_yard_2.mp3"
+  },
+  "reem_hint_yard_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأَذْهَبَ إِلَى الْبَوَّابَة.",
+    "audio": "res://assets/audio/lines/reem_hint_yard_3.mp3"
+  },
+  "reem_hint_path_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَنْظُرُ إِلَى الطَّرِيق.",
+    "audio": "res://assets/audio/lines/reem_hint_path_1.mp3"
+  },
+  "reem_hint_path_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "اللَّافِتَةُ تُسَاعِدُنِي عَلَى الْمَشْيِ بِرِفْقٍ.",
+    "audio": "res://assets/audio/lines/reem_hint_path_2.mp3"
+  },
+  "reem_hint_path_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَقْرَأُ اللَّافِتَةَ، ثُمَّ أَتَّبِعُ الطَّرِيقَ نَحْوَ الْيَمِينِ.",
+    "audio": "res://assets/audio/lines/reem_hint_path_3.mp3"
+  },
+  "reem_hint_bee_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "لَعَلَّ شَهْدَ تَحْتَاجُ إِلَى مُسَاعَدَتِي.",
+    "audio": "res://assets/audio/lines/reem_hint_bee_1.mp3"
+  },
+  "reem_hint_bee_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَسْأَلُ النَّحْلَةَ عَنِ الزُّهُورِ.",
+    "audio": "res://assets/audio/lines/reem_hint_bee_2.mp3"
+  },
+  "reem_hint_bee_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَضْغَطُ عَلَى شَهْدَ بِجَانِبِ خَلَايَا النَّحْلِ.",
+    "audio": "res://assets/audio/lines/reem_hint_bee_3.mp3"
+  },
+  "reem_hint_water_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "يُمْكِنُنِي إِصْلَاحُ مَا حَدَثَ لِلزُّهُورِ.",
+    "audio": "res://assets/audio/lines/reem_hint_water_1.mp3"
+  },
+  "reem_hint_water_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "الزُّهُورُ الذَّابِلَةُ تَحْتَاجُ إِلَى الْمَاءِ.",
+    "audio": "res://assets/audio/lines/reem_hint_water_2.mp3"
+  },
+  "reem_hint_water_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَآخُذُ إِبْرِيقَ الرَّيِّ مِنَ الْبِئْرِ، ثُمَّ أَضْغَطُ عَلَى الزُّهُورِ الَّتِي دُسْتُهَا.",
+    "audio": "res://assets/audio/lines/reem_hint_water_3.mp3"
+  },
+  "reem_hint_examine_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَنْظُرُ إِلَى الزُّهُورِ الْمُغْلَقَةِ.",
+    "audio": "res://assets/audio/lines/reem_hint_examine_1.mp3"
+  },
+  "reem_hint_examine_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "رُبَّمَا أَحْتَاجُ إِلَى شَيْءٍ يُسَاعِدُهَا.",
+    "audio": "res://assets/audio/lines/reem_hint_examine_2.mp3"
+  },
+  "reem_hint_examine_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَضْغَطُ عَلَى الزُّهُورِ فِي الظِّلِّ لِأَعْرِفَ مَا يَنْقُصُنِي.",
+    "audio": "res://assets/audio/lines/reem_hint_examine_3.mp3"
+  },
+  "reem_hint_confess_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "يُمْكِنُنِي أَنْ أَتَحَدَّثَ مَعَ جَدِّي بِصِدْقٍ.",
+    "audio": "res://assets/audio/lines/reem_hint_confess_1.mp3"
+  },
+  "reem_hint_confess_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "جَدِّي يُسَاعِدُنِي حِينَ أُخْبِرُهُ بِمَا حَدَثَ.",
+    "audio": "res://assets/audio/lines/reem_hint_confess_2.mp3"
+  },
+  "reem_hint_confess_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَعُودُ إِلَى السَّاحَةِ وَأَضْغَطُ عَلَى جَدِّي لِأُخْبِرَهُ عَنِ الْمِرْآةِ.",
+    "audio": "res://assets/audio/lines/reem_hint_confess_3.mp3"
+  },
+  "reem_hint_mirror_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "الزُّهُورُ فِي الظِّلِّ تَحْتَاجُ إِلَى الضَّوْءِ.",
+    "audio": "res://assets/audio/lines/reem_hint_mirror_1.mp3"
+  },
+  "reem_hint_mirror_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "الْمِرْآةُ تَعْكِسُ ضَوْءَ الشَّمْسِ.",
+    "audio": "res://assets/audio/lines/reem_hint_mirror_2.mp3"
+  },
+  "reem_hint_mirror_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "مَعِي مِرْآةُ جَدِّي؛ سَأَضْغَطُ عَلَى الزُّهُورِ الْمُغْلَقَةِ لِأُوَجِّهَ الضَّوْءَ إِلَيْهَا.",
+    "audio": "res://assets/audio/lines/reem_hint_mirror_3.mp3"
+  },
+  "reem_hint_forward_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "يُمْكِنُنِي أَنْ أُكْمِلَ رِحْلَتِي.",
+    "audio": "res://assets/audio/lines/reem_hint_forward_1.mp3"
+  },
+  "reem_hint_forward_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "الطَّرِيقُ يَمْتَدُّ نَحْوَ الْيَمِينِ.",
+    "audio": "res://assets/audio/lines/reem_hint_forward_2.mp3"
+  },
+  "reem_hint_forward_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَضْغَطُ عَلَى السَّهْمِ الْأَيْمَنِ لِأُكْمِلَ الطَّرِيقَ.",
+    "audio": "res://assets/audio/lines/reem_hint_forward_3.mp3"
+  },
+  "reem_hint_stone_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "هَلِ الْحَجَرُ كَمَا وَصَفَهُ ثَعْلُوبُ؟",
+    "audio": "res://assets/audio/lines/reem_hint_stone_1.mp3"
+  },
+  "reem_hint_stone_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَفْحَصُ الْحَجَرَ الَّذِي أَعْطَانِي إِيَّاهُ.",
+    "audio": "res://assets/audio/lines/reem_hint_stone_2.mp3"
+  },
+  "reem_hint_stone_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَضْغَطُ عَلَى الْحَجَرِ فِي السَّلَّةِ لِأَمْسَحَهُ.",
+    "audio": "res://assets/audio/lines/reem_hint_stone_3.mp3"
+  },
+  "reem_hint_return_stone_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "يُمْكِنُنِي إِصْلَاحُ هَذَا الْخَطَإِ.",
+    "audio": "res://assets/audio/lines/reem_hint_return_stone_1.mp3"
+  },
+  "reem_hint_return_stone_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "ثَعْلُوبُ مَا زَالَ بِجَانِبِ الصَّخْرَةِ.",
+    "audio": "res://assets/audio/lines/reem_hint_return_stone_2.mp3"
+  },
+  "reem_hint_return_stone_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "سَأَضْغَطُ عَلَى ثَعْلُوبَ لِأُعِيدَ الْحَجَرَ وَأَسْتَرِدَّ الْمِرْآةَ.",
+    "audio": "res://assets/audio/lines/reem_hint_return_stone_3.mp3"
+  },
+  "reem_card_shahd_name": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "شَهْد",
+    "audio": "res://assets/audio/lines/reem_card_shahd_name.mp3"
+  },
+  "reem_card_shahd_fact": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, thoughtful notebook reading",
+    "text": "تَجْمَعُ النَّحْلَةُ الرَّحِيقَ مِنَ الْأَزْهَارِ.",
+    "audio": "res://assets/audio/lines/reem_card_shahd_fact.mp3"
+  },
+  "reem_stream_arrive": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "هَذَا جَدْوَلٌ جَمِيلٌ. سَأَسِيرُ عَلَى الضِّفَّةِ بِهُدُوءٍ.",
+    "audio": "res://assets/audio/lines/reem_stream_arrive.mp3"
+  },
+  "reem_stream_ducks": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "تُرِيدُ الْبَطَّةُ وَصِغَارُهَا الْعُبُورَ، وَلَكِنَّ الْحِجَارَةَ تَحَرَّكَتْ.",
+    "audio": "res://assets/audio/lines/reem_stream_ducks.mp3"
+  },
+  "reem_stream_log": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "بِسْمِ اللّٰهِ. هَذَا الْجِذْعُ خَفِيفٌ. سَأُدَحْرِجُهُ لِيَصِيرَ جِسْرًا صَغِيرًا.",
+    "audio": "res://assets/audio/lines/reem_stream_log.mp3"
+  },
+  "reem_stream_thanks": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "عَبَرَتِ الْبَطَّةُ وَصِغَارُهَا! وَتَرَكَتْ لِي رِيشَةً مُلَوَّنَةً لِلْمِهْرَجَانِ.",
+    "audio": "res://assets/audio/lines/reem_stream_thanks.mp3"
+  },
+  "reem_stream_rabbit": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "هَذَا أَرْنُوبُ! رَكَضَ قَبْلَ أَنْ يَسْمَعَ وَصْفَ الطَّرِيقِ. هَلْ أَتْبَعُهُ؟",
+    "audio": "res://assets/audio/lines/reem_stream_rabbit.mp3"
+  },
+  "reem_stream_map": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "سَأَقْرَأُ خَرِيطَةَ جَدِّي أَوَّلًا. هَا هُوَ الطَّرِيقُ إِلَى الصَّنَوْبَرِ!",
+    "audio": "res://assets/audio/lines/reem_stream_map.mp3"
+  },
+  "reem_stream_lost": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "أَيْنَ الطَّرِيقُ؟ لَقَدْ تَسَرَّعْتُ. سَأَعُودُ إِلَى الضِّفَّةِ وَأَنْظُرُ فِي الْخَرِيطَةِ.",
+    "audio": "res://assets/audio/lines/reem_stream_lost.mp3"
+  },
+  "reem_stream_found": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "الْحَمْدُ لِلّٰهِ! عَرَفْتُ الطَّرِيقَ مِنَ الْخَرِيطَةِ. سَأَتَمَهَّلُ.",
+    "audio": "res://assets/audio/lines/reem_stream_found.mp3"
+  },
+  "fox_stream_offer": {
+    "speaker": "Thaaloob",
+    "tone": "playful, sly but gentle",
+    "text": "يَا رِيمُ، دَعِينِي أَحْمِلُ الْفَانُوسَ عَنْكِ! سَتَصِيرُ سَلَّتُكِ أَخَفَّ.",
+    "audio": "res://assets/audio/lines/fox_stream_offer.mp3"
+  },
+  "reem_stream_keep": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "جَزَاكَ اللّٰهُ خَيْرًا، وَلَكِنَّ الْفَانُوسَ أَمَانَةٌ. سَأَحْمِلُهُ بِنَفْسِي.",
+    "audio": "res://assets/audio/lines/reem_stream_keep.mp3"
+  },
+  "fox_stream_borrow": {
+    "speaker": "Thaaloob",
+    "tone": "playful, sly but gentle",
+    "text": "سَأَجْلِسُ هُنَا وَأُجَرِّبُ ضَوْءَهُ قَلِيلًا!",
+    "audio": "res://assets/audio/lines/fox_stream_borrow.mp3"
+  },
+  "reem_stream_ask_back": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "يَا ثَعْلُوبُ، أَحْتَاجُ إِلَى الْفَانُوسِ لِلْمِهْرَجَانِ. أَعِدْهُ إِلَيَّ مِنْ فَضْلِكَ.",
+    "audio": "res://assets/audio/lines/reem_stream_ask_back.mp3"
+  },
+  "fox_stream_return": {
+    "speaker": "Thaaloob",
+    "tone": "playful, sly but gentle",
+    "text": "تَفَضَّلِي. هَا هُوَ فَانُوسُكِ.",
+    "audio": "res://assets/audio/lines/fox_stream_return.mp3"
+  },
+  "reem_card_duck_name": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "الْبَطَّةُ",
+    "audio": "res://assets/audio/lines/reem_card_duck_name.mp3"
+  },
+  "reem_card_duck_fact": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "يُسَاعِدُ رِيشُ الْبَطَّةِ عَلَى إِبْعَادِ الْمَاءِ عَنْ جِسْمِهَا.",
+    "audio": "res://assets/audio/lines/reem_card_duck_fact.mp3"
+  },
+  "reem_hint_stream_bridge_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "كَيْفَ تَعْبُرُ الْبَطَّةُ مَعَ صِغَارِهَا؟",
+    "audio": "res://assets/audio/lines/reem_hint_stream_bridge_1.mp3"
+  },
+  "reem_hint_stream_bridge_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "قُرْبَ الْمَاءِ جِذْعٌ خَفِيفٌ.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_bridge_2.mp3"
+  },
+  "reem_hint_stream_bridge_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "أَضْغَطُ عَلَى الْجِذْعِ لِأَصْنَعَ جِسْرًا.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_bridge_3.mp3"
+  },
+  "reem_hint_stream_map_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "التَّمَهُّلُ يُسَاعِدُنِي عَلَى مَعْرِفَةِ الطَّرِيقِ.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_map_1.mp3"
+  },
+  "reem_hint_stream_map_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "خَرِيطَةُ جَدِّي فِي دَفْتَرِي.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_map_2.mp3"
+  },
+  "reem_hint_stream_map_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "أَضْغَطُ عَلَى أَرْنُوبَ، ثُمَّ أَخْتَارُ الْخَرِيطَةَ.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_map_3.mp3"
+  },
+  "reem_hint_stream_lantern_1": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "الْفَانُوسُ أَمَانَةٌ مَعِي.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_lantern_1.mp3"
+  },
+  "reem_hint_stream_lantern_2": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "ثَعْلُوبُ مَا زَالَ قَرِيبًا مِنِّي.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_lantern_2.mp3"
+  },
+  "reem_hint_stream_lantern_3": {
+    "speaker": "Reem",
+    "tone": "gentle, clear, reflective",
+    "text": "أَضْغَطُ عَلَى ثَعْلُوبَ لِأَطْلُبَ الْفَانُوسَ.",
+    "audio": "res://assets/audio/lines/reem_hint_stream_lantern_3.mp3"
+  },
+  "reem_pine_arrive": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "هُنَا تَلْتَقِي الطُّرُقُ عِنْدَ أَشْجَارِ الصَّنَوْبَرِ.",
+    "audio": "res://assets/audio/lines/reem_pine_arrive.mp3"
+  },
+  "fox_pine_offer": {
+    "speaker": "Thaaloob",
+    "tone": "playful, sly",
+    "text": "أَعْرِفُ طَرِيقًا سَهْلًا! لَا تَتَوَقَّفِي لِمُسَاعَدَةِ أَحَدٍ، فَلَنْ يَرَاكِ أَحَدٌ.",
+    "audio": "res://assets/audio/lines/fox_pine_offer.mp3"
+  },
+  "reem_pine_kind": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "سَأَخْتَارُ طَرِيقِي بِهُدُوءٍ، وَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ إِنْ شَاءَ اللّٰهُ.",
+    "audio": "res://assets/audio/lines/reem_pine_kind.mp3"
+  },
+  "reem_pine_skip": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "سَأُوَافِقُكَ لِأَصِلَ بِسُرْعَةٍ، وَلَنْ أَتَوَقَّفَ لِأَحَدٍ.",
+    "audio": "res://assets/audio/lines/reem_pine_skip.mp3"
+  },
+  "fox_pine_cave": {
+    "speaker": "Thaaloob",
+    "tone": "playful, sly",
+    "text": "طَرِيقُ الْكَهْفِ وَاحِدٌ مِنْ هَذِهِ الطُّرُقِ الثَّلَاثَةِ.",
+    "audio": "res://assets/audio/lines/fox_pine_cave.mp3"
+  },
+  "reem_pine_repair": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "الْوُصُولُ سَرِيعًا لَيْسَ كُلَّ شَيْءٍ. أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي.",
+    "audio": "res://assets/audio/lines/reem_pine_repair.mp3"
+  },
+  "reem_pine_fixed": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "سَأُسَاعِدُ مَنْ يَحْتَاجُ إِلَيَّ عَلَى أَيِّ طَرِيقٍ أَخْتَارُهُ.",
+    "audio": "res://assets/audio/lines/reem_pine_fixed.mp3"
+  },
+  "reem_hint_pine_meet_1": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "ثَعْلُوبُ عِنْدَ مُفْتَرَقِ الطُّرُقِ.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_meet_1.mp3"
+  },
+  "reem_hint_pine_meet_2": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "مَاذَا يُرِيدُ أَنْ يَقُولَ لِي؟",
+    "audio": "res://assets/audio/lines/reem_hint_pine_meet_2.mp3"
+  },
+  "reem_hint_pine_meet_3": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "أَضْغَطُ عَلَى ثَعْلُوبَ لِأَسْمَعَهُ.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_meet_3.mp3"
+  },
+  "reem_hint_pine_repair_1": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "أَسْتَطِيعُ أَنْ أُغَيِّرَ اخْتِيَارِي.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_repair_1.mp3"
+  },
+  "reem_hint_pine_repair_2": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "اللَّافِتَةُ تُسَاعِدُنِي عَلَى التَّفْكِيرِ.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_repair_2.mp3"
+  },
+  "reem_hint_pine_repair_3": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "أَضْغَطُ عَلَى اللَّافِتَةِ وَأَخْتَارُ الْمُسَاعَدَةَ.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_repair_3.mp3"
+  },
+  "reem_hint_pine_route_1": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "هُنَاكَ ثَلَاثَةُ طُرُقٍ.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_route_1.mp3"
+  },
+  "reem_hint_pine_route_2": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "أَسْتَطِيعُ أَنْ أَخْتَارَ الْغَابَةَ أَوِ الْكَهْفَ أَوِ الْبُحَيْرَةَ.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_route_2.mp3"
+  },
+  "reem_hint_pine_route_3": {
+    "speaker": "Reem",
+    "tone": "gentle, reflective",
+    "text": "أَضْغَطُ عَلَى سَهْمِ الطَّرِيقِ الَّذِي أُرِيدُهُ.",
+    "audio": "res://assets/audio/lines/reem_hint_pine_route_3.mp3"
+  },
+  "reem_oak_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هُنَا تَنْمُو أَشْجَارُ الْبَلُّوطِ.",
+    "audio": "res://assets/audio/lines/reem_oak_arrive.mp3"
+  },
+  "reem_oak_search": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "نَسِيَ سِنْجُوبُ مَكَانَ ثِمَارِهِ. لِنَبْحَثْ قُرْبَ الْجُذُورِ.",
+    "audio": "res://assets/audio/lines/reem_oak_search.mp3"
+  },
+  "reem_oak_found": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَجَدْنَا الثِّمَارَ الثَّلَاثَ. مَاذَا نَفْعَلُ بِهَا؟",
+    "audio": "res://assets/audio/lines/reem_oak_found.mp3"
+  },
+  "reem_oak_share": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِنَتَقَاسَمْهَا. هَذِهِ حِصَّةٌ لِلْمِهْرَجَانِ.",
+    "audio": "res://assets/audio/lines/reem_oak_share.mp3"
+  },
+  "reem_oak_keep": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بَقِيَتِ الثِّمَارُ كُلُّهَا فِي كَوْمَةٍ وَاحِدَةٍ.",
+    "audio": "res://assets/audio/lines/reem_oak_keep.mp3"
+  },
+  "reem_oak_meet": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذَا قُنْفُوذٌ. يَقِفُ وَحْدَهُ. هَلْ أُسَلِّمُ عَلَيْهِ؟",
+    "audio": "res://assets/audio/lines/reem_oak_meet.mp3"
+  },
+  "reem_oak_greet": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "السَّلَامُ عَلَيْكَ يَا قُنْفُوذُ! شُكْرًا لِمُسَاعَدَتِكَ فِي جَمْعِ الْأَوْرَاقِ.",
+    "audio": "res://assets/audio/lines/reem_oak_greet.mp3"
+  },
+  "reem_oak_avoid": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بَقِيَ قُنْفُوذٌ وَحْدَهُ. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهِ.",
+    "audio": "res://assets/audio/lines/reem_oak_avoid.mp3"
+  },
+  "reem_oak_card_sinjoob": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يُخَبِّئُ السِّنْجَابُ بَعْضَ طَعَامِهِ لِيَأْكُلَهُ لَاحِقًا.",
+    "audio": "res://assets/audio/lines/reem_oak_card_sinjoob.mp3"
+  },
+  "reem_oak_card_qunfood": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَحْمِي الْأَشْوَاكُ جِسْمَ الْقُنْفُذِ.",
+    "audio": "res://assets/audio/lines/reem_oak_card_qunfood.mp3"
+  },
+  "reem_oak_sinjoob_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سِنْجُوبُ",
+    "audio": "res://assets/audio/lines/reem_oak_sinjoob_name.mp3"
+  },
+  "reem_oak_qunfood_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قُنْفُوذُ",
+    "audio": "res://assets/audio/lines/reem_oak_qunfood_name.mp3"
+  },
+  "reem_cave_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "فِي الْكَهْفِ ظِلٌّ بَارِدٌ، وَمَعِي فَانُوسِي.",
+    "audio": "res://assets/audio/lines/reem_cave_arrive.mp3"
+  },
+  "reem_cave_kitten": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَخَافُ قَطْقُوطَةُ مِنَ الظَّلَامِ. هَلْ أَمْشِي مَعَهَا؟",
+    "audio": "res://assets/audio/lines/reem_cave_kitten.mp3"
+  },
+  "reem_cave_light": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَعَالَيْ يَا قَطْقُوطَةُ، سَنَمْشِي خُطْوَةً خُطْوَةً. سَتَدُقِّينَ جَرَسَ الْمِهْرَجَانِ!",
+    "audio": "res://assets/audio/lines/reem_cave_light.mp3"
+  },
+  "reem_cave_mock": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بَقِيَتْ قَطْقُوطَةُ عِنْدَ الْمَدْخَلِ. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهَا.",
+    "audio": "res://assets/audio/lines/reem_cave_mock.mp3"
+  },
+  "reem_cave_web": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قَطَعَتِ الرِّيحُ خُيُوطَ عَنْكُوبٍ. لِنَصِلِ الْأَشْكَالَ كَمَا فِي الْمِثَالِ.",
+    "audio": "res://assets/audio/lines/reem_cave_web.mp3"
+  },
+  "reem_cave_give_up": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لَمْ تَكْتَمِلِ الشَّبَكَةُ. يُمْكِنُنِي الْمُحَاوَلَةُ مَرَّةً أُخْرَى.",
+    "audio": "res://assets/audio/lines/reem_cave_give_up.mp3"
+  },
+  "reem_cave_thread": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "اكْتَمَلَتِ الشَّبَكَةُ! شُكْرًا لَكَ يَا عَنْكُوبُ عَلَى خُيُوطِ الْفَوَانِيسِ.",
+    "audio": "res://assets/audio/lines/reem_cave_thread.mp3"
+  },
+  "fox_cave_praise": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "يَا رِيمُ، مَا أَجْمَلَ صَوْتَكِ! ضَعِي سَلَّتَكِ هُنَا وَغَنِّي لَنَا.",
+    "audio": "res://assets/audio/lines/fox_cave_praise.mp3"
+  },
+  "reem_cave_keep": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "شُكْرًا يَا ثَعْلُوبُ. سَأُبْقِي سَلَّتِي قُرْبِي.",
+    "audio": "res://assets/audio/lines/reem_cave_keep.mp3"
+  },
+  "reem_cave_stolen": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "أَخَذَ ثَعْلُوبُ جَرَّةَ الْعَسَلِ! سَأَرْفَعُ سَلَّتِي.",
+    "audio": "res://assets/audio/lines/reem_cave_stolen.mp3"
+  },
+  "reem_cave_empty": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "فَتَّشَ ثَعْلُوبُ فِي سَلَّتِي. سَأَرْفَعُهَا وَأُبْقِيهَا قُرْبِي.",
+    "audio": "res://assets/audio/lines/reem_cave_empty.mp3"
+  },
+  "reem_cave_repair": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَلَّتِي مَعِي مِنْ جَدِيدٍ.",
+    "audio": "res://assets/audio/lines/reem_cave_repair.mp3"
+  },
+  "reem_cave_cat_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قَطْقُوطَةُ",
+    "audio": "res://assets/audio/lines/reem_cave_cat_name.mp3"
+  },
+  "reem_cave_cat_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تُسَاعِدُ شَوَارِبُ الْقِطَّةِ عَلَى الإِحْسَاسِ بِمَا حَوْلَهَا.",
+    "audio": "res://assets/audio/lines/reem_cave_cat_fact.mp3"
+  },
+  "reem_cave_spider_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "عَنْكُوبُ",
+    "audio": "res://assets/audio/lines/reem_cave_spider_name.mp3"
+  },
+  "reem_cave_spider_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِلْعَنْكَبُوتِ ثَمَانِي أَرْجُلٍ.",
+    "audio": "res://assets/audio/lines/reem_cave_spider_fact.mp3"
+  },
+  "reem_lake_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "مَاءُ الْبُحَيْرَةِ هَادِئٌ. سَأَمْشِي عَلَى الضِّفَّةِ.",
+    "audio": "res://assets/audio/lines/reem_lake_arrive.mp3"
+  },
+  "reem_lake_frog": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "فَقَدَ دَفْدُوفُ صَوْتَهُ. قَلِيلٌ مِنَ الْعَسَلِ مَعَ مَاءٍ دَافِئٍ قَدْ يُسَاعِدُهُ.",
+    "audio": "res://assets/audio/lines/reem_lake_frog.mp3"
+  },
+  "reem_lake_need_honey": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لَيْسَ مَعِي عَسَلٌ. لِنَسْأَلِ الْقَارِبَ عِنْدَ الرَّصِيفِ.",
+    "audio": "res://assets/audio/lines/reem_lake_need_honey.mp3"
+  },
+  "reem_lake_boat": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَقُولُ الْقَارِبُ إِنَّهُ سَيَأْخُذُنِي إِلَى الْبَحْرِ يَوْمًا مَا.",
+    "audio": "res://assets/audio/lines/reem_lake_boat.mp3"
+  },
+  "reem_lake_reserve": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لَدَى الْقَارِبِ مِلْعَقَةٌ مِنَ الْعَسَلِ لِدَفْدُوفَ.",
+    "audio": "res://assets/audio/lines/reem_lake_reserve.mp3"
+  },
+  "reem_lake_share": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "عَادَ صَوْتُ دَفْدُوفَ! أَهْدَانِي مِزْمَارًا مِنَ الْقَصَبِ.",
+    "audio": "res://assets/audio/lines/reem_lake_share.mp3"
+  },
+  "reem_lake_keep": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بَقِيَ دَفْدُوفُ صَامِتًا. يُمْكِنُنِي أَنْ أُشَارِكَهُ الْعَسَلَ.",
+    "audio": "res://assets/audio/lines/reem_lake_keep.mp3"
+  },
+  "reem_lake_gazelle": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "ابْتَعَدَتْ غَزْلَانَةُ عَنِ الْمَكَانِ الَّذِي حَدَّدَتْهُ أُمُّهَا. لِنَتْبَعْ آثَارَ خُطَاهَا.",
+    "audio": "res://assets/audio/lines/reem_lake_gazelle.mp3"
+  },
+  "reem_lake_tracks": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذَا أَثَرُ حَافِرٍ. لِنَبْحَثْ عَنِ الْأَثَرِ التَّالِي عَلَى الضِّفَّةِ.",
+    "audio": "res://assets/audio/lines/reem_lake_tracks.mp3"
+  },
+  "reem_lake_reunion": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَجَدْنَا أُمَّ غَزْلَانَةَ! سَتَبْقَى قُرْبَهَا هَذِهِ الْمَرَّةَ.",
+    "audio": "res://assets/audio/lines/reem_lake_reunion.mp3"
+  },
+  "reem_lake_frog_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "دَفْدُوفُ",
+    "audio": "res://assets/audio/lines/reem_lake_frog_name.mp3"
+  },
+  "reem_lake_frog_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَعِيشُ كَثِيرٌ مِنَ الضَّفَادِعِ قُرْبَ الْمَاءِ.",
+    "audio": "res://assets/audio/lines/reem_lake_frog_fact.mp3"
+  },
+  "reem_lake_gazelle_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "غَزْلَانَةُ",
+    "audio": "res://assets/audio/lines/reem_lake_gazelle_name.mp3"
+  },
+  "reem_lake_gazelle_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَجْرِي الْغِزْلَانُ بِسُرْعَةٍ عَلَى أَرْجُلِهَا الطَّوِيلَةِ.",
+    "audio": "res://assets/audio/lines/reem_lake_gazelle_fact.mp3"
+  },
+  "reem_orchard_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَصَلْتُ إِلَى بُسْتَانِ الْعَسَلِ.",
+    "audio": "res://assets/audio/lines/reem_orchard_arrive.mp3"
+  },
+  "reem_orchard_bear": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "عَلِقَ رَأْسُ دُبٍّ فِي الْجَرَّةِ. كَيْفَ أُسَاعِدُهُ؟",
+    "audio": "res://assets/audio/lines/reem_orchard_bear.mp3"
+  },
+  "reem_orchard_soft": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لَا تَخَفْ يَا دُبُّ. سَأَضَعُ قَلِيلًا مِنَ الْعَسَلِ عَلَى حَافَّةِ الْجَرَّةِ.",
+    "audio": "res://assets/audio/lines/reem_orchard_soft.mp3"
+  },
+  "reem_orchard_hard": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بَكَى دُبٌّ عِنْدَمَا شَدَدْتُ الْجَرَّةَ. سَأُحَاوِلُ بِرِفْقٍ.",
+    "audio": "res://assets/audio/lines/reem_orchard_hard.mp3"
+  },
+  "reem_orchard_free": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "خَرَجَ رَأْسُ دُبٍّ! سَيُسَاعِدُنَا فِي حَمْلِ الْفَوَانِيسِ.",
+    "audio": "res://assets/audio/lines/reem_orchard_free.mp3"
+  },
+  "fox_orchard_accuse": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "أَنَا مُتَأَكِّدٌ أَنَّ دُبًّا أَخَذَ فَوَانِيسَ الْمِهْرَجَانِ.",
+    "audio": "res://assets/audio/lines/fox_orchard_accuse.mp3"
+  },
+  "reem_orchard_look": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَبْحَثُ عَنِ الْفَوَانِيسِ قَبْلَ أَنْ أَحْكُمَ.",
+    "audio": "res://assets/audio/lines/reem_orchard_look.mp3"
+  },
+  "reem_orchard_blame": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "حَزِنَ دُبٌّ عِنْدَمَا قُلْتُ إِنَّهُ أَخَذَهَا. سَأَبْحَثُ عَنْهَا.",
+    "audio": "res://assets/audio/lines/reem_orchard_blame.mp3"
+  },
+  "reem_orchard_wet": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَا هِيَ الْفَوَانِيسُ! سَقَطَتْ فِي الْجَدْوَلِ، وَلَمْ يَأْخُذْهَا دُبٌّ.",
+    "audio": "res://assets/audio/lines/reem_orchard_wet.mp3"
+  },
+  "reem_orchard_sorry": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "عُذْرًا يَا دُبُّ. وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ.",
+    "audio": "res://assets/audio/lines/reem_orchard_sorry.mp3"
+  },
+  "reem_orchard_report": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَا دُبُّ، وَجَدْتُ الْفَوَانِيسَ عِنْدَ الْجَدْوَلِ. لِنَحْمِلْهَا مَعًا.",
+    "audio": "res://assets/audio/lines/reem_orchard_report.mp3"
+  },
+  "reem_orchard_dubb_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "دُبٌّ",
+    "audio": "res://assets/audio/lines/reem_orchard_dubb_name.mp3"
+  },
+  "reem_orchard_dubb_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِلدُّبِّ حَاسَّةُ شَمٍّ قَوِيَّةٌ.",
+    "audio": "res://assets/audio/lines/reem_orchard_dubb_fact.mp3"
+  },
+  "reem_hill_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بَدَأَتِ الشَّمْسُ تَغْرُبُ خَلْفَ التَّلِّ.",
+    "audio": "res://assets/audio/lines/reem_hill_arrive.mp3"
+  },
+  "reem_hill_proud": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لَا يُرِيدُ طَاوُوسٌ أَنْ يُعِيرَنَا رِيشَهُ. يَقُولُ إِنَّهُ الْأَجْمَلُ.",
+    "audio": "res://assets/audio/lines/reem_hill_proud.mp3"
+  },
+  "reem_hill_flatter": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "مَدَحْتُهُ وَحْدَهُ، وَبَقِيَ الْفَانُوسُ بِلَا زِينَةٍ.",
+    "audio": "res://assets/audio/lines/reem_hill_flatter.mp3"
+  },
+  "reem_hill_show": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "لِنَضَعِ الرِّيشَةَ مَعَ الشَّرِيطِ وَفَانُوسِ الْمِهْرَجَانِ.",
+    "audio": "res://assets/audio/lines/reem_hill_show.mp3"
+  },
+  "reem_hill_gift": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "انْظُرْ يَا طَاوُوسُ! بِعَمَلِنَا مَعًا صَارَ الْفَانُوسُ أَجْمَلَ. شُكْرًا لَكَ عَلَى الرِّيشِ.",
+    "audio": "res://assets/audio/lines/reem_hill_gift.mp3"
+  },
+  "reem_hill_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "طَاوُوسٌ",
+    "audio": "res://assets/audio/lines/reem_hill_name.mp3"
+  },
+  "reem_hill_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَبْسُطُ الطَّاوُوسُ رِيشَ ذَيْلِهِ مِثْلَ الْمِرْوَحَةِ.",
+    "audio": "res://assets/audio/lines/reem_hill_fact.mp3"
+  },
+  "reem_star_offer": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "الْمَرْصَدُ فَوْقَ الْجَبَلِ. هَلْ أَذْهَبُ لِأَرَى النُّجُومَ؟",
+    "audio": "res://assets/audio/lines/reem_star_offer.mp3"
+  },
+  "reem_star_perch": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "اللَّيْلُ هَادِئٌ، وَالنُّجُومُ وَاضِحَةٌ فَوْقَ الْجَبَلِ.",
+    "audio": "res://assets/audio/lines/reem_star_perch.mp3"
+  },
+  "reem_star_bat": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يَعْرِفُ الْخُفَّاشُ شَيْئًا عَنْ دَرْبِ النُّجُومِ. هَلْ أَسْمَعُ مِنْهُ؟",
+    "audio": "res://assets/audio/lines/reem_star_bat.mp3"
+  },
+  "reem_star_rush": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "أَسْرَعْتُ وَلَمْ أَسْمَعِ الدَّلِيلَ. سَأَعُودُ إِلَى الْخُفَّاشِ.",
+    "audio": "res://assets/audio/lines/reem_star_rush.mp3"
+  },
+  "reem_star_listen": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "قَالَ الْخُفَّاشُ إِنَّ لِلدَّرْبِ أَشْكَالًا نَتَّبِعُهَا بِالتَّرْتِيبِ.",
+    "audio": "res://assets/audio/lines/reem_star_listen.mp3"
+  },
+  "reem_star_fly": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَتَحْمِلُنِي الْبُومَةُ إِلَى الْمَرْصَدِ. بِسْمِ اللهِ.",
+    "audio": "res://assets/audio/lines/reem_star_fly.mp3"
+  },
+  "reem_star_bat_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "خُفَّاشٌ",
+    "audio": "res://assets/audio/lines/reem_star_bat_name.mp3"
+  },
+  "reem_star_bat_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَسْتَخْدِمُ خَفَافِيشُ كَثِيرَةٌ صَدَى الصَّوْتِ لِتَعْرِفَ طَرِيقَهَا.",
+    "audio": "res://assets/audio/lines/reem_star_bat_fact.mp3"
+  },
+  "reem_star_owl_name": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "بُومَةٌ",
+    "audio": "res://assets/audio/lines/reem_star_owl_name.mp3"
+  },
+  "reem_star_owl_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تُسَاعِدُ بَعْضُ رِيشَاتِ الْبُومَةِ عَلَى الطَّيَرَانِ بِهُدُوءٍ.",
+    "audio": "res://assets/audio/lines/reem_star_owl_fact.mp3"
+  },
+  "reem_star_dome": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "مِنْ فَتْحَةِ الْقُبَّةِ أَرَى السَّمَاءَ وَالنُّجُومَ.",
+    "audio": "res://assets/audio/lines/reem_star_dome.mp3"
+  },
+  "reem_star_chart": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "يُرِينِي الْفَلَكِيُّ خَرِيطَةً. سَأَصِلُ بَيْنَ النُّجُومِ كَمَا فِي الْمِثَالِ.",
+    "audio": "res://assets/audio/lines/reem_star_chart.mp3"
+  },
+  "reem_star_retry": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "لِنَنْظُرْ إِلَى الشَّكْلِ التَّالِي فِي الْمِثَالِ.",
+    "audio": "res://assets/audio/lines/reem_star_retry.mp3"
+  },
+  "reem_star_connected": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "اتَّصَلَتِ النُّجُومُ، وَصَارَ عِنْدَنَا دَلِيلٌ لِلدَّرْبِ.",
+    "audio": "res://assets/audio/lines/reem_star_connected.mp3"
+  },
+  "reem_star_caravan": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَنْتَظِرُ الْحَيَوَانَاتُ عِنْدَ الطَّرِيقِ. سَأُرِيهَا الطَّرِيقَ إِلَى الْمَأْوَى.",
+    "audio": "res://assets/audio/lines/reem_star_caravan.mp3"
+  },
+  "fox_star_bright": {
+    "speaker": "Thaaloob",
+    "tone": "playful",
+    "text": "لِنَتَّبِعْ أَلْمَعَ نَجْمٍ! أَوْ لِنَنْظُرْ إِلَى الْخَرِيطَةِ أَوَّلًا.",
+    "audio": "res://assets/audio/lines/fox_star_bright.mp3"
+  },
+  "reem_star_guide": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَتَّبِعُ الْعَلَامَاتِ بِتَرْتِيبِ الْخَرِيطَةِ.",
+    "audio": "res://assets/audio/lines/reem_star_guide.mp3"
+  },
+  "reem_star_safe": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "وَصَلَتِ الْحَيَوَانَاتُ إِلَى الْمَأْوَى الدَّافِئِ. الْحَمْدُ لِلَّهِ.",
+    "audio": "res://assets/audio/lines/reem_star_safe.mp3"
+  }
 }

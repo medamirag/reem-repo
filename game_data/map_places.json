@@ -9,7 +9,8 @@
     "neighbors": [
       "house",
       "gate",
-      "ramadan"
+      "ramadan",
+      "tree_day"
     ],
     "pack": 0,
     "name": "word_map_farm"
@@ -480,5 +481,18 @@
     ],
     "pack": 6,
     "name": "word_map_star_ridge"
+  },
+  {
+    "id": "tree_day",
+    "room": "TreeDay",
+    "position": [
+      0.164,
+      0.93
+    ],
+    "neighbors": [
+      "farm"
+    ],
+    "pack": 0,
+    "name": "word_map_tree_day"
   }
 ]

@@ -189,6 +189,11 @@ func _run() -> void:
 		_log("DONE snow")
 		get_tree().quit()
 		return
+	if _path == "tree_day":
+		await _tree_day_path()
+		_log("DONE tree_day")
+		get_tree().quit()
+		return
 	if _path == "parent":
 		await _parent_path()
 		_log("DONE parent")
@@ -280,6 +285,25 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _tree_day_path() -> void:
+	await Globals.new_game()
+	Globals.festival["completed"] = true
+	R.goto_room("Yard")
+	await _wait_room("Yard")
+	await _click("TreeDayEntry")
+	await _wait_room("TreeDay")
+	var wilts := Globals.wilts
+	_answers = [false]
+	await _click("Arnoob")
+	_expect(Globals.wilts == wilts + 1 and not R.current.get_node("NewLeaves").visible, "keeping water leaves the seedling drooping")
+	_answers = [true]
+	await _click("Arnoob")
+	await _click("Seedling")
+	_expect(Globals.wilts == wilts and Globals.friend_cards.has("tree_day") and R.current.get_node("NewLeaves").visible, "watering repairs the wilt and awards the tree card")
+	await _click("ExitLeft")
+	await _wait_room("Yard")
 
 
 func _parent_path() -> void:

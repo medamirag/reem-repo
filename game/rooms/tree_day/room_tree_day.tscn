@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/tree_day/room_tree_day.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg35_tree_day.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Resource" path="res://game/rooms/tree_day/room_tree_day.tres" id="state"]
+
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/arnoob/arnoob_base.png" id="rabbit"]
+[ext_resource type="Texture2D" path="res://game/rooms/tree_day/new_leaves.svg" id="leaves"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomTreeDay" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "TreeDay"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "Yard": Vector2(0.08, 0.82), "ObservatoryDome": Vector2(0.92, 0.82)}
+exit_arrows = {"ExitLeft": "left"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Arnoob" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Arnoob"
+position = Vector2(730, 843)
+interaction_polygon = PackedVector2Array(-110, -175, 110, -175, 110, 0, -110, 0)
+walk_to_point = Vector2(0, 48)
+
+[node name="InteractionPolygon" parent="Props/Arnoob" index="2"]
+polygon = PackedVector2Array(-110, -175, 110, -175, 110, 0, -110, 0)
+
+[node name="Sprite2D" parent="Props/Arnoob" index="0"]
+position = Vector2(0, -82)
+texture = ExtResource("rabbit")
+scale = Vector2(0.21, 0.21)
+
+[node name="Seedling" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Seedling"
+position = Vector2(1205, 618)
+interaction_polygon = PackedVector2Array(-112, -210, 112, -210, 112, 0, -112, 0)
+walk_to_point = Vector2(0, 273)
+
+[node name="InteractionPolygon" parent="Props/Seedling" index="2"]
+polygon = PackedVector2Array(-112, -210, 112, -210, 112, 0, -112, 0)
+
+[node name="NewLeaves" type="Sprite2D" parent="."]
+position = Vector2(1187, 423)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("leaves")
+visible = false

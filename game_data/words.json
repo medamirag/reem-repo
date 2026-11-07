@@ -1,4 +1,20 @@
 {
+  "word_seedling": {
+    "text": "شَتْلَة",
+    "rooms": [
+      "TreeDay"
+    ],
+    "audio": "res://assets/audio/words/word_seedling.mp3",
+    "objects": [
+      "prop:Seedling"
+    ]
+  },
+  "word_map_tree_day": {
+    "text": "يَوْمُ الشَّجَرَة",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_tree_day.mp3",
+    "objects": []
+  },
   "word_owl": {
     "text": "بُومَة",
     "rooms": [
@@ -947,7 +963,8 @@
     "text": "أَرْنَب",
     "rooms": [
       "Stream",
-      "SnowTracks"
+      "SnowTracks",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_rabbit.mp3",
     "objects": [
@@ -1034,7 +1051,8 @@
       "HilltopFestival",
       "RamadanLane",
       "IftarShelter",
-      "ObservatoryDome"
+      "ObservatoryDome",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_jug.mp3",
     "objects": [
@@ -1167,7 +1185,8 @@
       "SnowEdge",
       "SnowTracks",
       "SledHill",
-      "OwlPerch"
+      "OwlPerch",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_tree.mp3",
     "objects": []
@@ -1232,7 +1251,8 @@
       "DewBank",
       "AntCity",
       "OwlPerch",
-      "StarRidge"
+      "StarRidge",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -1255,7 +1275,8 @@
       "HedgehogCourt",
       "IftarShelter",
       "GiantBloom",
-      "DewBank"
+      "DewBank",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
@@ -1288,7 +1309,8 @@
   "word_fence": {
     "text": "سِيَاج",
     "rooms": [
-      "Gate"
+      "Gate",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_fence.mp3",
     "objects": []
@@ -1313,7 +1335,8 @@
       "PineFork",
       "HillSlope",
       "NarrowPass",
-      "OwlPerch"
+      "OwlPerch",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_cloud.mp3",
     "objects": []
@@ -1350,7 +1373,8 @@
       "SledHill",
       "GiantBloom",
       "DewBank",
-      "OwlPerch"
+      "OwlPerch",
+      "TreeDay"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/yard/room_yard.gd" id="2"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="9"]
 [ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="10"]
 [ext_resource type="Texture2D" path="res://game/scripts/ramadan/lantern.svg" id="11"]
+
+[ext_resource type="Texture2D" path="res://game/rooms/tree_day/new_leaves.svg" id="tree_event"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_Path"]
 agent_radius = 0.0
@@ -96,6 +98,22 @@ polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
 position = Vector2(0, -63)
 texture = ExtResource("11")
 scale = Vector2(1.65, 1.65)
+
+[node name="TreeDayEntry" parent="Props" instance=ExtResource("9")]
+visible = false
+script = ExtResource("10")
+script_name = "TreeDayEntry"
+position = Vector2(1420, 830)
+interaction_polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
+walk_to_point = Vector2(0, 62)
+
+[node name="InteractionPolygon" parent="Props/TreeDayEntry" index="2"]
+polygon = PackedVector2Array(-65, -126, 65, -126, 65, 0, -65, 0)
+
+[node name="Sprite2D" parent="Props/TreeDayEntry" index="0"]
+position = Vector2(0, -63)
+texture = ExtResource("tree_event")
+scale = Vector2(0.84, 0.84)
 
 [node name="Foreground" type="Sprite2D" parent="."]
 z_index = 100

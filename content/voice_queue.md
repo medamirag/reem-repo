@@ -310,13 +310,13 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_tree_day_done | Reem | warm | ارْتَفَعَتْ أَوْرَاقُهَا. الْحَمْدُ لِلَّهِ. | done |
 | reem_tree_day_card | Reem | warm | الشَّتْلَةُ | done |
 | reem_tree_day_fact | Reem | warm | تَحْتَاجُ الشَّتْلَةُ إِلَى الْمَاءِ وَضَوْءِ الشَّمْسِ لِتَنْمُوَ. | done |
-| reem_mother_day_arrive | Reem | warm | أُرِيدُ أَنْ أَصْنَعَ بِطَاقَةً لِأُمِّي. | todo |
-| reem_mother_day_offer | Reem | warm | هَلْ أَضَعُ زَهْرَةً عَلَى بِطَاقَةِ أُمِّي أَمْ أَحْتَفِظُ بِالزُّهُورِ؟ | todo |
-| reem_mother_day_wait | Reem | warm | بَقِيَتِ الْبِطَاقَةُ فَارِغَةً. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهَا. | todo |
-| reem_mother_day_make | Reem | warm | سَأَضَعُ زَهْرَةً عَلَى الْبِطَاقَةِ. | todo |
-| reem_mother_day_done | Reem | warm | أُمِّي، شُكْرًا لِرِعَايَتِكِ لِي. أُحِبُّكِ. | todo |
-| reem_mother_day_card | Reem | warm | بِطَاقَةٌ لِأُمِّي | todo |
-| reem_mother_day_fact | Reem | warm | يُمْكِنُنَا أَنْ نَقُولَ شُكْرًا بِكَلِمَةٍ طَيِّبَةٍ أَوْ بِبِطَاقَةٍ نَصْنَعُهَا بِأَيْدِينَا. | todo |
+| reem_mother_day_arrive | Reem | warm | أُرِيدُ أَنْ أَصْنَعَ بِطَاقَةً لِأُمِّي. | done |
+| reem_mother_day_offer | Reem | warm | هَلْ أَضَعُ زَهْرَةً عَلَى بِطَاقَةِ أُمِّي أَمْ أَحْتَفِظُ بِالزُّهُورِ؟ | done |
+| reem_mother_day_wait | Reem | warm | بَقِيَتِ الْبِطَاقَةُ فَارِغَةً. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهَا. | done |
+| reem_mother_day_make | Reem | warm | سَأَضَعُ زَهْرَةً عَلَى الْبِطَاقَةِ. | done |
+| reem_mother_day_done | Reem | warm | أُمِّي، شُكْرًا لِرِعَايَتِكِ لِي. أُحِبُّكِ. | done |
+| reem_mother_day_card | Reem | warm | بِطَاقَةٌ لِأُمِّي | done |
+| reem_mother_day_fact | Reem | warm | يُمْكِنُنَا أَنْ نَقُولَ شُكْرًا بِكَلِمَةٍ طَيِّبَةٍ أَوْ بِبِطَاقَةٍ نَصْنَعُهَا بِأَيْدِينَا. | done |
 
 ## Recording verification
 

@@ -184,3 +184,5 @@ Screenshots need a real renderer: run under Xvfb, for example `xvfb-run godot --
 - The saved Reem and Thaaloob voices recorded 18 dialogue lines on v3 with warm, gentle or playful synthesis-only tags. The saved Reem voice recorded eight vocabulary files on multilingual v2 without tags. No fallback was used. Numeric controls were unavailable. The existing Reem Stream sample and Thaaloob lines remain the listening references. File delivery was verified and full listening comparison remains open.
 
 - Tree Day used the same saved Reem voice and approved Stream reference. Seven dialogue files used v3 with [warmly]. Two isolated vocabulary files used multilingual v2. No numeric controls or fallback were used. File delivery was checked. Listening comparison remains open.
+
+- Mother Garden used saved Reem with v3 [warmly] for seven dialogue recordings and multilingual v2 for two vocabulary recordings. No fallback or explicit numeric controls were used. File delivery passed; listening comparison remains open.

@@ -1,4 +1,14 @@
 {
+  "word_tail": {
+    "text": "ذَيْل",
+    "rooms": [
+      "NarrowPass"
+    ],
+    "audio": "res://assets/audio/words/word_tail.mp3",
+    "objects": [
+      "prop:FoxTail"
+    ]
+  },
   "word_waterfall": {
     "text": "شَلَّال",
     "rooms": [
@@ -656,7 +666,8 @@
       "PineFork",
       "MeadowLake",
       "HillSlope",
-      "WaterfallPath"
+      "WaterfallPath",
+      "NarrowPass"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -727,7 +738,8 @@
       "Gate",
       "Stream",
       "PineFork",
-      "HillSlope"
+      "HillSlope",
+      "NarrowPass"
     ],
     "audio": "res://assets/audio/words/word_cloud.mp3",
     "objects": []
@@ -755,7 +767,8 @@
       "PineFork",
       "RockCave",
       "MeadowLake",
-      "WaterfallPath"
+      "WaterfallPath",
+      "NarrowPass"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []
@@ -791,12 +804,14 @@
     "rooms": [
       "FoxRock",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "NarrowPass"
     ],
     "audio": "res://assets/audio/words/word_fox.mp3",
     "objects": [
       "character:Thaaloob",
-      "prop:StreamFox"
+      "prop:StreamFox",
+      "prop:Thaaloob"
     ]
   },
   "word_bee": {
@@ -856,11 +871,13 @@
   "word_stone": {
     "text": "حَجَر",
     "rooms": [
-      "inventory"
+      "inventory",
+      "NarrowPass"
     ],
     "audio": "res://assets/audio/words/word_stone.mp3",
     "objects": [
-      "item:Stone"
+      "item:Stone",
+      "prop:LooseStone"
     ]
   }
 }

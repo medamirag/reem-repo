@@ -500,3 +500,11 @@ The parchment button on station screens and the M key open the illustrated map. 
 Map positions are fractions of the illustration in game_data/map_places.json. Each entry names its room, word label, neighbouring places and pack. Leaf markers use the existing Popochiu saved room visits. Cream clouds cover unvisited valley markers and locks mark unavailable packs. Reem's pin bobs over her current room. A tap displays the place name in right-to-left Cairo and plays its recording when available. A visited destination asks for confirmation before moving Reem there.
 
 The first opening shows Grandpa's introduction and plays the queued recording when installed. The map uses a short paper rustle. Add future rooms to the place data as they are built.
+
+## 19. Narrow pass (dusk)
+
+NarrowPass accepts both HillSlope and WaterfallPath. A wide safe foreground trail runs between two boulders at dusk. Thaaloob waits on the right of the gap with his tail caught by a small loose stone. Save the branch Reem used so the left exit returns there, with HillSlope as the fallback for a direct test run. The right exit opens to HilltopFestival once Thaaloob is free. Use the provisional End until that room exists.
+
+Click Thaaloob. Reem can offer to help or walk away. Walking away leaves him caught, wilts once and keeps the stone and Thaaloob reachable. Click him again to choose help. Then click the loose stone to roll it away without blocking Reem's path. Thaaloob apologises. If he took the HoneyJar in RockCave, he returns it. He asks to join the festival. Reem forgives him and invites him to come with her. Save the pending repair, the freed state and whether Thaaloob joins. Heal a previous wilt or add a blossom once. Repeated clicks cannot duplicate the HoneyJar or the reward.
+
+Use reem_pass_arrive, fox_pass_help, reem_pass_leave, reem_pass_stone, fox_pass_sorry, fox_pass_honey, fox_pass_join and reem_pass_welcome. Use saved Thaaloob for his own lines. Add notebook hints, both route connections and vocabulary for visible rocks, path, fox and tail. A hold on the loose stone teaches the word without freeing Thaaloob.

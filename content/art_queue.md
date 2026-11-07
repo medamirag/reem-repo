@@ -59,6 +59,8 @@ Originals in `assets/` are never edited: new images are new files with the names
 | qarqoor_sheet | `assets/art/characters/qarqoor/qarqoor_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See qarqoor_sheet below | No lettering | done |
 | qarqoor_base | `assets/art/characters/qarqoor/qarqoor_base.png` | `assets/art/characters/qarqoor/qarqoor_sheet.png` | transparent | portrait | See qarqoor_base below | No lettering | done |
 | qarqoor_fruit | `assets/art/items/qarqoor_fruit.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See qarqoor_fruit below | No lettering | done |
+| bg15_narrow_pass | `assets/art/backgrounds/bg15_narrow_pass.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg15_narrow_pass below | No lettering | done |
+| pass_loose_stone | `assets/art/items/pass_loose_stone.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See pass_loose_stone below | No lettering | done |
 
 <!-- One section per row, in the same order:
 
@@ -646,3 +648,23 @@ Standalone fully transparent game sprite of Qarqoor, using the reference sheet o
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 Standalone transparent sprite, one small round golden orange fruit with a green leaf. Smooth recognizable round silhouette that can roll. No scenery, ground, basket or shadows.
+
+## bg15_narrow_pass
+
+- **Save as:** `assets/art/backgrounds/bg15_narrow_pass.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+A wide dry dirt path runs across the entire lower third of a side-view game scene, through a safe gap framed by two large rounded boulders at dusk. A low right boulder leaves enough empty space for a fox and separate stone sprite. Muted lavender rocks, green scrub, warm violet-peach sky. Gentle atmosphere, no characters, no furniture, no falling rocks.
+
+## pass_loose_stone
+
+- **Save as:** `assets/art/items/pass_loose_stone.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Standalone isolated small rounded grey-violet stone with a moss patch, slightly flat oval shape that can roll. Transparent background, no ground or objects.

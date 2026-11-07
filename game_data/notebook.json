@@ -144,6 +144,11 @@
       "reem_waterfall_provoked",
       "reem_waterfall_ask",
       "reem_waterfall_roll"
+    ],
+    "pass_rescue": [
+      "fox_pass_help",
+      "reem_pass_leave",
+      "reem_pass_stone"
     ]
   },
   "map": [
@@ -258,6 +263,14 @@
         0.37,
         0.84
       ]
+    },
+    {
+      "room": "NarrowPass",
+      "label": "الْمَمَرُّ الضَّيِّق",
+      "at": [
+        0.56,
+        0.93
+      ]
     }
   ],
   "edges": [
@@ -324,6 +337,14 @@
     [
       11,
       13
+    ],
+    [
+      12,
+      14
+    ],
+    [
+      13,
+      14
     ]
   ],
   "cards": [

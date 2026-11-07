@@ -171,6 +171,14 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_waterfall_gift | Reem | warm | لَعِبْنَا مَعًا! سَيُسَاعِدُنَا قَرْقُورٌ فِي تَعْلِيقِ الْفَوَانِيسِ الْعَالِيَةِ. | done |
 | reem_waterfall_name | Reem | warm | قَرْقُورٌ | done |
 | reem_waterfall_fact | Reem | warm | يَتَسَلَّقُ الْقِرْدُ الْأَغْصَانَ بِيَدَيْهِ وَقَدَمَيْهِ. | done |
+| reem_pass_arrive | Reem | warm | هَذَا هُوَ الْمَمَرُّ إِلَى الْقِمَّةِ. | done |
+| fox_pass_help | Thaaloob | worried | يَا رِيمُ، عَلِقَ ذَيْلِي بَيْنَ الصَّخْرَتَيْنِ. هَلْ تُسَاعِدِينَنِي؟ | done |
+| reem_pass_leave | Reem | gentle | مَضَيْتُ وَبَقِيَ ثَعْلُوبٌ عَالِقًا. أَسْتَطِيعُ أَنْ أَعُودَ إِلَيْهِ. | done |
+| reem_pass_stone | Reem | warm | سَأُدَحْرِجُ الْحَجَرَ الصَّغِيرَ بَعِيدًا عَنْ ذَيْلِكَ. | done |
+| fox_pass_sorry | Thaaloob | embarrassed | سَاعَدْتِنِي بَعْدَ كُلِّ مَا فَعَلْتُ. أَنَا آسِفٌ يَا رِيمُ. | done |
+| fox_pass_honey | Thaaloob | embarrassed | هَذِهِ جَرَّةُ عَسَلِكِ. خُذِيهَا، فَهِيَ لَكِ. | done |
+| fox_pass_join | Thaaloob | gentle | هَلْ يُمْكِنُنِي أَنْ آتِيَ مَعَكِ إِلَى الْمِهْرَجَانِ؟ | done |
+| reem_pass_welcome | Reem | warm | سَامَحْتُكَ يَا ثَعْلُوبُ. تَعَالَ مَعِي، وَلْنَحْمِلِ الْفَوَانِيسَ مَعًا. | done |
 
 ## Recording verification
 

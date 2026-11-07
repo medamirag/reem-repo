@@ -129,6 +129,23 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path in ["narrow_pass", "narrow_pass_sand"]:
+		var repair := _path == "narrow_pass_sand"
+		await Globals.new_game()
+		var origin := "WaterfallPath" if repair else "HillSlope"
+		if repair:
+			Globals.waterfall["lantern_hanger"] = true
+			Globals.cave["fox_took_honey"] = true
+		else:
+			Globals.hill["feathers"] = true
+		R.goto_room(origin)
+		await _wait_room(origin)
+		await _click("ExitRight")
+		await _complete_pass(repair)
+		await _wait_room("End")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -214,6 +231,11 @@ func _waterfall_path(wrong: bool) -> void:
 	R.goto_room("HoneyOrchard")
 	await _wait_room("HoneyOrchard")
 	await _click("ExitWaterfall")
+	await _complete_waterfall(wrong)
+	await _wait_room("End")
+
+
+func _complete_waterfall(wrong: bool) -> void:
 	await _wait_room("WaterfallPath")
 	var previous_wilts := Globals.wilts
 	_expect(not R.current.is_exit_open("ExitRight"), "waterfall exit waits for Qarqoor")
@@ -237,7 +259,36 @@ func _waterfall_path(wrong: bool) -> void:
 	await _click("Fruit")
 	_expect(Globals.blossoms == previous_blossoms, "lantern reward cannot repeat")
 	await _click("ExitRight")
-	await _wait_room("End")
+	await _complete_pass(false)
+
+
+func _complete_pass(wrong: bool) -> void:
+	await _wait_room("NarrowPass")
+	var origin: String = C.player.last_room
+	var previous_wilts := Globals.wilts
+	_expect(Globals.narrow_pass.get("origin") == origin, "pass remembers incoming branch")
+	_expect(not R.current.is_exit_open("ExitRight"), "pass waits until Thaaloob is free")
+	_answers = [not wrong]
+	await _click("Thaaloob")
+	if wrong:
+		_expect(Globals.wilts == previous_wilts + 1, "leaving Thaaloob wilts once")
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore pass choice", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("NarrowPass")
+		_expect(Globals.narrow_pass.get("left_fox") and Globals.narrow_pass.get("origin") == origin, "pass mistake and return branch survive save")
+		_answers = [true]
+		await _click("Thaaloob")
+	var had_taken_honey: bool = Globals.cave.get("fox_took_honey", false)
+	await _click("LooseStone")
+	_expect(Globals.narrow_pass.get("fox_joins") and Globals.wilts == previous_wilts, "Thaaloob joins and earlier wilt heals")
+	if had_taken_honey:
+		_expect(_has("HoneyJar") and not Globals.cave.get("fox_took_honey", false), "Thaaloob returns the stolen honey")
+	var previous_blossoms := Globals.blossoms
+	await _click("LooseStone")
+	_expect(Globals.blossoms == previous_blossoms, "rescue reward cannot repeat")
+	await _click("ExitRight")
 
 
 func _complete_hill(wrong: bool, check_details := false) -> void:
@@ -266,6 +317,7 @@ func _complete_hill(wrong: bool, check_details := false) -> void:
 	await _click("Display")
 	_expect(Globals.blossoms == before, "display reward cannot repeat")
 	await _click("ExitRight")
+	await _complete_pass(false)
 
 
 func _complete_orchard(wrong: bool, origin: String) -> void:
@@ -294,7 +346,9 @@ func _complete_orchard(wrong: bool, origin: String) -> void:
 	_expect(Globals.wilts == previous_wilts and Globals.orchard.get("carrier") and Globals.orchard.get("verified"), "Dubb freed and evidence reported")
 	_expect(Globals.friend_cards.has("dubb") and R.current.is_exit_open("ExitWaterfall"), "Dubb card and both routes unlocked")
 	await _click("ExitWaterfall" if wrong else "ExitRight")
-	if not wrong:
+	if wrong:
+		await _complete_waterfall(false)
+	else:
 		await _complete_hill(false)
 
 

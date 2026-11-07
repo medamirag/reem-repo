@@ -75,6 +75,11 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 - Waterfall dialogue used saved Reem with `eleven_v3` and synthesis-only tags `[warmly]`, `[gently]`, `[playful]` and `[surprised]`. Reem's reference remains `res://assets/audio/lines/reem_s1_002.mp3`. Map names and Waterfall words used saved Reem with `eleven_multilingual_v2` and no tags.
 - No model fallback. The connected tool exposed no stability, similarity boost, style, speed or speaker boost controls. The delivered files were checked against the queues. Listening comparison for pace, pronunciation and loudness remains open.
 
+### Narrow Pass batch
+
+- Reem and Thaaloob recorded their own lines with the saved voices and `eleven_v3`. Reem used `[warmly]` and `[gently]`, and Thaaloob used `[worried]`, `[embarrassed]` and `[gently]`. Reference lines are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`.
+- Reem recorded the tail word with `eleven_multilingual_v2` and no tags. No model fallback. Numeric controls remain unsupported in this tool. Listening comparison remains open.
+
 ## ElevenLabs credentials
 
 - Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.

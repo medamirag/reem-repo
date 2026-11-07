@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/narrow_pass/room_narrow_pass.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg15_narrow_pass.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/items/pass_loose_stone.png" id="10"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomNarrowPass" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "NarrowPass"
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "HillSlope": Vector2(0.08, 0.82), "WaterfallPath": Vector2(0.08, 0.82), "HilltopFestival": Vector2(0.92, 0.82)}
+ambience_cue = "amb_meadow"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Thaaloob" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Thaaloob"
+position = Vector2(1180, 854)
+interaction_polygon = PackedVector2Array(-75, -295, 45, -295, 45, 0, -75, 0)
+walk_to_point = Vector2(0, 25)
+
+[node name="InteractionPolygon" parent="Props/Thaaloob" index="2"]
+polygon = PackedVector2Array(-75, -295, 45, -295, 45, 0, -75, 0)
+
+[node name="Sprite2D" parent="Props/Thaaloob" index="0"]
+position = Vector2(0, -147.5)
+texture = ExtResource("9")
+flip_h = true
+scale = Vector2(0.24, 0.24)
+
+[node name="LooseStone" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "LooseStone"
+position = Vector2(1294, 815)
+interaction_polygon = PackedVector2Array(-43, -78, 43, -78, 43, 10, -43, 10)
+walk_to_point = Vector2(0, 71)
+
+[node name="InteractionPolygon" parent="Props/LooseStone" index="2"]
+polygon = PackedVector2Array(-43, -78, 43, -78, 43, 10, -43, 10)
+
+[node name="Sprite2D" parent="Props/LooseStone" index="0"]
+z_index = 1
+position = Vector2(0, -32)
+texture = ExtResource("10")
+scale = Vector2(0.13, 0.13)
+
+[node name="FoxTail" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "FoxTail"
+position = Vector2(1258, 742)
+interaction_polygon = PackedVector2Array(-20, -29, 19, -29, 19, 19, -20, 19)
+
+[node name="InteractionPolygon" parent="Props/FoxTail" index="2"]
+polygon = PackedVector2Array(-20, -29, 19, -29, 19, 19, -20, 19)

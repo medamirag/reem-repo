@@ -18,6 +18,8 @@ const PRRockCave := preload("res://game/rooms/rock_cave/room_rock_cave.gd")
 const PRMeadowLake := preload("res://game/rooms/meadow_lake/room_meadow_lake.gd")
 const PRHoneyOrchard := preload("res://game/rooms/honey_orchard/room_honey_orchard.gd")
 const PRHillSlope := preload("res://game/rooms/hill_slope/room_hill_slope.gd")
+const PRWaterfallPath := preload("res://game/rooms/waterfall_path/room_waterfall_path.gd")
+const PRNarrowPass := preload("res://game/rooms/narrow_pass/room_narrow_pass.gd")
 # ---- classes
 
 # nodes ----
@@ -37,6 +39,8 @@ var RockCave: PRRockCave : get = get_RockCave
 var MeadowLake: PRMeadowLake : get = get_MeadowLake
 var HoneyOrchard: PRHoneyOrchard : get = get_HoneyOrchard
 var HillSlope: PRHillSlope : get = get_HillSlope
+var WaterfallPath: PRWaterfallPath : get = get_WaterfallPath
+var NarrowPass: PRNarrowPass : get = get_NarrowPass
 # ---- nodes
 
 # functions ----
@@ -56,4 +60,6 @@ func get_RockCave() -> PRRockCave: return get_runtime_room("RockCave")
 func get_MeadowLake() -> PRMeadowLake: return get_runtime_room("MeadowLake")
 func get_HoneyOrchard() -> PRHoneyOrchard: return get_runtime_room("HoneyOrchard")
 func get_HillSlope() -> PRHillSlope: return get_runtime_room("HillSlope")
+func get_WaterfallPath() -> PRWaterfallPath: return get_runtime_room("WaterfallPath")
+func get_NarrowPass() -> PRNarrowPass: return get_runtime_room("NarrowPass")
 # ---- functions

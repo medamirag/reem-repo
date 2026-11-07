@@ -10,6 +10,7 @@ import os
 #   objects: "prop:<Name>", "character:<Name>", "decor:<NodeName>" (a node in the room),
 #            "item:<InventoryItemName>"
 WORDS = {
+    "word_tail": ("ذَيْل", ["NarrowPass"], ["prop:FoxTail"]),
     "word_waterfall": ("شَلَّال", ["WaterfallPath"], []),
     "word_monkey": ("قِرْد", ["WaterfallPath"], ["prop:Qarqoor"]),
     "word_fruit": ("ثَمَرَة", ["WaterfallPath"], ["prop:Fruit"]),
@@ -84,25 +85,25 @@ WORDS = {
     "word_tree":         ("شَجَرَة",   ["Yard", "Gate", "MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "MeadowLake", "HoneyOrchard", "WaterfallPath"], []),
     "word_sky":          ("سَمَاء",    ["Yard", "Gate", "MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "MeadowLake"], []),
     "word_bird":         ("عُصْفُور",  ["Yard", "Gate", "MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork"], []),
-    "word_path":         ("طَرِيق",    ["Yard", "Gate", "MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "MeadowLake", "HillSlope", "WaterfallPath"], []),
+    "word_path":         ("طَرِيق",    ["Yard", "Gate", "MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "MeadowLake", "HillSlope", "WaterfallPath", "NarrowPass"], []),
     "word_flower":       ("زَهْرَة",   ["Yard", "Gate", "MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "MeadowLake", "HillSlope"], ["prop:FlowersFork", "prop:FlowersShade"]),
     "word_grass":        ("عُشْب",     ["Yard", "MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork"], []),
     "word_gate":         ("بَوَّابَة", ["Gate"], []),
     "word_fence":        ("سِيَاج",    ["Gate"], []),
     "word_sign":         ("لَافِتَة",  ["Gate", "MeadowFork", "PineFork"], ["prop:Sign"]),
-    "word_cloud":        ("غَيْمَة",   ["Gate", "Stream", "PineFork", "HillSlope"], []),
+    "word_cloud":        ("غَيْمَة",   ["Gate", "Stream", "PineFork", "HillSlope", "NarrowPass"], []),
     "word_hill":         ("تَلّ",      ["Gate", "MeadowFork", "FoxRock", "Stream", "PineFork", "HillSlope"], []),
-    "word_rock":         ("صَخْرَة",   ["MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "RockCave", "MeadowLake", "WaterfallPath"], []),
+    "word_rock":         ("صَخْرَة",   ["MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "RockCave", "MeadowLake", "WaterfallPath", "NarrowPass"], []),
     "word_shade":        ("ظِلّ",      ["BigTree"], []),
     "word_berries":      ("تُوت",      ["FoxRock"], []),
     "word_stream":       ("جَدْوَل",   ["FoxRock", "Stream", "HoneyOrchard"], []),
-    "word_fox":          ("ثَعْلَب",   ["FoxRock", "Stream", "PineFork"], ["character:Thaaloob", "prop:StreamFox"]),
+    "word_fox":          ("ثَعْلَب",   ["FoxRock", "Stream", "PineFork", "NarrowPass"], ["character:Thaaloob", "prop:StreamFox", "prop:Thaaloob"]),
     "word_bee":          ("نَحْلَة",   ["BigTree"], ["character:Shahd", "decor:BeeSmall1", "decor:BeeSmall2"]),
     "word_lantern":      ("فَانُوس",   ["inventory", "HoneyOrchard"], ["item:Lantern", "prop:LostLanterns"]),
     "word_notebook":     ("دَفْتَر",   ["inventory"], ["item:Notebook"]),
     "word_watering_can": ("مِرَشَّة",  ["inventory"], ["item:WateringCan"]),
     "word_honey":        ("عَسَل",     ["inventory"], ["item:HoneyJar"]),
-    "word_stone":        ("حَجَر",     ["inventory"], ["item:Stone"]),
+    "word_stone":        ("حَجَر",     ["inventory", "NarrowPass"], ["item:Stone", "prop:LooseStone"]),
 }
 
 TONE = "clear and cheerful, saying one word to teach a child"

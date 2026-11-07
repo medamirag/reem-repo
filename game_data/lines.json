@@ -1,4 +1,52 @@
 {
+ "reem_pass_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذَا هُوَ الْمَمَرُّ إِلَى الْقِمَّةِ.",
+  "audio": "res://assets/audio/lines/reem_pass_arrive.mp3"
+ },
+ "fox_pass_help": {
+  "speaker": "Thaaloob",
+  "tone": "worried",
+  "text": "يَا رِيمُ، عَلِقَ ذَيْلِي بَيْنَ الصَّخْرَتَيْنِ. هَلْ تُسَاعِدِينَنِي؟",
+  "audio": "res://assets/audio/lines/fox_pass_help.mp3"
+ },
+ "reem_pass_leave": {
+  "speaker": "Reem",
+  "tone": "gentle",
+  "text": "مَضَيْتُ وَبَقِيَ ثَعْلُوبٌ عَالِقًا. أَسْتَطِيعُ أَنْ أَعُودَ إِلَيْهِ.",
+  "audio": "res://assets/audio/lines/reem_pass_leave.mp3"
+ },
+ "reem_pass_stone": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَأُدَحْرِجُ الْحَجَرَ الصَّغِيرَ بَعِيدًا عَنْ ذَيْلِكَ.",
+  "audio": "res://assets/audio/lines/reem_pass_stone.mp3"
+ },
+ "fox_pass_sorry": {
+  "speaker": "Thaaloob",
+  "tone": "embarrassed",
+  "text": "سَاعَدْتِنِي بَعْدَ كُلِّ مَا فَعَلْتُ. أَنَا آسِفٌ يَا رِيمُ.",
+  "audio": "res://assets/audio/lines/fox_pass_sorry.mp3"
+ },
+ "fox_pass_honey": {
+  "speaker": "Thaaloob",
+  "tone": "embarrassed",
+  "text": "هَذِهِ جَرَّةُ عَسَلِكِ. خُذِيهَا، فَهِيَ لَكِ.",
+  "audio": "res://assets/audio/lines/fox_pass_honey.mp3"
+ },
+ "fox_pass_join": {
+  "speaker": "Thaaloob",
+  "tone": "gentle",
+  "text": "هَلْ يُمْكِنُنِي أَنْ آتِيَ مَعَكِ إِلَى الْمِهْرَجَانِ؟",
+  "audio": "res://assets/audio/lines/fox_pass_join.mp3"
+ },
+ "reem_pass_welcome": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَامَحْتُكَ يَا ثَعْلُوبُ. تَعَالَ مَعِي، وَلْنَحْمِلِ الْفَوَانِيسَ مَعًا.",
+  "audio": "res://assets/audio/lines/reem_pass_welcome.mp3"
+ },
  "reem_waterfall_arrive": {
   "speaker": "Reem",
   "tone": "warm",

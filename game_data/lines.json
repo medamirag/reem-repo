@@ -2074,5 +2074,47 @@
     "tone": "warm",
     "text": "وَصَلَتِ الْحَيَوَانَاتُ إِلَى الْمَأْوَى الدَّافِئِ. الْحَمْدُ لِلَّهِ.",
     "audio": "res://assets/audio/lines/reem_star_safe.mp3"
+  },
+  "reem_tree_day_arrive": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَذَا يَوْمُ الشَّجَرَةِ. هُنَاكَ شَتْلَةٌ صَغِيرَةٌ تَحْتَاجُ إِلَى الْمَاءِ.",
+    "audio": "res://assets/audio/lines/reem_tree_day_arrive.mp3"
+  },
+  "reem_tree_day_offer": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "هَلْ أَسْقِي الشَّتْلَةَ أَمْ أَحْتَفِظُ بِالْمَاءِ؟",
+    "audio": "res://assets/audio/lines/reem_tree_day_offer.mp3"
+  },
+  "reem_tree_day_wait": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "مَا زَالَتِ الشَّتْلَةُ عَطْشَى. يُمْكِنُنِي أَنْ أَعُودَ لِأَسْقِيَهَا.",
+    "audio": "res://assets/audio/lines/reem_tree_day_wait.mp3"
+  },
+  "reem_tree_day_water": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "سَأَسْقِي الشَّتْلَةَ بِرِفْقٍ. بِسْمِ اللهِ.",
+    "audio": "res://assets/audio/lines/reem_tree_day_water.mp3"
+  },
+  "reem_tree_day_done": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "ارْتَفَعَتْ أَوْرَاقُهَا. الْحَمْدُ لِلَّهِ.",
+    "audio": "res://assets/audio/lines/reem_tree_day_done.mp3"
+  },
+  "reem_tree_day_card": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "الشَّتْلَةُ",
+    "audio": "res://assets/audio/lines/reem_tree_day_card.mp3"
+  },
+  "reem_tree_day_fact": {
+    "speaker": "Reem",
+    "tone": "warm",
+    "text": "تَحْتَاجُ الشَّتْلَةُ إِلَى الْمَاءِ وَضَوْءِ الشَّمْسِ لِتَنْمُوَ.",
+    "audio": "res://assets/audio/lines/reem_tree_day_fact.mp3"
   }
 }

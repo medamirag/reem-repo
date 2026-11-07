@@ -586,3 +586,7 @@ The existing tree pictures show the first three good deeds and the wilted branch
 ## 28. Parent Corner
 
 Open Parent Corner from Settings. An Arabic arithmetic question with two random two-digit operands gates entry. A wrong answer leaves the panel closed and gives a fresh question. Closing Settings clears access. The panel lists lessons represented by completed choices in the current saved journey and prompts for discussion. There are no external links, purchases, new assets or recordings.
+
+## 29. Tree Day free event
+
+From the Farm Yard after the festival, take a signed-by-icon path to TreeDay. The new room has a broad walking lane with a young planting bed and a rabbit friend. Reem can offer water to the young tree or keep the water for later. Keeping it wilts once. Return and offer water, then click the planting bed to water the tree. The scene shows new leaves, awards a young-tree notebook card and keeps the return arrow open. Save the choice and completed watering and add the room to both maps. Reem narrates.

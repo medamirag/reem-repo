@@ -113,6 +113,7 @@ Originals in `assets/` are never edited: new images are new files with the names
 | observatory_bat_base | `assets/art/characters/observatory_bat/observatory_bat_base.png` | `assets/art/characters/observatory_bat/observatory_bat_sheet.png` | transparent | landscape | See observatory_bat_base below | Check silhouette, palette and no lettering | done |
 | astronomer_sheet | `assets/art/characters/astronomer/astronomer_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | landscape | See astronomer_sheet below | Check silhouette, palette and no lettering | done |
 | astronomer_base | `assets/art/characters/astronomer/astronomer_base.png` | `assets/art/characters/astronomer/astronomer_sheet.png` | transparent | portrait | See astronomer_base below | Check silhouette, palette and no lettering | done |
+| bg35_tree_day | `assets/art/backgrounds/bg35_tree_day.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg35_tree_day below | No lettering, clear walking lane | todo |
 
 <!-- One section per row, in the same order:
 
@@ -1204,3 +1205,9 @@ One friendly teal and bronze beetle matching the turnaround, exact six distinct 
 - **Save as:** `assets/art/characters/astronomer/astronomer_base.png`
 - **Reference:** `assets/art/characters/astronomer/astronomer_sheet.png`
 - **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One standing kind elderly astronomer matching attached reference, indigo robe, round glasses, grey beard and tan cap. Three-quarter facing left, two hands and two feet, fully transparent background, no scenery.
+
+## bg35_tree_day
+
+- **Save as:** `assets/art/backgrounds/bg35_tree_day.png`
+- **Reference:** `assets/art/backgrounds/bg1_room.png`
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Landscape 16:9 Arab valley garden on a bright spring morning. Painted fence on left, an earthen planting bed at centre-right with a single small slightly drooped young sapling, terracotta water pitcher at far right, yellow flowers and stones around the edges, large calm ground lane across the bottom third for a walking character. No people, animals, signs, text or labels. Match the warm parchment, honey-gold, teal and soft olive palette of the attached room.

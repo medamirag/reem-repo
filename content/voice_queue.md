@@ -303,6 +303,13 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | fox_star_bright | Thaaloob | playful | لِنَتَّبِعْ أَلْمَعَ نَجْمٍ! أَوْ لِنَنْظُرْ إِلَى الْخَرِيطَةِ أَوَّلًا. | done |
 | reem_star_guide | Reem | warm | سَأَتَّبِعُ الْعَلَامَاتِ بِتَرْتِيبِ الْخَرِيطَةِ. | done |
 | reem_star_safe | Reem | warm | وَصَلَتِ الْحَيَوَانَاتُ إِلَى الْمَأْوَى الدَّافِئِ. الْحَمْدُ لِلَّهِ. | done |
+| reem_tree_day_arrive | Reem | warm | هَذَا يَوْمُ الشَّجَرَةِ. هُنَاكَ شَتْلَةٌ صَغِيرَةٌ تَحْتَاجُ إِلَى الْمَاءِ. | todo |
+| reem_tree_day_offer | Reem | warm | هَلْ أَسْقِي الشَّتْلَةَ أَمْ أَحْتَفِظُ بِالْمَاءِ؟ | todo |
+| reem_tree_day_wait | Reem | warm | مَا زَالَتِ الشَّتْلَةُ عَطْشَى. يُمْكِنُنِي أَنْ أَعُودَ لِأَسْقِيَهَا. | todo |
+| reem_tree_day_water | Reem | warm | سَأَسْقِي الشَّتْلَةَ بِرِفْقٍ. بِسْمِ اللهِ. | todo |
+| reem_tree_day_done | Reem | warm | ارْتَفَعَتْ أَوْرَاقُهَا. الْحَمْدُ لِلَّهِ. | todo |
+| reem_tree_day_card | Reem | warm | الشَّتْلَةُ | todo |
+| reem_tree_day_fact | Reem | warm | تَحْتَاجُ الشَّتْلَةُ إِلَى الْمَاءِ وَضَوْءِ الشَّمْسِ لِتَنْمُوَ. | todo |
 
 ## Recording verification
 

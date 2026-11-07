@@ -13,6 +13,7 @@ const PRFoxRock := preload("res://game/rooms/fox_rock/room_fox_rock.gd")
 const PREnd := preload("res://game/rooms/end/room_end.gd")
 const PRStream := preload("res://game/rooms/stream/room_stream.gd")
 const PRPineFork := preload("res://game/rooms/pine_fork/room_pine_fork.gd")
+const PROakForest := preload("res://game/rooms/oak_forest/room_oak_forest.gd")
 # ---- classes
 
 # nodes ----
@@ -27,6 +28,7 @@ var FoxRock: PRFoxRock : get = get_FoxRock
 var End: PREnd : get = get_End
 var Stream: PRStream : get = get_Stream
 var PineFork: PRPineFork : get = get_PineFork
+var OakForest: PROakForest : get = get_OakForest
 # ---- nodes
 
 # functions ----
@@ -41,4 +43,5 @@ func get_FoxRock() -> PRFoxRock: return get_runtime_room("FoxRock")
 func get_End() -> PREnd: return get_runtime_room("End")
 func get_Stream() -> PRStream: return get_runtime_room("Stream")
 func get_PineFork() -> PRPineFork: return get_runtime_room("PineFork")
+func get_OakForest() -> PROakForest: return get_runtime_room("OakForest")
 # ---- functions

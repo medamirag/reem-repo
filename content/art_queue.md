@@ -18,6 +18,13 @@ Originals in `assets/` are never edited: new images are new files with the names
 | stream_log | `assets/art/items/stream_log.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1536x1024 | See stream_log below | Real alpha; matches reference | done |
 | bg8_pine_fork | `assets/art/backgrounds/bg8_pine_fork.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg8_pine_fork below | Three paths; continuous lower walking path; welcoming cave | done |
 
+| bg9_oak_forest | `assets/art/backgrounds/bg9_oak_forest.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg9_oak_forest below | Clear silhouette and correct background | done |
+| sinjoob_sheet | `assets/art/characters/sinjoob/sinjoob_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See sinjoob_sheet below | Clear silhouette and correct background | done |
+| sinjoob_base | `assets/art/characters/sinjoob/sinjoob_base.png` | `assets/art/characters/sinjoob/sinjoob_sheet.png` | transparent | 1536x1024 | See sinjoob_base below | Clear silhouette and correct background | done |
+| qunfood_sheet | `assets/art/characters/qunfood/qunfood_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See qunfood_sheet below | Clear silhouette and correct background | done |
+| qunfood_base | `assets/art/characters/qunfood/qunfood_base.png` | `assets/art/characters/qunfood/qunfood_sheet.png` | transparent | 1536x1024 | See qunfood_base below | Clear silhouette and correct background | done |
+| oak_acorn | `assets/art/items/oak_acorn.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1024x1024 | See oak_acorn below | Clear silhouette and correct background | done |
+
 <!-- One section per row, in the same order:
 
 ## <ID>
@@ -142,3 +149,87 @@ STYLE: Warm hand-painted 2D children’s storybook adventure, clear dark brown o
 ```
 
 Pine Fork art check (2026-11-06): no text/border/characters; three paths, friendly lit cave, pine cones and lake visible. Generated 1672×941, proportional fit. Sign/leaf and labels use native Godot shapes/text, no new bitmap. Existing fox original reused.
+
+
+## bg9_oak_forest
+
+- **Save as:** `assets/art/backgrounds/bg9_oak_forest.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1920x1080
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink contours, soft textured paint, rich natural colours, bright welcoming lighting. Match the reference style. No writing, frames or watermark. A sunny oak forest at noon, wide side-view adventure game environment. A broad unobstructed dry sandy footpath spans the lower quarter. Giant oak roots left at x 25%, loose leaves right at x 70%, ferns and leafy oak canopy. Leave space for squirrel and hedgehog sprites. No animals, acorns or people.
+```
+
+
+## sinjoob_sheet
+
+- **Save as:** `assets/art/characters/sinjoob/sinjoob_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink contours, soft textured paint, rich natural colours, bright welcoming lighting. Match the reference style. No writing, frames or watermark. Turnaround of an auburn squirrel with a large curled tail, cream muzzle, ochre waistcoat and curious eyes. Three separated full-body views front, right-facing profile and back on cream. Consistent design and correct limbs.
+```
+
+
+## sinjoob_base
+
+- **Save as:** `assets/art/characters/sinjoob/sinjoob_base.png`
+- **Attach:** `assets/art/characters/sinjoob/sinjoob_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink contours, soft textured paint, rich natural colours, bright welcoming lighting. Match the reference style. No writing, frames or watermark. Single full-body right-facing sprite of an auburn squirrel with a large curled tail, cream muzzle, ochre waistcoat and curious eyes, matching the attached turnaround exactly. Plain isolated alpha transparency with no ground or shadow.
+```
+
+
+## qunfood_sheet
+
+- **Save as:** `assets/art/characters/qunfood/qunfood_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink contours, soft textured paint, rich natural colours, bright welcoming lighting. Match the reference style. No writing, frames or watermark. Turnaround of a shy rounded hedgehog with soft chestnut spines, beige face, small green neckerchief and gentle eyes. Three separated full-body views front, right-facing profile and back on cream. Consistent design and correct limbs.
+```
+
+
+## qunfood_base
+
+- **Save as:** `assets/art/characters/qunfood/qunfood_base.png`
+- **Attach:** `assets/art/characters/qunfood/qunfood_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink contours, soft textured paint, rich natural colours, bright welcoming lighting. Match the reference style. No writing, frames or watermark. Single full-body right-facing sprite of a shy rounded hedgehog with soft chestnut spines, beige face, small green neckerchief and gentle eyes, matching the attached turnaround exactly. Plain isolated alpha transparency with no ground or shadow.
+```
+
+
+## oak_acorn
+
+- **Save as:** `assets/art/items/oak_acorn.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** 1024x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink contours, soft textured paint, rich natural colours, bright welcoming lighting. Match the reference style. No writing, frames or watermark. One isolated large recognizable oak acorn with chestnut brown nut and knobbly green-brown cup. True alpha, no ground or shadow.
+```

@@ -99,6 +99,12 @@ func show_page(page: String) -> void:
 ## Contexts follow puzzle progress rather than visit count, so hints remain useful on returns.
 func hint_context() -> String:
 	match R.current.script_name:
+		"OakForest":
+			if not Globals.oak.get("nuts", false):
+				if Globals.oak.get("Acorn1", false) and Globals.oak.get("Acorn2", false) and Globals.oak.get("Acorn3", false):
+					return "oak_share"
+				return "oak_search"
+			return "forward" if Globals.oak.get("leaves", false) else "oak_greet"
 		"PineFork":
 			if not Globals.pine.get("met", false): return "pine_meet"
 			return "pine_repair" if Globals.pine.get("promised", false) else "pine_route"

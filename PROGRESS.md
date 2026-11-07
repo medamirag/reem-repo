@@ -3,71 +3,21 @@
 ## Handoff
 
 - **Who worked last:** Codex (builder)
-- **Date:** 2026-11-06
+- **Date:** 2026-11-07
 - **Branch:** main
-- **What was done:** Stream committed and pushed as 65346a1; then built Pine Fork.
-  Specs are sections 10–11 of game_spec.md. Both meadow/FoxRock and Stream now
-  join PineFork. Gate has a labelled upper Stream exit after Grandpa's briefing.
-  Stream: log bridge/duckling crossing, map versus rushing, entrusted lantern versus
-  lending it, safe repairs, duck card and saved coloured feather festival contribution.
-  PineFork: Thaaloob's skip-help promise, kind response or wrong promise/wilt,
-  native sign with drooping leaf, repair from sign/fox, three morally neutral routes.
-  Cave is always allowed after the conversation. Left returns to saved arrival branch.
-  All rewards guarded; Globals.stream/pine save, load and reset with New journey.
-  Files: game/rooms/stream/, game/rooms/pine_fork/, Globals, notebook map/hints/card.
-  Seven art rows generated/inspected at exact queued paths; original images untouched.
-  Both new backgrounds are 1672x941, proportionally fitted; requested 1920x1080.
-  Sprite sheets 1536x1024; real alpha verified; derived sprites assets/cut/stream/.
-  40 new dialogue/hint/card lines added this session (24 Stream, 16 Pine); existing
-  text unchanged. Reem narrates duck/rabbit actions; no unapproved character voice.
-  11 new words from inspected art (including sun/olives added on second inspection),
-  existing words reused; make_words.py generated 49 total words, hand-edited areas.
-  Added tools/check_content.py: read-only table/queue/text/area/art/notebook checks.
-- **Audio:** Reem saved identity reverified. One v3 [warmly] sample generated
-  (two service takes), first downloaded to game/pending_audio/reem_stream_arrive.mp3.
-  Not used by the game. Comparison with original reem_s1_002 for voice/pace/Arabic/
-  loudness remains pending. Connected generator exposes no explicit numeric settings;
-  v3 schema accepts stability 0/.5/1, not historical .3. See AGENTS.md and sample README.
-  75 unrecorded dialogue rows and 11 word rows are problem: sample listening/settings
-  verification pending. No matched batch or successful numeric defaults claimed.
-- **Checks:** Stream kind/wrong-repair, save/load/custody, card/feather, hints, locks,
-  no duplicate rewards and New journey passed. Pine kind/wrong/repair, saved promise,
-  visible leaf consequence and all four word holds passed. Required green/sand/mixed/
-  words passed with Pine integration. Stream-to-Pine regression passed. After the rendered run exposed a silent-line
-  race, Lines now waits for visible text before closing, gives missing recordings readable
-  time, and guards against old skip timers closing the next line. Final startup, pine, pine_sand, stream_words, green, sand, mixed and words all
-  passed and reached DONE (startup clean apart from allowed exit leaks). Focused
-  dialogue_timing passed: readable silent text, manual skip, old-timer isolation and completion.
-  Content check passed: 143 lines, 49 words. Original dialogue values preserved.
-  Import passed with permitted exit leaks; normal Godot folder access required.
-- **Backup:** Stream 65346a1 and Pine Fork/dialogue timing afa8dc4 were both committed
-  and pushed successfully to origin/main. Working folder was clean after the push.
-- **What is next:** ROADMAP step 3: Oak forest, then Rock cave, Meadow lake, Honey
-  orchard, Hill slope, Waterfall path, Narrow pass, Hilltop festival with endings.
-  PineFork routes target OakForest/RockCave/MeadowLake if registered; otherwise
-  provisional MVP End. Replace these boundaries as stations are built. Expand map,
-  hints, cards, festival contributions, word areas and tests for each station.
-  Packs remain in ROADMAP order 1, 3, 2, 4, 5, 6; none started. Full roadmap unfinished.
-- **Half-finished:** no partial station code. Oak forest has not started; the roadmap remains
-  incomplete. Audio batch matching remains pending.
-  Rendered station_shots passed after fix; backgrounds, actors, bridge, connected Arabic
-  choices and notebook hint inspected. Pine route labels received cream panels for contrast and final static rendered
-  screenshots confirmed all three labels readable. Both rendered checks reached DONE.
-  Screenshots: C:/Users/ACER/.codex/visualizations/2026/11/06/01a1b2e4-c076-7403-a929-7bf9c9ac3681/station-shots/.
-  Previous notebook/settings visual checks and word_path/word_girl concerns remain.
-- **How to test Stream:** reopen Godot, F5, New journey. Take basket, choose truth,
-  leave blue door, talk to Grandpa. Go right to Gate; click upper arrow labelled
-  الْجَدْوَلُ. Click ducks then log. Click Arnoob; try following then choose map on
-  the next click to repair. Click Thaaloob; lend lantern then click again to reclaim.
-  N opens hints/map/duck card; hold ducks/ducklings/log/rabbit/reeds/sun/olives for words.
-- **How to test Pine:** leave completed Stream or complete meadow/fox trade encounter.
-  Click Thaaloob. Try wrong promise; leaf on sign droops. Click sign and choose help:
-  leaf rises and branch heals. Try the three labelled arrows (currently provisional End).
-  Hold pine trunk/cone/cave/lake for words; N gives context hints and visited map travel.
+- **Audio:** User approved Reem's Stream sample. Installed that exact take and recorded the other 85 pending rows with their saved voices. Oak added another 12 dialogue and 6 vocabulary recordings. All 104 delivered rows are done. Reem and Thaaloob dialogue use v3 with synthesis-only warm/playful tags. Words use Reem multilingual v2 without tags. No fallback or explicit numeric settings were used. Full batch listening remains open.
+- **Oak forest:** Spec section 12 and six new art originals. Enter via Pine Fork's left forward route. Start Sinjoob's search, collect three acorns, then choose whether to share. Meet Qunfood and choose whether to greet him. Either mistake can be repaired, and the two rewards cannot repeat. Save state tracks gifts, cards and acorns. The notebook shows the route, hints and both cards. Six new word IDs were generated via make_words.py. Oak's right exit uses provisional End until HoneyOrchard exists.
+- **Checks:** Content check, Godot import/startup, both Oak paths and all four required paths passed. Both Oak paths tested real acorn holds, no duplicate rewards and both cards. The repair path also tested save/restore. Only permitted exit leaks appeared in the final checks.
+- **Next:** Rock cave, then Meadow lake, Honey orchard, Hill slope, Waterfall path, Narrow pass and Hilltop festival. Packs remain in order 1, 3, 2, 4, 5, 6. Restore the remaining branch destinations as their rooms are registered. No Rock cave code or content started at this checkpoint.
+- **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Oak forest (Codex, 2026-11-07):** Reem narrates both animals because neither has an approved saved voice. The acorn gift moves one acorn out of Sinjoob's pile, and Qunfood's leaves are tracked as a festival gift. The path waits for both friends. Until HoneyOrchard is built, the right exit uses the MVP End. Existing regression paths use Pine Fork's provisional cave exit. Generated art sizes differ from the requested sheet dimensions. Sprite placement uses actual dimensions and the background fits proportionally.
+- **Voice batch (Codex, 2026-11-07):** Reused the approved take and generated the other rows in the same saved voices. Connector supplied no explicit numeric settings. Delivery and imports can be checked here. Listening approval applies to the original Reem sample only.
+
 
 - **Silent dialogue timing (Codex, 2026-11-06):** rendered screenshots found a short-line
   timer could expire while Popochiu still measured Arabic. Fixed in game/scripts/lines.gd

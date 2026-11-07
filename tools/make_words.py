@@ -10,6 +10,12 @@ import os
 #   objects: "prop:<Name>", "character:<Name>", "decor:<NodeName>" (a node in the room),
 #            "item:<InventoryItemName>"
 WORDS = {
+    "word_oak": ("بَلُّوط", ["OakForest"], []),
+    "word_acorn": ("ثَمْرَةُ بَلُّوط", ["OakForest"], ["prop:Acorn1", "prop:Acorn2", "prop:Acorn3"]),
+    "word_squirrel": ("سِنْجَاب", ["OakForest"], ["prop:Sinjoob"]),
+    "word_hedgehog": ("قُنْفُذ", ["OakForest"], ["prop:Qunfood"]),
+    "word_leaf": ("وَرَقَة", ["OakForest"], []),
+    "word_fern": ("سَرَخْس", ["OakForest"], []),
     "word_sun": ("شَمْس", ["Stream"], []),
     "word_olive": ("زَيْتُون", ["Stream"], []),
     "word_pine": ("صَنَوْبَر", ["PineFork"], []),

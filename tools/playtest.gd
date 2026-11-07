@@ -74,6 +74,11 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path in ["oak", "oak_sand"]:
+		await _oak_path(_path == "oak_sand")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -152,6 +157,49 @@ func _run() -> void:
 	get_tree().quit()
 
 
+func _oak_path(wrong: bool) -> void:
+	await Globals.new_game()
+	Globals.pine["met"] = true
+	R.goto_room("PineFork")
+	await _wait_room("PineFork")
+	await _click("ExitOak")
+	await _wait_room("OakForest")
+	_expect(not R.current.is_exit_open("ExitRight"), "Oak exit waits for both friends")
+	await _click("Sinjoob")
+	await _hold_at(Vector2(325.0 / 1920, 720.0 / 1080), 0.7)
+	_expect(Globals.discovered_words.has("word_acorn") and not Globals.oak.get("Acorn1", false), "acorn hold teaches without collecting")
+	for name in ["Acorn3", "Acorn1", "Acorn2", "Acorn1"]:
+		await _click(name)
+	_answers = [not wrong]
+	await _click("Sinjoob")
+	_answers = [not wrong]
+	await _click("Qunfood")
+	if wrong:
+		_expect(Globals.wilts == 2 and not R.current.is_exit_open("ExitRight"), "Oak mistakes wilt and remain repairable")
+		E.save_game(1)
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore Oak mistakes", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("OakForest")
+		_expect(Globals.oak.get("kept") and Globals.oak.get("avoided") and Globals.wilts == 2, "Oak choices survive save")
+		_answers = [false]
+		await _click("Sinjoob")
+		_expect(Globals.wilts == 2, "repeating a mistake adds no wilt")
+		_answers = [true]
+		await _click("Sinjoob")
+		_answers = [true]
+		await _click("Qunfood")
+	_expect(Globals.wilts == 0 and Globals.oak.get("nuts") and Globals.oak.get("leaves"), "Oak gifts and healthy branches")
+	_expect(Globals.friend_cards.has("sinjoob") and Globals.friend_cards.has("qunfood"), "both Oak cards earned")
+	var blossoms := Globals.blossoms
+	await _click("Sinjoob")
+	await _click("Qunfood")
+	_expect(Globals.blossoms == blossoms, "Oak rewards cannot repeat")
+	await _click("ExitRight")
+	await _wait_room("End")
+
+
 func _pine_path(wrong: bool) -> void:
 	await Globals.new_game()
 	Globals.pine["origin"] = "Stream"
@@ -194,7 +242,7 @@ func _finish_pine() -> void:
 	await _wait_room("PineFork")
 	_answers = [true]
 	await _click("Thaaloob")
-	await _click("ExitOak")
+	await _click("ExitCave")
 
 
 func _stream_path(wrong: bool) -> void:

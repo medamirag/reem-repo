@@ -1,7 +1,8 @@
-# Unapproved voice sample
+# Approved Stream voice sample archive
 
 `reem_stream_arrive.mp3` is the first of two ElevenLabs service takes generated
-2026-11-06. It is deliberately outside assets and is not loaded by Lines.
+2026-11-06. The user approved it on 2026-11-07, and the game uses its copy at
+`assets/audio/lines/reem_stream_arrive.mp3`.
 
 - Line text: copy `reem_stream_arrive` from `game_data/lines.json`.
 - Verified saved voice: Reem, `YLILAzNFndW6PENMeYXD`.
@@ -13,7 +14,5 @@
 - Compare against original `assets/audio/lines/reem_s1_002.mp3` for voice,
   pace, Arabic pronunciation and loudness before approving any batch.
 
-The service sample completed and its MP3 was downloaded. No subjective listening
-match or supported explicit numeric configuration has been verified. The queue
-therefore records a problem; do not mark this line done or copy it into assets
-without completing those checks. The original recording is untouched.
+The user approved the sample by listening. The connected call did not expose
+numeric settings, and those values remain unverified.

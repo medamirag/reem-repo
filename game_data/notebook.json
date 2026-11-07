@@ -84,6 +84,21 @@
       "reem_hint_pine_route_1",
       "reem_hint_pine_route_2",
       "reem_hint_pine_route_3"
+    ],
+    "oak_search": [
+      "reem_oak_arrive",
+      "reem_oak_search",
+      "reem_oak_search"
+    ],
+    "oak_share": [
+      "reem_oak_found",
+      "reem_oak_keep",
+      "reem_oak_share"
+    ],
+    "oak_greet": [
+      "reem_oak_meet",
+      "reem_oak_avoid",
+      "reem_oak_greet"
     ]
   },
   "map": [
@@ -150,6 +165,14 @@
         0.77,
         0.26
       ]
+    },
+    {
+      "room": "OakForest",
+      "label": "غَابَةُ الْبَلُّوطِ",
+      "at": [
+        0.88,
+        0.46
+      ]
     }
   ],
   "edges": [
@@ -184,6 +207,10 @@
     [
       6,
       7
+    ],
+    [
+      7,
+      8
     ]
   ],
   "cards": [
@@ -198,6 +225,18 @@
       "image": "res://assets/cut/stream/duck.png",
       "name_line": "reem_card_duck_name",
       "fact_line": "reem_card_duck_fact"
+    },
+    {
+      "id": "sinjoob",
+      "image": "res://assets/art/characters/sinjoob/sinjoob_base.png",
+      "name_line": "reem_oak_sinjoob_name",
+      "fact_line": "reem_oak_card_sinjoob"
+    },
+    {
+      "id": "qunfood",
+      "image": "res://assets/art/characters/qunfood/qunfood_base.png",
+      "name_line": "reem_oak_qunfood_name",
+      "fact_line": "reem_oak_card_qunfood"
     }
   ]
 }

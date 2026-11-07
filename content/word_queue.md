@@ -46,18 +46,24 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_watering_can | Reem | clear and cheerful, saying one word to teach a child | مِرَشَّة | done |
 | word_honey | Reem | clear and cheerful, saying one word to teach a child | عَسَل | done |
 | word_stone | Reem | clear and cheerful, saying one word to teach a child | حَجَر | done |
-| word_duck | Reem | clear and cheerful, saying one word to teach a child | بَطَّة | problem: sample listening/settings verification pending |
-| word_duckling | Reem | clear and cheerful, saying one word to teach a child | فَرْخ | problem: sample listening/settings verification pending |
-| word_rabbit | Reem | clear and cheerful, saying one word to teach a child | أَرْنَب | problem: sample listening/settings verification pending |
-| word_log | Reem | clear and cheerful, saying one word to teach a child | جِذْع | problem: sample listening/settings verification pending |
-| word_reed | Reem | clear and cheerful, saying one word to teach a child | قَصَب | problem: sample listening/settings verification pending |
+| word_duck | Reem | clear and cheerful, saying one word to teach a child | بَطَّة | done |
+| word_duckling | Reem | clear and cheerful, saying one word to teach a child | فَرْخ | done |
+| word_rabbit | Reem | clear and cheerful, saying one word to teach a child | أَرْنَب | done |
+| word_log | Reem | clear and cheerful, saying one word to teach a child | جِذْع | done |
+| word_reed | Reem | clear and cheerful, saying one word to teach a child | قَصَب | done |
+| word_pine | Reem | clear and cheerful, saying one word to teach a child | صَنَوْبَر | done |
+| word_cone | Reem | clear and cheerful, saying one word to teach a child | مَخْرُوط | done |
+| word_cave | Reem | clear and cheerful, saying one word to teach a child | كَهْف | done |
+| word_lake | Reem | clear and cheerful, saying one word to teach a child | بُحَيْرَة | done |
+| word_sun | Reem | clear and cheerful, saying one word to teach a child | شَمْس | done |
+| word_olive | Reem | clear and cheerful, saying one word to teach a child | زَيْتُون | done |
+| word_oak | Reem | clear and cheerful, saying one word to teach a child | بَلُّوط | done |
+| word_acorn | Reem | clear and cheerful, saying one word to teach a child | ثَمْرَةُ بَلُّوط | done |
+| word_squirrel | Reem | clear and cheerful, saying one word to teach a child | سِنْجَاب | done |
+| word_hedgehog | Reem | clear and cheerful, saying one word to teach a child | قُنْفُذ | done |
+| word_leaf | Reem | clear and cheerful, saying one word to teach a child | وَرَقَة | done |
+| word_fern | Reem | clear and cheerful, saying one word to teach a child | سَرَخْس | done |
 
-## Stream audio verification
+## Recording verification
 
-2026-11-06: Reem v3 sample generated and retained at `game/pending_audio/reem_stream_arrive.mp3`; it is not a game recording yet. Saved identity verified. The connected generator does not expose explicit numeric settings; no listening comparison can be verified in this build session. All unrecorded rows are marked problem rather than silently claiming completion. Exact text, voices and rows preserved. See AGENTS.md pending sample.
-| word_pine | Reem | clear and cheerful, saying one word to teach a child | صَنَوْبَر | problem: sample listening/settings verification pending |
-| word_cone | Reem | clear and cheerful, saying one word to teach a child | مَخْرُوط | problem: sample listening/settings verification pending |
-| word_cave | Reem | clear and cheerful, saying one word to teach a child | كَهْف | problem: sample listening/settings verification pending |
-| word_lake | Reem | clear and cheerful, saying one word to teach a child | بُحَيْرَة | problem: sample listening/settings verification pending |
-| word_sun | Reem | clear and cheerful, saying one word to teach a child | شَمْس | problem: sample listening/settings verification pending |
-| word_olive | Reem | clear and cheerful, saying one word to teach a child | زَيْتُون | problem: sample listening/settings verification pending |
+2026-11-07: User approved the Reem Stream sample. Previous pending rows and Oak forest rows were recorded with their saved voices. See AGENTS.md for model, tags and available settings.

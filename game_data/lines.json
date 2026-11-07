@@ -856,5 +856,77 @@
   "tone": "gentle, reflective",
   "text": "أَضْغَطُ عَلَى سَهْمِ الطَّرِيقِ الَّذِي أُرِيدُهُ.",
   "audio": "res://assets/audio/lines/reem_hint_pine_route_3.mp3"
+ },
+ "reem_oak_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هُنَا تَنْمُو أَشْجَارُ الْبَلُّوطِ.",
+  "audio": "res://assets/audio/lines/reem_oak_arrive.mp3"
+ },
+ "reem_oak_search": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "نَسِيَ سِنْجُوبُ مَكَانَ ثِمَارِهِ. لِنَبْحَثْ قُرْبَ الْجُذُورِ.",
+  "audio": "res://assets/audio/lines/reem_oak_search.mp3"
+ },
+ "reem_oak_found": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَجَدْنَا الثِّمَارَ الثَّلَاثَ. مَاذَا نَفْعَلُ بِهَا؟",
+  "audio": "res://assets/audio/lines/reem_oak_found.mp3"
+ },
+ "reem_oak_share": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِنَتَقَاسَمْهَا. هَذِهِ حِصَّةٌ لِلْمِهْرَجَانِ.",
+  "audio": "res://assets/audio/lines/reem_oak_share.mp3"
+ },
+ "reem_oak_keep": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بَقِيَتِ الثِّمَارُ كُلُّهَا فِي كَوْمَةٍ وَاحِدَةٍ.",
+  "audio": "res://assets/audio/lines/reem_oak_keep.mp3"
+ },
+ "reem_oak_meet": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذَا قُنْفُوذٌ. يَقِفُ وَحْدَهُ. هَلْ أُسَلِّمُ عَلَيْهِ؟",
+  "audio": "res://assets/audio/lines/reem_oak_meet.mp3"
+ },
+ "reem_oak_greet": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "السَّلَامُ عَلَيْكَ يَا قُنْفُوذُ! شُكْرًا لِمُسَاعَدَتِكَ فِي جَمْعِ الْأَوْرَاقِ.",
+  "audio": "res://assets/audio/lines/reem_oak_greet.mp3"
+ },
+ "reem_oak_avoid": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بَقِيَ قُنْفُوذٌ وَحْدَهُ. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهِ.",
+  "audio": "res://assets/audio/lines/reem_oak_avoid.mp3"
+ },
+ "reem_oak_card_sinjoob": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يُخَبِّئُ السِّنْجَابُ بَعْضَ طَعَامِهِ لِيَأْكُلَهُ لَاحِقًا.",
+  "audio": "res://assets/audio/lines/reem_oak_card_sinjoob.mp3"
+ },
+ "reem_oak_card_qunfood": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَحْمِي الْأَشْوَاكُ جِسْمَ الْقُنْفُذِ.",
+  "audio": "res://assets/audio/lines/reem_oak_card_qunfood.mp3"
+ },
+ "reem_oak_sinjoob_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سِنْجُوبُ",
+  "audio": "res://assets/audio/lines/reem_oak_sinjoob_name.mp3"
+ },
+ "reem_oak_qunfood_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "قُنْفُوذُ",
+  "audio": "res://assets/audio/lines/reem_oak_qunfood_name.mp3"
  }
 }

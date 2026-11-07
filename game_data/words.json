@@ -1,4 +1,60 @@
 {
+  "word_oak": {
+    "text": "بَلُّوط",
+    "rooms": [
+      "OakForest"
+    ],
+    "audio": "res://assets/audio/words/word_oak.mp3",
+    "objects": []
+  },
+  "word_acorn": {
+    "text": "ثَمْرَةُ بَلُّوط",
+    "rooms": [
+      "OakForest"
+    ],
+    "audio": "res://assets/audio/words/word_acorn.mp3",
+    "objects": [
+      "prop:Acorn1",
+      "prop:Acorn2",
+      "prop:Acorn3"
+    ]
+  },
+  "word_squirrel": {
+    "text": "سِنْجَاب",
+    "rooms": [
+      "OakForest"
+    ],
+    "audio": "res://assets/audio/words/word_squirrel.mp3",
+    "objects": [
+      "prop:Sinjoob"
+    ]
+  },
+  "word_hedgehog": {
+    "text": "قُنْفُذ",
+    "rooms": [
+      "OakForest"
+    ],
+    "audio": "res://assets/audio/words/word_hedgehog.mp3",
+    "objects": [
+      "prop:Qunfood"
+    ]
+  },
+  "word_leaf": {
+    "text": "وَرَقَة",
+    "rooms": [
+      "OakForest"
+    ],
+    "audio": "res://assets/audio/words/word_leaf.mp3",
+    "objects": []
+  },
+  "word_fern": {
+    "text": "سَرَخْس",
+    "rooms": [
+      "OakForest"
+    ],
+    "audio": "res://assets/audio/words/word_fern.mp3",
+    "objects": []
+  },
   "word_sun": {
     "text": "شَمْس",
     "rooms": [

@@ -432,3 +432,13 @@ Globals.pine: introduced, met, promised, origin. Reset on New journey. All rewar
 changes guarded for repeat clicks. New words identified from generated art only.
 Tests: entry from both routes, kind/wrong/repair, no repeat reward, any route allowed,
 save roundtrip, wrong promise visible on return, words, required four regressions.
+
+## 12. Oak forest (noon)
+
+OakForest branches from PineFork and rejoins at HoneyOrchard. A dry path runs across the lower screen. Sinjoob waits near the oak at left, Qunfood beside the leaves at right, and three visible acorns sit beside the roots. OakForest is optional in the valley route. Its left exit returns to PineFork. Its right exit opens once both friends are helped and uses provisional End until HoneyOrchard exists.
+
+Click Sinjoob to start searching. Click the three acorns in any order. Each moves into his pile once. Then click Sinjoob and choose to suggest sharing or keep all the nuts. Sharing earns his card and festival nuts. Keeping them wilts once and leaves the pile visible. Click him again to repair by sharing, heal once, and earn the same rewards.
+
+Click Qunfood to meet him. Choose to greet him or walk away because of his spines. Greeting lets him help Reem gather leaves, earns his card and festival leaves, and blooms once. Walking away wilts once. Qunfood stays reachable and the next click offers a greeting to repair. Reem narrates until approved voices exist for both animals.
+
+Save distinct search, collection, choice, repair and reward flags. Update the notebook with the visited route, three-stage hints for the nut search and each repair, and cards for both friends. Long presses teach visible oak forest words and never collect an acorn. Check both first-choice paths, all repairs, save and restore, and repeated clicks.

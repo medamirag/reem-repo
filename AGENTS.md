@@ -62,22 +62,14 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 - Copy spoken Arabic and diacritics from line/word data. Tone is direction only. V3 emotion tags belong only to synthesis input, never displayed Arabic or data text; omit them for v2 fallback.
 - **Every new character:** before recording dialogue, add a row here with game speaker, actual saved name, verified voice ID, successful model/settings and reference recording; add its design to the Voices queue too. Mark unverified items pending, never invent IDs or successful settings. Other saved account voices are not automatically assigned to future game characters.
 
+### Approved Reem sample and November 7 batch
+
+- User approved the Stream sample. The same take is installed at `res://assets/audio/lines/reem_stream_arrive.mp3`. Reference was `res://assets/audio/lines/reem_s1_002.mp3`.
+- Saved Reem and Thaaloob voices recorded dialogue with `eleven_v3` and synthesis-only tags `[warmly]` and `[playful]` respectively. Reem recorded vocabulary with `eleven_multilingual_v2` without tags. No model fallback was needed.
+- The connected generation call exposes no numeric controls. Stability, similarity, style, speed and speaker boost values were neither sent nor verified. Historical Thaaloob stability 0.3 is not an offered value in the connected v3 schema. No numeric substitution was made.
+- Sample approval covered Reem's Stream take. The full set and Thaaloob's new takes were checked for file delivery and import, with listening review still open.
+
 ## ElevenLabs credentials
-
-### Pending Stream voice sample (2026-11-06)
-
-- Saved Reem ID was reverified through the connected voice list. A sample of
-  `reem_stream_arrive` was generated with `eleven_v3`, synthesis tag `[warmly]`.
-  Candidate is `res://game/pending_audio/reem_stream_arrive.mp3`; reference for
-  comparison is `res://assets/audio/lines/reem_s1_002.mp3`.
-- The connected generation call exposes no numeric voice settings. Current v3
-  schema lists stability 0 / 0.5 / 1 (default 0.5); it does not support historical
-  0.3. Similarity boost, style, speed and speaker boost are not exposed in this
-  v3 schema. No numeric value was explicitly sent or confirmed in the result.
-- Sample generation succeeded; listening comparison (voice, pace, pronunciation,
-  loudness) is **pending**, not approved. Do not describe these settings as a
-  successful matched batch. Queue rows remain `problem: sample listening/settings
-  verification pending`; no existing original recording was replaced.
 
 - Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.
 - `.gitignore` excludes local environment files, credential/config paths and generation logs. Ignore rules match paths, not contents: if a tool creates any other file containing a key, remove the credential and ignore that exact path before staging. Never force-add secrets.

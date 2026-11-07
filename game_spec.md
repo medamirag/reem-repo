@@ -578,3 +578,7 @@ At OwlPerch, a cheeky bat offers to help read the stars. Reem can listen or rush
 At ObservatoryDome, the astronomer shows a fictional route of four stars. Reem clicks the marked stars in the shown sequence and a line connects each accepted point. Wrong stars leave the previous connections and example visible. Complete the route to open the ridge path. The example uses shape and arrangement without requiring a colour distinction.
 
 At StarRidge, a small lost animal caravan waits beside a safe path. Thaaloob wants to follow a bright star in the wrong direction, then helps compare the route with the dome chart. Click three safe trail markers in the same order as the map. The caravan walks to the warm shelter. All moves are untimed and none can fail permanently. Save the bat choice, owl ride, connected stars, marker progress and caravan arrival. Add map locations, hints, cards and words. Reem narrates the owl, bat and astronomer pending approved voices. Use the saved Thaaloob voice for his cameo.
+
+## 27. Heart tree growth over the whole journey
+
+The existing tree pictures show the first three good deeds and the wilted branches. From the fourth good deed, place an additional pink flower on the canopy for each deed, up to twelve added flowers. The same overlay appears on the ending tree. A wilted tree still shows its branch state, with earned flowers on the canopy. The blossom count remains in the existing save. The overlay is drawn in Godot and adds no art, voice or vocabulary rows.

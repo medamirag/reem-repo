@@ -5,6 +5,7 @@ extends PopochiuRoom
 ## current picture), Grandpa's closing words as narration (jad_s2_071), then «يتبع…» and a
 ## button «العودة إلى البداية» that starts a new game on the title screen.
 
+const Blossoms := preload("res://game/scripts/heart_blossoms.gd")
 const Data := preload('room_end_state.gd')
 const HEART_PIECES_DIR := "res://assets/cut/heart_tree_states/"
 ## Height of the big heart tree on screen, in pixels.
@@ -41,6 +42,7 @@ func _ready() -> void:
 		return
 
 	_back_button.pressed.connect(_on_back_pressed)
+	_heart.draw.connect(_draw_blossoms)
 
 
 #endregion
@@ -55,6 +57,7 @@ func _on_room_entered() -> void:
 	_heart.texture = load(HEART_PIECES_DIR + Globals.end_heart_picture() + ".tres")
 	if _heart.texture:
 		_heart.scale = Vector2.ONE * (heart_height / _heart.texture.get_size().y)
+		_heart.queue_redraw()
 
 	_continued.text = "[center]%s[/center]" % Labels.TO_BE_CONTINUED
 	_continued.hide()
@@ -82,6 +85,11 @@ func _on_restore_from_savegame() -> void:
 #endregion
 
 #region Private ####################################################################################
+func _draw_blossoms() -> void:
+	if _heart.texture:
+		Blossoms.draw(_heart, _heart.get_rect())
+
+
 func _on_back_pressed() -> void:
 	A.sfx_ui_click.play()
 	_back_button.disabled = true

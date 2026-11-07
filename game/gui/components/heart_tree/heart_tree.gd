@@ -2,6 +2,7 @@ extends TextureRect
 ## The heart tree from game_spec.md 4.3: top-right corner, about 140 px tall, shows the child's
 ## choices. Picture and pulse are driven entirely by Globals (blossoms/wilts/bloom/wilt/heal).
 
+const Blossoms := preload("res://game/scripts/heart_blossoms.gd")
 const PIECES_DIR := "res://assets/cut/heart_tree_states/"
 const GROW_SCALE := 1.18
 const GROW_TIME := 0.3
@@ -26,6 +27,14 @@ func _on_heart_changed(grew: bool) -> void:
 func _refresh() -> void:
 	var piece_name := Globals.heart_picture()
 	texture = load(PIECES_DIR + piece_name + ".tres")
+	queue_redraw()
+
+
+func _draw() -> void:
+	if texture:
+		var fit := minf(size.x / texture.get_width(), size.y / texture.get_height())
+		var drawn_size := texture.get_size() * fit
+		Blossoms.draw(self, Rect2((size - drawn_size) / 2.0, drawn_size))
 
 
 func _pulse() -> void:

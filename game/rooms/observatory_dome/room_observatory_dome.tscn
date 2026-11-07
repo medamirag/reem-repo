@@ -1,0 +1,165 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/observatory_dome/room_observatory_dome.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg33_observatory_dome.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Resource" path="res://game/rooms/observatory_dome/room_observatory_dome.tres" id="state"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/astronomer/astronomer_base.png" id="p0"]
+[ext_resource type="Texture2D" path="res://game/scripts/stars/diamond.svg" id="p1"]
+[ext_resource type="Texture2D" path="res://game/scripts/stars/circle.svg" id="p2"]
+[ext_resource type="Texture2D" path="res://game/scripts/stars/triangle.svg" id="p3"]
+[ext_resource type="Texture2D" path="res://game/scripts/stars/crescent.svg" id="p4"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomObservatoryDome" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "ObservatoryDome"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "OwlPerch": Vector2(0.08, 0.82), "StarRidge": Vector2(0.92, 0.82)}
+ambience_cue = ""
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="ExitRight" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitRight"
+position = Vector2(1881, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(-10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Astronomer" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Astronomer"
+position = Vector2(1320, 865)
+interaction_polygon = PackedVector2Array(-105, -315, 105, -315, 105, 0, -105, 0)
+walk_to_point = Vector2(0, 25)
+
+[node name="InteractionPolygon" parent="Props/Astronomer" index="2"]
+polygon = PackedVector2Array(-105, -315, 105, -315, 105, 0, -105, 0)
+
+[node name="Sprite2D" parent="Props/Astronomer" index="0"]
+position = Vector2(0, -157.5)
+texture = ExtResource("p0")
+scale = Vector2(0.22, 0.22)
+
+[node name="DiamondStar" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "DiamondStar"
+position = Vector2(900, 200)
+interaction_polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+walk_to_point = Vector2(0, 690)
+
+[node name="InteractionPolygon" parent="Props/DiamondStar" index="2"]
+polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+
+[node name="Sprite2D" parent="Props/DiamondStar" index="0"]
+position = Vector2(0, -50.0)
+texture = ExtResource("p1")
+scale = Vector2(0.78, 0.78)
+
+[node name="CircleStar" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "CircleStar"
+position = Vector2(1190, 155)
+interaction_polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+walk_to_point = Vector2(0, 735)
+
+[node name="InteractionPolygon" parent="Props/CircleStar" index="2"]
+polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+
+[node name="Sprite2D" parent="Props/CircleStar" index="0"]
+position = Vector2(0, -50.0)
+texture = ExtResource("p2")
+scale = Vector2(0.78, 0.78)
+
+[node name="TriangleStar" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "TriangleStar"
+position = Vector2(660, 125)
+interaction_polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+walk_to_point = Vector2(0, 765)
+
+[node name="InteractionPolygon" parent="Props/TriangleStar" index="2"]
+polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+
+[node name="Sprite2D" parent="Props/TriangleStar" index="0"]
+position = Vector2(0, -50.0)
+texture = ExtResource("p3")
+scale = Vector2(0.78, 0.78)
+
+[node name="CrescentStar" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "CrescentStar"
+position = Vector2(1370, 245)
+interaction_polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+walk_to_point = Vector2(0, 645)
+
+[node name="InteractionPolygon" parent="Props/CrescentStar" index="2"]
+polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
+
+[node name="Sprite2D" parent="Props/CrescentStar" index="0"]
+position = Vector2(0, -50.0)
+texture = ExtResource("p4")
+scale = Vector2(0.78, 0.78)
+
+[node name="Example" type="Node2D" parent="."]
+visible = false
+z_index = 10
+
+[node name="ExampleDiamondStar" type="Sprite2D" parent="Example"]
+position = Vector2(1060, 330)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("p1")
+
+[node name="ExampleCircleStar" type="Sprite2D" parent="Example"]
+position = Vector2(976, 330)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("p2")
+
+[node name="ExampleTriangleStar" type="Sprite2D" parent="Example"]
+position = Vector2(892, 330)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("p3")
+
+[node name="ExampleCrescentStar" type="Sprite2D" parent="Example"]
+position = Vector2(808, 330)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("p4")
+
+[node name="ChartLine" type="Line2D" parent="."]
+width = 7.0
+default_color = Color(1, 0.85, 0.47, 1)

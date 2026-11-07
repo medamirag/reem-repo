@@ -153,11 +153,11 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 ## Recording verification
 
 2026-11-07: User approved the Reem Stream sample. Previous pending rows and Oak forest rows were recorded with their saved voices. See AGENTS.md for model, tags and available settings.
-| word_owl | Reem | clear and cheerful, saying one word to teach a child | بُومَة | todo |
-| word_bat | Reem | clear and cheerful, saying one word to teach a child | خُفَّاش | todo |
-| word_telescope | Reem | clear and cheerful, saying one word to teach a child | مِقْرَاب | todo |
-| word_mountain | Reem | clear and cheerful, saying one word to teach a child | جَبَل | todo |
-| word_moon | Reem | clear and cheerful, saying one word to teach a child | قَمَر | todo |
-| word_astronomer | Reem | clear and cheerful, saying one word to teach a child | فَلَكِيّ | todo |
-| word_map_observatory_dome | Reem | clear and cheerful, saying one word to teach a child | قُبَّةُ الْمَرْصَد | todo |
-| word_map_star_ridge | Reem | clear and cheerful, saying one word to teach a child | دَرْبُ النُّجُوم | todo |
+| word_owl | Reem | clear and cheerful, saying one word to teach a child | بُومَة | done |
+| word_bat | Reem | clear and cheerful, saying one word to teach a child | خُفَّاش | done |
+| word_telescope | Reem | clear and cheerful, saying one word to teach a child | مِقْرَاب | done |
+| word_mountain | Reem | clear and cheerful, saying one word to teach a child | جَبَل | done |
+| word_moon | Reem | clear and cheerful, saying one word to teach a child | قَمَر | done |
+| word_astronomer | Reem | clear and cheerful, saying one word to teach a child | فَلَكِيّ | done |
+| word_map_observatory_dome | Reem | clear and cheerful, saying one word to teach a child | قُبَّةُ الْمَرْصَد | done |
+| word_map_star_ridge | Reem | clear and cheerful, saying one word to teach a child | دَرْبُ النُّجُوم | done |

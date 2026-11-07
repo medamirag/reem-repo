@@ -251,13 +251,14 @@
   },
   {
     "id": "mountain",
-    "room": "",
+    "room": "OwlPerch",
     "position": [
       0.1,
       0.1
     ],
     "neighbors": [
-      "festival"
+      "festival",
+      "observatory_dome"
     ],
     "pack": 6,
     "name": "word_map_mountain"
@@ -452,5 +453,32 @@
     ],
     "pack": 5,
     "name": "word_map_ant_city"
+  },
+  {
+    "id": "observatory_dome",
+    "room": "ObservatoryDome",
+    "position": [
+      0.16,
+      0.145
+    ],
+    "neighbors": [
+      "mountain",
+      "star_ridge"
+    ],
+    "pack": 6,
+    "name": "word_map_observatory_dome"
+  },
+  {
+    "id": "star_ridge",
+    "room": "StarRidge",
+    "position": [
+      0.054,
+      0.185
+    ],
+    "neighbors": [
+      "observatory_dome"
+    ],
+    "pack": 6,
+    "name": "word_map_star_ridge"
   }
 ]

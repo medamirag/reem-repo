@@ -285,24 +285,24 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_ant_safe | Reem | warm | وَصَلْنَا إِلَى مَكَانٍ جَافٍّ، وَالْبُذُورُ فِي مَخَازِنِهَا. | done |
 | reem_ant_queen_name | Reem | warm | مَلِكَةُ النَّمْلِ | done |
 | reem_ant_queen_fact | Reem | warm | تَضَعُ مَلِكَةُ النَّمْلِ الْبَيْضَ فِي الْمُسْتَعْمَرَةِ. | done |
-| reem_star_offer | Reem | warm | الْمَرْصَدُ فَوْقَ الْجَبَلِ. هَلْ أَذْهَبُ لِأَرَى النُّجُومَ؟ | todo |
-| reem_star_perch | Reem | warm | اللَّيْلُ هَادِئٌ، وَالنُّجُومُ وَاضِحَةٌ فَوْقَ الْجَبَلِ. | todo |
-| reem_star_bat | Reem | warm | يَعْرِفُ الْخُفَّاشُ شَيْئًا عَنْ دَرْبِ النُّجُومِ. هَلْ أَسْمَعُ مِنْهُ؟ | todo |
-| reem_star_rush | Reem | gentle | أَسْرَعْتُ وَلَمْ أَسْمَعِ الدَّلِيلَ. سَأَعُودُ إِلَى الْخُفَّاشِ. | todo |
-| reem_star_listen | Reem | warm | قَالَ الْخُفَّاشُ إِنَّ لِلدَّرْبِ أَشْكَالًا نَتَّبِعُهَا بِالتَّرْتِيبِ. | todo |
-| reem_star_fly | Reem | warm | سَتَحْمِلُنِي الْبُومَةُ إِلَى الْمَرْصَدِ. بِسْمِ اللهِ. | todo |
-| reem_star_bat_name | Reem | warm | خُفَّاشٌ | todo |
-| reem_star_bat_fact | Reem | warm | تَسْتَخْدِمُ خَفَافِيشُ كَثِيرَةٌ صَدَى الصَّوْتِ لِتَعْرِفَ طَرِيقَهَا. | todo |
-| reem_star_owl_name | Reem | warm | بُومَةٌ | todo |
-| reem_star_owl_fact | Reem | warm | تُسَاعِدُ بَعْضُ رِيشَاتِ الْبُومَةِ عَلَى الطَّيَرَانِ بِهُدُوءٍ. | todo |
-| reem_star_dome | Reem | warm | مِنْ فَتْحَةِ الْقُبَّةِ أَرَى السَّمَاءَ وَالنُّجُومَ. | todo |
-| reem_star_chart | Reem | warm | يُرِينِي الْفَلَكِيُّ خَرِيطَةً. سَأَصِلُ بَيْنَ النُّجُومِ كَمَا فِي الْمِثَالِ. | todo |
-| reem_star_retry | Reem | gentle | لِنَنْظُرْ إِلَى الشَّكْلِ التَّالِي فِي الْمِثَالِ. | todo |
-| reem_star_connected | Reem | warm | اتَّصَلَتِ النُّجُومُ، وَصَارَ عِنْدَنَا دَلِيلٌ لِلدَّرْبِ. | todo |
-| reem_star_caravan | Reem | warm | تَنْتَظِرُ الْحَيَوَانَاتُ عِنْدَ الطَّرِيقِ. سَأُرِيهَا الطَّرِيقَ إِلَى الْمَأْوَى. | todo |
-| fox_star_bright | Thaaloob | playful | لِنَتَّبِعْ أَلْمَعَ نَجْمٍ! أَوْ لِنَنْظُرْ إِلَى الْخَرِيطَةِ أَوَّلًا. | todo |
-| reem_star_guide | Reem | warm | سَأَتَّبِعُ الْعَلَامَاتِ بِتَرْتِيبِ الْخَرِيطَةِ. | todo |
-| reem_star_safe | Reem | warm | وَصَلَتِ الْحَيَوَانَاتُ إِلَى الْمَأْوَى الدَّافِئِ. الْحَمْدُ لِلَّهِ. | todo |
+| reem_star_offer | Reem | warm | الْمَرْصَدُ فَوْقَ الْجَبَلِ. هَلْ أَذْهَبُ لِأَرَى النُّجُومَ؟ | done |
+| reem_star_perch | Reem | warm | اللَّيْلُ هَادِئٌ، وَالنُّجُومُ وَاضِحَةٌ فَوْقَ الْجَبَلِ. | done |
+| reem_star_bat | Reem | warm | يَعْرِفُ الْخُفَّاشُ شَيْئًا عَنْ دَرْبِ النُّجُومِ. هَلْ أَسْمَعُ مِنْهُ؟ | done |
+| reem_star_rush | Reem | gentle | أَسْرَعْتُ وَلَمْ أَسْمَعِ الدَّلِيلَ. سَأَعُودُ إِلَى الْخُفَّاشِ. | done |
+| reem_star_listen | Reem | warm | قَالَ الْخُفَّاشُ إِنَّ لِلدَّرْبِ أَشْكَالًا نَتَّبِعُهَا بِالتَّرْتِيبِ. | done |
+| reem_star_fly | Reem | warm | سَتَحْمِلُنِي الْبُومَةُ إِلَى الْمَرْصَدِ. بِسْمِ اللهِ. | done |
+| reem_star_bat_name | Reem | warm | خُفَّاشٌ | done |
+| reem_star_bat_fact | Reem | warm | تَسْتَخْدِمُ خَفَافِيشُ كَثِيرَةٌ صَدَى الصَّوْتِ لِتَعْرِفَ طَرِيقَهَا. | done |
+| reem_star_owl_name | Reem | warm | بُومَةٌ | done |
+| reem_star_owl_fact | Reem | warm | تُسَاعِدُ بَعْضُ رِيشَاتِ الْبُومَةِ عَلَى الطَّيَرَانِ بِهُدُوءٍ. | done |
+| reem_star_dome | Reem | warm | مِنْ فَتْحَةِ الْقُبَّةِ أَرَى السَّمَاءَ وَالنُّجُومَ. | done |
+| reem_star_chart | Reem | warm | يُرِينِي الْفَلَكِيُّ خَرِيطَةً. سَأَصِلُ بَيْنَ النُّجُومِ كَمَا فِي الْمِثَالِ. | done |
+| reem_star_retry | Reem | gentle | لِنَنْظُرْ إِلَى الشَّكْلِ التَّالِي فِي الْمِثَالِ. | done |
+| reem_star_connected | Reem | warm | اتَّصَلَتِ النُّجُومُ، وَصَارَ عِنْدَنَا دَلِيلٌ لِلدَّرْبِ. | done |
+| reem_star_caravan | Reem | warm | تَنْتَظِرُ الْحَيَوَانَاتُ عِنْدَ الطَّرِيقِ. سَأُرِيهَا الطَّرِيقَ إِلَى الْمَأْوَى. | done |
+| fox_star_bright | Thaaloob | playful | لِنَتَّبِعْ أَلْمَعَ نَجْمٍ! أَوْ لِنَنْظُرْ إِلَى الْخَرِيطَةِ أَوَّلًا. | done |
+| reem_star_guide | Reem | warm | سَأَتَّبِعُ الْعَلَامَاتِ بِتَرْتِيبِ الْخَرِيطَةِ. | done |
+| reem_star_safe | Reem | warm | وَصَلَتِ الْحَيَوَانَاتُ إِلَى الْمَأْوَى الدَّافِئِ. الْحَمْدُ لِلَّهِ. | done |
 
 ## Recording verification
 

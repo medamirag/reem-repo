@@ -234,6 +234,21 @@
       "reem_ant_city",
       "reem_ant_order",
       "reem_ant_rain"
+    ],
+    "star_perch": [
+      "reem_star_bat",
+      "reem_star_listen",
+      "reem_star_fly"
+    ],
+    "star_chart": [
+      "reem_star_chart",
+      "reem_star_retry",
+      "reem_star_connected"
+    ],
+    "star_caravan": [
+      "reem_star_caravan",
+      "reem_star_guide",
+      "reem_star_retry"
     ]
   },
   "map": [
@@ -484,6 +499,30 @@
         0.32,
         0.05
       ]
+    },
+    {
+      "room": "OwlPerch",
+      "label": "جَبَلُ الْمَرْصَد",
+      "at": [
+        0.16,
+        0.29
+      ]
+    },
+    {
+      "room": "ObservatoryDome",
+      "label": "قُبَّةُ الْمَرْصَد",
+      "at": [
+        0.115,
+        0.17
+      ]
+    },
+    {
+      "room": "StarRidge",
+      "label": "دَرْبُ النُّجُوم",
+      "at": [
+        0.07,
+        0.06
+      ]
     }
   ],
   "edges": [
@@ -622,6 +661,18 @@
     [
       29,
       30
+    ],
+    [
+      15,
+      31
+    ],
+    [
+      31,
+      32
+    ],
+    [
+      32,
+      33
     ]
   ],
   "cards": [
@@ -750,6 +801,18 @@
       "image": "res://assets/art/characters/ant_queen/ant_queen_base.png",
       "name_line": "reem_ant_queen_name",
       "fact_line": "reem_ant_queen_fact"
+    },
+    {
+      "id": "observatory_owl",
+      "image": "res://assets/art/characters/observatory_owl/observatory_owl_base.png",
+      "name_line": "reem_star_owl_name",
+      "fact_line": "reem_star_owl_fact"
+    },
+    {
+      "id": "observatory_bat",
+      "image": "res://assets/art/characters/observatory_bat/observatory_bat_base.png",
+      "name_line": "reem_star_bat_name",
+      "fact_line": "reem_star_bat_fact"
     }
   ]
 }

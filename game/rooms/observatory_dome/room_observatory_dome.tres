@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/scripts/stars/star_room_state.gd" id="1"]
+[resource]
+resource_name = "ObservatoryDome"
+script = ExtResource("1")
+script_name = "ObservatoryDome"
+scene = "res://game/rooms/observatory_dome/room_observatory_dome.tscn"

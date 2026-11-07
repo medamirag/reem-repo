@@ -1,0 +1,149 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/star_ridge/room_star_ridge.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg34_star_ridge.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Resource" path="res://game/rooms/star_ridge/room_star_ridge.tres" id="state"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/ghazlana/ghazlana_base.png" id="p0"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="p1"]
+[ext_resource type="Texture2D" path="res://game/scripts/stars/diamond.svg" id="p2"]
+[ext_resource type="Texture2D" path="res://game/scripts/stars/circle.svg" id="p3"]
+[ext_resource type="Texture2D" path="res://game/scripts/stars/triangle.svg" id="p4"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomStarRidge" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "StarRidge"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "ObservatoryDome": Vector2(0.08, 0.82)}
+exit_arrows = {"ExitLeft": "left"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Caravan" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Caravan"
+position = Vector2(360, 865)
+interaction_polygon = PackedVector2Array(-125, -215, 125, -215, 125, 0, -125, 0)
+walk_to_point = Vector2(0, 25)
+
+[node name="InteractionPolygon" parent="Props/Caravan" index="2"]
+polygon = PackedVector2Array(-125, -215, 125, -215, 125, 0, -125, 0)
+
+[node name="Sprite2D" parent="Props/Caravan" index="0"]
+position = Vector2(0, -107.5)
+texture = ExtResource("p0")
+scale = Vector2(0.24, 0.24)
+
+[node name="TrailFox" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "TrailFox"
+position = Vector2(650, 866)
+interaction_polygon = PackedVector2Array(-102, -182, 102, -182, 102, 0, -102, 0)
+walk_to_point = Vector2(0, 24)
+
+[node name="InteractionPolygon" parent="Props/TrailFox" index="2"]
+polygon = PackedVector2Array(-102, -182, 102, -182, 102, 0, -102, 0)
+
+[node name="Sprite2D" parent="Props/TrailFox" index="0"]
+position = Vector2(0, -91.0)
+texture = ExtResource("p1")
+scale = Vector2(0.2, 0.2)
+
+[node name="DiamondMarker" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "DiamondMarker"
+position = Vector2(880, 795)
+interaction_polygon = PackedVector2Array(-55, -110, 55, -110, 55, 0, -55, 0)
+walk_to_point = Vector2(0, 95)
+
+[node name="InteractionPolygon" parent="Props/DiamondMarker" index="2"]
+polygon = PackedVector2Array(-55, -110, 55, -110, 55, 0, -55, 0)
+
+[node name="Sprite2D" parent="Props/DiamondMarker" index="0"]
+position = Vector2(0, -55.0)
+texture = ExtResource("p2")
+scale = Vector2(0.82, 0.82)
+
+[node name="CircleMarker" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "CircleMarker"
+position = Vector2(1440, 795)
+interaction_polygon = PackedVector2Array(-55, -110, 55, -110, 55, 0, -55, 0)
+walk_to_point = Vector2(0, 95)
+
+[node name="InteractionPolygon" parent="Props/CircleMarker" index="2"]
+polygon = PackedVector2Array(-55, -110, 55, -110, 55, 0, -55, 0)
+
+[node name="Sprite2D" parent="Props/CircleMarker" index="0"]
+position = Vector2(0, -55.0)
+texture = ExtResource("p3")
+scale = Vector2(0.82, 0.82)
+
+[node name="TriangleMarker" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "TriangleMarker"
+position = Vector2(1160, 795)
+interaction_polygon = PackedVector2Array(-55, -110, 55, -110, 55, 0, -55, 0)
+walk_to_point = Vector2(0, 95)
+
+[node name="InteractionPolygon" parent="Props/TriangleMarker" index="2"]
+polygon = PackedVector2Array(-55, -110, 55, -110, 55, 0, -55, 0)
+
+[node name="Sprite2D" parent="Props/TriangleMarker" index="0"]
+position = Vector2(0, -55.0)
+texture = ExtResource("p4")
+scale = Vector2(0.82, 0.82)
+
+[node name="Example" type="Node2D" parent="."]
+visible = false
+z_index = 10
+
+[node name="ExampleDiamondMarker" type="Sprite2D" parent="Example"]
+position = Vector2(1060, 440)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("p2")
+
+[node name="ExampleCircleMarker" type="Sprite2D" parent="Example"]
+position = Vector2(976, 440)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("p3")
+
+[node name="ExampleTriangleMarker" type="Sprite2D" parent="Example"]
+position = Vector2(892, 440)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("p4")
+
+[node name="Shelter" type="Marker2D" parent="."]
+position = Vector2(1660, 690)

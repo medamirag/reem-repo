@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
+[ext_resource type="Script" path="res://game/rooms/owl_perch/room_owl_perch.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg32_owl_perch.png" id="3"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="5"]
+[ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
+[ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
+[ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
+
+[ext_resource type="Resource" path="res://game/rooms/owl_perch/room_owl_perch.tres" id="state"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/observatory_bat/observatory_bat_base.png" id="p0"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/observatory_owl/observatory_owl_base.png" id="p1"]
+
+[sub_resource type="NavigationPolygon" id="Path"]
+agent_radius = 0.0
+
+[node name="RoomOwlPerch" instance=ExtResource("1")]
+script = ExtResource("2")
+script_name = "OwlPerch"
+state = ExtResource("state")
+width = 1920
+height = 1080
+entry_points = {"": Vector2(0.08, 0.82), "HilltopFestival": Vector2(0.08, 0.82), "ObservatoryDome": Vector2(0.92, 0.82)}
+exit_arrows = {"ExitLeft": "left"}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+centered = false
+texture = ExtResource("3")
+
+[node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
+script_name = "Path"
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 821, 1882, 821, 1882, 961, 38, 961)])
+
+[node name="Perimeter" parent="WalkableAreas/Path" index="0"]
+navigation_polygon = SubResource("Path")
+
+[node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitLeft"
+position = Vector2(38, 848)
+interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+walk_to_point = Vector2(10, 38)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
+polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
+
+[node name="Bat" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Bat"
+position = Vector2(525, 680)
+interaction_polygon = PackedVector2Array(-138, -98, 138, -98, 138, 0, -138, 0)
+walk_to_point = Vector2(0, 210)
+
+[node name="InteractionPolygon" parent="Props/Bat" index="2"]
+polygon = PackedVector2Array(-138, -98, 138, -98, 138, 0, -138, 0)
+
+[node name="Sprite2D" parent="Props/Bat" index="0"]
+position = Vector2(0, -49.0)
+texture = ExtResource("p0")
+scale = Vector2(0.18, 0.18)
+
+[node name="Owl" parent="Props" instance=ExtResource("7")]
+script = ExtResource("8")
+script_name = "Owl"
+position = Vector2(1395, 815)
+interaction_polygon = PackedVector2Array(-115, -245, 115, -245, 115, 0, -115, 0)
+walk_to_point = Vector2(0, 75)
+
+[node name="InteractionPolygon" parent="Props/Owl" index="2"]
+polygon = PackedVector2Array(-115, -245, 115, -245, 115, 0, -115, 0)
+
+[node name="Sprite2D" parent="Props/Owl" index="0"]
+position = Vector2(0, -122.5)
+texture = ExtResource("p1")
+scale = Vector2(0.25, 0.25)

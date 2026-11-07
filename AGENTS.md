@@ -178,3 +178,7 @@ godot --headless --path . -- --playtest --path=words
 ```
 
 Screenshots need a real renderer: run under Xvfb, for example `xvfb-run godot --path . --rendering-driver opengl3 -- --playtest --path=green --shots=/tmp/shots`. The cloud machine has no sound card, so sound cannot be checked there: say so in the Handoff.
+
+### Star Observatory audio
+
+- The saved Reem and Thaaloob voices recorded 18 dialogue lines on v3 with warm, gentle or playful synthesis-only tags. The saved Reem voice recorded eight vocabulary files on multilingual v2 without tags. No fallback was used. Numeric controls were unavailable. The existing Reem Stream sample and Thaaloob lines remain the listening references. File delivery was verified and full listening comparison remains open.

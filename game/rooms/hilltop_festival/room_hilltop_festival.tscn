@@ -16,6 +16,7 @@ agent_radius = 0.0
 [node name="RoomHilltopFestival" instance=ExtResource("1")]
 script = ExtResource("2")
 script_name = "HilltopFestival"
+exit_arrows = {"ExitLeft": "left", "ExitRight": "right", "ExitMountain": "up"}
 width = 1920
 height = 1080
 entry_points = {"": Vector2(0.08, 0.82), "NarrowPass": Vector2(0.08, 0.82)}
@@ -79,3 +80,13 @@ z_index = 1
 visible = false
 
 [node name="UnlitShading" type="Node2D" parent="."]
+
+[node name="ExitMountain" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "ExitMountain"
+position = Vector2(1370, 735)
+interaction_polygon = PackedVector2Array(-120, -83, 120, -83, 120, 83, -120, 83)
+walk_to_point = Vector2(0, 151)
+
+[node name="InteractionPolygon" parent="Hotspots/ExitMountain" index="0"]
+polygon = PackedVector2Array(-120, -83, 120, -83, 120, 83, -120, 83)

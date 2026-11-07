@@ -189,6 +189,11 @@ func _run() -> void:
 		_log("DONE snow")
 		get_tree().quit()
 		return
+	if _path == "stars":
+		await _star_path()
+		_log("DONE stars")
+		get_tree().quit()
+		return
 	if _path == "ants":
 		await _ant_path()
 		_log("DONE ants")
@@ -270,6 +275,44 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _star_path() -> void:
+	await Globals.new_game()
+	Globals.unlocked_packs["6"] = true
+	R.goto_room("HilltopFestival")
+	await _wait_room("HilltopFestival")
+	_answers = [true]
+	await _click("ExitMountain")
+	await _wait_room("OwlPerch")
+	var wilts := Globals.wilts
+	_answers = [false]
+	await _click("Bat")
+	_expect(Globals.wilts == wilts + 1, "rushing past the bat wilts once")
+	_answers = [true]
+	await _click("Bat")
+	_expect(Globals.wilts == wilts and Globals.friend_cards.has("observatory_bat"), "listening repairs the choice and earns the bat card")
+	await _click("Owl")
+	await _wait_room("ObservatoryDome")
+	await _click("Astronomer")
+	await _click("CircleStar")
+	_expect(Globals.stars.get("chart", 0) == 0, "wrong shape preserves chart progress")
+	await _click("DiamondStar")
+	Globals.reset()
+	R.goto_room("Title")
+	await _wait_room("Title")
+	await _step("continue star chart", func(): R.current.call("_on_continue_pressed"))
+	await _wait_room("ObservatoryDome")
+	_expect(Globals.stars.get("chart", 0) == 1, "star chart progress survives Continue")
+	for id in ["CircleStar", "TriangleStar", "CrescentStar"]:
+		await _click(id)
+	await _click("ExitRight")
+	await _wait_room("StarRidge")
+	await _click("TrailFox")
+	await _click("Caravan")
+	for id in ["DiamondMarker", "CircleMarker", "TriangleMarker"]:
+		await _click(id)
+	_expect(Globals.stars.get("safe", false) and Globals.friend_cards.has("observatory_owl"), "the owl card is saved and the caravan reaches shelter")
 
 
 func _ant_path() -> void:

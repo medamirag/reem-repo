@@ -36,6 +36,9 @@ const PRSledHill := preload("res://game/rooms/sled_hill/room_sled_hill.gd")
 const PRGiantBloom := preload("res://game/rooms/giant_bloom/room_giant_bloom.gd")
 const PRDewBank := preload("res://game/rooms/dew_bank/room_dew_bank.gd")
 const PRAntCity := preload("res://game/rooms/ant_city/room_ant_city.gd")
+const PRStarRidge := preload("res://game/rooms/star_ridge/room_star_ridge.gd")
+const PRObservatoryDome := preload("res://game/rooms/observatory_dome/room_observatory_dome.gd")
+const PROwlPerch := preload("res://game/rooms/owl_perch/room_owl_perch.gd")
 # ---- classes
 
 # nodes ----
@@ -73,6 +76,9 @@ var SledHill: PRSledHill : get = get_SledHill
 var GiantBloom: PRGiantBloom : get = get_GiantBloom
 var DewBank: PRDewBank : get = get_DewBank
 var AntCity: PRAntCity : get = get_AntCity
+var StarRidge: PRStarRidge : get = get_StarRidge
+var ObservatoryDome: PRObservatoryDome : get = get_ObservatoryDome
+var OwlPerch: PROwlPerch : get = get_OwlPerch
 # ---- nodes
 
 # functions ----
@@ -110,4 +116,7 @@ func get_SledHill() -> PRSledHill: return get_runtime_room("SledHill")
 func get_GiantBloom() -> PRGiantBloom: return get_runtime_room("GiantBloom")
 func get_DewBank() -> PRDewBank: return get_runtime_room("DewBank")
 func get_AntCity() -> PRAntCity: return get_runtime_room("AntCity")
+func get_StarRidge() -> PRStarRidge: return get_runtime_room("StarRidge")
+func get_ObservatoryDome() -> PRObservatoryDome: return get_runtime_room("ObservatoryDome")
+func get_OwlPerch() -> PROwlPerch: return get_runtime_room("OwlPerch")
 # ---- functions

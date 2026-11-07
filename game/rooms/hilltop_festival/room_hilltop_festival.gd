@@ -41,6 +41,8 @@ func _on_restore_from_savegame() -> void:
 
 
 func is_exit_open(exit_name: String) -> bool:
+	if exit_name == "ExitMountain":
+		return not hosting and Globals.unlocked_packs.get("6", false)
 	return not hosting and (exit_name == "ExitLeft" or Globals.festival.get("completed", false))
 
 
@@ -56,6 +58,10 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 	match obj.script_name:
 		"ExitLeft": await leave_through(obj, "NarrowPass")
 		"ExitRight": await leave_through(obj, "End")
+		"ExitMountain":
+			await Lines.say("reem_star_offer", true)
+			if await Choices.ask_two(Globals.notebook.labels["star_travel"], Globals.notebook.labels["star_stay"]):
+				await leave_through(obj, "OwlPerch")
 		"BigLantern": await _light_festival()
 
 

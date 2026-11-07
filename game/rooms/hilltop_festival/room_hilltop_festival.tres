@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://game/rooms/hilltop_festival/room_hilltop_festival_state.gd" id="1"]
+[resource]
+resource_name = "HilltopFestival"
+script = ExtResource("1")
+script_name = "HilltopFestival"
+scene = "res://game/rooms/hilltop_festival/room_hilltop_festival.tscn"

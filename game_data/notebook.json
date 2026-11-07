@@ -149,6 +149,11 @@
       "fox_pass_help",
       "reem_pass_leave",
       "reem_pass_stone"
+    ],
+    "festival_light": [
+      "reem_festival_arrive",
+      "reem_festival_light",
+      "reem_festival_light"
     ]
   },
   "map": [
@@ -271,6 +276,14 @@
         0.56,
         0.93
       ]
+    },
+    {
+      "room": "HilltopFestival",
+      "label": "مِهْرَجَانُ الْقِمَّة",
+      "at": [
+        0.81,
+        0.95
+      ]
     }
   ],
   "edges": [
@@ -345,6 +358,10 @@
     [
       13,
       14
+    ],
+    [
+      14,
+      15
     ]
   ],
   "cards": [

@@ -20,6 +20,7 @@ const PRHoneyOrchard := preload("res://game/rooms/honey_orchard/room_honey_orcha
 const PRHillSlope := preload("res://game/rooms/hill_slope/room_hill_slope.gd")
 const PRWaterfallPath := preload("res://game/rooms/waterfall_path/room_waterfall_path.gd")
 const PRNarrowPass := preload("res://game/rooms/narrow_pass/room_narrow_pass.gd")
+const PRHilltopFestival := preload("res://game/rooms/hilltop_festival/room_hilltop_festival.gd")
 # ---- classes
 
 # nodes ----
@@ -41,6 +42,7 @@ var HoneyOrchard: PRHoneyOrchard : get = get_HoneyOrchard
 var HillSlope: PRHillSlope : get = get_HillSlope
 var WaterfallPath: PRWaterfallPath : get = get_WaterfallPath
 var NarrowPass: PRNarrowPass : get = get_NarrowPass
+var HilltopFestival: PRHilltopFestival : get = get_HilltopFestival
 # ---- nodes
 
 # functions ----
@@ -62,4 +64,5 @@ func get_HoneyOrchard() -> PRHoneyOrchard: return get_runtime_room("HoneyOrchard
 func get_HillSlope() -> PRHillSlope: return get_runtime_room("HillSlope")
 func get_WaterfallPath() -> PRWaterfallPath: return get_runtime_room("WaterfallPath")
 func get_NarrowPass() -> PRNarrowPass: return get_runtime_room("NarrowPass")
+func get_HilltopFestival() -> PRHilltopFestival: return get_runtime_room("HilltopFestival")
 # ---- functions

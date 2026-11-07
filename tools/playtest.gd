@@ -146,6 +146,29 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path == "festival":
+		await Globals.new_game()
+		Globals.friend_cards["qarqoor"] = true
+		Globals.waterfall["lantern_hanger"] = true
+		Globals.narrow_pass["fox_joins"] = true
+		Globals.orchard["carrier"] = true
+		Globals.wilt()
+		Globals.heal()
+		Globals.wilt()
+		R.goto_room("HilltopFestival")
+		await _wait_room("HilltopFestival")
+		_expect(R.current.guests.has("qarqoor") and R.current.guests.has("thaaloob") and not R.current.guests.has("dafdoof"), "festival shows helped friends only")
+		await _complete_festival()
+		await _wait_room("End")
+		_expect(Globals.end_heart_picture() == "heart_wilt" and Lines.said.has("jad_festival_repair") and Lines.said.has("jad_festival_wilt"), "ending reflects repairs and pending wilts")
+		await _step("return from ending", func(): R.current.call("_on_back_pressed"))
+		await _wait_room("Title")
+		await _step("continue festival", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("HilltopFestival")
+		_expect(Globals.festival.get("completed") and Globals.unlocked_packs.size() == 6, "completed festival and unlocks survive continue")
+		_log("DONE festival")
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -288,6 +311,15 @@ func _complete_pass(wrong: bool) -> void:
 	var previous_blossoms := Globals.blossoms
 	await _click("LooseStone")
 	_expect(Globals.blossoms == previous_blossoms, "rescue reward cannot repeat")
+	await _click("ExitRight")
+	await _complete_festival()
+
+
+func _complete_festival() -> void:
+	await _wait_room("HilltopFestival")
+	_expect(not R.current.is_exit_open("ExitRight"), "ending waits for big lantern")
+	await _click("BigLantern")
+	_expect(Globals.festival.get("completed") and Globals.unlocked_packs.size() == 6, "lighting the lantern completes festival and unlocks packs")
 	await _click("ExitRight")
 
 
@@ -660,7 +692,10 @@ func _green_path() -> void:
 	await _wait_idle()
 	await _step("back to title", func(): R.current.call("_on_back_pressed"))
 	await _wait_room("Title")
-	_expect(not Globals.briefed and Globals.blossoms == 0, "reset after the end screen")
+	_expect(Globals.festival.get("completed"), "returning to title keeps the festival save")
+	await _step("replay from title", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	_expect(not Globals.briefed and Globals.blossoms == 0, "new journey resets the story")
 
 
 ## Word discovery with real mouse events: holds show words, a short click still works, no words

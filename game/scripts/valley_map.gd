@@ -116,7 +116,8 @@ func _button(parent: Node, title: String, action: Callable) -> Button:
 
 
 func _is_station() -> bool:
-	return is_instance_valid(R.current) and R.current is ReemRoom and not R.current.hide_gui
+	return is_instance_valid(R.current) and R.current is ReemRoom and not R.current.hide_gui \
+		and not ("hosting" in R.current and R.current.hosting)
 
 
 func _process(delta: float) -> void:

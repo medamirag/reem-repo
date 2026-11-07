@@ -32,6 +32,8 @@ var orchard := {}
 var hill := {}
 var waterfall := {}
 var narrow_pass := {}
+var festival := {}
+var repairs := 0
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
 ## cleared by a new game from the end screen, included in the autosave.
 var discovered_words := {}
@@ -86,6 +88,8 @@ func wilt() -> void:
 
 ## Fixing a past mistake: one fewer wilt (never below zero).
 func heal() -> void:
+	if wilts > 0:
+		repairs += 1
 	wilts = maxi(0, wilts - 1)
 	A.sfx_heart_bloom.play()
 	heart_changed.emit(false)
@@ -168,6 +172,8 @@ func reset() -> void:
 	hill.clear()
 	waterfall.clear()
 	narrow_pass.clear()
+	festival.clear()
+	repairs = 0
 	orchard.clear()
 	lake.clear()
 	cave.clear()
@@ -251,7 +257,7 @@ func play_ambience(cue_name: String) -> void:
 
 
 func on_save() -> Dictionary:
-	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak, "cave": cave, "lake": lake, "orchard": orchard, "hill": hill, "waterfall": waterfall, "narrow_pass": narrow_pass, "map_intro_seen": map_intro_seen, "unlocked_packs": unlocked_packs}
+	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak, "cave": cave, "lake": lake, "orchard": orchard, "hill": hill, "waterfall": waterfall, "narrow_pass": narrow_pass, "festival": festival, "map_intro_seen": map_intro_seen, "unlocked_packs": unlocked_packs}
 
 
 func on_load(data: Dictionary) -> void:
@@ -265,6 +271,7 @@ func on_load(data: Dictionary) -> void:
 	hill = data.get("hill", {}).duplicate()
 	waterfall = data.get("waterfall", {}).duplicate()
 	narrow_pass = data.get("narrow_pass", {}).duplicate()
+	festival = data.get("festival", {}).duplicate()
 	stream = data.get("stream", {}).duplicate()
 	discovered_words = data.get("discovered_words", {}).duplicate()
 	hint_steps = data.get("hint_steps", {}).duplicate()

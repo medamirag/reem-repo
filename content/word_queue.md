@@ -102,6 +102,8 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_monkey | Reem | clear and cheerful, saying one word to teach a child | قِرْد | done |
 | word_fruit | Reem | clear and cheerful, saying one word to teach a child | ثَمَرَة | done |
 | word_tail | Reem | clear and cheerful, saying one word to teach a child | ذَيْل | done |
+| word_star | Reem | clear and cheerful, saying one word to teach a child | نَجْم | done |
+| word_tent | Reem | clear and cheerful, saying one word to teach a child | خَيْمَة | done |
 
 ## Recording verification
 

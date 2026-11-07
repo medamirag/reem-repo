@@ -508,3 +508,13 @@ NarrowPass accepts both HillSlope and WaterfallPath. A wide safe foreground trai
 Click Thaaloob. Reem can offer to help or walk away. Walking away leaves him caught, wilts once and keeps the stone and Thaaloob reachable. Click him again to choose help. Then click the loose stone to roll it away without blocking Reem's path. Thaaloob apologises. If he took the HoneyJar in RockCave, he returns it. He asks to join the festival. Reem forgives him and invites him to come with her. Save the pending repair, the freed state and whether Thaaloob joins. Heal a previous wilt or add a blossom once. Repeated clicks cannot duplicate the HoneyJar or the reward.
 
 Use reem_pass_arrive, fox_pass_help, reem_pass_leave, reem_pass_stone, fox_pass_sorry, fox_pass_honey, fox_pass_join and reem_pass_welcome. Use saved Thaaloob for his own lines. Add notebook hints, both route connections and vocabulary for visible rocks, path, fox and tail. A hold on the loose stone teaches the word without freeing Thaaloob.
+
+## 20. Hilltop festival and endings (night)
+
+Persist the introduced and completed flags, the number of repaired mistakes and the six pack unlocks. Use the reem_festival and jad_festival line IDs in the voice queue. The return-to-title button keeps the festival save and the title's new journey button starts another route.
+
+HilltopFestival opens from NarrowPass. The fairground has a dry foreground path, a long table, a large unlit lantern at the centre, and hooks for little lanterns. It can be revisited. Its left exit returns to NarrowPass. The child clicks the large lantern after the helped friends assemble. Play the ceremony once and persist the completed state. Allow the child to see the ending again without adding rewards.
+
+Show only the animals whose help or repair is recorded. Use the earned notebook cards, Thaaloob's rescue flag, and Shahd's flower flag. Display nuts, leaves, the bell, silk, the reed flute, coloured feathers and the feather from Stream only when their reward flags are present. Dubb brings lanterns and carries Grandpa in as a surprise. Qarqoor raises the high lanterns when present. Grandpa recognises the good deeds and repaired mistakes in short conditional lines. He invites another route based on a friend Reem did not meet.
+
+The large lantern and string lights glow when Reem lights them. The ending shows the final heart tree, including wilts that were left unresolved. Keep the last valley save so Continue returns to the finished festival, and let the child revisit stations to repair mistakes. Unlock the six pack map regions after the ceremony. Their individual entrances and stations open as their packs are built.

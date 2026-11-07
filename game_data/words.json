@@ -1,4 +1,20 @@
 {
+  "word_star": {
+    "text": "نَجْم",
+    "rooms": [
+      "HilltopFestival"
+    ],
+    "audio": "res://assets/audio/words/word_star.mp3",
+    "objects": []
+  },
+  "word_tent": {
+    "text": "خَيْمَة",
+    "rooms": [
+      "HilltopFestival"
+    ],
+    "audio": "res://assets/audio/words/word_tent.mp3",
+    "objects": []
+  },
   "word_tail": {
     "text": "ذَيْل",
     "rooms": [
@@ -492,7 +508,8 @@
   "word_table": {
     "text": "طَاوِلَة",
     "rooms": [
-      "GrandpaRoom"
+      "GrandpaRoom",
+      "HilltopFestival"
     ],
     "audio": "res://assets/audio/words/word_table.mp3",
     "objects": []
@@ -500,7 +517,8 @@
   "word_jug": {
     "text": "إِبْرِيق",
     "rooms": [
-      "GrandpaRoom"
+      "GrandpaRoom",
+      "HilltopFestival"
     ],
     "audio": "res://assets/audio/words/word_jug.mp3",
     "objects": []
@@ -537,7 +555,8 @@
     "text": "سَلَّة",
     "rooms": [
       "GrandpaRoom",
-      "inventory"
+      "inventory",
+      "HilltopFestival"
     ],
     "audio": "res://assets/audio/words/word_basket.mp3",
     "objects": [
@@ -667,7 +686,8 @@
       "MeadowLake",
       "HillSlope",
       "WaterfallPath",
-      "NarrowPass"
+      "NarrowPass",
+      "HilltopFestival"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -683,7 +703,8 @@
       "Stream",
       "PineFork",
       "MeadowLake",
-      "HillSlope"
+      "HillSlope",
+      "HilltopFestival"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
@@ -830,12 +851,14 @@
     "text": "فَانُوس",
     "rooms": [
       "inventory",
-      "HoneyOrchard"
+      "HoneyOrchard",
+      "HilltopFestival"
     ],
     "audio": "res://assets/audio/words/word_lantern.mp3",
     "objects": [
       "item:Lantern",
-      "prop:LostLanterns"
+      "prop:LostLanterns",
+      "prop:BigLantern"
     ]
   },
   "word_notebook": {

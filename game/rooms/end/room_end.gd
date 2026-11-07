@@ -47,7 +47,8 @@ func _ready() -> void:
 
 #region Virtual ####################################################################################
 func _on_room_entered() -> void:
-	Globals.clear_autosave()
+	if not Globals.festival.get("completed", false):
+		Globals.clear_autosave()
 	RoomHelpers.fit_background(_background, width, height)
 	Globals.play_ambience("amb_meadow")
 
@@ -63,7 +64,8 @@ func _on_room_entered() -> void:
 
 func _on_room_transition_finished() -> void:
 	# Jad is not on this screen, so Lines shows his words in the narration box.
-	await Lines.say("jad_s2_071")
+	if not Globals.festival.get("completed", false):
+		await Lines.say("jad_s2_071")
 	_continued.show()
 	_back_button.show()
 	started = true
@@ -83,7 +85,8 @@ func _on_restore_from_savegame() -> void:
 func _on_back_pressed() -> void:
 	A.sfx_ui_click.play()
 	_back_button.disabled = true
-	await Globals.new_game()
+	if not Globals.festival.get("completed", false):
+		await Globals.new_game()
 	Globals.play_ambience("")
 	R.goto_room("Title")
 

@@ -80,6 +80,11 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 - Reem and Thaaloob recorded their own lines with the saved voices and `eleven_v3`. Reem used `[warmly]` and `[gently]`, and Thaaloob used `[worried]`, `[embarrassed]` and `[gently]`. Reference lines are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`.
 - Reem recorded the tail word with `eleven_multilingual_v2` and no tags. No model fallback. Numeric controls remain unsupported in this tool. Listening comparison remains open.
 
+### Hilltop Festival batch
+
+- Reem and Jad used their saved voices with `eleven_v3` and synthesis-only tags `[warmly]`, `[gently]` or `[playful]`, as appropriate. Reference files are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/jad_s1_015.mp3`. Reem recorded the two words with `eleven_multilingual_v2` and no tags.
+- No model fallback or numeric settings were used. Listening comparison remains open.
+
 ## ElevenLabs credentials
 
 - Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.

@@ -21,8 +21,12 @@
 - **Waterfall checks:** Content, headless import and startup, both Waterfall choices and green, sand, mixed and words passed. The repair route checked save and restore, and both routes checked that holding the fruit teaches its name without completing the task.
 - **Narrow Pass:** Section 19 joins HillSlope and WaterfallPath and remembers the arrival route. Reem can help Thaaloob and move the small stone, or leave him and later return to repair the choice. The rescue records Thaaloob's festival attendance, and he returns the HoneyJar only if he took it in Rock cave. Two art files, eight lines and one new word are marked done. The right exit uses provisional End until HilltopFestival is registered.
 - **Narrow Pass checks:** Content, headless import and startup, both Narrow Pass routes and green, sand, mixed and words passed. The repair test checked save and continue, honey return and the one-time rescue reward.
-- **Half-finished:** No HilltopFestival scene or assets yet. Its position is reserved in the illustrated map.
-- **Next:** Specify and build Hilltop festival with endings. Packs remain in order 1, 3, 2, 4, 5, 6. Add future stations and their room IDs to the illustrated map. The content check now catches missing registered rooms.
+- **Hilltop Festival:** Section 20 opens from Narrow Pass. Helped friends and earned gifts appear, Qarqoor raises the high lanterns if helped, and Dubb brings Grandpa. Click the big lantern for the ceremony and the right arrow for the heart-tree ending. Grandpa recognises repaired mistakes and suggests an unvisited branch. Returning to the title retains Continue. The six pack flags unlock and persist after the ceremony. The illustrated map and notebook include the festival.
+- **Festival assets:** Three new art files, eleven dialogue files and two word recordings are installed and marked done. Listening comparison is open.
+- **Festival checks:** Content, headless import and startup, festival, green, sand, mixed, words and valley_map passed. The festival test checked route-specific guests, both repair and unresolved-wilt narration, the final wilted tree, and Continue with all six unlocks. The green route tested starting a fresh journey after the ending.
+- **Half-finished:** No Gull island room is registered yet. Its existing map entrance is ready for the pack's first room ID.
+- **Next:** Specify and build Gull island, then Ramadan lantern night, Old city market, Snow trail, Ant kingdom and Star observatory in that order. Add each new room to the illustrated map and notebook. The content check catches registered rooms missing from the map.
+- **How to play the festival:** Free Thaaloob in Narrow Pass and take the right arrow. Click the big lantern. Look for the friends you helped and the gifts they brought. Use the right arrow to see the final tree, then click the return button. Choose Continue to revisit the festival, or start another journey from the title.
 - **How to play Narrow Pass:** Complete Hill slope or Waterfall Path and take the right arrow. Click Thaaloob and choose to help. Hold the small stone to learn its word, then click it to free him. If he took the HoneyJar in Rock cave, it returns to Reem's basket. Try leaving and coming back to see the repair.
 - **How to play Waterfall:** At Honey orchard, help Dubb and find the lanterns. Click the waterfall arrow and then Qarqoor. Try throwing the fruit back, then talk to him again and choose to ask calmly. Hold the fruit for its word, then click it to play. The right arrow opens and Qarqoor's card appears in the notebook.
 - **How to play Orchard:** Complete one of Oak, Cave or Lake and take the right arrow. Click Dubb, choose to speak softly, then click the jar to free him. Click Thaaloob, then inspect the two lanterns near the stream and report to Dubb. Try the wrong choices and repair them by the same steps. Both labelled routes unlock.
@@ -33,6 +37,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Hilltop Festival:** Dubb is Grandpa's carrier because helping him is on the mandatory orchard route. The screen darkens the painted small lanterns until the ceremony, then adds a gentle glow. Small gift icons use native vector drawings. The old end screen keeps its heart-tree display and returns to a title with the completed save available. The replay hint chooses an unseen branch friend. Older saves use known repaired-flower and mirror flags when a repair count is absent.
 
 - **Narrow Pass:** The loose stone rolls safely aside. The rescue reuses Thaaloob's existing sprite and moves him away from the rock when he is free. Reem can return via the route she arrived on, even after a save. Forgiveness uses story dialogue without a religious quotation.
 

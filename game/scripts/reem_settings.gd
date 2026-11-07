@@ -89,6 +89,8 @@ func can_open() -> bool:
 		return false
 	if Lines.busy or E.playing_queue:
 		return false
+	if "hosting" in R.current and R.current.hosting:
+		return false
 	if G.is_blocked and not R.current.hide_gui:
 		return false
 	if is_instance_valid(C.player) and C.player.is_moving:

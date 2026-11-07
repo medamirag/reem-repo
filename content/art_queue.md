@@ -61,6 +61,9 @@ Originals in `assets/` are never edited: new images are new files with the names
 | qarqoor_fruit | `assets/art/items/qarqoor_fruit.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See qarqoor_fruit below | No lettering | done |
 | bg15_narrow_pass | `assets/art/backgrounds/bg15_narrow_pass.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg15_narrow_pass below | No lettering | done |
 | pass_loose_stone | `assets/art/items/pass_loose_stone.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See pass_loose_stone below | No lettering | done |
+| bg16_hilltop_festival | `assets/art/backgrounds/bg16_hilltop_festival.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg16_hilltop_festival below | No lettering | done |
+| festival_big_lantern | `assets/art/items/festival_big_lantern.png` | `assets/art/backgrounds/bg1_room.png` | transparent | portrait | See festival_big_lantern below | No lettering | done |
+| festival_jad_seated | `assets/art/characters/grandpa/grandpa_festival_seated.png` | `assets/art/characters/grandpa/grandpa_sheet.png` | transparent | square | See festival_jad_seated below | No lettering | done |
 
 <!-- One section per row, in the same order:
 
@@ -668,3 +671,33 @@ A wide dry dirt path runs across the entire lower third of a side-view game scen
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
 
 Standalone isolated small rounded grey-violet stone with a moss patch, slightly flat oval shape that can roll. Transparent background, no ground or objects.
+
+## bg16_hilltop_festival
+
+- **Save as:** `assets/art/backgrounds/bg16_hilltop_festival.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Opaque
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+A welcoming hilltop festival at night, storybook side view. Deep navy sky, dusky green hills, subtle stars. Small stall awnings behind a broad dry foreground path, simple empty long low wooden table to the right, and a wooden beam with several small UNLIT gold parchment lanterns. Leave the central area behind the foreground clear for a separately composited large lantern and the full dry lower third clear for characters. No people or animals. No flames or illuminated lanterns.
+
+## festival_big_lantern
+
+- **Save as:** `assets/art/items/festival_big_lantern.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+Single large ornamental brass and warm cream parchment festival lantern, unlit, simple rounded hexagonal form with a small top handle and crescent motif, fully visible, straight on. Isolated on transparent background. No person, scenery, hanging rope, flame, light or halo.
+
+## festival_jad_seated
+
+- **Save as:** `assets/art/characters/grandpa/grandpa_festival_seated.png`
+- **Attach:** `assets/art/characters/grandpa/grandpa_sheet.png`
+- **Background:** Transparent
+
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark.
+
+One seated Grandpa Sulaiman, warm kindly elderly Arab man from the attached turnaround, exact facial features, beard and clothing colours. Three-quarter facing left, seated with knees gently folded and hands in lap, whole figure visible. No chair or ground, isolated transparent character sprite.

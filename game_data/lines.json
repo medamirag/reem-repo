@@ -1,4 +1,70 @@
 {
+ "reem_festival_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَصَلْنَا إِلَى الْقِمَّةِ! أَصْدِقَائِي هُنَا، وَالْفَانُوسُ الْكَبِيرُ يَنْتَظِرُنَا.",
+  "audio": "res://assets/audio/lines/reem_festival_arrive.mp3"
+ },
+ "reem_festival_high": {
+  "speaker": "Reem",
+  "tone": "playful",
+  "text": "قَرْقُورٌ يُعَلِّقُ الْفَوَانِيسَ الْعَالِيَةَ.",
+  "audio": "res://assets/audio/lines/reem_festival_high.mp3"
+ },
+ "reem_festival_light": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بِسْمِ اللهِ، لِنُضِئِ الْفَانُوسَ الْكَبِيرَ.",
+  "audio": "res://assets/audio/lines/reem_festival_light.mp3"
+ },
+ "jad_festival_arrive": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "السَّلَامُ عَلَيْكُمْ! حَمَلَنِي دُبٌّ إِلَى الْقِمَّةِ، فَشُكْرًا لَهُ.",
+  "audio": "res://assets/audio/lines/jad_festival_arrive.mp3"
+ },
+ "jad_festival_thanks": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "كُلَّمَا سَاعَدْتِ صَدِيقًا يَا رِيمُ، حَمَلَ مَعَكِ شَيْئًا إِلَى الْمِهْرَجَانِ. جَزَاكِ اللهُ خَيْرًا.",
+  "audio": "res://assets/audio/lines/jad_festival_thanks.mp3"
+ },
+ "jad_festival_repair": {
+  "speaker": "Jad",
+  "tone": "gentle",
+  "text": "وَحِينَ أَخْطَأْتِ، عُدْتِ وَأَصْلَحْتِ خَطَأَكِ. فَرِحَ أَصْدِقَاؤُكِ بِعَوْدَتِكِ.",
+  "audio": "res://assets/audio/lines/jad_festival_repair.mp3"
+ },
+ "jad_festival_wilt": {
+  "speaker": "Jad",
+  "tone": "gentle",
+  "text": "مَا زَالَ هُنَاكَ مَكَانٌ تَسْتَطِيعِينَ أَنْ تَعُودِي إِلَيْهِ. سَيَفْرَحُ صَدِيقُكِ بِرُؤْيَتِكِ.",
+  "audio": "res://assets/audio/lines/jad_festival_wilt.mp3"
+ },
+ "jad_festival_oak": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "سَمِعْتُ أَنَّ قُنْفُذًا فِي غَابَةِ الْبَلُّوطِ يَنْتَظِرُ صَدِيقًا. هَلْ تَزُورِينَهُ فِي رِحْلَةٍ أُخْرَى؟",
+  "audio": "res://assets/audio/lines/jad_festival_oak.mp3"
+ },
+ "jad_festival_cave": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "عِنْدَ الْكَهْفِ قِطَّةٌ صَغِيرَةٌ تُحِبُّ ضَوْءَ الْفَانُوسِ. هَلْ تَزُورِينَهَا فِي رِحْلَةٍ أُخْرَى؟",
+  "audio": "res://assets/audio/lines/jad_festival_cave.mp3"
+ },
+ "jad_festival_lake": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "عِنْدَ الْبُحَيْرَةِ ضِفْدَعٌ يُحِبُّ الْغِنَاءَ. هَلْ تَسْمَعِينَ غِنَاءَهُ فِي رِحْلَةٍ أُخْرَى؟",
+  "audio": "res://assets/audio/lines/jad_festival_lake.mp3"
+ },
+ "jad_festival_other": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "فِي الْوَادِي دُرُوبٌ أُخْرَى. اخْتَارِي دَرْبًا جَدِيدًا فِي رِحْلَةٍ أُخْرَى.",
+  "audio": "res://assets/audio/lines/jad_festival_other.mp3"
+ },
  "reem_pass_arrive": {
   "speaker": "Reem",
   "tone": "warm",

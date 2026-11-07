@@ -482,3 +482,11 @@ HillSlope branches from HoneyOrchard and leads to NarrowPass. Keep a continuous 
 Tawoos refuses to lend feathers because he thinks only his feathers are beautiful. Click him and choose to show what everyone made together or flatter him. Flattery wilts once and leaves the display empty. Click him again to choose the display and repair. Show the three parts by clicking the display after that choice. It visibly combines his feather with the orchard lantern and ribbon, which can be shown on every route. Tawoos lends his coloured feathers and earns his card. Heal a previous wilt or add a blossom. Extra clicks do not repeat the reward. The feathers are saved for the big lantern.
 
 Reem narrates Tawoos until a verified saved voice exists. Add progressive hints, a visited map node and vocabulary on the peacock, display and background. A word hold must not complete the display. Save the choice, pending repair and reward.
+
+## 17. Waterfall path (sunset)
+
+WaterfallPath branches from HoneyOrchard and rejoins HillSlope at NarrowPass. Keep Reem on the dry foreground trail. The waterfall and its pool remain behind the path. Qarqoor waits by a low tree beside one fallen fruit. The left arrow goes back to HoneyOrchard. The right arrow opens after Qarqoor agrees to hang the high festival lanterns, with provisional End until NarrowPass exists.
+
+On the first click, Qarqoor rolls a fruit onto the path to provoke Reem. Offer a choice to stay calm and ask why, or throw it back. Throwing back moves the fruit aside, wilts once, and keeps Qarqoor reachable. Reem can return and ask him calmly. He admits he wanted someone to play with. Click the fallen fruit to roll it gently back as a game. Qarqoor agrees to climb and hang the lanterns. Heal a prior wilt or add a blossom once. A word hold on the fruit must not advance the game.
+
+Save the conversation, pending repair, game and lantern-hanger reward. Add progressive notebook hints, the visited map route, Qarqoor's card and visible vocabulary. Reem narrates until Qarqoor has a verified saved voice. The fruit stays on the ground and never hits anyone. The waterfall introduces no timer or hazard.

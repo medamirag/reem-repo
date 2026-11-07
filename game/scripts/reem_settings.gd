@@ -19,6 +19,10 @@ var _was_blocked := false
 var _labels: Dictionary
 var _root: Control
 var _panel: PanelContainer
+var _settings_rows: VBoxContainer
+var _parent_rows: VBoxContainer
+var _parent_data: Dictionary
+var _parent_answer: int
 var open_button: Button
 var close_button: Button
 var music_control: CheckButton
@@ -130,6 +134,8 @@ func close_settings() -> void:
 	if not is_open:
 		return
 	_root.hide()
+	_settings_rows.show()
+	_parent_rows.hide()
 	is_open = false
 	get_tree().paused = false
 	if not _was_blocked:
@@ -189,6 +195,11 @@ func _build_controls() -> void:
 	var rows := VBoxContainer.new()
 	rows.add_theme_constant_override("separation", 18)
 	_panel.add_child(rows)
+	_settings_rows = rows
+	_parent_rows = VBoxContainer.new()
+	_panel.add_child(_parent_rows)
+	_parent_rows.hide()
+	_parent_data = JSON.parse_string(FileAccess.get_file_as_string("res://game_data/parent_corner.json"))
 	rows.add_child(_label(_labels.settings))
 	music_control = CheckButton.new()
 	music_control.text = _labels.music
@@ -208,6 +219,7 @@ func _build_controls() -> void:
 	text_control.get_popup().add_theme_font_size_override("font_size", 36)
 	text_row.add_child(text_control)
 	text_row.add_child(_label(_labels.text_size))
+	_add_parent_button(rows, _parent_data.title, _show_parent_gate)
 	close_button = Button.new()
 	close_button.text = _labels.back
 	close_button.custom_minimum_size.y = 80
@@ -249,3 +261,79 @@ func _style_text(control: Control, font_size := 36) -> void:
 	control.add_theme_font_override("font", ArabicText.get_font())
 	control.add_theme_font_size_override("font_size", font_size)
 	ArabicText.make_rtl(control)
+
+
+func _add_parent_button(rows: VBoxContainer, title: String, action: Callable) -> void:
+	var button := Button.new()
+	button.text = title
+	button.custom_minimum_size.y = 64
+	_style_text(button)
+	rows.add_child(button)
+	button.pressed.connect(action)
+
+
+func _reset_parent_panel() -> void:
+	_settings_rows.hide()
+	for child in _parent_rows.get_children():
+		_parent_rows.remove_child(child)
+		child.queue_free()
+	_parent_rows.show()
+	_parent_rows.add_child(_label(_parent_data.title, 42))
+
+
+func _show_parent_gate(retry := false) -> void:
+	_reset_parent_panel()
+	var left := randi_range(18, 48)
+	var right := randi_range(14, 39)
+	_parent_answer = left + right
+	_parent_rows.add_child(_label(_parent_data.retry if retry else _parent_data.gate))
+	var question := _label("%d + %d = ؟" % [left, right])
+	_parent_rows.add_child(question)
+	var answer := LineEdit.new()
+	_style_text(answer)
+	answer.virtual_keyboard_type = LineEdit.KEYBOARD_TYPE_NUMBER
+	answer.max_length = 3
+	_parent_rows.add_child(answer)
+	var submit := func():
+		var value := answer.text.strip_edges()
+		for index in 10:
+			value = value.replace("٠١٢٣٤٥٦٧٨٩"[index], str(index))
+			value = value.replace("۰۱۲۳۴۵۶۷۸۹"[index], str(index))
+		if value.is_valid_int() and value.to_int() == _parent_answer:
+			_show_parent_lessons()
+		else:
+			_show_parent_gate(true)
+	answer.text_submitted.connect(func(_text: String): submit.call())
+	_add_parent_button(_parent_rows, _parent_data.submit, submit)
+	_add_parent_button(_parent_rows, _labels.back, _leave_parent)
+	answer.grab_focus()
+
+
+func _show_parent_lessons() -> void:
+	_reset_parent_panel()
+	var scroll := ScrollContainer.new()
+	scroll.custom_minimum_size = Vector2(840, 525)
+	_parent_rows.add_child(scroll)
+	var lessons := VBoxContainer.new()
+	lessons.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	lessons.add_theme_constant_override("separation", 14)
+	scroll.add_child(lessons)
+	var journey := Globals.on_save()
+	for lesson: Array in _parent_data.lessons:
+		var state: Dictionary = journey.get(lesson[0], {})
+		if state.get(lesson[1], false):
+			lessons.add_child(_label(lesson[2], 36))
+			var question := _label(lesson[3], 31)
+			question.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			lessons.add_child(question)
+	if lessons.get_child_count() == 0:
+		var empty := _label(_parent_data.empty)
+		empty.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		lessons.add_child(empty)
+	_add_parent_button(_parent_rows, _labels.back, _leave_parent)
+
+
+func _leave_parent() -> void:
+	_parent_rows.hide()
+	_settings_rows.show()
+	close_button.grab_focus()

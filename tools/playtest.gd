@@ -189,6 +189,11 @@ func _run() -> void:
 		_log("DONE snow")
 		get_tree().quit()
 		return
+	if _path == "parent":
+		await _parent_path()
+		_log("DONE parent")
+		get_tree().quit()
+		return
 	if _path == "stars":
 		await _star_path()
 		_log("DONE stars")
@@ -275,6 +280,26 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _parent_path() -> void:
+	await Globals.new_game()
+	Globals.oak["nuts"] = true
+	var settings := Globals.settings
+	settings.open_settings()
+	settings.call("_show_parent_gate")
+	var panel: VBoxContainer = settings.get("_parent_rows")
+	var answer := panel.get_child(3) as LineEdit
+	answer.text = "0"
+	answer.text_submitted.emit(answer.text)
+	_expect(panel.get_child(3) is LineEdit, "wrong sum keeps Parent Corner gated")
+	answer = panel.get_child(3) as LineEdit
+	answer.text = str(settings.get("_parent_answer"))
+	answer.text_submitted.emit(answer.text)
+	var scroll := panel.get_child(1) as ScrollContainer
+	_expect(scroll != null and scroll.get_child(0).get_child_count() == 2, "parent sees only a completed lesson and its question")
+	settings.close_settings()
+	_expect(not panel.visible, "closing Settings clears access to Parent Corner")
 
 
 func _star_path() -> void:

@@ -582,3 +582,7 @@ At StarRidge, a small lost animal caravan waits beside a safe path. Thaaloob wan
 ## 27. Heart tree growth over the whole journey
 
 The existing tree pictures show the first three good deeds and the wilted branches. From the fourth good deed, place an additional pink flower on the canopy for each deed, up to twelve added flowers. The same overlay appears on the ending tree. A wilted tree still shows its branch state, with earned flowers on the canopy. The blossom count remains in the existing save. The overlay is drawn in Godot and adds no art, voice or vocabulary rows.
+
+## 28. Parent Corner
+
+Open Parent Corner from Settings. An Arabic arithmetic question with two random two-digit operands gates entry. A wrong answer leaves the panel closed and gives a fresh question. Closing Settings clears access. The panel lists lessons represented by completed choices in the current saved journey and prompts for discussion. There are no external links, purchases, new assets or recordings.

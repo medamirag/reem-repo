@@ -35,7 +35,7 @@
 - **Ant Kingdom:** Section 25 adds GiantBloom, DewBank and AntCity via the giant flower at MeadowFork. Reem shrinks, helps the worker with a seed, aligns a leaf bridge, sorts seeds by size and shelters from rain. Nine art files, 21 dialogue recordings and nine word recordings are installed. Both maps include all three rooms.
 - **Star Observatory:** Chapter 26 is built and pushed as c4aaa53. All nine art files, 18 dialogue recordings and eight vocabulary recordings are done. The festival mountain arrow opens Owl Perch. Listen to the bat, click the owl, then follow the four shapes from the astronomer and the three trail markers to guide the caravan. Both maps include the rooms.
 - **Star Observatory checks:** Content, Godot import and startup, stars, green, sand, mixed and words passed. The stars test checked repair, wrong-shape handling, Continue and caravan arrival. An earlier overlapping test shared the save slot and failed at Continue. The isolated rerun passed. Listening comparison remains open.
-- **Next:** Finish the heart-tree playtests, then build the Parent Corner and two small events in the roadmap. Review the existing Cave text-rendering issue and remaining listening checks.
+- **Next:** Build the two free events, Tree Day and Mothers Day, one station, situation and card each. Review the remaining Cave text-rendering and listening checks.
 - **How to play Ant Kingdom:** After the festival, click the giant flower in the meadow. Help the worker and click the seed. At the dew drop, click the leaf to straighten it, then talk to the beetle. In the colony, talk to the queen, click the seeds from smallest to largest, then click the tunnel.
 - **How to play Snow Trail:** After the festival, revisit Hill slope and take the snow arrow. Talk to the goldfinch and offer the bundle, then click the shelter. Talk to white-coated Arnoob and click the three split prints from left to right. At the next room click the wooden board, then click the deer when Reem reaches the bottom.
 - **How to play Old City Market:** After the festival, visit Gate and take the market arrow. Click the honey stall, then go to the baker. Select three coins and click the green tick. Share bread with the cat, then visit the scale. Talk to Thaaloob, place both weights and click the tick. Show the baker, then place both weights and test again.
@@ -53,7 +53,9 @@
 
 Choices made without asking (newest first).
 
-- **Heart tree:** The canopy shows up to twelve extra flowers after the first three good deeds, both in play and on the ending screen. It uses the original tree pictures and keeps the wilted branches visible. Headless results are in .godot/blossom-*.log.
+- **Parent Corner:** Open from Settings (F10). A randomized two-digit sum gates entry. The panel shows prompts for completed choices in the current journey. Godot startup and the dedicated parent route passed, covering wrong answers, the lesson list and clearing access.
+
+- **Heart tree:** The canopy shows up to twelve extra flowers after the first three good deeds, both in play and on the ending screen. It uses the original tree pictures and keeps the wilted branches visible. Headless startup, festival, green, sand, mixed and words passed.
 
 - **Star Observatory art and words:** The Dome background passed on the retry after a connection failure. Reem will narrate the new characters using her saved voice. The chart uses four distinct shapes, and the caravan follows three markers. Incorrect selections keep prior progress. The caravan uses the existing gazelle sprite. Existing words cover the path, trees, rocks, stars, shelter and familiar furnishings. New words include the telescope, owl and bat.
 

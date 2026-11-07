@@ -163,6 +163,8 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_hill_name | Reem | warm | طَاوُوسٌ | done |
 | reem_hill_fact | Reem | warm | يَبْسُطُ الطَّاوُوسُ رِيشَ ذَيْلِهِ مِثْلَ الْمِرْوَحَةِ. | done |
 
+| jad_map_intro | Jad | warm | هذه خريطة الوادي يا ريم. كلما زرتِ مكاناً جديداً ظهر عليها، وإن احترتِ في طريقك فانظري إليها. | todo |
+
 ## Recording verification
 
 2026-11-07: User approved the Reem Stream sample. Previous pending rows and Oak forest rows were recorded with their saved voices. See AGENTS.md for model, tags and available settings.

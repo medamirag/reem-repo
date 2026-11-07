@@ -1,0 +1,316 @@
+[
+  {
+    "id": "farm",
+    "room": "Yard",
+    "position": [
+      0.12,
+      0.87
+    ],
+    "neighbors": [
+      "house",
+      "gate",
+      "town",
+      "ramadan"
+    ],
+    "pack": 0,
+    "name": "word_map_farm"
+  },
+  {
+    "id": "house",
+    "room": "GrandpaRoom",
+    "position": [
+      0.085,
+      0.75
+    ],
+    "neighbors": [
+      "farm"
+    ],
+    "pack": 0,
+    "name": "word_map_house"
+  },
+  {
+    "id": "gate",
+    "room": "Gate",
+    "position": [
+      0.214,
+      0.81
+    ],
+    "neighbors": [
+      "farm",
+      "meadow",
+      "stream"
+    ],
+    "pack": 0,
+    "name": "word_map_gate"
+  },
+  {
+    "id": "meadow",
+    "room": "MeadowFork",
+    "position": [
+      0.254,
+      0.636
+    ],
+    "neighbors": [
+      "gate",
+      "tree",
+      "fox",
+      "pine",
+      "tiny"
+    ],
+    "pack": 0,
+    "name": "word_map_meadow"
+  },
+  {
+    "id": "tree",
+    "room": "BigTree",
+    "position": [
+      0.282,
+      0.51
+    ],
+    "neighbors": [
+      "meadow"
+    ],
+    "pack": 0,
+    "name": "word_map_tree"
+  },
+  {
+    "id": "fox",
+    "room": "FoxRock",
+    "position": [
+      0.309,
+      0.691
+    ],
+    "neighbors": [
+      "meadow"
+    ],
+    "pack": 0,
+    "name": "word_map_fox"
+  },
+  {
+    "id": "stream",
+    "room": "Stream",
+    "position": [
+      0.32,
+      0.76
+    ],
+    "neighbors": [
+      "gate",
+      "pine"
+    ],
+    "pack": 0,
+    "name": "word_map_stream"
+  },
+  {
+    "id": "pine",
+    "room": "PineFork",
+    "position": [
+      0.4,
+      0.51
+    ],
+    "neighbors": [
+      "meadow",
+      "stream",
+      "oak",
+      "cave",
+      "lake"
+    ],
+    "pack": 0,
+    "name": "word_map_pine"
+  },
+  {
+    "id": "oak",
+    "room": "OakForest",
+    "position": [
+      0.285,
+      0.26
+    ],
+    "neighbors": [
+      "pine",
+      "orchard"
+    ],
+    "pack": 0,
+    "name": "word_map_oak"
+  },
+  {
+    "id": "cave",
+    "room": "RockCave",
+    "position": [
+      0.45,
+      0.18
+    ],
+    "neighbors": [
+      "pine",
+      "orchard"
+    ],
+    "pack": 0,
+    "name": "word_map_cave"
+  },
+  {
+    "id": "lake",
+    "room": "MeadowLake",
+    "position": [
+      0.59,
+      0.29
+    ],
+    "neighbors": [
+      "pine",
+      "orchard",
+      "island"
+    ],
+    "pack": 0,
+    "name": "word_map_lake"
+  },
+  {
+    "id": "orchard",
+    "room": "HoneyOrchard",
+    "position": [
+      0.54,
+      0.63
+    ],
+    "neighbors": [
+      "oak",
+      "cave",
+      "lake",
+      "slope",
+      "waterfall"
+    ],
+    "pack": 0,
+    "name": "word_map_orchard"
+  },
+  {
+    "id": "slope",
+    "room": "HillSlope",
+    "position": [
+      0.71,
+      0.45
+    ],
+    "neighbors": [
+      "orchard",
+      "pass"
+    ],
+    "pack": 0,
+    "name": "word_map_slope"
+  },
+  {
+    "id": "waterfall",
+    "room": "WaterfallPath",
+    "position": [
+      0.715,
+      0.73
+    ],
+    "neighbors": [
+      "orchard",
+      "pass"
+    ],
+    "pack": 0,
+    "name": "word_map_waterfall"
+  },
+  {
+    "id": "pass",
+    "room": "NarrowPass",
+    "position": [
+      0.83,
+      0.56
+    ],
+    "neighbors": [
+      "slope",
+      "waterfall",
+      "festival"
+    ],
+    "pack": 0,
+    "name": "word_map_pass"
+  },
+  {
+    "id": "festival",
+    "room": "HilltopFestival",
+    "position": [
+      0.88,
+      0.2
+    ],
+    "neighbors": [
+      "pass",
+      "mountain",
+      "snow"
+    ],
+    "pack": 0,
+    "name": "word_map_festival"
+  },
+  {
+    "id": "island",
+    "room": "",
+    "position": [
+      0.92,
+      0.78
+    ],
+    "neighbors": [
+      "lake"
+    ],
+    "pack": 1,
+    "name": "word_map_island"
+  },
+  {
+    "id": "mountain",
+    "room": "",
+    "position": [
+      0.1,
+      0.1
+    ],
+    "neighbors": [
+      "festival"
+    ],
+    "pack": 6,
+    "name": "word_map_mountain"
+  },
+  {
+    "id": "tiny",
+    "room": "",
+    "position": [
+      0.318,
+      0.621
+    ],
+    "neighbors": [
+      "meadow"
+    ],
+    "pack": 5,
+    "name": "word_map_tiny"
+  },
+  {
+    "id": "town",
+    "room": "",
+    "position": [
+      0.09,
+      0.45
+    ],
+    "neighbors": [
+      "farm"
+    ],
+    "pack": 2,
+    "name": "word_map_town"
+  },
+  {
+    "id": "ramadan",
+    "room": "",
+    "position": [
+      0.042,
+      0.89
+    ],
+    "neighbors": [
+      "farm"
+    ],
+    "pack": 3,
+    "name": "word_map_ramadan"
+  },
+  {
+    "id": "snow",
+    "room": "",
+    "position": [
+      0.82,
+      0.1
+    ],
+    "neighbors": [
+      "festival"
+    ],
+    "pack": 4,
+    "name": "word_map_snow"
+  }
+]

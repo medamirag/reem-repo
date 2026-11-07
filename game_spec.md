@@ -490,3 +490,11 @@ WaterfallPath branches from HoneyOrchard and rejoins HillSlope at NarrowPass. Ke
 On the first click, Qarqoor rolls a fruit onto the path to provoke Reem. Offer a choice to stay calm and ask why, or throw it back. Throwing back moves the fruit aside, wilts once, and keeps Qarqoor reachable. Reem can return and ask him calmly. He admits he wanted someone to play with. Click the fallen fruit to roll it gently back as a game. Qarqoor agrees to climb and hang the lanterns. Heal a prior wilt or add a blossom once. A word hold on the fruit must not advance the game.
 
 Save the conversation, pending repair, game and lantern-hanger reward. Add progressive notebook hints, the visited map route, Qarqoor's card and visible vocabulary. Reem narrates until Qarqoor has a verified saved voice. The fruit stays on the ground and never hits anyone. The waterfall introduces no timer or hazard.
+
+## 18. Illustrated valley map
+
+The parchment button on station screens and the M key open the illustrated map. The cross and Escape close it. The map pauses the room while it is open. Title and ending cinematics have no map button.
+
+Map positions are fractions of the illustration in game_data/map_places.json. Each entry names its room, word label, neighbouring places and pack. Leaf markers use the existing Popochiu saved room visits. Cream clouds cover unvisited valley markers and locks mark unavailable packs. Reem's pin bobs over her current room. A tap displays the place name in right-to-left Cairo and plays its recording when available. A visited destination asks for confirmation before moving Reem there.
+
+The first opening shows Grandpa's introduction and plays the queued recording when installed. The map uses a short paper rustle. Add future rooms to the place data as they are built.

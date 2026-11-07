@@ -50,6 +50,12 @@ Originals in `assets/` are never edited: new images are new files with the names
 | tawoos_base | `assets/art/characters/tawoos/tawoos_base.png` | `assets/art/characters/tawoos/tawoos_sheet.png` | transparent | 1536x1024 | See tawoos_base below | Clear silhouette and correct background | done |
 | tawoos_feather | `assets/art/items/tawoos_feather.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1024x1024 | See tawoos_feather below | Clear silhouette and correct background | done |
 
+| map_valley | `assets/art/ui/map_valley.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See map_valley below | No lettering | done |
+| map_pin_reem | `assets/art/ui/map_pin_reem.png` | `assets/art/backgrounds/bg1_room.png`, `assets/art/characters/reem/reem_sheet.png` | transparent | square | See map_pin_reem below | No lettering | done |
+| map_fog | `assets/art/ui/map_fog.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See map_fog below | No lettering | done |
+| map_check | `assets/art/ui/map_check.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See map_check below | No lettering | done |
+| map_button | `assets/art/ui/map_button.png` | `assets/art/backgrounds/bg1_room.png` | transparent | square | See map_button below | No lettering | done |
+
 <!-- One section per row, in the same order:
 
 ## <ID>
@@ -530,4 +536,69 @@ STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown
 
 ```text
 STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One isolated peacock tail feather with teal, emerald and sapphire eye markings. Large readable silhouette, no shadow, true transparency.
+```
+
+## map_valley
+
+- **Save as:** `assets/art/ui/map_valley.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 16:9 landscape
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Top-down children's treasure map on warm parchment, soft palette, no text letters or labels. Bottom left Grandpa's red-roof farm; dirt trail forks via flower meadow and blue stream to tall pine fork. Three trails from pines via oak forest, grey hill with cave mouth, and round lake with small wooden dock, rejoining at orchard with beehives. Then two trails via gentle green slope and little waterfall to narrow gap between two rocks, then hilltop festival top right, unlit lanterns. Smaller faded edge features: lighthouse island and seagulls bottom right across lake, walled town with market awning at left off farm road, mountain with dome observatory top left, giant flower and tiny anthill in meadow. Clear spaces for icons at each site.
+```
+
+## map_pin_reem
+
+- **Save as:** `assets/art/ui/map_pin_reem.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`, `assets/art/characters/reem/reem_sheet.png`
+- **Background:** transparent
+- **Size:** square
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Reem’s face matching her reference sheet in a round teal #2BB3A8 badge with a small downward point, a compact map pin. One isolated icon on true alpha.
+```
+
+## map_fog
+
+- **Save as:** `assets/art/ui/map_fog.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** square
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Single soft opaque white-cream cloud puff with feathered edges for hiding a map landmark. Isolated on true alpha.
+```
+
+## map_check
+
+- **Save as:** `assets/art/ui/map_check.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** square
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. A small simple green leaf badge for a visited landmark, clear dark outline, single isolated icon on true alpha.
+```
+
+## map_button
+
+- **Save as:** `assets/art/ui/map_button.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** transparent
+- **Size:** square
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Small rolled parchment treasure-map icon with two rolled edges, no marks or lettering, single isolated icon on true alpha.
 ```

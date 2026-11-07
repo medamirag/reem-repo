@@ -16,6 +16,9 @@ const HEART_TREE_SCENE := "res://game/gui/components/heart_tree/heart_tree.tscn"
 var word_discovery: WordDiscovery
 var settings: ReemSettings
 var notebook: ReemNotebook
+var valley_map: CanvasLayer
+var map_intro_seen := false
+var unlocked_packs := {}
 var hotspot_highlight: HotspotHighlight
 var hint_steps := {}
 var friend_cards := {}
@@ -52,6 +55,8 @@ func _ready() -> void:
 		notebook = ReemNotebook.new()
 		notebook.name = "Notebook"
 		add_child(notebook)
+		valley_map = preload("res://game/scripts/valley_map.gd").new()
+		add_child(valley_map)
 		hotspot_highlight = HotspotHighlight.new()
 		hotspot_highlight.name = "HotspotHighlight"
 		add_child(hotspot_highlight)
@@ -157,6 +162,7 @@ var fox_intro_done := false
 ## Puts every flag and counter back to how a new game starts. Used by the end screen's
 ## «العودة إلى البداية» button.
 func reset() -> void:
+	map_intro_seen = false
 	hill.clear()
 	orchard.clear()
 	lake.clear()
@@ -241,10 +247,12 @@ func play_ambience(cue_name: String) -> void:
 
 
 func on_save() -> Dictionary:
-	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak, "cave": cave, "lake": lake, "orchard": orchard, "hill": hill}
+	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak, "cave": cave, "lake": lake, "orchard": orchard, "hill": hill, "map_intro_seen": map_intro_seen, "unlocked_packs": unlocked_packs}
 
 
 func on_load(data: Dictionary) -> void:
+	map_intro_seen = data.get("map_intro_seen", false)
+	unlocked_packs = data.get("unlocked_packs", {}).duplicate()
 	pine = data.get("pine", {}).duplicate()
 	oak = data.get("oak", {}).duplicate()
 	cave = data.get("cave", {}).duplicate()

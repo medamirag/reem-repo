@@ -53,6 +53,11 @@ func _run() -> void:
 		_log("DONE highlight")
 		get_tree().quit()
 		return
+	if _path == "valley_map":
+		await _valley_map_path()
+		_log("DONE valley_map")
+		get_tree().quit()
+		return
 	if _path in ["stream", "stream_sand"]:
 		await _stream_path(_path == "stream_sand")
 		_log("DONE " + _path)
@@ -1105,6 +1110,45 @@ func _settings_path() -> void:
 	prefs.text_size = original[3]
 	prefs._apply()
 	prefs.save_preferences()
+
+
+func _valley_map_path() -> void:
+	var map = Globals.valley_map
+	map.open_map()
+	_expect(not map.is_open and not map.map_button.visible, "map unavailable on title")
+	await _step("start map test", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	await _wait_idle()
+	var key := InputEventKey.new()
+	key.pressed = true
+	key.keycode = KEY_M
+	Input.parse_input_event(key)
+	await get_tree().process_frame
+	_expect(map.is_open and get_tree().paused and map.pin.visible, "M opens map with current pin")
+	_expect(Globals.on_save().map_intro_seen, "first map introduction saved")
+	map.markers[7].pressed.emit()
+	_expect(map.destination.is_empty() and map.name_label.text == map.words.word_map_pine.text, "unvisited place shows name without travel")
+	_expect(map.markers[16].icon.resource_path.ends_with("map_lock.svg"), "unavailable pack has a lock")
+	key = InputEventKey.new()
+	key.pressed = true
+	key.keycode = KEY_ESCAPE
+	Input.parse_input_event(key)
+	await get_tree().process_frame
+	_expect(not map.is_open and not get_tree().paused, "Escape closes map")
+	_answers = [true]
+	await _click("BasketProp")
+	await _click("Door")
+	await _wait_room("Yard")
+	await _wait_idle()
+	map.map_button.pressed.emit()
+	map.markers[1].pressed.emit()
+	_expect(map.choices.visible and map.destination == "GrandpaRoom", "visited place asks before travel")
+	map.choices.get_child(1).pressed.emit()
+	_expect(map.is_open and map.destination.is_empty(), "No keeps Reem on the map")
+	map.markers[1].pressed.emit()
+	map.choices.get_child(0).pressed.emit()
+	await _wait_room("GrandpaRoom")
+	_expect(not map.is_open, "Yes closes map and travels")
 
 
 func _notebook_path() -> void:

@@ -1,4 +1,10 @@
 {
+ "jad_map_intro": {
+  "speaker": "Jad",
+  "tone": "warm",
+  "text": "هذه خريطة الوادي يا ريم. كلما زرتِ مكاناً جديداً ظهر عليها، وإن احترتِ في طريقك فانظري إليها.",
+  "audio": "res://assets/audio/lines/jad_map_intro.mp3"
+ },
  "reem_s1_001": {
   "speaker": "Reem",
   "tone": "calm, just woken up",

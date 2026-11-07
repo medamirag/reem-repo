@@ -5,6 +5,10 @@
 - **Who worked last:** Codex (builder)
 - **Date:** 2026-11-07
 - **Branch:** main
+- **Valley map:** Added all five art files and marked their rows done. The parchment button and M open the map in playable rooms. Escape or × closes it. It uses saved room visits for the leaf markers and travel, and the first introduction is saved when the map closes. All existing playable rooms, the remaining valley destinations and six pack entrances are in game_data/map_places.json. WaterfallPath already has a position. Keep adding rooms and pack IDs as they are built.
+- **Map audio:** Grandpa's introduction and 22 place-name recordings are queued as todo. The map shows the Arabic text now and will play the recordings as soon as the queued files are installed. Page turn uses a short generated paper rustle in game/audio.
+- **Map checks:** Content, import, startup, valley_map, green, sand, mixed and words passed. The dedicated route checked title exclusion, keyboard open and close, the pin, locked and unvisited places, and both answers before travel. Godot reported the usual exit leaks.
+- **How to play the map:** Reopen Godot and press F5. Start a journey, then click the parchment in the top left or press M. Reem's pin should bob over her room. Tap a cloud to see the place name, or visit the Yard and tap the leaf on Grandpa's house. Choose لَا to stay on the map or نَعَم to return to Grandpa's house. Press Escape or click × to close.
 - **Audio:** User approved Reem's Stream sample. Installed that exact take and recorded the other 85 pending rows with their saved voices. Oak added another 12 dialogue and 6 vocabulary recordings. All 104 delivered rows are done. Reem and Thaaloob dialogue use v3 with synthesis-only warm/playful tags. Words use Reem multilingual v2 without tags. No fallback or explicit numeric settings were used. Full batch listening remains open.
 - **Oak forest:** Spec section 12 and six new art originals. Enter via Pine Fork's left forward route. Start Sinjoob's search, collect three acorns, then choose whether to share. Meet Qunfood and choose whether to greet him. Either mistake can be repaired, and the two rewards cannot repeat. Save state tracks gifts, cards and acorns. The notebook shows the route, hints and both cards. Six new word IDs were generated via make_words.py. Oak's right exit uses provisional End until HoneyOrchard exists.
 - **Rock cave:** Section 13, registered room and visited map route. Qatqoota accepts lantern help and promises the bell. Ankoob has a four-anchor sequence with retry, healed mistakes and saved thread reward. Thaaloob can take HoneyJar only when present. Basket recovery heals the choice and custody remains saved for Narrow pass. Added 16 dialogue and 3 vocabulary recordings, two cards and context hints. Four art assets passed and Ankoob uses a temporary SVG after two failed leg-count checks.
@@ -23,6 +27,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Valley map:** Kept the existing notebook map available. The new map groups the farm and meadow rooms around their painted landmarks. Ramadan and snow share the base valley, with locks near the farm and festival. The painting simplifies several trail joins, including the three-way reunion at the orchard. The data keeps those connections and follows the roadmap pack IDs. The first cloud generation included the room reference, so the second standalone cloud replaced that take. Headless checks verify behavior. The paper rustle and RTL layout still need a listening and visual review in the game.
 
 - **Waterfall draft:** Fruit rolls on the ground and never hits either character. Reem narrates Qarqoor pending a verified saved voice.
 

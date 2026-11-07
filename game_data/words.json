@@ -1,4 +1,136 @@
 {
+  "word_map_farm": {
+    "text": "سَاحَةُ الْمَزْرَعَة",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_farm.mp3",
+    "objects": []
+  },
+  "word_map_house": {
+    "text": "بَيْتُ الْجَدّ",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_house.mp3",
+    "objects": []
+  },
+  "word_map_gate": {
+    "text": "بَوَّابَةُ الْمَزْرَعَة",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_gate.mp3",
+    "objects": []
+  },
+  "word_map_meadow": {
+    "text": "مَرْجُ الْأَزْهَار",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_meadow.mp3",
+    "objects": []
+  },
+  "word_map_tree": {
+    "text": "الشَّجَرَةُ الْكَبِيرَة",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_tree.mp3",
+    "objects": []
+  },
+  "word_map_fox": {
+    "text": "صَخْرَةُ ثَعْلُوب",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_fox.mp3",
+    "objects": []
+  },
+  "word_map_stream": {
+    "text": "جَدْوَلُ الْمَاء",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_stream.mp3",
+    "objects": []
+  },
+  "word_map_pine": {
+    "text": "مُفْتَرَقُ الصَّنَوْبَر",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_pine.mp3",
+    "objects": []
+  },
+  "word_map_oak": {
+    "text": "غَابَةُ الْبَلُّوط",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_oak.mp3",
+    "objects": []
+  },
+  "word_map_cave": {
+    "text": "التَّلُّ الصَّخْرِيّ",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_cave.mp3",
+    "objects": []
+  },
+  "word_map_lake": {
+    "text": "بُحَيْرَةُ الْوَادِي",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_lake.mp3",
+    "objects": []
+  },
+  "word_map_orchard": {
+    "text": "بُسْتَانُ الْعَسَل",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_orchard.mp3",
+    "objects": []
+  },
+  "word_map_slope": {
+    "text": "الْمُنْحَدَرُ الْأَخْضَر",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_slope.mp3",
+    "objects": []
+  },
+  "word_map_waterfall": {
+    "text": "دَرْبُ الشَّلَّال",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_waterfall.mp3",
+    "objects": []
+  },
+  "word_map_pass": {
+    "text": "الْمَمَرُّ الضَّيِّق",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_pass.mp3",
+    "objects": []
+  },
+  "word_map_festival": {
+    "text": "مِهْرَجَانُ الْقِمَّة",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_festival.mp3",
+    "objects": []
+  },
+  "word_map_island": {
+    "text": "جَزِيرَةُ الْمَنَارَة",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_island.mp3",
+    "objects": []
+  },
+  "word_map_mountain": {
+    "text": "جَبَلُ الْمَرْصَد",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_mountain.mp3",
+    "objects": []
+  },
+  "word_map_tiny": {
+    "text": "عَالَمُ النَّمْل",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_tiny.mp3",
+    "objects": []
+  },
+  "word_map_town": {
+    "text": "بَلْدَةُ السُّوق",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_town.mp3",
+    "objects": []
+  },
+  "word_map_ramadan": {
+    "text": "لَيْلَةُ رَمَضَان",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_ramadan.mp3",
+    "objects": []
+  },
+  "word_map_snow": {
+    "text": "يَوْمُ الثَّلْج",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_map_snow.mp3",
+    "objects": []
+  },
   "word_peacock": {
     "text": "طَاوُوس",
     "rooms": [

@@ -454,3 +454,13 @@ Click Ankoob to see his web and choose to keep trying or give up. Giving up wilt
 After helping both friends, click Thaaloob. He praises Reem's voice and asks her to put down her basket and sing. Reem can keep the basket close or put it down. If she puts it down, he tries to grab the honey. When HoneyJar is present, remove it and save fox_took_honey for Narrow pass. If Reem came via Stream without honey, Thaaloob finds no jar. Reem can pick her basket back up to repair the careless choice in either case. The jar stays with Thaaloob until Narrow pass if taken. Exit unlocks once the encounter ends, and the room remains revisitable.
 
 Save progress, both cards, bell and thread rewards, pending repairs and honey custody. Add notebook hints and the visited route from Pine Fork. Reem narrates Qatqoota and Ankoob until each has a verified saved voice. Record Thaaloob with his saved voice. Long presses teach visible cave objects without advancing the web or story.
+
+## 14. Meadow lake (afternoon)
+
+MeadowLake branches from PineFork. The walking path stays on dry ground, with Dafdoof on the left bank, Ghazlana by three visible hoofprints and the wooden boat tied to the right dock. Left returns to PineFork. Right leads to HoneyOrchard once the frog and gazelle are helped, with provisional End until the orchard exists.
+
+Click Dafdoof to learn that his voice is gone. Offer a spoonful of honey from HoneyJar and make warm honey water, or keep it all. If Reem arrives without HoneyJar, the boat can offer a small reserve spoonful so the puzzle remains available. Sharing warms the cup, brings back Dafdoof's song, and earns his card and the reed flute. Keeping the honey wilts once. Click Dafdoof again to share and heal. Keep the HoneyJar inventory item because only a spoonful was used.
+
+Click Ghazlana to learn she went beyond where her mother asked her to stay. Follow three hoofprints along the bank in order. A wrong print leaves the current clue active. The last print leads to a safe reunion point and earns her card. The child's actions cannot send her into the water.
+
+The boat introduces itself at its dock and mentions a future trip to the sea. It stays tied until the Gull island pack is built and unlocked. Reem narrates Dafdoof, Ghazlana and the boat until they have verified saved voices. Save the reserve honey, choices, hoofprint progress, rewards and cards. Notebook hints and the map update as the station progresses. Holding a hoofprint teaches the word and never advances the search.

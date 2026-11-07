@@ -1024,5 +1024,89 @@
   "tone": "warm",
   "text": "لِلْعَنْكَبُوتِ ثَمَانِي أَرْجُلٍ.",
   "audio": "res://assets/audio/lines/reem_cave_spider_fact.mp3"
+ },
+ "reem_lake_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "مَاءُ الْبُحَيْرَةِ هَادِئٌ. سَأَمْشِي عَلَى الضِّفَّةِ.",
+  "audio": "res://assets/audio/lines/reem_lake_arrive.mp3"
+ },
+ "reem_lake_frog": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "فَقَدَ دَفْدُوفُ صَوْتَهُ. قَلِيلٌ مِنَ الْعَسَلِ مَعَ مَاءٍ دَافِئٍ قَدْ يُسَاعِدُهُ.",
+  "audio": "res://assets/audio/lines/reem_lake_frog.mp3"
+ },
+ "reem_lake_need_honey": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لَيْسَ مَعِي عَسَلٌ. لِنَسْأَلِ الْقَارِبَ عِنْدَ الرَّصِيفِ.",
+  "audio": "res://assets/audio/lines/reem_lake_need_honey.mp3"
+ },
+ "reem_lake_boat": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَقُولُ الْقَارِبُ إِنَّهُ سَيَأْخُذُنِي إِلَى الْبَحْرِ يَوْمًا مَا.",
+  "audio": "res://assets/audio/lines/reem_lake_boat.mp3"
+ },
+ "reem_lake_reserve": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لَدَى الْقَارِبِ مِلْعَقَةٌ مِنَ الْعَسَلِ لِدَفْدُوفَ.",
+  "audio": "res://assets/audio/lines/reem_lake_reserve.mp3"
+ },
+ "reem_lake_share": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "عَادَ صَوْتُ دَفْدُوفَ! أَهْدَانِي مِزْمَارًا مِنَ الْقَصَبِ.",
+  "audio": "res://assets/audio/lines/reem_lake_share.mp3"
+ },
+ "reem_lake_keep": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بَقِيَ دَفْدُوفُ صَامِتًا. يُمْكِنُنِي أَنْ أُشَارِكَهُ الْعَسَلَ.",
+  "audio": "res://assets/audio/lines/reem_lake_keep.mp3"
+ },
+ "reem_lake_gazelle": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "ابْتَعَدَتْ غَزْلَانَةُ عَنِ الْمَكَانِ الَّذِي حَدَّدَتْهُ أُمُّهَا. لِنَتْبَعْ آثَارَ خُطَاهَا.",
+  "audio": "res://assets/audio/lines/reem_lake_gazelle.mp3"
+ },
+ "reem_lake_tracks": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "هَذَا أَثَرُ حَافِرٍ. لِنَبْحَثْ عَنِ الْأَثَرِ التَّالِي عَلَى الضِّفَّةِ.",
+  "audio": "res://assets/audio/lines/reem_lake_tracks.mp3"
+ },
+ "reem_lake_reunion": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "وَجَدْنَا أُمَّ غَزْلَانَةَ! سَتَبْقَى قُرْبَهَا هَذِهِ الْمَرَّةَ.",
+  "audio": "res://assets/audio/lines/reem_lake_reunion.mp3"
+ },
+ "reem_lake_frog_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "دَفْدُوفُ",
+  "audio": "res://assets/audio/lines/reem_lake_frog_name.mp3"
+ },
+ "reem_lake_frog_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "يَعِيشُ كَثِيرٌ مِنَ الضَّفَادِعِ قُرْبَ الْمَاءِ.",
+  "audio": "res://assets/audio/lines/reem_lake_frog_fact.mp3"
+ },
+ "reem_lake_gazelle_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "غَزْلَانَةُ",
+  "audio": "res://assets/audio/lines/reem_lake_gazelle_name.mp3"
+ },
+ "reem_lake_gazelle_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَجْرِي الْغِزْلَانُ بِسُرْعَةٍ عَلَى أَرْجُلِهَا الطَّوِيلَةِ.",
+  "audio": "res://assets/audio/lines/reem_lake_gazelle_fact.mp3"
  }
 }

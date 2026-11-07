@@ -31,6 +31,14 @@ Originals in `assets/` are never edited: new images are new files with the names
 | ankoob_sheet | `assets/art/characters/ankoob/ankoob_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See ankoob_sheet below | Clean edges, readable silhouette | done |
 | ankoob_base | `assets/art/characters/ankoob/ankoob_base.png` | `assets/art/characters/ankoob/ankoob_sheet.png` | transparent | 1536x1024 | See ankoob_base below | Clean edges, readable silhouette | problem: both attempts failed visible leg-count check |
 
+| bg11_meadow_lake | `assets/art/backgrounds/bg11_meadow_lake.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg11_meadow_lake below | Clear silhouette and correct background | done |
+| dafdoof_sheet | `assets/art/characters/dafdoof/dafdoof_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See dafdoof_sheet below | Clear silhouette and correct background | done |
+| dafdoof_base | `assets/art/characters/dafdoof/dafdoof_base.png` | `assets/art/characters/dafdoof/dafdoof_sheet.png` | transparent | 1536x1024 | See dafdoof_base below | Clear silhouette and correct background | done |
+| ghazlana_sheet | `assets/art/characters/ghazlana/ghazlana_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See ghazlana_sheet below | Clear silhouette and correct background | done |
+| ghazlana_base | `assets/art/characters/ghazlana/ghazlana_base.png` | `assets/art/characters/ghazlana/ghazlana_sheet.png` | transparent | 1536x1024 | See ghazlana_base below | Clear silhouette and correct background | done |
+| wooden_boat_sheet | `assets/art/characters/wooden_boat/wooden_boat_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See wooden_boat_sheet below | Clear silhouette and correct background | done |
+| wooden_boat_base | `assets/art/characters/wooden_boat/wooden_boat_base.png` | `assets/art/characters/wooden_boat/wooden_boat_sheet.png` | transparent | 1536x1024 | See wooden_boat_base below | Clear silhouette and correct background | done |
+
 <!-- One section per row, in the same order:
 
 ## <ID>
@@ -303,4 +311,95 @@ STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown
 
 ```text
 STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No letters, frame or watermark. Single full-body right-facing sprite of a friendly small purple-brown spider with exactly eight thin rounded legs, warm eyes and tiny gold scarf, matching reference. True alpha background, no ground or shadow.
+```
+
+## bg11_meadow_lake
+
+- **Save as:** `assets/art/backgrounds/bg11_meadow_lake.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1920x1080
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Wide afternoon lakeside meadow, clear warm sunlight, reeds and round stones along the far bank. Lower quarter is an uninterrupted broad dry sandy path. Short wooden dock on far right, still open water behind dock. No boat, people, animals, hoofprints or furniture. Style reference for brushwork only, not room contents.
+```
+
+## dafdoof_sheet
+
+- **Save as:** `assets/art/characters/dafdoof/dafdoof_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Three separated matching full-body turnaround views of a little moss-green frog with a cream belly, wide friendly eyes and a red neckerchief: front, right-facing profile and back on cream.
+```
+
+## dafdoof_base
+
+- **Save as:** `assets/art/characters/dafdoof/dafdoof_base.png`
+- **Attach:** `assets/art/characters/dafdoof/dafdoof_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Single full-body right-facing sprite of a little moss-green frog with a cream belly, wide friendly eyes and a red neckerchief, matching reference. Real transparent background, no ground or shadow.
+```
+
+## ghazlana_sheet
+
+- **Save as:** `assets/art/characters/ghazlana/ghazlana_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Three separated matching full-body turnaround views of a small tan gazelle with large kind eyes, white belly, dark leg markings and a lilac scarf: front, right-facing profile and back on cream.
+```
+
+## ghazlana_base
+
+- **Save as:** `assets/art/characters/ghazlana/ghazlana_base.png`
+- **Attach:** `assets/art/characters/ghazlana/ghazlana_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Single full-body right-facing sprite of a small tan gazelle with large kind eyes, white belly, dark leg markings and a lilac scarf, matching reference. Real transparent background, no ground or shadow.
+```
+
+## wooden_boat_sheet
+
+- **Save as:** `assets/art/characters/wooden_boat/wooden_boat_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Three separated matching full-body turnaround views of a small warmly smiling wooden rowboat with a blue stripe and two subtle carved eyes near the bow, no human limbs: front, right-facing profile and back on cream.
+```
+
+## wooden_boat_base
+
+- **Save as:** `assets/art/characters/wooden_boat/wooden_boat_base.png`
+- **Attach:** `assets/art/characters/wooden_boat/wooden_boat_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint, natural colours. No letters, frames or watermark. Single full-body right-facing sprite of a small warmly smiling wooden rowboat with a blue stripe and two subtle carved eyes near the bow, no human limbs, matching reference. Real transparent background, no ground or shadow.
 ```

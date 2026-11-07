@@ -1,4 +1,54 @@
 {
+  "word_frog": {
+    "text": "ضِفْدَع",
+    "rooms": [
+      "MeadowLake"
+    ],
+    "audio": "res://assets/audio/words/word_frog.mp3",
+    "objects": [
+      "prop:Dafdoof"
+    ]
+  },
+  "word_gazelle": {
+    "text": "غَزَال",
+    "rooms": [
+      "MeadowLake"
+    ],
+    "audio": "res://assets/audio/words/word_gazelle.mp3",
+    "objects": [
+      "prop:Ghazlana"
+    ]
+  },
+  "word_boat": {
+    "text": "قَارِب",
+    "rooms": [
+      "MeadowLake"
+    ],
+    "audio": "res://assets/audio/words/word_boat.mp3",
+    "objects": [
+      "prop:WoodenBoat"
+    ]
+  },
+  "word_dock": {
+    "text": "رَصِيف",
+    "rooms": [
+      "MeadowLake"
+    ],
+    "audio": "res://assets/audio/words/word_dock.mp3",
+    "objects": []
+  },
+  "word_hoofprint": {
+    "text": "أَثَرُ حَافِر",
+    "rooms": [
+      "MeadowLake"
+    ],
+    "audio": "res://assets/audio/words/word_hoofprint.mp3",
+    "objects": [
+      "prop:Print1",
+      "prop:Print2",
+      "prop:Print3"
+    ]
+  },
   "word_cat": {
     "text": "قِطَّة",
     "rooms": [
@@ -127,7 +177,8 @@
   "word_lake": {
     "text": "بُحَيْرَة",
     "rooms": [
-      "PineFork"
+      "PineFork",
+      "MeadowLake"
     ],
     "audio": "res://assets/audio/words/word_lake.mp3",
     "objects": []
@@ -177,7 +228,8 @@
   "word_reed": {
     "text": "قَصَب",
     "rooms": [
-      "Stream"
+      "Stream",
+      "MeadowLake"
     ],
     "audio": "res://assets/audio/words/word_reed.mp3",
     "objects": []
@@ -341,7 +393,8 @@
       "BigTree",
       "FoxRock",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "MeadowLake"
     ],
     "audio": "res://assets/audio/words/word_tree.mp3",
     "objects": []
@@ -355,7 +408,8 @@
       "BigTree",
       "FoxRock",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "MeadowLake"
     ],
     "audio": "res://assets/audio/words/word_sky.mp3",
     "objects": []
@@ -383,7 +437,8 @@
       "BigTree",
       "FoxRock",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "MeadowLake"
     ],
     "audio": "res://assets/audio/words/word_path.mp3",
     "objects": []
@@ -397,7 +452,8 @@
       "BigTree",
       "FoxRock",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "MeadowLake"
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
@@ -476,7 +532,8 @@
       "FoxRock",
       "Stream",
       "PineFork",
-      "RockCave"
+      "RockCave",
+      "MeadowLake"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []

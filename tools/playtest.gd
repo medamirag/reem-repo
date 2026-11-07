@@ -84,6 +84,17 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path in ["lake", "lake_sand"]:
+		await Globals.new_game()
+		Globals.pine["met"] = true
+		R.goto_room("PineFork")
+		await _wait_room("PineFork")
+		await _click("ExitLake")
+		await _complete_lake(_path == "lake_sand", true)
+		await _wait_room("End")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -160,6 +171,40 @@ func _run() -> void:
 	_log("lines said: %s" % " ".join(Lines.said.keys()))
 	_log("DONE %s" % _path)
 	get_tree().quit()
+
+
+func _complete_lake(wrong: bool, check_details := false) -> void:
+	await _wait_room("MeadowLake")
+	var prior_wilts := Globals.wilts
+	_expect(not R.current.is_exit_open("ExitRight"), "lake exit waits for both friends")
+	if not _has("HoneyJar"):
+		await _click("Dafdoof")
+		await _click("WoodenBoat")
+		_expect(Globals.lake.get("reserve"), "boat supplies a spoonful without a jar")
+	_answers = [not wrong]
+	await _click("Dafdoof")
+	if wrong:
+		_expect(Globals.lake.get("kept") and Globals.wilts == prior_wilts + 1, "withholding honey wilts once")
+		E.save_game(1)
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore lake choice", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("MeadowLake")
+		_expect(Globals.lake.get("kept"), "lake mistake survives save")
+		_answers = [true]
+		await _click("Dafdoof")
+	_expect(Globals.lake.get("flute") and Globals.wilts == prior_wilts, "frog shares the flute and branch is healthy")
+	await _click("Ghazlana")
+	if check_details:
+		await _hold_at(Vector2(730.0 / 1920, 846.0 / 1080), 0.7)
+		_expect(Globals.discovered_words.has("word_hoofprint") and Globals.lake.get("tracks", 0) == 0, "hoofprint hold teaches without advancing")
+		await _click("Print3")
+		_expect(Globals.lake.get("tracks", 0) == 0, "out-of-order hoofprint keeps current clue")
+	for id in [1, 2, 3]:
+		await _click("Print%d" % id)
+	_expect(Globals.lake.get("reunited") and Globals.friend_cards.has("dafdoof") and Globals.friend_cards.has("ghazlana"), "gazelle reunited and both cards earned")
+	await _click("ExitRight")
 
 
 func _cave_path(wrong: bool, has_honey: bool) -> void:
@@ -282,6 +327,7 @@ func _pine_path(wrong: bool) -> void:
 		await _hold_at(sample[0], .7)
 		_expect(Globals.discovered_words.has(sample[1]), "Pine real hold discovers " + sample[1])
 	await _click("ExitLake")
+	await _complete_lake(false)
 	await _wait_room("End")
 
 
@@ -291,6 +337,7 @@ func _finish_pine() -> void:
 	_answers = [true]
 	await _click("Thaaloob")
 	await _click("ExitLake")
+	await _complete_lake(false)
 
 
 func _stream_path(wrong: bool) -> void:

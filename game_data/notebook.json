@@ -114,6 +114,16 @@
       "fox_cave_praise",
       "reem_cave_keep",
       "reem_cave_repair"
+    ],
+    "lake_frog": [
+      "reem_lake_frog",
+      "reem_lake_need_honey",
+      "reem_lake_reserve"
+    ],
+    "lake_tracks": [
+      "reem_lake_gazelle",
+      "reem_lake_tracks",
+      "reem_lake_reunion"
     ]
   },
   "map": [
@@ -196,6 +206,14 @@
         0.64,
         0.46
       ]
+    },
+    {
+      "room": "MeadowLake",
+      "label": "بُحَيْرَةُ الْمَرْجِ",
+      "at": [
+        0.81,
+        0.63
+      ]
     }
   ],
   "edges": [
@@ -238,6 +256,10 @@
     [
       7,
       9
+    ],
+    [
+      7,
+      10
     ]
   ],
   "cards": [
@@ -276,6 +298,18 @@
       "image": "res://game/rooms/rock_cave/ankoob_placeholder.svg",
       "name_line": "reem_cave_spider_name",
       "fact_line": "reem_cave_spider_fact"
+    },
+    {
+      "id": "dafdoof",
+      "image": "res://assets/art/characters/dafdoof/dafdoof_base.png",
+      "name_line": "reem_lake_frog_name",
+      "fact_line": "reem_lake_frog_fact"
+    },
+    {
+      "id": "ghazlana",
+      "image": "res://assets/art/characters/ghazlana/ghazlana_base.png",
+      "name_line": "reem_lake_gazelle_name",
+      "fact_line": "reem_lake_gazelle_fact"
     }
   ]
 }

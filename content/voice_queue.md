@@ -128,6 +128,20 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_cave_cat_fact | Reem | warm | تُسَاعِدُ شَوَارِبُ الْقِطَّةِ عَلَى الإِحْسَاسِ بِمَا حَوْلَهَا. | done |
 | reem_cave_spider_name | Reem | warm | عَنْكُوبُ | done |
 | reem_cave_spider_fact | Reem | warm | لِلْعَنْكَبُوتِ ثَمَانِي أَرْجُلٍ. | done |
+| reem_lake_arrive | Reem | warm | مَاءُ الْبُحَيْرَةِ هَادِئٌ. سَأَمْشِي عَلَى الضِّفَّةِ. | done |
+| reem_lake_frog | Reem | warm | فَقَدَ دَفْدُوفُ صَوْتَهُ. قَلِيلٌ مِنَ الْعَسَلِ مَعَ مَاءٍ دَافِئٍ قَدْ يُسَاعِدُهُ. | done |
+| reem_lake_need_honey | Reem | warm | لَيْسَ مَعِي عَسَلٌ. لِنَسْأَلِ الْقَارِبَ عِنْدَ الرَّصِيفِ. | done |
+| reem_lake_boat | Reem | warm | يَقُولُ الْقَارِبُ إِنَّهُ سَيَأْخُذُنِي إِلَى الْبَحْرِ يَوْمًا مَا. | done |
+| reem_lake_reserve | Reem | warm | لَدَى الْقَارِبِ مِلْعَقَةٌ مِنَ الْعَسَلِ لِدَفْدُوفَ. | done |
+| reem_lake_share | Reem | warm | عَادَ صَوْتُ دَفْدُوفَ! أَهْدَانِي مِزْمَارًا مِنَ الْقَصَبِ. | done |
+| reem_lake_keep | Reem | warm | بَقِيَ دَفْدُوفُ صَامِتًا. يُمْكِنُنِي أَنْ أُشَارِكَهُ الْعَسَلَ. | done |
+| reem_lake_gazelle | Reem | warm | ابْتَعَدَتْ غَزْلَانَةُ عَنِ الْمَكَانِ الَّذِي حَدَّدَتْهُ أُمُّهَا. لِنَتْبَعْ آثَارَ خُطَاهَا. | done |
+| reem_lake_tracks | Reem | warm | هَذَا أَثَرُ حَافِرٍ. لِنَبْحَثْ عَنِ الْأَثَرِ التَّالِي عَلَى الضِّفَّةِ. | done |
+| reem_lake_reunion | Reem | warm | وَجَدْنَا أُمَّ غَزْلَانَةَ! سَتَبْقَى قُرْبَهَا هَذِهِ الْمَرَّةَ. | done |
+| reem_lake_frog_name | Reem | warm | دَفْدُوفُ | done |
+| reem_lake_frog_fact | Reem | warm | يَعِيشُ كَثِيرٌ مِنَ الضَّفَادِعِ قُرْبَ الْمَاءِ. | done |
+| reem_lake_gazelle_name | Reem | warm | غَزْلَانَةُ | done |
+| reem_lake_gazelle_fact | Reem | warm | تَجْرِي الْغِزْلَانُ بِسُرْعَةٍ عَلَى أَرْجُلِهَا الطَّوِيلَةِ. | done |
 
 ## Recording verification
 

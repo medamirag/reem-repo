@@ -79,6 +79,11 @@ func _run() -> void:
 		_log("DONE " + _path)
 		get_tree().quit()
 		return
+	if _path in ["cave", "cave_sand", "cave_empty"]:
+		await _cave_path(_path != "cave", _path == "cave_sand")
+		_log("DONE " + _path)
+		get_tree().quit()
+		return
 	if _path == "station_shots":
 		await Globals.new_game()
 		R.goto_room("Stream")
@@ -157,6 +162,49 @@ func _run() -> void:
 	get_tree().quit()
 
 
+func _cave_path(wrong: bool, has_honey: bool) -> void:
+	await Globals.new_game()
+	Globals.pine["met"] = true
+	R.goto_room("PineFork")
+	await _wait_room("PineFork")
+	await _click("ExitCave")
+	await _wait_room("RockCave")
+	_expect(not R.current.is_exit_open("ExitRight"), "Cave exit waits for both puzzles and fox")
+	if wrong:
+		if has_honey:
+			await C.player.add_to_inventory(I.HoneyJar)
+		_answers = [false]
+		await _click("Qatqoota")
+		_answers = [false]
+		await _click("Ankoob")
+		_expect(Globals.wilts == 2, "Cave mistakes wilt once")
+	_answers = [true]
+	await _click("Qatqoota")
+	_answers = [true]
+	await _click("Ankoob")
+	await _click("Anchor2")
+	await _click("Anchor1")
+	_expect(Globals.cave.get("progress") == 0, "wrong anchor resets the attempt")
+	for id in [2, 0, 3, 1]:
+		await _click("Anchor%d" % id)
+	_expect(Globals.cave.get("bell") and Globals.cave.get("threads") and Globals.wilts == 0, "Cave gifts earned")
+	_answers = [not wrong]
+	await _click("Thaaloob")
+	if wrong:
+		_expect(Globals.cave.get("fox_took_honey", false) == has_honey and not _has("HoneyJar"), "fox takes the jar only if present")
+		E.save_game(1)
+		Globals.reset()
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("restore Cave basket", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("RockCave")
+		_expect(Globals.cave.get("basket_down") and Globals.cave.get("fox_took_honey", false) == has_honey and not _has("HoneyJar"), "honey custody survives save")
+		await _click("CaveBasket")
+	_expect(Globals.wilts == 0 and Globals.friend_cards.has("qatqoota") and Globals.friend_cards.has("ankoob"), "Cave branches healthy and both cards earned")
+	await _click("ExitRight")
+	await _wait_room("End")
+
+
 func _oak_path(wrong: bool) -> void:
 	await Globals.new_game()
 	Globals.pine["met"] = true
@@ -233,7 +281,7 @@ func _pine_path(wrong: bool) -> void:
 	for sample in [[Vector2(.21,.30),"word_pine"],[Vector2(.29,.28),"word_cone"],[Vector2(.55,.40),"word_cave"],[Vector2(.91,.45),"word_lake"]]:
 		await _hold_at(sample[0], .7)
 		_expect(Globals.discovered_words.has(sample[1]), "Pine real hold discovers " + sample[1])
-	await _click("ExitLake" if wrong else "ExitCave")
+	await _click("ExitLake")
 	await _wait_room("End")
 
 
@@ -242,7 +290,7 @@ func _finish_pine() -> void:
 	await _wait_room("PineFork")
 	_answers = [true]
 	await _click("Thaaloob")
-	await _click("ExitCave")
+	await _click("ExitLake")
 
 
 func _stream_path(wrong: bool) -> void:

@@ -928,5 +928,101 @@
   "tone": "warm",
   "text": "قُنْفُوذُ",
   "audio": "res://assets/audio/lines/reem_oak_qunfood_name.mp3"
+ },
+ "reem_cave_arrive": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "فِي الْكَهْفِ ظِلٌّ بَارِدٌ، وَمَعِي فَانُوسِي.",
+  "audio": "res://assets/audio/lines/reem_cave_arrive.mp3"
+ },
+ "reem_cave_kitten": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَخَافُ قَطْقُوطَةُ مِنَ الظَّلَامِ. هَلْ أَمْشِي مَعَهَا؟",
+  "audio": "res://assets/audio/lines/reem_cave_kitten.mp3"
+ },
+ "reem_cave_light": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تَعَالَيْ يَا قَطْقُوطَةُ، سَنَمْشِي خُطْوَةً خُطْوَةً. سَتَدُقِّينَ جَرَسَ الْمِهْرَجَانِ!",
+  "audio": "res://assets/audio/lines/reem_cave_light.mp3"
+ },
+ "reem_cave_mock": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "بَقِيَتْ قَطْقُوطَةُ عِنْدَ الْمَدْخَلِ. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهَا.",
+  "audio": "res://assets/audio/lines/reem_cave_mock.mp3"
+ },
+ "reem_cave_web": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "قَطَعَتِ الرِّيحُ خُيُوطَ عَنْكُوبٍ. لِنَصِلِ الْأَشْكَالَ كَمَا فِي الْمِثَالِ.",
+  "audio": "res://assets/audio/lines/reem_cave_web.mp3"
+ },
+ "reem_cave_give_up": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لَمْ تَكْتَمِلِ الشَّبَكَةُ. يُمْكِنُنِي الْمُحَاوَلَةُ مَرَّةً أُخْرَى.",
+  "audio": "res://assets/audio/lines/reem_cave_give_up.mp3"
+ },
+ "reem_cave_thread": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "اكْتَمَلَتِ الشَّبَكَةُ! شُكْرًا لَكَ يَا عَنْكُوبُ عَلَى خُيُوطِ الْفَوَانِيسِ.",
+  "audio": "res://assets/audio/lines/reem_cave_thread.mp3"
+ },
+ "fox_cave_praise": {
+  "speaker": "Thaaloob",
+  "tone": "playful",
+  "text": "يَا رِيمُ، مَا أَجْمَلَ صَوْتَكِ! ضَعِي سَلَّتَكِ هُنَا وَغَنِّي لَنَا.",
+  "audio": "res://assets/audio/lines/fox_cave_praise.mp3"
+ },
+ "reem_cave_keep": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "شُكْرًا يَا ثَعْلُوبُ. سَأُبْقِي سَلَّتِي قُرْبِي.",
+  "audio": "res://assets/audio/lines/reem_cave_keep.mp3"
+ },
+ "reem_cave_stolen": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "أَخَذَ ثَعْلُوبُ جَرَّةَ الْعَسَلِ! سَأَرْفَعُ سَلَّتِي.",
+  "audio": "res://assets/audio/lines/reem_cave_stolen.mp3"
+ },
+ "reem_cave_empty": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "فَتَّشَ ثَعْلُوبُ فِي سَلَّتِي. سَأَرْفَعُهَا وَأُبْقِيهَا قُرْبِي.",
+  "audio": "res://assets/audio/lines/reem_cave_empty.mp3"
+ },
+ "reem_cave_repair": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "سَلَّتِي مَعِي مِنْ جَدِيدٍ.",
+  "audio": "res://assets/audio/lines/reem_cave_repair.mp3"
+ },
+ "reem_cave_cat_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "قَطْقُوطَةُ",
+  "audio": "res://assets/audio/lines/reem_cave_cat_name.mp3"
+ },
+ "reem_cave_cat_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "تُسَاعِدُ شَوَارِبُ الْقِطَّةِ عَلَى الإِحْسَاسِ بِمَا حَوْلَهَا.",
+  "audio": "res://assets/audio/lines/reem_cave_cat_fact.mp3"
+ },
+ "reem_cave_spider_name": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "عَنْكُوبُ",
+  "audio": "res://assets/audio/lines/reem_cave_spider_name.mp3"
+ },
+ "reem_cave_spider_fact": {
+  "speaker": "Reem",
+  "tone": "warm",
+  "text": "لِلْعَنْكَبُوتِ ثَمَانِي أَرْجُلٍ.",
+  "audio": "res://assets/audio/lines/reem_cave_spider_fact.mp3"
  }
 }

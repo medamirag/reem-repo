@@ -99,6 +99,21 @@
       "reem_oak_meet",
       "reem_oak_avoid",
       "reem_oak_greet"
+    ],
+    "cave_kitten": [
+      "reem_cave_arrive",
+      "reem_cave_kitten",
+      "reem_cave_light"
+    ],
+    "cave_web": [
+      "reem_cave_web",
+      "reem_cave_give_up",
+      "reem_cave_thread"
+    ],
+    "cave_fox": [
+      "fox_cave_praise",
+      "reem_cave_keep",
+      "reem_cave_repair"
     ]
   },
   "map": [
@@ -173,6 +188,14 @@
         0.88,
         0.46
       ]
+    },
+    {
+      "room": "RockCave",
+      "label": "كَهْفُ الصُّخُورِ",
+      "at": [
+        0.64,
+        0.46
+      ]
     }
   ],
   "edges": [
@@ -211,6 +234,10 @@
     [
       7,
       8
+    ],
+    [
+      7,
+      9
     ]
   ],
   "cards": [
@@ -237,6 +264,18 @@
       "image": "res://assets/art/characters/qunfood/qunfood_base.png",
       "name_line": "reem_oak_qunfood_name",
       "fact_line": "reem_oak_card_qunfood"
+    },
+    {
+      "id": "qatqoota",
+      "image": "res://assets/art/characters/qatqoota/qatqoota_base.png",
+      "name_line": "reem_cave_cat_name",
+      "fact_line": "reem_cave_cat_fact"
+    },
+    {
+      "id": "ankoob",
+      "image": "res://game/rooms/rock_cave/ankoob_placeholder.svg",
+      "name_line": "reem_cave_spider_name",
+      "fact_line": "reem_cave_spider_fact"
     }
   ]
 }

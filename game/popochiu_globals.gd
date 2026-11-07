@@ -23,6 +23,7 @@ var friend_cards := {}
 var stream := {}
 var pine := {}
 var oak := {}
+var cave := {}
 ## Every word the child has discovered so far (word id -> true). Kept for a later reward; not
 ## cleared by a new game from the end screen, included in the autosave.
 var discovered_words := {}
@@ -153,6 +154,7 @@ var fox_intro_done := false
 ## Puts every flag and counter back to how a new game starts. Used by the end screen's
 ## «العودة إلى البداية» button.
 func reset() -> void:
+	cave.clear()
 	oak.clear()
 	pine.clear()
 	stream.clear()
@@ -233,12 +235,13 @@ func play_ambience(cue_name: String) -> void:
 
 
 func on_save() -> Dictionary:
-	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak}
+	return {"discovered_words": discovered_words, "hint_steps": hint_steps, "friend_cards": friend_cards, "stream": stream, "pine": pine, "oak": oak, "cave": cave}
 
 
 func on_load(data: Dictionary) -> void:
 	pine = data.get("pine", {}).duplicate()
 	oak = data.get("oak", {}).duplicate()
+	cave = data.get("cave", {}).duplicate()
 	stream = data.get("stream", {}).duplicate()
 	discovered_words = data.get("discovered_words", {}).duplicate()
 	hint_steps = data.get("hint_steps", {}).duplicate()

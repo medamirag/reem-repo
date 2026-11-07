@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 156">
+  <!-- Temporary spider art. Replace with the approved eight-legged asset. -->
+  <path fill="none" stroke="#754759" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"
+    d="M105 86 63 60 27 77 M108 94 56 83 18 105 M108 102 66 107 36 133 M112 110 81 126 65 146
+       M132 86 168 59 208 76 M132 94 184 82 222 104 M132 102 174 106 204 132 M128 110 159 125 177 146"/>
+  <ellipse cx="119" cy="92" rx="52" ry="39" fill="#a3677b" stroke="#583544" stroke-width="4"/>
+  <circle cx="137" cy="61" r="35" fill="#c78a98" stroke="#583544" stroke-width="4"/>
+  <path d="M112 88 Q136 99 164 86" fill="none" stroke="#f0be62" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="131" cy="57" r="5" fill="#382323"/>
+  <circle cx="153" cy="57" r="5" fill="#382323"/>
+  <path d="M135 69 Q143 78 151 69" fill="none" stroke="#382323" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -442,3 +442,15 @@ Click Sinjoob to start searching. Click the three acorns in any order. Each move
 Click Qunfood to meet him. Choose to greet him or walk away because of his spines. Greeting lets him help Reem gather leaves, earns his card and festival leaves, and blooms once. Walking away wilts once. Qunfood stays reachable and the next click offers a greeting to repair. Reem narrates until approved voices exist for both animals.
 
 Save distinct search, collection, choice, repair and reward flags. Update the notebook with the visited route, three-stage hints for the nut search and each repair, and cards for both friends. Long presses teach visible oak forest words and never collect an acorn. Check both first-choice paths, all repairs, save and restore, and repeated clicks.
+
+## 13. Rock cave (noon)
+
+RockCave branches from PineFork and exits to HoneyOrchard, using provisional End until that station exists. A broad safe path remains visible in soft reflected daylight. The left exit always returns to PineFork. Qatqoota waits near the left entrance, Ankoob and a damaged web sit in the middle, and Thaaloob waits on the right. No jump scare, countdown or total blackout.
+
+Click Qatqoota and choose to offer the lantern or laugh at her fear. Offering it creates a warm pool of light and lets her walk a short way alongside Reem. She earns her card and offers to ring the festival bell. Laughing wilts once and leaves her at the entrance. The next conversation allows repair through the lantern choice, with no extra wilt on repetition.
+
+Click Ankoob to see his web and choose to keep trying or give up. Giving up wilts once. Retry whenever ready. The web shows a four-anchor example sequence using shapes as well as colours. The child then clicks matching anchors in order. An incorrect anchor clears only the current attempt and leaves the example available. Completing the pattern earns Ankoob's card and festival threads and heals a previous give-up wilt or adds a blossom.
+
+After helping both friends, click Thaaloob. He praises Reem's voice and asks her to put down her basket and sing. Reem can keep the basket close or put it down. If she puts it down, he tries to grab the honey. When HoneyJar is present, remove it and save fox_took_honey for Narrow pass. If Reem came via Stream without honey, Thaaloob finds no jar. Reem can pick her basket back up to repair the careless choice in either case. The jar stays with Thaaloob until Narrow pass if taken. Exit unlocks once the encounter ends, and the room remains revisitable.
+
+Save progress, both cards, bell and thread rewards, pending repairs and honey custody. Add notebook hints and the visited route from Pine Fork. Reem narrates Qatqoota and Ankoob until each has a verified saved voice. Record Thaaloob with his saved voice. Long presses teach visible cave objects without advancing the web or story.

@@ -112,6 +112,22 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_oak_card_qunfood | Reem | warm | تَحْمِي الْأَشْوَاكُ جِسْمَ الْقُنْفُذِ. | done |
 | reem_oak_sinjoob_name | Reem | warm | سِنْجُوبُ | done |
 | reem_oak_qunfood_name | Reem | warm | قُنْفُوذُ | done |
+| reem_cave_arrive | Reem | warm | فِي الْكَهْفِ ظِلٌّ بَارِدٌ، وَمَعِي فَانُوسِي. | done |
+| reem_cave_kitten | Reem | warm | تَخَافُ قَطْقُوطَةُ مِنَ الظَّلَامِ. هَلْ أَمْشِي مَعَهَا؟ | done |
+| reem_cave_light | Reem | warm | تَعَالَيْ يَا قَطْقُوطَةُ، سَنَمْشِي خُطْوَةً خُطْوَةً. سَتَدُقِّينَ جَرَسَ الْمِهْرَجَانِ! | done |
+| reem_cave_mock | Reem | warm | بَقِيَتْ قَطْقُوطَةُ عِنْدَ الْمَدْخَلِ. يُمْكِنُنِي أَنْ أَعُودَ إِلَيْهَا. | done |
+| reem_cave_web | Reem | warm | قَطَعَتِ الرِّيحُ خُيُوطَ عَنْكُوبٍ. لِنَصِلِ الْأَشْكَالَ كَمَا فِي الْمِثَالِ. | done |
+| reem_cave_give_up | Reem | warm | لَمْ تَكْتَمِلِ الشَّبَكَةُ. يُمْكِنُنِي الْمُحَاوَلَةُ مَرَّةً أُخْرَى. | done |
+| reem_cave_thread | Reem | warm | اكْتَمَلَتِ الشَّبَكَةُ! شُكْرًا لَكَ يَا عَنْكُوبُ عَلَى خُيُوطِ الْفَوَانِيسِ. | done |
+| fox_cave_praise | Thaaloob | playful | يَا رِيمُ، مَا أَجْمَلَ صَوْتَكِ! ضَعِي سَلَّتَكِ هُنَا وَغَنِّي لَنَا. | done |
+| reem_cave_keep | Reem | warm | شُكْرًا يَا ثَعْلُوبُ. سَأُبْقِي سَلَّتِي قُرْبِي. | done |
+| reem_cave_stolen | Reem | warm | أَخَذَ ثَعْلُوبُ جَرَّةَ الْعَسَلِ! سَأَرْفَعُ سَلَّتِي. | done |
+| reem_cave_empty | Reem | warm | فَتَّشَ ثَعْلُوبُ فِي سَلَّتِي. سَأَرْفَعُهَا وَأُبْقِيهَا قُرْبِي. | done |
+| reem_cave_repair | Reem | warm | سَلَّتِي مَعِي مِنْ جَدِيدٍ. | done |
+| reem_cave_cat_name | Reem | warm | قَطْقُوطَةُ | done |
+| reem_cave_cat_fact | Reem | warm | تُسَاعِدُ شَوَارِبُ الْقِطَّةِ عَلَى الإِحْسَاسِ بِمَا حَوْلَهَا. | done |
+| reem_cave_spider_name | Reem | warm | عَنْكُوبُ | done |
+| reem_cave_spider_fact | Reem | warm | لِلْعَنْكَبُوتِ ثَمَانِي أَرْجُلٍ. | done |
 
 ## Recording verification
 

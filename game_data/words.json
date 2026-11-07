@@ -1,4 +1,32 @@
 {
+  "word_cat": {
+    "text": "قِطَّة",
+    "rooms": [
+      "RockCave"
+    ],
+    "audio": "res://assets/audio/words/word_cat.mp3",
+    "objects": [
+      "prop:Qatqoota"
+    ]
+  },
+  "word_spider": {
+    "text": "عَنْكَبُوت",
+    "rooms": [
+      "RockCave"
+    ],
+    "audio": "res://assets/audio/words/word_spider.mp3",
+    "objects": [
+      "prop:Ankoob"
+    ]
+  },
+  "word_web": {
+    "text": "شَبَكَة",
+    "rooms": [
+      "RockCave"
+    ],
+    "audio": "res://assets/audio/words/word_web.mp3",
+    "objects": []
+  },
   "word_oak": {
     "text": "بَلُّوط",
     "rooms": [
@@ -90,7 +118,8 @@
   "word_cave": {
     "text": "كَهْف",
     "rooms": [
-      "PineFork"
+      "PineFork",
+      "RockCave"
     ],
     "audio": "res://assets/audio/words/word_cave.mp3",
     "objects": []
@@ -446,7 +475,8 @@
       "BigTree",
       "FoxRock",
       "Stream",
-      "PineFork"
+      "PineFork",
+      "RockCave"
     ],
     "audio": "res://assets/audio/words/word_rock.mp3",
     "objects": []

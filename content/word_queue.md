@@ -63,6 +63,9 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_hedgehog | Reem | clear and cheerful, saying one word to teach a child | قُنْفُذ | done |
 | word_leaf | Reem | clear and cheerful, saying one word to teach a child | وَرَقَة | done |
 | word_fern | Reem | clear and cheerful, saying one word to teach a child | سَرَخْس | done |
+| word_cat | Reem | clear and cheerful, saying one word to teach a child | قِطَّة | done |
+| word_spider | Reem | clear and cheerful, saying one word to teach a child | عَنْكَبُوت | done |
+| word_web | Reem | clear and cheerful, saying one word to teach a child | شَبَكَة | done |
 
 ## Recording verification
 

@@ -10,6 +10,9 @@ import os
 #   objects: "prop:<Name>", "character:<Name>", "decor:<NodeName>" (a node in the room),
 #            "item:<InventoryItemName>"
 WORDS = {
+    "word_cat": ("قِطَّة", ["RockCave"], ["prop:Qatqoota"]),
+    "word_spider": ("عَنْكَبُوت", ["RockCave"], ["prop:Ankoob"]),
+    "word_web": ("شَبَكَة", ["RockCave"], []),
     "word_oak": ("بَلُّوط", ["OakForest"], []),
     "word_acorn": ("ثَمْرَةُ بَلُّوط", ["OakForest"], ["prop:Acorn1", "prop:Acorn2", "prop:Acorn3"]),
     "word_squirrel": ("سِنْجَاب", ["OakForest"], ["prop:Sinjoob"]),
@@ -20,7 +23,7 @@ WORDS = {
     "word_olive": ("زَيْتُون", ["Stream"], []),
     "word_pine": ("صَنَوْبَر", ["PineFork"], []),
     "word_cone": ("مَخْرُوط", ["PineFork"], []),
-    "word_cave": ("كَهْف", ["PineFork"], []),
+    "word_cave": ("كَهْف", ["PineFork", "RockCave"], []),
     "word_lake": ("بُحَيْرَة", ["PineFork"], []),
     "word_duck": ("بَطَّة", ["Stream"], ["prop:Ducks"]),
     "word_duckling": ("فَرْخ", ["Stream"], ["decor:Duckling1", "decor:Duckling2", "decor:Duckling3"]),
@@ -54,7 +57,7 @@ WORDS = {
     "word_sign":         ("لَافِتَة",  ["Gate", "MeadowFork", "PineFork"], ["prop:Sign"]),
     "word_cloud":        ("غَيْمَة",   ["Gate", "Stream", "PineFork"], []),
     "word_hill":         ("تَلّ",      ["Gate", "MeadowFork", "FoxRock", "Stream", "PineFork"], []),
-    "word_rock":         ("صَخْرَة",   ["MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork"], []),
+    "word_rock":         ("صَخْرَة",   ["MeadowFork", "BigTree", "FoxRock", "Stream", "PineFork", "RockCave"], []),
     "word_shade":        ("ظِلّ",      ["BigTree"], []),
     "word_berries":      ("تُوت",      ["FoxRock"], []),
     "word_stream":       ("جَدْوَل",   ["FoxRock", "Stream"], []),

@@ -25,6 +25,12 @@ Originals in `assets/` are never edited: new images are new files with the names
 | qunfood_base | `assets/art/characters/qunfood/qunfood_base.png` | `assets/art/characters/qunfood/qunfood_sheet.png` | transparent | 1536x1024 | See qunfood_base below | Clear silhouette and correct background | done |
 | oak_acorn | `assets/art/items/oak_acorn.png` | `assets/art/backgrounds/bg1_room.png` | transparent | 1024x1024 | See oak_acorn below | Clear silhouette and correct background | done |
 
+| bg10_rock_cave | `assets/art/backgrounds/bg10_rock_cave.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg10_rock_cave below | Clean edges, readable silhouette | done |
+| qatqoota_sheet | `assets/art/characters/qatqoota/qatqoota_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See qatqoota_sheet below | Clean edges, readable silhouette | done |
+| qatqoota_base | `assets/art/characters/qatqoota/qatqoota_base.png` | `assets/art/characters/qatqoota/qatqoota_sheet.png` | transparent | 1536x1024 | See qatqoota_base below | Clean edges, readable silhouette | done |
+| ankoob_sheet | `assets/art/characters/ankoob/ankoob_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See ankoob_sheet below | Clean edges, readable silhouette | done |
+| ankoob_base | `assets/art/characters/ankoob/ankoob_base.png` | `assets/art/characters/ankoob/ankoob_sheet.png` | transparent | 1536x1024 | See ankoob_base below | Clean edges, readable silhouette | problem: both attempts failed visible leg-count check |
+
 <!-- One section per row, in the same order:
 
 ## <ID>
@@ -232,4 +238,69 @@ STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown
 
 ```text
 STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink contours, soft textured paint, rich natural colours, bright welcoming lighting. Match the reference style. No writing, frames or watermark. One isolated large recognizable oak acorn with chestnut brown nut and knobbly green-brown cup. True alpha, no ground or shadow.
+```
+
+## bg10_rock_cave
+
+- **Save as:** `assets/art/backgrounds/bg10_rock_cave.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1920x1080
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No letters, frame or watermark. Wide welcoming limestone cave, late noon reflected gold and cool blue. Broad continuous flat dry path in lower quarter. Soft daylight through left and right openings. Smooth rock shelf center for a web game drawn in Godot. Subtle rounded stalactites safely above path. No characters, spiderweb, frightening silhouettes, text or darkness hiding the path.
+```
+
+## qatqoota_sheet
+
+- **Save as:** `assets/art/characters/qatqoota/qatqoota_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No letters, frame or watermark. Three separated matching full-body turnaround views of a small shy cream kitten with amber patches, rounded paws and dusty blue neck ribbon: front, right-facing profile, back on plain cream.
+```
+
+## qatqoota_base
+
+- **Save as:** `assets/art/characters/qatqoota/qatqoota_base.png`
+- **Attach:** `assets/art/characters/qatqoota/qatqoota_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No letters, frame or watermark. Single full-body right-facing sprite of a small shy cream kitten with amber patches, rounded paws and dusty blue neck ribbon, matching reference. True alpha background, no ground or shadow.
+```
+
+## ankoob_sheet
+
+- **Save as:** `assets/art/characters/ankoob/ankoob_sheet.png`
+- **Attach:** `assets/art/backgrounds/bg1_room.png`
+- **Background:** opaque
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No letters, frame or watermark. Three separated matching full-body turnaround views of a friendly small purple-brown spider with exactly eight thin rounded legs, warm eyes and tiny gold scarf: front, right-facing profile, back on plain cream.
+```
+
+## ankoob_base
+
+- **Save as:** `assets/art/characters/ankoob/ankoob_base.png`
+- **Attach:** `assets/art/characters/ankoob/ankoob_sheet.png`
+- **Background:** transparent
+- **Size:** 1536x1024
+
+**Prompt:**
+
+```text
+STYLE: Warm hand-painted 2D children's storybook adventure. Rounded forms, brown ink outlines, soft textured paint. No letters, frame or watermark. Single full-body right-facing sprite of a friendly small purple-brown spider with exactly eight thin rounded legs, warm eyes and tiny gold scarf, matching reference. True alpha background, no ground or shadow.
 ```

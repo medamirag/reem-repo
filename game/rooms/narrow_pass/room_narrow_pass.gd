@@ -3,9 +3,12 @@ extends ReemRoom
 
 const Data := preload("room_narrow_pass_state.gd")
 var state: Data = load("res://game/rooms/narrow_pass/room_narrow_pass.tres")
-@export var stone_open := Vector2(1420, 916)
+## Where the rock over Thaaloob's tail ends up after it rolls away (docs/BUGS.md #5).
+@export var stone_open := Vector2(1610, 800)
+## How far the rock turns while rolling away (radians; one full turn lands it flat again).
+@export var stone_roll := TAU
 @export var fox_free := Vector2(1090, 854)
-const TAIL_OFFSET := Vector2(118, -169)
+const TAIL_OFFSET := Vector2(110, -172)
 
 
 func _on_room_started() -> void:
@@ -28,6 +31,9 @@ func _on_restore_from_savegame() -> void:
 func _sync_stone() -> void:
 	if Globals.narrow_pass.get("fox_joins", false):
 		$Props/LooseStone.position = stone_open
+		$Props/LooseStone/Sprite2D.rotation = stone_roll
+		# Once rolled off the tail it no longer has to be drawn over Thaaloob.
+		$Props/LooseStone/Sprite2D.z_index = 0
 		$Props/Thaaloob.position = fox_free
 		$Props/FoxTail.position = fox_free + TAIL_OFFSET
 
@@ -76,7 +82,10 @@ func _free_fox() -> void:
 	var story := Globals.narrow_pass
 	G.block()
 	var tween := create_tween()
-	tween.tween_property($Props/LooseStone, "position", stone_open, 0.5)
+	# The rock over the tail rolls away to the right, then Thaaloob steps free.
+	tween.tween_property($Props/LooseStone, "position", stone_open, 0.9).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.parallel().tween_property($Props/LooseStone/Sprite2D, "rotation", stone_roll, 0.9).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(func() -> void: $Props/LooseStone/Sprite2D.z_index = 0)
 	tween.tween_property($Props/Thaaloob, "position", fox_free, 0.4)
 	tween.parallel().tween_property($Props/FoxTail, "position", fox_free + TAIL_OFFSET, 0.4)
 	await tween.finished

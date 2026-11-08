@@ -73,24 +73,24 @@ scale = Vector2(0.3617, 0.3617)
 [node name="LooseStone" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")
 script_name = "LooseStone"
-position = Vector2(1346, 815)
-interaction_polygon = PackedVector2Array(-43, -78, 43, -78, 43, 10, -43, 10)
-walk_to_point = Vector2(0, 71)
+position = Vector2(1340, 805)
+interaction_polygon = PackedVector2Array(-88, -118, 88, -118, 88, 0, -88, 0)
+walk_to_point = Vector2(0, 75)
 
 [node name="InteractionPolygon" parent="Props/LooseStone" index="2"]
-polygon = PackedVector2Array(-43, -78, 43, -78, 43, 10, -43, 10)
+polygon = PackedVector2Array(-88, -118, 88, -118, 88, 0, -88, 0)
 
 [node name="Sprite2D" parent="Props/LooseStone" index="0"]
 z_index = 1
-position = Vector2(0, -32)
+position = Vector2(0, -60)
 texture = ExtResource("10")
-scale = Vector2(0.13, 0.13)
+scale = Vector2(0.26, 0.26)
 
 [node name="FoxTail" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")
 script_name = "FoxTail"
-position = Vector2(1298, 685)
-interaction_polygon = PackedVector2Array(-20, -29, 19, -29, 19, 19, -20, 19)
+position = Vector2(1290, 682)
+interaction_polygon = PackedVector2Array(-35, -70, 35, -70, 35, 0, -35, 0)
 
 [node name="InteractionPolygon" parent="Props/FoxTail" index="2"]
-polygon = PackedVector2Array(-20, -29, 19, -29, 19, 19, -20, 19)
+polygon = PackedVector2Array(-35, -70, 35, -70, 35, 0, -35, 0)

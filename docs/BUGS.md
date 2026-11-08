@@ -50,7 +50,7 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 - **What a child sees:** Thaaloob is about two thirds of Reem's height at Narrow Pass, but as tall as Reem in FoxRock and the orchard.
 - **Cause:** at Narrow Pass he is a prop with his own copy of the fox picture at scale 0.24 (`game/rooms/narrow_pass/room_narrow_pass.tscn`); the Thaaloob character uses 0.3617.
 - **Fix:** the same 0.3617 scale, with his click area, his stuck tail point and the stone pinning it moved to match.
-- **Left to decide:** at his real size the tail's tip is above the ground, so the stone (which must stay on the ground) now sits just under the tail instead of over it. If the tail should look pinned, the fox needs a pose with the tail on the ground, or a second rock drawn over the tail.
+- **Tail (decided by the user, 2026-11-08: a rock drawn over the tail):** the loose stone is now a bigger rock on the ground in front of Thaaloob, covering the lower curl of his tail with the white tip showing above it, so the tail looks pinned. When Reem clicks it, it rolls one full turn away to the right and lands flat, then Thaaloob steps free (`game/rooms/narrow_pass/room_narrow_pass.gd`: `stone_open`, `stone_roll`). Until Codex paints `pass_tail_rock` (art queue), the placeholder is the existing `pass_loose_stone.png` at twice its old size. After: `docs/bugs/136_NarrowPass_tail_rock_fixed.jpg`.
 
 ### 6. Grandpa and Thaaloob too small at the festival
 

@@ -118,6 +118,7 @@ Originals in `assets/` are never edited: new images are new files with the names
 | bg35_tree_day | `assets/art/backgrounds/bg35_tree_day.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg35_tree_day below | No lettering, clear walking lane | done |
 | bg36_mother_garden | `assets/art/backgrounds/bg36_mother_garden.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg36_mother_garden below | No lettering, blank card and clear walking lane | done |
 | dew_leaf_bridge | `assets/art/items/dew_leaf_bridge.png` | `assets/art/backgrounds/bg30_dew_bank.png` | transparent | 1536x512 | See dew_leaf_bridge below | One long leaf only, real alpha, wide and flat (about 4:1) | todo |
+| pass_tail_rock | `assets/art/items/pass_tail_rock.png` | `assets/art/backgrounds/bg15_narrow_pass.png` | transparent | 1536x1024 | See pass_tail_rock below | One rock only, real alpha, sandstone like the Narrow Pass boulders, round enough to roll | todo |
 
 <!-- One section per row, in the same order:
 
@@ -1240,3 +1241,10 @@ One friendly teal and bronze beetle matching the turnaround, exact six distinct 
 - **Reference:** `assets/art/backgrounds/bg30_dew_bank.png`
 - **Use:** the LeafBridge prop in DewBank (ants pack), drawn about 520x120 px; it floats tilted on the dew drop, then lies flat as a bridge. Replaces the placeholder `game/scripts/ants/leaf_bridge.svg` (docs/BUGS.md #10).
 - **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One long flat fresh green leaf seen from the side, lying horizontally like a small boat or bridge, gentle upturned tip on the right, stem on the left, soft sage and spring green with a visible central vein. Wide and flat, about four times longer than tall. Isolated on real transparent background, no water, ground, insects or shadow.
+
+## pass_tail_rock
+
+- **Save as:** `assets/art/items/pass_tail_rock.png`
+- **Reference:** `assets/art/backgrounds/bg15_narrow_pass.png`
+- **Use:** the LooseStone prop in NarrowPass, drawn about 180x120 px in front of Thaaloob so it covers the lower part of his tail and pins it (his white tail tip stays visible above it). When Reem frees him it rolls away to the right. Replaces the placeholder (the small `pass_loose_stone.png` scaled up) in `game/rooms/narrow_pass/room_narrow_pass.tscn` (docs/BUGS.md #5).
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One medium rounded sandstone rock in the same warm pink-ochre colours, soft shading and brown ink outlines as the boulders in the attached Narrow Pass background, a few small cracks and a little tuft of dry grass at its base. Rounded, slightly wider than tall, sturdy enough to pin a fox's tail but clearly able to roll. Side view, isolated on real transparent background, no ground, shadow, animals or other rocks.

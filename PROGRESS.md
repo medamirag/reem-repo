@@ -2,9 +2,10 @@
 
 ## Handoff
 
-- **Who worked last:** Codex (builder).
+- **Who worked last:** Claude Code (builder), instruction-file cleanup only; the audit items below are still Codex's latest status and its "Next" still applies.
 - **Date:** 2026-11-08
 - **Branch:** main
+- **Instruction files:** AGENTS.md now says the playtest has a path per route/station/pack/event/system (always run green, sand, mixed and words plus the paths for what you changed, one at a time) and points to `addons/popochiu/plugin.cfg` for the Popochiu version (2.2.1, not 2.0.3). The per-batch recording notes moved verbatim from AGENTS.md to `content/voice_log.md`: **record each new voice batch there**, and only the saved voice and its settings in the AGENTS.md registry. docs/PIPELINE.md says the same (changed at the user's request). No game files changed.
 - **Audit item 1:** Replaced all cache references in the GUI theme with one tracked sprite sheet under game/gui/resources. Content, import, startup, green, sand, mixed and words passed.
 - **Audit item 2:** The three repeated hint sets now have distinct nudges, clues and actions. Nine Reem recordings are queued. Content, startup, notebook, green, sand, mixed and words passed.
 - **Audit item 3:** The map uses fully diacritised jad_map_intro_vocalised with a fresh take from saved Jad. Original line and audio preserved. Content, import, startup, valley_map, green, sand, mixed and words passed.

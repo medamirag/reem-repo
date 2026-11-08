@@ -88,61 +88,9 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 
 - **New expressive lines:** use `eleven_v3`; if v3 fails, use `eleven_multilingual_v2` with the same saved voice. Clear isolated words reuse Reem's multilingual-v2 approach. Existing originals stay untouched.
 - These are historical working settings, not proof that today's v3 endpoint accepts those parameters. Check the current model/tool schema before generating. Never silently round unsupported settings or claim untested values worked. The voice-list tool returns identities, not historical generation settings.
-- Before a batch, compare a sample with that character's existing audio for voice, pace, Arabic pronunciation and loudness. Record the successful model and explicit supported settings here: stability, similarity boost, style, speed, speaker boost, tags, reference line/file and any fallback. Mark unsupported fields as such. Do not rely on changing service defaults; exact historical numeric defaults remain unknown until verified.
+- Before a batch, compare a sample with that character's existing audio for voice, pace, Arabic pronunciation and loudness. Record the successful model and supported settings in that character's row above, and the batch details (stability, similarity boost, style, speed, speaker boost, tags, reference line/file and any fallback) in `content/voice_log.md`. Mark unsupported fields as such. Do not rely on changing service defaults; exact historical numeric defaults remain unknown until verified.
 - Copy spoken Arabic and diacritics from line/word data. Tone is direction only. V3 emotion tags belong only to synthesis input, never displayed Arabic or data text; omit them for v2 fallback.
 - **Every new character:** before recording dialogue, add a row here with game speaker, actual saved name, verified voice ID, successful model/settings and reference recording; add its design to the Voices queue too. Mark unverified items pending, never invent IDs or successful settings. Other saved account voices are not automatically assigned to future game characters.
-
-### Approved Reem sample and November 7 batch
-
-- User approved the Stream sample. The same take is installed at `res://assets/audio/lines/reem_stream_arrive.mp3`. Reference was `res://assets/audio/lines/reem_s1_002.mp3`.
-- Saved Reem and Thaaloob voices recorded dialogue with `eleven_v3` and synthesis-only tags `[warmly]` and `[playful]` respectively. Reem recorded vocabulary with `eleven_multilingual_v2` without tags. No model fallback was needed.
-- The connected generation call exposes no numeric controls. Stability, similarity, style, speed and speaker boost values were neither sent nor verified. Historical Thaaloob stability 0.3 is not an offered value in the connected v3 schema. No numeric substitution was made.
-- Sample approval covered Reem's Stream take. The full set and Thaaloob's new takes were checked for file delivery and import, with listening review still open.
-
-### Valley map and Waterfall Path batch
-
-- Map introduction used saved Jad with `eleven_v3` and the synthesis-only tag `[warmly]`. Existing reference is `res://assets/audio/lines/jad_s1_015.mp3`.
-- Waterfall dialogue used saved Reem with `eleven_v3` and synthesis-only tags `[warmly]`, `[gently]`, `[playful]` and `[surprised]`. Reem's reference remains `res://assets/audio/lines/reem_s1_002.mp3`. Map names and Waterfall words used saved Reem with `eleven_multilingual_v2` and no tags.
-- No model fallback. The connected tool exposed no stability, similarity boost, style, speed or speaker boost controls. The delivered files were checked against the queues. Listening comparison for pace, pronunciation and loudness remains open.
-
-### Narrow Pass batch
-
-- Reem and Thaaloob recorded their own lines with the saved voices and `eleven_v3`. Reem used `[warmly]` and `[gently]`, and Thaaloob used `[worried]`, `[embarrassed]` and `[gently]`. Reference lines are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`.
-- Reem recorded the tail word with `eleven_multilingual_v2` and no tags. No model fallback. Numeric controls remain unsupported in this tool. Listening comparison remains open.
-
-### Hilltop Festival batch
-
-- Reem and Jad used their saved voices with `eleven_v3` and synthesis-only tags `[warmly]`, `[gently]` or `[playful]`, as appropriate. Reference files are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/jad_s1_015.mp3`. Reem recorded the two words with `eleven_multilingual_v2` and no tags.
-- No model fallback or numeric settings were used. Listening comparison remains open.
-
-### Gull Island batch
-
-- Reem narrates the turtle, octopus and gull. Reem dialogue uses the saved Reem voice and `eleven_v3` with `[warmly]` and `[gently]`. Thaaloob's line uses the saved Thaaloob voice and `[playful]` on `eleven_v3`. Existing references remain `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`.
-- Reem recorded the vocabulary with `eleven_multilingual_v2` and no tags. No fallback or numeric settings were used. Listening comparison remains open.
-
-### Ramadan Lantern Night batch
-
-- Reem narrates the musaharati, hedgehog family and traveller. Reem used the saved voice with `eleven_v3` and `[warmly]` or `[gently]`. Thaaloob used his saved voice with `eleven_v3` and `[playful]`. Reem recorded the words in `eleven_multilingual_v2` without tags.
-- No fallback or numeric settings were used. The existing reference files are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`. Listening comparison remains open.
-
-### Old City Market batch
-
-- Reem narrates the merchant, baker and market cat using her saved voice on `eleven_v3` with `[warmly]` or `[gently]`. Thaaloob used his saved voice on `eleven_v3` with `[playful]` and `[embarrassed]`. Reem used `eleven_multilingual_v2` with no tags for words.
-- No model fallback or numeric controls were used. Reference files remain `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`. Listening comparison remains open.
-
-### Snow Trail batch
-
-- Reem narrates the goldfinch, Arnoob and deer. Her saved voice used `eleven_v3` with `[warmly]` and `[gently]`. Thaaloob's saved voice used `eleven_v3` with `[playful]`. Reem recorded words with `eleven_multilingual_v2` and no tags.
-- No model fallback or numeric settings were used. References are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`. Listening comparison remains open.
-
-### Ant Kingdom batch
-
-- Reem narrates the worker, beetle and queen. Her saved voice used `eleven_v3` with `[warmly]` and `[gently]`. Thaaloob's saved voice used `eleven_v3` with `[playful]`. Reem recorded words on `eleven_multilingual_v2` with no tags.
-- No model fallback or numeric controls were used. References are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`. Listening comparison remains open.
-
-### Diacritised map introduction
-
-- Saved Jad recorded jad_map_intro_vocalised using eleven_v3 and [warmly], without fallback. Numeric settings were unavailable. Reference take is assets/audio/lines/jad_map_intro.mp3. The new file imported and the map playtest passed. Listening comparison remains open.
 
 ## ElevenLabs credentials
 
@@ -152,7 +100,7 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 
 ## Popochiu rules
 
-* Popochiu 2.0.3 is in `res://addons/popochiu/`. **Before writing Popochiu code, read its source and its example templates in `res://addons/popochiu/` to confirm class names, method names and signals. Do not guess the API.**
+* Popochiu (version in `addons/popochiu/plugin.cfg`, 2.2.1 at the time of writing) is in `res://addons/popochiu/`. **Before writing Popochiu code, read its source and its example templates in `res://addons/popochiu/` to confirm class names, method names and signals. Do not guess the API.**
 * Popochiu was not officially tested on Godot 4.7: if something in it breaks, say so plainly and propose the smallest fix.
 * Godot scene (`.tscn`) and resource (`.tres`) files are text, but prefer creating Popochiu rooms, characters, props, hotspots and inventory items the way Popochiu expects (its own templates and folder layout under `res://game/`). If you must write `.tscn` files by hand, keep them minimal and valid.
 
@@ -183,7 +131,7 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 
 Run every check from the project folder. Any `ERROR` or `SCRIPT ERROR` in the output is a bug, except the usual "leaked at exit" / "resources still in use at exit" lines and "Aseprite command failed" during import (Popochiu's Aseprite importer, not used by this game). The playtest prints lines starting with `[PLAYTEST]`: every line should say `ok`, and the last line `DONE`.
 
-The automatic playtest (`tools/playtest.gd`) has four paths: `green`, `sand`, `mixed` (the three story playthroughs) and `words` (word discovery with real mouse presses). Run all four.
+The automatic playtest (`tools/playtest.gd`) has one path per story route, station, pack, event and system; the `_path` checks in its `_run()` list them. Always run `green`, `sand`, `mixed` (the three story playthroughs) and `words` (word discovery with real mouse presses), plus the paths for every room or system you changed. The paths share one save slot: run them one at a time.
 
 ### Windows (the user's computer)
 
@@ -196,7 +144,7 @@ In PowerShell:
 & "C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --headless --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --path=green
 ```
 
-Then the same playtest line with `--path=sand`, `--path=mixed` and `--path=words`.
+Then the same playtest line with `--path=sand`, `--path=mixed`, `--path=words` and the paths for what you changed.
 
 ### Linux cloud session
 
@@ -212,11 +160,3 @@ godot --headless --path . -- --playtest --path=words
 ```
 
 Screenshots need a real renderer: run under Xvfb, for example `xvfb-run godot --path . --rendering-driver opengl3 -- --playtest --path=green --shots=/tmp/shots`. The cloud machine has no sound card, so sound cannot be checked there: say so in the Handoff.
-
-### Star Observatory audio
-
-- The saved Reem and Thaaloob voices recorded 18 dialogue lines on v3 with warm, gentle or playful synthesis-only tags. The saved Reem voice recorded eight vocabulary files on multilingual v2 without tags. No fallback was used. Numeric controls were unavailable. The existing Reem Stream sample and Thaaloob lines remain the listening references. File delivery was verified and full listening comparison remains open.
-
-- Tree Day used the same saved Reem voice and approved Stream reference. Seven dialogue files used v3 with [warmly]. Two isolated vocabulary files used multilingual v2. No numeric controls or fallback were used. File delivery was checked. Listening comparison remains open.
-
-- Mother Garden used saved Reem with v3 [warmly] for seven dialogue recordings and multilingual v2 for two vocabulary recordings. No fallback or explicit numeric controls were used. File delivery passed; listening comparison remains open.

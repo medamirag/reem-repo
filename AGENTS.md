@@ -131,19 +131,14 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 
 Run every check from the project folder. Any `ERROR` or `SCRIPT ERROR` in the output is a bug, except the usual "leaked at exit" / "resources still in use at exit" lines and "Aseprite command failed" during import (Popochiu's Aseprite importer, not used by this game). The playtest prints lines starting with `[PLAYTEST]`: every line should say `ok`, and the last line `DONE`.
 
-The automatic playtest (`tools/playtest.gd`) has one path per story route, station, pack, event and system; the `_path` checks in its `_run()` list them. Always run `green`, `sand`, `mixed` (the three story playthroughs) and `words` (word discovery with real mouse presses), plus the paths for every room or system you changed. The paths share one save slot: run them one at a time.
+The automatic playtest (`tools/playtest.gd`) has paths for story routes, stations, packs, events and systems. Run broader checks only in headless mode, with no game window or desktop mouse use. Select relevant headless paths for the change and run them one at a time because they share a save slot.
 
-### Real-player mode (Windows, with a window)
+### Windowed checks
 
-The headless runs above check the logic quickly. To test like a player, add `--real` and leave out `--headless`:
-
-```
-& "C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --real --path=green
-```
-
-It opens a 1920x1080 window and plays with real mouse moves and clicks at each thing's place on screen, so a hidden, covered or unreachable thing fails ("FAIL: real click ..."). It saves a screenshot after every step and every spoken line in `tests/screenshots/<path>/` (git-ignored, overwritten each run) and checks each one for layout problems ("FAIL: lint ..."). Nobody should touch the mouse while it runs. After a run, look at the screenshots yourself (characters on the ground and in proportion, nothing covering the HUD, text readable and right to left), and write any problem in `docs/BUGS.md` with its screenshot path. `--trace` adds a few lines after each click showing what the game did with it.
-
-After changing anything a player sees, run the real-player `green` path and the real-player path of the room you changed.
+- After a change, test only what changed in a window. Open the affected room directly, take a screenshot and perform the one or two real clicks needed to prove the fix. If there is no direct route, use a focused room check before launching a window.
+- Before launching any windowed test, tell the user in one line what will open and roughly how long it will take.
+- Run full windowed regressions across the routes only when the user writes “full test”. Keep all other broader checks headless.
+- If the user asks to stop a windowed test, stop it immediately and confirm that it has stopped.
 
 ### Windows (the user's computer)
 
@@ -156,7 +151,7 @@ In PowerShell:
 & "C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --headless --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --path=green
 ```
 
-Then the same playtest line with `--path=sand`, `--path=mixed`, `--path=words` and the paths for what you changed.
+For broader checks, choose the relevant headless paths, such as `sand`, `mixed` or `words`.
 
 ### Linux cloud session
 
@@ -171,4 +166,4 @@ godot --headless --path . -- --playtest --path=mixed
 godot --headless --path . -- --playtest --path=words
 ```
 
-Screenshots need a real renderer: run under Xvfb, for example `xvfb-run godot --path . --rendering-driver opengl3 -- --playtest --path=green --shots=/tmp/shots`. The cloud machine has no sound card, so sound cannot be checked there: say so in the Handoff.
+For screenshots, use a real renderer and follow the focused windowed-check rules above. The cloud machine has no sound card, so sound cannot be checked there: say so in the Handoff.

@@ -1,17 +1,18 @@
 @tool
 extends ReemRoom
-## Station 2, room 4: MeadowFork (game_spec.md). The path goes the long way round the meadow;
-## a sign asks walkers to stay on it. The first time Reem heads for the right exit she chooses
-## (Choice 2): stay on the path (green, Bloom) or cut across the flowers (sand: tramples them,
-## Wilt). Later, if Shahd asked her to, she can water the trampled flowers back (Heal).
-## Exits: left → Gate; right → BigTree.
+## MeadowFork. The shortcut and main road are the two inputs for Choice 2.
 
-const Data := preload('room_meadow_fork_state.gd')
-const OPEN_TEXTURE := preload("res://assets/cut/flowers_states/flowers_open.tres")
-const TRAMPLED_TEXTURE := preload("res://assets/cut/flowers_states/flowers_trampled.tres")
-## Size of the text written on the sign board (game_spec.md: "small, in a dark brown color").
-const SIGN_FONT_SIZE := 24
-const SIGN_COLOR := Color(0.29, 0.16, 0.06)
+const Data := preload("room_meadow_fork_state.gd")
+const SIGN_FONT_SIZE := 29
+const SIGN_COLOR := Color(0.19, 0.09, 0.025)
+
+@export var road_route := PackedVector2Array([
+	Vector2(810, 921), Vector2(1135, 916), Vector2(1450, 866),
+	Vector2(1670, 780), Vector2(1780, 696), Vector2(1800, 630),
+	Vector2(1750, 576), Vector2(1640, 549), Vector2(1480, 534),
+	Vector2(1400, 511), Vector2(1405, 482), Vector2(1530, 449),
+	Vector2(1618, 425), Vector2(1601, 407), Vector2(1492, 388),
+])
 
 var state: Data = load("res://game/rooms/meadow_fork/room_meadow_fork.tres")
 
@@ -21,11 +22,7 @@ func _setup_room() -> void:
 	_write_sign()
 	$Props/GiantFlower.visible = Globals.unlocked_packs.get("5", false)
 
-	var flowers := get_prop("FlowersFork")
-	if Globals.trampled and not Globals.flowers_fixed:
-		flowers.texture = TRAMPLED_TEXTURE
-	else:
-		flowers.texture = OPEN_TEXTURE
+	$ShortcutFlowers.show_bent(Globals.trampled and not Globals.flowers_fixed)
 
 	Globals.notebook_hint = func() -> void: await Lines.say("reem_s2_002")
 
@@ -43,19 +40,20 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 				if await Choices.ask_two(Globals.notebook.labels["ant_go"], Globals.notebook.labels["ant_stay"]):
 					await leave_through(obj, "GiantBloom")
 		"Sign":
-			await C.player.walk_to_clicked()
 			await Lines.say("reem_s2_002")
 		"FlowersFork":
 			# One click does everything (game_spec.md 1): with the watering can, she waters.
 			if _can_water():
-				await _water(obj)
+				await _water()
+			elif not Globals.fork_choice_done:
+				await _choose_route(true)
 		"ExitLeft":
 			await leave_through(obj, "Gate")
-		"ExitRight":
+		"ExitRight", "MainRoad":
 			if Globals.fork_choice_done:
-				await leave_through(obj, "BigTree")
+				await _follow_road()
 			else:
-				await _choice_2(obj)
+				await _choose_route(false)
 
 
 func _on_item_used_on(obj: PopochiuClickable, item: PopochiuInventoryItem) -> void:
@@ -64,14 +62,14 @@ func _on_item_used_on(obj: PopochiuClickable, item: PopochiuInventoryItem) -> vo
 	if not (Globals.trampled and Globals.told_to_fix and not Globals.flowers_fixed):
 		return
 
-	await _water(obj)
+	await _water()
 
 
 func has_action(obj: PopochiuClickable) -> bool:
 	if obj.script_name == "GiantFlower":
 		return obj.visible
 	if obj.script_name == "FlowersFork":
-		return _can_water()
+		return not Globals.fork_choice_done or _can_water()
 	return super(obj)
 
 
@@ -83,54 +81,68 @@ func _can_water() -> bool:
 		and C.player.has_inventory_item("WateringCan")
 
 
-func _water(obj: PopochiuClickable) -> void:
+func _water() -> void:
 	await C.player.walk_to_clicked()
 	A.sfx_water_pour.play()
 	await Lines.say("reem_s2_013b")
-	(obj as PopochiuProp).texture = OPEN_TEXTURE
+	$ShortcutFlowers.show_bent(false)
 	Globals.flowers_fixed = true
 	Globals.heal()
 
 
 func _write_sign() -> void:
-	var label := get_node_or_null("Props/Sign/SignText") as RichTextLabel
-	if label == null:
-		return
-
-	label.add_theme_font_override("normal_font", ArabicText.get_font())
-	label.add_theme_font_size_override("normal_font_size", SIGN_FONT_SIZE)
-	label.add_theme_color_override("default_color", SIGN_COLOR)
+	var label: Label = $Props/Sign/SignText
+	label.add_theme_font_override("font", ArabicText.get_font())
+	label.add_theme_font_size_override("font_size", SIGN_FONT_SIZE)
+	label.add_theme_color_override("font_color", SIGN_COLOR)
 	ArabicText.make_rtl(label)
-	label.text = "[center]%s[/center]" % Labels.SIGN
+	label.text = Labels.SIGN.replace("، ", "،\n")
 
 
-## game_spec.md MeadowFork, "First click on the right exit".
-func _choice_2(exit: PopochiuClickable) -> void:
+func _choose_route(shortcut: bool) -> void:
 	G.block()
 	await C.player.walk(get_marker_position("ChoiceSpot"))
 	G.unblock()
 	await Lines.say("reem_s2_003")
-
-	var went_green: bool = await Choices.ask_two(Labels.CHOICE2_GREEN, Labels.CHOICE2_SAND)
 	Globals.fork_choice_done = true
 
-	if went_green:
+	if not shortcut:
 		await Lines.say("reem_s2_004a")
 		Globals.bloom()
-		await leave_through(exit, "BigTree")
+		await _follow_road()
 		return
 
 	await Lines.say("reem_s2_004b")
 	G.block()
-	# Straight across the grass, through the flowers, and off to the right.
-	await scripted_walk(get_marker_position("AcrossFlowers"))
+	await scripted_walk(get_marker_position("ShortcutStart"))
+	await _walk_into_meadow(get_marker_position("AcrossFlowers"))
 	A.sfx_trample.play()
-	get_prop("FlowersFork").texture = TRAMPLED_TEXTURE
+	$ShortcutFlowers.show_bent(true)
 	Globals.trampled = true
 	Globals.wilt()
-	await scripted_walk(get_marker_position("FlowersFarSide"))
+	await _walk_into_meadow(get_marker_position("FlowersFarSide"))
 	G.unblock()
 	R.goto_room("BigTree")
+
+
+func _follow_road() -> void:
+	G.block()
+	await C.player.walk(get_marker_position("ChoiceSpot"))
+	for point in road_route:
+		await _walk_into_meadow(point)
+	G.unblock()
+	R.goto_room("BigTree")
+
+
+func _walk_into_meadow(point: Vector2) -> void:
+	const SPEED := 455.0
+	var sprite := C.player.get_node("Sprite2D") as Sprite2D
+	var fraction := clampf(inverse_lerp(388.0, 920.0, point.y), 0.0, 1.0)
+	var scale_at_distance := height * reem_height_ratio * lerpf(0.19, 1.0, fraction) / sprite.texture.get_height()
+	var duration := C.player.position.distance_to(point) / SPEED
+	if duration > 0.01:
+		create_tween().tween_property(sprite, "scale", Vector2.ONE * scale_at_distance, duration)
+	await scripted_walk(point, SPEED)
 
 
 #endregion

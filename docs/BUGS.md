@@ -24,6 +24,8 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 | 14 | Gate: the «الجدول» arrow and click area sit on the fence | `docs/bugs/gate_stream_and_help_before.png` (user screenshot) | verified |
 | 15 | Gate: flowers show through the «أين أضغط؟» button and reduce contrast | `docs/bugs/gate_stream_and_help_before.png` (user screenshot) | verified |
 
+| 16 | MeadowFork: separate flower patch obscures the choice between the long road and shortcut, and the sign is hard to read | `docs/bugs/meadow_before.png` (user screenshot) | verified |
+
 ## Details
 
 ### 1. Dialogue text hard to read; Grandpa's text far above him
@@ -134,3 +136,9 @@ Moved the up arrow and its label onto the dirt track behind the open gate. The h
 The help button has an opaque dark brown background in its normal, hover and pressed states. Its position and action are unchanged.
 
 After: `docs/bugs/gate_stream_and_help_fixed.jpg`. The real-click Stream route entered Stream through the moved arrow.
+
+### 16. Flower Meadow route choice
+
+Replaced the separate patch and old northbound road with a winding sandy road and a direct, patchy shortcut from the sign to the distant Big Tree and hives. The painted grass has scattered flowers, including some on the shortcut. Additional flowers on the shortcut bend after the wrong choice and straighten on repair. The two clicks use the original dialogue and flags. The sign uses centred dark Cairo text.
+
+The focused real-click check confirmed that the shortcut wilts the tree, the bent flowers persist on return, and the road earns a blossom. After screenshots: `docs/bugs/meadow_shortcut_fixed.jpg` and `docs/bugs/meadow_shortcut_bent.jpg`.

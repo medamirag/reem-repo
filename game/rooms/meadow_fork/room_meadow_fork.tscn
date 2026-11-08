@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/meadow_fork/room_meadow_fork.gd" id="2"]
-[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg4_fork.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg4_fork_wildflowers.png" id="3"]
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="5"]
 [ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="6"]
-[ext_resource type="Texture2D" path="res://assets/cut/flowers_states/flowers_open.tres" id="7"]
+[ext_resource type="Script" path="res://game/rooms/meadow_fork/shortcut_flowers.gd" id="7"]
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/hotspot/popochiu_hotspot.tscn" id="8"]
 [ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="9"]
 [ext_resource type="Texture2D" path="res://assets/art/backgrounds/fg4_fork_fg.png" id="10"]
@@ -21,9 +21,9 @@ script_name = "MeadowFork"
 width = 1920
 height = 1080
 entry_points = {
-"": Vector2(0.06, 0.8),
-"Gate": Vector2(0.06, 0.8),
-"BigTree": Vector2(0.94, 0.8)
+"": Vector2(0.11, 0.75),
+"Gate": Vector2(0.11, 0.75),
+"BigTree": Vector2(0.78, 0.78)
 }
 footstep_cue = "sfx_steps_grass"
 ambience_cue = "amb_meadow"
@@ -35,7 +35,7 @@ texture = ExtResource("3")
 
 [node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
 script_name = "Path"
-interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 810, 1882, 788, 1882, 907, 38, 929)])
+interaction_polygon = Array[PackedVector2Array]([PackedVector2Array(38, 730, 250, 750, 520, 841, 790, 870, 1110, 865, 1400, 832, 1610, 755, 1610, 858, 1400, 935, 1100, 970, 790, 980, 510, 947, 250, 850, 38, 870)])
 
 [node name="Perimeter" parent="WalkableAreas/Path" index="0"]
 navigation_polygon = SubResource("NavigationPolygon_Path")
@@ -45,9 +45,9 @@ script = ExtResource("6")
 script_name = "Sign"
 description = ""
 cursor = 5
-position = Vector2(580, 562)
+position = Vector2(566, 579)
 interaction_polygon = PackedVector2Array(-120, -60, 120, -60, 120, 200, -120, 200)
-walk_to_point = Vector2(170, 262)
+walk_to_point = Vector2(0, 311)
 
 [node name="InteractionPolygon" parent="Props/Sign" index="2"]
 polygon = PackedVector2Array(-120, -60, 120, -60, 120, 200, -120, 200)
@@ -55,25 +55,34 @@ polygon = PackedVector2Array(-120, -60, 120, -60, 120, 200, -120, 200)
 [node name="FlowersFork" parent="Props" instance=ExtResource("5")]
 script = ExtResource("6")
 script_name = "FlowersFork"
-description = ""
-cursor = 10
-texture = ExtResource("7")
-position = Vector2(1267, 648)
-scale = Vector2(0.4, 0.4)
-interaction_polygon = PackedVector2Array(-340, -268, 340, -268, 340, 268, -340, 268)
-walk_to_point = Vector2(0, 440)
+position = Vector2(1010, 617)
+interaction_polygon = PackedVector2Array(-450, 151, 426, -245, 472, -225, -400, 197)
+walk_to_point = Vector2(-404, 287)
 
 [node name="InteractionPolygon" parent="Props/FlowersFork" index="2"]
-polygon = PackedVector2Array(-340, -268, 340, -268, 340, 268, -340, 268)
+polygon = PackedVector2Array(-450, 151, 426, -245, 472, -225, -400, 197)
+
+[node name="MainRoad" parent="Hotspots" instance=ExtResource("8")]
+script = ExtResource("9")
+script_name = "MainRoad"
+position = Vector2(990, 919)
+interaction_polygon = PackedVector2Array(-340, -48, 335, -66, 350, 33, -340, 52)
+
+[node name="InteractionPolygon" parent="Hotspots/MainRoad" index="0"]
+polygon = PackedVector2Array(-340, -48, 335, -66, 350, 33, -340, 52)
+
+[node name="ShortcutFlowers" type="Node2D" parent="."]
+script = ExtResource("7")
+roots = PackedVector2Array(666, 758, 730, 724, 801, 692, 862, 668, 940, 634, 1001, 605, 1080, 568, 1162, 532, 1221, 503, 1300, 469)
 
 [node name="ExitLeft" parent="Hotspots" instance=ExtResource("8")]
 script = ExtResource("9")
 script_name = "ExitLeft"
 description = ""
 cursor = 4
-position = Vector2(38, 848)
+position = Vector2(38, 800)
 interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
-walk_to_point = Vector2(10, 27)
+walk_to_point = Vector2(10, 8)
 
 [node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
 polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
@@ -83,31 +92,34 @@ script = ExtResource("9")
 script_name = "ExitRight"
 description = ""
 cursor = 6
-position = Vector2(1881, 837)
-interaction_polygon = PackedVector2Array(-38, -189, 38, -189, 38, 189, -38, 189)
-walk_to_point = Vector2(-9, 16)
+position = Vector2(1865, 657)
+interaction_polygon = PackedVector2Array(-50, -65, 50, -65, 50, 65, -50, 65)
+walk_to_point = Vector2(0, 0)
 
 [node name="InteractionPolygon" parent="Hotspots/ExitRight" index="0"]
-polygon = PackedVector2Array(-38, -189, 38, -189, 38, 189, -38, 189)
+polygon = PackedVector2Array(-50, -65, 50, -65, 50, 65, -50, 65)
 
 [node name="ChoiceSpot" type="Marker2D" parent="Markers"]
-position = Vector2(960, 864)
+position = Vector2(565, 891)
+
+[node name="ShortcutStart" type="Marker2D" parent="Markers"]
+position = Vector2(596, 802)
 
 [node name="AcrossFlowers" type="Marker2D" parent="Markers"]
-position = Vector2(1267, 713)
+position = Vector2(1045, 592)
 
 [node name="FlowersFarSide" type="Marker2D" parent="Markers"]
-position = Vector2(1901, 756)
+position = Vector2(1492, 388)
 
-[node name="SignText" type="RichTextLabel" parent="Props/Sign"]
-offset_left = -105.0
-offset_top = -46.0
-offset_right = 105.0
-offset_bottom = 46.0
+[node name="SignText" type="Label" parent="Props/Sign"]
+offset_left = -103.0
+offset_top = -56.0
+offset_right = 103.0
+offset_bottom = 47.0
 mouse_filter = 2
-bbcode_enabled = true
-scroll_active = false
+horizontal_alignment = 1
 vertical_alignment = 1
+theme_override_constants/line_spacing = -17
 
 [node name="Foreground" type="Sprite2D" parent="."]
 z_index = 100
@@ -118,9 +130,9 @@ texture = ExtResource("10")
 visible = false
 script = ExtResource("6")
 script_name = "GiantFlower"
-position = Vector2(1550, 814)
+position = Vector2(1510, 822)
 interaction_polygon = PackedVector2Array(-65, -150, 65, -150, 65, 0, -65, 0)
-walk_to_point = Vector2(0, 72)
+walk_to_point = Vector2(-10, 15)
 
 [node name="InteractionPolygon" parent="Props/GiantFlower" index="2"]
 polygon = PackedVector2Array(-65, -150, 65, -150, 65, 0, -65, 0)

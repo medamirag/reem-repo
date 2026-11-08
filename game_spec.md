@@ -171,30 +171,14 @@ Walkable: the path, y 0.80 to 0.95. Exits: left → Yard; right → MeadowFork. 
 
 **On first entering after `briefed`:** `reem_s1_030`, `jad_s1_031` (off-screen), `reem_s1_032`.
 
-### Station 2, room 4: MeadowFork (`bg4_fork`, `fg4_fork_fg`)
+### Station 2, room 4: MeadowFork (`bg4_fork_wildflowers`, `fg4_fork_fg`)
 
-Walkable: the main path along the bottom (y 0.80 to 0.95), the upper path that curves up and around the meadow edge, and, only after the sand choice, a strip across the flower patch.
+The wide main road enters from the left, dips low and curves far right before winding up to the distant Big Tree and two hives. Grass, bushes and flowers replace the former northbound road. A faint worn trail cuts across the meadow from the bend near the sign directly to the tree. Small wildflowers grow in irregular groups across the grass and on the patchy shortcut. The main road is clear. The blank painted sign faces the player and its larger, dark brown Arabic text is centred in Godot.
 
-**Props:**
-- `Sign`: the wooden sign at about x 0.30, y 0.55. In Godot, write on its board in Arabic: «من فضلك، امشِ على الطريق», small, in a dark brown color.
-- `FlowersFork`: image `flowers_open`, placed on the open grass patch at about x 0.70, y 0.75.
-- Exits: left → Gate; right → BigTree.
-
-**On first entering:** `reem_s2_001`.
-
-**Click Sign:** `reem_s2_002`.
-
-**First click on the right exit:**
-1. `reem_s2_003`.
-2. **Choice 2:** green «أمشي على الطريق» / sand «أختصرُ فوقَ الزهور».
-   - Green: `reem_s2_004a`. Reem walks along the upper path to the right exit. **Bloom.** → BigTree.
-   - Sand: `reem_s2_004b`. Reem walks straight across the flowers; `sfx_trample`; `FlowersFork` becomes `flowers_trampled`. `trampled = true`. **Wilt.** → BigTree.
-
-Later exits to the right go along the path with no choice.
-
-**Use WateringCan on FlowersFork** (only if `trampled` and `told_to_fix` and not `flowers_fixed`): `sfx_water_pour`, `reem_s2_013b`, `FlowersFork` becomes `flowers_open`. `flowers_fixed = true`. **Heal.**
-
-**Notebook hint here:** `reem_s2_002`.
+- Click the sign for `reem_s2_002`. First arrival still plays `reem_s2_001`.
+- The first route click plays `reem_s2_003`. Click the main road or right arrow for `reem_s2_004a`, a blossom and the road walk to BigTree. Click the shortcut for `reem_s2_004b`, the shortcut walk, `sfx_trample`, bending flowers, `trampled = true` and a wilt before BigTree. Both set `fork_choice_done`.
+- Later right exits take the road. After Shahd asks for repair, click the shortcut with the watering can available or use it on `FlowersFork`. Play `sfx_water_pour` and `reem_s2_013b`, straighten the flowers, set `flowers_fixed` and heal.
+- Left exit returns to Gate. The notebook hint remains `reem_s2_002`.
 
 ### Station 2, room 5: BigTree (`bg5_tree_bees`, `fg5_tree_bees_fg`)
 

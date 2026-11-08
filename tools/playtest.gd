@@ -70,6 +70,11 @@ func _run() -> void:
 	for anim in ["use", "active", "talk", "look", "left", "right"]:
 		var tex := frames.get_frame_texture(anim, 0)
 		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
+	if _path == "meadow_shortcut":
+		await _meadow_shortcut_path()
+		_log("DONE meadow_shortcut")
+		get_tree().quit()
+		return
 	if _path == "highlight":
 		await _highlight_path()
 		_log("DONE highlight")
@@ -1218,6 +1223,27 @@ func _bubble_text() -> String:
 
 ## Choice 1 sand (hide the mirror), then green at Choice 2 and Choice 3: the needs_mirror
 ## branch without trampled flowers.
+func _meadow_shortcut_path() -> void:
+	await Globals.new_game()
+	R.goto_room("MeadowFork")
+	await _wait_room("MeadowFork")
+	await _shot("meadow_before_choice")
+	await _click("FlowersFork")
+	await _wait_room("BigTree")
+	_expect(Globals.trampled and Globals.wilts == 1, "the shortcut tramples flowers and wilts once")
+	R.goto_room("MeadowFork")
+	await _wait_room("MeadowFork")
+	_expect(R.current.get_node("ShortcutFlowers").bent, "trampled flowers stay bent on return")
+	await _shot("meadow_bent_flowers")
+	Globals.fork_choice_done = false
+	Globals.trampled = false
+	Globals.wilts = 0
+	R.current.call("_setup_room")
+	await _click("MainRoad")
+	await _wait_room("BigTree")
+	_expect(not Globals.trampled and Globals.blossoms == 1, "the road keeps flowers upright and earns a blossom")
+
+
 func _mixed_path() -> void:
 	await _wait_room("GrandpaRoom")
 	_answers = [false]
@@ -1229,7 +1255,6 @@ func _mixed_path() -> void:
 	await _wait_room("Gate")
 	await _click("ExitRight")
 	await _wait_room("MeadowFork")
-	_answers = [true]
 	await _click("ExitRight")
 	await _wait_room("BigTree")
 	await _click("Shahd")
@@ -1290,8 +1315,7 @@ func _sand_path() -> void:
 	await _click("ExitRight")
 
 	await _wait_room("MeadowFork")
-	_answers = [false]
-	await _click("ExitRight")
+	await _click("FlowersFork")
 
 	await _wait_room("BigTree")
 	_expect(Globals.trampled and Globals.wilts == 2, "Choice 2 sand")
@@ -1383,8 +1407,9 @@ func _click(obj_name: String) -> void:
 		await obj.on_click()
 		E.clicked = null
 	)
-	# User rule: Reem only moves left and right (the trample shortcut leaves the room).
-	if _room_name() == room_before and is_instance_valid(C.player) and C.player.is_inside_tree() \
+	# Watering the shortcut approaches the flowers along the curved meadow road.
+	var meadow_watering := room_before == "MeadowFork" and obj_name == "FlowersFork" and Globals.flowers_fixed
+	if not meadow_watering and _room_name() == room_before and is_instance_valid(C.player) and C.player.is_inside_tree() \
 			and absf(C.player.global_position.y - y_before) > 1.0:
 		_log("FAIL: Reem moved up/down when clicking %s (%.0f -> %.0f)" % [
 			obj_name, y_before, C.player.global_position.y
@@ -2295,7 +2320,6 @@ func _notebook_path() -> void:
 	await _wait_room("Gate")
 	await _click("ExitRight")
 	await _wait_room("MeadowFork")
-	_answers = [true]
 	await _click("ExitRight")
 	await _wait_room("BigTree")
 	await _click("Shahd")

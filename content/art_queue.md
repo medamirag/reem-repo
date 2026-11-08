@@ -119,6 +119,8 @@ Originals in `assets/` are never edited: new images are new files with the names
 | bg36_mother_garden | `assets/art/backgrounds/bg36_mother_garden.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg36_mother_garden below | No lettering, blank card and clear walking lane | done |
 | dew_leaf_bridge | `assets/art/items/dew_leaf_bridge.png` | `assets/art/backgrounds/bg30_dew_bank.png` | transparent | 2172x724 | See dew_leaf_bridge below | One long leaf only, real alpha, wide and flat (about 4:1) | done |
 | pass_tail_rock | `assets/art/items/pass_tail_rock.png` | `assets/art/backgrounds/bg15_narrow_pass.png` | transparent | 1536x1024 | See pass_tail_rock below | One rock only, real alpha, sandstone like the Narrow Pass boulders, round enough to roll | done |
+| bg4_fork_shortcut | `assets/art/backgrounds/bg4_fork_shortcut.png` | `assets/art/backgrounds/bg4_fork.png`, `assets/art/backgrounds/bg5_tree_bees.png` | opaque | 16:9 | See bg4_fork_shortcut below | Preserve framing and main road, no text | done |
+| bg4_fork_wildflowers | `assets/art/backgrounds/bg4_fork_wildflowers.png` | `assets/art/backgrounds/bg4_fork_shortcut.png` | opaque | 16:9 | See bg4_fork_wildflowers below | Keep composition and clean road, no text | done |
 
 <!-- One section per row, in the same order:
 
@@ -1248,3 +1250,13 @@ One friendly teal and bronze beetle matching the turnaround, exact six distinct 
 - **Reference:** `assets/art/backgrounds/bg15_narrow_pass.png`
 - **Use:** the LooseStone prop in NarrowPass, drawn about 180x120 px in front of Thaaloob so it covers the lower part of his tail and pins it (his white tail tip stays visible above it). When Reem frees him it rolls away to the right. Replaces the placeholder (the small `pass_loose_stone.png` scaled up) in `game/rooms/narrow_pass/room_narrow_pass.tscn` (docs/BUGS.md #5).
 - **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One medium rounded sandstone rock in the same warm pink-ochre colours, soft shading and brown ink outlines as the boulders in the attached Narrow Pass background, a few small cracks and a little tuft of dry grass at its base. Rounded, slightly wider than tall, sturdy enough to pin a fox's tail but clearly able to roll. Side view, isolated on real transparent background, no ground, shadow, animals or other rocks.
+
+## bg4_fork_shortcut
+
+- **Reference:** `assets/art/backgrounds/bg4_fork.png`
+- **Prompt:** Edit the original locally. Keep the trees, hills, sky, blank sign, foreground flowers and palette. Remove the northbound road and replace it with matching plants. Use bg5_tree_bees as the destination reference. A distant Big Tree and two hives sit on the upper right hill. The wide road dips low and winds far right before curling back to the tree. A straight worn-grass shortcut starts beside the blank sign and heads directly to the tree. Place tiny pink, yellow and white wildflowers on and along it. No separate flower patch, stones or text.
+
+## bg4_fork_wildflowers
+
+- **Reference:** `assets/art/backgrounds/bg4_fork_shortcut.png`
+- **Prompt:** Preserve the composition and style. Widen the diagonal shortcut to a third to half the main road width with broken earth, flattened grass and tufts. Scatter varied wildflowers in irregular clusters and singles across the grass, with some on the shortcut. Keep the main road clear. No text.

@@ -5,6 +5,8 @@
 - **Who worked last:** Codex (builder), installing the two queued artwork replacements.
 - **Date:** 2026-11-08
 - **Branch:** main
+- **Flower Meadow:** The new bg4_fork_wildflowers background keeps the previous versions and shows a winding road to the distant Big Tree and a wider, straight, patchy shortcut with scattered wildflowers. Both route clicks lead to BigTree, with the original lines, wilt and repair flags. The sign text is centred. The focused two-click windowed check passed. See BUGS.md #16 and the before and after screenshots. The shortcut word is available as text and its recording is queued.
+- **Meadow check:** From Gate, go right to MeadowFork. Click the broad road or right arrow for a blossom, or the worn diagonal trail for a wilt. After Shahd asks for repair, return with the watering can and click the trail.
 - **Gate fix:** Moved the Stream arrow, label and click area onto the dirt path. The Market exit moved to foreground sand to keep the exits separate after unlock. The help button has a solid background. The user’s before screenshot is in docs/bugs and BUGS.md lists issues #14 and #15. The after screenshot confirms the arrow is on sand and the help text is readable. The real-click test entered Stream. Remaining route checks are in .godot/gatefix-*.log.
 - **Real-player playtests:** `tools/playtest.gd` has a `--real` mode (run without `--headless`, see AGENTS.md "Real-player mode"): a 1920x1080 window, real mouse moves and clicks (including the inventory bar, choices and the notebook's ×), a screenshot after every step and spoken line in `tests/screenshots/<path>/` (git-ignored), and layout checks on each. The fast headless mode is unchanged. New path `notebook_clicks`.
 - **Bugs:** `docs/BUGS.md` lists the 8 problems found in the `green` screenshots, all fixed and verified by a second real run: outlined dialogue text and Grandpa's speech point; the map, notebook and settings buttons moved below the inventory bar (y 132); readable choice boards; the lake reunion moved off the boat; Thaaloob at his real size at Narrow Pass and at the festival, and Grandpa larger on Dubb; Reem's start spot clear of the plant; the open notebook tab highlighted. Evidence (before and `_fixed`) is in `docs/bugs/`.
@@ -68,6 +70,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Meadow:** Kept the earlier destination composition as the reference file for the final wildflowers edit. A small set of interactive flowers bends while the painted meadow flowers stay decorative. Reem scales down as she walks uphill to the distant tree.
 
 - **Gate exits:** Moved the Market arrow as well because its original hotspot overlapped the corrected Stream route after unlock. Kept the help button in place and made its background opaque.
 

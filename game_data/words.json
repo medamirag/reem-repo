@@ -1186,7 +1186,8 @@
     "text": "خَلِيَّة",
     "rooms": [
       "Yard",
-      "BigTree"
+      "BigTree",
+      "MeadowFork"
     ],
     "audio": "res://assets/audio/words/word_beehive.mp3",
     "objects": []
@@ -1241,6 +1242,16 @@
     ],
     "audio": "res://assets/audio/words/word_bird.mp3",
     "objects": []
+  },
+  "word_shortcut": {
+    "text": "طَرِيق مُخْتَصَر",
+    "rooms": [
+      "MeadowFork"
+    ],
+    "audio": "res://assets/audio/words/word_shortcut.mp3",
+    "objects": [
+      "prop:FlowersFork"
+    ]
   },
   "word_path": {
     "text": "طَرِيق",
@@ -1304,7 +1315,6 @@
     ],
     "audio": "res://assets/audio/words/word_flower.mp3",
     "objects": [
-      "prop:FlowersFork",
       "prop:FlowersShade",
       "prop:GiantFlower"
     ]

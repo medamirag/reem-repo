@@ -1,6 +1,8 @@
 # AUDIT.md – the whole game against docs/ROADMAP.md and game_spec.md
 
-Audit by Claude Code on 2026-11-08, at commit `fde41b0`. Nothing was fixed: this file only records what was found.
+Audit by Claude Code on 2026-11-08, at commit `fde41b0`. The original scores below are the audit baseline. Fixes are tracked here as they are verified.
+
+- **Theme fixed:** All four atlas regions now use the same tracked radio-button image under game/gui/resources. Content, import, startup and all four standard playtests passed.
 
 ## Summary
 
@@ -80,7 +82,7 @@ All six open after the festival, from the entrance the roadmap names, and each h
 | Voice and word queues | ok | 296 voice rows and 153 word rows, all `done`. The 68 MVP lines were recorded before the queue existed, so they are not in it. |
 | Character voices | incomplete | Only Reem, Jad, Shahd and Thaaloob speak. Every character added after the MVP is narrated by Reem (Decisions to review), so none of them has a voice in `AGENTS.md`'s saved-voices table. |
 | Listening review | incomplete | About 410 recordings since the MVP are checked as delivered files only; pace, pronunciation and loudness against the MVP voices are still open. Also open from the MVP: `word_path` and `word_girl` measured oddly. |
-| GUI theme (`game/gui/resources/gui_theme.tres`) | broken | Lines 7, 75, 82 and 89 load `res://.godot/imported/radio_button.png`, a file in Godot's cache folder. It works on this computer, but a fresh copy (cloud session, new computer) has no `.godot` folder, so those radio-button pictures will be missing there. |
+| GUI theme (`game/gui/resources/gui_theme.tres`) | fixed | Previously, lines 7, 75, 82 and 89 loaded `res://.godot/imported/radio_button.png`, a file in Godot's cache folder. It works on this computer, but a fresh copy (cloud session, new computer) has no `.godot` folder, so those radio-button pictures will be missing there. |
 
 ## Automatic checks
 

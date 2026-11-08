@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://44mgdgxc5oo8" path="res://addons/popochiu/engine/objects/gui/resources/images/check_button_unchecked_high_res.svg" id="2_aqb6g"]
 [ext_resource type="Texture2D" uid="uid://dw0btnkpx0axu" path="res://addons/popochiu/engine/objects/gui/resources/images/h_slider_grabber_high_res.svg" id="3_emke0"]
 [ext_resource type="Texture2D" uid="uid://d1ywqbehmtuv" path="res://addons/popochiu/engine/objects/gui/resources/images/down_arrow.png" id="4_13x2e"]
-[ext_resource type="Texture2D" uid="uid://b7bgdkmjwfxdl" path="res://addons/popochiu/engine/objects/gui/resources/images/radio_button.png" id="5_3v5ri"]
+[ext_resource type="Texture2D" path="res://game/gui/resources/radio_button.png" id="5_3v5ri"]
 [ext_resource type="FontFile" uid="uid://dw0kdyo16d8t4" path="res://addons/popochiu/engine/objects/gui/fonts/open_sans_regular.ttf" id="6_d35rj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27bc1"]
@@ -71,25 +71,16 @@ bg_color = Color(0, 0, 0, 0.705882)
 atlas = ExtResource("5_3v5ri")
 region = Rect2(0, 0, 12, 12)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3p65d"]
-load_path = "res://.godot/imported/radio_button.png-f5f800afce88f7818a95c83aac5f8cc2.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_og2df"]
-atlas = SubResource("CompressedTexture2D_3p65d")
+atlas = ExtResource("5_3v5ri")
 region = Rect2(12, 0, 12, 12)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kqstm"]
-load_path = "res://.godot/imported/radio_button.png-f5f800afce88f7818a95c83aac5f8cc2.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rc3uc"]
-atlas = SubResource("CompressedTexture2D_kqstm")
+atlas = ExtResource("5_3v5ri")
 region = Rect2(24, 0, 12, 12)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e522l"]
-load_path = "res://.godot/imported/radio_button.png-f5f800afce88f7818a95c83aac5f8cc2.ctex"
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbum8"]
-atlas = SubResource("CompressedTexture2D_e522l")
+atlas = ExtResource("5_3v5ri")
 region = Rect2(36, 0, 12, 12)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5q8d"]

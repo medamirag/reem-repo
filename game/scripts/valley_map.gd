@@ -123,6 +123,7 @@ func _is_station() -> bool:
 
 func _process(delta: float) -> void:
 	map_button.visible = _is_station() and not is_open
+	map_button.position.x = 48 if map_button.visible and R.current.script_name == "Stream" else 18
 	map_button.disabled = not map_button.visible or not Globals.settings.can_open()
 	if is_open and pin.visible:
 		elapsed += delta

@@ -5,6 +5,7 @@
 - **Who worked last:** Codex (builder), installing the two queued artwork replacements.
 - **Date:** 2026-11-08
 - **Branch:** main
+- **Stream bridge:** Two new originals are installed and marked done. The old log scene ID now picks up the planks. Click the stones to build and watch all three ducklings cross and gather with the mother. The old dialogue IDs, bridge flag, feather, duck card and blossom are preserved. The windowed check opened Stream directly and passed both clicks, with three screenshots in docs/bugs. The Stream entry and map button have extra clearance. The plank word is added as text and its recording is queued.
 - **Flower Meadow:** The new bg4_fork_wildflowers background keeps the previous versions and shows a winding road to the distant Big Tree and a wider, straight, patchy shortcut with scattered wildflowers. Both route clicks lead to BigTree, with the original lines, wilt and repair flags. The sign text is centred. The focused two-click windowed check passed. See BUGS.md #16 and the before and after screenshots. The shortcut word is available as text and its recording is queued.
 - **Meadow check:** From Gate, go right to MeadowFork. Click the broad road or right arrow for a blossom, or the worn diagonal trail for a wilt. After Shahd asks for repair, return with the watering can and click the trail.
 - **Gate fix:** Moved the Stream arrow, label and click area onto the dirt path. The Market exit moved to foreground sand to keep the exits separate after unlock. The help button has a solid background. The user’s before screenshot is in docs/bugs and BUGS.md lists issues #14 and #15. The after screenshot confirms the arrow is on sand and the help text is readable. The real-click test entered Stream. Remaining route checks are in .godot/gatefix-*.log.
@@ -70,6 +71,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Stream bridge:** Used the existing three duckling sprites with staggered paths, hops, tilt and perspective scale. The sound cues are short synthesized effects. The build spot is to the left of the bridge so Reem does not hide the crossing. The original dialogue stays in place as requested, including its reference to a log.
 
 - **Meadow:** Kept the earlier destination composition as the reference file for the final wildflowers edit. A small set of interactive flowers bends while the painted meadow flowers stay decorative. Reem scales down as she walks uphill to the distant tree.
 

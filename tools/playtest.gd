@@ -70,6 +70,11 @@ func _run() -> void:
 	for anim in ["use", "active", "talk", "look", "left", "right"]:
 		var tex := frames.get_frame_texture(anim, 0)
 		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
+	if _path == "stream_bridge":
+		await _stream_bridge_path()
+		_log("DONE stream_bridge")
+		get_tree().quit()
+		return
 	if _path == "meadow_shortcut":
 		await _meadow_shortcut_path()
 		_log("DONE meadow_shortcut")
@@ -104,7 +109,7 @@ func _run() -> void:
 		await Globals.new_game()
 		R.goto_room("Stream")
 		await _wait_room("Stream")
-		for sample in [[Vector2(0.28, 0.62), "word_log"], [Vector2(0.396, 0.66), "word_duck"], [Vector2(0.36, 0.69), "word_duckling"], [Vector2(0.677, 0.65), "word_rabbit"], [Vector2(0.92, 0.38), "word_reed"], [Vector2(.335,.14), "word_sun"], [Vector2(.10,.06), "word_olive"]]:
+		for sample in [[Vector2(0.25, 0.69), "word_bridge_planks"], [Vector2(0.702, 0.35), "word_duck"], [Vector2(0.423, 0.626), "word_duckling"], [Vector2(0.677, 0.65), "word_rabbit"], [Vector2(0.92, 0.38), "word_reed"], [Vector2(.335,.14), "word_sun"], [Vector2(.10,.06), "word_olive"]]:
 			await _hold_at(sample[0], 0.7)
 			_expect(Globals.discovered_words.has(sample[1]), "Stream real hold discovers " + sample[1])
 		_expect(not Globals.stream.get("bridge", false), "word holds do not solve bridge")
@@ -258,6 +263,7 @@ func _run() -> void:
 		await C.player.add_to_inventory(I.Notebook)
 		await C.player.add_to_inventory(I.Lantern)
 		await _click("Log")
+		await _click("BridgeWater")
 		await _shot("bridge_crossed")
 		await _hold_at(Vector2(.335,.14), .7)
 		await _shot("sun_word")
@@ -978,6 +984,31 @@ func _finish_pine() -> void:
 	await _complete_lake(false)
 
 
+func _stream_bridge_path() -> void:
+	await Globals.new_game()
+	R.goto_room("Stream")
+	await _wait_room("Stream")
+	_expect(not Globals.stream.get("bridge", false), "bridge starts unbuilt")
+	await _shot("stream_bridge_before")
+	await _click("Log")
+	_expect(Globals.stream.get("planks_carried", false), "click picks up planks")
+	if _real:
+		_capture_stream_crossing()
+	await _click("BridgeWater")
+	_expect(Globals.stream.get("bridge", false) and Globals.stream.get("feather", false), "ducklings cross and award the feather")
+	_expect(Globals.blossoms == 1 and Globals.friend_cards.has("duck"), "crossing awards one blossom and the duck card")
+	await _shot("stream_bridge_after")
+
+
+func _capture_stream_crossing() -> void:
+	while _room_name() == "Stream" and not R.current.crossing_active:
+		await get_tree().process_frame
+	if _room_name() != "Stream":
+		return
+	await get_tree().create_timer(1.62).timeout
+	await _shot("stream_bridge_crossing")
+
+
 func _stream_path(wrong: bool) -> void:
 	await _step("new Stream journey", func(): R.current.call("_on_start_pressed"))
 	await _wait_room("GrandpaRoom")
@@ -996,8 +1027,9 @@ func _stream_path(wrong: bool) -> void:
 	await _click("Ducks")
 	var before := Globals.blossoms
 	await _click("Log")
+	await _click("BridgeWater")
 	_expect(Globals.stream.get("bridge") and Globals.stream.get("feather") and Globals.friend_cards.has("duck"), "ducks crossed, card and feather earned")
-	await _click("Log")
+	await _click("BridgeWater")
 	_expect(Globals.blossoms == before + 1, "bridge reward cannot repeat")
 	_expect(Globals.notebook.hint_context() == "stream_map", "route hints")
 	_answers = [not wrong]
@@ -1500,6 +1532,8 @@ func _wait_room(room_name: String) -> void:
 
 ## Saves what is on screen right now as a PNG (only with --shots=folder and a real display).
 func _shot(label: String) -> void:
+	if _path == "stream_bridge" and not label.begins_with("stream_bridge_"):
+		return
 	if _shots_dir.is_empty() or DisplayServer.get_name() == "headless":
 		return
 	await RenderingServer.frame_post_draw

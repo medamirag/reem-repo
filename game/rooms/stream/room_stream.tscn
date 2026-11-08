@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=19 format=3]
 
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/stream/room_stream.gd" id="2"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://game/scripts/room_hotspot.gd" id="6"]
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
 [ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
-[ext_resource type="Texture2D" path="res://assets/cut/stream/log.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/art/items/bridge_planks.png" id="9"]
 [ext_resource type="Texture2D" path="res://assets/cut/stream/duck.png" id="10"]
 [ext_resource type="Texture2D" path="res://assets/cut/stream/arnoob.png" id="11"]
 [ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="12"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" path="res://assets/cut/stream/duckling2.png" id="14"]
 [ext_resource type="Texture2D" path="res://assets/cut/stream/duckling3.png" id="15"]
 [ext_resource type="Texture2D" path="res://assets/cut/notebook_lantern/lantern.tres" id="16"]
+
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/bg_stream_bridge.png" id="17"]
 
 [sub_resource type="NavigationPolygon" id="Path"]
 agent_radius = 0.0
@@ -25,13 +27,23 @@ script = ExtResource("2")
 script_name = "Stream"
 width = 1920
 height = 1080
-entry_points = {"": Vector2(0.08, 0.82), "Gate": Vector2(0.08, 0.82), "PineFork": Vector2(0.92, 0.82)}
+entry_points = {"": Vector2(0.13, 0.82), "Gate": Vector2(0.13, 0.82), "PineFork": Vector2(0.92, 0.82)}
 ambience_cue = "amb_meadow"
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
 centered = false
 texture = ExtResource("3")
+
+[node name="BridgeBuilt" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = -99
+centered = false
+texture = ExtResource("17")
+
+[node name="BridgeSounds" type="AudioStreamPlayer" parent="."]
+volume_db = -7.0
+bus = &"ReemEffects"
 
 [node name="Path" parent="WalkableAreas" instance=ExtResource("4")]
 script_name = "Path"
@@ -43,9 +55,9 @@ navigation_polygon = SubResource("Path")
 [node name="ExitLeft" parent="Hotspots" instance=ExtResource("5")]
 script = ExtResource("6")
 script_name = "ExitLeft"
-position = Vector2(38, 848)
+position = Vector2(120, 860)
 interaction_polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
-walk_to_point = Vector2(10, 38)
+walk_to_point = Vector2(-72, 26)
 
 [node name="InteractionPolygon" parent="Hotspots/ExitLeft" index="0"]
 polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
@@ -63,32 +75,49 @@ polygon = PackedVector2Array(-38, -178, 38, -178, 38, 178, -38, 178)
 [node name="Log" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")
 script_name = "Log"
-position = Vector2(540, 710)
-interaction_polygon = PackedVector2Array(-157.5, -90, 157.5, -90, 157.5, 0, -157.5, 0)
-walk_to_point = Vector2(-170, 176)
+position = Vector2(488, 776)
+interaction_polygon = PackedVector2Array(-130, -65, 130, -65, 130, 0, -130, 0)
+walk_to_point = Vector2(0, 110)
 
 [node name="Sprite2D" parent="Props/Log" index="0"]
-position = Vector2(0, -45.0)
+position = Vector2(0, -30)
 texture = ExtResource("9")
-scale = Vector2(0.24456521739130435, 0.24456521739130435)
+scale = Vector2(0.14, 0.14)
 
 [node name="InteractionPolygon" parent="Props/Log" index="2"]
-polygon = PackedVector2Array(-157.5, -90, 157.5, -90, 157.5, 0, -157.5, 0)
+polygon = PackedVector2Array(-130, -65, 130, -65, 130, 0, -130, 0)
+
+[node name="BridgeWater" parent="Hotspots" instance=ExtResource("5")]
+script = ExtResource("6")
+script_name = "BridgeWater"
+position = Vector2(941, 606)
+interaction_polygon = PackedVector2Array(-160, -28, 54, -135, 160, -62, -94, 66)
+walk_to_point = Vector2(-285, 280)
+
+[node name="InteractionPolygon" parent="Hotspots/BridgeWater" index="0"]
+polygon = PackedVector2Array(-160, -28, 54, -135, 160, -62, -94, 66)
 
 [node name="Ducks" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")
 script_name = "Ducks"
-position = Vector2(760, 745)
-interaction_polygon = PackedVector2Array(-65.49657534246575, -170, 65.49657534246575, -170, 65.49657534246575, 0, -65.49657534246575, 0)
-walk_to_point = Vector2(-170, 141)
+position = Vector2(1348, 440)
+interaction_polygon = PackedVector2Array(-48, -120, 48, -120, 48, 0, -48, 0)
+walk_to_point = Vector2(-170, 446)
 
 [node name="Sprite2D" parent="Props/Ducks" index="0"]
-position = Vector2(0, -85.0)
+position = Vector2(0, -59)
 texture = ExtResource("10")
-scale = Vector2(0.2910958904109589, 0.2910958904109589)
+scale = Vector2(0.20, 0.20)
+flip_h = true
+
+[node name="Wing" type="Polygon2D" parent="Props/Ducks/Sprite2D"]
+visible = false
+position = Vector2(12, 66)
+color = Color(1, 0.95, 0.8, 1)
+polygon = PackedVector2Array(0, 0, 53, -32, 127, -94, 162, -95, 152, -58, 107, -10, 57, 22)
 
 [node name="InteractionPolygon" parent="Props/Ducks" index="2"]
-polygon = PackedVector2Array(-65.49657534246575, -170, 65.49657534246575, -170, 65.49657534246575, 0, -65.49657534246575, 0)
+polygon = PackedVector2Array(-48, -120, 48, -120, 48, 0, -48, 0)
 
 [node name="Arnoob" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")

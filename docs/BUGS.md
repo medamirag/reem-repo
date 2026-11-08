@@ -26,6 +26,8 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 
 | 16 | MeadowFork: separate flower patch obscures the choice between the long road and shortcut, and the sign is hard to read | `docs/bugs/meadow_before.png` (user screenshot) | verified |
 
+| 17 | Stream: the log floats over the stepping stones and HUD controls crowd the left edge | `docs/bugs/stream_bridge_before.jpg` (new unbuilt state) | verified |
+
 ## Details
 
 ### 1. Dialogue text hard to read; Grandpa's text far above him
@@ -142,3 +144,9 @@ After: `docs/bugs/gate_stream_and_help_fixed.jpg`. The real-click Stream route e
 Replaced the separate patch and old northbound road with a winding sandy road and a direct, patchy shortcut from the sign to the distant Big Tree and hives. The painted grass has scattered flowers, including some on the shortcut. Additional flowers on the shortcut bend after the wrong choice and straighten on repair. The two clicks use the original dialogue and flags. The sign uses centred dark Cairo text.
 
 The focused real-click check confirmed that the shortcut wilts the tree, the bent flowers persist on return, and the road earns a blossom. After screenshots: `docs/bugs/meadow_shortcut_fixed.jpg` and `docs/bugs/meadow_shortcut_bent.jpg`.
+
+### 17. Stream footbridge and duck crossing
+
+Replaced the rolling log with a tied bundle and a painted footbridge. Pick up the planks, then click the water over the stones. Reem bends and knocks the wood into place. The ducklings cross one at a time and gather beside their mother before the existing thank-you line and rewards. The Stream entry position clears the left exit arrow, and the map button is inset.
+
+The focused two-click windowed check passed. Evidence: `docs/bugs/stream_bridge_before.jpg`, `docs/bugs/stream_bridge_crossing.jpg` and `docs/bugs/stream_bridge_after.jpg`.

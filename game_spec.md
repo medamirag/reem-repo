@@ -346,17 +346,9 @@ One room `Stream`, 1920×1080. Gate offers Meadow (existing right arrow) or Stre
 routes require Grandpa's briefing. Left exit returns to Gate at any time.
 Right exit leads to PineFork once bridge, route and lantern are resolved.
 
-Art: `bg7_stream.png` uses farm background as style reference. Shallow stream in
-the middle distance, displaced stepping stones; dry continuous foreground path
-y .80–.95. No Reem, fox, log or animals baked in. Duck family at (.44,.69), Arnoob
-at (.70,.73), Thaaloob at (.84,.76). Character turnaround sheets precede their
-derived right-facing sprites. A lightweight log beside the water at (.28,.70)
-rolls to span a narrow channel; no child walks through water. All positions editable.
+Art: `bg7_stream.png` shows the shallow stream and stepping stones before construction. `bg_stream_bridge.png` adds a small tied-plank footbridge on the stones. The plank bundle and all ducks are separate sprites. Arnoob and Thaaloob stay on the foreground bank. No child walks through water. All positions are editable.
 
-On first entry: `reem_stream_arrive`. Click Ducks -> `reem_stream_ducks` until
-helped. Click Log -> `reem_stream_log`, roll it into place, duck family crosses
-with a short tween, `reem_stream_thanks`; bloom once, earn duck card and coloured
-feather festival contribution. Repeated clicks never duplicate rewards.
+On first entry: `reem_stream_arrive`. Click Ducks for `reem_stream_ducks` until helped. Click the tied planks (`Log` scene ID) for `reem_stream_log`, then click `BridgeWater` to build. After the crossing play `reem_stream_thanks`, bloom once, and award the duck card and feather. Repeated clicks never duplicate rewards.
 
 After bridge, click Arnoob or right exit: `reem_stream_rabbit`, choice Map / Follow.
 Map -> `reem_stream_map`, bloom once, route resolved. Follow ->
@@ -371,7 +363,7 @@ Keep -> `reem_stream_keep`, bloom once. Lend -> remove Lantern,
 `reem_stream_ask_back`, return Lantern, `fox_stream_return`, heal once.
 No fox friend card yet. Exit requires Lantern returned and all puzzles complete.
 
-Flags in saved Globals.stream: introduced, bridge, route, lost, lantern_choice,
+Flags in saved Globals.stream: introduced, planks_carried, bridge, route, lost, lantern_choice,
 lent, feather. Reset on New journey. Dict values, inventory, earned card and heart
 survive save/load. Hints: bridge / map repair / lantern return, each three steps.
 Map adds Stream after first visit, connected to Gate. Reem narrates animal actions
@@ -382,6 +374,8 @@ tools/make_words.py and hand-edit word_areas.json. No hand edits to words.json.
 
 Checks: required four MVP paths plus Stream green and wrong/repair paths, repeated
 reward clicks, exit locks, lantern custody, card, hints, words, save/load and reset.
+
+**Bridge art and crossing update.** Before the crossing, a bundle of three tied planks sits on the near grass and the mother duck waits on the far bank. Click the planks, then click the water beside the stones. Reem bends and places the planks with a wood knock. A short fade reveals `bg_stream_bridge.png`. The three ducklings hop and waddle in single file along the planks, scale down towards the far bank, and gather under their mother's wings. Soft peeps and quacks play. Retain the existing dialogue IDs, bridge, feather and card rewards and the blossom. The original art remains available for the unbuilt bridge.
 
 ## 11. Pine Fork (meeting 1, late morning)
 

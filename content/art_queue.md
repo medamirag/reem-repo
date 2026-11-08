@@ -121,6 +121,8 @@ Originals in `assets/` are never edited: new images are new files with the names
 | pass_tail_rock | `assets/art/items/pass_tail_rock.png` | `assets/art/backgrounds/bg15_narrow_pass.png` | transparent | 1536x1024 | See pass_tail_rock below | One rock only, real alpha, sandstone like the Narrow Pass boulders, round enough to roll | done |
 | bg4_fork_shortcut | `assets/art/backgrounds/bg4_fork_shortcut.png` | `assets/art/backgrounds/bg4_fork.png`, `assets/art/backgrounds/bg5_tree_bees.png` | opaque | 16:9 | See bg4_fork_shortcut below | Preserve framing and main road, no text | done |
 | bg4_fork_wildflowers | `assets/art/backgrounds/bg4_fork_wildflowers.png` | `assets/art/backgrounds/bg4_fork_shortcut.png` | opaque | 16:9 | See bg4_fork_wildflowers below | Keep composition and clean road, no text | done |
+| bg_stream_bridge | `assets/art/backgrounds/bg_stream_bridge.png` | `assets/art/backgrounds/bg7_stream.png` | opaque | 16:9 | See bg_stream_bridge below | Same banks and stones, footbridge in perspective, no text | done |
+| bridge_planks | `assets/art/items/bridge_planks.png` | `assets/art/backgrounds/bg7_stream.png` | transparent | landscape | See bridge_planks below | Isolated planks and rope, true alpha | done |
 
 <!-- One section per row, in the same order:
 
@@ -1260,3 +1262,13 @@ One friendly teal and bronze beetle matching the turnaround, exact six distinct 
 
 - **Reference:** `assets/art/backgrounds/bg4_fork_shortcut.png`
 - **Prompt:** Preserve the composition and style. Widen the diagonal shortcut to a third to half the main road width with broken earth, flattened grass and tufts. Scatter varied wildflowers in irregular clusters and singles across the grass, with some on the shortcut. Keep the main road clear. No text.
+
+## bg_stream_bridge
+
+- **Reference:** `assets/art/backgrounds/bg7_stream.png`
+- **Prompt:** Edit the exact Stream art. Preserve the scene outside the stepping stones. A small flat handmade footbridge spans both banks on the stepping stones, with three parallel planks tied with rope and thin, low branch rails. Wider near the viewer, narrower at the far bank. No characters or text.
+
+## bridge_planks
+
+- **Reference:** `assets/art/backgrounds/bg7_stream.png`
+- **Prompt:** Three small flat golden planks bundled with rope, lying flat, side view, same storybook shading. One isolated prop on transparent alpha. No ground, shadow or text.

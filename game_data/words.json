@@ -990,10 +990,16 @@
   },
   "word_log": {
     "text": "جِذْع",
+    "rooms": [],
+    "audio": "res://assets/audio/words/word_log.mp3",
+    "objects": []
+  },
+  "word_bridge_planks": {
+    "text": "أَلْوَاح خَشَبِيَّة",
     "rooms": [
       "Stream"
     ],
-    "audio": "res://assets/audio/words/word_log.mp3",
+    "audio": "res://assets/audio/words/word_bridge_planks.mp3",
     "objects": [
       "prop:Log"
     ]

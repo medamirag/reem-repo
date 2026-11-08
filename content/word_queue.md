@@ -166,3 +166,4 @@ Never delete rows. New rows are added by `python tools/make_words.py` (see docs/
 | word_card | Reem | clear and cheerful, saying one word to teach a child | بِطَاقَة | done |
 | word_map_mother_day | Reem | clear and cheerful, saying one word to teach a child | عِيدُ الْأُمّ | done |
 | word_shortcut | Reem | clear and cheerful, saying one word to teach a child | طَرِيق مُخْتَصَر | todo |
+| word_bridge_planks | Reem | clear and cheerful, saying one word to teach a child | أَلْوَاح خَشَبِيَّة | todo |

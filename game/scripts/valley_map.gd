@@ -29,7 +29,8 @@ func _ready() -> void:
 	words = _read("words")
 	lines = _read("lines")
 	map_button = _button(self, "الخَرِيطَة", open_map)
-	map_button.position = Vector2(18, 18)
+	# Below the inventory bar's 120 px strip, so the bar never slides over it (docs/BUGS.md #2).
+	map_button.position = Vector2(18, 134)
 	map_button.size = Vector2(76, 60)
 	map_button.icon = _texture("button")
 	map_button.expand_icon = true

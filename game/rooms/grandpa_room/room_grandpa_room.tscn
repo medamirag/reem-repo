@@ -20,7 +20,7 @@ script_name = "GrandpaRoom"
 width = 1920
 height = 1080
 entry_points = {
-"": Vector2(0.2, 0.88),
+"": Vector2(0.3, 0.88),
 "Yard": Vector2(0.85, 0.88)
 }
 footstep_cue = "sfx_steps_tile"

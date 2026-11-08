@@ -23,6 +23,11 @@ func _ready() -> void:
 	sand_label.theme = ArabicText.get_theme()
 	ArabicText.make_rtl(green_label)
 	ArabicText.make_rtl(sand_label)
+	# Readable on both boards (docs/BUGS.md #3): dark brown on the pale sand wood, and a dark
+	# green outline around the white letters on the green wood.
+	sand_label.add_theme_color_override("font_color", Color(0.30, 0.16, 0.04))
+	green_label.add_theme_constant_override("outline_size", 10)
+	green_label.add_theme_color_override("font_outline_color", Color(0.13, 0.30, 0.06))
 
 	green_button.pressed.connect(_on_green_pressed)
 	sand_button.pressed.connect(_on_sand_pressed)

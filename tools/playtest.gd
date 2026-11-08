@@ -8,8 +8,17 @@ extends Node
 ## "green" picks the green button at every choice. "sand" picks sand at every choice and then
 ## fixes every mistake (watering can, late confession, wiping the stone, giving the stone back).
 ## Prints lines starting with [PLAYTEST]; any "SCRIPT ERROR" / "ERROR" in the output is a bug.
+##
+## Real-player mode (a real 1920x1080 window, no --headless):
+##   godot --path . -- --playtest --real --path=green
+## Every click, item use and choice is a real mouse move + press + release at the thing's place on
+## screen, so a hidden, covered or unreachable clickable fails. A screenshot is saved after every
+## step and every spoken line in tests/screenshots/<path>/, and each screenshot is checked for
+## layout problems (lines starting with "FAIL: lint").
 
 const SPEED := 8.0
+## Real-player mode plays slower so dialogue and movement are visible in the screenshots.
+const REAL_SPEED := 3.0
 ## Real seconds one step may take before the playtest gives up.
 const STEP_TIMEOUT := 90.0
 
@@ -20,6 +29,12 @@ var _step_name := ""
 ## Folder for screenshots (--shots=/some/folder). Empty = no screenshots (headless runs).
 var _shots_dir := ""
 var _shot_count := 0
+## Real-player mode (--real): real mouse clicks, screenshots and layout checks.
+var _real := false
+## Layout problems already reported (so each is logged once per room).
+var _lint_seen := {}
+## How many lines had been spoken at the last check (a new one gets its own screenshot).
+var _said_count := 0
 
 
 func _ready() -> void:
@@ -28,13 +43,20 @@ func _ready() -> void:
 			_path = arg.get_slice("=", 1)
 		elif arg.begins_with("--shots="):
 			_shots_dir = arg.get_slice("=", 1)
+		elif arg == "--real":
+			_real = true
 
 	Engine.time_scale = SPEED
+	if _real:
+		_setup_real_mode()
 	_run.call_deferred()
 
 
 func _process(_delta: float) -> void:
 	_answer_choices()
+	if _real and Lines.said.size() != _said_count:
+		_said_count = Lines.said.size()
+		_shot_line(Lines.said.keys()[-1])
 
 	if not _step_name.is_empty() and Time.get_ticks_msec() / 1000.0 - _step_started > STEP_TIMEOUT:
 		_fail("step '%s' took too long (stuck?) in room %s" % [_step_name, _room_name()])
@@ -56,6 +78,11 @@ func _run() -> void:
 	if _path == "valley_map":
 		await _valley_map_path()
 		_log("DONE valley_map")
+		get_tree().quit()
+		return
+	if _path == "notebook_clicks":
+		await _notebook_clicks_path()
+		_log("DONE notebook_clicks")
 		get_tree().quit()
 		return
 	if _path in ["stream", "stream_sand"]:
@@ -1093,7 +1120,9 @@ func _words_path() -> void:
 	_expect(Globals.discovered_words.has("word_window"), "hold on the window shows its word")
 	_expect(_bubble_text() == "نَافِذَة", "bubble shows نَافِذَة (got '%s')" % _bubble_text())
 	await _shot("word_window")
-	await _hold_at(Vector2(0.20, 0.80), 0.7)
+	# Hold on Reem wherever she stands (her middle, about a third of her height above her feet).
+	var reem_middle: Vector2 = C.player.position - Vector2(0, R.current.height * 0.14)
+	await _hold_at(reem_middle / Vector2(R.current.width, R.current.height), 0.7)
 	_expect(Globals.discovered_words.has("word_girl"), "hold on Reem shows بنت")
 	await _hold_at(Vector2(0.45, 0.62), 0.2)
 	_expect(not Globals.discovered_words.has("word_jug"), "a short press on the jug is not a hold")
@@ -1342,6 +1371,8 @@ func _click(obj_name: String) -> void:
 	var room_before := _room_name()
 	var y_before: float = C.player.global_position.y if is_instance_valid(C.player) else 0.0
 	await _step("click " + obj_name, func():
+		if _real and await _real_click_object(obj):
+			return
 		E.clicked = obj
 		obj.last_click_button = MOUSE_BUTTON_LEFT
 		await obj.on_click()
@@ -1365,6 +1396,9 @@ func _use(item_name: String, obj_name: String) -> void:
 
 	_log("use %s on %s (%s)" % [item_name, obj_name, _room_name()])
 	await _step("use %s on %s" % [item_name, obj_name], func():
+		if _real and await _real_click_item(item) and I.active == item and await _real_click_object(obj):
+			I.active = null
+			return
 		I.active = item
 		E.clicked = obj
 		obj.last_click_button = MOUSE_BUTTON_LEFT
@@ -1383,11 +1417,24 @@ func _click_item(item_name: String) -> void:
 
 	_log("click item %s (%s)" % [item_name, _room_name()])
 	await _step("click item " + item_name, func():
-		I.clicked = item
-		item.last_click_button = MOUSE_BUTTON_LEFT
-		await item.on_click()
+		if not (_real and await _real_click_item(item)):
+			I.clicked = item
+			item.last_click_button = MOUSE_BUTTON_LEFT
+			await item.on_click()
+		await _shot("item_" + item_name)
 		if Globals.notebook.is_open:
 			_expect(true, "Notebook inventory click opens its pages")
+			if _real:
+				# Close it the way a player does: the × button.
+				var close: Control = Globals.notebook.close_button
+				await _real_move(_to_window(close, close.size / 2.0))
+				await _real_press_at(_to_window(close, close.size / 2.0))
+				await get_tree().create_timer(0.3).timeout
+				_expect(not Globals.notebook.is_open, "the notebook's × button closes it")
+				if "--trace" in OS.get_cmdline_user_args():
+					_log("trace after notebook: words(pressing=%s passthrough=%s)" % [
+						Globals.word_discovery._pressing, Globals.word_discovery._passthrough
+					])
 			Globals.notebook.close_notebook()
 		I.active = null
 	)
@@ -1428,8 +1475,12 @@ func _shot(label: String) -> void:
 	await RenderingServer.frame_post_draw
 	_shot_count += 1
 	var path := "%s/%s_%02d_%s.png" % [_shots_dir, _path, _shot_count, label]
+	if _real:
+		path = "%s/%03d_%s_%s.png" % [_shots_dir, _shot_count, _room_name(), label.validate_filename()]
 	get_viewport().get_texture().get_image().save_png(path)
 	_log("screenshot " + path)
+	if _real:
+		_lint(path.get_file())
 
 
 ## Waits until nothing is happening: the GUI is not blocked, nobody is talking or walking, and
@@ -1445,12 +1496,22 @@ func _wait_idle() -> void:
 			busy = busy or C.player.is_moving or C.player.is_talking
 		if is_instance_valid(R.current) and "started" in R.current and not R.current.started:
 			busy = true
+		# A real click returns before the game reacts. Popochiu keeps E.clicked set until the
+		# whole reaction has ended; an open choice counts as busy too.
+		if _real and (E.clicked != null or Lines.busy):
+			busy = true
+		if is_instance_valid(G.gui):
+			for child in G.gui.get_children():
+				if child is ChoicePopup and child.visible:
+					busy = true
 		quiet_frames = 0 if busy else quiet_frames + 1
 
 
 ## Screenshot while a line is being spoken (to check the moving mouth), only with --shots.
 func _shot_talking(line_id: String) -> void:
-	if _shots_dir.is_empty():
+	# Real-player mode already photographs every line as it is spoken; replaying one would change
+	# what the player sees (a click during a line only skips it).
+	if _shots_dir.is_empty() or _real:
 		return
 	Lines.say(line_id)
 	for wait in [0.3, 0.45]:
@@ -1461,7 +1522,7 @@ func _shot_talking(line_id: String) -> void:
 
 ## Screenshot of Reem in the middle of a walk (to check the walk rig), only with --shots.
 func _shot_walking(target: Vector2) -> void:
-	if _shots_dir.is_empty():
+	if _shots_dir.is_empty() or _real:
 		return
 	C.player.walk(target)
 	await get_tree().create_timer(0.5).timeout
@@ -1485,6 +1546,9 @@ func _answer_choices() -> void:
 				green = true
 			_log("choice -> %s" % ("green" if green else "sand"))
 			await _shot("choice")
+			if _real:
+				_real_press_choice(child, child.green_button if green else child.sand_button)
+				continue
 			if green:
 				child.call_deferred("_on_green_pressed")
 			else:
@@ -1539,6 +1603,447 @@ func _log(message: String) -> void:
 	print("[PLAYTEST] ", message)
 
 
+#endregion
+
+#region Real-player mode (--real) ##################################################################
+const SCREEN_SIZE := Vector2i(1920, 1080)
+## How far (game pixels) Reem's feet may be outside the walkable area before it counts as floating.
+const GROUND_TOLERANCE := 12.0
+## A prop or character taller or wider than this share of the screen is reported as oversized.
+const OVERSIZED_SHARE := Vector2(0.6, 0.75)
+
+
+func _setup_real_mode() -> void:
+	if DisplayServer.get_name() == "headless":
+		_log("FAIL: --real needs a window: run without --headless")
+		_real = false
+		return
+	Engine.time_scale = REAL_SPEED
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	DisplayServer.window_set_size(SCREEN_SIZE)
+	DisplayServer.window_set_position(Vector2i.ZERO)
+	_shots_dir = ProjectSettings.globalize_path("res://tests/screenshots/" + _path)
+	DirAccess.make_dir_recursive_absolute(_shots_dir)
+	for file in DirAccess.get_files_at(_shots_dir):
+		if file.ends_with(".png"):
+			DirAccess.remove_absolute(_shots_dir.path_join(file))
+	await get_tree().process_frame
+	var size := DisplayServer.window_get_size()
+	_log("real mode: window %dx%d, screenshots in %s" % [size.x, size.y, _shots_dir])
+	if size != SCREEN_SIZE:
+		_log("WARN: the screen is smaller than 1920x1080, so the window is %dx%d" % [size.x, size.y])
+
+
+## A point of a node (in its own local coordinates) as window pixels, the way a mouse sees it.
+func _to_window(node: CanvasItem, local := Vector2.ZERO) -> Vector2:
+	return get_viewport().get_screen_transform() * (node.get_global_transform_with_canvas() * local)
+
+
+## The interaction polygon of a clickable in viewport pixels (empty if it has none).
+func _viewport_polygon(obj: PopochiuClickable) -> PackedVector2Array:
+	var out := PackedVector2Array()
+	var poly_node := obj.get_node_or_null("InteractionPolygon") as CollisionPolygon2D
+	if poly_node == null:
+		return out
+	var xform := poly_node.get_global_transform_with_canvas()
+	for p in poly_node.polygon:
+		out.append(xform * p)
+	return out
+
+
+## Where a player would click a clickable, in window pixels: on its exit arrow if it has one,
+## otherwise at the middle of its interaction polygon (moved inside it for odd shapes).
+func _click_point(obj: PopochiuClickable) -> Vector2:
+	var arrow := obj.get_node_or_null("ExitArrow") as ExitArrow
+	if arrow and arrow.is_visible_in_tree():
+		return _to_window(arrow)
+	var poly := _viewport_polygon(obj)
+	if poly.is_empty():
+		return _to_window(obj)
+	var middle := Vector2.ZERO
+	for p in poly:
+		middle += p
+	middle /= poly.size()
+	if not Geometry2D.is_point_in_polygon(middle, poly):
+		var bounds := Rect2(poly[0], Vector2.ZERO)
+		for p in poly:
+			bounds = bounds.expand(p)
+		var best := middle
+		var best_distance := INF
+		for i in 13:
+			for j in 13:
+				var candidate := bounds.position + bounds.size * Vector2((i + 1) / 14.0, (j + 1) / 14.0)
+				if Geometry2D.is_point_in_polygon(candidate, poly) and candidate.distance_to(middle) < best_distance:
+					best = candidate
+					best_distance = candidate.distance_to(middle)
+		middle = best
+	return get_viewport().get_screen_transform() * middle
+
+
+func _real_move(window_pos: Vector2) -> void:
+	var motion := InputEventMouseMotion.new()
+	motion.position = window_pos
+	motion.global_position = window_pos
+	Input.warp_mouse(window_pos)
+	Input.parse_input_event(motion)
+	for i in 3:
+		await get_tree().physics_frame
+	await get_tree().process_frame
+
+
+func _real_press_at(window_pos: Vector2) -> void:
+	var press := InputEventMouseButton.new()
+	press.button_index = MOUSE_BUTTON_LEFT
+	press.pressed = true
+	press.position = window_pos
+	press.global_position = window_pos
+	Input.parse_input_event(press)
+	await get_tree().process_frame
+	var release := press.duplicate() as InputEventMouseButton
+	release.pressed = false
+	Input.parse_input_event(release)
+	await get_tree().process_frame
+
+
+## Moves the mouse onto `obj` and clicks it like a player. Returns false (after logging a FAIL)
+## when the player could not click it: hidden, disabled, covered by the GUI or by another object.
+func _real_click_object(obj: PopochiuClickable) -> bool:
+	var what := "%s (%s)" % [obj.script_name, _room_name()]
+	if not obj.is_visible_in_tree() or not obj.clickable:
+		_expect(false, "real click: %s is hidden or not clickable" % what)
+		return false
+	var at := _click_point(obj)
+	var screen := Rect2(Vector2.ZERO, Vector2(DisplayServer.window_get_size()))
+	if not screen.has_point(at):
+		_expect(false, "real click: %s is off screen at %s" % [what, at.round()])
+		return false
+	_check_reachable(obj)
+	await _real_move(at)
+	var control := get_viewport().gui_get_hovered_control()
+	if control != null:
+		_expect(false, "real click: %s is covered by the GUI (%s) at %s" % [what, control.name, at.round()])
+		return false
+	if E.hovered != obj:
+		var other: String = E.hovered.script_name if is_instance_valid(E.hovered) else "nothing"
+		_expect(false, "real click: %s is under %s at %s" % [what, other, at.round()])
+		return false
+	await _real_press_at(at)
+	# The click starts the room's reaction (walking, talking); wait until it has begun or ended.
+	await get_tree().create_timer(0.2).timeout
+	if "--trace" in OS.get_cmdline_user_args():
+		for i in 8:
+			_log("trace %s: clicked=%s hovered=%s moving=%s blocked=%s words(pressing=%s passthrough=%s) paused=%s" % [
+				obj.script_name,
+				E.clicked.script_name if is_instance_valid(E.clicked) else "null",
+				E.hovered.script_name if is_instance_valid(E.hovered) else "null",
+				C.player.is_moving if is_instance_valid(C.player) else false, G.is_blocked,
+				Globals.word_discovery._pressing, Globals.word_discovery._passthrough, get_tree().paused,
+			])
+			await get_tree().create_timer(0.15, true, false, true).timeout
+	return true
+
+
+## Reports a clickable whose walk-to point is off the walkable ground (Reem cannot get there).
+func _check_reachable(obj: PopochiuClickable) -> void:
+	if not (is_instance_valid(R.current) and R.current.has_player) or obj.walk_to_point == Vector2.ZERO:
+		return
+	if obj is PopochiuCharacter and obj == C.player:
+		return
+	var target := obj.get_global_transform_with_canvas() * obj.walk_to_point
+	if _ground_distance(target) > GROUND_TOLERANCE * 4.0:
+		_lint_once("offroad:" + obj.script_name, "%s: walk-to point %s is off the walkable path" % [
+			obj.script_name, target.round()
+		])
+
+
+## Clicks an inventory item in the bar like a player (the bar slides in when the mouse reaches it).
+## Moves the mouse to the top of the screen, as a player does, until the inventory bar has slid
+## down and `item` is fully on screen and still. Returns false if it never shows.
+func _reveal_item(item: PopochiuInventoryItem) -> bool:
+	var screen := Rect2(Vector2.ZERO, Vector2(DisplayServer.window_get_size()))
+	var last := Vector2(-9999, -9999)
+	var still := 0
+	var until := Time.get_ticks_msec() + 3000
+	while Time.get_ticks_msec() < until:
+		var top := _to_window(item, item.size / 2.0)
+		await _real_move(Vector2(clampf(top.x, 10.0, screen.size.x - 10.0), 12.0))
+		var rect := Rect2(_to_window(item), _to_window(item, item.size) - _to_window(item))
+		still = still + 1 if rect.position.distance_to(last) < 0.5 else 0
+		last = rect.position
+		if item.is_visible_in_tree() and screen.encloses(rect) and still >= 3:
+			return true
+	return false
+
+
+func _real_click_item(item: PopochiuInventoryItem) -> bool:
+	var what := "item %s (%s)" % [item.script_name, _room_name()]
+	if not await _reveal_item(item):
+		_expect(false, "real click: %s never came into view in the inventory bar" % what)
+		return false
+	var until := Time.get_ticks_msec() + 3000
+	while Time.get_ticks_msec() < until:
+		var at := _to_window(item, item.size / 2.0)
+		await _real_move(at)
+		var control := get_viewport().gui_get_hovered_control()
+		if item.is_visible_in_tree() and (control == item or (control != null and item.is_ancestor_of(control))):
+			await _real_press_at(at)
+			await get_tree().create_timer(0.2).timeout
+			if "--trace" in OS.get_cmdline_user_args():
+				for i in 6:
+					_log("trace item %s: active=%s clicked=%s notebook_open=%s words(pressing=%s passthrough=%s) paused=%s hovered_control=%s" % [
+						item.script_name,
+						I.active.script_name if is_instance_valid(I.active) else "null",
+						I.clicked.script_name if is_instance_valid(I.clicked) else "null",
+						Globals.notebook.is_open, Globals.word_discovery._pressing,
+						Globals.word_discovery._passthrough, get_tree().paused,
+						get_viewport().gui_get_hovered_control().name if get_viewport().gui_get_hovered_control() else "null",
+					])
+					await get_tree().create_timer(0.15, true, false, true).timeout
+			return true
+		await get_tree().create_timer(0.1).timeout
+	var hovered := get_viewport().gui_get_hovered_control()
+	_expect(false, "real click: %s could not be reached in the inventory bar (mouse is over %s)" % [
+		what, hovered.name if hovered else "nothing"
+	])
+	return false
+
+
+## Clicks a choice button like a player; falls back to pressing it in code (after a FAIL).
+func _real_press_choice(popup: ChoicePopup, button: TextureButton) -> void:
+	for i in 10:
+		await get_tree().process_frame
+	if not is_instance_valid(popup):
+		return
+	var at := _to_window(button, button.size / 2.0)
+	await _real_move(at)
+	var control := get_viewport().gui_get_hovered_control()
+	if control == button or (control != null and button.is_ancestor_of(control)):
+		await _real_press_at(at)
+		await get_tree().create_timer(0.3).timeout
+		if not is_instance_valid(popup) or not popup.is_inside_tree() or not popup.visible:
+			return
+	_expect(false, "real click: choice button %s could not be clicked (mouse over %s)" % [
+		button.name, control.name if control else "nothing"
+	])
+	if is_instance_valid(popup):
+		if button == popup.green_button:
+			popup.call_deferred("_on_green_pressed")
+		else:
+			popup.call_deferred("_on_sand_pressed")
+
+
+## A screenshot shortly after a line starts, once its text has been laid out.
+func _shot_line(line_id: String) -> void:
+	# Real time, not game time: give the text time to finish typing out before the screenshot.
+	var until := Time.get_ticks_msec() + 600
+	while Time.get_ticks_msec() < until:
+		await get_tree().process_frame
+	await _shot("line_" + line_id)
+
+
+#region Layout checks
+func _lint_once(key: String, message: String) -> void:
+	var full := _room_name() + ":" + key
+	if _lint_seen.has(full):
+		return
+	_lint_seen[full] = true
+	_log("FAIL: lint %s in %s (screenshot %s)" % [message, _room_name(), _last_shot])
+
+
+var _last_shot := ""
+
+
+func _lint(shot: String) -> void:
+	_last_shot = shot
+	if not is_instance_valid(R.current):
+		return
+	_lint_ground()
+	_lint_oversized()
+	_lint_text(G.gui)
+	# HUD and cursor checks only make sense when nothing is going on (no line, choice or page).
+	var talking := Lines.busy or (is_instance_valid(C.player) and C.player.is_inside_tree() and C.player.is_talking)
+	if not talking and not _popup_open():
+		_lint_hud_overlap()
+		_lint_cursor()
+
+
+## True while a choice or the notebook pages cover the room.
+func _popup_open() -> bool:
+	if Globals.notebook and Globals.notebook.is_open:
+		return true
+	for child in G.gui.get_children():
+		if child is ChoicePopup and child.visible:
+			return true
+	return false
+
+
+## Every enabled walkable area of the current room as polygons in viewport pixels.
+func _walk_polygons() -> Array[PackedVector2Array]:
+	var out: Array[PackedVector2Array] = []
+	for wa in get_tree().get_nodes_in_group("walkable_areas"):
+		if not (wa is PopochiuWalkableArea) or not wa.enabled or not R.current.is_ancestor_of(wa):
+			continue
+		var xform: Transform2D = (wa as Node2D).get_global_transform_with_canvas()
+		for poly: PackedVector2Array in wa.interaction_polygon:
+			var points := PackedVector2Array()
+			for p in poly:
+				points.append(xform * (p + wa.interaction_polygon_position))
+			out.append(points)
+	return out
+
+
+## 0 inside the walkable ground, otherwise the distance (viewport pixels) to its nearest edge.
+func _ground_distance(point: Vector2) -> float:
+	var best := INF
+	for poly in _walk_polygons():
+		if Geometry2D.is_point_in_polygon(point, poly):
+			return 0.0
+		for i in poly.size():
+			var closest := Geometry2D.get_closest_point_to_segment(point, poly[i], poly[(i + 1) % poly.size()])
+			best = minf(best, point.distance_to(closest))
+	return best
+
+
+func _lint_ground() -> void:
+	if not R.current.has_player or not is_instance_valid(C.player) or not C.player.is_inside_tree():
+		return
+	if C.player.is_moving or not C.player.visible or _walk_polygons().is_empty():
+		return
+	var feet := C.player.get_global_transform_with_canvas().origin
+	var off := _ground_distance(feet)
+	if off > GROUND_TOLERANCE:
+		_lint_once("ground", "Reem is not standing on the ground (feet %s, %.0f px off the walkable path)" % [
+			feet.round(), off
+		])
+
+
+func _lint_oversized() -> void:
+	var limit := Vector2(get_viewport().get_visible_rect().size) * OVERSIZED_SHARE
+	for node in R.current.find_children("*", "Sprite2D", true, false):
+		var sprite := node as Sprite2D
+		if not sprite.is_visible_in_tree() or sprite.texture == null or sprite.z_index < 0:
+			continue
+		var lower := String(sprite.name).to_lower()
+		if lower.contains("background") or lower.begins_with("fg") or lower.contains("foreground"):
+			continue
+		var r := sprite.get_rect()
+		var xform := sprite.get_global_transform_with_canvas()
+		var size := (xform * r.end - xform * r.position).abs()
+		if size.x > limit.x or size.y > limit.y:
+			_lint_once("big:" + str(sprite.get_path()), "%s looks oversized (%.0fx%.0f on a 1920x1080 screen)" % [
+				_owner_name(sprite), size.x, size.y
+			])
+
+
+func _owner_name(node: Node) -> String:
+	var n := node
+	while n != null and not (n is PopochiuClickable) and n != R.current:
+		n = n.get_parent()
+	return (n as PopochiuClickable).script_name if n is PopochiuClickable else String(node.name)
+
+
+## Clickable things the HUD (inventory bar, map, heart tree, buttons) sits on top of.
+func _lint_hud_overlap() -> void:
+	var screen := get_viewport().get_visible_rect()
+	var hud: Array[Control] = []
+	for node in G.gui.find_children("*", "Control", true, false):
+		var c := node as Control
+		if not c.is_visible_in_tree() or c.mouse_filter == Control.MOUSE_FILTER_IGNORE:
+			continue
+		var r := c.get_global_rect()
+		if r.size.x <= 0 or r.size.y <= 0 or r.get_area() > screen.get_area() * 0.25:
+			continue
+		# Pop-ups (choices, settings, notebook pages) cover the room on purpose while open.
+		var in_popup := false
+		var up: Node = c
+		while up != null and up != G.gui:
+			if up is ChoicePopup or String(up.name) in ["Popups", "NotebookPages"]:
+				in_popup = true
+				break
+			up = up.get_parent()
+		if not in_popup:
+			hud.append(c)
+	for node in R.current.find_children("*", "", true, false):
+		if not (node is PopochiuClickable):
+			continue
+		var obj := node as PopochiuClickable
+		if not obj.is_visible_in_tree() or not obj.clickable or obj == C.player:
+			continue
+		var poly := _viewport_polygon(obj)
+		if poly.is_empty():
+			continue
+		var box := Rect2(poly[0], Vector2.ZERO)
+		for p in poly:
+			box = box.expand(p)
+		for c in hud:
+			var overlap := box.intersection(c.get_global_rect())
+			if overlap.get_area() > box.get_area() * 0.3:
+				_lint_once("hud:%s:%s" % [obj.script_name, c.name], "%s is under the HUD (%s covers %.0f%% of it)" % [
+					obj.script_name, c.name, overlap.get_area() * 100.0 / box.get_area()
+				])
+
+
+func _lint_text(root: Node) -> void:
+	var screen := get_viewport().get_visible_rect().grow(-2)
+	for node in root.find_children("*", "Control", true, false):
+		var c := node as Control
+		if not c.is_visible_in_tree():
+			continue
+		var text := ""
+		if c is Label:
+			text = (c as Label).text
+		elif c is RichTextLabel:
+			text = (c as RichTextLabel).get_parsed_text()
+		elif c is Button:
+			text = (c as Button).text
+		if text.strip_edges().is_empty():
+			continue
+		var r := c.get_global_rect()
+		var short := text.strip_edges().left(24)
+		if not screen.encloses(r):
+			_lint_once("offscreen:" + short, "text \"%s\" goes off the screen (%s)" % [short, r])
+		if c is Label and (c as Label).get_line_count() > (c as Label).get_visible_line_count():
+			_lint_once("cut:" + short, "text \"%s\" is cut off (%d of %d lines visible)" % [
+				short, (c as Label).get_visible_line_count(), (c as Label).get_line_count()
+			])
+		if c is RichTextLabel and not (c as RichTextLabel).fit_content \
+				and (c as RichTextLabel).get_content_height() > c.size.y + 2:
+			_lint_once("cut:" + short, "text \"%s\" is taller than its box (%d > %d px)" % [
+				short, (c as RichTextLabel).get_content_height(), c.size.y
+			])
+		var parent := c.get_parent() as Control
+		if parent and (parent is Panel or parent is PanelContainer or parent is NinePatchRect) \
+				and not parent.get_global_rect().grow(2).encloses(r):
+			_lint_once("box:" + short, "text \"%s\" spills out of its box %s" % [short, parent.name])
+		if _has_arabic(text):
+			if c.get("text_direction") == Control.TEXT_DIRECTION_LTR:
+				_lint_once("ltr:" + short, "Arabic text \"%s\" is set left-to-right" % short)
+			var font := c.get_theme_font("normal_font" if c is RichTextLabel else "font")
+			var font_name := font.resource_path if font else ""
+			if font and not font_name.is_empty() and not font_name.to_lower().contains("cairo"):
+				_lint_once("font:" + short, "Arabic text \"%s\" uses %s instead of Cairo" % [short, font_name.get_file()])
+			var font_size := c.get_theme_font_size("normal_font_size" if c is RichTextLabel else "font_size")
+			if font_size > 0 and font_size < 24:
+				_lint_once("small:" + short, "Arabic text \"%s\" is small (%d px)" % [short, font_size])
+
+
+func _has_arabic(text: String) -> bool:
+	for i in text.length():
+		var code := text.unicode_at(i)
+		if code >= 0x0600 and code <= 0x06FF:
+			return true
+	return false
+
+
+func _lint_cursor() -> void:
+	var cursor = PopochiuUtils.cursor.main_cursor
+	if cursor == null or G.is_blocked or E.playing_queue:
+		return
+	if (cursor as AnimatedSprite2D).animation == &"wait" and (cursor as AnimatedSprite2D).visible:
+		_lint_once("cursor", "the cursor is stuck on the wait shape while nothing is happening")
+
+
+#endregion
 #endregion
 
 
@@ -1663,6 +2168,26 @@ func _valley_map_path() -> void:
 	map.choices.get_child(0).pressed.emit()
 	await _wait_room("GrandpaRoom")
 	_expect(not map.is_open, "Yes closes map and travels")
+
+
+## Real-mouse check (run with --real): after opening the notebook from the inventory and closing
+## it with ×, the next click on the room and the next notebook click must still work.
+func _notebook_clicks_path() -> void:
+	await _step("start", func(): R.current.call("_on_start_pressed"))
+	await _wait_room("GrandpaRoom")
+	_answers = [true]
+	await _click("BasketProp")
+	await _click("Door")
+	await _wait_room("Yard")
+	_answers = [true]
+	await _click("Jad")
+	for round in 2:
+		await _click_item("Notebook")
+		_log("left button held after closing the notebook: %s" % Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT))
+		var had_can := _has("WateringCan")
+		await _click("Well")
+		_expect(had_can or _has("WateringCan"), "a click on the Well works after the notebook (round %d)" % (round + 1))
+	_expect(Globals.notebook.is_open == false, "notebook closed at the end")
 
 
 func _notebook_path() -> void:

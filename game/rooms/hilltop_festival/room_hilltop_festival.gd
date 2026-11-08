@@ -86,7 +86,8 @@ func _sync_festival() -> void:
 		guests[card.id] = _sprite($Gathering, card.image, guest_slots[attended], height)
 		attended += 1
 	if Globals.narrow_pass.get("fox_joins", false) and attended < guest_slots.size():
-		guests["thaaloob"] = _sprite($Gathering, FOX, guest_slots[attended], 220.0)
+		# Same height as the Thaaloob character everywhere else (docs/BUGS.md #6).
+		guests["thaaloob"] = _sprite($Gathering, FOX, guest_slots[attended], 454.0)
 	var gift_paths := {
 		"nuts": "res://assets/art/items/oak_acorn.png" if Globals.oak.get("nuts", false) else "",
 		"leaves": GIFT_DIR + "gift_leaves.svg" if Globals.oak.get("leaves", false) else "",
@@ -141,11 +142,13 @@ func _soft_disc(layer_node: Node2D, center: Vector2, extent: float, color: Color
 
 func _place_jad(animate: bool) -> void:
 	$Bearer.position = bear_spot + (Vector2(-660, 0) if animate else Vector2.ZERO)
+	# Grandpa sits at about 430 px in the Yard; riding Dubb (300 px, his orchard size) he stays
+	# close to that instead of shrinking to doll size (docs/BUGS.md #6).
 	if Globals.orchard.get("carrier", false):
 		_sprite($Bearer, DUBB, Vector2.ZERO, 300)
-		_sprite($Bearer, JAD, Vector2(19, -163), 179)
+		_sprite($Bearer, JAD, Vector2(19, -150), 300)
 	else:
-		_sprite($Bearer, JAD, Vector2.ZERO, 190)
+		_sprite($Bearer, JAD, Vector2.ZERO, 400)
 
 
 func _light_festival() -> void:

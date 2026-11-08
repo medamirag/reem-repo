@@ -144,7 +144,7 @@ color = Color(0.427, 0.274, 0.2, 1)
 
 [node name="MotherStandIn" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1630, 654)
+position = Vector2(1130, 654)
 texture = ExtResource("10")
 scale = Vector2(0.245, 0.245)
 flip_h = true

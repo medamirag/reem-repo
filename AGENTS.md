@@ -133,6 +133,18 @@ Run every check from the project folder. Any `ERROR` or `SCRIPT ERROR` in the ou
 
 The automatic playtest (`tools/playtest.gd`) has one path per story route, station, pack, event and system; the `_path` checks in its `_run()` list them. Always run `green`, `sand`, `mixed` (the three story playthroughs) and `words` (word discovery with real mouse presses), plus the paths for every room or system you changed. The paths share one save slot: run them one at a time.
 
+### Real-player mode (Windows, with a window)
+
+The headless runs above check the logic quickly. To test like a player, add `--real` and leave out `--headless`:
+
+```
+& "C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe" --path "C:\Users\ACER\Desktop\Games\reem-game" -- --playtest --real --path=green
+```
+
+It opens a 1920x1080 window and plays with real mouse moves and clicks at each thing's place on screen, so a hidden, covered or unreachable thing fails ("FAIL: real click ..."). It saves a screenshot after every step and every spoken line in `tests/screenshots/<path>/` (git-ignored, overwritten each run) and checks each one for layout problems ("FAIL: lint ..."). Nobody should touch the mouse while it runs. After a run, look at the screenshots yourself (characters on the ground and in proportion, nothing covering the HUD, text readable and right to left), and write any problem in `docs/BUGS.md` with its screenshot path. `--trace` adds a few lines after each click showing what the game did with it.
+
+After changing anything a player sees, run the real-player `green` path and the real-player path of the room you changed.
+
 ### Windows (the user's computer)
 
 Godot 4.7.2, Compatibility renderer. Project: `C:\Users\ACER\Desktop\Games\reem-game`. Godot: `C:\Users\ACER\Desktop\Godot\Godot_v4.7.2-stable_win64_console.exe` (use the `_console` build so the output shows).

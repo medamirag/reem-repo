@@ -3,9 +3,9 @@ extends ReemRoom
 
 const Data := preload("room_narrow_pass_state.gd")
 var state: Data = load("res://game/rooms/narrow_pass/room_narrow_pass.tres")
-@export var stone_open := Vector2(1370, 916)
+@export var stone_open := Vector2(1420, 916)
 @export var fox_free := Vector2(1090, 854)
-const TAIL_OFFSET := Vector2(78, -112)
+const TAIL_OFFSET := Vector2(118, -169)
 
 
 func _on_room_started() -> void:

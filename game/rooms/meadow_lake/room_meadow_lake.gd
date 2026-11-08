@@ -19,7 +19,7 @@ func _on_restore_from_savegame() -> void:
 func _sync_scene() -> void:
 	var reunited: bool = Globals.lake.get("reunited", false)
 	$MotherStandIn.visible = reunited
-	$Props/Ghazlana.position = Vector2(1420, 803) if reunited else Vector2(825, 790)
+	$Props/Ghazlana.position = Vector2(1000, 803) if reunited else Vector2(825, 790)
 	$SongNotes.visible = Globals.lake.get("flute", false)
 	$WarmCup.visible = Globals.lake.get("flute", false)
 	for index in range(1, 4):

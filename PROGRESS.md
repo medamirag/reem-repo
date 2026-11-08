@@ -2,9 +2,12 @@
 
 ## Handoff
 
-- **Who worked last:** Claude Code (builder), instruction-file cleanup only; the audit items below are still Codex's latest status and its "Next" still applies.
+- **Who worked last:** Claude Code (builder): real-player playtests and the eight bugs they found. The audit items further down are still Codex's latest status and its "Next" still applies.
 - **Date:** 2026-11-08
 - **Branch:** main
+- **Real-player playtests:** `tools/playtest.gd` has a `--real` mode (run without `--headless`, see AGENTS.md "Real-player mode"): a 1920x1080 window, real mouse moves and clicks (including the inventory bar, choices and the notebook's ×), a screenshot after every step and spoken line in `tests/screenshots/<path>/` (git-ignored), and layout checks on each. The fast headless mode is unchanged. New path `notebook_clicks`.
+- **Bugs:** `docs/BUGS.md` lists the 8 problems found in the `green` screenshots, all fixed and verified by a second real run: outlined dialogue text and Grandpa's speech point; the map, notebook and settings buttons moved below the inventory bar (y 132); readable choice boards; the lake reunion moved off the boat; Thaaloob at his real size at Narrow Pass and at the festival, and Grandpa larger on Dubb; Reem's start spot clear of the plant; the open notebook tab highlighted. Evidence (before and `_fixed`) is in `docs/bugs/`.
+- **Next (real-player):** run `--real` on the paths not yet played that way (sand, mixed, stream, oak, cave, waterfall, the six packs, the two events, the system paths), look at every screenshot, and add problems to `docs/BUGS.md`.
 - **Instruction files:** AGENTS.md now says the playtest has a path per route/station/pack/event/system (always run green, sand, mixed and words plus the paths for what you changed, one at a time) and points to `addons/popochiu/plugin.cfg` for the Popochiu version (2.2.1, not 2.0.3). The per-batch recording notes moved verbatim from AGENTS.md to `content/voice_log.md`: **record each new voice batch there**, and only the saved voice and its settings in the AGENTS.md registry. docs/PIPELINE.md says the same (changed at the user's request). No game files changed.
 - **Audit item 1:** Replaced all cache references in the GUI theme with one tracked sprite sheet under game/gui/resources. Content, import, startup, green, sand, mixed and words passed.
 - **Audit item 2:** The three repeated hint sets now have distinct nudges, clues and actions. Nine Reem recordings are queued. Content, startup, notebook, green, sand, mixed and words passed.
@@ -61,6 +64,11 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Top buttons moved down:** the map, «دفتري» and «الإعدادات» buttons now sit at y 132–134, just below the inventory bar's 120 px strip, instead of inside it (docs/BUGS.md #2). Moving the bar instead would have meant editing Popochiu's inventory template.
+- **Festival sizes:** only Thaaloob (back to 454 px, his size everywhere else) and Grandpa (300 px riding Dubb, 400 px without) were enlarged. The other guests keep their smaller festival sizes so all ten still fit along the path.
+- **Narrow Pass tail:** at Thaaloob's real size his tail tip is above the ground, so the stone now lies just under it rather than over it. A pose with the tail on the ground, or a rock drawn over the tail, would make him look pinned again.
+- **Dialogue outline:** the text above speakers has a cream outline (12 px) for all characters, not only where it was hard to read.
 
 - **Cast audit:** Drafted child-friendly adult voice briefs and sample lines for the post-MVP speaking roles. Kept candidate voices pending until a saved character mapping is verified.
 

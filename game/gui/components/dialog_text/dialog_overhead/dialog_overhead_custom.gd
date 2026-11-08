@@ -13,6 +13,10 @@ func _ready() -> void:
 
 	ArabicText.make_rtl(rich_text_label)
 
+	# A cream outline keeps the dark letters readable over leaves, reeds and stalls.
+	rich_text_label.add_theme_constant_override("outline_size", 12)
+	rich_text_label.add_theme_color_override("font_outline_color", Color(1.0, 0.97, 0.88))
+
 	# Popochiu remembers the label's design size and reuses it as the height of a one-line
 	# dialogue. The template's 28 pixels were meant for small Latin text, so make room.
 	var default_size: Vector2 = get_meta(DFLT_SIZE)

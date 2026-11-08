@@ -28,3 +28,6 @@ mcp_config.json
 *.credentials
 *.log
 __pycache__/
+
+# Screenshots from the real-player playtest (tools/playtest.gd --real); regenerated on every run.
+tests/screenshots/

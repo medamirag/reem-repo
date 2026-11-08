@@ -324,7 +324,8 @@ func _text(caption: String) -> Label:
 func _build() -> void:
 	open_button = _button(labels.notebook)
 	open_button.name = "NotebookButton"
-	open_button.position = Vector2(1000, 16)
+	# Below the inventory bar's 120 px strip, so the bar never slides over it (docs/BUGS.md #2).
+	open_button.position = Vector2(1000, 132)
 	open_button.custom_minimum_size.x = 270
 	add_child(open_button)
 	open_button.pressed.connect(open_notebook)
@@ -360,6 +361,15 @@ func _build() -> void:
 	for key: String in ["hints", "words", "map", "cards"]:
 		var button := _button(labels[key])
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		# The open page's tab is disabled so it cannot be pressed again; draw it as selected
+		# rather than greyed out (docs/BUGS.md #8).
+		var selected := StyleBoxFlat.new()
+		selected.bg_color = Color(1.0, 0.86, 0.5)
+		selected.border_color = Color(0.45, 0.25, 0.08)
+		selected.set_border_width_all(4)
+		selected.set_corner_radius_all(8)
+		button.add_theme_stylebox_override("disabled", selected)
+		button.add_theme_color_override("font_disabled_color", Color(0.25, 0.13, 0.04))
 		button.pressed.connect(func(): show_page(key))
 		tabs.add_child(button)
 		page_buttons[key] = button

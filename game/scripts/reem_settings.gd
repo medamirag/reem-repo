@@ -164,7 +164,8 @@ func _build_controls() -> void:
 	open_button = Button.new()
 	open_button.name = "SettingsButton"
 	open_button.text = _labels.settings
-	open_button.position = Vector2(1320, 16)
+	# Below the inventory bar's 120 px strip, so the bar never slides over it (docs/BUGS.md #2).
+	open_button.position = Vector2(1320, 132)
 	open_button.custom_minimum_size = Vector2(300, 80)
 	_style_text(open_button)
 	add_child(open_button)

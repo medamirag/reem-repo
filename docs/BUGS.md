@@ -19,6 +19,8 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 | 11 | The settings and notebook buttons cover two of the observatory's sky stars (a real click on the crescent star hits «الإعدادات») | `tests/screenshots/stars/028_ObservatoryDome_after_TriangleStar.png` (`docs/bugs/028_ObservatoryDome_after_TriangleStar.jpg`) | verified |
 | 12 | While the two choice boards are shown, the cursor is the hourglass (wait) instead of the pointer | `tests/screenshots/mother_day/007_MotherGarden_choice.png` (`docs/bugs/007_MotherGarden_choice.jpg`) | verified |
 
+| 13 | The left exit arrow overlaps Reem’s feet on arrival in DewBank and Narrow Pass | `docs/bugs/020_DewBank_painted_leaf_tilted_fixed.jpg` and `docs/bugs/136_NarrowPass_painted_tail_rock_fixed.jpg` | open |
+
 ## Details
 
 ### 1. Dialogue text hard to read; Grandpa's text far above him
@@ -50,7 +52,7 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 - **What a child sees:** Thaaloob is about two thirds of Reem's height at Narrow Pass, but as tall as Reem in FoxRock and the orchard.
 - **Cause:** at Narrow Pass he is a prop with his own copy of the fox picture at scale 0.24 (`game/rooms/narrow_pass/room_narrow_pass.tscn`); the Thaaloob character uses 0.3617.
 - **Fix:** the same 0.3617 scale, with his click area, his stuck tail point and the stone pinning it moved to match.
-- **Tail (decided by the user, 2026-11-08: a rock drawn over the tail):** the loose stone is now a bigger rock on the ground in front of Thaaloob, covering the lower curl of his tail with the white tip showing above it, so the tail looks pinned. When Reem clicks it, it rolls one full turn away to the right and lands flat, then Thaaloob steps free (`game/rooms/narrow_pass/room_narrow_pass.gd`: `stone_open`, `stone_roll`). Until Codex paints `pass_tail_rock` (art queue), the placeholder is the existing `pass_loose_stone.png` at twice its old size. Placeholder reference: `docs/bugs/136_NarrowPass_tail_rock_fixed.jpg`. The painted `pass_tail_rock.png` is installed. Its real-click screenshot is pending approval.
+- **Tail (decided by the user, 2026-11-08: a rock drawn over the tail):** the loose stone is now a bigger rock on the ground in front of Thaaloob, covering the lower curl of his tail with the white tip showing above it, so the tail looks pinned. When Reem clicks it, it rolls one full turn away to the right and lands flat, then Thaaloob steps free (`game/rooms/narrow_pass/room_narrow_pass.gd`: `stone_open`, `stone_roll`). Until Codex paints `pass_tail_rock` (art queue), the placeholder is the existing `pass_loose_stone.png` at twice its old size. Placeholder reference: `docs/bugs/136_NarrowPass_tail_rock_fixed.jpg`. The painted `pass_tail_rock.png` is installed. The real-click rerun verified the placement and movement.
 
 ### 6. Grandpa and Thaaloob too small at the festival
 
@@ -80,7 +82,7 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 
 - **What a child sees:** in DewBank (ants pack), the floating leaf is a huge blurry green bar of blocks, tilted across the whole dew drop and over the dialogue box.
 - **Cause:** the LeafBridge prop (`game/rooms/dew_bank/room_dew_bank.tscn`) used the 80x80 leaf icon `game/scripts/ants/leaf.svg` at scale 19 x 3.
-- **Fix:** a new placeholder drawn at its real size, `game/scripts/ants/leaf_bridge.svg` (520x120, scale 1), followed by the painted `dew_leaf_bridge.png`, now installed at about 520 × 120 on screen. Its real-click screenshot is pending approval.
+- **Fix:** a new placeholder drawn at its real size, `game/scripts/ants/leaf_bridge.svg` (520x120, scale 1), followed by the painted `dew_leaf_bridge.png`, now installed at about 520 × 120 on screen. The real-click rerun verified the tilted and aligned states.
 
 ### 11. Top buttons cover the observatory stars
 
@@ -111,3 +113,11 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 - Real clicks return before the game reacts; the test now waits until Popochiu's click is over (`E.clicked`), the line is finished (`Lines.busy`) and any choice is answered.
 - Real-player runs of `highlight` checked the glow one frame too early after opening the settings; it now waits two frames.
 - In `settings`, the path itself answers a choice while its screenshot is taken; the choice helper now skips a choice that is already gone (it printed a SCRIPT ERROR).
+
+### Painted prop verification
+
+The approved windowed green, ants and narrow_pass routes reached DONE with real clicks and no playtest failures. Godot reported resource leaks on exit.
+
+- **Narrow Pass (#5):** The painted rock covers the lower tail while the white tip remains visible. The click moves the rock clear and opens the right exit. Evidence: `docs/bugs/136_NarrowPass_painted_tail_rock_fixed.jpg` and `docs/bugs/144_NarrowPass_painted_tail_rock_rolled_fixed.jpg`.
+- **DewBank (#10):** The painted leaf is clear in both positions. Clicking it aligns it and allows the beetle interaction to open the route. Evidence: `docs/bugs/020_DewBank_painted_leaf_tilted_fixed.jpg` and `docs/bugs/026_DewBank_painted_leaf_aligned_fixed.jpg`.
+- **Arrival arrow (#13):** The left exit arrow partially covers Reem’s feet in both entry screenshots. The click checks still passed.

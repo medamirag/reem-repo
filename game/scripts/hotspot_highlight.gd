@@ -24,6 +24,12 @@ func _ready() -> void:
 	button.custom_minimum_size = Vector2(300, 80)
 	button.theme = ArabicText.get_theme()
 	button.add_theme_font_size_override("font_size", 32)
+	var button_colors := {"normal": Color("#493421"), "hover": Color("#62482c"), "pressed": Color("#372617")}
+	for state: String in button_colors:
+		var background := StyleBoxFlat.new()
+		background.bg_color = button_colors[state]
+		background.set_corner_radius_all(12)
+		button.add_theme_stylebox_override(state, background)
 	ArabicText.make_rtl(button)
 	add_child(button)
 	button.pressed.connect(reveal)

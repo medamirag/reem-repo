@@ -21,6 +21,9 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 
 | 13 | The left exit arrow overlaps Reem’s feet on arrival in DewBank and Narrow Pass | `docs/bugs/020_DewBank_painted_leaf_tilted_fixed.jpg` and `docs/bugs/136_NarrowPass_painted_tail_rock_fixed.jpg` | open |
 
+| 14 | Gate: the «الجدول» arrow and click area sit on the fence | `docs/bugs/gate_stream_and_help_before.png` (user screenshot) | verified |
+| 15 | Gate: flowers show through the «أين أضغط؟» button and reduce contrast | `docs/bugs/gate_stream_and_help_before.png` (user screenshot) | verified |
+
 ## Details
 
 ### 1. Dialogue text hard to read; Grandpa's text far above him
@@ -121,3 +124,13 @@ The approved windowed green, ants and narrow_pass routes reached DONE with real 
 - **Narrow Pass (#5):** The painted rock covers the lower tail while the white tip remains visible. The click moves the rock clear and opens the right exit. Evidence: `docs/bugs/136_NarrowPass_painted_tail_rock_fixed.jpg` and `docs/bugs/144_NarrowPass_painted_tail_rock_rolled_fixed.jpg`.
 - **DewBank (#10):** The painted leaf is clear in both positions. Clicking it aligns it and allows the beetle interaction to open the route. Evidence: `docs/bugs/020_DewBank_painted_leaf_tilted_fixed.jpg` and `docs/bugs/026_DewBank_painted_leaf_aligned_fixed.jpg`.
 - **Arrival arrow (#13):** The left exit arrow partially covers Reem’s feet in both entry screenshots. The click checks still passed.
+
+### 14. Gate Stream arrow on the fence
+
+Moved the up arrow and its label onto the dirt track behind the open gate. The hotspot follows the arrow with a narrower click area. The Market entrance moved to the foreground sand so the two exits stay separate after the festival.
+
+### 15. Gate help button over flowers
+
+The help button has an opaque dark brown background in its normal, hover and pressed states. Its position and action are unchanged.
+
+After: `docs/bugs/gate_stream_and_help_fixed.jpg`. The real-click Stream route entered Stream through the moved arrow.

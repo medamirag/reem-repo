@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 const ART := "res://assets/art/ui/map_"
-const INTRO := "jad_map_intro"
+const INTRO := "jad_map_intro_vocalised"
 var is_open := false
 var places: Array
 var words: Dictionary

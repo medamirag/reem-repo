@@ -731,6 +731,12 @@
     "text": "يَتَسَلَّقُ الْقِرْدُ الْأَغْصَانَ بِيَدَيْهِ وَقَدَمَيْهِ.",
     "audio": "res://assets/audio/lines/reem_waterfall_fact.mp3"
   },
+  "jad_map_intro_vocalised": {
+    "speaker": "Jad",
+    "tone": "warm",
+    "text": "هَذِهِ خَرِيطَةُ الْوَادِي يَا رِيمُ. كُلَّمَا زُرْتِ مَكَانًا جَدِيدًا ظَهَرَ عَلَيْهَا، وَإِنِ احْتَرْتِ فِي طَرِيقِكِ فَانْظُرِي إِلَيْهَا.",
+    "audio": "res://assets/audio/lines/jad_map_intro_vocalised.mp3"
+  },
   "jad_map_intro": {
     "speaker": "Jad",
     "tone": "warm",

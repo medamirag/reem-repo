@@ -163,6 +163,7 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_hill_name | Reem | warm | طَاوُوسٌ | done |
 | reem_hill_fact | Reem | warm | يَبْسُطُ الطَّاوُوسُ رِيشَ ذَيْلِهِ مِثْلَ الْمِرْوَحَةِ. | done |
 | jad_map_intro | Jad | warm | هذه خريطة الوادي يا ريم. كلما زرتِ مكاناً جديداً ظهر عليها، وإن احترتِ في طريقك فانظري إليها. | done |
+| jad_map_intro_vocalised | Jad | warm | هَذِهِ خَرِيطَةُ الْوَادِي يَا رِيمُ. كُلَّمَا زُرْتِ مَكَانًا جَدِيدًا ظَهَرَ عَلَيْهَا، وَإِنِ احْتَرْتِ فِي طَرِيقِكِ فَانْظُرِي إِلَيْهَا. | done |
 | reem_waterfall_arrive | Reem | warm | أَسْمَعُ صَوْتَ الشَّلَّالِ مِنْ هُنَا. | done |
 | reem_waterfall_provoked | Reem | surprised | دَحْرَجَ قَرْقُورٌ ثَمَرَةً إِلَى طَرِيقِي! لِمَاذَا فَعَلَ ذَلِكَ؟ | done |
 | reem_waterfall_throw | Reem | gentle | رَمَيْتُ الثَّمَرَةَ، فَابْتَعَدَ قَرْقُورٌ. سَأَتَحَدَّثُ إِلَيْهِ بِهُدُوءٍ. | done |

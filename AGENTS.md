@@ -110,6 +110,10 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 - Reem narrates the worker, beetle and queen. Her saved voice used `eleven_v3` with `[warmly]` and `[gently]`. Thaaloob's saved voice used `eleven_v3` with `[playful]`. Reem recorded words on `eleven_multilingual_v2` with no tags.
 - No model fallback or numeric controls were used. References are `res://assets/audio/lines/reem_s1_002.mp3` and `res://assets/audio/lines/fox_cave_praise.mp3`. Listening comparison remains open.
 
+### Diacritised map introduction
+
+- Saved Jad recorded jad_map_intro_vocalised using eleven_v3 and [warmly], without fallback. Numeric settings were unavailable. Reference take is assets/audio/lines/jad_map_intro.mp3. The new file imported and the map playtest passed. Listening comparison remains open.
+
 ## ElevenLabs credentials
 
 - Never write the ElevenLabs API key in any repo file: code, documentation, examples, queues, logs or Godot resources. Use connected authentication or `ELEVENLABS_API_KEY` supplied through the process environment; keep credentials outside this project.

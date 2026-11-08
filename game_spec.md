@@ -594,3 +594,7 @@ From the Farm Yard after the festival, take a signed-by-icon path to TreeDay. Th
 ## 30. Mother's Day free event
 
 After the festival, click a flower basket in Grandpa's Yard. MotherGarden is one quiet courtyard room. Reem can make a card for her mother or keep the flowers for herself. Keeping them leaves the card blank and wilts once. Return to the craft table and choose to share the flowers, then click the blank card to place the flower and repair. Reem reads her own note to her mother, earns a card in the notebook and can walk back to the yard. Save the choice and completed card, and add the room to both maps. Reem is the only voice.
+
+### Ankoob artwork
+
+The Cave uses a separate painted body and one leg texture. Godot creates four rotated legs on each side, mirrored on the left. Talking to Ankoob triggers a short stepping wiggle. The notebook uses the body as a portrait.

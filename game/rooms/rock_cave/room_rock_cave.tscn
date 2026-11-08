@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/room/popochiu_room.tscn" id="1"]
 [ext_resource type="Script" path="res://game/rooms/rock_cave/room_rock_cave.gd" id="2"]
@@ -9,9 +9,12 @@
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
 [ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
 [ext_resource type="Texture2D" path="res://assets/art/characters/qatqoota/qatqoota_base.png" id="9"]
-[ext_resource type="Texture2D" path="res://game/rooms/rock_cave/ankoob_placeholder.svg" id="10"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/ankoob/ankoob_body.png" id="10"]
 [ext_resource type="Texture2D" path="res://assets/cut/handmirror_basket/basket.tres" id="11"]
 [ext_resource type="PackedScene" path="res://game/characters/thaaloob/character_thaaloob.tscn" id="12"]
+
+[ext_resource type="Texture2D" path="res://assets/art/characters/ankoob/ankoob_leg.png" id="ankoob_leg"]
+[ext_resource type="Script" path="res://game/rooms/rock_cave/ankoob_visual.gd" id="ankoob_visual"]
 
 [sub_resource type="NavigationPolygon" id="Path"]
 agent_radius = 0.0
@@ -79,10 +82,13 @@ position = Vector2(1235, 725)
 interaction_polygon = PackedVector2Array(-125, -155, 125, -155, 125, 0, -125, 0)
 walk_to_point = Vector2(0, 161)
 
-[node name="Sprite2D" parent="Props/Ankoob" index="0"]
+[node name="Visual" type="Node2D" parent="Props/Ankoob"]
 position = Vector2(0, -77.5)
-texture = ExtResource("10")
-scale = Vector2(1, 1)
+script = ExtResource("ankoob_visual")
+leg = ExtResource("ankoob_leg")
+body = ExtResource("10")
+leg_region = Rect2(80, 150, 1585, 650)
+body_region = Rect2(287, 55, 678, 1083)
 
 [node name="InteractionPolygon" parent="Props/Ankoob" index="2"]
 polygon = PackedVector2Array(-125, -155, 125, -155, 125, 0, -125, 0)

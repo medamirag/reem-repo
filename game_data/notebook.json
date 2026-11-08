@@ -742,7 +742,7 @@
     },
     {
       "id": "ankoob",
-      "image": "res://game/rooms/rock_cave/ankoob_placeholder.svg",
+      "image": "res://game/rooms/rock_cave/ankoob_portrait.tres",
       "name_line": "reem_cave_spider_name",
       "fact_line": "reem_cave_spider_fact"
     },

@@ -37,7 +37,7 @@
 - **Star Observatory checks:** Content, Godot import and startup, stars, green, sand, mixed and words passed. The stars test checked repair, wrong-shape handling, Continue and caravan arrival. An earlier overlapping test shared the save slot and failed at Continue. The isolated rerun passed. Listening comparison remains open.
 - **Tree Day:** The garden, seven dialogue recordings and two word recordings are installed and marked done. After the festival, click the leaf in Yard, talk to Arnoob and click the seedling after offering water. Watering shows new leaves and awards the notebook card. Godot import and startup, the dedicated route and green, sand, mixed and words passed. Tree Day was committed as d888e57.
 - **Mothers Day:** Mother Garden is built and pushed as ed2239b. The courtyard, seven dialogue recordings and two vocabulary recordings are installed and marked done. The dedicated route passed with the finished audio. Godot import, startup and the dedicated route passed. From Yard after the festival, click the pink flower, click the basket to choose, then click the blank card.
-- **Next:** The roadmap is implemented. The final Cave, cave_sand, cave_empty, green, sand, mixed and words playtests all passed after the Cairo caption and choice-sign changes. Release checks still include hands-on Arabic layout, recording comparison and timings. Ankoob uses the temporary eight-legged sprite after two failed art checks.
+- **Next:** The roadmap is implemented. The final Cave, cave_sand, cave_empty, green, sand, mixed and words playtests all passed after the Cairo caption and choice-sign changes. Release checks still include hands-on Arabic layout, recording comparison and timings. Ankoob now uses a painted body and exactly eight Godot leg sprites. Check .godot/ankoob-*.log for the final reruns.
 - **How to play Ant Kingdom:** After the festival, click the giant flower in the meadow. Help the worker and click the seed. At the dew drop, click the leaf to straighten it, then talk to the beetle. In the colony, talk to the queen, click the seeds from smallest to largest, then click the tunnel.
 - **How to play Snow Trail:** After the festival, revisit Hill slope and take the snow arrow. Talk to the goldfinch and offer the bundle, then click the shelter. Talk to white-coated Arnoob and click the three split prints from left to right. At the next room click the wooden board, then click the deer when Reem reaches the bottom.
 - **How to play Old City Market:** After the festival, visit Gate and take the market arrow. Click the honey stall, then go to the baker. Select three coins and click the green tick. Share bread with the cat, then visit the scale. Talk to Thaaloob, place both weights and click the tick. Show the baker, then place both weights and test again.
@@ -54,6 +54,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Ankoob:** The first body draft had background haze and the first leg request failed. Both retries passed. The Cave uses four legs on each side and a brief stepping wiggle on interaction. The notebook shows a cropped body portrait.
 
 - **Cave captions:** The two web lines use plain Cairo bottom captions. This removed the repeated errors after connecting the web. The remaining error on the offer cleared when the choice signs switched to plain Cairo labels. All three Cave reruns passed without the rectangle error. The exact Arabic text and audio were preserved.
 

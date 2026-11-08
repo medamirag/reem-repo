@@ -103,6 +103,7 @@ func _help_kitten() -> void:
 		await Lines.say("reem_cave_mock")
 
 func _offer_web() -> void:
+	$Props/Ankoob/Visual.wiggle()
 	await Lines.say("reem_cave_web", true)
 	var try_again: bool = await _choice("cave_try", "cave_give_up")
 	Globals.cave["weaving"] = try_again

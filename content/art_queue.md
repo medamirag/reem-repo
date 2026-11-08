@@ -30,6 +30,8 @@ Originals in `assets/` are never edited: new images are new files with the names
 | qatqoota_base | `assets/art/characters/qatqoota/qatqoota_base.png` | `assets/art/characters/qatqoota/qatqoota_sheet.png` | transparent | 1536x1024 | See qatqoota_base below | Clean edges, readable silhouette | done |
 | ankoob_sheet | `assets/art/characters/ankoob/ankoob_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See ankoob_sheet below | Clean edges, readable silhouette | done |
 | ankoob_base | `assets/art/characters/ankoob/ankoob_base.png` | `assets/art/characters/ankoob/ankoob_sheet.png` | transparent | 1536x1024 | See ankoob_base below | Clean edges, readable silhouette | problem: both attempts failed visible leg-count check |
+| ankoob_body | `assets/art/characters/ankoob/ankoob_body.png` | assets/art/characters/ankoob/ankoob_sheet.png | transparent | 1254x1254 | See ankoob_body below | No additional limbs, clear alpha | done |
+| ankoob_leg | `assets/art/characters/ankoob/ankoob_leg.png` | None on retry | transparent | 1774x887 | See ankoob_leg below | No additional limbs, clear alpha | done |
 
 | bg11_meadow_lake | `assets/art/backgrounds/bg11_meadow_lake.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1920x1080 | See bg11_meadow_lake below | Clear silhouette and correct background | done |
 | dafdoof_sheet | `assets/art/characters/dafdoof/dafdoof_sheet.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 1536x1024 | See dafdoof_sheet below | Clear silhouette and correct background | done |
@@ -1218,3 +1220,15 @@ One friendly teal and bronze beetle matching the turnaround, exact six distinct 
 - **Save as:** `assets/art/backgrounds/bg36_mother_garden.png`
 - **Reference:** `assets/art/backgrounds/bg1_room.png`
 - **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Opaque 16:9 sunny Arab courtyard with a low wooden craft table centre-left, blank cream folded card on the tabletop, wicker basket of pink and yellow flowers on the right, warm sandstone walls and teal wooden window, terracotta flower pots, broad clear walking area across the bottom third. No people, animals, words, letters or symbols on the card. Match warm parchment, honey gold, teal and soft olive palette of the attached room.
+
+## ankoob_body
+
+- **Save as:** `assets/art/characters/ankoob/ankoob_body.png`
+- **Reference:** assets/art/characters/ankoob/ankoob_sheet.png
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. Round abdomen above a friendly head, dorsal view, no legs, true transparent canvas.
+
+## ankoob_leg
+
+- **Save as:** `assets/art/characters/ankoob/ankoob_leg.png`
+- **Reference:** None on retry
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One bent chestnut spider leg with attachment on the left and tip on the right, transparent canvas.

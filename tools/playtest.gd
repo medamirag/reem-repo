@@ -805,6 +805,14 @@ func _cave_path(wrong: bool, has_honey: bool) -> void:
 	await _wait_room("PineFork")
 	await _click("ExitCave")
 	await _wait_room("RockCave")
+	var visual := R.current.get_node("Props/Ankoob/Visual")
+	var legs: Array = visual.get("_legs")
+	_expect(legs.size() == 8, "Ankoob has exactly eight legs")
+	var mirrored := 0
+	for leg: Sprite2D in legs:
+		if leg.flip_h:
+			mirrored += 1
+	_expect(mirrored == 4, "Ankoob has four mirrored legs")
 	_expect(not R.current.is_exit_open("ExitRight"), "Cave exit waits for both puzzles and fox")
 	if wrong:
 		if has_honey:

@@ -94,7 +94,7 @@ scale = Vector2(0.78, 0.78)
 [node name="CircleStar" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")
 script_name = "CircleStar"
-position = Vector2(1190, 155)
+position = Vector2(1190, 122)
 interaction_polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
 walk_to_point = Vector2(0, 735)
 
@@ -124,7 +124,7 @@ scale = Vector2(0.78, 0.78)
 [node name="CrescentStar" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")
 script_name = "CrescentStar"
-position = Vector2(1370, 245)
+position = Vector2(1370, 322)
 interaction_polygon = PackedVector2Array(-56, -100, 56, -100, 56, 0, -56, 0)
 walk_to_point = Vector2(0, 645)
 

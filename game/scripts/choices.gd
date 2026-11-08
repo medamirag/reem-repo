@@ -17,6 +17,9 @@ func ask_two(green_text: String, sand_text: String) -> bool:
 	var popup: ChoicePopup = ChoicePopupScene.instantiate()
 	popup.setup(green_text, sand_text)
 	G.gui.add_child(popup)
+	# G.block() shows the hourglass; the child must choose now, so show the pointing cursor
+	# (docs/BUGS.md #11). G.unblock() puts back the normal one.
+	PopochiuUtils.cursor.show_cursor("gui", true)
 
 	var is_green: bool = await popup.picked
 

@@ -14,6 +14,10 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 | 6 | At the festival, Grandpa (on Dubb) and Thaaloob are drawn at about half their size | `tests/screenshots/green/150_HilltopFestival_line_jad_festival_arrive.png` | verified |
 | 7 | A new journey starts with Reem half hidden behind the big plant in Grandpa's room | `tests/screenshots/green/157_GrandpaRoom_GrandpaRoom.png` | verified |
 | 8 | In the notebook, the page that is open looks greyed out, as if it could not be used | `tests/screenshots/green/038_Yard_item_Notebook.png` | verified |
+| 9 | English hover text («Use Hand Mirror with») appears at the bottom edge, cut in half, while an item is held | `tests/screenshots/sand/090_BigTree_after_HandMirror_on_FlowersShade.png` (`docs/bugs/090_BigTree_after_HandMirror_on_FlowersShade.jpg`) | verified |
+| 10 | The DewBank leaf bridge is a tiny leaf icon stretched 19 times: blurry blocks that cross the whole dew drop and the dialogue | `tests/screenshots/ants/018_DewBank_line_reem_ant_dew.png` (`docs/bugs/018_DewBank_line_reem_ant_dew.jpg`) | verified |
+| 11 | The settings and notebook buttons cover two of the observatory's sky stars (a real click on the crescent star hits «الإعدادات») | `tests/screenshots/stars/028_ObservatoryDome_after_TriangleStar.png` (`docs/bugs/028_ObservatoryDome_after_TriangleStar.jpg`) | verified |
+| 12 | While the two choice boards are shown, the cursor is the hourglass (wait) instead of the pointer | `tests/screenshots/mother_day/007_MotherGarden_choice.png` (`docs/bugs/007_MotherGarden_choice.jpg`) | verified |
 
 ## Details
 
@@ -66,18 +70,44 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 - **Cause:** the open tab is a disabled button (`game/scripts/reem_notebook.gd`), drawn with the theme's disabled look.
 - **Fix:** the open tab is drawn highlighted (warm yellow with a brown border and dark text) while staying unclickable.
 
+### 9. English hover text while an item is held
+
+- **What a child sees:** after using the mirror on the wrong spot, «Use Hand Mirror with» in English sits on the bottom edge of the screen, half of it below the screen.
+- **Cause:** Popochiu writes "Use X with Y" when the mouse is over something while an item is held. The game clears Popochiu's hover text, but in `game/gui/gui.gd` it returned early when an item was held, before clearing.
+- **Fix:** the hover text is cleared first in `gui.gd`, and the hover text component (`game/gui/components/hover_text/hover_text_custom.gd`) now never shows any text.
+
+### 10. The leaf bridge is a stretched icon
+
+- **What a child sees:** in DewBank (ants pack), the floating leaf is a huge blurry green bar of blocks, tilted across the whole dew drop and over the dialogue box.
+- **Cause:** the LeafBridge prop (`game/rooms/dew_bank/room_dew_bank.tscn`) used the 80x80 leaf icon `game/scripts/ants/leaf.svg` at scale 19 x 3.
+- **Fix:** a new placeholder drawn at its real size, `game/scripts/ants/leaf_bridge.svg` (520x120, scale 1), and a row `dew_leaf_bridge` in `content/art_queue.md` so Codex can paint the real leaf.
+
+### 11. Top buttons cover the observatory stars
+
+- **What a child sees:** in the observatory dome (stars pack), the crescent star is under «الإعدادات» and the circle star partly under «دفتري»; clicking the crescent opens the settings.
+- **Cause:** fix #2 moved the top buttons down to y = 132, into the dome's sky.
+- **Fix:** the circle star moves up (y 155 to 122) and the crescent star down (y 245 to 322), clear of both buttons; the chart's thread follows the stars by itself. A new check, `--path=hud_layout`, opens every room scene and fails if any clickable thing sits under the map, notebook, settings or hint button; the real-player HUD lint now also includes those four buttons.
+
+### 12. Hourglass cursor during choices
+
+- **What a child sees:** the two wooden choice boards appear, but the mouse pointer is an hourglass, which says "wait", not "choose".
+- **Cause:** `Choices.ask_two` (`game/scripts/choices.gd`) blocks the GUI, and Popochiu shows the wait cursor while blocked.
+- **Fix:** the pointer cursor is shown as soon as the boards appear (as the map already does); unblocking puts the normal one back.
+
 ## What has been played this way so far
 
 - `green` (the whole main story: Title, GrandpaRoom, Yard, Gate, MeadowFork, BigTree, FoxRock, PineFork, MeadowLake, HoneyOrchard, HillSlope, NarrowPass, HilltopFestival, End, and a new journey): 157 screenshots, all looked at. Passes with real clicks and no layout warnings, before and after the fixes.
 - `notebook_clicks` (new): open the notebook from the inventory, close it with ×, and click in the room again, twice. Passes. Real Windows mouse clicks gave the same result.
-- Not yet run with `--real`: the sand and mixed stories, the branch rooms that `green` skips (Stream, Oak forest, Rock cave, Waterfall path), the six packs, the two events, and the system paths. Run each with `-- --playtest --real --path=<name>` and look at `tests/screenshots/<name>/`.
+- All 39 other paths (2026-11-08): sand, mixed, words, save, highlight, valley_map, notebook, settings, dialogue_timing, the branch rooms (stream, pine, oak, cave, lake, orchard, hill, waterfall, narrow_pass, each with its sand version), festival, the six packs (gull, ramadan, market, snow, ants, stars), the two events (tree_day, mother_day) and parent: 2,097 screenshots. Every path reached DONE. The screenshots were compared with each other and with green, and every one that looked new (116) was looked at; bugs #9 to #12 came from this run. The other test failures were problems in the test itself (see "Not bugs").
 
-## Known headless-only message
+## Known harmless engine message
 
-- `orchard_sand` run headless prints "ERROR: Rect2i size is negative" six times right after the DubbJar click, then passes. It happens at the audit commit (`fde41b0`) too, and not in runs with a window, so it comes from Godot's text layout without a real renderer, not from the game. Ignore it in headless runs; a real-player run of that path should stay clean.
+- `orchard_sand` prints "ERROR: Rect2i size is negative" right after the DubbJar click (six times headless, twice with a window), then passes. It happens at the audit commit (`fde41b0`) too. The screenshot at that moment (`tests/screenshots/orchard_sand/020_HoneyOrchard_line_reem_orchard_free.png`) looks right, so it is an engine message from Godot's drawing code with nothing visible wrong. Left as is.
 
 ## Not bugs (problems in the test itself, fixed in tools/playtest.gd)
 
 - The inventory bar is hidden above the screen until the mouse reaches the top; the test first clicked the hidden item. It now moves to the top and waits for the bar to slide in, like a player.
 - The old screenshot helper replayed a line for a photo, so the next click only skipped the line. Real-player mode no longer replays lines.
 - Real clicks return before the game reacts; the test now waits until Popochiu's click is over (`E.clicked`), the line is finished (`Lines.busy`) and any choice is answered.
+- Real-player runs of `highlight` checked the glow one frame too early after opening the settings; it now waits two frames.
+- In `settings`, the path itself answers a choice while its screenshot is taken; the choice helper now skips a choice that is already gone (it printed a SCRIPT ERROR).

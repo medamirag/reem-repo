@@ -117,6 +117,7 @@ Originals in `assets/` are never edited: new images are new files with the names
 | astronomer_base | `assets/art/characters/astronomer/astronomer_base.png` | `assets/art/characters/astronomer/astronomer_sheet.png` | transparent | portrait | See astronomer_base below | Check silhouette, palette and no lettering | done |
 | bg35_tree_day | `assets/art/backgrounds/bg35_tree_day.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg35_tree_day below | No lettering, clear walking lane | done |
 | bg36_mother_garden | `assets/art/backgrounds/bg36_mother_garden.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg36_mother_garden below | No lettering, blank card and clear walking lane | done |
+| dew_leaf_bridge | `assets/art/items/dew_leaf_bridge.png` | `assets/art/backgrounds/bg30_dew_bank.png` | transparent | 1536x512 | See dew_leaf_bridge below | One long leaf only, real alpha, wide and flat (about 4:1) | todo |
 
 <!-- One section per row, in the same order:
 
@@ -1232,3 +1233,10 @@ One friendly teal and bronze beetle matching the turnaround, exact six distinct 
 - **Save as:** `assets/art/characters/ankoob/ankoob_leg.png`
 - **Reference:** None on retry
 - **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One bent chestnut spider leg with attachment on the left and tip on the right, transparent canvas.
+
+## dew_leaf_bridge
+
+- **Save as:** `assets/art/items/dew_leaf_bridge.png`
+- **Reference:** `assets/art/backgrounds/bg30_dew_bank.png`
+- **Use:** the LeafBridge prop in DewBank (ants pack), drawn about 520x120 px; it floats tilted on the dew drop, then lies flat as a bridge. Replaces the placeholder `game/scripts/ants/leaf_bridge.svg` (docs/BUGS.md #10).
+- **Prompt:** STYLE: Warm hand-painted 2D children's storybook adventure, rounded forms, brown ink outlines, soft textured paint. No writing, frame or watermark. One long flat fresh green leaf seen from the side, lying horizontally like a small boat or bridge, gentle upturned tip on the right, stem on the left, soft sage and spring green with a visible central vein. Wide and flat, about four times longer than tall. Isolated on real transparent background, no water, ground, insects or shadow.

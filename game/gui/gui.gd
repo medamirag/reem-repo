@@ -63,15 +63,16 @@ func _on_system_text_hidden() -> void:
 # Called when the mouse enters (hovers) a `clickable`.
 func _on_mouse_entered_clickable(clickable: PopochiuClickable) -> void:
 	super(clickable)
+	# No hover text in this game: Popochiu's hover text is English ("Use X with Y") and the
+	# players are young children who read Arabic only (game_spec.md: Arabic only). Cleared
+	# first, also while an item is held (docs/BUGS.md #9).
+	G.show_hover_text()
 	# Over something that would do nothing if clicked right now, keep the normal arrow.
 	var room := R.current as ReemRoom
 	if PopochiuUtils.g.is_blocked or PopochiuUtils.i.active:
 		return
 	if room and not room.has_action(clickable):
 		PopochiuUtils.cursor.show_cursor("normal")
-	# No hover text in this game: Popochiu's hover text is English ("Use X with Y") and the
-	# players are young children who read Arabic only (game_spec.md: Arabic only).
-	G.show_hover_text()
 
 
 # Called when the mouse exits a `clickable`.

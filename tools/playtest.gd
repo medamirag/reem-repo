@@ -80,6 +80,11 @@ func _run() -> void:
 		_log("DONE valley_map")
 		get_tree().quit()
 		return
+	if _path == "hud_layout":
+		await _hud_layout_path()
+		_log("DONE hud_layout")
+		get_tree().quit()
+		return
 	if _path == "notebook_clicks":
 		await _notebook_clicks_path()
 		_log("DONE notebook_clicks")
@@ -1546,6 +1551,9 @@ func _answer_choices() -> void:
 				green = true
 			_log("choice -> %s" % ("green" if green else "sand"))
 			await _shot("choice")
+			# The path may answer or close the choice itself while the screenshot is taken.
+			if not is_instance_valid(child) or not child.is_inside_tree():
+				continue
 			if _real:
 				_real_press_choice(child, child.green_button if green else child.sand_button)
 				continue
@@ -1963,6 +1971,11 @@ func _lint_hud_overlap() -> void:
 			up = up.get_parent()
 		if not in_popup:
 			hud.append(c)
+	# The game's own screen buttons live on their own layers, outside Popochiu's GUI.
+	for c: Control in [Globals.valley_map.map_button, Globals.notebook.open_button,
+			Globals.settings.open_button, Globals.hotspot_highlight.button]:
+		if is_instance_valid(c) and c.is_visible_in_tree():
+			hud.append(c)
 	for node in R.current.find_children("*", "", true, false):
 		if not (node is PopochiuClickable):
 			continue
@@ -2172,6 +2185,55 @@ func _valley_map_path() -> void:
 
 ## Real-mouse check (run with --real): after opening the notebook from the inventory and closing
 ## it with ×, the next click on the room and the next notebook click must still work.
+## Checks every room scene, without playing it: no clickable thing (hidden ones too, since they
+## can appear later) may sit under an always-on screen button (map, notebook, settings, hint).
+## Runs in a second, headless too. Characters placed by scripts are not in the scenes, so the
+## real-player paths still catch those.
+func _hud_layout_path() -> void:
+	await _wait_idle()
+	var buttons := {}
+	buttons["MapButton"] = Rect2(Globals.valley_map.map_button.position, Globals.valley_map.map_button.size)
+	buttons["NotebookButton"] = Rect2(Globals.notebook.open_button.position, Globals.notebook.open_button.get_combined_minimum_size().max(Globals.notebook.open_button.size))
+	buttons["SettingsButton"] = Rect2(Globals.settings.open_button.position, Globals.settings.open_button.get_combined_minimum_size().max(Globals.settings.open_button.size))
+	var highlight := Globals.hotspot_highlight
+	if highlight:
+		buttons["HighlightButton"] = Rect2(highlight.button.position, highlight.button.get_combined_minimum_size())
+	for name: String in buttons:
+		_log("%s at %s" % [name, buttons[name]])
+	var problems := 0
+	for room: String in DirAccess.get_directories_at("res://game/rooms"):
+		var path := "res://game/rooms/%s/room_%s.tscn" % [room, room]
+		if not ResourceLoader.exists(path):
+			continue
+		var scene := (load(path) as PackedScene).instantiate()
+		for node in scene.find_children("*", "", true, false):
+			if not (node is PopochiuClickable):
+				continue
+			var poly_node := node.get_node_or_null("InteractionPolygon") as CollisionPolygon2D
+			if poly_node == null or poly_node.polygon.is_empty():
+				continue
+			var xform := Transform2D.IDENTITY
+			var up: Node = poly_node
+			while up != null and up != scene:
+				if up is Node2D:
+					xform = (up as Node2D).transform * xform
+				up = up.get_parent()
+			var box := Rect2(xform * poly_node.polygon[0], Vector2.ZERO)
+			for p in poly_node.polygon:
+				box = box.expand(xform * p)
+			for name: String in buttons:
+				var overlap := box.intersection(buttons[name])
+				# A corner under a button is fine (the edge exits reach the hint button's corner);
+				# a fifth of the thing, or its middle, is not.
+				if overlap.get_area() > box.get_area() * 0.2 or buttons[name].has_point(box.get_center()):
+					problems += 1
+					_log("FAIL: %s/%s is under the %s (%.0f%% of it, box %s)" % [
+						room, node.name, name, overlap.get_area() * 100.0 / box.get_area(), box
+					])
+		scene.free()
+	_expect(problems == 0, "no clickable thing in any room sits under a screen button")
+
+
 func _notebook_clicks_path() -> void:
 	await _step("start", func(): R.current.call("_on_start_pressed"))
 	await _wait_room("GrandpaRoom")
@@ -2301,6 +2363,8 @@ func _highlight_path() -> void:
 	highlight.reveal()
 	_expect(not _highlight_ids().has("Mirror") and not _highlight_ids().has("BasketProp") and _highlight_ids().has("Door"), "glow follows updated puzzle state")
 	Globals.settings.open_settings()
+	# Two frames: the glow's own _process must run once after settings opened.
+	await get_tree().process_frame
 	await get_tree().process_frame
 	_expect(highlight.targets.is_empty(), "settings clears the glow")
 	Globals.settings.close_settings()

@@ -2,12 +2,13 @@
 
 ## Handoff
 
-- **Who worked last:** Claude Code (builder): real-player playtests and the eight bugs they found. The audit items further down are still Codex's latest status and its "Next" still applies.
+- **Who worked last:** Claude Code (builder): real-player playtests of every path and the twelve bugs they found. The audit items further down are still Codex's latest status and its "Next" still applies.
 - **Date:** 2026-11-08
 - **Branch:** main
 - **Real-player playtests:** `tools/playtest.gd` has a `--real` mode (run without `--headless`, see AGENTS.md "Real-player mode"): a 1920x1080 window, real mouse moves and clicks (including the inventory bar, choices and the notebook's ×), a screenshot after every step and spoken line in `tests/screenshots/<path>/` (git-ignored), and layout checks on each. The fast headless mode is unchanged. New path `notebook_clicks`.
 - **Bugs:** `docs/BUGS.md` lists the 8 problems found in the `green` screenshots, all fixed and verified by a second real run: outlined dialogue text and Grandpa's speech point; the map, notebook and settings buttons moved below the inventory bar (y 132); readable choice boards; the lake reunion moved off the boat; Thaaloob at his real size at Narrow Pass and at the festival, and Grandpa larger on Dubb; Reem's start spot clear of the plant; the open notebook tab highlighted. Evidence (before and `_fixed`) is in `docs/bugs/`.
-- **Next (real-player):** run `--real` on the paths not yet played that way (sand, mixed, stream, oak, cave, waterfall, the six packs, the two events, the system paths), look at every screenshot, and add problems to `docs/BUGS.md`.
+- **Real-player run of every other path (2026-11-08):** all 39 other paths reached DONE with real clicks (2,097 screenshots; every new-looking one was looked at). Four more bugs, now fixed (`docs/BUGS.md` #9 to #12): English hover text «Use Hand Mirror with» while holding an item; the DewBank leaf bridge was an 80 px icon stretched 19x (new placeholder `game/scripts/ants/leaf_bridge.svg` and art row `dew_leaf_bridge`, todo, for Codex); the moved top buttons covered two observatory stars (stars moved); the hourglass cursor during choices (pointer now). New check `--path=hud_layout`: every room scene, no clickable thing under the map/notebook/settings/hint buttons (run it after moving a button or a prop near the screen edges). The real-player HUD lint now includes those buttons too.
+- **Next (real-player):** when Codex paints `dew_leaf_bridge`, point the LeafBridge Sprite2D in `game/rooms/dew_bank/room_dew_bank.tscn` at it (about 520x120 on screen) and rerun `--real --path=ants`. Still to decide by the user: the Narrow Pass tail (BUGS.md #5).
 - **Instruction files:** AGENTS.md now says the playtest has a path per route/station/pack/event/system (always run green, sand, mixed and words plus the paths for what you changed, one at a time) and points to `addons/popochiu/plugin.cfg` for the Popochiu version (2.2.1, not 2.0.3). The per-batch recording notes moved verbatim from AGENTS.md to `content/voice_log.md`: **record each new voice batch there**, and only the saved voice and its settings in the AGENTS.md registry. docs/PIPELINE.md says the same (changed at the user's request). No game files changed.
 - **Audit item 1:** Replaced all cache references in the GUI theme with one tracked sprite sheet under game/gui/resources. Content, import, startup, green, sand, mixed and words passed.
 - **Audit item 2:** The three repeated hint sets now have distinct nudges, clues and actions. Nine Reem recordings are queued. Content, startup, notebook, green, sand, mixed and words passed.
@@ -65,6 +66,9 @@
 
 Choices made without asking (newest first).
 
+- **Observatory stars moved, not the buttons:** the circle star sits 33 px higher and the crescent star 77 px lower, so the top buttons can stay where fix #2 put them. Every other room was checked by `--path=hud_layout` and has nothing under the buttons.
+- **No hover text at all:** Popochiu's hover text (English) is now switched off inside the component itself, not only cleared by the GUI.
+- **Leaf bridge placeholder:** drawn as a simple long leaf (SVG, 520x120) until Codex paints `dew_leaf_bridge`; the old 80x80 `leaf.svg` is left in place, unused.
 - **Top buttons moved down:** the map, «دفتري» and «الإعدادات» buttons now sit at y 132–134, just below the inventory bar's 120 px strip, instead of inside it (docs/BUGS.md #2). Moving the bar instead would have meant editing Popochiu's inventory template.
 - **Festival sizes:** only Thaaloob (back to 454 px, his size everywhere else) and Grandpa (300 px riding Dubb, 400 px without) were enlarged. The other guests keep their smaller festival sizes so all ten still fit along the path.
 - **Narrow Pass tail:** at Thaaloob's real size his tail tip is above the ground, so the stone now lies just under it rather than over it. A pose with the tail on the ground, or a rock drawn over the tail, would make him look pinned again.

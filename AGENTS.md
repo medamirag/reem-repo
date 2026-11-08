@@ -55,6 +55,36 @@ Voice IDs verified against connected ElevenLabs saved voices on 2026-11-06. Gran
 | Grandpa Sulaiman / Grandpa / Jad (`Jad`) | Jad | `gCP17uzQRkTEVzNwqVhU` | `eleven_multilingual_v2`, default settings; numeric values were not recorded. |
 | Thaaloob (`Thaaloob`) | Thaaloob | `oBbj6AAeBj390Oj9jRV0` | `eleven_v3`, stability `0.3`, style `0.5`; tone-matching tags `[playful]`, `[sly]`, `[laughs]`, `[embarrassed]` before spoken Arabic. Other settings were not recorded. Do not use the separate saved voice named Fox. |
 | Shahd (`Shahd`) | Shahd | `hWl5pxIj5IuLzLlK07YG` | `eleven_multilingual_v2`, default settings; numeric values were not recorded. |
+| Duck | Pending | Pending | No voice saved or tested. |
+| Arnoob | Pending | Pending | No voice saved or tested. |
+| Sinjoob | Pending | Pending | No voice saved or tested. |
+| Qunfood | Pending | Pending | No voice saved or tested. |
+| Qatqoota | Pending | Pending | No voice saved or tested. |
+| Ankoob | Pending | Pending | No voice saved or tested. |
+| Dafdoof | Pending | Pending | No voice saved or tested. |
+| Ghazlana | Pending | Pending | No voice saved or tested. |
+| Dubb | Pending | Pending | No voice saved or tested. |
+| Tawoos | Pending | Pending | No voice saved or tested. |
+| Qarqoor | Pending | Pending | No voice saved or tested. |
+| WoodenBoat | Pending | Pending | No voice saved or tested. |
+| SeaTurtle | Pending | Pending | No voice saved or tested. |
+| Octopus | Pending | Pending | No voice saved or tested. |
+| Gull | Pending | Pending | No voice saved or tested. |
+| Musaharati | Pending | Pending | No voice saved or tested. |
+| HedgehogFamily | Pending | Pending | No voice saved or tested. |
+| Traveller | Pending | Pending | No voice saved or tested. |
+| MarketMerchant | Pending | Pending | No voice saved or tested. |
+| Baker | Pending | Pending | No voice saved or tested. |
+| MarketCat | Pending | Pending | No voice saved or tested. |
+| Goldfinch | Pending | Pending | No voice saved or tested. |
+| SnowDeer | Pending | Pending | No voice saved or tested. |
+| AntWorker | Pending | Pending | No voice saved or tested. |
+| GuardBeetle | Pending | Pending | No voice saved or tested. |
+| AntQueen | Pending | Pending | No voice saved or tested. |
+| ObservatoryOwl | Pending | Pending | No voice saved or tested. |
+| ObservatoryBat | Pending | Pending | No voice saved or tested. |
+| Astronomer | Pending | Pending | No voice saved or tested. |
+
 
 - **New expressive lines:** use `eleven_v3`; if v3 fails, use `eleven_multilingual_v2` with the same saved voice. Clear isolated words reuse Reem's multilingual-v2 approach. Existing originals stay untouched.
 - These are historical working settings, not proof that today's v3 endpoint accepts those parameters. Check the current model/tool schema before generating. Never silently round unsupported settings or claim untested values worked. The voice-list tool returns identities, not historical generation settings.

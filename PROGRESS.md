@@ -8,7 +8,8 @@
 - **Audit item 1:** Replaced all cache references in the GUI theme with one tracked sprite sheet under game/gui/resources. Content, import, startup, green, sand, mixed and words passed.
 - **Audit item 2:** The three repeated hint sets now have distinct nudges, clues and actions. Nine Reem recordings are queued. Content, startup, notebook, green, sand, mixed and words passed.
 - **Audit item 3:** The map uses fully diacritised jad_map_intro_vocalised with a fresh take from saved Jad. Original line and audio preserved. Content, import, startup, valley_map, green, sand, mixed and words passed.
-- **Next:** Add character voices, then extend each pack with its own Thaaloob story.
+- **Audit item 4 pending:** 29 proposed post-MVP cast designs and preview lines are in the Voices table, with pending saved IDs in AGENTS.md. The connected voice designer requires user-supplied briefs and preview text. No new voices were saved and Reem narration is still wired.
+- **Next:** Finish character voices before the six pack expansions, as requested. For each voice, verify the saved ID and sample, record direct speech as new IDs, and then replace the corresponding Reem narration calls.
 - **Test notes:** `pine_sand`'s real-hold step on `word_lake` failed once in a windowed run and passed headless and windowed afterwards: flaky with a real mouse over the window. `snow` aborted once only because the computer slept.
 - **Valley map:** Added all five art files and marked their rows done. The parchment button and M open the map in playable rooms. Escape or × closes it. It uses saved room visits for the leaf markers and travel, and the first introduction is saved when the map closes. All existing playable rooms, the remaining valley destinations and six pack entrances are in game_data/map_places.json. WaterfallPath already has a position. Keep adding rooms and pack IDs as they are built.
 - **Map audio:** Grandpa's introduction and all 22 place-name recordings are installed and marked done. Page turn uses a short generated paper rustle in game/audio. Map feature was pushed as 3decfda. The recordings arrived in the Waterfall batch.
@@ -59,6 +60,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Cast audit:** Drafted child-friendly adult voice briefs and sample lines for the post-MVP speaking roles. Kept candidate voices pending until a saved character mapping is verified.
 
 - **Map introduction audit:** A new ID keeps the original line and take available. The new introduction uses saved Jad with v3 and a warm tag. Listening comparison remains open.
 

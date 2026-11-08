@@ -17,6 +17,36 @@ Use the verified voice IDs, historical working settings and future batch records
 | Jad | A warm, wise elderly Arab man in his seventies. Deep, soft and gentle voice with a slight raspiness, calm and loving, a smile can be heard in his voice. Speaks clear Modern Standard Arabic slowly and kindly, like a grandfather telling a story. Clean studio recording. | وعليكمُ السلامُ ورحمةُ اللهِ وبركاتُه يا ريم. باركَ اللهُ فيكِ يا ابنتي. تعالَي واجلسي بجانبي، سأحكي لكِ حكايةً جميلةً عن وادي النسيم. | done |
 | Thaaloob | A playful, smooth-talking cartoon fox voice: a light adult male voice, slightly nasal and sing-song, charming, quick and witty, with a cheeky little laugh. Mischievous but friendly, never scary or threatening. Speaks clear Modern Standard Arabic with playful rising intonation. Clean studio recording. | السلامُ عليكم يا صغيرةَ الوادي! انظري إلى هذا الحجرِ العجيب، يلمعُ أكثرَ من الشمس! ما رأيُكِ أن نتبادلَ، ها؟ | done |
 | Shahd | A bright, energetic, friendly female cartoon voice with a slight buzzy, bouncy quality, quick and lively, honest and direct, warm-hearted. Speaks clear Modern Standard Arabic. Clean studio recording. | وعليكمُ السلام! نحنُ نحلاتُ الحقل، نعملُ منذُ الفجر. الزهورُ مغلقةٌ اليومَ، ولا نعرفُ كيفَ نصنعُ العسل! | done |
+| Duck | Warm adult female, rounded cadence. Clear Modern Standard Arabic. | هَذَا رِيشٌ مِنْ جَنَاحِي. | problem: voice-design connector requires user-supplied brief and preview text |
+| Arnoob | Quick bright adult male, clear pauses. Clear Modern Standard Arabic. | سَأَتَمَهَّلُ وَأَسْمَعُ الدَّلِيلَ. | problem: voice-design connector requires user-supplied brief and preview text |
+| Sinjoob | Lively and curious adult male. Clear Modern Standard Arabic. | أَيْنَ وَضَعْتُ ثِمَارَ الْبَلُّوطِ؟ | problem: voice-design connector requires user-supplied brief and preview text |
+| Qunfood | Shy gentle adult male. Clear Modern Standard Arabic. | سُرِرْتُ بِسَلَامِكِ يَا رِيمُ. | problem: voice-design connector requires user-supplied brief and preview text |
+| Qatqoota | Soft, tentative youthful adult female. Clear Modern Standard Arabic. | هَلْ تَمْشِينَ مَعِي فِي الضَّوْءِ؟ | problem: voice-design connector requires user-supplied brief and preview text |
+| Ankoob | Steady, patient adult female. Clear Modern Standard Arabic. | سَأُحَاوِلُ نَسْجَ الشَّبَكَةِ مَرَّةً أُخْرَى. | problem: voice-design connector requires user-supplied brief and preview text |
+| Dafdoof | Bouncy adult male with a mellow low register. Clear Modern Standard Arabic. | عَادَ صَوْتِي. هَلْ تَسْمَعِينَ أُغْنِيَتِي؟ | problem: voice-design connector requires user-supplied brief and preview text |
+| Ghazlana | Gentle bright adult female. Clear Modern Standard Arabic. | أَيْنَ أُمِّي؟ سَأَتَّبِعُ آثَارَهَا. | problem: voice-design connector requires user-supplied brief and preview text |
+| Dubb | Low, gentle adult male with a warm cadence. Clear Modern Standard Arabic. | لَقَدْ خَرَجْتُ مِنَ الْجَرَّةِ. شُكْرًا! | problem: voice-design connector requires user-supplied brief and preview text |
+| Tawoos | Clear, theatrical adult male. Clear Modern Standard Arabic. | لِنَعْرِضْ عَمَلَنَا مَعًا. | problem: voice-design connector requires user-supplied brief and preview text |
+| Qarqoor | Playful, quick adult male. Clear Modern Standard Arabic. | سَأُدَحْرِجُ الثَّمَرَةَ إِلَيْكِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| WoodenBoat | Warm low adult voice with a rolling cadence. Clear Modern Standard Arabic. | اِصْعَدِي يَا رِيمُ، سَأَحْمِلُكِ إِلَى الْجَزِيرَةِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| SeaTurtle | Older female, unhurried and warm. Clear Modern Standard Arabic. | هَيَّا نُنَظِّفُ الشَّاطِئَ مَعًا. | problem: voice-design connector requires user-supplied brief and preview text |
+| Octopus | Quiet, hesitant adult voice. Clear Modern Standard Arabic. | أَسْتَطِيعُ أَنْ أُغَيِّرَ لَوْنِي. | problem: voice-design connector requires user-supplied brief and preview text |
+| Gull | Bright adult male with a jaunty rhythm. Clear Modern Standard Arabic. | هَلْ نَتَقَاسَمُ الصَّدَفَ؟ | problem: voice-design connector requires user-supplied brief and preview text |
+| Musaharati | Warm adult male, measured and clear. Clear Modern Standard Arabic. | يُظْهِرُ الْفَانُوسُ مَا فِي الظَّلَامِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| HedgehogFamily | Warm adult female, calm and welcoming. Clear Modern Standard Arabic. | لِنُهَيِّئْ مَكَانًا لِلْمُسَافِرِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| Traveller | Tired but gentle adult male. Clear Modern Standard Arabic. | جَزَاكِ اللهُ خَيْرًا عَلَى هَذَا الْإِفْطَارِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| MarketMerchant | Adult male, clear and friendly. Clear Modern Standard Arabic. | هَذِهِ خَمْسُ قِطَعٍ نَقْدِيَّةٍ. | problem: voice-design connector requires user-supplied brief and preview text |
+| Baker | Older male, warm and matter-of-fact. Clear Modern Standard Arabic. | ثَمَنُ الْخُبْزِ ثَلَاثُ قِطَعٍ نَقْدِيَّةٍ. | problem: voice-design connector requires user-supplied brief and preview text |
+| MarketCat | Light adult female, polite and curious. Clear Modern Standard Arabic. | هَلْ تُشَارِكِينَنِي قَلِيلًا مِنَ الْخُبْزِ؟ | problem: voice-design connector requires user-supplied brief and preview text |
+| Goldfinch | Bright soft adult female, airy. Clear Modern Standard Arabic. | هَذَا الْمَأْوَى دَافِئٌ. | problem: voice-design connector requires user-supplied brief and preview text |
+| SnowDeer | Gentle adult male, soft and relieved. Clear Modern Standard Arabic. | وَجَدْتُ طَرِيقَ الْعَوْدَةِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| AntWorker | Adult male, slightly tired but cheerful. Clear Modern Standard Arabic. | هَلْ نَحْمِلُ الْبَذْرَةَ مَعًا؟ | problem: voice-design connector requires user-supplied brief and preview text |
+| GuardBeetle | Calm, alert adult male. Clear Modern Standard Arabic. | اِنْتَظِرِي حَتَّى تَسْتَقِرَّ الْوَرَقَةُ. | problem: voice-design connector requires user-supplied brief and preview text |
+| AntQueen | Adult female with calm authority. Clear Modern Standard Arabic. | رَتِّبِي الْبُذُورَ مِنَ الْأَصْغَرِ إِلَى الْأَكْبَرِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| ObservatoryOwl | Older female, soft and assured. Clear Modern Standard Arabic. | سَأَحْمِلُكِ إِلَى الْمَرْصَدِ. | problem: voice-design connector requires user-supplied brief and preview text |
+| ObservatoryBat | Adult male, quick and cheeky. Clear Modern Standard Arabic. | لِلدَّرْبِ عَلَامَاتٌ. اِسْتَمِعِي إِلَيَّ. | problem: voice-design connector requires user-supplied brief and preview text |
+| Astronomer | Older male, measured and curious. Clear Modern Standard Arabic. | صِلِي النُّجُومَ كَمَا تَرَيْنَ فِي الْمِثَالِ. | problem: voice-design connector requires user-supplied brief and preview text |
+
 
 ## Lines
 

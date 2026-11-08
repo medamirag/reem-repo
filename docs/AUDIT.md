@@ -5,6 +5,7 @@ Audit by Claude Code on 2026-11-08, at commit `fde41b0`. The original scores bel
 - **Theme fixed:** All four atlas regions now use the same tracked radio-button image under game/gui/resources. Content, import, startup and all four standard playtests passed.
 - **Hints fixed:** Oak search, festival lighting and market sale now each have a nudge, a clue and an explicit action. Nine new Reem recordings are queued. Content, notebook and standard Godot playtests passed.
 - **Map introduction fixed:** The map uses the fully diacritised jad_map_intro_vocalised and a new take from saved Jad. The original entry and MP3 are preserved. Content, import, startup, map and all four standard playtests passed.
+- **Character voices pending:** 29 proposed voice briefs and preview lines are in the Voices table, with pending IDs in AGENTS.md. The connected designer requires user-supplied descriptions and preview text. No characters were reassigned or recorded.
 
 ## Summary
 

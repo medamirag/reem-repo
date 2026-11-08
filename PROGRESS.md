@@ -2,14 +2,15 @@
 
 ## Handoff
 
-- **Who worked last:** Claude Code (builder): real-player playtests of every path and the twelve bugs they found. The audit items further down are still Codex's latest status and its "Next" still applies.
+- **Who worked last:** Codex (builder), installing the two queued artwork replacements.
 - **Date:** 2026-11-08
 - **Branch:** main
 - **Real-player playtests:** `tools/playtest.gd` has a `--real` mode (run without `--headless`, see AGENTS.md "Real-player mode"): a 1920x1080 window, real mouse moves and clicks (including the inventory bar, choices and the notebook's ×), a screenshot after every step and spoken line in `tests/screenshots/<path>/` (git-ignored), and layout checks on each. The fast headless mode is unchanged. New path `notebook_clicks`.
 - **Bugs:** `docs/BUGS.md` lists the 8 problems found in the `green` screenshots, all fixed and verified by a second real run: outlined dialogue text and Grandpa's speech point; the map, notebook and settings buttons moved below the inventory bar (y 132); readable choice boards; the lake reunion moved off the boat; Thaaloob at his real size at Narrow Pass and at the festival, and Grandpa larger on Dubb; Reem's start spot clear of the plant; the open notebook tab highlighted. Evidence (before and `_fixed`) is in `docs/bugs/`.
 - **Real-player run of every other path (2026-11-08):** all 39 other paths reached DONE with real clicks (2,097 screenshots; every new-looking one was looked at). Four more bugs, now fixed (`docs/BUGS.md` #9 to #12): English hover text «Use Hand Mirror with» while holding an item; the DewBank leaf bridge was an 80 px icon stretched 19x (new placeholder `game/scripts/ants/leaf_bridge.svg` and art row `dew_leaf_bridge`, todo, for Codex); the moved top buttons covered two observatory stars (stars moved); the hourglass cursor during choices (pointer now). New check `--path=hud_layout`: every room scene, no clickable thing under the map/notebook/settings/hint buttons (run it after moving a button or a prop near the screen edges). The real-player HUD lint now includes those buttons too.
-- **Next (real-player):** when Codex paints `dew_leaf_bridge`, point the LeafBridge Sprite2D in `game/rooms/dew_bank/room_dew_bank.tscn` at it (about 520x120 on screen) and rerun `--real --path=ants`. When Codex paints `pass_tail_rock`, set it as the texture of `Props/LooseStone/Sprite2D` in `game/rooms/narrow_pass/room_narrow_pass.tscn` (about 180x120 on screen, covering the lower tail; adjust `scale`) and rerun `--real --path=narrow_pass`.
-- **Narrow Pass tail (user's choice, BUGS.md #5):** the loose stone is now a rock drawn over Thaaloob's tail (placeholder: `pass_loose_stone.png` scaled 0.26); it rolls away to the right when Reem frees him. Art row `pass_tail_rock` (todo) for Codex.
+- **Artwork:** Installed the painted dew_leaf_bridge and pass_tail_rock textures. No art rows remain todo. The existing leaf and stone words already map to these props.
+- **Checks:** Content, headless import and startup, ants, narrow_pass, green, sand, mixed and words passed.
+- **Next (real-player):** Wait for the user to reply OK before launching any windowed or real-click test. Then run green, ants and narrow_pass in real-player mode, inspect the screenshots, and update docs/BUGS.md with the new visual evidence.
 - **Instruction files:** AGENTS.md now says the playtest has a path per route/station/pack/event/system (always run green, sand, mixed and words plus the paths for what you changed, one at a time) and points to `addons/popochiu/plugin.cfg` for the Popochiu version (2.2.1, not 2.0.3). The per-batch recording notes moved verbatim from AGENTS.md to `content/voice_log.md`: **record each new voice batch there**, and only the saved voice and its settings in the AGENTS.md registry. docs/PIPELINE.md says the same (changed at the user's request). No game files changed.
 - **Audit item 1:** Replaced all cache references in the GUI theme with one tracked sprite sheet under game/gui/resources. Content, import, startup, green, sand, mixed and words passed.
 - **Audit item 2:** The three repeated hint sets now have distinct nudges, clues and actions. Nine Reem recordings are queued. Content, startup, notebook, green, sand, mixed and words passed.
@@ -66,6 +67,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Leaf and rock:** Preserved the generated PNGs and used sprite regions to remove transparent margins in-game. The leaf source is 2172 × 724 and displays near 520 × 120. The rock displays near 180 × 120. Both keep their previous movement and click areas.
 
 - **Observatory stars moved, not the buttons:** the circle star sits 33 px higher and the crescent star 77 px lower, so the top buttons can stay where fix #2 put them. Every other room was checked by `--path=hud_layout` and has nothing under the buttons.
 - **No hover text at all:** Popochiu's hover text (English) is now switched off inside the component itself, not only cleared by the GUI.

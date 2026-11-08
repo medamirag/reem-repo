@@ -11,7 +11,7 @@
 
 [ext_resource type="Texture2D" path="res://assets/art/characters/ant_beetle/ant_beetle_base.png" id="9"]
 [ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="10"]
-[ext_resource type="Texture2D" path="res://game/scripts/ants/leaf_bridge.svg" id="11"]
+[ext_resource type="Texture2D" path="res://assets/art/items/dew_leaf_bridge.png" id="11"]
 [ext_resource type="Resource" path="res://game/rooms/dew_bank/room_dew_bank.tres" id="state"]
 
 [sub_resource type="NavigationPolygon" id="Path"]
@@ -102,3 +102,6 @@ polygon = PackedVector2Array(-252, -117, 252, -117, 252, 0, -252, 0)
 [node name="Sprite2D" parent="Props/LeafBridge" index="0"]
 position = Vector2(0, -58.5)
 texture = ExtResource("11")
+scale = Vector2(0.25, 0.30)
+region_enabled = true
+region_rect = Rect2(48, 151, 2090, 401)

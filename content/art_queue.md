@@ -117,8 +117,8 @@ Originals in `assets/` are never edited: new images are new files with the names
 | astronomer_base | `assets/art/characters/astronomer/astronomer_base.png` | `assets/art/characters/astronomer/astronomer_sheet.png` | transparent | portrait | See astronomer_base below | Check silhouette, palette and no lettering | done |
 | bg35_tree_day | `assets/art/backgrounds/bg35_tree_day.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg35_tree_day below | No lettering, clear walking lane | done |
 | bg36_mother_garden | `assets/art/backgrounds/bg36_mother_garden.png` | `assets/art/backgrounds/bg1_room.png` | opaque | 16:9 landscape | See bg36_mother_garden below | No lettering, blank card and clear walking lane | done |
-| dew_leaf_bridge | `assets/art/items/dew_leaf_bridge.png` | `assets/art/backgrounds/bg30_dew_bank.png` | transparent | 1536x512 | See dew_leaf_bridge below | One long leaf only, real alpha, wide and flat (about 4:1) | todo |
-| pass_tail_rock | `assets/art/items/pass_tail_rock.png` | `assets/art/backgrounds/bg15_narrow_pass.png` | transparent | 1536x1024 | See pass_tail_rock below | One rock only, real alpha, sandstone like the Narrow Pass boulders, round enough to roll | todo |
+| dew_leaf_bridge | `assets/art/items/dew_leaf_bridge.png` | `assets/art/backgrounds/bg30_dew_bank.png` | transparent | 2172x724 | See dew_leaf_bridge below | One long leaf only, real alpha, wide and flat (about 4:1) | done |
+| pass_tail_rock | `assets/art/items/pass_tail_rock.png` | `assets/art/backgrounds/bg15_narrow_pass.png` | transparent | 1536x1024 | See pass_tail_rock below | One rock only, real alpha, sandstone like the Narrow Pass boulders, round enough to roll | done |
 
 <!-- One section per row, in the same order:
 

@@ -50,7 +50,7 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 - **What a child sees:** Thaaloob is about two thirds of Reem's height at Narrow Pass, but as tall as Reem in FoxRock and the orchard.
 - **Cause:** at Narrow Pass he is a prop with his own copy of the fox picture at scale 0.24 (`game/rooms/narrow_pass/room_narrow_pass.tscn`); the Thaaloob character uses 0.3617.
 - **Fix:** the same 0.3617 scale, with his click area, his stuck tail point and the stone pinning it moved to match.
-- **Tail (decided by the user, 2026-11-08: a rock drawn over the tail):** the loose stone is now a bigger rock on the ground in front of Thaaloob, covering the lower curl of his tail with the white tip showing above it, so the tail looks pinned. When Reem clicks it, it rolls one full turn away to the right and lands flat, then Thaaloob steps free (`game/rooms/narrow_pass/room_narrow_pass.gd`: `stone_open`, `stone_roll`). Until Codex paints `pass_tail_rock` (art queue), the placeholder is the existing `pass_loose_stone.png` at twice its old size. After: `docs/bugs/136_NarrowPass_tail_rock_fixed.jpg`.
+- **Tail (decided by the user, 2026-11-08: a rock drawn over the tail):** the loose stone is now a bigger rock on the ground in front of Thaaloob, covering the lower curl of his tail with the white tip showing above it, so the tail looks pinned. When Reem clicks it, it rolls one full turn away to the right and lands flat, then Thaaloob steps free (`game/rooms/narrow_pass/room_narrow_pass.gd`: `stone_open`, `stone_roll`). Until Codex paints `pass_tail_rock` (art queue), the placeholder is the existing `pass_loose_stone.png` at twice its old size. Placeholder reference: `docs/bugs/136_NarrowPass_tail_rock_fixed.jpg`. The painted `pass_tail_rock.png` is installed. Its real-click screenshot is pending approval.
 
 ### 6. Grandpa and Thaaloob too small at the festival
 
@@ -80,7 +80,7 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 
 - **What a child sees:** in DewBank (ants pack), the floating leaf is a huge blurry green bar of blocks, tilted across the whole dew drop and over the dialogue box.
 - **Cause:** the LeafBridge prop (`game/rooms/dew_bank/room_dew_bank.tscn`) used the 80x80 leaf icon `game/scripts/ants/leaf.svg` at scale 19 x 3.
-- **Fix:** a new placeholder drawn at its real size, `game/scripts/ants/leaf_bridge.svg` (520x120, scale 1), and a row `dew_leaf_bridge` in `content/art_queue.md` so Codex can paint the real leaf.
+- **Fix:** a new placeholder drawn at its real size, `game/scripts/ants/leaf_bridge.svg` (520x120, scale 1), followed by the painted `dew_leaf_bridge.png`, now installed at about 520 × 120 on screen. Its real-click screenshot is pending approval.
 
 ### 11. Top buttons cover the observatory stars
 

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.tscn" id="7"]
 [ext_resource type="Script" path="res://game/scripts/room_prop.gd" id="8"]
 [ext_resource type="Texture2D" path="res://assets/art/characters/fox/fox_base.png" id="9"]
-[ext_resource type="Texture2D" path="res://assets/art/items/pass_loose_stone.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/art/items/pass_tail_rock.png" id="10"]
 
 [sub_resource type="NavigationPolygon" id="Path"]
 agent_radius = 0.0
@@ -84,7 +84,9 @@ polygon = PackedVector2Array(-88, -118, 88, -118, 88, 0, -88, 0)
 z_index = 1
 position = Vector2(0, -60)
 texture = ExtResource("10")
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.184, 0.162)
+region_enabled = true
+region_rect = Rect2(268, 135, 980, 745)
 
 [node name="FoxTail" parent="Props" instance=ExtResource("7")]
 script = ExtResource("8")

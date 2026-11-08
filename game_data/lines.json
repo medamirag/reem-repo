@@ -2158,5 +2158,59 @@
     "tone": "warm",
     "text": "يُمْكِنُنَا أَنْ نَقُولَ شُكْرًا بِكَلِمَةٍ طَيِّبَةٍ أَوْ بِبِطَاقَةٍ نَصْنَعُهَا بِأَيْدِينَا.",
     "audio": "res://assets/audio/lines/reem_mother_day_fact.mp3"
+  },
+  "reem_hint_oak_search_1": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "يَبْحَثُ سِنْجُوبُ عَنْ ثِمَارِ الْبَلُّوطِ.",
+    "audio": "res://assets/audio/lines/reem_hint_oak_search_1.mp3"
+  },
+  "reem_hint_oak_search_2": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "اُنْظُرِي قُرْبَ جُذُورِ الْأَشْجَارِ.",
+    "audio": "res://assets/audio/lines/reem_hint_oak_search_2.mp3"
+  },
+  "reem_hint_oak_search_3": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "تَحَدَّثِي إِلَى سِنْجُوبَ، ثُمَّ اضْغَطِي عَلَى ثَلَاثِ ثِمَارٍ مِنَ الْبَلُّوطِ.",
+    "audio": "res://assets/audio/lines/reem_hint_oak_search_3.mp3"
+  },
+  "reem_hint_festival_light_1": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "مَا الَّذِي سَيُضِيءُ الْمِهْرَجَانَ؟",
+    "audio": "res://assets/audio/lines/reem_hint_festival_light_1.mp3"
+  },
+  "reem_hint_festival_light_2": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "اُنْظُرِي إِلَى الْفَانُوسِ الْكَبِيرِ فِي وَسَطِ السَّاحَةِ.",
+    "audio": "res://assets/audio/lines/reem_hint_festival_light_2.mp3"
+  },
+  "reem_hint_festival_light_3": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "اِضْغَطِي عَلَى الْفَانُوسِ الْكَبِيرِ لِإِضَاءَةِ الْمِهْرَجَانِ.",
+    "audio": "res://assets/audio/lines/reem_hint_festival_light_3.mp3"
+  },
+  "reem_hint_market_sale_1": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "مَا الَّذِي يُمْكِنُكِ بَيْعُهُ قَبْلَ التَّسَوُّقِ؟",
+    "audio": "res://assets/audio/lines/reem_hint_market_sale_1.mp3"
+  },
+  "reem_hint_market_sale_2": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "اِبْحَثِي عَنْ بَسْطَةِ الْعَسَلِ عِنْدَ بَوَّابَةِ السُّوقِ.",
+    "audio": "res://assets/audio/lines/reem_hint_market_sale_2.mp3"
+  },
+  "reem_hint_market_sale_3": {
+    "speaker": "Reem",
+    "tone": "gentle",
+    "text": "اِضْغَطِي عَلَى بَسْطَةِ الْعَسَلِ لِتَبِيعِي الْعَسَلَ وَتَحْصُلِي عَلَى خَمْسِ قِطَعٍ نَقْدِيَّةٍ.",
+    "audio": "res://assets/audio/lines/reem_hint_market_sale_3.mp3"
   }
 }

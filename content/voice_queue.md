@@ -317,6 +317,15 @@ All 68 MVP lines are recorded (`assets/audio/lines/`). New lines start below.
 | reem_mother_day_done | Reem | warm | أُمِّي، شُكْرًا لِرِعَايَتِكِ لِي. أُحِبُّكِ. | done |
 | reem_mother_day_card | Reem | warm | بِطَاقَةٌ لِأُمِّي | done |
 | reem_mother_day_fact | Reem | warm | يُمْكِنُنَا أَنْ نَقُولَ شُكْرًا بِكَلِمَةٍ طَيِّبَةٍ أَوْ بِبِطَاقَةٍ نَصْنَعُهَا بِأَيْدِينَا. | done |
+| reem_hint_oak_search_1 | Reem | gentle | يَبْحَثُ سِنْجُوبُ عَنْ ثِمَارِ الْبَلُّوطِ. | todo |
+| reem_hint_oak_search_2 | Reem | gentle | اُنْظُرِي قُرْبَ جُذُورِ الْأَشْجَارِ. | todo |
+| reem_hint_oak_search_3 | Reem | gentle | تَحَدَّثِي إِلَى سِنْجُوبَ، ثُمَّ اضْغَطِي عَلَى ثَلَاثِ ثِمَارٍ مِنَ الْبَلُّوطِ. | todo |
+| reem_hint_festival_light_1 | Reem | gentle | مَا الَّذِي سَيُضِيءُ الْمِهْرَجَانَ؟ | todo |
+| reem_hint_festival_light_2 | Reem | gentle | اُنْظُرِي إِلَى الْفَانُوسِ الْكَبِيرِ فِي وَسَطِ السَّاحَةِ. | todo |
+| reem_hint_festival_light_3 | Reem | gentle | اِضْغَطِي عَلَى الْفَانُوسِ الْكَبِيرِ لِإِضَاءَةِ الْمِهْرَجَانِ. | todo |
+| reem_hint_market_sale_1 | Reem | gentle | مَا الَّذِي يُمْكِنُكِ بَيْعُهُ قَبْلَ التَّسَوُّقِ؟ | todo |
+| reem_hint_market_sale_2 | Reem | gentle | اِبْحَثِي عَنْ بَسْطَةِ الْعَسَلِ عِنْدَ بَوَّابَةِ السُّوقِ. | todo |
+| reem_hint_market_sale_3 | Reem | gentle | اِضْغَطِي عَلَى بَسْطَةِ الْعَسَلِ لِتَبِيعِي الْعَسَلَ وَتَحْصُلِي عَلَى خَمْسِ قِطَعٍ نَقْدِيَّةٍ. | todo |
 
 ## Recording verification
 

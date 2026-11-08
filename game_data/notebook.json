@@ -86,9 +86,9 @@
       "reem_hint_pine_route_3"
     ],
     "oak_search": [
-      "reem_oak_arrive",
-      "reem_oak_search",
-      "reem_oak_search"
+      "reem_hint_oak_search_1",
+      "reem_hint_oak_search_2",
+      "reem_hint_oak_search_3"
     ],
     "oak_share": [
       "reem_oak_found",
@@ -151,9 +151,9 @@
       "reem_pass_stone"
     ],
     "festival_light": [
-      "reem_festival_arrive",
-      "reem_festival_light",
-      "reem_festival_light"
+      "reem_hint_festival_light_1",
+      "reem_hint_festival_light_2",
+      "reem_hint_festival_light_3"
     ],
     "gull_tide": [
       "reem_gull_shore",
@@ -191,9 +191,9 @@
       "reem_ramadan_feast"
     ],
     "market_sale": [
-      "reem_market_arrive",
-      "reem_market_arrive",
-      "reem_market_sale"
+      "reem_hint_market_sale_1",
+      "reem_hint_market_sale_2",
+      "reem_hint_market_sale_3"
     ],
     "market_count": [
       "reem_market_baker",

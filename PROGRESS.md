@@ -6,7 +6,8 @@
 - **Date:** 2026-11-08
 - **Branch:** main
 - **Audit item 1:** Replaced all cache references in the GUI theme with one tracked sprite sheet under game/gui/resources. Content, import, startup, green, sand, mixed and words passed.
-- **Next:** Audit items in the requested order are progressive hints, the fully diacritised map recording, new character voices, then longer packs with Thaaloob stories.
+- **Audit item 2:** The three repeated hint sets now have distinct nudges, clues and actions. Nine Reem recordings are queued. Content, startup, notebook, green, sand, mixed and words passed.
+- **Next:** Record the fully diacritised map introduction, then new character voices and longer packs with Thaaloob stories.
 - **Test notes:** `pine_sand`'s real-hold step on `word_lake` failed once in a windowed run and passed headless and windowed afterwards: flaky with a real mouse over the window. `snow` aborted once only because the computer slept.
 - **Valley map:** Added all five art files and marked their rows done. The parchment button and M open the map in playable rooms. Escape or × closes it. It uses saved room visits for the leaf markers and travel, and the first introduction is saved when the map closes. All existing playable rooms, the remaining valley destinations and six pack entrances are in game_data/map_places.json. WaterfallPath already has a position. Keep adding rooms and pack IDs as they are built.
 - **Map audio:** Grandpa's introduction and all 22 place-name recordings are installed and marked done. Page turn uses a short generated paper rustle in game/audio. Map feature was pushed as 3decfda. The recordings arrived in the Waterfall batch.
@@ -57,6 +58,8 @@
 ## Decisions to review
 
 Choices made without asking (newest first).
+
+- **Hints audit:** Wrote three fresh, progressively more explicit steps for each affected puzzle. The content checker now rejects repeated IDs in any hint set.
 
 - **Theme audit:** Copied Popochiu's existing radio-button sheet into game resources so all four states retain their original appearance.
 

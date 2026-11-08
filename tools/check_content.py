@@ -69,7 +69,7 @@ def main():
                     assert (ROOT / path).is_file(), (key, path)
     book = read_json("game_data/notebook.json")
     for context, ids in book["hints"].items():
-        assert len(ids) == 3 and all(key in lines for key in ids), context
+        assert len(ids) == len(set(ids)) == 3 and all(key in lines for key in ids), context
     for card in book["cards"]:
         assert card["name_line"] in lines and card["fact_line"] in lines, card["id"]
         assert (ROOT / card["image"].removeprefix("res://")).is_file(), card["id"]

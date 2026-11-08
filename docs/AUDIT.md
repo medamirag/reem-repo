@@ -3,6 +3,7 @@
 Audit by Claude Code on 2026-11-08, at commit `fde41b0`. The original scores below are the audit baseline. Fixes are tracked here as they are verified.
 
 - **Theme fixed:** All four atlas regions now use the same tracked radio-button image under game/gui/resources. Content, import, startup and all four standard playtests passed.
+- **Hints fixed:** Oak search, festival lighting and market sale now each have a nudge, a clue and an explicit action. Nine new Reem recordings are queued. Content, notebook and standard Godot playtests passed.
 
 ## Summary
 
@@ -46,7 +47,7 @@ Status values: **ok** = exists, every choice has its consequence and repair, and
 | 2. Friend cards album | ok | 25 cards, each with an existing picture and recorded name and fact, all awarded in play and shown in the notebook. No card for Arnoob (he is not helped in the story). |
 | 3. Word discovery and words page | ok | 153 words, all with audio, all placed in rooms (4 to 19 per room); the notebook has a words page listing found words. |
 | 4. Valley map and fast travel | incomplete | Map, pins, locks and travel work, and all 36 places have recorded names. Grandpa's introduction `jad_map_intro` has almost no diacritics (AGENTS.md asks for full diacritics in new dialogue). |
-| 5. Hints in three steps | incomplete | 51 hint sets, all with real lines. Three repeat a line, so they give only two different steps: `oak_search` (`reem_oak_search` twice), `festival_light` (`reem_festival_light` twice), `market_sale` (`reem_market_arrive` twice). |
+| 5. Hints in three steps | fixed | Baseline finding: 51 hint sets, all with real lines. Three repeat a line, so they give only two different steps: `oak_search` (`reem_oak_search` twice), `festival_light` (`reem_festival_light` twice), `market_sale` (`reem_market_arrive` twice). |
 | 6. Hotspot highlight | ok | |
 | 7. Save, continue, new journey | ok | Autosave; the title shows Continue when a save exists. |
 | 8. Settings | ok | Music on/off (off by default), voice volume, effects volume, three text sizes; saved between runs. |

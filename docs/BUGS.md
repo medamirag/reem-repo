@@ -28,6 +28,8 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 
 | 17 | Stream: the log floats over the stepping stones and HUD controls crowd the left edge | `docs/bugs/stream_bridge_before.jpg` (new unbuilt state) | verified |
 
+| 18 | Notebook Map: labels overlap and lines obscure the valley | `docs/bugs/notebook_map_before.png` (user screenshot) | verified |
+
 ## Details
 
 ### 1. Dialogue text hard to read; Grandpa's text far above him
@@ -150,3 +152,9 @@ The focused real-click check confirmed that the shortcut wilts the tree, the ben
 Replaced the rolling log with a tied bundle and a painted footbridge. Pick up the planks, then click the water over the stones. Reem bends and knocks the wood into place. The ducklings cross one at a time and gather beside their mother before the existing thank-you line and rewards. The Stream entry position clears the left exit arrow, and the map button is inset.
 
 The focused two-click windowed check passed. Evidence: `docs/bugs/stream_bridge_before.jpg`, `docs/bugs/stream_bridge_crossing.jpg` and `docs/bugs/stream_bridge_after.jpg`.
+
+### 18. Notebook Map tab
+
+The Map tab opens the same illustrated valley map as the map button. It shows marker art and the painted paths by default. Tap a marker to show one place name on solid parchment. Notebook controls use dark brown Cairo text on warm parchment.
+
+The focused two-click check passed. Screenshots: `docs/bugs/notebook_tabs_fixed.jpg`, `docs/bugs/notebook_map_fixed.jpg` and `docs/bugs/notebook_map_place_fixed.jpg`.

@@ -67,7 +67,6 @@ func _ready() -> void:
 	name_label.theme = ArabicText.get_theme()
 	ArabicText.make_rtl(name_label)
 	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	name_label.add_theme_color_override("font_color", Color("#442916"))
 	column.add_child(name_label)
 	choices = HBoxContainer.new()
@@ -158,7 +157,6 @@ func open_map() -> void:
 		Globals.map_intro_seen = true
 		save_intro_on_close = true
 		var intro: Dictionary = lines[INTRO]
-		_show_notice(intro.text, false)
 		_play(intro.audio)
 
 
@@ -202,7 +200,7 @@ func _layout() -> void:
 		marker.size = Vector2.ONE * unit
 		marker.position = center - marker.size / 2.0
 		marker.icon = load("res://game/gui/map_lock.svg") if locked else _texture("check" if visited else "fog")
-		marker.text = "" if marker.icon else "●"
+		marker.text = ""
 		marker.modulate = Color(1, 1, 1, 0.65) if locked else Color.WHITE
 		if place.room == R.current.script_name:
 			pin.size = Vector2.ONE * unit * 1.5
@@ -211,8 +209,7 @@ func _layout() -> void:
 			pin.show()
 	close_button.position = Vector2(extent.x - 74, 15)
 	close_button.size = Vector2(56, 54)
-	notice.size.x = minf(extent.x - 32, 900)
-	notice.position = Vector2((extent.x - notice.size.x) / 2.0, 12)
+	_size_notice()
 
 
 func select_place(place: Dictionary) -> void:
@@ -232,7 +229,13 @@ func _show_notice(title: String, ask: bool) -> void:
 	name_label.text = title
 	choices.visible = ask
 	notice.show()
-	notice.size.y = 0
+	_size_notice.call_deferred()
+
+
+func _size_notice() -> void:
+	var width := get_viewport().get_visible_rect().size.x
+	notice.size = Vector2(minf(width - 32, 900), 0)
+	notice.position = Vector2((width - notice.size.x) / 2.0, 12)
 
 
 func _dismiss() -> void:

@@ -12,7 +12,6 @@ var more_button: Button
 var hint_label: Label
 var page_buttons: Dictionary = {}
 var word_buttons: Dictionary = {}
-var map_buttons: Dictionary = {}
 var _root: Control
 var _body: VBoxContainer
 var _voice: AudioStreamPlayer
@@ -80,19 +79,22 @@ func close_notebook() -> void:
 
 
 func show_page(page: String) -> void:
+	if page == "map":
+		if is_open:
+			close_notebook()
+			Globals.valley_map.open_map()
+		return
 	_voice.stop()
 	_page = page
 	for child in _body.get_children():
 		_body.remove_child(child)
 		child.queue_free()
 	word_buttons.clear()
-	map_buttons.clear()
 	for key: String in page_buttons:
 		page_buttons[key].disabled = key == page
 	match page:
 		"hints": _show_hints()
 		"words": _show_words()
-		"map": _show_map()
 		"cards": _show_cards()
 
 
@@ -229,45 +231,6 @@ func visited(room_name: String) -> bool:
 	return state != null and state.visited_times > 0
 
 
-func _show_map() -> void:
-	var map := Control.new()
-	map.custom_minimum_size = Vector2(1200, 520)
-	_body.add_child(map)
-	for edge: Array in data.edges:
-		var start: Dictionary = data.map[int(edge[0])]
-		var end: Dictionary = data.map[int(edge[1])]
-		var a := Vector2(start.at[0], start.at[1]) * Vector2(1200, 520) + Vector2(155, 40)
-		var b := Vector2(end.at[0], end.at[1]) * Vector2(1200, 520) + Vector2(155, 40)
-		var trail := Line2D.new()
-		trail.width = 9
-		trail.default_color = Color(0.66, 0.43, 0.22)
-		trail.points = PackedVector2Array([a, a.lerp(b, 0.33) + Vector2(8, -9), a.lerp(b, 0.66) + Vector2(-8, 9), b])
-		map.add_child(trail)
-	for place: Dictionary in data.map:
-		var room_name: String = place.room
-		var current: bool = room_name == R.current.script_name
-		var caption: String = place.label
-		caption += "\n" + (labels.current_place if current else labels.locked if not visited(room_name) else "")
-		var button := _button(caption)
-		button.add_theme_font_size_override("font_size", 32)
-		button.position = Vector2(place.at[0], place.at[1]) * Vector2(1200, 520)
-		button.custom_minimum_size = Vector2(350, 110)
-		button.disabled = current or not visited(room_name)
-		button.pressed.connect(func(): travel(room_name))
-		map_buttons[room_name] = button
-		map.add_child(button)
-
-
-func travel(room_name: String) -> void:
-	if not is_open or _page != "map" or not visited(room_name): return
-	var allowed := false
-	for place: Dictionary in data.map:
-		if place.room == room_name: allowed = true
-	if not allowed or room_name == R.current.script_name: return
-	close_notebook()
-	R.goto_room(room_name)
-
-
 func _show_cards() -> void:
 	var found := false
 	for card: Dictionary in data.cards:
@@ -305,6 +268,17 @@ func _button(caption: String) -> Button:
 	var button := Button.new()
 	button.text = caption
 	button.theme = ArabicText.get_theme()
+	for state: String in ["normal", "hover", "pressed", "focus"]:
+		var paper := StyleBoxFlat.new()
+		paper.bg_color = Color("#ffedbf") if state == "normal" else Color("#ffe09a")
+		paper.set_corner_radius_all(8)
+		if state == "focus":
+			paper.draw_center = false
+			paper.border_color = Color("#805329")
+			paper.set_border_width_all(2)
+		button.add_theme_stylebox_override(state, paper)
+	for color_name: String in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color", "font_disabled_color"]:
+		button.add_theme_color_override(color_name, Color("#442916"))
 	button.custom_minimum_size.y = 86
 	ArabicText.make_rtl(button)
 	return button

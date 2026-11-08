@@ -95,6 +95,11 @@ func _run() -> void:
 		_log("DONE hud_layout")
 		get_tree().quit()
 		return
+	if _path == "notebook_map_focus":
+		await _notebook_map_focus()
+		_log("DONE notebook_map_focus")
+		get_tree().quit()
+		return
 	if _path == "notebook_clicks":
 		await _notebook_clicks_path()
 		_log("DONE notebook_clicks")
@@ -2293,6 +2298,38 @@ func _hud_layout_path() -> void:
 	_expect(problems == 0, "no clickable thing in any room sits under a screen button")
 
 
+func _notebook_map_focus() -> void:
+	await Globals.new_game()
+	R.goto_room("Yard")
+	await _wait_room("Yard")
+	await C.player.add_to_inventory(I.Notebook)
+	await _wait_idle()
+	Globals.notebook.open_notebook()
+	_expect(Globals.notebook.is_open, "the notebook opens")
+	await _shot("notebook_map_tabs")
+	var tab: Button = Globals.notebook.page_buttons.map
+	if _real:
+		await _real_move(_to_window(tab, tab.size / 2.0))
+		await _real_press_at(_to_window(tab, tab.size / 2.0))
+	else:
+		tab.pressed.emit()
+	var map := Globals.valley_map
+	_expect(map.is_open and not Globals.notebook.is_open and not map.notice.visible, "the shared map opens without labels")
+	if not map.is_open:
+		return
+	await _shot("notebook_map_default")
+	var marker: Button = map.markers[0]
+	if _real:
+		await _real_move(_to_window(marker, marker.size / 2.0))
+		await _real_press_at(_to_window(marker, marker.size / 2.0))
+	else:
+		marker.pressed.emit()
+	await get_tree().process_frame
+	_expect(map.notice.visible and map.notice.size.y < 300, "tapping a place opens one compact parchment label")
+	await _shot("notebook_map_place")
+	map.close_map()
+
+
 func _notebook_clicks_path() -> void:
 	await _step("start", func(): R.current.call("_on_start_pressed"))
 	await _wait_room("GrandpaRoom")
@@ -2340,12 +2377,17 @@ func _notebook_path() -> void:
 	book.page_buttons.cards.pressed.emit()
 	_expect(Globals.friend_cards.is_empty(), "cards are not given before helping")
 	book.page_buttons.map.pressed.emit()
-	_expect(book.map_buttons.MeadowFork.disabled, "unvisited map destination locked")
-	book.travel("End")
-	_expect(book.is_open and _room_name() == "Yard", "map cannot skip to ending")
-	book.travel("MeadowFork")
-	_expect(book.is_open and _room_name() == "Yard", "map rejects unvisited destination")
-	book.map_buttons.GrandpaRoom.pressed.emit()
+	var map := Globals.valley_map
+	_expect(map.is_open and not book.is_open, "notebook opens the shared map")
+	for place: Dictionary in map.places:
+		if place.room == "MeadowFork":
+			map.select_place(place)
+			_expect(map.destination.is_empty(), "map rejects unvisited destination")
+	for place: Dictionary in map.places:
+		if place.room == "GrandpaRoom":
+			map.select_place(place)
+			map._travel()
+			break
 	await _wait_room("GrandpaRoom")
 	_expect(not book.is_open and not get_tree().paused and Globals.briefed, "map travels without resetting story")
 	await _click("Door")

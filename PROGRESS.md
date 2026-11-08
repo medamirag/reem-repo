@@ -2,9 +2,12 @@
 
 ## Handoff
 
-- **Who worked last:** Codex (builder)
+- **Who worked last:** Claude Code (builder), audit only; the notes below it are Codex's previous session.
 - **Date:** 2026-11-08
 - **Branch:** main
+- **Audit:** `docs/AUDIT.md` checks every station, system, pack and event against docs/ROADMAP.md and game_spec.md, at commit `fde41b0`. Nothing was changed in the game. Real completion: 83% by item (79% if packs are weighted by length). Everything exists and every automatic check passes (content, import, startup and all 40 playtest paths).
+- **Next, from the audit (in this order):** (1) the packs are about a quarter of the roadmap's 30 to 45 minutes each, with one Thaaloob line instead of a short Thaaloob story; (2) characters added after the MVP have no voices of their own (Reem narrates them); (3) hints `oak_search`, `festival_light` and `market_sale` repeat a step; (4) `jad_map_intro` has almost no diacritics; (5) `game/gui/resources/gui_theme.tres` loads `res://.godot/imported/radio_button.png` (lines 7, 75, 82, 89), which a fresh copy does not have; (6) listening review of about 410 new recordings.
+- **Test notes:** `pine_sand`'s real-hold step on `word_lake` failed once in a windowed run and passed headless and windowed afterwards: flaky with a real mouse over the window. `snow` aborted once only because the computer slept.
 - **Valley map:** Added all five art files and marked their rows done. The parchment button and M open the map in playable rooms. Escape or × closes it. It uses saved room visits for the leaf markers and travel, and the first introduction is saved when the map closes. All existing playable rooms, the remaining valley destinations and six pack entrances are in game_data/map_places.json. WaterfallPath already has a position. Keep adding rooms and pack IDs as they are built.
 - **Map audio:** Grandpa's introduction and all 22 place-name recordings are installed and marked done. Page turn uses a short generated paper rustle in game/audio. Map feature was pushed as 3decfda. The recordings arrived in the Waterfall batch.
 - **Map checks:** Content, import, startup, valley_map, green, sand, mixed and words passed. The dedicated route checked title exclusion, keyboard open and close, the pin, locked and unvisited places, and both answers before travel. Godot reported the usual exit leaks.

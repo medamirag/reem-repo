@@ -576,3 +576,6 @@ After the festival, click a flower basket in Grandpa's Yard. MotherGarden is one
 ### Ankoob artwork
 
 The Cave uses a separate painted body and one leg texture. Godot creates four rotated legs on each side, mirrored on the left. Talking to Ankoob triggers a short stepping wiggle. The notebook uses the body as a portrait.
+
+## Reem procedural animation (2026-11-13)
+Reem alone uses a persistent Skeleton2D cutout with joint-overlapping parts, eased walking, planted stance feet, breathing, 2–5 second blinks, voice-synchronised mouth, tone expressions and greeting wave. Preserve Popochiu movement, inventory and saves. Add blossom petals, reward sparkles and watering drops; subtle depth layers only in Yard and Stream. Other cast await approval.

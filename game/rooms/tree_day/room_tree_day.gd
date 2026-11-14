@@ -46,6 +46,7 @@ func _on_object_clicked(obj: PopochiuClickable) -> void:
 				await Lines.say("reem_tree_day_wait", true)
 			E.save_game(1)
 		"Seedling":
+			ReemEffects.burst(self, obj.position, "water")
 			story["watered"] = true
 			Globals.friend_cards["tree_day"] = true
 			if story.get("kept", false):

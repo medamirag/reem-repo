@@ -2,6 +2,23 @@
 
 ## Handoff
 
+- **Who worked last:** Codex (builder), Reem procedural cutout animation.
+- **Date:** 2026-11-14 (work began 2026-11-13)
+- **Branch:** main
+- **Done:** Generated a transparent atlas against both existing Reem references, extracted 21 separate textures under `game/characters/reem/cutout/`, and marked all new art queue rows done. Originals under assets were untouched. Reem now always shows the same Skeleton2D/Bone2D rig: eased distance-driven walking with two-bone planted-foot solving, eased start/stop, small bob, breathing, random 2–5 second blink, voice-timed mouth, tone-based happy/sad/surprised expressions, and greeting wave. Existing hidden Sprite2D remains the size/facing reference for Popochiu. Pickup and reach use the visible skeleton.
+- **Effects:** `game/scripts/reem_effects.gd` adds CPU petals at the heart-tree blossom, sparkles on inventory/good deeds/new notebook cards, and watering drops at MeadowFork and TreeDay. `reem_parallax.gd` adds three restrained depth masks in Yard and Stream only, including Stream's built-bridge texture.
+- **Controls:** CharacterReem Inspector exports Use Walk Rig, Walk Stride, Walk Bob and Idle Breathing. Bone names and all texture paths are in `reem_walk_rig.gd`. Re-extract the shared atlas with `tools/extract_reem_cutout.py` (Pillow); alpha bounds ignore faint fringe pixels and two cell boundaries have explicit crop offsets.
+- **Review:** `docs/reem_animation/review.png`, four full Yard PNGs, and `walking.gif`. Blink image is a natural closed-eye frame during the wave; the first requested blink had reopened by render time. GIF uses twelve captured walking frames.
+- **Checks:** Content consistency passed. Clean headless import passed apart from permitted exit leaks/Aseprite messages and existing UID warnings. Focused headless `--playtest --path=reem_animation` passed blink, mouth start/end, all expressions, rig reuse Yard→Stream, inventory and Continue restoring position and the visible rig. No full route runs. Final logs are in .godot/reem-*.log.
+- **Windowed limitation:** Yard screenshots were inspected and exposed/fixed alpha-padding gaps and two atlas-cell overlaps. Automated native mouse targeting returned 'under nothing'; its direct-call fallback is not counted as a real click. Desktop Computer Use then reported 'Computer Use app approval timed out'. Final Yard window closed after its manual-click timeout. **Two native clicks remain unverified**, despite passing headless interactions/save checks. No other playable room was opened in a window.
+- **How to check:** Reopen Godot. In FileSystem, open `game/rooms/yard/room_yard.tscn` and press F6. Click the path to walk; wait for a blink; click Grandpa to talk and the well to collect the can. Review the GIF and expression screenshots first. No changes to Arabic line text or voices.
+- **What is next:** Wait for the user's approval of Reem's appearance and motion. Only after approval, apply the same approach to Grandpa, Thaaloob and then the animals. Existing voice work remains pending separately.
+- **Half-finished:** Native two-click check is pending due to desktop approval timeout; no half-built game code. Visual approval of generated art and joint outlines remains pending.
+- **Backup:** Commit and push this Reem feature on main; see this session's final response for the result.
+
+### Previous handoff (2026-11-08)
+
+
 - **Who worked last:** Codex (builder), installing the two queued artwork replacements.
 - **Date:** 2026-11-08
 - **Branch:** main
@@ -70,6 +87,14 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-14 / Reem:** The current request supersedes the earlier no-bob preference for Reem: bob is small (4 native pixels, about 1.4 on screen), exposed in the Inspector. Other characters keep their existing behaviour.
+- **2026-11-14 / art:** Generate one shared transparent atlas with both references attached, then extract named parts, rather than independently generating inconsistent limbs. The generated painted finish and visible sleeve/knee joint outlines need user visual approval; no pixel-identical match is claimed.
+- **2026-11-14 / gait:** Distance, rather than an independent clock, drives the walk phase so stance feet cancel character travel. Tween sine easing handles swing, start/stop, breathing, expressions, blink and wave. The original sprite stays hidden solely to preserve all existing size/facing integration.
+- **2026-11-14 / expressions:** Existing tone containing sad/worried/sorry maps to sad; surpris/amazed maps to surprised; other tones map to happy. Arabic greeting detection triggers the wave. Existing line data is unchanged.
+- **2026-11-14 / depth:** Use three soft horizontal depth masks (sky/landscape/near ground), maximum 3 pixels, from existing background textures. This avoids changing original art or click locations; it is a restrained depth approximation, not newly painted semantic scenery layers.
+- **2026-11-14 / testing:** Test saves use an isolated APPDATA under .godot/reem-test-profile. Two native Yard clicks could not be verified after desktop app approval timed out. The focused manual mode waits for the well reward and Grandpa line; a timeout is reported honestly, not counted as success.
+
 
 Choices made without asking (newest first).
 

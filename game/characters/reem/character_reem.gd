@@ -3,9 +3,8 @@ extends PopochiuCharacter
 # You can use `E.queue([])` in any of the methods in this script to trigger a sequence of events.
 # Use `await E.queue([])` to pause execution until the sequence completes.
 #
-# game_spec.md section 3 ("simple version"), adjusted by the user: no up-and-down bob and no
-# size pulse while speaking. Her mouth moves while she talks (TalkingMouth) and her legs and
-# arms move while she walks (ReemWalkRig).
+# Reem uses one persistent cutout for walking, idle, dialogue and gestures.
+# Original sprite remains a hidden size/facing reference for Popochiu.
 
 const Data := preload('character_reem_state.gd')
 
@@ -13,9 +12,11 @@ const BOB_HEIGHT := 0.0  # user: no up-and-down movement
 const BOB_HZ := 4.0
 const GRAB_TIME := 0.6
 
-## Walk with legs and arms that move (ReemWalkRig, built from reem_parts.png). Untick to go back
-## to the simple version: reem_base.png with a gentle bob.
+## Persistent procedural cutout. Disable only for comparison with the original.
 @export var use_walk_rig := true
+@export_range(60.0, 180.0) var walk_stride := 160.0
+@export_range(0.0, 10.0) var walk_bob := 4.0
+@export_range(0.0, 6.0) var idle_breathing := 2.5
 
 var state: Data = load("res://game/characters/reem/character_reem.tres")
 
@@ -42,11 +43,16 @@ func _ready() -> void:
 	if use_walk_rig:
 		_rig = ReemWalkRig.new()
 		_rig.name = "WalkRig"
-		_rig.hide()
+		_rig.stride = walk_stride
+		_rig.bob_height = walk_bob
+		_rig.breathing = idle_breathing
+		_rig.show()
 		add_child(_rig)
 		# Popochiu frees a character's children that it does not own when Reem leaves a room
 		# (PopochiuRoom.exit_room), so the rig must belong to Reem to survive room changes.
 		_rig.owner = self
+		_sprite.hide()
+		_rig.match_picture(_sprite)
 
 
 
@@ -95,6 +101,8 @@ func _play_idle() -> void:
 
 
 func _set_mouth_talking(value: bool) -> void:
+	if is_instance_valid(_rig):
+		_rig.set_talking(value)
 	var mouth := get_node_or_null("Sprite2D/Mouth") as TalkingMouth
 	if mouth:
 		mouth.talking = value
@@ -116,11 +124,12 @@ func _play_grab() -> void:
 		grab_done.emit.call_deferred()
 		return
 
-	var base_scale := _sprite.scale
+	var visual: Node2D = _rig._body if is_instance_valid(_rig) else _sprite
+	var base_scale := visual.scale
 	var bent := Vector2(base_scale.x * 1.04, base_scale.y * 0.9)
-	var tween := create_tween()
-	tween.tween_property(_sprite, "scale", bent, GRAB_TIME / 2.0)
-	tween.tween_property(_sprite, "scale", base_scale, GRAB_TIME / 2.0)
+	var tween := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(visual, "scale", bent, GRAB_TIME / 2.0)
+	tween.tween_property(visual, "scale", base_scale, GRAB_TIME / 2.0)
 	await tween.finished
 	grab_done.emit()
 
@@ -132,12 +141,13 @@ func reach_up() -> void:
 		await get_tree().process_frame
 		return
 
-	var base_scale := _sprite.scale
+	var visual: Node2D = _rig._body if is_instance_valid(_rig) else _sprite
+	var base_scale := visual.scale
 	var stretched := Vector2(base_scale.x * 0.97, base_scale.y * 1.08)
 	var tween := create_tween()
-	tween.tween_property(_sprite, "scale", stretched, GRAB_TIME / 2.0) \
+	tween.tween_property(visual, "scale", stretched, GRAB_TIME / 2.0) \
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(_sprite, "scale", base_scale, GRAB_TIME / 2.0) \
+	tween.tween_property(visual, "scale", base_scale, GRAB_TIME / 2.0) \
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	await tween.finished
 
@@ -166,8 +176,8 @@ func _on_movement_started() -> void:
 func _on_movement_ended() -> void:
 	if is_instance_valid(_rig):
 		_rig.set_walking(false)
-		_rig.hide()
-		_sprite.show()
+		_rig.show()
+		_sprite.hide()
 	else:
 		_stop_bob()
 
@@ -207,3 +217,16 @@ func _stop_bob() -> void:
 
 
 #endregion
+
+
+func animate_line(tone: String, text: String) -> void:
+	if not is_instance_valid(_rig):
+		return
+	var mood := "happy"
+	if tone.to_lower().contains("sad") or tone.to_lower().contains("worried") or tone.to_lower().contains("sorry"):
+		mood = "sad"
+	elif tone.to_lower().contains("surpris") or tone.to_lower().contains("amazed"):
+		mood = "surprised"
+	_rig.set_expression(mood)
+	if text.contains("السَّلَامُ") or text.contains("السَّلَامُ") or tone.to_lower().contains("greet"):
+		_rig.wave()

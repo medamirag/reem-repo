@@ -84,6 +84,7 @@ func _can_water() -> bool:
 func _water() -> void:
 	await C.player.walk_to_clicked()
 	A.sfx_water_pour.play()
+	ReemEffects.burst(self, C.player.position + Vector2(55, -90), "water")
 	await Lines.say("reem_s2_013b")
 	$ShortcutFlowers.show_bent(false)
 	Globals.flowers_fixed = true

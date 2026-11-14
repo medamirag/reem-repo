@@ -30,6 +30,9 @@ func _ready() -> void:
 	_voice = AudioStreamPlayer.new()
 	_voice.bus = ReemSettings.VOICE_BUS
 	_voice.name = "Voice"
+	_voice.finished.connect(func():
+		if is_instance_valid(C.player) and C.player.has_method("_set_mouth_talking"):
+			C.player._set_mouth_talking(false))
 	add_child(_voice)
 
 	_load_lines()
@@ -74,6 +77,8 @@ func say(line_id: String, narrate := false) -> void:
 	if not narrate and is_instance_valid(R.current) and R.current.has_character(speaker):
 		character = C.get_character(speaker)
 
+	if character != null and character.has_method("animate_line"):
+		character.animate_line(str(line.get("tone", "")), text)
 	var voice_length := _start_voice(str(line.get("audio", "")))
 	# Unrecorded text must remain readable, rather than vanish after 0.3 seconds.
 	if voice_length <= 0.0:
@@ -88,6 +93,8 @@ func say(line_id: String, narrate := false) -> void:
 
 	if _voice.playing:
 		_voice.stop()
+	if character != null and character.has_method("_set_mouth_talking"):
+		character._set_mouth_talking(false)
 	busy = false
 
 

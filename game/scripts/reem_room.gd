@@ -55,6 +55,14 @@ func _on_room_entered() -> void:
 
 	_add_exit_arrows()
 	_setup_room()
+	if not has_node("ProceduralEffects"):
+		var effects := ReemEffects.new()
+		effects.name = "ProceduralEffects"
+		add_child(effects)
+	if script_name in ["Yard", "Stream"] and not has_node("DepthLayers"):
+		var depth := ReemParallax.new()
+		depth.name = "DepthLayers"
+		add_child(depth)
 
 
 func _on_room_transition_finished() -> void:

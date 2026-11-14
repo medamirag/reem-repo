@@ -22,6 +22,7 @@ func _on_heart_changed(grew: bool) -> void:
 
 	if grew:
 		_pulse()
+		ReemEffects.burst(self, size * Vector2(.5, .3), "petals")
 
 
 func _refresh() -> void:

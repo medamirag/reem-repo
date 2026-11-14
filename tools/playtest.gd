@@ -70,6 +70,11 @@ func _run() -> void:
 	for anim in ["use", "active", "talk", "look", "left", "right"]:
 		var tex := frames.get_frame_texture(anim, 0)
 		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
+	if _path == "reem_animation":
+		await _reem_animation_path()
+		_log("DONE reem_animation")
+		get_tree().quit()
+		return
 	if _path == "stream_bridge":
 		await _stream_bridge_path()
 		_log("DONE stream_bridge")
@@ -2476,3 +2481,75 @@ func _highlight_path() -> void:
 	await _wait_room("Gate")
 	highlight.reveal()
 	_expect(_highlight_ids().has("ExitLeft") and not _highlight_ids().has("ExitRight"), "locked Gate exit stays unmarked")
+
+
+## Focused Reem check: Yard only in a window; headless additionally checks room reuse.
+func _reem_animation_path() -> void:
+	Engine.time_scale = 1.0 if _real else 4.0
+	await Globals.new_game()
+	R.goto_room("Yard")
+	await _wait_room("Yard")
+	var rig: ReemWalkRig = C.player.get_node("WalkRig")
+	_expect(rig.visible and not C.player.get_node("Sprite2D").visible, "persistent cutout replaces original")
+	_expect(rig.get_node("Skeleton2D/Body/Head") is Bone2D, "Reem uses Skeleton2D and bones")
+	_expect(R.current.has_node("DepthLayers"), "Yard has three depth layers")
+	await _shot("idle")
+	rig.blink()
+	await get_tree().create_timer(.04).timeout
+	_expect(rig._blinking, "blink closes eyes")
+	await _shot("blink")
+	await get_tree().create_timer(.2).timeout
+	_expect(not rig._blinking, "blink reopens eyes")
+	C.player.walk(C.player.position + Vector2(650, 0))
+	for frame in 12:
+		await get_tree().create_timer(.07).timeout
+		await _shot("walk_%02d" % frame)
+	await _wait_idle()
+	_expect(not rig.walking, "walk stops in idle")
+	Lines.say("reem_s1_010")
+	await get_tree().create_timer(.35).timeout
+	_expect(rig.talking, "voice drives mouth")
+	await _shot("talking")
+	await _wait_idle()
+	_expect(not rig.talking, "mouth closes after voice")
+	for mood in ["sad", "surprised", "happy"]:
+		C.player.animate_line(mood, "")
+		await get_tree().create_timer(.3).timeout
+		_expect(rig.expression == mood, "line tone drives " + mood)
+		await _shot(mood)
+	rig.wave()
+	await get_tree().create_timer(.5).timeout
+	await _shot("wave")
+	await get_tree().create_timer(1.3).timeout
+	Globals.bloom()
+	if not _real:
+		await C.player.add_to_inventory(I.WateringCan)
+	ReemEffects.burst(R.current, C.player.position + Vector2(50, -80), "water")
+	await get_tree().create_timer(.15).timeout
+	await _shot("effects")
+	if _real:
+		Globals.briefed = true
+		_log("ok: ready for two manual clicks: Well, then Jad")
+		_step_name = "manual Yard clicks"
+		_step_started = Time.get_ticks_msec() / 1000.0
+		while not C.player.has_inventory_item("WateringCan") or not Lines.said.has("jad_s1_019"):
+			await get_tree().process_frame
+		await _wait_idle()
+		_step_name = ""
+		_expect(C.player.has_inventory_item("WateringCan"), "real Well click awards watering can")
+		_expect(Lines.said.has("jad_s1_019"), "real Grandpa click speaks his line")
+		await _shot("after_real_clicks")
+	else:
+		R.goto_room("Stream")
+		await _wait_room("Stream")
+		_expect(C.player.get_node("WalkRig") == rig, "same rig survives room transition")
+		_expect(R.current.has_node("DepthLayers"), "Stream has three depth layers")
+		E.save_game(1)
+		var saved_position: Vector2 = C.player.position
+		R.goto_room("Title")
+		await _wait_room("Title")
+		await _step("continue animated Reem save", func(): R.current.call("_on_continue_pressed"))
+		await _wait_room("Stream")
+		_expect(C.player.has_inventory_item("WateringCan"), "inventory survives Continue")
+		_expect(C.player.position.is_equal_approx(saved_position), "position survives Continue")
+		_expect(C.player.get_node("WalkRig").visible, "cutout visible after Continue")

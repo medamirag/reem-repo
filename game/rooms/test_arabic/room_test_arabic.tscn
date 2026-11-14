@@ -21,8 +21,8 @@ metadata/_edit_horizontal_guides_ = [-149.0]
 position = Vector2(384, 950)
 input_pickable = false
 use_walk_rig = true
-walk_stride = 160.0
-walk_bob = 4.0
+walk_stride = 370.5
+walk_bob = 31.35
 idle_breathing = 2.5
 metadata/EDITOR_TMP_COPY_OF = "Reem"
 

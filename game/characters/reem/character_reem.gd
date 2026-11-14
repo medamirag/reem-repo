@@ -15,8 +15,8 @@ const GRAB_TIME := 0.6
 
 ## Persistent procedural cutout. Disable only for comparison with the original.
 @export var use_walk_rig := true
-@export_range(60.0, 90.0) var walk_stride := 90.0
-@export_range(0.0, 10.0) var walk_bob := 4.0
+@export_range(330.0, 390.0) var walk_stride := 370.5
+@export_range(0.0, 40.0) var walk_bob := 31.35
 @export_range(0.0, 6.0) var idle_breathing := 2.5
 
 var state: Data = load("res://game/characters/reem/character_reem.tres")

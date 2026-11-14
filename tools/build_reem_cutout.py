@@ -1,7 +1,7 @@
 """Extract untouched source pixels into layers and build smooth, overlapping native skin meshes."""
 import json,math
 from pathlib import Path
-from PIL import Image,ImageDraw,ImageFilter
+from PIL import Image,ImageDraw,ImageFilter,ImageChops
 ROOT=Path(__file__).resolve().parents[1];D=json.loads((ROOT/'game/characters/reem/cutout_layout.json').read_text())
 DEST=ROOT/'game/characters/reem/aligned';DEST.mkdir(exist_ok=True)
 FRONT=[(430,636),(475,625),(500,616),(525,604),(550,590),(575,576),(600,568),(625,558),(650,549),(675,538),(700,525),(725,511),(750,498),(775,494),(800,488),(825,480),(850,480)]
@@ -14,7 +14,24 @@ def interp(curve,y):
 def smooth(a,b,t):
  t=max(0,min(1,(t-a)/(b-a)));return t*t*(3-2*t)
 names=['head','torso','arm_front','arm_back','leg_front','leg_back']
-im=Image.open(ROOT/'assets/art/characters/reem/reem_base.png').convert('RGBA');src=im.load();head=Image.new('L',im.size);ImageDraw.Draw(head).polygon([tuple(p) for p in D['parts']['head']],fill=255);hm=head.filter(ImageFilter.MaxFilter(9)).load()
+im=Image.open(ROOT/'assets/art/characters/reem/reem_base.png').convert('RGBA')
+# Remove thin alpha fringe at the collar/shoulders only; approved face pixels stay exact.
+a=im.getchannel('A');core=a.point(lambda v:255 if v>=96 else 0)
+opened=core.filter(ImageFilter.MinFilter(5)).filter(ImageFilter.MaxFilter(5)).filter(ImageFilter.MaxFilter(3))
+clean=ImageChops.multiply(a,opened)
+a.paste(clean.crop((390,420,850,590)),(390,420));im.putalpha(a)
+im.save(ROOT/'game/characters/reem/reem_clean_source.png')
+src=im.load();head=Image.new('L',im.size);ImageDraw.Draw(head).polygon([tuple(p) for p in D['parts']['head']],fill=255)
+head=head.filter(ImageFilter.MaxFilter(9));hm=head.load()
+warm=Image.new('L',im.size);wp=warm.load()
+for y in range(410,590):
+ for x in range(390,850):
+  r,g,b,a=src[x,y]
+  if r>145 and g>130 and b>90 and r>g*1.01 and r>b*1.06 and a>64:wp[x,y]=255
+support=warm.filter(ImageFilter.MaxFilter(13)).load()
+for y in range(410,590):
+ for x in range(390,850):
+  if not support[x,y]:hm[x,y]=0
 hem_edge={}
 for x in range(im.width):
  teal=[y for y in range(900,1025) if src[x,y][1]>65 and src[x,y][2]>65 and src[x,y][1]>src[x,y][0]*1.2 and src[x,y][2]>src[x,y][0]*1.2 and src[x,y][3]>200]
@@ -25,7 +42,7 @@ for y in range(im.height):
   r,g,b,a=src[x,y]
   if not a:continue
   if hm[x,y] and not(y>420 and g>65 and b>65 and g>r*1.2 and b>r*1.2):name='head'
-  elif y>=hem_edge[x]:name='leg_front' if x<615 else 'leg_back'
+  elif y>=hem_edge[x]:name='leg_front' if x<(635 if y>1130 else 615) else 'leg_back'
   elif 430<=y<=850 and x<interp(FRONT,y):name='arm_front'
   elif 480<=y<=850 and x>interp(BACK,y):name='arm_back'
   else:name='torso'
@@ -38,8 +55,10 @@ for name,mask in masks.items():
   for x in range(im.width):
    for y in range(hem_edge[x]+1,im.height):mp[x,y]=0
  image=Image.new('RGBA',im.size);image.paste(im,(0,0),mask);image.save(DEST/(name+'.png'))
-lines=['[gd_scene load_steps=13 format=3]','[ext_resource type="Script" path="res://game/characters/reem/reem_walk_rig.gd" id="rig"]','[ext_resource type="Texture2D" path="res://assets/art/characters/reem/reem_base.png" id="source"]','[ext_resource type="Shader" path="res://game/characters/reem/reem_face.gdshader" id="face"]']
+lines=['[gd_scene load_steps=16 format=3]','[ext_resource type="Script" path="res://game/characters/reem/reem_walk_rig.gd" id="rig"]','[ext_resource type="Texture2D" path="res://assets/art/characters/reem/reem_base.png" id="source"]','[ext_resource type="Shader" path="res://game/characters/reem/reem_face.gdshader" id="face"]']
+lines.append('[ext_resource type="Shader" path="res://game/characters/reem/reem_trousers.gdshader" id="trousers"]')
 for name in names:lines.append(f'[ext_resource type="Texture2D" path="res://game/characters/reem/aligned/{name}.png" id="{name}_tex"]')
+lines+=['[sub_resource type="ShaderMaterial" id="TrouserTop"]','shader = ExtResource("trousers")','[sub_resource type="ShaderMaterial" id="TrouserCap"]','shader = ExtResource("trousers")','shader_parameter/cap_mode = true']
 lines+=['[sub_resource type="ShaderMaterial" id="FaceSkin"]','shader = ExtResource("face")']
 for name,key in [('OpenEye','eye_rect'),('NeutralMouth','mouth_rect')]:lines.extend([f'[sub_resource type="AtlasTexture" id="{name}"]','atlas = ExtResource("source")','region = Rect2(%s)'%', '.join(map(str,D[key]))])
 lines+=['[node name="ReemCutout" type="Node2D"]','script = ExtResource("rig")','[node name="Skeleton2D" type="Skeleton2D" parent="."]']
@@ -71,16 +90,19 @@ def mesh(name,family,box):
  for x,y in points:
   if name.endswith('Cap'):
    centre=550 if family.endswith('front') else 695
-   uv.append((round(centre+(x-centre)*1.3,5),1030))
+   uv.append((round(centre+(x-centre),5),1030))
   else:uv.append((x,y))
  lines.extend([f'[node name="{name}" type="Polygon2D" parent="Skeleton2D"]',f'texture = ExtResource("{family}_tex")','skeleton = NodePath("..")','polygon = PackedVector2Array('+', '.join(str(p[i]-D['feet_origin'][i]) for p in points for i in (0,1))+')','uv = PackedVector2Array('+', '.join(str(v) for p in uv for v in p)+')','polygons = ['+', '.join('PackedInt32Array('+', '.join(map(str,c))+')' for c in cells)+']','metadata/skin = {'+', '.join('"'+path+'": PackedFloat32Array('+', '.join(map(str,w))+')' for path,w in skin.items())+'}', 'metadata/virtual_cap = '+('true' if name.endswith('Cap') else 'false')])
 
 for side in ['back','front']:
  if side=='back':
   for name,y0,y1 in [('Upper',480,620),('Lower',590,740),('Hand',700,850)]:mesh('ArmBack'+name,'arm_back',(640,y0,850,y1))
- mesh('Leg'+side.capitalize()+'Cap','leg_'+side,((450 if side=='front' else 615),945,(615 if side=='front' else 810),1010))
- for name,y0,y1 in [('Upper',945,1090),('Lower',1030,1180),('Foot',1130,1240)]:mesh('Leg'+side.capitalize()+name,'leg_'+side,((450 if side=='front' else 615),y0,(615 if side=='front' else 810),y1))
-mesh('Tunic','torso',(400,420,850,1010))
+ mesh('Leg'+side.capitalize()+'Cap','leg_'+side,((450 if side=='front' else 615),900,(615 if side=='front' else 810),1030))
+ lines.append('material = SubResource("TrouserCap")')
+ for name,y0,y1 in [('Upper',945,1090),('Lower',1030,1180),('Foot',1130,1240)]:
+  mesh('Leg'+side.capitalize()+name,'leg_'+side,((450 if side=='front' else 615),y0,((635 if name=='Foot' else 615) if side=='front' else 810),y1))
+  lines.append('material = SubResource("TrouserTop")')
+mesh('Tunic','torso',(400,400,850,1010))
 mesh('HeadSurface','head',(390,0,850,580))
 lines.append('material = SubResource("FaceSkin")')
 def bone(name,parent,point,origin):

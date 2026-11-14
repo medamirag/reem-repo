@@ -1317,3 +1317,9 @@ These are non-generative extractions of unchanged pixels from the original sprit
 | reem_aligned_leg_back | `game/characters/reem/aligned/leg_back.png` | `assets/art/characters/reem/reem_base.png` | transparent | 1254x1254 | Extract original leg_back pixels without repainting, scaling, recolouring or moving them; preserve source coordinates | Exact source colours and alpha; shared bone weights over overlapping joints | done |
 
 2026-11-14 walk refinement: the six `reem_aligned_*` derived layers above were rebuilt from the same source pixels with a curved hem boundary and clean scarf/sleeve ownership. All remain done. Original assets and approved facial features are unchanged; no new generated artwork was needed.
+
+### Reem stronger walk: collar/shoulder fringe cleanup (2026-11-14)
+
+| ID | Save as | Attach | Background | Size | Prompt | Extra check | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| reem_clean_source | `game/characters/reem/reem_clean_source.png` | `assets/art/characters/reem/reem_base.png` | transparent | 1254x1254 | Derived by code: preserve all RGB and face pixels; remove only thin alpha fringe in the collar/shoulder area (y420–589), leaving the original asset untouched | Same profile/three-quarter angle; no collar/shoulder lines; shoe-edge ownership corrected in six existing aligned layers | done |

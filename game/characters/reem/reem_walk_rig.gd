@@ -5,8 +5,8 @@ const SOURCE := preload("res://assets/art/characters/reem/reem_base.png")
 const PARTS := "res://game/characters/reem/cutout/"
 const FEET := Vector2(627, 1254)
 const LAYOUT_PATH := "res://game/characters/reem/cutout_layout.json"
-@export var stride := 90.0
-@export var bob_height := 4.0
+@export var stride := 370.5
+@export var bob_height := 31.35
 @export var breathing := 2.5
 var walking := false
 var talking := false
@@ -127,12 +127,18 @@ func _reset_limbs() -> void:
 	_body.rotation = 0
 	_hem.rotation = 0
 	_hem.scale = Vector2.ONE
+	for part in $Skeleton2D.get_children():
+		if part is Polygon2D:
+			part.modulate = Color.WHITE
+			if part.name.begins_with("Leg") and part.material is ShaderMaterial:
+				part.material.set_shader_parameter("walking", 0.0)
 	for joint in _hips + _knees + _feet:
 		joint.rotation = 0.0
 	for index in 2:
 		_hips[index].position = _rest_hips[index]
 
 func _settle_feet(weight: float) -> void:
+	_set_leg_blend(1.0 - weight)
 	for index in 2:
 		_solve_leg(index, _body.transform.affine_inverse() * _from_feet[index].lerp(_rest_ankles[index], weight), lerpf(_from_hip_shifts[index], 0.0, weight))
 		_feet[index].rotation += lerpf(_from_foot_angles[index], 0.0, weight) - _body.rotation
@@ -145,7 +151,7 @@ func _process(delta: float) -> void:
 	var distance := absf(current_x - _last_x) / maxf(absf(scale.x), .001)
 	_last_x = current_x
 	if walking:
-		_phase = fposmod(_phase + distance / (_effective_stride() / .625), 1.0)
+		_phase = fposmod(_phase + distance / (_effective_stride() / .5), 1.0)
 		apply_walk_phase(_phase, _lift)
 	elif not _settling:
 		_body.position = Vector2.ZERO
@@ -160,8 +166,8 @@ func _process(delta: float) -> void:
 		_show_mouth("open" if _mouth_open else "closed")
 
 func _effective_stride() -> float:
-	# A wider step would exceed the original short legs' reach and make planted feet slide.
-	return clampf(stride, 60.0, 90.0)
+	# Use the full hidden thigh length under the tunic; stance distance cancels root travel.
+	return clampf(stride, 330.0, 390.0)
 
 # Eight keyed poses: contact, down, passing, up, repeated for the other leg.
 # Stance travel remains linear to cancel root movement; all pose changes use Tween easing.
@@ -174,35 +180,55 @@ func _pose(values: Array, phase: float) -> float:
 
 func apply_walk_phase(phase: float, weight := 1.0) -> void:
 	_phase = fposmod(phase, 1.0)
-	_body.position.y = weight * _pose([2.0, 5.0, -5.0, -8.0, 2.0, 5.0, -5.0, -8.0], _phase) * bob_height / 4.0
+	_body.position.y = weight * bob_height * _pose([0.0, 1.0, -.5, -1.0, 0.0, 1.0, -.5, -1.0], _phase)
 	_body.rotation = weight * .008
 	_hem.scale.y = 1.0 + .07 * weight
 	_hem.rotation = weight * _pose([0.0, .008, .012, .008, 0.0, -.008, -.012, -.008], _phase - .10)
+	_set_leg_blend(weight)
 	for index in 2:
-		var p := fposmod(_phase + index * .5, 1.0)
+		# Near leg leads at frame 1; all joint poses exchange legs half a cycle later.
+		var p := fposmod(_phase + (1 - index) * .5, 1.0)
 		var target := _rest_ankles[index]
 		target.x = lerpf(target.x, 620.0 - FEET.x, weight)
-		var angle := weight * _pose([-.10, 0.0, 0.0, 0.0, .02, .14, .10, .08], p)
-		if p < .625:
-			# The ground contact advances backward exactly as far as the actor advances.
-			target.x += _effective_stride() * (.5 - p / .625)
-			var contact := Vector2(-42, 71) if p < .125 else Vector2(62, 71)
-			# Roll around the heel/toe on the ground, rather than around a floating ankle.
+		var angle := weight * _pose([-.20, 0.0, 0.0, .16, .25, .22, .16, .08], p)
+		var heel := Vector2(-50, 71)
+		var toe := Vector2(88, 71)
+		if p <= .5:
+			target.x += weight * _effective_stride() * (.5 - p / .5)
+			var contact := heel if p < .125 else toe
 			target += contact - contact.rotated(angle)
 		else:
-			var t := (p - .625) / .375
+			var t := (p - .5) / .5
 			var eased: float = Tween.interpolate_value(0.0, 1.0, t, 1.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-			target.x += _effective_stride() * (eased - .5)
-			var toe := Vector2(62, 71)
-			var heel := Vector2(-42, 71)
-			target += (toe - toe.rotated(.14 * weight)).lerp(heel - heel.rotated(-.10 * weight), eased)
-			target.y -= weight * 13.0 * sin(t * PI) ** 2
-		_solve_leg(index, _body.transform.affine_inverse() * target, weight * (620.0 - FEET.x - _rest_hips[index].x))
+			target.x += weight * _effective_stride() * (eased - .5)
+			target += (toe - toe.rotated(.25 * weight)).lerp(heel - heel.rotated(-.20 * weight), eased)
+			target.y -= weight * 40.0 * sin(t * PI) ** 2
+		var thigh := _pose([25.0, 15.0, 0.0, -15.0, -25.0, -15.0, 15.0, 25.0], p)
+		var knee := _pose([5.0, 22.0, 8.0, 8.0, 8.0, 30.0, 40.0, 20.0], p)
+		_place_gait_leg(index, _body.transform.affine_inverse() * target, thigh, knee, weight)
 		_feet[index].rotation += angle - _body.rotation
 		if not (_waving and index == 1):
-			# Positive shoulder rotation carries an arm back while its own leg is forward.
-			_arms[index].rotation = weight * ((.34 if index == 0 else -.38) + _pose([.12, .08, 0.0, -.08, -.12, -.08, 0.0, .08], p))
-			_elbows[index].rotation = weight * _pose([-.035, -.05, -.06, -.05, -.035, -.02, -.01, -.02], p)
+			var arc := _pose([1.0, .7, 0.0, -.7, -1.0, -.7, 0.0, .7], p)
+			_arms[index].rotation = weight * deg_to_rad(20.0 if index == 1 else 14.0) * arc
+			_elbows[index].rotation = weight * _pose([-.05, -.08, -.15, -.26, -.38, -.26, -.15, -.08], p) * (1.0 if index == 1 else .6)
+
+func _set_leg_blend(weight: float) -> void:
+	for part in $Skeleton2D.get_children():
+		if part is Polygon2D and part.name.begins_with("Leg"):
+			if part.material is ShaderMaterial:
+				part.material.set_shader_parameter("walking", weight)
+			if part.name.begins_with("LegBack"):
+				part.modulate = Color.WHITE.lerp(Color(.86, .86, .86, 1), weight)
+
+func _place_gait_leg(index: int, target: Vector2, thigh: float, bend: float, weight := 1.0) -> void:
+	# Exact angles without stretching the skin. The hidden hip follows the planted
+	# foot, so a larger bob does not pull a shoe along the floor.
+	var upper_angle := PI / 2.0 - deg_to_rad(thigh) - _body.rotation
+	var lower_angle := upper_angle + deg_to_rad(bend)
+	_hips[index].rotation = lerpf(0.0, upper_angle - _upper_vectors[index].angle(), weight)
+	_knees[index].rotation = lerpf(0.0, lower_angle - _lower_vectors[index].angle() - (upper_angle - _upper_vectors[index].angle()), weight)
+	_hips[index].position = target - _upper_vectors[index].rotated(_hips[index].rotation) - _lower_vectors[index].rotated(_hips[index].rotation + _knees[index].rotation)
+	_feet[index].rotation = -_hips[index].rotation - _knees[index].rotation
 
 func _solve_leg(index: int, target: Vector2, hip_shift := 0.0) -> void:
 	_hips[index].position = _rest_hips[index] + Vector2(hip_shift, 0)
@@ -213,7 +239,7 @@ func _solve_leg(index: int, target: Vector2, hip_shift := 0.0) -> void:
 	var b := lower.length()
 	# Hidden hip correction keeps the short trouser leg within reach without sliding
 	# the planted shoe or forcing a wide, swollen knee fold.
-	var minimum := sqrt(a*a + b*b + 2*a*b*cos(deg_to_rad(35.0)))
+	var minimum := sqrt(a*a + b*b + 2*a*b*cos(deg_to_rad(40.0)))
 	var d := clampf(v.length(), minimum, a + b - .01)
 	_hips[index].position.y = target.y - sqrt(maxf(1.0, d*d - v.x*v.x))
 	v = target - _hips[index].position

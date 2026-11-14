@@ -3,14 +3,19 @@ from pathlib import Path
 import sys
 from PIL import Image,ImageChops
 ROOT=Path(__file__).resolve().parents[1]
-im=Image.open(ROOT/'assets/art/characters/reem/reem_base.png').convert('RGBA')
+original=Image.open(ROOT/'assets/art/characters/reem/reem_base.png').convert('RGBA')
+im=Image.open(ROOT/'game/characters/reem/reem_clean_source.png').convert('RGBA')
+assert ImageChops.difference(original.convert('RGB'),im.convert('RGB')).getbbox() is None
+delta=ImageChops.difference(original.getchannel('A'),im.getchannel('A'))
+box=delta.getbbox()
+assert box is None or (box[1]>=420 and box[3]<=590), 'Cleanup changed pixels outside the collar/shoulder area'
 alpha=Image.new('L',im.size)
 for path in sorted((ROOT/'game/characters/reem/aligned').glob('*.png')):
  layer=Image.open(path).convert('RGBA');assert layer.size==im.size
  alpha=ImageChops.lighter(alpha,layer.getchannel('A'))
 assert ImageChops.difference(alpha,im.getchannel('A')).getbbox() is None,'Source cutouts lose or add source alpha'
 print('[ALIGN PIXELS] ok: source cutouts preserve original alpha at every pixel')
-render=ROOT/(sys.argv[1] if len(sys.argv)>1 else 'docs/reem_alignment/neutral_rgba.png')
+render=ROOT/(sys.argv[1] if len(sys.argv)>1 else 'docs/reem_walk_v2/neutral_rgba.png')
 if render.exists():
  actual=Image.open(render).convert('RGBA');assert actual.size==im.size
  lost=outside=different=0;maximum=0
@@ -27,7 +32,7 @@ if render.exists():
  print('[ALIGN PIXELS] ok: rendered neutral matches original silhouette and colours')
 
 # Preserve the face the user approved, including the exact talking/blinking previews.
-if render.parent.name == 'reem_walk':
+if render.exists() and render.parent.name in ['reem_walk','reem_walk_v2']:
  for name in ['neutral_rgba','face_talking','face_blinking']:
   before=Image.open(ROOT/'docs/reem_alignment'/f'{name}.png').convert('RGBA')
   after=Image.open(render.parent/f'{name}.png').convert('RGBA')

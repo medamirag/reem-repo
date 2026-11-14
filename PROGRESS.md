@@ -2,6 +2,23 @@
 
 ## Handoff
 
+
+- **Who worked last:** Codex (builder), Reem eight-pose walk refinement.
+- **Date / branch:** 2026-11-14 / main.
+- **User confirmed:** Reem's face is now correct. Preserve it. No work on other characters until Reem is approved.
+- **Done:** Replaced the old sinusoidal flat-foot gait with eight keyed contact/down/passing/up poses (each leg), sine Tween interpolation, opposing relaxed shoulder arcs and slight elbow bending. Cadence follows actual character travel, so the existing movement speed is preserved. Upper body dips on contact/down, rises on passing/up and has a tiny forward lean.
+- **Feet / trousers:** Heel, flat-sole and toe contact compensate ankle position while the actor moves. Swing feet tilt toe-down, lift smoothly and return continuously to heel contact. Walking hips/ankles converge to a side-view stance so feet actually pass each other. Hidden hip corrections keep targets reachable and knee flexion within 35 degrees, without scaling/inflating the legs. Hands, cuffs and ankles retain continuous shared skinning.
+- **Tunic / seams:** Torso stays stable; a separate Hem bone adds a delayed small sway and roughly 10 source pixels of extra overlap while walking. It returns to exact rest size at idle. Tunic renders ahead of trousers. Source-colour ownership follows the curved hem, with separate hidden trouser caps. Removed duplicated coat/scarf outline fragments from the moving limb layers. All original assets and facial shader/features remain unchanged.
+- **Files:** `game/characters/reem/reem_walk_rig.gd`, `reem_cutout.tscn`, `aligned/*.png`; deterministic rebuild in `tools/build_reem_cutout.py`. Inspector stride range/default is now 60–90 native pixels; rig clamps legacy room overrides to 90. Existing art queue rows remain done, with a refinement note.
+- **Review evidence:** `docs/reem_walk/eight_poses.png` contains eight actual Godot captures, not retouched drawings. `legs_closeups.png` shows all knees/feet enlarged. Neutral side-by-side, source-size captures and talking/blinking captures are included. Several early renders exposed cloth distortion and original-edge fragments; those were corrected before the final sheet. Rebuild instructions are in its README.
+- **Checks:** Final isolated fixture passed neutral source registration, all facial anchors, overlay removal, opposing arms on all eight poses, forward knees, maximum 35-degree flexion, gentle shoe angles, front/back order, flat stance planting and heel/toe roll planting. Pixel check: zero missing/protruding neutral pixels, zero solid-source differences above 12/255, max 3/255 GPU rounding. Approved neutral/talking/blinking face crops compare identically with the previous captures. Content and focused headless `reem_animation` passed through DONE (speech, blink, expressions, room reuse, inventory and Continue). Usual exit leaks and existing Aseprite/UID warnings only. Logs: `.godot/walk-visual-final.log`, `walk-import-final.log`, `walk-integration-final.log`.
+- **How to check:** Open the eight-pose image first. Reopen Godot, open `game/rooms/yard/room_yard.tscn`, press F6 and click along the path. Only the isolated Reem preview was opened during this turn; no full windowed route tests or desktop mouse actions.
+- **What is next:** User review of Reem's updated walk. Only after approval, apply the same approach to Grandpa, Thaaloob and the animals.
+- **Half-finished:** None for this walk correction. Earlier unrelated native mouse-helper limitations remain documented below.
+- **Backup:** Commit and push this refinement to origin/main; the final response records the resulting commit.
+
+### Previous handoff (Reem source alignment)
+
 - **Who worked last:** Codex (builder), Reem cutout alignment correction.
 - **Date:** 2026-11-14
 - **Branch:** main
@@ -125,6 +142,11 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-14 / walk refinement:** Preserve the user-approved face exactly. Use eight distance-driven poses with 62.5% stance per leg; keep stance travel linear for planting and ease pose/swing changes with Tween sine interpolation. Walking speed is unchanged.
+- **2026-11-14 / gait stance and knees:** Bring hidden hips and ankles into a side-view walking stance, retain exact original neutral pivots, cap stride at 90 native pixels and knee bend at 35 degrees. Hidden hip correction preserves contact without scaling trouser width. This supersedes the earlier 120px stride decision.
+- **2026-11-14 / stable clothing:** Keep torso and scarf stable instead of spreading large shoulder rotations through them. A dedicated Hem bone adds delayed sway and 7% local vertical overlap (about 10 native pixels at the edge) only while walking. Separate hidden trouser caps and a measured curved hem avoid the previous repeated outline strips. This supersedes the prior scarf/torso shared-motion choice for walking.
+- **2026-11-14 / evidence:** Use the actual packed scene in an isolated preview for all eight frozen poses and compare approved face crops pixel-for-pixel. No AI repainting or full windowed route tests.
 
 - **2026-11-14 / source match:** Re-align by extracting original sprite pixels rather than independently stretching the differently proportioned generated parts. Keep all originals and previous generated files. Six source layers support separate overlapping native upper/lower/hand/foot meshes.
 - **2026-11-14 / joints:** Use continuous native skin weights at overlapping joints and shared scarf/sleeve borders; rigid source crops alone produced jagged intersections when bent. Original-pixel under-hem caps are hidden in the neutral pose.

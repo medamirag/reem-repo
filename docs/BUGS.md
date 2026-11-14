@@ -172,3 +172,7 @@ User reported floating/clipped dialogue, a stuck hourglass and Reem overlapping 
 ### 22. Reem source alignment and joint continuity
 
 Rebuilt the active cutout with original-pixel layers at the source coordinates, measured pivots, overlapping native skin meshes and shared face anchors. The temporary 50% original overlay was removed before final neutral/face/walk captures. Fixed the incomplete eye/mouth masks and the rigid-cut knee/elbow/scarf seams exposed by close inspection. Final neutral render has no missing/protruding visible pixels and at most 4/255 opaque colour rounding difference. Evidence: `docs/reem_alignment/neutral_side_by_side.png`, `face_closeups.png` and `walk_four_frames.png`. Source-pixel, bone, foot-planting and headless integration checks passed.
+
+### 23. Reem walk: opposing arms, heel-toe motion and clothing seams (2026-11-14)
+
+User approved the face and requested a proper eight-pose walk. Replaced the old gait with distance-driven contact/down/passing/up poses, relaxed opposing arms, body bob/lean, grounded heel-toe roll, tilted swing feet and delayed hem sway. Limited knee bending to 35 degrees and preserved original leg widths. Corrected curved hem/scarf ownership and added hidden upper-leg overlaps behind the stable tunic. See `docs/reem_walk/eight_poses.png` and `legs_closeups.png`. Focused pose/contact checks and headless Reem integration passed. Neutral and approved facial comparisons passed; other characters remain unchanged pending approval.

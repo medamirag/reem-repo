@@ -586,3 +586,6 @@ Reem alone uses a persistent Skeleton2D cutout with joint-overlapping parts, eas
 
 ### Reem alignment correction (2026-11-14)
 Use original-pixel source cutouts at their exact neutral coordinates. The editable `reem_cutout.tscn` has true shoulder/elbow/wrist and hidden hip/knee/ankle pivots from `cutout_layout.json`. Overlapping weighted meshes bend continuously, preserving attached hands/cuffs and shoes/trousers. All eye and mouth states share fixed anchors. Original single-sprite overlays are restricted to the alignment fixture and removed before final captures.
+
+### Reem eight-pose walk refinement (2026-11-14)
+Keep the approved face. Use contact/down/passing/up for each leg, with Tween sine easing between poses and cadence driven by actual travel. Arms oppose their legs from relaxed shoulder positions. Upper body dips on contact/down, rises on passing/up, and leans forward slightly. Shoes roll from heel to sole to toe, lock their ground contact during stance and tilt during the eased lift. Keep knees within 35 degrees without scaling trousers. Stable torso renders ahead of hidden upper-leg overlaps; a separate hem bone sways slightly behind the step.

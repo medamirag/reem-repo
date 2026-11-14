@@ -1,8 +1,8 @@
 extends SceneTree
-## Isolated alignment fixture: original/overlay/neutral, face closeups and four gait phases.
+## Isolated walk fixture: approved face/neutral and eight distance-driven gait poses.
 const CUTOUT := preload("res://game/characters/reem/reem_cutout.tscn")
 const SOURCE := preload("res://assets/art/characters/reem/reem_base.png")
-const OUT := "res://docs/reem_alignment"
+const OUT := "res://docs/reem_walk"
 var failed := false
 var actor: Node2D
 var rig: ReemWalkRig
@@ -39,7 +39,7 @@ func _run() -> void:
 	for part in rig.find_children("*", "Polygon2D", true, false):
 		for index in part.polygon.size():
 			var at: Vector2 = part.global_transform * part.polygon[index]
-			var hidden_cap: bool = part.get_meta("virtual_cap", false) and at.y < 1000 and part.uv[index].y == 1000
+			var hidden_cap: bool = part.get_meta("virtual_cap", false) and part.uv[index].y == 1030
 			if not hidden_cap and at.distance_to(part.uv[index]) > .001:
 				geometry_ok = false
 	check(geometry_ok, "every neutral body polygon is registered to the original source pixels")
@@ -64,28 +64,44 @@ func _run() -> void:
 	await capture("neutral_side_by_side", "Original (left) / aligned neutral cutout (right)")
 	await native_capture("neutral_rgba")
 	# Test a planted back foot while translating the character by the matching distance.
-	rig.apply_walk_phase(.1)
+	rig.apply_walk_phase(.2)
 	var planted := rig._feet[0].global_position
 	actor.position.x += 12
-	rig.apply_walk_phase(.1 + 12.0 / (rig._effective_stride() / .6))
+	rig.apply_walk_phase(.2 + 12.0 / (rig._effective_stride() / .625))
 	check(planted.distance_to(rig._feet[0].global_position) < .02, "stance foot stays planted during root travel")
 	actor.position = ReemWalkRig.FEET
+	for roll in [[.015, Vector2(-42, 71)], [.55, Vector2(62, 71)]]:
+		rig.apply_walk_phase(roll[0])
+		var contact: Vector2 = rig._feet[0].global_transform * roll[1]
+		actor.position.x += 2
+		rig.apply_walk_phase(roll[0] + 2.0 / (rig._effective_stride() / .625))
+		check(contact.distance_to(rig._feet[0].global_transform * roll[1]) < .02, "heel/toe contact remains planted while rolling")
+		actor.position = ReemWalkRig.FEET
 	var knee_ok := true
 	var sole_ok := true
-	for index in 4:
-		var phase: float = [.05, .3, .55, .8][index]
+	var arms_ok := true
+	var knee_limit_ok := true
+	for index in 8:
+		var phase: float = index / 8.0
 		rig.apply_walk_phase(phase)
+		arms_ok = arms_ok and (rig._arms[0].rotation - .34) * (rig._arms[1].rotation + .38) <= .00001
 		for leg in 2:
 			var hip := rig._hips[leg].global_position
 			var knee := rig._knees[leg].global_position
 			var foot := rig._feet[leg].global_position
 			var line_x := lerpf(hip.x, foot.x, (knee.y - hip.y) / (foot.y - hip.y))
 			knee_ok = knee_ok and knee.x >= line_x - .01
-			sole_ok = sole_ok and absf(rig._feet[leg].global_rotation) < .001
+			var upper := (knee - hip).normalized()
+			var lower := (foot - knee).normalized()
+			knee_limit_ok = knee_limit_ok and absf(upper.angle_to(lower)) <= deg_to_rad(35.01)
+			sole_ok = sole_ok and absf(rig._feet[leg].global_rotation) < .16
 		await capture("walk_%d" % (index + 1), "Original (left) / walk phase %.2f (right)" % phase)
 		await native_capture("walk_%d_rgba" % (index + 1))
 	check(knee_ok, "both knees bend forward")
-	check(sole_ok, "ankles keep both soles level")
+	check(knee_limit_ok, "knee bend stays within 35 degrees without stretching the trousers")
+	check(arms_ok, "arms swing in opposition on all eight poses")
+	check(sole_ok, "heel/toe angles remain gentle")
+	check(rig._arms[0].rotation > 0 and rig._arms[1].rotation < 0, "arms start from relaxed shoulder arcs")
 	check(rig._hips[1].get_index() > rig._hips[0].get_index(), "near leg draws in front of far leg")
 	rig.neutral_for_review()
 	rig._show_mouth("open")

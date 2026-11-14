@@ -5,13 +5,14 @@ const SOURCE := preload("res://assets/art/characters/reem/reem_base.png")
 const PARTS := "res://game/characters/reem/cutout/"
 const FEET := Vector2(627, 1254)
 const LAYOUT_PATH := "res://game/characters/reem/cutout_layout.json"
-@export var stride := 120.0
+@export var stride := 90.0
 @export var bob_height := 4.0
 @export var breathing := 2.5
 var walking := false
 var talking := false
 var expression := "happy"
 var _body: Bone2D
+var _hem: Bone2D
 var _head: Bone2D
 var _arms: Array[Bone2D] = []
 var _elbows: Array[Bone2D] = []
@@ -24,6 +25,7 @@ var _closed_eyes: Node2D
 var _mouth: Sprite2D
 var _neutral_mouth: Texture2D
 var _rest_head := Vector2.ZERO
+var _rest_hips: Array[Vector2] = []
 var _rest_ankles: Array[Vector2] = []
 var _upper_vectors: Array[Vector2] = []
 var _lower_vectors: Array[Vector2] = []
@@ -41,6 +43,8 @@ var _waving := false
 var _settling := false
 var _lift := 0.0
 var _from_feet: Array[Vector2] = []
+var _from_hip_shifts: Array[float] = []
+var _from_foot_angles: Array[float] = []
 var _rng := RandomNumberGenerator.new()
 var _layout: Dictionary
 
@@ -53,6 +57,7 @@ func _ready() -> void:
 			for path in skin:
 				part.add_bone(NodePath(path), skin[path])
 	_body = $Skeleton2D/Body
+	_hem = $Skeleton2D/Body/Hem
 	_head = $Skeleton2D/Body/Head
 	_rest_head = _head.position
 	_eyes = _head.get_node("Eyes/Open")
@@ -69,6 +74,7 @@ func _ready() -> void:
 		var knee: Bone2D = hip.get_node("Knee_" + side)
 		var ankle: Bone2D = knee.get_node("Ankle_" + side)
 		_hips.append(hip)
+		_rest_hips.append(hip.position)
 		_knees.append(knee)
 		_feet.append(ankle)
 		_upper_vectors.append(knee.position)
@@ -96,12 +102,19 @@ func set_walking(value: bool) -> void:
 		_settle.tween_property(self, "_lift", 1.0, .18)
 		return
 	_from_feet.clear()
-	for foot in _feet:
-		_from_feet.append(to_local(foot.global_position))
+	_from_hip_shifts.clear()
+	_from_foot_angles.clear()
+	for index in 2:
+		_from_feet.append(to_local(_feet[index].global_position))
+		_from_hip_shifts.append(_hips[index].position.x - _rest_hips[index].x)
+		_from_foot_angles.append(_feet[index].global_rotation - global_rotation)
 	_settling = true
 	_settle = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	_settle.tween_method(_settle_feet, 0.0, 1.0, .22)
 	_settle.parallel().tween_property(_body, "position:y", 0.0, .22)
+	_settle.parallel().tween_property(_body, "rotation", 0.0, .22)
+	_settle.parallel().tween_property(_hem, "rotation", 0.0, .22)
+	_settle.parallel().tween_property(_hem, "scale", Vector2.ONE, .22)
 	_settle.tween_callback(func():
 		_settling = false
 		_reset_limbs())
@@ -111,12 +124,18 @@ func set_walking(value: bool) -> void:
 			arms.tween_property(joint, "rotation", 0.0, .22)
 
 func _reset_limbs() -> void:
+	_body.rotation = 0
+	_hem.rotation = 0
+	_hem.scale = Vector2.ONE
 	for joint in _hips + _knees + _feet:
 		joint.rotation = 0.0
+	for index in 2:
+		_hips[index].position = _rest_hips[index]
 
 func _settle_feet(weight: float) -> void:
 	for index in 2:
-		_solve_leg(index, _from_feet[index].lerp(_rest_ankles[index], weight) - _body.position)
+		_solve_leg(index, _body.transform.affine_inverse() * _from_feet[index].lerp(_rest_ankles[index], weight), lerpf(_from_hip_shifts[index], 0.0, weight))
+		_feet[index].rotation += lerpf(_from_foot_angles[index], 0.0, weight) - _body.rotation
 
 func _process(delta: float) -> void:
 	var picture := get_parent().get_node_or_null("Sprite2D") as Sprite2D
@@ -126,7 +145,7 @@ func _process(delta: float) -> void:
 	var distance := absf(current_x - _last_x) / maxf(absf(scale.x), .001)
 	_last_x = current_x
 	if walking:
-		_phase = fposmod(_phase + distance / (_effective_stride() / .6), 1.0)
+		_phase = fposmod(_phase + distance / (_effective_stride() / .625), 1.0)
 		apply_walk_phase(_phase, _lift)
 	elif not _settling:
 		_body.position = Vector2.ZERO
@@ -142,35 +161,62 @@ func _process(delta: float) -> void:
 
 func _effective_stride() -> float:
 	# A wider step would exceed the original short legs' reach and make planted feet slide.
-	return clampf(stride, 60.0, 120.0)
+	return clampf(stride, 60.0, 90.0)
+
+# Eight keyed poses: contact, down, passing, up, repeated for the other leg.
+# Stance travel remains linear to cancel root movement; all pose changes use Tween easing.
+func _pose(values: Array, phase: float) -> float:
+	var sample := fposmod(phase, 1.0) * values.size()
+	var index := int(sample)
+	return float(values[index]) + float(Tween.interpolate_value(0.0,
+		float(values[(index + 1) % values.size()]) - float(values[index]),
+		sample - index, 1.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT))
 
 func apply_walk_phase(phase: float, weight := 1.0) -> void:
 	_phase = fposmod(phase, 1.0)
-	# Small hip lowering leaves room for forward knee bending without stretching limbs.
-	_body.position.y = weight * (18.0 - bob_height * sin(_phase * TAU * 2) ** 2)
+	_body.position.y = weight * _pose([2.0, 5.0, -5.0, -8.0, 2.0, 5.0, -5.0, -8.0], _phase) * bob_height / 4.0
+	_body.rotation = weight * .008
+	_hem.scale.y = 1.0 + .07 * weight
+	_hem.rotation = weight * _pose([0.0, .008, .012, .008, 0.0, -.008, -.012, -.008], _phase - .10)
 	for index in 2:
 		var p := fposmod(_phase + index * .5, 1.0)
 		var target := _rest_ankles[index]
-		if p < .6:
-			# Cancels character travel exactly during the planted portion of the step.
-			target.x += _effective_stride() * (.5 - p / .6)
+		target.x = lerpf(target.x, 620.0 - FEET.x, weight)
+		var angle := weight * _pose([-.10, 0.0, 0.0, 0.0, .02, .14, .10, .08], p)
+		if p < .625:
+			# The ground contact advances backward exactly as far as the actor advances.
+			target.x += _effective_stride() * (.5 - p / .625)
+			var contact := Vector2(-42, 71) if p < .125 else Vector2(62, 71)
+			# Roll around the heel/toe on the ground, rather than around a floating ankle.
+			target += contact - contact.rotated(angle)
 		else:
-			var t := (p - .6) / .4
+			var t := (p - .625) / .375
 			var eased: float = Tween.interpolate_value(0.0, 1.0, t, 1.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 			target.x += _effective_stride() * (eased - .5)
-			target.y -= weight * 30.0 * sin(t * PI)
-		_solve_leg(index, target - _body.position)
+			var toe := Vector2(62, 71)
+			var heel := Vector2(-42, 71)
+			target += (toe - toe.rotated(.14 * weight)).lerp(heel - heel.rotated(-.10 * weight), eased)
+			target.y -= weight * 13.0 * sin(t * PI) ** 2
+		_solve_leg(index, _body.transform.affine_inverse() * target, weight * (620.0 - FEET.x - _rest_hips[index].x))
+		_feet[index].rotation += angle - _body.rotation
 		if not (_waving and index == 1):
-			_arms[index].rotation = weight * .12 * sin(p * TAU)
-			_elbows[index].rotation = -weight * .06 * sin(p * TAU)
+			# Positive shoulder rotation carries an arm back while its own leg is forward.
+			_arms[index].rotation = weight * ((.34 if index == 0 else -.38) + _pose([.12, .08, 0.0, -.08, -.12, -.08, 0.0, .08], p))
+			_elbows[index].rotation = weight * _pose([-.035, -.05, -.06, -.05, -.035, -.02, -.01, -.02], p)
 
-func _solve_leg(index: int, target: Vector2) -> void:
+func _solve_leg(index: int, target: Vector2, hip_shift := 0.0) -> void:
+	_hips[index].position = _rest_hips[index] + Vector2(hip_shift, 0)
 	var v := target - _hips[index].position
 	var upper := _upper_vectors[index]
 	var lower := _lower_vectors[index]
 	var a := upper.length()
 	var b := lower.length()
-	var d := clampf(v.length(), absf(a - b) + .001, a + b - .001)
+	# Hidden hip correction keeps the short trouser leg within reach without sliding
+	# the planted shoe or forcing a wide, swollen knee fold.
+	var minimum := sqrt(a*a + b*b + 2*a*b*cos(deg_to_rad(35.0)))
+	var d := clampf(v.length(), minimum, a + b - .01)
+	_hips[index].position.y = target.y - sqrt(maxf(1.0, d*d - v.x*v.x))
+	v = target - _hips[index].position
 	var direction := v.angle()
 	var bend := acos(clampf((a*a + d*d - b*b) / (2*a*d), -1, 1))
 	var upper_angle := direction - bend

@@ -188,3 +188,7 @@ User accepted the leg stride and far-leg shading, then reported unequal arm halv
 ### 26. Small teal tip behind Reem's scarf (2026-11-14)
 
 After approving the walk, the user reported a small teal triangle below the back scarf in frames 1/4/5/6/8. Tucked the top-back torso backing and its generated contour inward beneath the scarf tip. Only that local edge changed; approved motion, face and original artwork stay unchanged. Inspected one frame-5 close-up: `docs/bugs/reem_neck_scarf_trim.png`. Current rendered face matches the approved pixels, and focused eight-pose/content checks passed.
+
+### 27. Torso trim left hard unoutlined edges / grey shoulder fragments (2026-11-14)
+
+Replaced the earlier clipped backing and contours with one closed rounded tunic and continuous 7px black outline. Source-derived sleeves have clean upper overlaps; the original bag and strap retain their own outlines. Original assets, face and approved motion remain unchanged. Inspected all eight actual Godot poses at 400% for back/shoulder/front contours and stray grey lines. Evidence: `docs/reem_torso_outline/torso_all_8_400pct.png`. Focused pose, pixel, content and headless Reem integration checks passed.

@@ -3,7 +3,7 @@ extends SceneTree
 const CUTOUT := preload("res://game/characters/reem/reem_cutout.tscn")
 const SOURCE := preload("res://assets/art/characters/reem/reem_base.png")
 const PAD := Vector2(96, 96)
-const OUT := "res://docs/reem_walk_v3"
+const OUT := "res://docs/reem_torso_outline"
 var failed := false
 var actor: Node2D
 var rig: ReemWalkRig
@@ -147,7 +147,10 @@ func _run() -> void:
 	for index in 4:
 		check(arm_poses[index][0].distance_to(arm_poses[index + 4][1]) < .001 and arm_poses[index][1].distance_to(arm_poses[index + 4][0]) < .001, "half-cycle exchanges both shoulder/forearm poses: %d/%d" % [index+1,index+5])
 	check(near_hands.max() - near_hands.min() > 150.0, "near hand moves freely through the swing")
-	check(rig.has_node("Skeleton2D/ShoulderBacking"), "body-bound shoulder underlap fills the sleeve/scarf triangle")
+	check(rig.has_node("Skeleton2D/TorsoOutline") and rig.has_node("Skeleton2D/TorsoFabric"), "torso is one closed rounded silhouette with fabric inside its outline")
+	check(not Geometry2D.triangulate_polygon(rig.get_node("Skeleton2D/TorsoFabric").polygon).is_empty(), "rounded fabric fill is triangulatable")
+	check(rig.get_node("Skeleton2D/TorsoOutline").get_meta("outline_width") == 7.0, "torso has the original 7-pixel black outline")
+	check(rig.get_node("Skeleton2D/TorsoOutline").polygon.size() >= 150, "torso boundary uses smooth sampled curves, without straight cut edges")
 	check(rig.get_node("Skeleton2D/LegBackLower").modulate.r < .9, "far leg is visibly darker")
 	check(rig._hips[1].get_index() > rig._hips[0].get_index(), "near leg draws in front of far leg")
 	rig.neutral_for_review()

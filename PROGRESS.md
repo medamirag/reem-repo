@@ -2,6 +2,19 @@
 
 ## Handoff
 
+- **Who worked last:** Codex (builder), Reem rounded torso and shoulder-outline correction.
+- **Date / branch:** 2026-11-14 / main.
+- **User confirmed:** Walk and face approved. Preserve the accepted motion; this request fixes the trim's exposed straight edges and grey shoulder/scarf fragments.
+- **Done:** Replaced clipped shoulder patches with one complete rounded native tunic, continuous 7px black outline and original-colour shading in `tools/reem_torso_art.py` / `reem_torso.gdshader`. Builder generates the packed scene. Extracted original bag/strap and cleaned sleeve/hand layers under `game/characters/reem/refined/`; repainted only the upper shoulder overlap to remove baked grey fragments. No original assets or approved motion code changed.
+- **Evidence:** `docs/reem_torso_outline/torso_all_8_400pct.png`, actual Godot renders enlarged exactly 4x without smoothing, plus `eight_poses.png` and original-size captures. Individually inspected back, shoulder and strap-side front in all eight poses before committing. README explains the redraw and evidence.
+- **Checks:** Content and cutout checks pass; approved neutral/talking/blinking face pixels are identical. Unchanged lower legs/feet match original; source-derived accessories/hands retain RGB. Eight-pose geometry/contact/symmetry checks pass through DONE. Focused headless `reem_animation` passed through DONE (blink, speech, expressions, room reuse, inventory, Continue). Only isolated Reem previews were windowed. Final logs: `.godot/torso-edge-final-import.log`, `torso-edge-final-capture.log`, `torso-integration.log`; existing Aseprite warnings / exit leaks only. Earlier local import permission error was resolved by rerunning the import successfully with appropriate access.
+- **How to check:** Open the 400% close-up sheet. To watch in Godot, open Yard and press F6, then click the path.
+- **What is next:** User review of this final silhouette correction; subsequently the same cutout feature for Grandpa, Thaaloob and animals as requested. No other cast changed.
+- **Half-finished:** None for this correction.
+- **Backup:** Commit and push origin/main; final reply records the commit.
+
+### Previous handoff (neck trim, superseded by torso redraw)
+
 
 - **Who worked last:** Codex (builder), final Reem back-neck silhouette trim.
 - **Date / branch:** 2026-11-14 / main.
@@ -193,6 +206,9 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-14, Reem torso:** Used editable native closed curves and a 7px continuous outline rather than another bitmap trim. Repainted the small sleeve-cap overlap in the existing teal, preserving the solid outer sleeve stroke, original accessories, face and approved animation. The earlier neck-trim close-up is historical evidence; the all-eight 400% sheet supersedes it.
+
 
 - **2026-11-14 / final approved-walk trim:** Keep every approved animation value and source face intact. Trim only the native torso backing/outline control points behind the scarf instead of repainting or enlarging the original scarf. Verify one close-up of frame 5, plus the existing headless pose checks. The scarf's free back edge can overhang the shirt naturally.
 

@@ -2,7 +2,7 @@
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
-folder = ROOT / 'docs/reem_walk_v3'
+folder = ROOT / 'docs/reem_torso_outline'
 sheet = Image.new('RGB', (1600, 1040), '#fff4de')
 draw = ImageDraw.Draw(sheet)
 font = ImageFont.truetype('C:/Windows/Fonts/arial.ttf', 22)
@@ -16,7 +16,7 @@ for index in range(8):
     label = ['Contact', 'Down', 'Passing', 'Up'][index % 4]
     draw.text((index % 4 * 400 + 25, index // 4 * 520 + 482), f'{index + 1}. {label}', font=font, fill='#4c2e1d')
 sheet.save(folder / 'eight_poses.png')
-print('[WALK] Saved docs/reem_walk_v3/eight_poses.png from actual Godot renders')
+print('[WALK] Saved docs/reem_torso_outline/eight_poses.png from actual Godot renders')
 
 legs = Image.new('RGB', (2600, 708), '#fff4de')
 for index in range(8):
@@ -31,3 +31,20 @@ for index in range(8):
     frame = frame.crop((540, 475, 865, 785))
     shoulders.paste(frame, (index % 4 * 325, index // 4 * 310), frame)
 shoulders.save(folder / 'shoulders_closeups.png')
+
+# True 400% source-pixel inspection: nearest-neighbour enlargement cannot hide
+# alpha fragments, outline gaps or steps through smoothing.
+zoom = Image.new('RGB', (5120, 2800), '#fff4de')
+zd = ImageDraw.Draw(zoom)
+zfont = ImageFont.truetype('C:/Windows/Fonts/arial.ttf', 30)
+bob = [0, 31.35, -15.675, -31.35, 0, 31.35, -15.675, -31.35]
+for index in range(8):
+    image = Image.open(folder / f'walk_{index + 1}_rgba.png').convert('RGBA')
+    y = 390 + 96 + round(bob[index])
+    crop = image.crop((460 + 96, y, 780 + 96, y + 340))
+    crop = crop.resize((1280,1360), Image.Resampling.NEAREST)
+    x = index % 4 * 1280
+    top = index // 4 * 1400
+    zoom.paste(crop, (x,top + 40), crop)
+    zd.text((x+15,top+3), f'{index+1}. '+['Contact','Down','Passing','Up'][index%4]+' - 400%',font=zfont,fill='#4c2e1d')
+zoom.save(folder / 'torso_all_8_400pct.png')

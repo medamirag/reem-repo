@@ -598,3 +598,6 @@ Keep the accepted stride, darker far leg and exact half-cycle leg exchange. Both
 
 ### Reem walk approval and final neck trim (2026-11-14)
 The user approved the walk. Preserve all motion values and the face. Tuck only the top-back native shirt backing/outline beneath the rear scarf tip to remove the small protruding teal triangle. Original scarf artwork stays untouched.
+
+### Reem clean torso redraw (2026-11-14)
+Preserve the approved walk and face. Replace the patchwork shoulder/torso with one naturally rounded closed tunic silhouette, a continuous black outline matching the original 7px line weight, and original-colour fabric shading. Retain the original bag and diagonal strap as a separate source-pixel overlay. Remove thin disconnected scarf/shoulder fragments from the sleeve cutouts. Inspect every walk pose at 400% before committing; do not retune movement.

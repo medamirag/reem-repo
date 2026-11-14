@@ -583,3 +583,6 @@ The Cave uses a separate painted body and one leg texture. Godot creates four ro
 
 ## Reem procedural animation (2026-11-13)
 Reem alone uses a persistent Skeleton2D cutout with joint-overlapping parts, eased walking, planted stance feet, breathing, 2–5 second blinks, voice-synchronised mouth, tone expressions and greeting wave. Preserve Popochiu movement, inventory and saves. Add blossom petals, reward sparkles and watering drops; subtle depth layers only in Yard and Stream. Other cast await approval.
+
+### Reem alignment correction (2026-11-14)
+Use original-pixel source cutouts at their exact neutral coordinates. The editable `reem_cutout.tscn` has true shoulder/elbow/wrist and hidden hip/knee/ankle pivots from `cutout_layout.json`. Overlapping weighted meshes bend continuously, preserving attached hands/cuffs and shoes/trousers. All eye and mouth states share fixed anchors. Original single-sprite overlays are restricted to the alignment fixture and removed before final captures.

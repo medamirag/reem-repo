@@ -34,6 +34,8 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 | 20 | A wait/hourglass cursor remains at top left; use the normal mouse-following pointer at all times | `docs/bugs/grandpa_mirror_subtitles_fixed.png` | verified |
 | 21 | Reem stands on the fallen mirror frame; stop beside it and sort room objects by their floor baselines | `docs/bugs/grandpa_mirror_spacing_fixed.png` | verified |
 
+| 22 | Reem cutout face, hands and legs do not register to the original; joints separate and facial variants jump | `docs/reem_animation/review.png` (earlier version), `docs/reem_alignment/neutral_side_by_side.png` (fixed) | verified |
+
 ## Details
 
 ### 1. Dialogue text hard to read; Grandpa's text far above him
@@ -166,3 +168,7 @@ The focused two-click check passed. Screenshots: `docs/bugs/notebook_tabs_fixed.
 ### 19–21. GrandpaRoom mirror scene (2026-11-14)
 
 User reported floating/clipped dialogue, a stuck hourglass and Reem overlapping the mirror frame. Character dialogue, offscreen narration and system dialogue now share a cream rounded bottom subtitle bar with bold brown Cairo text, RTL shaping, wrapping and automatic height. The software cursor layer is hidden; the native arrow remains visible and its position is mirrored for Popochiu APIs. Mirror/basket approaches stop one step left of the frame. Existing Popochiu room Y-sorting is preserved and the fallen mirror uses its bottom edge as its depth baseline. Focused headless mirror_ui passed all checks, including the longest dialogue at 44 and 56 pixels. The GrandpaRoom-only windowed screenshots confirm the layout, no hourglass and clear mirror spacing: `docs/bugs/grandpa_mirror_subtitles_fixed.png` and `docs/bugs/grandpa_mirror_spacing_fixed.png`. The ellipsis at the end of reem_s1_006 is in lines.json itself; its complete original text is displayed without clipping. The windowed mouse helper still reported the previously known targeting failures and used direct-call fallback; native clicks are not counted as verified. No other playable room was opened or full route run.
+
+### 22. Reem source alignment and joint continuity
+
+Rebuilt the active cutout with original-pixel layers at the source coordinates, measured pivots, overlapping native skin meshes and shared face anchors. The temporary 50% original overlay was removed before final neutral/face/walk captures. Fixed the incomplete eye/mouth masks and the rigid-cut knee/elbow/scarf seams exposed by close inspection. Final neutral render has no missing/protruding visible pixels and at most 4/255 opaque colour rounding difference. Evidence: `docs/reem_alignment/neutral_side_by_side.png`, `face_closeups.png` and `walk_four_frames.png`. Source-pixel, bone, foot-planting and headless integration checks passed.

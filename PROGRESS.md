@@ -2,6 +2,26 @@
 
 ## Handoff
 
+- **Who worked last:** Codex (builder), Reem cutout alignment correction.
+- **Date:** 2026-11-14
+- **Branch:** main
+- **Done:** Reem now uses the editable `game/characters/reem/reem_cutout.tscn`, instantiated by character_reem.gd. Its neutral pose uses untouched pixels from reem_base.png, extracted to six transparent layers under `game/characters/reem/aligned/`. Original assets and previous generated pieces remain unchanged. The six derived layers are recorded done in the art queue.
+- **Body/joints:** Source-pixel pivots in `cutout_layout.json` locate shoulders, elbows, cuff wrists, hips hidden inside the tunic, knees and ankles. Upper/lower arm, hand, upper/lower leg and foot sections overlap and share continuous Skeleton2D skin weights. The scarf/sleeve borders share motion too. Near-side limbs render after far-side limbs. The original standing silhouette, clothing, bag, skin and face are restored.
+- **Face:** Measured original eye bounds (686..750, 199..276) and mouth bounds (736..772, 316..333) replaced the old guessed rectangles. Eye anchor is (718.5,238.5); all mouth variants share (754,324). The neutral eye/mouth are exact source crops. The existing other mouths and a native closed eyelid use those anchors; a shader blanks only baked features beneath them. No left-behind mouth tail, iris strip or dark blink rectangle remains.
+- **Walking:** Measured leg lengths replace the former arbitrary 110px bones. Forward-bending two-bone solving and ankle counter-rotation keep soles level, with distance-driven planting. Effective stride is capped at 120 native pixels; small hip lowering keeps all targets within reach. Hands and cuffs remain connected through shared weights.
+- **Overlay:** Alignment fixture temporarily added the original at exactly 50% opacity and the same source scale/origin. It removed it before final captures, with an explicit no-overlay assertion. The shipping cutout scene contains no reference overlay; the character's original hidden Sprite2D remains only for Popochiu scale/facing compatibility.
+- **Evidence inspected:** `docs/reem_alignment/neutral_side_by_side.png`, `face_closeups.png`, `walk_four_frames.png`, four individual walk images and the temporary `overlay_50.png`. Actual Godot renders were inspected at native size and enlarged. Early rigid-joint seams, an incomplete feature mask and screenshot framing were corrected before the final captures. Review README explains the captures and rebuild steps.
+- **Quantitative checks:** `tools/check_reem_cutout.py` verifies the source layers preserve original alpha at every pixel. Final rendered neutral: zero missing/protruding visible pixels, zero solid-source colour differences above 12/255, maximum channel difference 4/255 (render rounding). The alignment fixture also passed source registration, all five mouth anchors, the eye anchor, temporary-overlay removal, forward knees, level soles, front/back order and planted-foot root travel.
+- **Integration checks:** Content, clean final import, startup and focused headless `--playtest --path=reem_animation` passed (blink, talking end/start, three tones, room reuse, inventory and Continue restoring position). Usual exit leaks and existing Aseprite/UID import warnings only. Logs: .godot/align-visual-final.log, align-import-final.log, align-game-integration.log and align-startup.log. No full route runs or other character changes.
+- **Rebuild:** Run `tools/build_reem_cutout.py` with Pillow after changing source-pixel pivots/masks in cutout_layout.json. It deterministically re-extracts original pixels and builds scene grids/weights. The scene is directly inspectable in Godot. `tools/reem_alignment_review.gd` is an isolated renderer/checker; it does not advance a story save.
+- **How to check:** Open the linked review images first. Reopen Godot, open `game/rooms/yard/room_yard.tscn` and press F6; click the path to walk, wait for a blink and click Grandpa for speech. To inspect the rig, open reem_cutout.tscn and expand Skeleton2D/Body and the named mesh sections.
+- **What is next:** Wait for the user's visual approval of Reem. Only then apply the same approach to Grandpa, Thaaloob and the animals.
+- **Half-finished:** None in this alignment change. The inherited native mouse-helper targeting issue is unrelated and remains in earlier Handoffs.
+- **Backup:** Commit and push this alignment fix on main; final response records the resulting commit.
+
+### Previous handoff (mirror UI fixes)
+
+
 - **Who worked last:** Codex (builder), GrandpaRoom mirror UI bugs #19–21.
 - **Date:** 2026-11-14
 - **Branch:** main
@@ -105,6 +125,13 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-14 / source match:** Re-align by extracting original sprite pixels rather than independently stretching the differently proportioned generated parts. Keep all originals and previous generated files. Six source layers support separate overlapping native upper/lower/hand/foot meshes.
+- **2026-11-14 / joints:** Use continuous native skin weights at overlapping joints and shared scarf/sleeve borders; rigid source crops alone produced jagged intersections when bent. Original-pixel under-hem caps are hidden in the neutral pose.
+- **2026-11-14 / face:** Determine eye and mouth bounds from the original dark-feature components, not the earlier atlas guesses. Preserve the original eyebrows, blush and profile; blank only the old features and anchor every replacement to their measured source centre.
+- **2026-11-14 / stride:** Cap legacy 160px stride settings to 120px in the rig so the original short legs can reach planted targets without sliding. The Inspector range/default now reflect 60–120px. Source size and neutral pose stay unchanged.
+- **2026-11-14 / review:** Freeze the actual rig at neutral, eye/mouth states and four walk phases for sharp deterministic Godot screenshots. Compare neutral source pixels numerically as well as visually; a maximum 4/255 GPU colour-rounding difference remains, with no visible silhouette mismatch.
+
 
 - **2026-11-14 / mirror UI:** Full text appears immediately instead of a typewriter reveal; this prevents partial Arabic shaping or voice-time truncation. Every dialogue channel shares one presentation component, with adaptive height rather than any maximum-line clipping. Text settings use 44–56px for subtitles, preserving the larger preferences.
 - **2026-11-14 / cursor:** Use the native arrow for every game state, including inventory selection. Hide both software-cursor sources rather than replacing just the wait frame. Item selection state and click actions are unchanged.

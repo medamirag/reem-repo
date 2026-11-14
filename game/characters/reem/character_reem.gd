@@ -7,6 +7,7 @@ extends PopochiuCharacter
 # Original sprite remains a hidden size/facing reference for Popochiu.
 
 const Data := preload('character_reem_state.gd')
+const CUTOUT_SCENE := preload('res://game/characters/reem/reem_cutout.tscn')
 
 const BOB_HEIGHT := 0.0  # user: no up-and-down movement
 const BOB_HZ := 4.0
@@ -14,7 +15,7 @@ const GRAB_TIME := 0.6
 
 ## Persistent procedural cutout. Disable only for comparison with the original.
 @export var use_walk_rig := true
-@export_range(60.0, 180.0) var walk_stride := 160.0
+@export_range(60.0, 120.0) var walk_stride := 120.0
 @export_range(0.0, 10.0) var walk_bob := 4.0
 @export_range(0.0, 6.0) var idle_breathing := 2.5
 
@@ -41,7 +42,7 @@ func _ready() -> void:
 		_sprite_base_offset_y = _sprite.offset.y
 
 	if use_walk_rig:
-		_rig = ReemWalkRig.new()
+		_rig = CUTOUT_SCENE.instantiate() as ReemWalkRig
 		_rig.name = "WalkRig"
 		_rig.stride = walk_stride
 		_rig.bob_height = walk_bob

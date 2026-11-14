@@ -21,6 +21,9 @@ metadata/_edit_horizontal_guides_ = [-149.0]
 position = Vector2(384, 950)
 input_pickable = false
 use_walk_rig = true
+walk_stride = 160.0
+walk_bob = 4.0
+idle_breathing = 2.5
 metadata/EDITOR_TMP_COPY_OF = "Reem"
 
 [node name="Background" type="Sprite2D" parent="." index="6" unique_id=380678549]

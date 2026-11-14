@@ -3,6 +3,24 @@
 ## Handoff
 
 
+- **Who worked last:** Codex (builder), Reem arm symmetry / fixed torso / shoulder seam correction.
+- **Date / branch:** 2026-11-14 / main.
+- **User confirmed:** The stronger stride, darker far leg and mirrored leg motion from a3c4b21 are better and must stay. Face remains approved. Whole Reem approval is still pending; other characters remain untouched.
+- **Arms:** Both upper arms now swing the same physical +/-20 degrees around vertical, compensating for the different directions of the original sleeve pieces. The same 8–12-degree forward elbow bend is used on both sides. Upper-arm and forearm direction angles exchange exactly across 1/5, 2/6, 3/7 and 4/8. Both arms pass close to the body at frames 3/7, opposite their own leg's cycle, instead of the old 20/14-degree and different-elbow curves. Start/stop still ease from/to the exact original neutral joints.
+- **Torso:** Kept the original torso pixels, proportions, view and constant tiny forward lean (.008 radians) in all eight poses. Upper tunic has Body weights only; arm motion does not turn/stretch it. A fixed body-bound shirt extension under the scarf covers missing background where the sleeve moves away.
+- **Shoulder:** `tools/build_reem_cutout.py` creates a rounded `ShoulderBacking`/contour and a sleeve-shaped `FarShoulderGusset` using the original far-arm joint weights. Body-side gusset vertices stay on the torso, sleeve-side vertices stay inside the far sleeve. `reem_shoulder.gdshader` supplies the sampled original teal/outline colour. This covers the shoulder opening without a projecting block or right-side body bulge. Pieces fade with the walk and hide at idle; no original PNG, face, existing source cutout or neutral silhouette changed.
+- **Passing feet:** Increased only the swing lift from 40 to 60 native pixels (+20); toes remain slightly down and the foot passes beside the planted leg. Measured passing toe clearance is over 50px. Retained 40-degree knee bend, unchanged stride/contact gap, 14% darker far leg, draw order, exact half-cycle leg exchange and distance-driven foot planting.
+- **Files / evidence:** Rig and packed scene, deterministic builder, new `reem_shoulder.gdshader`, and review/check tools. New evidence is in `docs/reem_walk_v3/`: `eight_poses.png`, `shoulders_closeups.png`, `legs_closeups.png`, neutral/face views and eight source-size poses. README checks all four requested points. Earlier v1/v2 evidence is preserved unchanged.
+- **Visual work:** Inspected actual Godot renders at full figure and enlarged shoulders. Initial broad/rectangular backing attempts altered the silhouette; these were replaced by the rounded body extension and trimmed, correctly skinned sleeve gusset before final captures. No game room was opened in a window; only the isolated Reem preview.
+- **Checks:** Final pose checker passed exact shoulder/forearm exchange, equal 20-degree amplitude on both arms, Passing arms near body, fixed torso angle/scale, increased foot clearance, original accepted stride/leg checks and flat/heel/toe planting. Neutral comparison has zero missing/protruding cleaned-reference pixels, max 3/255 opaque RGB rounding; approved neutral/talking/blinking face crops are identical. Content, headless import and focused `reem_animation` integration passed through DONE (blink, speech, expressions, room changes, inventory and Continue). Existing Aseprite/UID warnings and exit leaks only. Logs: `.godot/walk3-visual-final.log`, `walk3-import-final.log`, `walk3-integration-final.log`.
+- **How to check:** Open `docs/reem_walk_v3/eight_poses.png` and the shoulder close-ups. To watch in Godot, open `game/rooms/yard/room_yard.tscn`, press F6, then click along the path. No full windowed regression was run.
+- **What is next:** User review of the four requested corrections. Only after approval, apply Reem's approach to Grandpa, Thaaloob and the animals.
+- **Half-finished:** None in this correction. The earlier native mouse-helper issue remains a separate historical note.
+- **Backup:** Commit and push this correction to origin/main; final reply records the commit.
+
+### Previous handoff (stronger Reem stride)
+
+
 - **Who worked last:** Codex (builder), stronger Reem walk using the user's seven-point numeric correction.
 - **Date / branch:** 2026-11-14 / main.
 - **User confirmed:** Keep the stable face, seam-free tunic overlap and non-inflating trousers. The earlier 5948f94 walk was rejected as too stiff/shuffling. This stronger version still awaits visual approval; other characters remain untouched.
@@ -160,6 +178,11 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-14 / exact arm symmetry:** Measure upper-arm/forearm directions in body/world space, compensating for the unequal source rest angles instead of applying identical raw bone rotations. Both shoulders use +/-20 degrees and the same 8–12-degree elbow bend; this supersedes the earlier near-20/far-14 and unequal-elbow choice. Preserve original limb lengths and original neutral rest transforms.
+- **2026-11-14 / shoulder fill:** Use code-native rounded shirt underlap plus a far-sleeve gusset, with the original arm skin weights on its sleeve edge. Keep the torso itself rigid in its original view. A broad fixed underlap caused a right-side bulge, so the final gusset folds under the actual arm/body. Fade overlaps to zero at idle to preserve the exact standing picture. No new painted art or original asset changes.
+- **2026-11-14 / passing clearance:** Increase the existing eased foot-lift arc by 20 native pixels (40 to 60), keeping toe tilt, 40-degree knee bend, stride, foot planting and mirrored leg phases unchanged. Keep the user's accepted 14% far-leg tint.
+- **2026-11-14 / review:** Save the current four-point correction in docs/reem_walk_v3 and include all eight enlarged shoulder crops, alongside the leg crops and unchanged face comparisons. Retain earlier review images as history.
 
 - **2026-11-14 / stronger user values:** Supersede the 90px stride and 35-degree knee limits: use 370.5px stance travel, 25-degree contact thighs, 40-degree passing knees, +/-20-degree near shoulder about the original art rest, +/-14-degree far shoulder, 14% far-leg shading and +/-31.35px bob. A nominal sole length of 155px gives the requested 232.5px heel-to-toe ground-contact gap. Preserve movement speed and derive cadence from actual distance.
 - **2026-11-14 / hidden hip anatomy:** Place hip pivots at y750 under the waist, rather than close to the hem at y900. This provides the hidden thigh length needed for a wide step at 25 degrees, keeping the original visible trouser proportions and the neutral pose intact. Foot-target compensation under the tunic maintains contact while the torso bobs.

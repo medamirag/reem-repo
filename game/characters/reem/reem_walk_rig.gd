@@ -130,6 +130,8 @@ func _reset_limbs() -> void:
 	for part in $Skeleton2D.get_children():
 		if part is Polygon2D:
 			part.modulate = Color.WHITE
+			if part.get_meta("underlap", false):
+				part.modulate.a = 0.0
 			if part.name.begins_with("Leg") and part.material is ShaderMaterial:
 				part.material.set_shader_parameter("walking", 0.0)
 	for joint in _hips + _knees + _feet:
@@ -202,18 +204,26 @@ func apply_walk_phase(phase: float, weight := 1.0) -> void:
 			var eased: float = Tween.interpolate_value(0.0, 1.0, t, 1.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 			target.x += weight * _effective_stride() * (eased - .5)
 			target += (toe - toe.rotated(.25 * weight)).lerp(heel - heel.rotated(-.20 * weight), eased)
-			target.y -= weight * 40.0 * sin(t * PI) ** 2
+			target.y -= weight * 60.0 * sin(t * PI) ** 2
 		var thigh := _pose([25.0, 15.0, 0.0, -15.0, -25.0, -15.0, 15.0, 25.0], p)
 		var knee := _pose([5.0, 22.0, 8.0, 8.0, 8.0, 30.0, 40.0, 20.0], p)
 		_place_gait_leg(index, _body.transform.affine_inverse() * target, thigh, knee, weight)
 		_feet[index].rotation += angle - _body.rotation
 		if not (_waving and index == 1):
 			var arc := _pose([1.0, .7, 0.0, -.7, -1.0, -.7, 0.0, .7], p)
-			_arms[index].rotation = weight * deg_to_rad(20.0 if index == 1 else 14.0) * arc
-			_elbows[index].rotation = weight * _pose([-.05, -.08, -.15, -.26, -.38, -.26, -.15, -.08], p) * (1.0 if index == 1 else .6)
+			# Both arms use identical physical poses, accounting for the different
+			# directions in which the original upper/lower sleeve pieces were drawn.
+			var upper_angle := PI / 2.0 + deg_to_rad(20.0) * arc - _body.rotation
+			var forearm_angle := upper_angle + deg_to_rad(_pose([-8.0, -10.0, -12.0, -10.0, -8.0, -10.0, -12.0, -10.0], p))
+			var shoulder_goal := upper_angle - _elbows[index].position.angle()
+			var elbow_goal := forearm_angle - _wrists[index].position.angle() - shoulder_goal
+			_arms[index].rotation = lerpf(0.0, shoulder_goal, weight)
+			_elbows[index].rotation = lerpf(0.0, elbow_goal, weight)
 
 func _set_leg_blend(weight: float) -> void:
 	for part in $Skeleton2D.get_children():
+		if part is Polygon2D and part.get_meta("underlap", false):
+			part.modulate.a = weight
 		if part is Polygon2D and part.name.begins_with("Leg"):
 			if part.material is ShaderMaterial:
 				part.material.set_shader_parameter("walking", weight)

@@ -55,10 +55,12 @@ for name,mask in masks.items():
   for x in range(im.width):
    for y in range(hem_edge[x]+1,im.height):mp[x,y]=0
  image=Image.new('RGBA',im.size);image.paste(im,(0,0),mask);image.save(DEST/(name+'.png'))
-lines=['[gd_scene load_steps=16 format=3]','[ext_resource type="Script" path="res://game/characters/reem/reem_walk_rig.gd" id="rig"]','[ext_resource type="Texture2D" path="res://assets/art/characters/reem/reem_base.png" id="source"]','[ext_resource type="Shader" path="res://game/characters/reem/reem_face.gdshader" id="face"]']
+lines=['[gd_scene load_steps=18 format=3]','[ext_resource type="Script" path="res://game/characters/reem/reem_walk_rig.gd" id="rig"]','[ext_resource type="Texture2D" path="res://assets/art/characters/reem/reem_base.png" id="source"]','[ext_resource type="Shader" path="res://game/characters/reem/reem_face.gdshader" id="face"]']
 lines.append('[ext_resource type="Shader" path="res://game/characters/reem/reem_trousers.gdshader" id="trousers"]')
+lines.append('[ext_resource type="Shader" path="res://game/characters/reem/reem_shoulder.gdshader" id="shoulder"]')
 for name in names:lines.append(f'[ext_resource type="Texture2D" path="res://game/characters/reem/aligned/{name}.png" id="{name}_tex"]')
 lines+=['[sub_resource type="ShaderMaterial" id="TrouserTop"]','shader = ExtResource("trousers")','[sub_resource type="ShaderMaterial" id="TrouserCap"]','shader = ExtResource("trousers")','shader_parameter/cap_mode = true']
+lines+=['[sub_resource type="ShaderMaterial" id="ShoulderFill"]','shader = ExtResource("shoulder")']
 lines+=['[sub_resource type="ShaderMaterial" id="FaceSkin"]','shader = ExtResource("face")']
 for name,key in [('OpenEye','eye_rect'),('NeutralMouth','mouth_rect')]:lines.extend([f'[sub_resource type="AtlasTexture" id="{name}"]','atlas = ExtResource("source")','region = Rect2(%s)'%', '.join(map(str,D[key]))])
 lines+=['[node name="ReemCutout" type="Node2D"]','script = ExtResource("rig")','[node name="Skeleton2D" type="Skeleton2D" parent="."]']
@@ -102,6 +104,55 @@ for side in ['back','front']:
  for name,y0,y1 in [('Upper',945,1090),('Lower',1030,1180),('Foot',1130,1240)]:
   mesh('Leg'+side.capitalize()+name,'leg_'+side,((450 if side=='front' else 615),y0,((635 if name=='Foot' else 615) if side=='front' else 810),y1))
   lines.append('material = SubResource("TrouserTop")')
+# Body-only rounded shoulder extension joins the scarf to the stable chest.
+# Idle blending restores the exact original standing silhouette.
+def bezier(a,b,c,d,steps=12):
+ return [tuple(round((1-t)**3*a[k]+3*(1-t)**2*t*b[k]+3*(1-t)*t*t*c[k]+t**3*d[k],4) for k in (0,1)) for t in [i/steps for i in range(steps+1)]]
+def edge_strip(points,width=5):
+ outer=[];inner=[]
+ for i,p in enumerate(points):
+  before=points[max(0,i-1)];after=points[min(len(points)-1,i+1)]
+  dx=after[0]-before[0];dy=after[1]-before[1];length=math.hypot(dx,dy)
+  nx=-dy/length*width/2;ny=dx/length*width/2
+  outer.append((p[0]+nx,p[1]+ny));inner.append((p[0]-nx,p[1]-ny))
+ return outer+inner[::-1]
+left=bezier((535,440),(500,440),(478,485),(485,515))+bezier((485,515),(488,545),(520,590),(550,650))[1:]
+right=bezier((672,450),(700,460),(700,540),(700,580))+bezier((700,580),(700,610),(706,635),(706,650))[1:]
+backing=left[:1]+right+left[:0:-1]
+border=edge_strip(left)
+colour=src[610,600]
+# A skinned gusset bridges torso to the far sleeve. Arm-side vertices stay inside
+# that sleeve; when it swings back the gusset folds behind the unchanged chest.
+ys=[480,510,540,570,600,630,660];right_edge=[700,705,717,729,744,758,775]
+points=[(round(680+(right-680)*column/5,5),y) for y,right in zip(ys,right_edge) for column in range(6)]
+gusset_skin={}
+for index,(x,y) in enumerate(points):
+ row=index//6;edge=right_edge[row];blend=smooth(680,edge,x)
+ values={BODY:1-blend}
+ for path,value in limb_weights('arm','back',y).items():values[path]=values.get(path,0)+value*blend
+ for path,value in values.items():
+  if path not in gusset_skin:gusset_skin[path]=[0.0]*len(points)
+  gusset_skin[path][index]=round(value,7)
+cells=[]
+for row in range(len(ys)-1):
+ for col in range(5):
+  a=row*6+col;cells.extend([(a,a+1,a+7),(a,a+7,a+6)])
+lines.extend(['[node name="FarShoulderGusset" type="Polygon2D" parent="Skeleton2D"]',
+ 'polygon = PackedVector2Array('+', '.join(str(p[i]-D['feet_origin'][i]) for p in points for i in (0,1))+')',
+ 'polygons = ['+', '.join('PackedInt32Array('+', '.join(map(str,c))+')' for c in cells)+']',
+ 'material = SubResource("ShoulderFill")', 'skeleton = NodePath("..")',
+ 'color = Color('+', '.join(str(round(v/255,7)) for v in colour[:3])+', 1)',
+ 'modulate = Color(1, 1, 1, 0)', 'metadata/underlap = true',
+ 'metadata/skin = {'+', '.join('"'+path+'": PackedFloat32Array('+', '.join(map(str,values))+')' for path,values in gusset_skin.items())+'}'])
+for name,points,tint in [('ShoulderContour',border,(.035,.025,.015)),('ShoulderBacking',backing,tuple(round(v/255,7) for v in colour[:3]))]:
+ lines.extend([f'[node name="{name}" type="Polygon2D" parent="Skeleton2D"]',
+  'polygon = PackedVector2Array('+', '.join(str(p[i]-D['feet_origin'][i]) for p in points for i in (0,1))+')',
+  'uv = PackedVector2Array('+', '.join(str(v) for p in points for v in p)+')',
+  'texture = ExtResource("source")','material = SubResource("ShoulderFill")',
+  'color = Color('+', '.join(map(str,tint))+', 1)', 'modulate = Color(1, 1, 1, 0)',
+  'skeleton = NodePath("..")',
+  'metadata/skin = {"Body": PackedFloat32Array('+', '.join(['1']*len(points))+')}',
+  'metadata/underlap = true'])
 mesh('Tunic','torso',(400,400,850,1010))
 mesh('HeadSurface','head',(390,0,850,580))
 lines.append('material = SubResource("FaceSkin")')

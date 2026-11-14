@@ -3,7 +3,7 @@ extends SceneTree
 const CUTOUT := preload("res://game/characters/reem/reem_cutout.tscn")
 const SOURCE := preload("res://assets/art/characters/reem/reem_base.png")
 const PAD := Vector2(96, 96)
-const OUT := "res://docs/reem_walk_v2"
+const OUT := "res://docs/reem_walk_v3"
 var failed := false
 var actor: Node2D
 var rig: ReemWalkRig
@@ -44,6 +44,8 @@ func _run() -> void:
 	await process_frame
 	var geometry_ok := true
 	for part in rig.find_children("*", "Polygon2D", true, false):
+		if part.get_meta("underlap", false):
+			continue
 		for index in part.polygon.size():
 			var at: Vector2 = part.global_transform * part.polygon[index] - PAD
 			var hidden_cap: bool = part.get_meta("virtual_cap", false) and part.uv[index].y == 1030
@@ -89,21 +91,32 @@ func _run() -> void:
 	var arms_ok := true
 	var knee_limit_ok := true
 	var poses: Array = []
+	var arm_poses: Array = []
+	var near_hands: Array[float] = []
 	for index in 8:
 		var phase: float = index / 8.0
 		rig.apply_walk_phase(phase)
-		arms_ok = arms_ok and rig._arms[0].rotation * rig._arms[1].rotation <= .00001
+		var arm_pose: Array = []
+		for side in 2:
+			var upper := (rig._elbows[side].global_position - rig._arms[side].global_position).angle()
+			var forearm := (rig._wrists[side].global_position - rig._elbows[side].global_position).angle()
+			var own_thigh := (rig._knees[side].global_position - rig._hips[side].global_position).angle() - PI / 2
+			arms_ok = arms_ok and (upper - PI / 2) * own_thigh <= .00001
+			arm_pose.append(Vector2(upper, forearm))
+		arm_poses.append(arm_pose)
+		near_hands.append(rig._wrists[1].global_position.x)
+		check(is_equal_approx(rig._body.rotation, .008) and rig._body.scale.is_equal_approx(Vector2.ONE), "torso angle and proportions remain fixed")
+		if index % 4 == 2:
+			check(absf(arm_pose[0].x - PI / 2) < .001 and absf(arm_pose[1].x - PI / 2) < .001, "both arms pass close to the body")
 		poses.append([rig._feet[0].global_position, rig._feet[1].global_position])
 		if index % 4 == 0:
-			check(absf(absf(rig._arms[1].rotation) - deg_to_rad(20)) < .001, "near shoulder swings 20 degrees at contact")
+			for side in 2:
+				check(absf(absf(arm_pose[side].x - PI / 2) - deg_to_rad(20)) < .001, "both arms have equal 20-degree contact amplitude")
 			var front_leg := 1 if index == 0 else 0
 			var rear_leg := 1 - front_leg
 			var front_heel: Vector2 = rig._feet[front_leg].global_transform * Vector2(-50, 71)
 			var rear_toe: Vector2 = rig._feet[rear_leg].global_transform * Vector2(88, 71)
 			check(absf((front_heel.x - rear_toe.x) / 155.0 - 1.5) < .01, "heel-to-toe contact gap is 1.5 foot lengths")
-			var hand: Vector2 = rig._wrists[1].global_transform * Vector2(-15, 53)
-			var bag: Vector2 = rig._body.global_transform * (Vector2(510, 780) - ReemWalkRig.FEET)
-			check(hand.distance_to(bag) > 90.0, "near hand leaves the bag on both contact poses")
 			for leg in 2:
 				var thigh_angle := (rig._knees[leg].global_position - rig._hips[leg].global_position).angle() - PI / 2
 				check(absf(absf(thigh_angle) - deg_to_rad(25)) < .001, "contact thigh angle is 25 degrees")
@@ -120,7 +133,7 @@ func _run() -> void:
 			if (index == 2 and leg == 0) or (index == 6 and leg == 1):
 				check(absf(absf(upper.angle_to(lower)) - deg_to_rad(40)) < .001, "passing knee bends 40 degrees")
 				var lowest_toe: Vector2 = rig._feet[leg].global_transform * Vector2(100, 71)
-				check(PAD.y + 1227.0 - lowest_toe.y > 30.0, "passing shoe is clearly off the floor")
+				check(PAD.y + 1227.0 - lowest_toe.y > 50.0, "passing shoe has the increased floor clearance")
 			knee_limit_ok = knee_limit_ok and absf(upper.angle_to(lower)) <= deg_to_rad(40.01)
 			sole_ok = sole_ok and absf(rig._feet[leg].global_rotation) < .27
 		await capture("walk_%d" % (index + 1), "Original (left) / walk phase %.2f (right)" % phase)
@@ -131,6 +144,10 @@ func _run() -> void:
 	check(sole_ok, "heel/toe angles remain gentle")
 	for index in 4:
 		check(poses[index][0].distance_to(poses[index + 4][1]) < .01 and poses[index][1].distance_to(poses[index + 4][0]) < .01, "half-cycle exchanges legs exactly: %d/%d" % [index+1,index+5])
+	for index in 4:
+		check(arm_poses[index][0].distance_to(arm_poses[index + 4][1]) < .001 and arm_poses[index][1].distance_to(arm_poses[index + 4][0]) < .001, "half-cycle exchanges both shoulder/forearm poses: %d/%d" % [index+1,index+5])
+	check(near_hands.max() - near_hands.min() > 150.0, "near hand moves freely through the swing")
+	check(rig.has_node("Skeleton2D/ShoulderBacking"), "body-bound shoulder underlap fills the sleeve/scarf triangle")
 	check(rig.get_node("Skeleton2D/LegBackLower").modulate.r < .9, "far leg is visibly darker")
 	check(rig._hips[1].get_index() > rig._hips[0].get_index(), "near leg draws in front of far leg")
 	rig.neutral_for_review()

@@ -65,6 +65,8 @@ Make all characters the same height relative to each other as in their turnaroun
 
 ### 4.1 Speaking a line
 
+**Presentation update (2026-11-14):** Every spoken line, including offscreen narration and system dialogue, uses the same bottom subtitle style: soft cream rounded panel, large bold dark-brown Cairo, connected RTL Arabic, full text at once and wrapping without clipping. No floating speech over the artwork. Optional speaker name is smaller. The normal native arrow is always visible; wait/hourglass and item cursor artwork are hidden.
+
 Write one helper used for every line, for example `say_line(line_id)`:
 1. Read the line from `game_data/lines.json`.
 2. Show its Arabic `text` through the Popochiu dialogue text (the character named in `speaker` speaks it: Reem → Reem, Jad → Jad, Thaaloob → Thaaloob, Shahd → Shahd).
@@ -135,6 +137,8 @@ Walkable: the terracotta floor, roughly y 0.80 to 0.97. Reem starts at x 0.20, y
 **On first entering:** `reem_s1_001`, then `reem_s1_002`.
 
 **Click Mirror** (before it falls): `reem_s1_003`.
+
+**Mirror approach update (2026-11-14):** Stop Reem at room x = 570 when inspecting the mirror or taking the basket, one step left of the fallen frame. The fallen mirror sorts by its bottom contact point; preserve Popochiu Y sorting for characters and props.
 
 **Click BasketProp:**
 1. Reem walks to it, pickup pose, `reem_s1_004`, add `Basket`, hide BasketProp. `basket_taken = true`.

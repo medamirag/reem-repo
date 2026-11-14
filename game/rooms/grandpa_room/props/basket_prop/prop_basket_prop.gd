@@ -8,7 +8,7 @@ extends PopochiuProp
 
 ## Where Reem stands when she takes the basket, relative to the basket, in room pixels: on the
 ## floor just below it, a little to the left. A starting point: adjust in the Inspector.
-@export var reem_stand_offset := Vector2(-100, 420)
+@export var reem_stand_offset := Vector2(-230, 420)
 
 #region Virtual ####################################################################################
 func _on_click() -> void:

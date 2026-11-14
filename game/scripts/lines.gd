@@ -70,9 +70,9 @@ func say(line_id: String, narrate := false) -> void:
 	var speaker := str(line.get("speaker", ""))
 	var text := str(line.get("text", ""))
 
-	# The speaker talks above their head only if they are standing in the current room. Lines
-	# spoken off screen (jad_s1_031 in the Gate, jad_s2_071 on the end screen) are shown in a
-	# narration box at the bottom of the screen instead (game_spec.md 4.1).
+	# Present every line in the shared bottom subtitle style. In-room speakers still use
+	# Popochiu's character speech lifecycle for animation and skipping; offscreen lines
+	# use the same presentation on an independent layer, including GUI-hidden screens.
 	var character: PopochiuCharacter = null
 	if not narrate and is_instance_valid(R.current) and R.current.has_character(speaker):
 		character = C.get_character(speaker)

@@ -2,6 +2,24 @@
 
 ## Handoff
 
+- **Who worked last:** Codex (builder), GrandpaRoom mirror UI bugs #19–21.
+- **Date:** 2026-11-14
+- **Branch:** main
+- **Done:** Logged and fixed the three reported bugs in docs/BUGS.md. All character speech, offscreen narration and system dialogue now share `game/gui/components/dialog_text/subtitle_bar.gd`: cream rounded panel at the viewport bottom, bold dark-brown Cairo, full connected RTL text, smart wrapping and content-driven height. A small Arabic speaker name appears when available. No typewriter truncation or overhead text remains.
+- **Cursor:** `game/gui/gui.gd::_use_normal_pointer` hides both the software Cursor layer and the GUI cursor-template sprite, uses the native visible arrow, and updates the old cursor coordinates for Popochiu APIs. Blocked dialogue, choice and inventory cursor changes cannot reveal an hourglass.
+- **Mirror spacing/depth:** Mirror inspection and basket pickup stop Reem at x=570 (basket offset -230). `prop_mirror.gd::show_fallen` moves the sorting origin to the bottom of the frame while keeping its painted position unchanged. Room/Props/Characters retain Popochiu Y sorting; foreground art retains its explicit front layer.
+- **Evidence:** `docs/bugs/grandpa_mirror_subtitles_fixed.png` shows the reported full line in the bar and no hourglass. `grandpa_mirror_spacing_fixed.png` shows Reem's feet clear of the fallen frame. The original line's trailing ellipsis belongs to lines.json and was preserved.
+- **Checks:** Content check, import and focused headless `--playtest --path=mirror_ui` passed: mirror approach, basket/choice flags, bottom baseline, full bold RTL subtitles, wrapping, shared narration, blocked/wait cursor, and longest dialogue at 44/56 pixels. Only GrandpaRoom was visually tested, with no full routes. Logs: .godot/mirror-headless-final.log and mirror-window.log; usual exit leaks and existing import warnings remain.
+- **Windowed limitation:** The known mouse helper targeting issue recurred ('under nothing', choice over ChoicePopup); it used its direct-call fallback. Screenshots and scene assertions passed, but native clicks are not claimed as verified. Test window closed normally.
+- **Existing editor change:** Preserved Godot's saved default Reem sliders in the Arabic preview scene first, in commit 166d47e.
+- **How to check:** Reopen Godot, double-click `game/rooms/grandpa_room/room_grandpa_room.tscn` in FileSystem, press F6. Click the wall mirror, then the hanging basket. Reem should stay left of the fallen frame; every line should be in the cream bottom bar and the arrow should follow the mouse. Choose either story option normally.
+- **What is next:** Reem animation/art still awaits the user's approval before Grandpa, Thaaloob or animal animation work. The inherited native mouse test-helper issue remains a separate follow-up.
+- **Half-finished:** No unfinished fix code; native mouse targeting remains unverified as above.
+- **Backup:** Commit this mirror-scene fix on main and push to origin/main; final response records the resulting commit.
+
+### Previous handoff (Reem animation)
+
+
 - **Who worked last:** Codex (builder), Reem procedural cutout animation.
 - **Date:** 2026-11-14 (work began 2026-11-13)
 - **Branch:** main
@@ -87,6 +105,12 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-14 / mirror UI:** Full text appears immediately instead of a typewriter reveal; this prevents partial Arabic shaping or voice-time truncation. Every dialogue channel shares one presentation component, with adaptive height rather than any maximum-line clipping. Text settings use 44–56px for subtitles, preserving the larger preferences.
+- **2026-11-14 / cursor:** Use the native arrow for every game state, including inventory selection. Hide both software-cursor sources rather than replacing just the wait frame. Item selection state and click actions are unchanged.
+- **2026-11-14 / mirror:** x=570 gives the current cutout one clear step left of the 800px-centred fallen frame. Keep fall_target as the artwork centre and shift only the sorting origin to the floor edge.
+- **2026-11-14 / verification:** The supplied prompt describes a screenshot but no image attachment was available to save; reproduce the described scene and preserve after screenshots. The known windowed mouse-helper failure is documented, and only the scene/screenshot checks are counted as passed.
+
 
 - **2026-11-14 / Reem:** The current request supersedes the earlier no-bob preference for Reem: bob is small (4 native pixels, about 1.4 on screen), exposed in the Inspector. Other characters keep their existing behaviour.
 - **2026-11-14 / art:** Generate one shared transparent atlas with both references attached, then extract named parts, rather than independently generating inconsistent limbs. The generated painted finish and visible sleeve/knee joint outlines need user visual approval; no pixel-identical match is claimed.

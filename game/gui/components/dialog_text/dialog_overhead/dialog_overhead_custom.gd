@@ -1,32 +1,36 @@
 extends "dialog_overhead.gd"
-## The dialogue text that appears above the speaking character.
-## Everything here is only about showing Arabic correctly: the Cairo font, a right-to-left
-## reading direction, and enough height for one line of Arabic with its vowel marks.
-
+## Keep Popochiu's speech lifecycle, but present every character in one bottom bar.
+var subtitle: ReemSubtitleBar
+var _speaker := ""
 
 func _ready() -> void:
 	super()
+	rich_text_label.hide()
+	continue_icon.hide()
+	subtitle = ReemSubtitleBar.new()
+	subtitle.name = "SubtitleBar"
+	add_child(subtitle)
+	z_index = 300
 
-	# The theme is set on this node, so the temporary labels Popochiu creates to measure the
-	# text (see _calculate_size) use exactly the same font and size as the visible text.
-	theme = ArabicText.get_theme()
+func _show_dialogue(character: PopochiuCharacter, msg := "") -> void:
+	_speaker = ""
+	# A name is optional; never expose an English internal character identifier.
+	for index in character.description.length():
+		var codepoint := character.description.unicode_at(index)
+		if codepoint >= 0x0600 and codepoint <= 0x06ff:
+			_speaker = character.description
+			break
+	super(character, msg)
 
-	ArabicText.make_rtl(rich_text_label)
+func play_text(props: Dictionary) -> void:
+	_is_waiting_input = true
+	_auto_continue = false
+	# Full text appears at once: no typewriter slice through Arabic or voice-time truncation.
+	rich_text_label.text = props.text
+	rich_text_label.visible_ratio = 1.0
+	subtitle.setup(props.text, _speaker)
+	modulate.a = 1.0
+	set_process_input(true)
 
-	# A cream outline keeps the dark letters readable over leaves, reeds and stalls.
-	rich_text_label.add_theme_constant_override("outline_size", 12)
-	rich_text_label.add_theme_color_override("font_outline_color", Color(1.0, 0.97, 0.88))
-
-	# Popochiu remembers the label's design size and reuses it as the height of a one-line
-	# dialogue. The template's 28 pixels were meant for small Latin text, so make room.
-	var default_size: Vector2 = get_meta(DFLT_SIZE)
-	default_size.y = ArabicText.LINE_HEIGHT * ArabicText.get_theme().default_font_size / 40.0
-	set_meta(DFLT_SIZE, default_size)
-	rich_text_label.size.y = default_size.y
-
-
-func _modify_size(msg: String, target_position: Vector2) -> void:
-	var default_size: Vector2 = get_meta(DFLT_SIZE)
-	default_size.y = ArabicText.LINE_HEIGHT * ArabicText.get_theme().default_font_size / 40.0
-	set_meta(DFLT_SIZE, default_size)
-	await super(msg, target_position)
+func _show_icon() -> void:
+	continue_icon.hide()

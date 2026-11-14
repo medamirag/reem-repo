@@ -17,6 +17,8 @@ const CRACKED_TEXTURE := preload("res://assets/cut/mirror_states/mirror_cracked.
 ## How big the cracked mirror is once it has fallen, compared with the mirror on the peg
 ## (user's request: about 20% smaller).
 @export var fallen_scale_ratio := 0.8
+## Reem stops beside the frame, clear of its fallen footprint.
+@export var reem_approach_x := 570.0
 
 # The mirror's size on the peg, read from the scene when the room loads. A constant rather
 # than a plain variable on purpose: Popochiu saves and restores a prop's script variables when
@@ -30,6 +32,7 @@ func _on_click() -> void:
 		E.command_fallback()
 		return
 
+	await C.player.walk(Vector2(reem_approach_x, C.player.global_position.y))
 	await C.player.face_clicked()
 	await Lines.say("reem_s1_003")
 
@@ -98,8 +101,12 @@ func break_mirror() -> void:
 func show_fallen() -> void:
 	texture = CRACKED_TEXTURE
 	rotation_degrees = 0.0
-	position = fall_target
 	scale = _SCALE_ON_PEG * fallen_scale_ratio
+	# Sort from the floor contact, while preserving the painted frame position.
+	var half_height := CRACKED_TEXTURE.get_height() * .5
+	position = fall_target + Vector2(0, half_height * scale.y)
+	$Sprite2D.position.y = -half_height
+	$InteractionPolygon.position.y = -half_height
 
 
 #endregion

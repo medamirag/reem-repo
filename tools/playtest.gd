@@ -70,6 +70,11 @@ func _run() -> void:
 	for anim in ["use", "active", "talk", "look", "left", "right"]:
 		var tex := frames.get_frame_texture(anim, 0)
 		_expect(tex != null and tex.resource_path.contains("assets/cut/cursors"), "cursor '%s' uses the game's picture" % anim)
+	if _path == "mirror_ui":
+		await _mirror_ui_path()
+		_log("DONE mirror_ui")
+		get_tree().quit()
+		return
 	if _path == "reem_animation":
 		await _reem_animation_path()
 		_log("DONE reem_animation")
@@ -2121,7 +2126,7 @@ func _lint_cursor() -> void:
 	var cursor = PopochiuUtils.cursor.main_cursor
 	if cursor == null or G.is_blocked or E.playing_queue:
 		return
-	if (cursor as AnimatedSprite2D).animation == &"wait" and (cursor as AnimatedSprite2D).visible:
+	if (cursor as AnimatedSprite2D).animation == &"wait" and (cursor as AnimatedSprite2D).is_visible_in_tree():
 		_lint_once("cursor", "the cursor is stuck on the wait shape while nothing is happening")
 
 
@@ -2553,3 +2558,70 @@ func _reem_animation_path() -> void:
 		_expect(C.player.has_inventory_item("WateringCan"), "inventory survives Continue")
 		_expect(C.player.position.is_equal_approx(saved_position), "position survives Continue")
 		_expect(C.player.get_node("WalkRig").visible, "cutout visible after Continue")
+
+
+## Reported mirror scene only; no story route or other playable room.
+func _mirror_ui_path() -> void:
+	Engine.time_scale = 1.0 if DisplayServer.get_name() != "headless" else 4.0
+	if _real:
+		DisplayServer.window_move_to_foreground()
+	await Globals.new_game()
+	R.rooms_states["GrandpaRoom"].visited_times = 1
+	R.goto_room("GrandpaRoom")
+	await _wait_room("GrandpaRoom")
+	var room: ReemRoom = R.current
+	_expect(room.y_sort_enabled and room.get_node("Props").y_sort_enabled and room.get_node("Characters").y_sort_enabled, "room sorts props and characters by baseline Y")
+	await _click("Mirror")
+	_expect(absf(C.player.position.x - 570) < 3, "Reem approaches beside mirror")
+	_answers = [true]
+	await _click("BasketProp")
+	var mirror := room.get_prop("Mirror")
+	_expect(Globals.mirror_broken and Globals.basket_taken, "basket still falls and breaks mirror")
+	_expect(C.player.position.x < mirror.position.x - 200, "Reem feet stay one step left of mirror")
+	_expect(mirror.position.y > mirror.fall_target.y and mirror.get_node("Sprite2D").position.y < 0, "fallen mirror sorts from its bottom edge")
+	var dialog = G.gui.get_node("DialogOverheadHighRes")
+	Lines.say("reem_s1_006")
+	await get_tree().create_timer(.35).timeout
+	var bar: ReemSubtitleBar = dialog.subtitle
+	_expect(dialog.modulate.a > 0 and not dialog.rich_text_label.visible, "one subtitle bar replaces overhead dialogue")
+	_expect(bar.text_label.text == Lines.get_text("reem_s1_006"), "whole original Arabic line is present")
+	_expect(bar.text_label.text_direction == Control.TEXT_DIRECTION_RTL and bar.text_label.get_theme_font("font") == ReemSubtitleBar.BOLD, "subtitle uses bold RTL Cairo")
+	var screen_height := get_viewport().get_visible_rect().size.y
+	_expect(bar.panel.get_global_rect().position.y > screen_height * .7 and bar.panel.get_global_rect().end.y <= screen_height, "subtitle stays at bottom inside screen")
+	_expect(bar.text_label.get_line_count() <= 2 and bar.text_label.get_visible_line_count() == bar.text_label.get_line_count(), "subtitle wraps without cutting lines")
+	await _shot("mirror_subtitles_fixed")
+	await _wait_idle()
+	# Offscreen narration uses exactly the same component and style.
+	Lines.say("reem_s1_006", true)
+	await get_tree().create_timer(.35).timeout
+	var narration: NarrationBox = null
+	for layer in Lines.get_children():
+		for child in layer.get_children():
+			if child is NarrationBox:
+				narration = child
+	_expect(narration != null and narration.text_label.text == Lines.get_text("reem_s1_006"), "narration uses the same full-text subtitle component")
+	_expect(dialog.modulate.a == 0, "offscreen narration leaves no floating character text")
+	await _shot("mirror_narration_fixed")
+	await _wait_idle()
+	G.block()
+	PopochiuUtils.cursor.show_cursor("wait", true)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	_expect(not PopochiuUtils.cursor.visible and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "wait cursor cannot appear while blocked")
+	G.unblock()
+	while Lines.busy:
+		await get_tree().process_frame
+	_expect(not Lines.busy, "narration closes cleanly")
+	if DisplayServer.get_name() == "headless":
+		var longest := ""
+		for line_id in Lines._lines:
+			var candidate := Lines.get_text(line_id)
+			if candidate.length() > longest.length():
+				longest = candidate
+		for font_size in [44, 56]:
+			bar.setup(longest)
+			bar.text_label.add_theme_font_size_override("font_size", font_size)
+			bar._fit()
+			for frame in 5:
+				await get_tree().process_frame
+			_expect(bar.text_label.get_line_count() <= 2 and bar.text_label.get_visible_line_count() == bar.text_label.get_line_count(), "longest dialogue fits at text size %d" % font_size)

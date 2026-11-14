@@ -30,6 +30,10 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 
 | 18 | Notebook Map: labels overlap and lines obscure the valley | `docs/bugs/notebook_map_before.png` (user screenshot) | verified |
 
+| 19 | Dialogue floats over artwork and the mirror-scene line is clipped; unify all dialogue in a readable bottom subtitle bar | `docs/bugs/grandpa_mirror_subtitles_fixed.png` (user report reproduced) | verified |
+| 20 | A wait/hourglass cursor remains at top left; use the normal mouse-following pointer at all times | `docs/bugs/grandpa_mirror_subtitles_fixed.png` | verified |
+| 21 | Reem stands on the fallen mirror frame; stop beside it and sort room objects by their floor baselines | `docs/bugs/grandpa_mirror_spacing_fixed.png` | verified |
+
 ## Details
 
 ### 1. Dialogue text hard to read; Grandpa's text far above him
@@ -158,3 +162,7 @@ The focused two-click windowed check passed. Evidence: `docs/bugs/stream_bridge_
 The Map tab opens the same illustrated valley map as the map button. It shows marker art and the painted paths by default. Tap a marker to show one place name on solid parchment. Notebook controls use dark brown Cairo text on warm parchment.
 
 The focused two-click check passed. Screenshots: `docs/bugs/notebook_tabs_fixed.jpg`, `docs/bugs/notebook_map_fixed.jpg` and `docs/bugs/notebook_map_place_fixed.jpg`.
+
+### 19–21. GrandpaRoom mirror scene (2026-11-14)
+
+User reported floating/clipped dialogue, a stuck hourglass and Reem overlapping the mirror frame. Character dialogue, offscreen narration and system dialogue now share a cream rounded bottom subtitle bar with bold brown Cairo text, RTL shaping, wrapping and automatic height. The software cursor layer is hidden; the native arrow remains visible and its position is mirrored for Popochiu APIs. Mirror/basket approaches stop one step left of the frame. Existing Popochiu room Y-sorting is preserved and the fallen mirror uses its bottom edge as its depth baseline. Focused headless mirror_ui passed all checks, including the longest dialogue at 44 and 56 pixels. The GrandpaRoom-only windowed screenshots confirm the layout, no hourglass and clear mirror spacing: `docs/bugs/grandpa_mirror_subtitles_fixed.png` and `docs/bugs/grandpa_mirror_spacing_fixed.png`. The ellipsis at the end of reem_s1_006 is in lines.json itself; its complete original text is displayed without clipping. The windowed mouse helper still reported the previously known targeting failures and used direct-call fallback; native clicks are not counted as verified. No other playable room was opened or full route run.

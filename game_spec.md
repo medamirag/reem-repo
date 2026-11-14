@@ -595,3 +595,6 @@ Keep the approved face, original right-facing profile/slight three-quarter body 
 
 ### Reem symmetric arms and shoulder closure (2026-11-14)
 Keep the accepted stride, darker far leg and exact half-cycle leg exchange. Both arms use identical physical +/-20-degree swings and 8–12-degree elbow bends, exchanging upper/forearm directions across all four half-cycle pairs. At Passing, arms are close to the body. Keep the torso's original view/scale and fixed tiny lean in all poses. Add rounded body/sleeve underlaps beneath scarf, strap and arms to close the shoulder triangle; fade these out at idle. Increase swing lift from 40 to 60 native pixels, retaining toe tilt and the accepted leg geometry. Other cast still await Reem approval.
+
+### Reem walk approval and final neck trim (2026-11-14)
+The user approved the walk. Preserve all motion values and the face. Tuck only the top-back native shirt backing/outline beneath the rear scarf tip to remove the small protruding teal triangle. Original scarf artwork stays untouched.

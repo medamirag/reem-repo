@@ -3,6 +3,21 @@
 ## Handoff
 
 
+- **Who worked last:** Codex (builder), final Reem back-neck silhouette trim.
+- **Date / branch:** 2026-11-14 / main.
+- **User approval:** Reem's walk is approved. Preserve the approved stride, mirrored arms/legs, darker far leg, torso view, bob, passing lift and face. The only requested remaining correction was a small teal triangle below the back of the scarf.
+- **Done:** Trimmed the top-back Bezier edge of `ShoulderBacking` and its matching contour in `tools/build_reem_cutout.py`; rebuilt `game/characters/reem/reem_cutout.tscn`. The edge now tucks beneath the scarf tip. Lower backing endpoint, sleeve gusset, all motion code, pivots, original assets and source cutout PNGs remain unchanged.
+- **Evidence:** One actual Godot close-up screenshot, at frame 5 where the protrusion is exposed: `docs/bugs/reem_neck_scarf_trim.png`. Inspected it personally: no teal tip sticks out behind the scarf. The isolated preview also compared the newly rendered neutral face against the approved face pixels: identical.
+- **Checks:** Focused headless eight-pose checker passed through DONE, including exact mirrored arm/leg pairs, 20-degree arms, accepted stride/contact gap, 40-degree knee bend, higher passing clearance, fixed torso, shading and foot planting. Content check passed. No story-route or additional windowed room tests. Logs: `.godot/reem-neck-closeup.log`, `reem-neck-pose-check.log`; usual exit leaks only.
+- **Previous requested render:** Preserved `docs/bugs/reem_walk_latest.png` from the prior render-only task in commit 7823a2f (Codex). It records the approved 3dc311a walk before this local neck trim; it was not regenerated or retouched.
+- **How to check:** Open the neck close-up. To watch the approved walk, open Yard in Godot and press F6, then click the path. No animation retuning is needed.
+- **What is next:** Reem walk approval is recorded. Grandpa, Thaaloob and the animals are ready for the next requested character-animation feature; none were changed during this final trim.
+- **Half-finished:** None for Reem's walk/neck correction. Earlier unrelated native mouse-helper limitations remain historical notes.
+- **Backup:** Commit this final trim and push origin/main; final reply records the commit.
+
+### Previous handoff (arm symmetry and shoulder closure)
+
+
 - **Who worked last:** Codex (builder), Reem arm symmetry / fixed torso / shoulder seam correction.
 - **Date / branch:** 2026-11-14 / main.
 - **User confirmed:** The stronger stride, darker far leg and mirrored leg motion from a3c4b21 are better and must stay. Face remains approved. Whole Reem approval is still pending; other characters remain untouched.
@@ -178,6 +193,8 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-14 / final approved-walk trim:** Keep every approved animation value and source face intact. Trim only the native torso backing/outline control points behind the scarf instead of repainting or enlarging the original scarf. Verify one close-up of frame 5, plus the existing headless pose checks. The scarf's free back edge can overhang the shirt naturally.
 
 - **2026-11-14 / exact arm symmetry:** Measure upper-arm/forearm directions in body/world space, compensating for the unequal source rest angles instead of applying identical raw bone rotations. Both shoulders use +/-20 degrees and the same 8–12-degree elbow bend; this supersedes the earlier near-20/far-14 and unequal-elbow choice. Preserve original limb lengths and original neutral rest transforms.
 - **2026-11-14 / shoulder fill:** Use code-native rounded shirt underlap plus a far-sleeve gusset, with the original arm skin weights on its sleeve edge. Keep the torso itself rigid in its original view. A broad fixed underlap caused a right-side bulge, so the final gusset folds under the actual arm/body. Fade overlaps to zero at idle to preserve the exact standing picture. No new painted art or original asset changes.

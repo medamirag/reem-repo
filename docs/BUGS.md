@@ -184,3 +184,7 @@ The user rejected the first eight-pose pass as too stiff. Expanded contact to 25
 ### 25. Reem asymmetric arms / shoulder opening / passing clearance (2026-11-14)
 
 User accepted the leg stride and far-leg shading, then reported unequal arm halves, an apparent torso turn, a shoulder triangle and insufficient passing-foot lift. Both arms now use the same body-space 20-degree swing and elbow curve, compensating for the original sleeve angles. All four upper-arm/forearm pose pairs exchange exactly; the torso keeps its original angle/scale. Rounded body underlap and a trimmed far-sleeve gusset cover the shoulder opening without changing the idle picture. Swing lift increased by 20px, while accepted stride/shading/mirrored legs stay unchanged. Final actual captures inspected: `docs/reem_walk_v3/eight_poses.png`, `shoulders_closeups.png` and `legs_closeups.png`. Pose/source/face checks and focused headless integration passed.
+
+### 26. Small teal tip behind Reem's scarf (2026-11-14)
+
+After approving the walk, the user reported a small teal triangle below the back scarf in frames 1/4/5/6/8. Tucked the top-back torso backing and its generated contour inward beneath the scarf tip. Only that local edge changed; approved motion, face and original artwork stay unchanged. Inspected one frame-5 close-up: `docs/bugs/reem_neck_scarf_trim.png`. Current rendered face matches the approved pixels, and focused eight-pose/content checks passed.

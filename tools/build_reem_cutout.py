@@ -116,7 +116,8 @@ def edge_strip(points,width=5):
   nx=-dy/length*width/2;ny=dx/length*width/2
   outer.append((p[0]+nx,p[1]+ny));inner.append((p[0]-nx,p[1]-ny))
  return outer+inner[::-1]
-left=bezier((535,440),(500,440),(478,485),(485,515))+bezier((485,515),(488,545),(520,590),(550,650))[1:]
+# Tuck the upper back edge beneath the scarf tip; keep the approved walk intact.
+left=bezier((535,440),(518,450),(511,510),(520,540))+bezier((520,540),(520,575),(535,610),(550,650))[1:]
 right=bezier((672,450),(700,460),(700,540),(700,580))+bezier((700,580),(700,610),(706,635),(706,650))[1:]
 backing=left[:1]+right+left[:0:-1]
 border=edge_strip(left)

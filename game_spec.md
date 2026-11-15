@@ -604,3 +604,6 @@ Preserve the approved walk and face. Replace the patchwork shoulder/torso with o
 
 ### Final Reem overlap cleanup (2026-11-15)
 Close the rear scarf/sleeve notch by extending the rounded body overlap; remove the small front-neck dash/notch and redundant parallel front outline. Explicitly use linear filtering for Reem. Preserve all approved gait values and face. Deliver game-scale and 400% eight-pose evidence. After this, change the walk only for defects visible at game size.
+
+### Fable cutout preparation (2026-11-15; incomplete checkpoint)
+Prepare source-matched transparent neutral parts and labelled original/parts review sheets for all non-Reem cast before any animation. Exact source/part paths and anatomy are in docs/rigs/character_manifest.json; known source/variant gaps are documented in docs/FABLE_BRIEF.md. No new rigs or animation in this preparation stage. Reem's final walk stays unchanged.

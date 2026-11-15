@@ -23,7 +23,7 @@ script_name = "DewBank"
 state = ExtResource("state")
 width = 1920
 height = 1080
-entry_points = {"": Vector2(0.08, 0.82), "GiantBloom": Vector2(0.08, 0.82), "AntCity": Vector2(0.92, 0.82)}
+entry_points = {"": Vector2(0.20, 0.82), "GiantBloom": Vector2(0.20, 0.82), "AntCity": Vector2(0.80, 0.82)}
 ambience_cue = "amb_meadow"
 reem_height_ratio = 0.23
 

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "reem_hint_oak_search_1",
+    "path": "assets/audio/lines/reem_hint_oak_search_1.mp3",
+    "model": "eleven_v3",
+    "generation_id": "b5wU2gq5ebvhemrpzRNu",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_oak_search_2",
+    "path": "assets/audio/lines/reem_hint_oak_search_2.mp3",
+    "model": "eleven_v3",
+    "generation_id": "CBw10tgtN4s9ymjW6fpV",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_oak_search_3",
+    "path": "assets/audio/lines/reem_hint_oak_search_3.mp3",
+    "model": "eleven_v3",
+    "generation_id": "TKMzmW8f2z6UVD5e3y2d",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_festival_light_1",
+    "path": "assets/audio/lines/reem_hint_festival_light_1.mp3",
+    "model": "eleven_v3",
+    "generation_id": "RuyniIrYflU1ykRDI7mN",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_festival_light_2",
+    "path": "assets/audio/lines/reem_hint_festival_light_2.mp3",
+    "model": "eleven_v3",
+    "generation_id": "vgJefgRRcFWnWodAUC6a",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_festival_light_3",
+    "path": "assets/audio/lines/reem_hint_festival_light_3.mp3",
+    "model": "eleven_v3",
+    "generation_id": "dsYJJIGcuMaU2iRy5L1i",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_market_sale_1",
+    "path": "assets/audio/lines/reem_hint_market_sale_1.mp3",
+    "model": "eleven_v3",
+    "generation_id": "TohPZgjPdOsM5n22VF83",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_market_sale_2",
+    "path": "assets/audio/lines/reem_hint_market_sale_2.mp3",
+    "model": "eleven_v3",
+    "generation_id": "bqKLPa7Sa7Xa8aTQa4hj",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "reem_hint_market_sale_3",
+    "path": "assets/audio/lines/reem_hint_market_sale_3.mp3",
+    "model": "eleven_v3",
+    "generation_id": "cA9pjSPP9GXjUwwEaRln",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "word_shortcut",
+    "path": "assets/audio/words/word_shortcut.mp3",
+    "model": "eleven_multilingual_v2",
+    "generation_id": "TSDbNG28wBjvcY56XH21",
+    "qa": "generated; audible comparison unverified"
+  },
+  {
+    "id": "word_bridge_planks",
+    "path": "assets/audio/words/word_bridge_planks.mp3",
+    "model": "eleven_multilingual_v2",
+    "generation_id": "G9lS104hBR6U76duWZC6",
+    "qa": "generated; audible comparison unverified"
+  }
+]

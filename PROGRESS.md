@@ -2,6 +2,19 @@
 
 ## Handoff
 
+- **Who worked last / date / branch:** Codex, 2026-11-15, main.
+- **Current request: INCOMPLETE.** Prepare all non-Reem character cutouts for Claude Fable; animate nothing. This checkpoint is NOT ready for animation: 745 requested part PNGs remain unbuilt. Do not interpret problem rows or review-sheet files as completed parts.
+- **Done:** Read rules/handoff, audited queues/bugs. No pre-existing todo art. Generated and installed nine Reem hints and two words using exact data text and saved Reem voice; paths/models/generation IDs in `docs/rigs/audio_manifest.json`. Headless MP3 decode/duration check passed, but audible voice/pace/pronunciation/loudness comparison remains unverified. Queue rows explicitly flag that QA limitation; see voice_log. Initial non-data trial was discarded and never installed.
+- **Simple bug:** docs/BUGS.md #13 was the only explicitly open row. Changed entry points in DewBank/NarrowPass from 8/92% to 20/80% so feet clear edge arrows. Short headless clearance assertions passed. Status fixed, pending visual confirmation. No other hard open gameplay item is listed; unreliable native mouse-helper coverage and known orchard engine diagnostic are recorded in FABLE_BRIEF.
+- **Parts preparation:** `docs/rigs/character_manifest.json` records 33 source designs including three ducklings, source paths/canvas sizes, anatomy and all intended part filenames. `tools/prepare_fable_inventory.py` writes/updates queue rows and labelled review templates. Grandpa=Jad=Sulaiman; Thaaloob=fox; Shahd=bees. Check family reuse and winter/festival/merchant variants before declaring complete. All 33 `<name>_parts.png` sheets show originals plus MISSING cells, not generated cutouts.
+- **Generation attempt:** Grandpa blank-head draft generated with built-in image generation and both existing references; rejected for changed proportions/canvas. Preserved at `docs/rigs/grandpa_head_REJECTED.png`, never wired into a scene. Other required part images have NOT been generated. Do not rig from the rejected draft or placeholders.
+- **Brief:** `docs/FABLE_BRIEF.md` includes the exact part lists, body types, aliases, approved Reem scene/code, quality rules, 100%/400% checks, known limitations and next steps. It explicitly gates rigging on finished art. Reem remains final; change her walk only for defects visible at game size.
+- **Checks:** `tools/check_content.py` passed. `tools/check_fable_prep.gd` reached DONE for both room entry clearances and all eleven MP3 decode/durations; log `.godot/fable-prep-check.log`, usual exit leaks only. No windowed tests, no full runs. Review templates inspected as inventories, not certified art.
+- **Half-finished / exact next step:** Continue genuine image generation from each queue row with its reference sheet AND current sprite. Register accepted parts to original canvas/anchors; reconstruct hidden joint overlaps; check complete rounded black outlines and neutral overlay; replace MISSING review cells with actual labelled parts and mark done only after QA. Fix the manifest's noted costume/source variants. Audition new voice sample against original Reem and check all eleven recordings. Visually verify bug #13. Only after that is Fable preparation complete. No animation was authored this session.
+- **Backup:** Commit and push this clearly labelled incomplete checkpoint on main; final response records commit.
+
+### Previous handoff (final Reem walk)
+
 - **Who worked last:** Codex (builder), final Reem torso/sleeve overlap cleanup.
 - **Date / branch:** 2026-11-15 / main.
 - **User confirmed / stop rule:** Reem's face and walk motion are approved. After this cleanup, the walk is final. **Do not change it again unless a defect is visible at game size.** No further magnification-only polishing.
@@ -219,6 +232,9 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-15 Fable prep:** Grandpa and Jad share one kit; biped animals retain their actual biped topology rather than being forced onto four legs. Spider/octopus/boat need explicit topology exceptions. Never present ungenerated inventory cells as parts. Voice tool exposes model/voice only; unsupported numeric settings remain unset and audible QA is pending.
+
 
 - **2026-11-15, final Reem cleanup:** Increased body/sleeve overlap and repaired only the sleeve's stepped edge, retaining original texture shading. Put the scarf above the upper sleeve and explicitly enabled linear filtering. Review percentages now refer to actual game scale (0.362), with a separate 4x render, rather than nearest-neighbour enlargement of source pixels. Follow the user's final-walk stop rule: future fixes only for defects visible at game size.
 

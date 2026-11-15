@@ -19,7 +19,7 @@ Status: **open**, **fixed** (fix made, not yet confirmed by a rerun) or **verifi
 | 11 | The settings and notebook buttons cover two of the observatory's sky stars (a real click on the crescent star hits «الإعدادات») | `tests/screenshots/stars/028_ObservatoryDome_after_TriangleStar.png` (`docs/bugs/028_ObservatoryDome_after_TriangleStar.jpg`) | verified |
 | 12 | While the two choice boards are shown, the cursor is the hourglass (wait) instead of the pointer | `tests/screenshots/mother_day/007_MotherGarden_choice.png` (`docs/bugs/007_MotherGarden_choice.jpg`) | verified |
 
-| 13 | The left exit arrow overlaps Reem’s feet on arrival in DewBank and Narrow Pass | `docs/bugs/020_DewBank_painted_leaf_tilted_fixed.jpg` and `docs/bugs/136_NarrowPass_painted_tail_rock_fixed.jpg` | open |
+| 13 | The left exit arrow overlaps Reem’s feet on arrival in DewBank and Narrow Pass | `docs/bugs/020_DewBank_painted_leaf_tilted_fixed.jpg` and `docs/bugs/136_NarrowPass_painted_tail_rock_fixed.jpg` | fixed |
 
 | 14 | Gate: the «الجدول» arrow and click area sit on the fence | `docs/bugs/gate_stream_and_help_before.png` (user screenshot) | verified |
 | 15 | Gate: flowers show through the «أين أضغط؟» button and reduce contrast | `docs/bugs/gate_stream_and_help_before.png` (user screenshot) | verified |
@@ -196,3 +196,6 @@ Replaced the earlier clipped backing and contours with one closed rounded tunic 
 ### 28. Final scarf/sleeve notch, neck marks and duplicate front border (2026-11-15)
 
 Extended rounded body overlap at the rear shoulder and front. Smoothed the near sleeve's stepped alpha edge into a continuous black contour and drew the scarf over it. The front overlap covers the residual far-sleeve neck dash/light notch and duplicate parallel border. Enabled explicit linear filtering on Reem. Inspected all eight actual Godot poses at game scale and 4x: `docs/reem_walk_final/walk_game_100pct.png` and `torso_game_400pct.png`. Face and all approved movement values are unchanged. Walk is now final: future changes only for issues visible at game size.
+
+### 13. Arrival arrow spacing — 2026-11-15
+DewBank and NarrowPass entry points moved inward from 8/92% to 20/80% of room width. Arrows remain at x95/x1825; left/right hotspot actions and walkable floor remain unchanged. Status fixed pending focused visual verification; no full-route rerun.

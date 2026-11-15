@@ -10,11 +10,28 @@
     376,
     172
   ],
+  "upper_box": [
+    238,
+    62,
+    378,
+    180
+  ],
   "mouth_box": [
     286,
     194,
     394,
     262
   ],
-  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_grandpa_face.py."
+  "arm_box": [
+    130,
+    330,
+    390,
+    610
+  ],
+  "elbow": [
+    212,
+    500
+  ],
+  "arm_rest_angle": 79.0,
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. arm_fore.png is drawn raised (hand on heart); turning it arm_rest_angle degrees clockwise around `elbow` lays it where the forearm is in the picture. Made by tools/build_grandpa_face.py."
 }

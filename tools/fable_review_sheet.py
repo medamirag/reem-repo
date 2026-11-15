@@ -6,6 +6,7 @@ Writes, in docs/rigs/<name>_review/:
   poses_game_100pct.png  the eight poses at real game size (not resized)
   poses_400pct.png       the same eight poses rendered 4x larger by Godot
   face_closeup.png       the face of each pose, cut from the 4x render (not resized)
+  fixed_expressions_400pct.png  (Grandpa) greeting, sad and surprised, upper body
 """
 import sys
 from pathlib import Path
@@ -54,6 +55,13 @@ def main(name):
     crop = tuple(int(v * k + pad * 4) for v in box)
     sheet([Image.open(p).convert("RGBA").crop(crop) for p in big], [l + " - face 400%" for l in labels], 4,
           folder / "face_closeup.png", 26)
+    if name == "grandpa":
+        # The three expressions the user asked to see: upper body, cut from the 4x render.
+        wanted = [p for p in big if any(k in p.stem for k in ("sad", "surprised", "hand_on_heart"))]
+        upper = tuple(int(v * k + pad * 4) for v in (40, 0, 520, 620))
+        sheet([Image.open(p).convert("RGBA").crop(upper) for p in wanted],
+              [p.stem[2:-4].replace("_", " ").capitalize() + " - 400%" for p in wanted], 3,
+              folder / "fixed_expressions_400pct.png", 30)
 
 
 if __name__ == "__main__":

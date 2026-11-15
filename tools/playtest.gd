@@ -2658,17 +2658,18 @@ func _grandpa_animation_path() -> void:
 	Lines.say("jad_s1_011")
 	await get_tree().create_timer(.5).timeout
 	_expect(rig.talking, "voice drives Grandpa's mouth")
-	_expect(rig._hand_lift > 0.0, "greeting lifts his hand")
+	_expect(rig._heart > 0.2 and rig._forearm.visible, "greeting raises his hand to his heart")
 	await _shot("talking_greeting")
 	await get_tree().create_timer(.4).timeout
 	await _shot("talking_2")
 	while Lines.busy:
 		await get_tree().process_frame
 	_expect(not rig.talking and not rig._mouth.visible, "mouth closes after the voice")
+	_expect(is_zero_approx(rig._heart) and not rig._forearm.visible, "arm returns to the picture after the greeting")
 	for mood in ["sad", "surprised"]:
 		jad.animate_line(mood, "")
 		await get_tree().create_timer(.4).timeout
-		_expect(rig.expression == mood and rig._mouth.visible, "line tone drives " + mood)
+		_expect(rig.expression == mood and rig._mouth.visible and rig._upper_face.visible, "line tone drives " + mood)
 		await _shot(mood)
 	await get_tree().create_timer(1.6).timeout
 	_expect(rig.expression == "happy" and not rig._mouth.visible, "smile returns after the line")

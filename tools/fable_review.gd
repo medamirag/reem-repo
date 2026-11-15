@@ -25,13 +25,13 @@ func _config() -> Dictionary:
 				"canvas": Vector2(604, 982), "feet": Vector2(302, 982), "scale": 0.438,
 				"poses": [
 					["1_rest", {}],
-					["2_breath_in", {"rise": 3.0}],
-					["3_blink", {"blink": true, "rise": 1.5}],
-					["4_talk_half", {"mouth": "half", "lean": 0.010, "head": 0.022, "hand": 0.10}],
-					["5_talk_open", {"mouth": "open", "lean": 0.014, "head": -0.018, "hand": 0.135}],
-					["6_greeting", {"mouth": "open", "head": 0.06, "hand": 0.17, "rise": 1.0}],
-					["7_sad", {"mouth": "sad", "head": 0.05}],
-					["8_surprised", {"mouth": "surprised", "head": -0.035, "rise": 3.0}],
+					["2_breath_in", {"breath": 1.0}],
+					["3_blink", {"blink": true, "breath": 0.5}],
+					["4_talk_open", {"mouth": "open", "lean": 0.014, "head": -0.018, "hand": 0.135}],
+					["5_greeting_rising", {"heart": 0.55, "head": 0.01}],
+					["6_greeting_hand_on_heart", {"heart": 1.0, "head": 0.05, "breath": 0.3}],
+					["7_sad", {"face": "sad", "mouth": "sad", "head": 0.05}],
+					["8_surprised", {"face": "surprised", "mouth": "surprised", "head": -0.035, "rise": 3.0}],
 				],
 			}
 	return {}

@@ -11,7 +11,7 @@ const SEATED_PICTURE := "res://assets/cut/grandpa_bench/grandpa_seated.png"
 ## Turn off to see the old still picture again (for comparison).
 @export var use_rig := true
 ## How far his chest rises when he breathes, in picture pixels.
-@export_range(0.0, 6.0) var breathing := 3.0
+@export_range(0.0, 8.0) var breathing := 5.0
 ## How strongly his head moves while he talks.
 @export_range(0.0, 2.0) var talk_energy := 1.0
 

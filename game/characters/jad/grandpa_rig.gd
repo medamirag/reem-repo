@@ -1,6 +1,6 @@
 class_name GrandpaRig
 extends Node2D
-## Grandpa's seated rig. He stays on his chair (bandaged ankle), so there is no walk.
+## Grandpa's seated rig. He stays on his chair (sprained ankle), so there is no walk.
 ##
 ## The approved picture is shown as ONE flexible sheet (a grid of small squares) instead of cut
 ## pieces, so there are no seams: three invisible "bones" bend it gently.
@@ -9,7 +9,11 @@ extends Node2D
 ##   Hand:  the hand on his knee lifts a little (gestures and finger taps).
 ## The chair, stool, legs and cane never move.
 ##
-## Blink and mouth patches come from tools/build_grandpa_face.py (game/characters/jad/rig/).
+## Small patches come from tools/build_grandpa_face.py (game/characters/jad/rig/):
+##   eyes_closed, mouth_* (talking, sad, surprised), face_sad / face_surprised (eyebrows,
+##   eyelids, wider eyes), and the greeting arm: arm_cover hides the forearm of the picture
+##   while arm_fore (his right forearm and hand) turns up at the elbow until the hand rests
+##   on his heart.
 
 const SOURCE := preload("res://assets/cut/grandpa_bench/grandpa_seated.png")
 const PARTS := "res://game/characters/jad/rig/"
@@ -22,8 +26,10 @@ const CELL := 12.0
 ## The line between head (above) and body (below): it follows the lower edge of the beard.
 const NECK_LINE: Array[Vector2] = [Vector2(150, 225), Vector2(215, 252), Vector2(300, 303), Vector2(420, 328)]
 
-## How far the chest rises with each breath, in picture pixels.
-@export var breathing := 3.0
+## How far the chest and shoulders rise with each breath, in picture pixels.
+@export var breathing := 5.0
+## How much the chest widens with each breath (0.012 = 1.2%).
+@export var breath_swell := 0.012
 ## Seconds for one breath in and out.
 @export var breath_time := 3.8
 ## How strongly the head moves while he talks (1 = normal, 0 = still).
@@ -40,6 +46,15 @@ var _chest: Bone2D
 var _head: Bone2D
 var _hand: Bone2D
 var _closed_eyes: Sprite2D
+var _upper_face: Sprite2D
+var _faces := {}
+var _arm_cover: Sprite2D
+var _forearm: Node2D
+var _arm_rest_angle := 0.0
+## 0 = arm as in the picture, 1 = hand on his heart.
+var _heart := 0.0
+var _heart_tween: Tween
+var _face_tween: Tween
 var _mouth: Sprite2D
 var _mouths := {}
 var _rest_chest := Vector2.ZERO
@@ -182,10 +197,37 @@ func _hand_weight(p: Vector2) -> float:
 
 func _build_face() -> void:
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(PARTS + "face_layout.json"))
+	_upper_face = _patch("UpperFace", "face_sad", layout.upper_box)
+	for mood in ["sad", "surprised"]:
+		_faces[mood] = load(PARTS + "face_%s.png" % mood)
 	_closed_eyes = _patch("EyesClosed", "eyes_closed", layout.eyes_box)
 	_mouth = _patch("Mouth", "mouth_open", layout.mouth_box)
 	for shape in ["half", "open", "sad", "surprised"]:
 		_mouths[shape] = load(PARTS + "mouth_%s.png" % shape)
+	# Greeting arm. The cover stays with the chair side of the body, the forearm with the chest.
+	var arm_at := Vector2(layout.arm_box[0], layout.arm_box[1])
+	var elbow := Vector2(layout.elbow[0], layout.elbow[1])
+	_arm_rest_angle = deg_to_rad(layout.arm_rest_angle)
+	var root_bone: Node2D = _skeleton.get_node("Root")
+	_arm_cover = Sprite2D.new()
+	_arm_cover.name = "ArmCover"
+	_arm_cover.texture = load(PARTS + "arm_cover.png")
+	_arm_cover.centered = false
+	_arm_cover.position = arm_at - FEET
+	_arm_cover.hide()
+	root_bone.add_child(_arm_cover)
+	root_bone.move_child(_arm_cover, 0)
+	_forearm = Node2D.new()
+	_forearm.name = "Forearm"
+	_forearm.position = elbow - CHEST_PIVOT
+	_forearm.hide()
+	_chest.add_child(_forearm)
+	var fore := Sprite2D.new()
+	fore.name = "Sleeve"
+	fore.texture = load(PARTS + "arm_fore.png")
+	fore.centered = false
+	fore.position = arm_at - elbow
+	_forearm.add_child(fore)
 
 
 func _patch(node_name: String, file: String, box: Array) -> Sprite2D:
@@ -217,7 +259,7 @@ func _process(delta: float) -> void:
 			_mouth_wait = _rng.randf_range(0.07, 0.13)
 			_show_mouth(["closed", "half", "open", "half"][_mouth_step])
 	_blink_wait -= delta
-	if _blink_wait <= 0.0 and not _blinking:
+	if _blink_wait <= 0.0 and not _blinking and expression != "surprised":
 		blink()
 	if not talking and expression != "happy":
 		# A sad or surprised face stays a moment after the line, then his smile returns.
@@ -240,6 +282,8 @@ func _apply() -> void:
 	var breath := 0.5 - 0.5 * cos(_time * TAU / breath_time)
 	var talk_bob := sin(_talk_time * 9.5) * 0.6 + sin(_talk_time * 5.3 + 1.0) * 0.4
 	_chest.position = _rest_chest + Vector2(0, -breathing * breath - _mood_lift)
+	_chest.scale = Vector2(1.0 + breath_swell * breath, 1.0 + breath_swell * 0.5 * breath)
+	_head.scale = Vector2.ONE / _chest.scale
 	_chest.rotation = 0.010 * _talk_weight * talk_energy + 0.004 * _talk_weight * talk_bob
 	var sway := sin(_time * TAU / 7.3) * 0.010 if idle_life else 0.0
 	_head.rotation = sway * (1.0 - _talk_weight) + _mood_tilt + _nod \
@@ -247,6 +291,20 @@ func _apply() -> void:
 	_head.position.y = (HEAD_PIVOT - CHEST_PIVOT).y - breathing * 0.25 * breath
 	var beat := maxf(0.0, sin(_talk_time * 4.1)) * 0.035 * _talk_weight * _gesture
 	_hand.rotation = -_hand_lift - beat
+	_show_heart_arm(_heart)
+
+
+## The greeting arm: hidden at 0 (the picture shows his arm), on his heart at 1.
+func _show_heart_arm(amount: float) -> void:
+	var shown := amount > 0.001
+	_arm_cover.visible = shown
+	_forearm.visible = shown
+	if not shown:
+		return
+	var alpha := smoothstep(0.0, 0.3, amount)
+	_arm_cover.modulate.a = alpha
+	_forearm.modulate.a = alpha
+	_forearm.rotation = _arm_rest_angle * (1.0 - amount)
 
 
 func set_talking(value: bool) -> void:
@@ -270,6 +328,7 @@ func set_talking(value: bool) -> void:
 func set_expression(value: String) -> void:
 	expression = value
 	_show_mouth("closed")
+	_show_upper_face(value)
 	if is_instance_valid(_mood_tween):
 		_mood_tween.kill()
 	_mood_tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
@@ -303,17 +362,30 @@ func nod(depth := 0.06, time := 0.4) -> void:
 	_nod_tween.tween_property(self, "_nod", 0.0, time * 1.2)
 
 
-## Greeting: his hand lifts from his knee and he nods.
+## Greeting of peace: his right hand rises to his heart, with a small nod and his warm smile.
 func greet() -> void:
-	nod(0.06, 0.4)
-	_gesture = 1.0
-	if is_instance_valid(_hand_tween):
-		_hand_tween.kill()
-	_hand_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	_hand_tween.tween_property(self, "_hand_lift", 0.17, 0.35)
-	_hand_tween.tween_property(self, "_hand_lift", 0.11, 0.25)
-	_hand_tween.tween_property(self, "_hand_lift", 0.17, 0.25)
-	_hand_tween.tween_property(self, "_hand_lift", 0.10 if talking else 0.0, 0.4)
+	set_expression("happy")
+	if is_instance_valid(_heart_tween):
+		_heart_tween.kill()
+	_heart_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_heart_tween.tween_property(self, "_heart", 1.0, 0.5)
+	_heart_tween.tween_callback(nod.bind(0.05, 0.4))
+	_heart_tween.tween_interval(1.7)
+	_heart_tween.tween_property(self, "_heart", 0.0, 0.55)
+
+
+## Eyebrows, eyelids and eye size of the mood (nothing for his normal happy face).
+func _show_upper_face(mood: String) -> void:
+	if is_instance_valid(_face_tween):
+		_face_tween.kill()
+	_face_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if _faces.has(mood):
+		_upper_face.texture = _faces[mood]
+		_upper_face.show()
+		_face_tween.tween_property(_upper_face, "modulate:a", 1.0, 0.12)
+	else:
+		_face_tween.tween_property(_upper_face, "modulate:a", 0.0, 0.12)
+		_face_tween.tween_callback(_upper_face.hide)
 
 
 func tap_fingers() -> void:
@@ -349,10 +421,19 @@ func _show_mouth(shape: String) -> void:
 ## Freezes the rig in one exact pose, for the review pictures (tools/fable_review.gd).
 func pose_for_review(pose: Dictionary) -> void:
 	set_process(false)
-	for tween in [_blink_tween, _mood_tween, _nod_tween, _hand_tween]:
+	for tween in [_blink_tween, _mood_tween, _nod_tween, _hand_tween, _heart_tween, _face_tween]:
 		if is_instance_valid(tween):
 			tween.kill()
-	_chest.position = _rest_chest + Vector2(0, -float(pose.get("rise", 0.0)))
+	var breath := float(pose.get("breath", 0.0))
+	_chest.position = _rest_chest + Vector2(0, -breathing * breath - float(pose.get("rise", 0.0)))
+	_chest.scale = Vector2(1.0 + breath_swell * breath, 1.0 + breath_swell * 0.5 * breath)
+	_head.scale = Vector2.ONE / _chest.scale
+	_show_heart_arm(float(pose.get("heart", 0.0)))
+	var face := str(pose.get("face", ""))
+	_upper_face.visible = _faces.has(face)
+	_upper_face.modulate.a = 1.0
+	if _upper_face.visible:
+		_upper_face.texture = _faces[face]
 	_chest.rotation = float(pose.get("lean", 0.0))
 	_head.position = HEAD_PIVOT - CHEST_PIVOT
 	_head.rotation = float(pose.get("head", 0.0))

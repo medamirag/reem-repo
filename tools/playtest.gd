@@ -2842,6 +2842,24 @@ func _light_rigs_path() -> void:
 	_expect(ducks == 4, "the duck and her three ducklings have light rigs (found %d)" % ducks)
 	await _shot("stream_ducks")
 
+	# Step 3: code-only characters (no patches): breathing, bounce, small hops.
+	var rooms := 0
+	for room_name: String in ["SnowEdge", "MarketStalls", "GullShore", "OwlPerch", "GiantBloom", "RamadanLane"]:
+		if not R.rooms_states.has(room_name):
+			continue
+		R.goto_room(room_name)
+		await _wait_room(room_name)
+		var found: Array[String] = []
+		for rig in R.current.find_children("LightRig", "", true, false):
+			found.append((rig as LightRig).character.get_file())
+			var picture_material := (rig.get_parent() as Sprite2D).material as ShaderMaterial
+			_expect(picture_material != null, "%s is drawn through the light rig" % found[-1])
+		_log("%s light rigs: %s" % [room_name, ", ".join(found)])
+		_expect(not found.is_empty(), "%s has at least one moving character" % room_name)
+		rooms += 1
+		await _shot("pack_" + room_name)
+	_expect(rooms >= 4, "pack rooms were checked (%d)" % rooms)
+
 	R.goto_room("BigTree")
 	await _wait_room("BigTree")
 	var bee := C.get_character("Shahd").get_node_or_null("Sprite2D/LightRig") as LightRig

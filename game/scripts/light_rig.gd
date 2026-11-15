@@ -25,6 +25,33 @@ const STYLE := {
 	"qunfood": {"sway": 2.5},
 }
 
+## CODE ONLY characters (pack animals and minor characters): no patches and no new pictures,
+## only breathing, the bounce while talking or listening, and for the small ones a little hop
+## now and then. Key = folder and file name in assets/art/characters/ (<key>/<key>_base.png).
+## speaker = name in the AGENTS.md voice table; hop = idle hops; bob = floats instead of breathing.
+const CODE_ONLY := {
+	"ant_beetle": {"speaker": "GuardBeetle", "hop": true},
+	"ant_queen": {"speaker": "AntQueen"},
+	"ant_worker": {"speaker": "AntWorker", "hop": true},
+	"astronomer": {"speaker": "Astronomer"},
+	"goldfinch": {"speaker": "Goldfinch", "hop": true},
+	"gull_bird": {"speaker": "Gull", "hop": true},
+	"gull_octopus": {"speaker": "Octopus"},
+	"gull_turtle": {"speaker": "SeaTurtle", "breath": 0.008},
+	"iftar_traveller": {"speaker": "Traveller"},
+	"market_baker": {"speaker": "Baker"},
+	"market_cat": {"speaker": "MarketCat", "hop": true},
+	"musaharati": {"speaker": "Musaharati"},
+	"observatory_bat": {"speaker": "ObservatoryBat"},
+	"observatory_owl": {"speaker": "ObservatoryOwl"},
+	"snow_deer": {"speaker": "SnowDeer"},
+	"wooden_boat": {"speaker": "WoodenBoat", "breath": 0.0, "bob": 0.006, "bounce": 0.006},
+}
+## Costume pictures of light characters: code-only motion too (FABLE_BRIEF.md).
+const COSTUMES := {
+	"res://assets/art/characters/arnoob/arnoob_winter.png": {"speaker": "Arnoob", "hop": true},
+}
+
 ## Seconds for one breath in and out.
 @export var breath_time := 3.2
 ## How high the picture hops while talking, as a fraction of its height.
@@ -52,7 +79,11 @@ var _mouth_wait := 0.0
 var _mouth_step := 0
 var _flick := 0.0
 var _flick_wait := 5.0
+var _hops := false
+var _hop := 0.0
+var _bob := 0.0
 var _rng := RandomNumberGenerator.new()
+var _style := {}
 
 ## Picture file -> character folder, read once from the layout files.
 static var _known := {}
@@ -68,6 +99,10 @@ static func dress(root: Node) -> void:
 			var layout: Variant = JSON.parse_string(FileAccess.get_file_as_string(RIGS + folder + "/layout.json"))
 			if layout is Dictionary:
 				_known["res://" + str(layout.source)] = folder
+		for key: String in CODE_ONLY:
+			_known["res://assets/art/characters/%s/%s_base.png" % [key, key]] = key
+		for path: String in COSTUMES:
+			_known[path] = path
 	for node in root.find_children("*", "Sprite2D", true, false):
 		var picture := node as Sprite2D
 		if picture.texture == null or not _known.has(picture.texture.resource_path):
@@ -92,9 +127,16 @@ func _ready() -> void:
 		return
 	_rng.randomize()
 	var folder := RIGS + character + "/"
-	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(folder + "layout.json"))
+	var layout := {}
 	var style: Dictionary = STYLE.get(character, {})
-	var size := Vector2(layout.canvas[0], layout.canvas[1])
+	var size := _picture.texture.get_size()
+	if CODE_ONLY.has(character) or COSTUMES.has(character):
+		style = CODE_ONLY.get(character, COSTUMES.get(character, {}))
+		layout = {"speaker": style.get("speaker", "")}
+	else:
+		layout = JSON.parse_string(FileAccess.get_file_as_string(folder + "layout.json"))
+	_hops = bool(style.get("hop", false))
+	_bob = float(style.get("bob", 0.0)) * size.y
 	speaker = str(layout.get("speaker", ""))
 	if not speaker.is_empty():
 		# Lines.say() moves the mouth of this group when the speaker is not a Popochiu character.
@@ -106,8 +148,9 @@ func _ready() -> void:
 	_material = ShaderMaterial.new()
 	_material.shader = SHADER
 	_material.set_shader_parameter("canvas", size)
-	_material.set_shader_parameter("eyes_tex", load(folder + "eyes_closed.png"))
-	_material.set_shader_parameter("eyes_rect", _rect(layout.eyes_box, size))
+	if layout.has("eyes_box"):
+		_material.set_shader_parameter("eyes_tex", load(folder + "eyes_closed.png"))
+		_material.set_shader_parameter("eyes_rect", _rect(layout.eyes_box, size))
 	if layout.has("mouth_box"):
 		for shape: String in ["half", "open"]:
 			_mouths[shape] = load(folder + "mouth_%s.png" % shape)
@@ -151,6 +194,11 @@ func _process(delta: float) -> void:
 		flick.tween_property(self, "_flick", 1.0, 0.16)
 		flick.tween_property(self, "_flick", -0.5, 0.2)
 		flick.tween_property(self, "_flick", 0.0, 0.25)
+		if _hops and not talking and not listening:
+			# A small hop on the spot, now and then (never while a line plays).
+			var jump := create_tween()
+			jump.tween_property(self, "_hop", 1.0, 0.13).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+			jump.tween_property(self, "_hop", 0.0, 0.16).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 	var breath := 0.5 - 0.5 * cos(_time * TAU / breath_time)
 	# Two soft hops a second while talking; slower and smaller while listening.
@@ -158,6 +206,8 @@ func _process(delta: float) -> void:
 	var height := bounce * (1.0 if talking else 0.55)
 	var hop := absf(sin(_talk_time * PI * speed)) * height * _picture.texture.get_height() * _talk_weight
 	_material.set_shader_parameter("breath", _breath * breath)
+	hop += _hop * 0.02 * _picture.texture.get_height()
+	hop += _bob * (0.5 - 0.5 * cos(_time * TAU / 4.5))
 	_material.set_shader_parameter("lift", hop)
 	_material.set_shader_parameter("blink", _blink)
 	var swaying := sway and _has_extra

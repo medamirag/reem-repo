@@ -3,11 +3,16 @@ extends SceneTree
 const CUTOUT := preload("res://game/characters/reem/reem_cutout.tscn")
 const SOURCE := preload("res://assets/art/characters/reem/reem_base.png")
 const PAD := Vector2(96, 96)
-const OUT := "res://docs/reem_torso_outline"
+const OUT := "res://docs/reem_walk_final"
 var failed := false
 var actor: Node2D
 var rig: ReemWalkRig
 var viewport: SubViewport
+var zoom_view: SubViewport
+var zoom_rig: ReemWalkRig
+var game_view: SubViewport
+var game_actor: Node2D
+var game_rig: ReemWalkRig
 var canvas: Control
 var caption: Label
 
@@ -33,6 +38,30 @@ func _run() -> void:
 	rig = CUTOUT.instantiate()
 	actor.add_child(rig)
 	rig.neutral_for_review()
+	game_view = SubViewport.new()
+	game_view.size = Vector2i(524, 524)
+	game_view.transparent_bg = true
+	game_view.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	root.add_child(game_view)
+	game_actor = Node2D.new()
+	game_actor.position = (ReemWalkRig.FEET + PAD) * .362
+	game_view.add_child(game_actor)
+	game_rig = CUTOUT.instantiate()
+	game_rig.scale = Vector2.ONE * .362
+	game_actor.add_child(game_rig)
+	game_rig.neutral_for_review()
+	zoom_view = SubViewport.new()
+	zoom_view.size = Vector2i(2094, 2094)
+	zoom_view.transparent_bg = true
+	zoom_view.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	root.add_child(zoom_view)
+	var zoom_actor := Node2D.new()
+	zoom_actor.position = (ReemWalkRig.FEET + PAD) * 1.448
+	zoom_view.add_child(zoom_actor)
+	zoom_rig = CUTOUT.instantiate()
+	zoom_rig.scale = Vector2.ONE * 1.448
+	zoom_actor.add_child(zoom_rig)
+	zoom_rig.neutral_for_review()
 	_make_review_window()
 	rig.apply_walk_phase(0.0, 0.0)
 	var fade_neutral := true
@@ -96,6 +125,8 @@ func _run() -> void:
 	for index in 8:
 		var phase: float = index / 8.0
 		rig.apply_walk_phase(phase)
+		game_rig.apply_walk_phase(phase)
+		zoom_rig.apply_walk_phase(phase)
 		var arm_pose: Array = []
 		for side in 2:
 			var upper := (rig._elbows[side].global_position - rig._arms[side].global_position).angle()
@@ -149,6 +180,8 @@ func _run() -> void:
 	check(near_hands.max() - near_hands.min() > 150.0, "near hand moves freely through the swing")
 	check(rig.has_node("Skeleton2D/TorsoOutline") and rig.has_node("Skeleton2D/TorsoFabric"), "torso is one closed rounded silhouette with fabric inside its outline")
 	check(not Geometry2D.triangulate_polygon(rig.get_node("Skeleton2D/TorsoFabric").polygon).is_empty(), "rounded fabric fill is triangulatable")
+	check(rig.texture_filter == CanvasItem.TEXTURE_FILTER_LINEAR, "Reem explicitly uses smooth linear texture filtering")
+	check(rig.has_node("Skeleton2D/ArmFrontUpper") and rig.get_node("Skeleton2D/ArmFrontUpper").get_index() < rig.get_node("Skeleton2D/HeadSurface").get_index(), "outlined upper sleeve overlaps beneath the scarf")
 	check(rig.get_node("Skeleton2D/TorsoOutline").get_meta("outline_width") == 7.0, "torso has the original 7-pixel black outline")
 	check(rig.get_node("Skeleton2D/TorsoOutline").polygon.size() >= 150, "torso boundary uses smooth sampled curves, without straight cut edges")
 	check(rig.get_node("Skeleton2D/LegBackLower").modulate.r < .9, "far leg is visibly darker")
@@ -210,3 +243,6 @@ func native_capture(name: String) -> void:
 	if not name.begins_with("walk_"):
 		frame = frame.get_region(Rect2i(96, 96, 1254, 1254))
 	frame.save_png(OUT + "/" + name + ".png")
+	if name.begins_with("walk_"):
+		zoom_view.get_texture().get_image().save_png(OUT + "/" + name.replace("_rgba", "_zoom") + ".png")
+		game_view.get_texture().get_image().save_png(OUT + "/" + name.replace("_rgba", "_game") + ".png")

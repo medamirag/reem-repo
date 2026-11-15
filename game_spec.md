@@ -601,3 +601,6 @@ The user approved the walk. Preserve all motion values and the face. Tuck only t
 
 ### Reem clean torso redraw (2026-11-14)
 Preserve the approved walk and face. Replace the patchwork shoulder/torso with one naturally rounded closed tunic silhouette, a continuous black outline matching the original 7px line weight, and original-colour fabric shading. Retain the original bag and diagonal strap as a separate source-pixel overlay. Remove thin disconnected scarf/shoulder fragments from the sleeve cutouts. Inspect every walk pose at 400% before committing; do not retune movement.
+
+### Final Reem overlap cleanup (2026-11-15)
+Close the rear scarf/sleeve notch by extending the rounded body overlap; remove the small front-neck dash/notch and redundant parallel front outline. Explicitly use linear filtering for Reem. Preserve all approved gait values and face. Deliver game-scale and 400% eight-pose evidence. After this, change the walk only for defects visible at game size.

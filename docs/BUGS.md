@@ -192,3 +192,7 @@ After approving the walk, the user reported a small teal triangle below the back
 ### 27. Torso trim left hard unoutlined edges / grey shoulder fragments (2026-11-14)
 
 Replaced the earlier clipped backing and contours with one closed rounded tunic and continuous 7px black outline. Source-derived sleeves have clean upper overlaps; the original bag and strap retain their own outlines. Original assets, face and approved motion remain unchanged. Inspected all eight actual Godot poses at 400% for back/shoulder/front contours and stray grey lines. Evidence: `docs/reem_torso_outline/torso_all_8_400pct.png`. Focused pose, pixel, content and headless Reem integration checks passed.
+
+### 28. Final scarf/sleeve notch, neck marks and duplicate front border (2026-11-15)
+
+Extended rounded body overlap at the rear shoulder and front. Smoothed the near sleeve's stepped alpha edge into a continuous black contour and drew the scarf over it. The front overlap covers the residual far-sleeve neck dash/light notch and duplicate parallel border. Enabled explicit linear filtering on Reem. Inspected all eight actual Godot poses at game scale and 4x: `docs/reem_walk_final/walk_game_100pct.png` and `torso_game_400pct.png`. Face and all approved movement values are unchanged. Walk is now final: future changes only for issues visible at game size.

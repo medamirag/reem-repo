@@ -2,6 +2,19 @@
 
 ## Handoff
 
+- **Who worked last:** Codex (builder), final Reem torso/sleeve overlap cleanup.
+- **Date / branch:** 2026-11-15 / main.
+- **User confirmed / stop rule:** Reem's face and walk motion are approved. After this cleanup, the walk is final. **Do not change it again unless a defect is visible at game size.** No further magnification-only polishing.
+- **Done:** Extended the rounded rear and front body overlaps in `tools/reem_torso_art.py`, closing the back scarf join and hiding the far-sleeve neck dash/light notch and parallel front border. Smoothed just the near sleeve's stepped outer alpha edge into one continuous 7px outlined curve; retained original lower sleeve/hand artwork and skin weights. `tools/build_reem_cutout.py` draws the upper sleeve beneath the scarf and sets `texture_filter = 2` (linear) on the rig. Rebuilt `reem_cutout.tscn` and derived `refined/arm_front.png`. No original assets, face pixels, pivots or motion code changed.
+- **Evidence inspected:** `docs/reem_walk_final/walk_game_100pct.png` and `torso_game_400pct.png`, all eight poses. Actual Godot renders at 0.362 and 1.448 scales, arranged without resizing/retouching. These supersede the earlier source-scale nearest-neighbour diagnostic sheet. Checked all eight at both scales for back continuity, clean neck/front, one front silhouette and filtered edges. `tools/reem_final_review_sheet.py` composes them; the existing review fixture captures native/100%/400% viewports.
+- **Checks:** Content and cutout checks pass, including identical approved neutral/talking/blinking face pixels, unchanged lower legs/feet, and source RGB outside the intentional sleeve-edge repair. Final visual pose assertions reach DONE, covering approved stride, mirrored arms/legs, bob, fixed torso, planted feet, linear filtering and scarf/sleeve draw order. Focused headless `reem_animation` checks speech, blinking, expression, inventory, room reuse and Continue. Logs: `.godot/reem-final-sleeve-import.log`, `reem-final-sleeve-visual.log`, `reem-final-integration.log`. Only isolated Reem previews were windowed; no full routes.
+- **How to check:** Open the two final sheets. To watch in Godot, open Yard, press F6 and click the path. Judge future issues at actual game size first.
+- **What is next:** Reem's walk is final under the stop rule above. Next character work is the same feature for Grandpa, Thaaloob and the animals when requested; none were changed here.
+- **Half-finished:** None for Reem.
+- **Backup:** Commit and push origin/main; final reply records the commit.
+
+### Previous handoff (rounded torso redraw)
+
 - **Who worked last:** Codex (builder), Reem rounded torso and shoulder-outline correction.
 - **Date / branch:** 2026-11-14 / main.
 - **User confirmed:** Walk and face approved. Preserve the accepted motion; this request fixes the trim's exposed straight edges and grey shoulder/scarf fragments.
@@ -206,6 +219,9 @@
 - **How to play Oak:** Close and reopen Godot, press F5, start a new journey and reach Pine Fork via Stream or the meadow. Talk to Thaaloob and choose غَابَةُ الْبَلُّوطِ. Click Sinjoob, then the three acorns near the roots, then Sinjoob again. Try keeping all the acorns and then sharing to repair. Click Qunfood and try both choices. Press N to see earned cards. Hold an acorn before collecting to learn its name.
 
 ## Decisions to review
+
+- **2026-11-15, final Reem cleanup:** Increased body/sleeve overlap and repaired only the sleeve's stepped edge, retaining original texture shading. Put the scarf above the upper sleeve and explicitly enabled linear filtering. Review percentages now refer to actual game scale (0.362), with a separate 4x render, rather than nearest-neighbour enlargement of source pixels. Follow the user's final-walk stop rule: future fixes only for defects visible at game size.
+
 
 - **2026-11-14, Reem torso:** Used editable native closed curves and a 7px continuous outline rather than another bitmap trim. Repainted the small sleeve-cap overlap in the existing teal, preserving the solid outer sleeve stroke, original accessories, face and approved animation. The earlier neck-trim close-up is historical evidence; the all-eight 400% sheet supersedes it.
 

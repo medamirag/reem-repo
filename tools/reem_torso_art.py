@@ -52,6 +52,24 @@ def refined_textures(root, source):
                 r,g,b,a=lp[x,y]
                 if a and ((y<550 and g>35 and b>25) or (g>70 and b>70 and r<g*.65) or a<220):
                     lp[x,y]=(37,174,168,255) if a<220 else (round(r*(1-fade)+37*fade),round(g*(1-fade)+174*fade),round(b*(1-fade)+168*fade),255)
+        if side=='front':
+            # One smooth outlined sleeve edge, replacing the old 10px jump
+            # at y530/540. The lower sleeve/hand and joint weights are unchanged.
+            edge=curve((552,465),(540,490),(500,550),(476,600),135)
+            for y in range(465,601):
+                left=next((a[0]+(b[0]-a[0])*(y-a[1])/(b[1]-a[1]) for a,b in zip(edge,edge[1:]) if a[1]<=y<=b[1]),476)
+                old=[x for x in range(390,600) if lp[x,y][3]>128]
+                start=min(min(old)-3 if old else int(left)-3,int(left)-3)
+                sample=lp[min(620,int(left)+25),y]
+                fabric=sample[:3] if sample[1]>120 and sample[2]>100 else (37,174,168)
+                for x in range(start,int(left)+22):
+                    distance=x+.5-left
+                    if distance<-.5:lp[x,y]=(0,0,0,0);continue
+                    if distance<6.5:rgb=(6,5,3)
+                    else:
+                        blend=smooth(6.5,8,distance)
+                        rgb=tuple(round((6,5,3)[k]*(1-blend)+fabric[k]*blend) for k in range(3))
+                    lp[x,y]=(*rgb,round(255*max(0,min(1,distance+.5))))
         layer.save(dest/f'arm_{side}.png')
     print('[TORSO] cleaned source sleeve fragments and extracted original bag/strap')
 
@@ -59,13 +77,13 @@ def curve(a,b,c,d,steps=24):
     return [tuple(round((1-t)**3*a[k]+3*(1-t)**2*t*b[k]+3*(1-t)*t*t*c[k]+t**3*d[k],5) for k in (0,1)) for t in [i/steps for i in range(steps+1)]]
 
 def outline():
-    segments=[((565,435),(540,448),(518,515),(524,570)),
-              ((524,570),(534,635),(520,720),(501,810)),
+    segments=[((565,435),(537,448),(500,520),(510,570)),
+              ((510,570),(522,635),(520,720),(501,810)),
               ((501,810),(488,872),(467,930),(459,953)),
               ((459,953),(456,966),(536,992),(620,992)),
               ((620,992),(695,992),(783,966),(778,953)),
-              ((778,953),(756,889),(714,704),(710,610)),
-              ((710,610),(706,548),(719,493),(695,465)),
+              ((778,953),(756,889),(739,704),(735,610)),
+              ((735,610),(731,548),(730,493),(695,465)),
               ((695,465),(665,438),(602,420),(565,435))]
     points=[]
     for segment in segments:points+=curve(*segment)[:-1]

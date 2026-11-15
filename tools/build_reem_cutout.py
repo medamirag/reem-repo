@@ -69,7 +69,7 @@ lines+=['[sub_resource type="ShaderMaterial" id="TrouserTop"]','shader = ExtReso
 lines+=['[sub_resource type="ShaderMaterial" id="TorsoFabric"]','shader = ExtResource("torso_fabric")']
 lines+=['[sub_resource type="ShaderMaterial" id="FaceSkin"]','shader = ExtResource("face")']
 for name,key in [('OpenEye','eye_rect'),('NeutralMouth','mouth_rect')]:lines.extend([f'[sub_resource type="AtlasTexture" id="{name}"]','atlas = ExtResource("source")','region = Rect2(%s)'%', '.join(map(str,D[key]))])
-lines+=['[node name="ReemCutout" type="Node2D"]','script = ExtResource("rig")','[node name="Skeleton2D" type="Skeleton2D" parent="."]']
+lines+=['[node name="ReemCutout" type="Node2D"]','script = ExtResource("rig")','texture_filter = 2','[node name="Skeleton2D" type="Skeleton2D" parent="."]']
 BODY='Body'
 def limb_weights(kind,side,y):
  a=D['arms' if kind=='arm' else 'legs'][side];j=['shoulder','elbow','wrist'] if kind=='arm' else ['hip','knee','ankle'];path=BODY;paths=[]
@@ -114,6 +114,7 @@ for side in ['back','front']:
 # One complete outlined torso replaces all clipped shoulder backing/gusset pieces.
 add_torso(lines,D)
 mesh('Tunic','accessories',(400,400,850,900))
+mesh('ArmFrontUpper','arm_front',(390,430,650,620))
 mesh('HeadSurface','head',(390,0,850,580))
 lines.append('material = SubResource("FaceSkin")')
 def bone(name,parent,point,origin):
@@ -131,6 +132,6 @@ for name,key in [('Eyes','eye_anchor'),('MouthAnchor','mouth_anchor')]:
   lines.extend([f'[node name="Open" type="Sprite2D" parent="{head}/Eyes"]','texture = SubResource("OpenEye")',f'[node name="Closed" type="Node2D" parent="{head}/Eyes"]','visible = false'])
   for label,points,width in [('Lid',[[-31,-1],[-23,7],[-10,12],[3,13],[17,8],[29,-1]],5),('LashLeft',[[-24,7],[-34,4]],4),('LashMiddle',[[-16,10],[-24,15]],4),('LashRight',[[18,8],[26,11]],4)]:lines.extend([f'[node name="{label}" type="Line2D" parent="{head}/Eyes/Closed"]','points = PackedVector2Array('+', '.join(str(v) for p in points for v in p)+')',f'width = {width}.0','default_color = Color(0.06, 0.035, 0.015, 1)','begin_cap_mode = 2','end_cap_mode = 2','antialiased = true'])
  else:lines.extend([f'[node name="Mouth" type="Sprite2D" parent="{head}/MouthAnchor"]','texture = SubResource("NeutralMouth")'])
-for name,y0,y1 in [('Upper',430,620),('Lower',590,740),('Hand',700,850)]:mesh('ArmFront'+name,'arm_front',(390,y0,650,y1))
+for name,y0,y1 in [('Lower',590,740),('Hand',700,850)]:mesh('ArmFront'+name,'arm_front',(390,y0,650,y1))
 (ROOT/'game/characters/reem/reem_cutout.tscn').write_text('\n\n'.join(lines)+'\n',encoding='utf-8')
 print('[CUTOUT] Built source-pixel masks and overlapping, smoothly weighted joint meshes')

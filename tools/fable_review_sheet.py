@@ -6,6 +6,7 @@ Writes, in docs/rigs/<name>_review/:
   poses_game_100pct.png  the eight poses at real game size (not resized)
   poses_400pct.png       the same eight poses rendered 4x larger by Godot
   face_closeup.png       the face of each pose, cut from the 4x render (not resized)
+  walk_game_100pct.png / walk_400pct.png  (Thaaloob) the eight walk frames
   fixed_expressions_400pct.png  (Grandpa) greeting, sad and surprised, upper body
 """
 import sys
@@ -16,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PAPER = (255, 244, 222)
 INK = (70, 45, 30)
 # Face box in picture pixels, and the scale the character has in the game.
-FACES = {"grandpa": ((95, 0, 420, 320), 0.438, 24), "fox": ((500, 20, 880, 520), 0.3617, 24)}
+FACES = {"grandpa": ((95, 0, 420, 320), 0.438, 24), "fox": ((420, 0, 900, 540), 0.3617, 24)}
 
 
 def font(size):
@@ -43,17 +44,28 @@ def sheet(frames, labels, columns, path, label_size):
 
 def main(name):
     folder = ROOT / "docs/rigs" / (name + "_review")
-    small = sorted(folder.glob("[0-9]_*_100.png"))
-    big = sorted(folder.glob("[0-9]_*_400.png"))
-    labels = [p.stem[:-4].replace("_", ". ", 1).replace("_", " ").capitalize() for p in small]
-    sheet([Image.open(p).convert("RGBA") for p in small], [l + " - 100%" for l in labels], 4,
-          folder / "poses_game_100pct.png", 15)
-    sheet([Image.open(p).convert("RGBA") for p in big], [l + " - 400%" for l in labels], 4,
-          folder / "poses_400pct.png", 40)
     box, scale, pad = FACES[name]
     k = scale * 4
     crop = tuple(int(v * k + pad * 4) for v in box)
-    sheet([Image.open(p).convert("RGBA").crop(crop) for p in big], [l + " - face 400%" for l in labels], 4,
+    opened = lambda paths: [Image.open(p).convert("RGBA") for p in paths]
+    titles = lambda paths: [p.stem[:-4].lstrip("wf").replace("_", ". ", 1).replace("_", " ").capitalize() for p in paths]
+    if name == "fox":
+        # Walk frames and face poses are saved with the prefixes w and f.
+        small, big = sorted(folder.glob("w[0-9]_*_100.png")), sorted(folder.glob("w[0-9]_*_400.png"))
+        faces = sorted(folder.glob("f[0-9]_*_400.png"))
+        sheet(opened(small), [l + " - 100%" for l in titles(small)], 4, folder / "walk_game_100pct.png", 15)
+        sheet(opened(big), [l + " - 400%" for l in titles(big)], 4, folder / "walk_400pct.png", 40)
+        sheet([i.crop(crop) for i in opened(faces)], [l + " - face 400%" for l in titles(faces)], 3,
+              folder / "face_closeup.png", 26)
+        sheet(opened(sorted(folder.glob("f[0-9]_*_100.png"))), [l + " - 100%" for l in titles(faces)], 6,
+              folder / "poses_game_100pct.png", 15)
+        return
+    small = sorted(folder.glob("[0-9]_*_100.png"))
+    big = sorted(folder.glob("[0-9]_*_400.png"))
+    labels = titles(small)
+    sheet(opened(small), [l + " - 100%" for l in labels], 4, folder / "poses_game_100pct.png", 15)
+    sheet(opened(big), [l + " - 400%" for l in labels], 4, folder / "poses_400pct.png", 40)
+    sheet([i.crop(crop) for i in opened(big)], [l + " - face 400%" for l in labels], 4,
           folder / "face_closeup.png", 26)
     if name == "grandpa":
         # The three expressions the user asked to see: upper body, cut from the 4x render.

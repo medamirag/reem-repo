@@ -1,0 +1,595 @@
+{
+ "source": "assets/art/characters/fox/fox_base.png",
+ "canvas": [
+  1254,
+  1254
+ ],
+ "feet": [
+  627,
+  1254
+ ],
+ "bones": [
+  {
+   "name": "Body",
+   "parent": "",
+   "at": [
+    645,
+    900
+   ]
+  },
+  {
+   "name": "Head",
+   "parent": "Body",
+   "at": [
+    655,
+    492
+   ]
+  },
+  {
+   "name": "EarNear",
+   "parent": "Head",
+   "at": [
+    575,
+    268
+   ]
+  },
+  {
+   "name": "EarFar",
+   "parent": "Head",
+   "at": [
+    688,
+    170
+   ]
+  },
+  {
+   "name": "ScarfEnd",
+   "parent": "Body",
+   "at": [
+    746,
+    562
+   ]
+  },
+  {
+   "name": "Tail",
+   "parent": "Body",
+   "at": [
+    540,
+    888
+   ]
+  },
+  {
+   "name": "TailTip",
+   "parent": "Tail",
+   "at": [
+    372,
+    905
+   ]
+  },
+  {
+   "name": "Shoulder_near",
+   "parent": "Body",
+   "at": [
+    600,
+    578
+   ]
+  },
+  {
+   "name": "Elbow_near",
+   "parent": "Shoulder_near",
+   "at": [
+    551,
+    676
+   ]
+  },
+  {
+   "name": "Wrist_near",
+   "parent": "Elbow_near",
+   "at": [
+    503,
+    764
+   ]
+  },
+  {
+   "name": "Shoulder_far",
+   "parent": "Body",
+   "at": [
+    748,
+    690
+   ]
+  },
+  {
+   "name": "Elbow_far",
+   "parent": "Shoulder_far",
+   "at": [
+    776,
+    742
+   ]
+  },
+  {
+   "name": "Wrist_far",
+   "parent": "Elbow_far",
+   "at": [
+    806,
+    792
+   ]
+  },
+  {
+   "name": "Hip_near",
+   "parent": "Body",
+   "at": [
+    598,
+    899
+   ]
+  },
+  {
+   "name": "Knee_near",
+   "parent": "Hip_near",
+   "at": [
+    548,
+    1035
+   ]
+  },
+  {
+   "name": "Ankle_near",
+   "parent": "Knee_near",
+   "at": [
+    522,
+    1150
+   ]
+  },
+  {
+   "name": "Hip_far",
+   "parent": "Body",
+   "at": [
+    692,
+    897
+   ]
+  },
+  {
+   "name": "Knee_far",
+   "parent": "Hip_far",
+   "at": [
+    682,
+    1035
+   ]
+  },
+  {
+   "name": "Ankle_far",
+   "parent": "Knee_far",
+   "at": [
+    674,
+    1150
+   ]
+  }
+ ],
+ "layers": [
+  {
+   "name": "tail",
+   "file": "tail.png",
+   "at": [
+    234,
+    582
+   ],
+   "base": "Body",
+   "chains": [
+    {
+     "base": "Body",
+     "joints": [
+      {
+       "bone": "Tail",
+       "at": [
+        540,
+        888
+       ],
+       "toward": [
+        372,
+        905
+       ],
+       "soft": 36
+      },
+      {
+       "bone": "TailTip",
+       "at": [
+        372,
+        905
+       ],
+       "toward": [
+        300,
+        700
+       ],
+       "soft": 60
+      }
+     ],
+     "area": null
+    }
+   ],
+   "far_side": false
+  },
+  {
+   "name": "arm_far",
+   "file": "arm_far.png",
+   "at": [
+    717,
+    638
+   ],
+   "base": "Body",
+   "chains": [
+    {
+     "base": "Body",
+     "joints": [
+      {
+       "bone": "Shoulder_far",
+       "at": [
+        748,
+        690
+       ],
+       "toward": [
+        776,
+        742
+       ],
+       "soft": 14
+      },
+      {
+       "bone": "Elbow_far",
+       "at": [
+        776,
+        742
+       ],
+       "toward": [
+        806,
+        792
+       ],
+       "soft": 16
+      },
+      {
+       "bone": "Wrist_far",
+       "at": [
+        806,
+        792
+       ],
+       "toward": [
+        826,
+        830
+       ],
+       "soft": 10
+      }
+     ],
+     "area": null
+    }
+   ],
+   "far_side": true
+  },
+  {
+   "name": "leg_far",
+   "file": "leg_far.png",
+   "at": [
+    545,
+    788
+   ],
+   "base": "Body",
+   "chains": [
+    {
+     "base": "Body",
+     "joints": [
+      {
+       "bone": "Hip_far",
+       "at": [
+        692,
+        897
+       ],
+       "toward": [
+        682,
+        1035
+       ],
+       "soft": 44
+      },
+      {
+       "bone": "Knee_far",
+       "at": [
+        682,
+        1035
+       ],
+       "toward": [
+        674,
+        1150
+       ],
+       "soft": 30
+      }
+     ],
+     "area": null
+    }
+   ],
+   "far_side": true
+  },
+  {
+   "name": "foot_far",
+   "file": "foot_far.png",
+   "at": [
+    631,
+    1144
+   ],
+   "base": "Ankle_far",
+   "chains": [],
+   "far_side": true
+  },
+  {
+   "name": "head",
+   "file": "head.png",
+   "at": [
+    440,
+    23
+   ],
+   "base": "Head",
+   "chains": [
+    {
+     "base": "Head",
+     "joints": [
+      {
+       "bone": "EarNear",
+       "at": [
+        575,
+        268
+       ],
+       "toward": [
+        585,
+        40
+       ],
+       "soft": 52
+      }
+     ],
+     "area": [
+      [
+       470,
+       0
+      ],
+      [
+       600,
+       0
+      ],
+      [
+       640,
+       110
+      ],
+      [
+       664,
+       185
+      ],
+      [
+       650,
+       300
+      ],
+      [
+       470,
+       330
+      ]
+     ]
+    },
+    {
+     "base": "Head",
+     "joints": [
+      {
+       "bone": "EarFar",
+       "at": [
+        688,
+        170
+       ],
+       "toward": [
+        690,
+        70
+       ],
+       "soft": 18
+      }
+     ],
+     "area": [
+      [
+       655,
+       55
+      ],
+      [
+       722,
+       55
+      ],
+      [
+       726,
+       172
+      ],
+      [
+       660,
+       188
+      ]
+     ]
+    }
+   ],
+   "far_side": false
+  },
+  {
+   "name": "body",
+   "file": "body.png",
+   "at": [
+    482,
+    491
+   ],
+   "base": "Body",
+   "chains": [
+    {
+     "base": "Body",
+     "joints": [
+      {
+       "bone": "Hip_near",
+       "at": [
+        598,
+        899
+       ],
+       "toward": [
+        548,
+        1035
+       ],
+       "soft": 44
+      },
+      {
+       "bone": "Knee_near",
+       "at": [
+        548,
+        1035
+       ],
+       "toward": [
+        522,
+        1150
+       ],
+       "soft": 30
+      }
+     ],
+     "area": null
+    }
+   ],
+   "far_side": false
+  },
+  {
+   "name": "foot_near",
+   "file": "foot_near.png",
+   "at": [
+    417,
+    1151
+   ],
+   "base": "Ankle_near",
+   "chains": [],
+   "far_side": false
+  },
+  {
+   "name": "arm_near",
+   "file": "arm_near.png",
+   "at": [
+    423,
+    539
+   ],
+   "base": "Body",
+   "chains": [
+    {
+     "base": "Body",
+     "joints": [
+      {
+       "bone": "Shoulder_near",
+       "at": [
+        600,
+        578
+       ],
+       "toward": [
+        551,
+        676
+       ],
+       "soft": 26
+      },
+      {
+       "bone": "Elbow_near",
+       "at": [
+        551,
+        676
+       ],
+       "toward": [
+        503,
+        764
+       ],
+       "soft": 22
+      },
+      {
+       "bone": "Wrist_near",
+       "at": [
+        503,
+        764
+       ],
+       "toward": [
+        480,
+        815
+       ],
+       "soft": 12
+      }
+     ],
+     "area": null
+    }
+   ],
+   "far_side": false
+  },
+  {
+   "name": "scarf",
+   "file": "scarf.png",
+   "at": [
+    575,
+    472
+   ],
+   "base": "Body",
+   "chains": [
+    {
+     "base": "Body",
+     "joints": [
+      {
+       "bone": "ScarfEnd",
+       "at": [
+        746,
+        562
+       ],
+       "toward": [
+        752,
+        660
+       ],
+       "soft": 18
+      }
+     ],
+     "area": [
+      [
+       700,
+       548
+      ],
+      [
+       800,
+       548
+      ],
+      [
+       800,
+       712
+      ],
+      [
+       700,
+       712
+      ]
+     ]
+    }
+   ],
+   "far_side": false
+  }
+ ],
+ "soles": {
+  "near": {
+   "heel": [
+    -46,
+    78
+   ],
+   "toe": [
+    104,
+    76
+   ]
+  },
+  "far": {
+   "heel": [
+    -34,
+    76
+   ],
+   "toe": [
+    152,
+    72
+   ]
+  }
+ },
+ "eye_box": [
+  636,
+  186,
+  790,
+  400
+ ],
+ "mouth_box": [
+  680,
+  380,
+  880,
+  500
+ ],
+ "note": "All positions are in the picture's pixels. Made by tools/build_fox_rig.py; edit the tables in that script and run it again rather than editing this file."
+}

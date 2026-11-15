@@ -34,6 +34,24 @@ func _config() -> Dictionary:
 					["8_surprised", {"face": "surprised", "mouth": "surprised", "head": -0.035, "rise": 3.0}],
 				],
 			}
+		"fox":
+			var poses := []
+			var labels := ["contact", "down", "passing", "up", "contact", "down", "passing", "up"]
+			for index in 8:
+				poses.append(["w%d_%s" % [index + 1, labels[index]], {"walk": index / 8.0}])
+			poses.append_array([
+				["f1_rest", {}],
+				["f2_blink", {"blink": true}],
+				["f3_talk_half", {"mouth": "half", "talk": 0.5, "gesture": 1.0}],
+				["f4_talk_open", {"mouth": "open", "talk": 1.0, "gesture": 1.0}],
+				["f5_sad", {"face": "sad", "mouth": "sad", "head": 0.07, "ears": -0.2, "tail": -0.16}],
+				["f6_surprised", {"face": "surprised", "mouth": "open", "head": -0.045, "ears": 0.04, "tail": 0.12}],
+			])
+			return {
+				"script": "res://game/characters/thaaloob/fox_rig.gd",
+				"canvas": Vector2(1254, 1254), "feet": Vector2(627, 1254), "scale": 0.3617,
+				"poses": poses,
+			}
 	return {}
 
 

@@ -85,6 +85,11 @@ func _run() -> void:
 		_log("DONE grandpa_animation")
 		get_tree().quit()
 		return
+	if _path == "fox_animation":
+		await _fox_animation_path()
+		_log("DONE fox_animation")
+		get_tree().quit()
+		return
 	if _path == "stream_bridge":
 		await _stream_bridge_path()
 		_log("DONE stream_bridge")
@@ -2674,3 +2679,57 @@ func _grandpa_animation_path() -> void:
 	await get_tree().create_timer(1.6).timeout
 	_expect(rig.expression == "happy" and not rig._mouth.visible, "smile returns after the line")
 	await _shot("smile_again")
+
+
+
+## Focused check of Thaaloob's rig in FoxRock: rig replaces the picture, blink, talking mouth,
+## expressions, and the walk that starts by itself when he is moved sideways.
+func _fox_animation_path() -> void:
+	# The meeting scene of the room plays first, quickly; the rig is then watched at normal speed.
+	Engine.time_scale = 8.0
+	await Globals.new_game()
+	R.goto_room("FoxRock")
+	await _wait_room("FoxRock")
+	await _wait_idle()
+	while Lines.busy:
+		await get_tree().process_frame
+	Engine.time_scale = 1.0 if _real or not _shots_dir.is_empty() else 4.0
+	var fox: PopochiuCharacter = C.get_character("Thaaloob")
+	var rig := fox.get_node_or_null("Rig") as FoxRig
+	_expect(rig != null, "Thaaloob has his rig")
+	if rig == null:
+		return
+	var picture: Sprite2D = fox.get_node("Sprite2D")
+	_expect(rig.visible and not picture.visible, "rig replaces the still picture")
+	_expect(rig.scale.is_equal_approx(picture.scale), "rig has the picture's size and facing")
+	await _shot("idle")
+	rig.blink()
+	await get_tree().create_timer(.09).timeout
+	_expect(rig._blinking and rig._closed_eyes.visible, "blink closes his eye")
+	await get_tree().create_timer(.3).timeout
+	_expect(not rig._blinking, "blink reopens his eye")
+	fox._set_mouth_talking(true)
+	await get_tree().create_timer(.4).timeout
+	_expect(rig.talking, "talking drives his mouth")
+	await _shot("talking")
+	fox._set_mouth_talking(false)
+	_expect(not rig.talking and not rig._mouth.visible, "mouth closes when he stops")
+	for mood in ["sad", "surprised"]:
+		fox.animate_line(mood, "")
+		await get_tree().create_timer(.45).timeout
+		_expect(rig.expression == mood and rig._upper_face.visible, "line tone drives " + mood)
+		await _shot(mood)
+	fox.animate_line("playful", "")
+	var start := fox.position
+	var away := start + Vector2(-260 if rig.scale.x < 0 else 260, 0)
+	var stroll := create_tween()
+	stroll.tween_property(fox, "position", away, 2.0)
+	for frame in 5:
+		await get_tree().create_timer(.3).timeout
+		await _shot("walk_%d" % frame)
+	_expect(rig.walking and rig._lift > 0.9, "moving sideways starts the walk")
+	await stroll.finished
+	await get_tree().create_timer(.6).timeout
+	_expect(not rig.walking and is_zero_approx(rig._lift), "the walk stops when he stops")
+	await _shot("stopped")
+	fox.position = start

@@ -1,0 +1,51 @@
+{
+  "source": "assets/art/characters/arnoob/arnoob_base.png",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "eyes": [
+    [
+      793,
+      352,
+      891,
+      441
+    ]
+  ],
+  "mouth": [
+    845,
+    439,
+    962,
+    517
+  ],
+  "features_anchor": [
+    842.0,
+    396.5
+  ],
+  "mouth_anchor": [
+    903.5,
+    478.0
+  ],
+  "extra_anchor": [
+    783,
+    307
+  ],
+  "extra_mask": [
+    [
+      607,
+      0
+    ],
+    [
+      860,
+      0
+    ],
+    [
+      889,
+      307
+    ],
+    [
+      660,
+      348
+    ]
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "source": "assets/art/characters/ghazlana/ghazlana_base.png",
+  "canvas": [
+    1184,
+    1328
+  ],
+  "eyes": [
+    [
+      751,
+      263,
+      875,
+      369
+    ]
+  ],
+  "mouth": [
+    880,
+    390,
+    959,
+    434
+  ],
+  "features_anchor": [
+    813.0,
+    316.0
+  ],
+  "mouth_anchor": [
+    919.5,
+    412.0
+  ],
+  "extra_anchor": [
+    189,
+    677
+  ],
+  "extra_mask": [
+    [
+      24,
+      637
+    ],
+    [
+      189,
+      611
+    ],
+    [
+      260,
+      730
+    ],
+    [
+      154,
+      850
+    ],
+    [
+      18,
+      797
+    ]
+  ]
+}

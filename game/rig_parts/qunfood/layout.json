@@ -1,0 +1,51 @@
+{
+  "source": "assets/art/characters/qunfood/qunfood_base.png",
+  "canvas": [
+    1312,
+    1199
+  ],
+  "eyes": [
+    [
+      855,
+      341,
+      953,
+      468
+    ]
+  ],
+  "mouth": [
+    926,
+    474,
+    1067,
+    540
+  ],
+  "features_anchor": [
+    904.0,
+    404.5
+  ],
+  "mouth_anchor": [
+    996.5,
+    507.0
+  ],
+  "extra_anchor": [
+    669,
+    342
+  ],
+  "extra_mask": [
+    [
+      585,
+      174
+    ],
+    [
+      766,
+      180
+    ],
+    [
+      768,
+      360
+    ],
+    [
+      589,
+      367
+    ]
+  ]
+}

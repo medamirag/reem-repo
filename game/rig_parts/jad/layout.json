@@ -1,0 +1,35 @@
+{
+  "source": "assets/cut/grandpa_bench/grandpa_seated.png",
+  "canvas": [
+    604,
+    982
+  ],
+  "eyes": [
+    [
+      265,
+      123,
+      312,
+      178
+    ],
+    [
+      334,
+      116,
+      368,
+      166
+    ]
+  ],
+  "mouth": [
+    287,
+    191,
+    389,
+    262
+  ],
+  "features_anchor": [
+    319.75,
+    145.75
+  ],
+  "mouth_anchor": [
+    338.0,
+    226.5
+  ]
+}

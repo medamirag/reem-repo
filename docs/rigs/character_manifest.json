@@ -5,179 +5,30 @@
     "body_type": "insect",
     "biped_animal": false,
     "reference_sheet": "assets/art/characters/ankoob/ankoob_sheet.png",
-    "current_sprite": "assets/art/characters/ankoob/ankoob_sheet.png",
+    "current_sprite": "assets/art/characters/ankoob/ankoob_body.png",
     "canvas": [
-      2172,
-      724
+      1254,
+      1254
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/ankoob/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/ankoob/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/ankoob/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/ankoob/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/ankoob/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/ankoob/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/ankoob/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/ankoob/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/ankoob/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/ankoob/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/ankoob/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/ankoob/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/ankoob/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/ankoob/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/ankoob/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/ankoob/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/ankoob/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/ankoob/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/ankoob/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/ankoob/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/ankoob/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_upper",
-        "path": "game/rig_parts/ankoob/leg_05_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_lower",
-        "path": "game/rig_parts/ankoob/leg_05_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_paw",
-        "path": "game/rig_parts/ankoob/leg_05_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_upper",
-        "path": "game/rig_parts/ankoob/leg_06_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_lower",
-        "path": "game/rig_parts/ankoob/leg_06_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_paw",
-        "path": "game/rig_parts/ankoob/leg_06_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_07_upper",
-        "path": "game/rig_parts/ankoob/leg_07_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_07_lower",
-        "path": "game/rig_parts/ankoob/leg_07_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_07_paw",
-        "path": "game/rig_parts/ankoob/leg_07_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_08_upper",
-        "path": "game/rig_parts/ankoob/leg_08_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_08_lower",
-        "path": "game/rig_parts/ankoob/leg_08_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_08_paw",
-        "path": "game/rig_parts/ankoob/leg_08_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/ankoob/mouth_closed.png",
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/ankoob_parts.png"
+    "review": "docs/rigs/ankoob_parts.png",
+    "tier": "light"
   },
   {
     "name": "ant_beetle",
@@ -190,154 +41,9 @@
       1312,
       1199
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/ant_beetle/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/ant_beetle/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/ant_beetle/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/ant_beetle/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/ant_beetle/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/ant_beetle/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/ant_beetle/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/ant_beetle/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/ant_beetle/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/ant_beetle/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/ant_beetle/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/ant_beetle/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/ant_beetle/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/ant_beetle/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/ant_beetle/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/ant_beetle/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/ant_beetle/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/ant_beetle/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/ant_beetle/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/ant_beetle/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/ant_beetle/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_upper",
-        "path": "game/rig_parts/ant_beetle/leg_05_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_lower",
-        "path": "game/rig_parts/ant_beetle/leg_05_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_paw",
-        "path": "game/rig_parts/ant_beetle/leg_05_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_upper",
-        "path": "game/rig_parts/ant_beetle/leg_06_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_lower",
-        "path": "game/rig_parts/ant_beetle/leg_06_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_paw",
-        "path": "game/rig_parts/ant_beetle/leg_06_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_near",
-        "path": "game/rig_parts/ant_beetle/antenna_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_far",
-        "path": "game/rig_parts/ant_beetle/antenna_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/ant_beetle_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "ant_queen",
@@ -350,154 +56,9 @@
       1024,
       1536
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/ant_queen/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/ant_queen/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/ant_queen/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/ant_queen/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/ant_queen/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/ant_queen/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/ant_queen/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/ant_queen/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/ant_queen/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/ant_queen/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/ant_queen/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/ant_queen/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/ant_queen/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/ant_queen/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/ant_queen/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/ant_queen/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/ant_queen/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/ant_queen/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/ant_queen/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/ant_queen/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/ant_queen/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_upper",
-        "path": "game/rig_parts/ant_queen/leg_05_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_lower",
-        "path": "game/rig_parts/ant_queen/leg_05_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_paw",
-        "path": "game/rig_parts/ant_queen/leg_05_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_upper",
-        "path": "game/rig_parts/ant_queen/leg_06_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_lower",
-        "path": "game/rig_parts/ant_queen/leg_06_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_paw",
-        "path": "game/rig_parts/ant_queen/leg_06_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_near",
-        "path": "game/rig_parts/ant_queen/antenna_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_far",
-        "path": "game/rig_parts/ant_queen/antenna_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/ant_queen_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "ant_worker",
@@ -510,154 +71,9 @@
       1086,
       1448
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/ant_worker/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/ant_worker/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/ant_worker/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/ant_worker/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/ant_worker/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/ant_worker/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/ant_worker/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/ant_worker/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/ant_worker/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/ant_worker/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/ant_worker/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/ant_worker/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/ant_worker/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/ant_worker/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/ant_worker/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/ant_worker/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/ant_worker/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/ant_worker/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/ant_worker/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/ant_worker/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/ant_worker/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_upper",
-        "path": "game/rig_parts/ant_worker/leg_05_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_lower",
-        "path": "game/rig_parts/ant_worker/leg_05_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_paw",
-        "path": "game/rig_parts/ant_worker/leg_05_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_upper",
-        "path": "game/rig_parts/ant_worker/leg_06_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_lower",
-        "path": "game/rig_parts/ant_worker/leg_06_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_paw",
-        "path": "game/rig_parts/ant_worker/leg_06_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_near",
-        "path": "game/rig_parts/ant_worker/antenna_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_far",
-        "path": "game/rig_parts/ant_worker/antenna_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/ant_worker_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "arnoob",
@@ -672,127 +88,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/arnoob/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/arnoob/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/arnoob/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/arnoob/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/arnoob/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/arnoob/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/arnoob/mouth_closed.png",
+        "status": "done"
       },
       {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/arnoob/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/arnoob/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/arnoob/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/arnoob/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/arnoob/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/arnoob/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/arnoob/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/arnoob/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/arnoob/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/arnoob/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/arnoob/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/arnoob/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/arnoob/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/arnoob/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/arnoob/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/arnoob/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/arnoob/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/arnoob/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "ears",
+        "path": "game/rig_parts/arnoob/ears.png",
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/arnoob_parts.png"
+    "review": "docs/rigs/arnoob_parts.png",
+    "tier": "light"
   },
   {
     "name": "astronomer",
@@ -805,114 +122,9 @@
       1024,
       1536
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/astronomer/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/astronomer/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/astronomer/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/astronomer/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/astronomer/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/astronomer/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/astronomer/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/astronomer/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/astronomer/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/astronomer/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/astronomer/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/astronomer/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/astronomer/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/astronomer/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/astronomer/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/astronomer/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/astronomer/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/astronomer/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/astronomer/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/astronomer/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/astronomer/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/astronomer_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "bees",
@@ -929,162 +141,23 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/bees/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/bees/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/bees/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/bees/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/bees/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/bees/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/bees/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/bees/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/bees/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/bees/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/bees/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/bees/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/bees/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/bees/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/bees/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/bees/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/bees/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/bees/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/bees/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/bees/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/bees/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_upper",
-        "path": "game/rig_parts/bees/leg_05_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_lower",
-        "path": "game/rig_parts/bees/leg_05_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_05_paw",
-        "path": "game/rig_parts/bees/leg_05_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_upper",
-        "path": "game/rig_parts/bees/leg_06_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_lower",
-        "path": "game/rig_parts/bees/leg_06_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_06_paw",
-        "path": "game/rig_parts/bees/leg_06_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_near",
-        "path": "game/rig_parts/bees/antenna_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "antenna_far",
-        "path": "game/rig_parts/bees/antenna_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/bees/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/bees/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/bees/mouth_closed.png",
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/bees_parts.png"
+    "review": "docs/rigs/bees_parts.png",
+    "tier": "light"
   },
   {
     "name": "dafdoof",
@@ -1099,127 +172,23 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/dafdoof/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/dafdoof/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/dafdoof/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/dafdoof/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/dafdoof/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/dafdoof/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/dafdoof/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/dafdoof/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/dafdoof/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/dafdoof/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/dafdoof/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/dafdoof/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/dafdoof/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/dafdoof/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/dafdoof/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/dafdoof/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/dafdoof/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/dafdoof/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/dafdoof/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/dafdoof/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/dafdoof/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/dafdoof/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/dafdoof/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/dafdoof/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/dafdoof/mouth_closed.png",
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/dafdoof_parts.png"
+    "review": "docs/rigs/dafdoof_parts.png",
+    "tier": "light"
   },
   {
     "name": "dubb",
@@ -1234,127 +203,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/dubb/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/dubb/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/dubb/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/dubb/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/dubb/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/dubb/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/dubb/mouth_closed.png",
+        "status": "done"
       },
       {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/dubb/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/dubb/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/dubb/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/dubb/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/dubb/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/dubb/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/dubb/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/dubb/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/dubb/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/dubb/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/dubb/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/dubb/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/dubb/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/dubb/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/dubb/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/dubb/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/dubb/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/dubb/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "ears",
+        "path": "game/rig_parts/dubb/ears.png",
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/dubb_parts.png"
+    "review": "docs/rigs/dubb_parts.png",
+    "tier": "light"
   },
   {
     "name": "duck",
@@ -1369,97 +239,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/duck/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/duck/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/duck/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/duck/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/duck/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/duck/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/duck/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/duck/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/duck/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/duck/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/duck/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/duck/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/duck/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/duck/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/duck/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/duck/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/duck/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/duck/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/duck/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/duck_parts.png"
+    "review": "docs/rigs/duck_parts.png",
+    "tier": "light"
   },
   {
     "name": "fox",
@@ -1478,125 +279,126 @@
       {
         "name": "head_blank",
         "path": "game/rig_parts/fox/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "eyes_open",
         "path": "game/rig_parts/fox/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "eyes_closed",
         "path": "game/rig_parts/fox/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_closed",
         "path": "game/rig_parts/fox/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/fox/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_smile",
         "path": "game/rig_parts/fox/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_sad",
         "path": "game/rig_parts/fox/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_surprised",
         "path": "game/rig_parts/fox/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "torso",
         "path": "game/rig_parts/fox/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_arm_near",
         "path": "game/rig_parts/fox/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_arm_near",
         "path": "game/rig_parts/fox/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "hand_near",
         "path": "game/rig_parts/fox/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_leg_near",
         "path": "game/rig_parts/fox/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_leg_near",
         "path": "game/rig_parts/fox/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "foot_near",
         "path": "game/rig_parts/fox/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_arm_far",
         "path": "game/rig_parts/fox/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_arm_far",
         "path": "game/rig_parts/fox/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "hand_far",
         "path": "game/rig_parts/fox/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_leg_far",
         "path": "game/rig_parts/fox/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_leg_far",
         "path": "game/rig_parts/fox/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "foot_far",
         "path": "game/rig_parts/fox/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/fox/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "ear_near",
         "path": "game/rig_parts/fox/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "ear_far",
         "path": "game/rig_parts/fox/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/fox_parts.png"
+    "review": "docs/rigs/fox_parts.png",
+    "tier": "full"
   },
   {
     "name": "ghazlana",
@@ -1611,127 +413,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/ghazlana/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/ghazlana/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/ghazlana/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/ghazlana/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/ghazlana/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/ghazlana/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/ghazlana/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/ghazlana/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/ghazlana/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/ghazlana/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/ghazlana/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/ghazlana/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/ghazlana/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/ghazlana/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/ghazlana/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/ghazlana/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/ghazlana/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/ghazlana/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/ghazlana/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/ghazlana/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/ghazlana/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/ghazlana/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/ghazlana/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/ghazlana/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/ghazlana/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/ghazlana_parts.png"
+    "review": "docs/rigs/ghazlana_parts.png",
+    "tier": "light"
   },
   {
     "name": "goldfinch",
@@ -1744,99 +447,9 @@
       1312,
       1199
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/goldfinch/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/goldfinch/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/goldfinch/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/goldfinch/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/goldfinch/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/goldfinch/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/goldfinch/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/goldfinch/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/goldfinch/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/goldfinch/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/goldfinch/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/goldfinch/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/goldfinch/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/goldfinch/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/goldfinch/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/goldfinch/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/goldfinch/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/goldfinch/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/goldfinch_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "grandpa",
@@ -1857,125 +470,121 @@
       {
         "name": "head_blank",
         "path": "game/rig_parts/grandpa/head_blank.png",
-        "status": "problem: generated draft rejected; no accepted part"
+        "status": "done"
       },
       {
         "name": "eyes_open",
         "path": "game/rig_parts/grandpa/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "eyes_closed",
         "path": "game/rig_parts/grandpa/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_closed",
         "path": "game/rig_parts/grandpa/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/grandpa/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_smile",
         "path": "game/rig_parts/grandpa/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_sad",
         "path": "game/rig_parts/grandpa/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_surprised",
         "path": "game/rig_parts/grandpa/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "torso",
         "path": "game/rig_parts/grandpa/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_arm_near",
         "path": "game/rig_parts/grandpa/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_arm_near",
         "path": "game/rig_parts/grandpa/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "hand_near",
         "path": "game/rig_parts/grandpa/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_leg_near",
         "path": "game/rig_parts/grandpa/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_leg_near",
         "path": "game/rig_parts/grandpa/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "foot_near",
         "path": "game/rig_parts/grandpa/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_arm_far",
         "path": "game/rig_parts/grandpa/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_arm_far",
         "path": "game/rig_parts/grandpa/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "hand_far",
         "path": "game/rig_parts/grandpa/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "upper_leg_far",
         "path": "game/rig_parts/grandpa/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "lower_leg_far",
         "path": "game/rig_parts/grandpa/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "foot_far",
         "path": "game/rig_parts/grandpa/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "cane",
         "path": "game/rig_parts/grandpa/cane.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "bench",
-        "path": "game/rig_parts/grandpa/bench.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "footstool",
-        "path": "game/rig_parts/grandpa/footstool.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "seat_and_stool",
+        "path": "game/rig_parts/grandpa/seat_and_stool.png",
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/grandpa_parts.png"
+    "review": "docs/rigs/grandpa_parts.png",
+    "tier": "full"
   },
   {
     "name": "gull_bird",
@@ -1988,99 +597,9 @@
       1155,
       1362
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/gull_bird/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/gull_bird/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/gull_bird/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/gull_bird/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/gull_bird/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/gull_bird/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/gull_bird/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/gull_bird/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/gull_bird/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/gull_bird/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/gull_bird/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/gull_bird/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/gull_bird/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/gull_bird/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/gull_bird/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/gull_bird/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/gull_bird/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/gull_bird/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/gull_bird_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "gull_octopus",
@@ -2093,174 +612,9 @@
       1310,
       1200
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/gull_octopus/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/gull_octopus/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/gull_octopus/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/gull_octopus/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/gull_octopus/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/gull_octopus/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/gull_octopus/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/gull_octopus/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/gull_octopus/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_01_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_01_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_01_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_01_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_02_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_02_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_02_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_02_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_03_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_03_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_03_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_03_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_04_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_04_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_04_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_04_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_05_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_05_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_05_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_05_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_05_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_05_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_06_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_06_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_06_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_06_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_06_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_06_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_07_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_07_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_07_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_07_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_07_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_07_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_08_upper",
-        "path": "game/rig_parts/gull_octopus/tentacle_08_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_08_lower",
-        "path": "game/rig_parts/gull_octopus/tentacle_08_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tentacle_08_tip",
-        "path": "game/rig_parts/gull_octopus/tentacle_08_tip.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/gull_octopus_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "gull_turtle",
@@ -2273,119 +627,9 @@
       1670,
       941
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/gull_turtle/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/gull_turtle/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/gull_turtle/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/gull_turtle/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/gull_turtle/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/gull_turtle/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/gull_turtle/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/gull_turtle/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/gull_turtle/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/gull_turtle/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/gull_turtle/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/gull_turtle/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/gull_turtle/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/gull_turtle/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/gull_turtle/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/gull_turtle/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/gull_turtle/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/gull_turtle/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/gull_turtle/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/gull_turtle/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/gull_turtle/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/gull_turtle/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/gull_turtle_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "iftar_traveller",
@@ -2398,114 +642,9 @@
       1312,
       1199
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/iftar_traveller/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/iftar_traveller/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/iftar_traveller/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/iftar_traveller/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/iftar_traveller/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/iftar_traveller/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/iftar_traveller/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/iftar_traveller/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/iftar_traveller/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/iftar_traveller/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/iftar_traveller/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/iftar_traveller/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/iftar_traveller/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/iftar_traveller/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/iftar_traveller/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/iftar_traveller/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/iftar_traveller/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/iftar_traveller/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/iftar_traveller/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/iftar_traveller/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/iftar_traveller/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/iftar_traveller_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "market_baker",
@@ -2518,114 +657,9 @@
       1024,
       1536
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/market_baker/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/market_baker/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/market_baker/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/market_baker/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/market_baker/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/market_baker/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/market_baker/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/market_baker/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/market_baker/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/market_baker/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/market_baker/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/market_baker/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/market_baker/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/market_baker/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/market_baker/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/market_baker/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/market_baker/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/market_baker/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/market_baker/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/market_baker/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/market_baker/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/market_baker_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "market_cat",
@@ -2638,129 +672,9 @@
       1312,
       1199
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/market_cat/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/market_cat/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/market_cat/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/market_cat/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/market_cat/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/market_cat/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/market_cat/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/market_cat/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/market_cat/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/market_cat/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/market_cat/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/market_cat/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/market_cat/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/market_cat/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/market_cat/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/market_cat/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/market_cat/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/market_cat/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/market_cat/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/market_cat/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/market_cat/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/market_cat/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/market_cat/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/market_cat/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/market_cat_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "musaharati",
@@ -2773,114 +687,9 @@
       1024,
       1536
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/musaharati/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/musaharati/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/musaharati/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/musaharati/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/musaharati/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/musaharati/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/musaharati/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/musaharati/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/musaharati/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/musaharati/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/musaharati/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/musaharati/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/musaharati/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/musaharati/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/musaharati/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/musaharati/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/musaharati/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/musaharati/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/musaharati/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/musaharati/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/musaharati/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/musaharati_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "observatory_bat",
@@ -2893,109 +702,9 @@
       1536,
       1024
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/observatory_bat/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/observatory_bat/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/observatory_bat/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/observatory_bat/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/observatory_bat/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/observatory_bat/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/observatory_bat/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/observatory_bat/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/observatory_bat/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/observatory_bat/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/observatory_bat/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/observatory_bat/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/observatory_bat/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/observatory_bat/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/observatory_bat/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/observatory_bat/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/observatory_bat/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/observatory_bat/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/observatory_bat/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/observatory_bat/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/observatory_bat_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "observatory_owl",
@@ -3008,99 +717,9 @@
       1254,
       1254
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/observatory_owl/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/observatory_owl/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/observatory_owl/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/observatory_owl/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/observatory_owl/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/observatory_owl/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/observatory_owl/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/observatory_owl/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/observatory_owl/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/observatory_owl/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/observatory_owl/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/observatory_owl/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/observatory_owl/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/observatory_owl/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/observatory_owl/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/observatory_owl/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/observatory_owl/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/observatory_owl/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/observatory_owl_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "qarqoor",
@@ -3115,127 +734,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/qarqoor/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/qarqoor/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/qarqoor/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/qarqoor/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/qarqoor/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/qarqoor/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/qarqoor/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/qarqoor/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/qarqoor/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/qarqoor/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/qarqoor/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/qarqoor/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/qarqoor/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/qarqoor/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/qarqoor/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/qarqoor/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/qarqoor/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/qarqoor/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/qarqoor/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/qarqoor/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/qarqoor/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/qarqoor/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/qarqoor/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/qarqoor/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/qarqoor/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/qarqoor_parts.png"
+    "review": "docs/rigs/qarqoor_parts.png",
+    "tier": "light"
   },
   {
     "name": "qatqoota",
@@ -3250,127 +770,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/qatqoota/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/qatqoota/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/qatqoota/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/qatqoota/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/qatqoota/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/qatqoota/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/qatqoota/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/qatqoota/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/qatqoota/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/qatqoota/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/qatqoota/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/qatqoota/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/qatqoota/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/qatqoota/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/qatqoota/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/qatqoota/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/qatqoota/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/qatqoota/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/qatqoota/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/qatqoota/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/qatqoota/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/qatqoota/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/qatqoota/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/qatqoota/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/qatqoota/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/qatqoota_parts.png"
+    "review": "docs/rigs/qatqoota_parts.png",
+    "tier": "light"
   },
   {
     "name": "qunfood",
@@ -3385,127 +806,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/qunfood/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/qunfood/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/qunfood/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/qunfood/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/qunfood/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/qunfood/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/qunfood/mouth_closed.png",
+        "status": "done"
       },
       {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/qunfood/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/qunfood/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/qunfood/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/qunfood/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/qunfood/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/qunfood/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/qunfood/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/qunfood/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/qunfood/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/qunfood/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/qunfood/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/qunfood/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/qunfood/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/qunfood/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/qunfood/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/qunfood/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/qunfood/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/qunfood/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "ears",
+        "path": "game/rig_parts/qunfood/ears.png",
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/qunfood_parts.png"
+    "review": "docs/rigs/qunfood_parts.png",
+    "tier": "light"
   },
   {
     "name": "sinjoob",
@@ -3520,127 +842,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/sinjoob/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/sinjoob/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/sinjoob/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/sinjoob/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/sinjoob/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/sinjoob/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/sinjoob/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/sinjoob/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/sinjoob/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_near",
-        "path": "game/rig_parts/sinjoob/upper_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_near",
-        "path": "game/rig_parts/sinjoob/lower_arm_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_near",
-        "path": "game/rig_parts/sinjoob/hand_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/sinjoob/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/sinjoob/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/sinjoob/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_arm_far",
-        "path": "game/rig_parts/sinjoob/upper_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_arm_far",
-        "path": "game/rig_parts/sinjoob/lower_arm_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "hand_far",
-        "path": "game/rig_parts/sinjoob/hand_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/sinjoob/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/sinjoob/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/sinjoob/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/sinjoob/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/sinjoob/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/sinjoob/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/sinjoob/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/sinjoob_parts.png"
+    "review": "docs/rigs/sinjoob_parts.png",
+    "tier": "light"
   },
   {
     "name": "snow_deer",
@@ -3653,129 +876,9 @@
       1158,
       1358
     ],
-    "parts": [
-      {
-        "name": "head_blank",
-        "path": "game/rig_parts/snow_deer/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/snow_deer/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_closed",
-        "path": "game/rig_parts/snow_deer/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/snow_deer/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_open",
-        "path": "game/rig_parts/snow_deer/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/snow_deer/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/snow_deer/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/snow_deer/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/snow_deer/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_upper",
-        "path": "game/rig_parts/snow_deer/leg_01_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_lower",
-        "path": "game/rig_parts/snow_deer/leg_01_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_01_paw",
-        "path": "game/rig_parts/snow_deer/leg_01_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_upper",
-        "path": "game/rig_parts/snow_deer/leg_02_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_lower",
-        "path": "game/rig_parts/snow_deer/leg_02_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_02_paw",
-        "path": "game/rig_parts/snow_deer/leg_02_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_upper",
-        "path": "game/rig_parts/snow_deer/leg_03_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_lower",
-        "path": "game/rig_parts/snow_deer/leg_03_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_03_paw",
-        "path": "game/rig_parts/snow_deer/leg_03_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_upper",
-        "path": "game/rig_parts/snow_deer/leg_04_upper.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_lower",
-        "path": "game/rig_parts/snow_deer/leg_04_lower.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "leg_04_paw",
-        "path": "game/rig_parts/snow_deer/leg_04_paw.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "tail",
-        "path": "game/rig_parts/snow_deer/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_near",
-        "path": "game/rig_parts/snow_deer/ear_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "ear_far",
-        "path": "game/rig_parts/snow_deer/ear_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/snow_deer_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "tawoos",
@@ -3790,97 +893,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/tawoos/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/tawoos/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/tawoos/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/tawoos/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/tawoos/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/tawoos/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/tawoos/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/tawoos/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/tawoos/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/tawoos/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/tawoos/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/tawoos/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/tawoos/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/tawoos/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/tawoos/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/tawoos/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/tawoos/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/tawoos/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/tawoos/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/tawoos_parts.png"
+    "review": "docs/rigs/tawoos_parts.png",
+    "tier": "light"
   },
   {
     "name": "wooden_boat",
@@ -3893,24 +927,9 @@
       2172,
       724
     ],
-    "parts": [
-      {
-        "name": "hull",
-        "path": "game/rig_parts/wooden_boat/hull.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "oar_left",
-        "path": "game/rig_parts/wooden_boat/oar_left.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "oar_right",
-        "path": "game/rig_parts/wooden_boat/oar_right.png",
-        "status": "problem: not generated; do not rig placeholders"
-      }
-    ],
-    "review": "docs/rigs/wooden_boat_parts.png"
+    "parts": [],
+    "review": null,
+    "tier": "code_only"
   },
   {
     "name": "duckling1",
@@ -3925,97 +944,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/duckling1/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/duckling1/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/duckling1/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/duckling1/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/duckling1/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/duckling1/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/duckling1/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/duckling1/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/duckling1/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/duckling1/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/duckling1/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/duckling1/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/duckling1/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/duckling1/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/duckling1/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/duckling1/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/duckling1/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/duckling1/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/duckling1/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/duckling1_parts.png"
+    "review": "docs/rigs/duckling1_parts.png",
+    "tier": "light"
   },
   {
     "name": "duckling2",
@@ -4030,97 +980,28 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/duckling2/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/duckling2/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/duckling2/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/duckling2/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/duckling2/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/duckling2/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/duckling2/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/duckling2/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/duckling2/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/duckling2/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/duckling2/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/duckling2/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/duckling2/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/duckling2/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/duckling2/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/duckling2/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/duckling2/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/duckling2/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/duckling2/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/duckling2_parts.png"
+    "review": "docs/rigs/duckling2_parts.png",
+    "tier": "light"
   },
   {
     "name": "duckling3",
@@ -4135,96 +1016,60 @@
     ],
     "parts": [
       {
-        "name": "head_blank",
-        "path": "game/rig_parts/duckling3/head_blank.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "eyes_open",
-        "path": "game/rig_parts/duckling3/eyes_open.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
         "name": "eyes_closed",
         "path": "game/rig_parts/duckling3/eyes_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_closed",
-        "path": "game/rig_parts/duckling3/mouth_closed.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
         "name": "mouth_open",
         "path": "game/rig_parts/duckling3/mouth_open.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       },
       {
-        "name": "mouth_smile",
-        "path": "game/rig_parts/duckling3/mouth_smile.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_sad",
-        "path": "game/rig_parts/duckling3/mouth_sad.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "mouth_surprised",
-        "path": "game/rig_parts/duckling3/mouth_surprised.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "torso",
-        "path": "game/rig_parts/duckling3/torso.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_near",
-        "path": "game/rig_parts/duckling3/wing_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_near",
-        "path": "game/rig_parts/duckling3/upper_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_near",
-        "path": "game/rig_parts/duckling3/lower_leg_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_near",
-        "path": "game/rig_parts/duckling3/foot_near.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "wing_far",
-        "path": "game/rig_parts/duckling3/wing_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "upper_leg_far",
-        "path": "game/rig_parts/duckling3/upper_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "lower_leg_far",
-        "path": "game/rig_parts/duckling3/lower_leg_far.png",
-        "status": "problem: not generated; do not rig placeholders"
-      },
-      {
-        "name": "foot_far",
-        "path": "game/rig_parts/duckling3/foot_far.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "name": "mouth_closed",
+        "path": "game/rig_parts/duckling3/mouth_closed.png",
+        "status": "done"
       },
       {
         "name": "tail",
         "path": "game/rig_parts/duckling3/tail.png",
-        "status": "problem: not generated; do not rig placeholders"
+        "status": "done"
       }
     ],
-    "review": "docs/rigs/duckling3_parts.png"
+    "review": "docs/rigs/duckling3_parts.png",
+    "tier": "light"
+  },
+  {
+    "name": "jad",
+    "aliases": [
+      "Jad single-sprite appearance of Grandpa"
+    ],
+    "body_type": "human",
+    "biped_animal": false,
+    "reference_sheet": "assets/art/characters/grandpa/grandpa_sheet.png",
+    "current_sprite": "assets/cut/grandpa_bench/grandpa_seated.png",
+    "canvas": [
+      604,
+      982
+    ],
+    "parts": [
+      {
+        "name": "eyes_closed",
+        "path": "game/rig_parts/jad/eyes_closed.png",
+        "status": "done"
+      },
+      {
+        "name": "mouth_open",
+        "path": "game/rig_parts/jad/mouth_open.png",
+        "status": "done"
+      },
+      {
+        "name": "mouth_closed",
+        "path": "game/rig_parts/jad/mouth_closed.png",
+        "status": "done"
+      }
+    ],
+    "review": "docs/rigs/jad_parts.png",
+    "tier": "light"
   }
 ]

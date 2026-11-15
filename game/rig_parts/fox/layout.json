@@ -1,0 +1,141 @@
+{
+  "source": "assets/art/characters/fox/fox_base.png",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "eyes": [
+    [
+      658,
+      250,
+      779,
+      390
+    ]
+  ],
+  "mouth": [
+    686,
+    387,
+    815,
+    444
+  ],
+  "features_anchor": [
+    718.5,
+    320.0
+  ],
+  "mouth_anchor": [
+    750.5,
+    415.5
+  ],
+  "root": [
+    627,
+    1254
+  ],
+  "head_pivot": [
+    640,
+    465
+  ],
+  "joints": {
+    "upper_arm_near": [
+      617,
+      584
+    ],
+    "lower_arm_near": [
+      552,
+      704
+    ],
+    "hand_near": [
+      493,
+      787
+    ],
+    "upper_arm_far": [
+      735,
+      654
+    ],
+    "lower_arm_far": [
+      780,
+      759
+    ],
+    "hand_far": [
+      816,
+      803
+    ],
+    "upper_leg_near": [
+      595,
+      881
+    ],
+    "lower_leg_near": [
+      551,
+      1018
+    ],
+    "foot_near": [
+      521,
+      1166
+    ],
+    "upper_leg_far": [
+      694,
+      883
+    ],
+    "lower_leg_far": [
+      689,
+      1017
+    ],
+    "foot_far": [
+      691,
+      1171
+    ],
+    "tail": [
+      538,
+      891
+    ],
+    "ear_near": [
+      570,
+      252
+    ],
+    "ear_far": [
+      685,
+      174
+    ]
+  },
+  "draw_order": [
+    "tail",
+    "upper_leg_far",
+    "lower_leg_far",
+    "foot_far",
+    "upper_leg_near",
+    "lower_leg_near",
+    "foot_near",
+    "torso",
+    "upper_arm_far",
+    "lower_arm_far",
+    "hand_far",
+    "upper_arm_near",
+    "lower_arm_near",
+    "hand_near",
+    "head_blank",
+    "ear_far",
+    "ear_near",
+    "eyes_open",
+    "mouth_smile"
+  ],
+  "neutral_face_max_difference": 4,
+  "bone_paths": {
+    "head_blank": "Skeleton2D/Body/Head",
+    "upper_arm_near": "Skeleton2D/Body/Shoulder_near",
+    "lower_arm_near": "Skeleton2D/Body/Shoulder_near/Elbow_near",
+    "hand_near": "Skeleton2D/Body/Shoulder_near/Elbow_near/Wrist_near",
+    "upper_leg_near": "Skeleton2D/Body/Hip_near",
+    "lower_leg_near": "Skeleton2D/Body/Hip_near/Knee_near",
+    "foot_near": "Skeleton2D/Body/Hip_near/Knee_near/Ankle_near",
+    "upper_arm_far": "Skeleton2D/Body/Shoulder_far",
+    "lower_arm_far": "Skeleton2D/Body/Shoulder_far/Elbow_far",
+    "hand_far": "Skeleton2D/Body/Shoulder_far/Elbow_far/Wrist_far",
+    "upper_leg_far": "Skeleton2D/Body/Hip_far",
+    "lower_leg_far": "Skeleton2D/Body/Hip_far/Knee_far",
+    "foot_far": "Skeleton2D/Body/Hip_far/Knee_far/Ankle_far",
+    "tail": "Skeleton2D/Body/Tail",
+    "ear_near": "Skeleton2D/Body/Head/EarNear",
+    "ear_far": "Skeleton2D/Body/Head/EarFar"
+  },
+  "scene": "game/rig_parts/fox/static_rig.tscn",
+  "alignment_note": "Source-canvas bottom centre, matching the existing centered Sprite2D offset; preserve original padding and effective flip/scale."
+}

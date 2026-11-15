@@ -1,0 +1,138 @@
+{
+  "source": "assets/cut/grandpa_bench/grandpa_seated.png",
+  "canvas": [
+    604,
+    982
+  ],
+  "eyes": [
+    [
+      265,
+      123,
+      312,
+      178
+    ],
+    [
+      334,
+      116,
+      368,
+      166
+    ]
+  ],
+  "mouth": [
+    287,
+    191,
+    389,
+    262
+  ],
+  "features_anchor": [
+    319.75,
+    145.75
+  ],
+  "mouth_anchor": [
+    338.0,
+    226.5
+  ],
+  "root": [
+    302,
+    982
+  ],
+  "head_pivot": [
+    247,
+    280
+  ],
+  "joints": {
+    "upper_arm_near": [
+      161,
+      344
+    ],
+    "lower_arm_near": [
+      200,
+      470
+    ],
+    "hand_near": [
+      275,
+      526
+    ],
+    "upper_arm_far": [
+      331,
+      355
+    ],
+    "lower_arm_far": [
+      401,
+      481
+    ],
+    "hand_far": [
+      437,
+      540
+    ],
+    "upper_leg_near": [
+      290,
+      629
+    ],
+    "lower_leg_near": [
+      306,
+      785
+    ],
+    "foot_near": [
+      313,
+      902
+    ],
+    "upper_leg_far": [
+      353,
+      619
+    ],
+    "lower_leg_far": [
+      431,
+      743
+    ],
+    "foot_far": [
+      467,
+      819
+    ],
+    "cane": [
+      126,
+      539
+    ]
+  },
+  "draw_order": [
+    "seat_and_stool",
+    "upper_leg_far",
+    "lower_leg_far",
+    "foot_far",
+    "upper_leg_near",
+    "lower_leg_near",
+    "foot_near",
+    "cane",
+    "torso",
+    "upper_arm_far",
+    "lower_arm_far",
+    "hand_far",
+    "upper_arm_near",
+    "lower_arm_near",
+    "head_blank",
+    "eyes_open",
+    "mouth_smile"
+  ],
+  "neutral_hidden": [
+    "hand_near"
+  ],
+  "neutral_face_max_difference": 4,
+  "bone_paths": {
+    "head_blank": "Skeleton2D/Body/Head",
+    "upper_arm_near": "Skeleton2D/Body/Shoulder_near",
+    "lower_arm_near": "Skeleton2D/Body/Shoulder_near/Elbow_near",
+    "hand_near": "Skeleton2D/Body/Shoulder_near/Elbow_near/Wrist_near",
+    "upper_leg_near": "Skeleton2D/Body/Hip_near",
+    "lower_leg_near": "Skeleton2D/Body/Hip_near/Knee_near",
+    "foot_near": "Skeleton2D/Body/Hip_near/Knee_near/Ankle_near",
+    "upper_arm_far": "Skeleton2D/Body/Shoulder_far",
+    "lower_arm_far": "Skeleton2D/Body/Shoulder_far/Elbow_far",
+    "hand_far": "Skeleton2D/Body/Shoulder_far/Elbow_far/Wrist_far",
+    "upper_leg_far": "Skeleton2D/Body/Hip_far",
+    "lower_leg_far": "Skeleton2D/Body/Hip_far/Knee_far",
+    "foot_far": "Skeleton2D/Body/Hip_far/Knee_far/Ankle_far",
+    "cane": "Skeleton2D/Body/Cane"
+  },
+  "scene": "game/rig_parts/grandpa/static_rig.tscn",
+  "alignment_note": "Source-canvas bottom centre, matching the existing centered Sprite2D offset; preserve original padding and effective flip/scale."
+}

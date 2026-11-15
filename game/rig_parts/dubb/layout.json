@@ -1,0 +1,51 @@
+{
+  "source": "assets/art/characters/dubb/dubb_base.png",
+  "canvas": [
+    1283,
+    1226
+  ],
+  "eyes": [
+    [
+      751,
+      218,
+      819,
+      313
+    ]
+  ],
+  "mouth": [
+    831,
+    351,
+    922,
+    401
+  ],
+  "features_anchor": [
+    785.0,
+    265.5
+  ],
+  "mouth_anchor": [
+    876.5,
+    376.0
+  ],
+  "extra_anchor": [
+    500,
+    233
+  ],
+  "extra_mask": [
+    [
+      411,
+      40
+    ],
+    [
+      629,
+      49
+    ],
+    [
+      629,
+      245
+    ],
+    [
+      411,
+      245
+    ]
+  ]
+}

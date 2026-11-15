@@ -1,0 +1,35 @@
+{
+  "source": "assets/cut/bees_sheet/shahd_body.png",
+  "canvas": [
+    578,
+    510
+  ],
+  "eyes": [
+    [
+      367,
+      171,
+      454,
+      300
+    ],
+    [
+      477,
+      172,
+      535,
+      292
+    ]
+  ],
+  "mouth": [
+    451,
+    301,
+    520,
+    337
+  ],
+  "features_anchor": [
+    458.25,
+    233.75
+  ],
+  "mouth_anchor": [
+    485.5,
+    319.0
+  ]
+}

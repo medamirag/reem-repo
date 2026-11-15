@@ -607,3 +607,6 @@ Close the rear scarf/sleeve notch by extending the rounded body overlap; remove 
 
 ### Fable cutout preparation (2026-11-15; incomplete checkpoint)
 Prepare source-matched transparent neutral parts and labelled original/parts review sheets for all non-Reem cast before any animation. Exact source/part paths and anatomy are in docs/rigs/character_manifest.json; known source/variant gaps are documented in docs/FABLE_BRIEF.md. No new rigs or animation in this preparation stage. Reem's final walk stays unchanged.
+
+### Reduced Fable preparation (2026-11-15)
+Full source-cut static rigs only for Grandpa (approved seated pose) and Thaaloob. Light single-sprite overlays for Shahd, the Jad appearance and base-valley animals. Packs and minor characters use code only with no new images. Reem remains final. Cancel superseded queue rows without deleting them. Reconstruct only hidden surfaces, retain visible source artwork exactly, and prepare bones/pivots without authoring animation.

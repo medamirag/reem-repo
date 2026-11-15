@@ -1,0 +1,35 @@
+{
+  "source": "assets/art/characters/ankoob/ankoob_body.png",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "eyes": [
+    [
+      431,
+      810,
+      586,
+      984
+    ],
+    [
+      650,
+      810,
+      815,
+      983
+    ]
+  ],
+  "mouth": [
+    527,
+    946,
+    715,
+    1072
+  ],
+  "features_anchor": [
+    620.5,
+    896.75
+  ],
+  "mouth_anchor": [
+    621.0,
+    1009.0
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "source": "assets/art/characters/dafdoof/dafdoof_base.png",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "eyes": [
+    [
+      509,
+      95,
+      670,
+      376
+    ]
+  ],
+  "mouth": [
+    626,
+    353,
+    809,
+    527
+  ],
+  "features_anchor": [
+    589.5,
+    235.5
+  ],
+  "mouth_anchor": [
+    717.5,
+    440.0
+  ]
+}

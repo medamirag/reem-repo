@@ -90,6 +90,11 @@ func _run() -> void:
 		_log("DONE fox_animation")
 		get_tree().quit()
 		return
+	if _path == "dialogue_portrait":
+		await _dialogue_portrait_path()
+		_log("DONE dialogue_portrait")
+		get_tree().quit()
+		return
 	if _path == "light_sheet":
 		await _light_sheet()
 		_log("DONE light_sheet")
@@ -2752,6 +2757,78 @@ func _fox_animation_path() -> void:
 
 ## Focused check that Thaaloob and Grandpa use their rigs where they are plain pictures: the
 ## NarrowPass prop (mood, mouth and the walk when he steps free), one pack prop, the festival.
+## Step 4: the speaker's round portrait in the subtitle bar and the gentle zoom on key lines.
+func _dialogue_portrait_path() -> void:
+	R.goto_room("Yard")
+	await _wait_room("Yard")
+	Globals.settings.zoom_enabled = true
+	var camera: PopochiuMainCamera = E.camera
+	# Grandpa, a key line: portrait on the left, the picture comes closer.
+	Lines.say("jad_s1_017")
+	await get_tree().create_timer(1.3).timeout
+	var bar := _visible_bar()
+	_expect(bar != null and bar.portrait.visible, "Grandpa's portrait shows while he speaks")
+	if bar:
+		_expect(bar.portrait.position.x < 400.0, "Grandpa's portrait is on the left")
+		_expect(bar.text_label.get_global_rect().position.x > bar.portrait.get_global_rect().end.x, "the text stays clear of the portrait")
+	_expect(Lines.portraits.speaker == "Jad", "the portrait stage plays Grandpa")
+	_expect(camera.zoom.x > 1.25, "the key line zooms in gently (zoom %.2f)" % camera.zoom.x)
+	await _shot("grandpa_key_line")
+	while Lines.busy:
+		await get_tree().process_frame
+	_expect(is_equal_approx(camera.zoom.x, 1.0) and camera.offset.is_zero_approx(), "the zoom is back before the line ends")
+	_expect(Lines.portraits.speaker == "", "the portrait stage rests after the line")
+
+	# Reem, an ordinary line: portrait on the right, no zoom.
+	Lines.say("reem_s1_012")
+	await get_tree().create_timer(.9).timeout
+	bar = _visible_bar()
+	_expect(bar != null and bar.portrait.visible, "Reem's portrait shows while she speaks")
+	if bar:
+		_expect(bar.portrait.position.x > 1400.0, "Reem's portrait is on the right")
+		_expect(bar.text_label.get_global_rect().end.x < bar.portrait.get_global_rect().position.x, "the text stays clear of Reem's portrait")
+	_expect(is_equal_approx(camera.zoom.x, 1.0), "an ordinary line does not zoom")
+	var reem_rig: Node = Lines.portraits._stages["Reem"].rig
+	_expect(reem_rig.talking, "the portrait's mouth moves with the voice")
+	await _shot("reem_line")
+	while Lines.busy:
+		await get_tree().process_frame
+	_expect(not reem_rig.talking, "the portrait's mouth closes after the voice")
+
+	# A key line of Reem with a sad tone, zoom turned off in the settings.
+	Globals.settings.zoom_enabled = false
+	Lines.say("reem_s1_021a")
+	await get_tree().create_timer(1.0).timeout
+	_expect(is_equal_approx(camera.zoom.x, 1.0), "no zoom when it is turned off in the settings")
+	_expect(reem_rig.expression == "sad", "the portrait shows the mood of the line")
+	await _shot("reem_sad_line")
+	while Lines.busy:
+		await get_tree().process_frame
+	Globals.settings.zoom_enabled = true
+
+	for who: String in ["Thaaloob", "Shahd"]:
+		_expect(Lines.portraits.texture_for(who) != null, "%s has a portrait" % who)
+	if not _shots_dir.is_empty() and DisplayServer.get_name() != "headless":
+		Lines.portraits.start("Thaaloob", "embarrassed", "")
+		await get_tree().create_timer(.5).timeout
+		var sheet := Image.create(640, 320, false, Image.FORMAT_RGBA8)
+		sheet.blit_rect(Lines.portraits.texture_for("Thaaloob").get_image(), Rect2i(0, 0, 320, 320), Vector2i.ZERO)
+		Lines.portraits.start("Shahd", "very happy", "")
+		await get_tree().create_timer(.5).timeout
+		sheet.blit_rect(Lines.portraits.texture_for("Shahd").get_image(), Rect2i(0, 0, 320, 320), Vector2i(320, 0))
+		Lines.portraits.stop()
+		sheet.save_png(_shots_dir.path_join("portraits_fox_shahd.png"))
+	_expect(Globals.settings.zoom_control != null, "the settings screen has the zoom switch")
+
+
+func _visible_bar() -> ReemSubtitleBar:
+	for bar in get_tree().get_nodes_in_group("subtitle_bars"):
+		if (bar as Control).is_visible_in_tree() and (bar as Control).modulate.a > 0.5 and (bar.get_parent() as CanvasItem == null or (bar.get_parent() as CanvasItem).modulate.a > 0.5):
+			if (bar as ReemSubtitleBar).text_label.text != "":
+				return bar
+	return null
+
+
 ## Review picture of every light rig: rest, blink, talking and tail/ears to both sides, at about
 ## game size. Saved to docs/rigs/light_review/sheet_<n>.png (needs a window: it draws).
 func _light_sheet() -> void:

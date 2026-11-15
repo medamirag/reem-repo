@@ -14,6 +14,8 @@ var music_enabled := false
 var voice_volume := 1.0
 var effects_volume := 1.0
 var text_size := 40
+## The gentle zoom on a few key dialogue lines (Lines.say, "zoom": true in lines.json).
+var zoom_enabled := true
 var is_open := false
 var _was_blocked := false
 var _labels: Dictionary
@@ -29,6 +31,7 @@ var music_control: CheckButton
 var voice_control: HSlider
 var effects_control: HSlider
 var text_control: OptionButton
+var zoom_control: CheckButton
 
 
 func _ready() -> void:
@@ -61,6 +64,7 @@ func load_preferences() -> void:
 		text_size = int(config.get_value("text", "size", 40))
 		if text_size not in TEXT_SIZES:
 			text_size = 40
+		zoom_enabled = bool(config.get_value("picture", "zoom", true))
 	_apply()
 
 
@@ -84,6 +88,7 @@ func save_preferences() -> void:
 	config.set_value("sound", "voice", voice_volume)
 	config.set_value("sound", "effects", effects_volume)
 	config.set_value("text", "size", text_size)
+	config.set_value("picture", "zoom", zoom_enabled)
 	if config.save(CONFIG_PATH) != OK:
 		push_error("[Settings] Could not save preferences")
 
@@ -149,6 +154,7 @@ func _sync_controls() -> void:
 	voice_control.set_value_no_signal(voice_volume * 100.0)
 	effects_control.set_value_no_signal(effects_volume * 100.0)
 	text_control.select(TEXT_SIZES.find(text_size))
+	zoom_control.set_pressed_no_signal(zoom_enabled)
 
 
 func _changed() -> void:
@@ -156,6 +162,7 @@ func _changed() -> void:
 	voice_volume = voice_control.value / 100.0
 	effects_volume = effects_control.value / 100.0
 	text_size = TEXT_SIZES[text_control.selected]
+	zoom_enabled = zoom_control.button_pressed
 	_apply()
 	save_preferences()
 
@@ -220,6 +227,10 @@ func _build_controls() -> void:
 	text_control.get_popup().add_theme_font_size_override("font_size", 36)
 	text_row.add_child(text_control)
 	text_row.add_child(_label(_labels.text_size))
+	zoom_control = CheckButton.new()
+	zoom_control.text = _labels.zoom
+	_style_text(zoom_control)
+	rows.add_child(zoom_control)
 	_add_parent_button(rows, _parent_data.title, _show_parent_gate)
 	close_button = Button.new()
 	close_button.text = _labels.back
@@ -231,6 +242,7 @@ func _build_controls() -> void:
 	voice_control.value_changed.connect(func(_value: float): _changed())
 	effects_control.value_changed.connect(func(_value: float): _changed())
 	text_control.item_selected.connect(func(_index: int): _changed())
+	zoom_control.toggled.connect(func(_value: bool): _changed())
 	_sync_controls()
 	_root.hide()
 

@@ -596,6 +596,7 @@
   "jad_festival_thanks": {
     "speaker": "Jad",
     "tone": "warm",
+    "zoom": true,
     "text": "كُلَّمَا سَاعَدْتِ صَدِيقًا يَا رِيمُ، حَمَلَ مَعَكِ شَيْئًا إِلَى الْمِهْرَجَانِ. جَزَاكِ اللهُ خَيْرًا.",
     "audio": "res://assets/audio/lines/jad_festival_thanks.mp3"
   },
@@ -662,6 +663,7 @@
   "fox_pass_sorry": {
     "speaker": "Thaaloob",
     "tone": "embarrassed",
+    "zoom": true,
     "text": "سَاعَدْتِنِي بَعْدَ كُلِّ مَا فَعَلْتُ. أَنَا آسِفٌ يَا رِيمُ.",
     "audio": "res://assets/audio/lines/fox_pass_sorry.mp3"
   },
@@ -836,6 +838,7 @@
   "jad_s1_017": {
     "speaker": "Jad",
     "tone": "wise",
+    "zoom": true,
     "text": "وخُذي دفتري أيضاً. كتبتُ فيه أسرارَ الوادي، فإذا حِرتِ في شيءٍ فانظري فيه.",
     "audio": "res://assets/audio/lines/jad_s1_017.mp3"
   },
@@ -860,12 +863,14 @@
   "reem_s1_021a": {
     "speaker": "Reem",
     "tone": "ashamed",
+    "zoom": true,
     "text": "يا جدّي… أنا آسفة. أخذتُ السَّلّةَ فوقعتْ مرآتُكَ وانشرَخَت. لم أقصِد.",
     "audio": "res://assets/audio/lines/reem_s1_021a.mp3"
   },
   "jad_s1_022a": {
     "speaker": "Jad",
     "tone": "tender, proud",
+    "zoom": true,
     "text": "بارَكَ اللهُ فيكِ يا ريم على صدقِكِ. المرآةُ تُصلَح، أمّا الصِّدقُ فلا يُشترى بمال.",
     "audio": "res://assets/audio/lines/jad_s1_022a.mp3"
   },
@@ -884,12 +889,14 @@
   "reem_s1_021b": {
     "speaker": "Reem",
     "tone": "very ashamed",
+    "zoom": true,
     "text": "يا جدّي… أنا آسفة. انشرَخَتْ مرآتُكَ صباحاً، وخبّأتُها لأنّي خِفتُ أن تحزَن.",
     "audio": "res://assets/audio/lines/reem_s1_021b.mp3"
   },
   "jad_s1_022b": {
     "speaker": "Jad",
     "tone": "tender",
+    "zoom": true,
     "text": "أشكُرُكِ لأنّكِ عُدتِ وقُلتِ الحقيقةَ يا ريم. كلُّنا نخطئ، والرُّجوعُ عن الخطأِ شجاعة.",
     "audio": "res://assets/audio/lines/jad_s1_022b.mp3"
   },
@@ -1040,6 +1047,7 @@
   "bee_s2_031": {
     "speaker": "Shahd",
     "tone": "very happy",
+    "zoom": true,
     "text": "سبحانَ الله! تفتَّحَتْ كلُّها! جزاكِ اللهُ خيراً يا ريم!",
     "audio": "res://assets/audio/lines/bee_s2_031.mp3"
   },
@@ -1124,12 +1132,14 @@
   "reem_s2_057b": {
     "speaker": "Reem",
     "tone": "polite, honest",
+    "zoom": true,
     "text": "يا ثعلوب، هذه المرآةُ أمانةٌ من جدّي، والحجرُ لم يكنْ عجيباً. أرجو أن تُعيدَها إليّ.",
     "audio": "res://assets/audio/lines/reem_s2_057b.mp3"
   },
   "fox_s2_058b": {
     "speaker": "Thaaloob",
     "tone": "embarrassed",
+    "zoom": true,
     "text": "أمم… حسناً، حسناً. خُذيها… كنتُ أمزحُ فقط!",
     "audio": "res://assets/audio/lines/fox_s2_058b.mp3"
   },

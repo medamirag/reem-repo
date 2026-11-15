@@ -18,7 +18,14 @@ var _lines := {}
 var said := {}
 ## True while a line is being spoken (word discovery waits until it is over).
 var busy := false
+## Speaker of the line being spoken ("" between lines): the subtitle bar shows this portrait.
+var current_speaker := ""
+## The portraits of the speakers (game/scripts/portrait_stage.gd).
+var portraits: PortraitStage
+## How close the picture comes on the few key lines marked "zoom": true in lines.json.
+const ZOOM := 1.3
 var _voice: AudioStreamPlayer = null
+var _zoom_tween: Tween
 var _line_serial := 0
 
 
@@ -30,7 +37,11 @@ func _ready() -> void:
 	_voice = AudioStreamPlayer.new()
 	_voice.bus = ReemSettings.VOICE_BUS
 	_voice.name = "Voice"
+	portraits = PortraitStage.new()
+	portraits.name = "Portraits"
+	add_child(portraits)
 	_voice.finished.connect(func():
+		portraits.set_talking(false)
 		if is_instance_valid(C.player) and C.player.has_method("_set_mouth_talking"):
 			C.player._set_mouth_talking(false))
 	add_child(_voice)
@@ -77,6 +88,12 @@ func say(line_id: String, narrate := false) -> void:
 	if not narrate and is_instance_valid(R.current) and R.current.has_character(speaker):
 		character = C.get_character(speaker)
 
+	current_speaker = speaker
+	portraits.start(speaker, str(line.get("tone", "")), text)
+	var zoomed := false
+	if bool(line.get("zoom", false)):
+		zoomed = _zoom_in(speaker, character)
+
 	if character != null and character.has_method("animate_line"):
 		character.animate_line(str(line.get("tone", "")), text)
 	# The speaker may be in the room as a plain prop with a rig (Thaaloob in several rooms,
@@ -106,12 +123,57 @@ func say(line_id: String, narrate := false) -> void:
 	for actor in actors:
 		if is_instance_valid(actor):
 			actor.set_talking(false)
+	portraits.stop()
+	current_speaker = ""
+	if zoomed:
+		# Back to the whole picture before anything else happens (a choice never shows zoomed).
+		await _zoom_out()
 	busy = false
 
 
 #endregion
 
 #region Private ####################################################################################
+# Brings the picture gently closer to the speaker (key lines only). False = nothing was done:
+# the zoom is turned off in the settings, or the speaker is not on screen.
+func _zoom_in(speaker: String, character: PopochiuCharacter) -> bool:
+	if not is_instance_valid(Globals.settings) or not Globals.settings.zoom_enabled:
+		return false
+	var camera: PopochiuMainCamera = E.camera
+	if not is_instance_valid(camera) or camera.is_shaking:
+		return false
+	var focus: Node2D = character
+	if focus == null and speaker == "Reem" and is_instance_valid(C.player) and C.player.is_inside_tree():
+		focus = C.player
+	if focus == null:
+		for actor in get_tree().get_nodes_in_group("line_actor_" + speaker):
+			if actor is Node2D and (actor as Node2D).is_visible_in_tree() and not actor.get_viewport() is SubViewport:
+				focus = actor
+				break
+	if focus == null:
+		return false
+	var face := focus.global_position + Vector2(0, -260)
+	var shift := (face - camera.get_screen_center_position()) * 0.85
+	if is_instance_valid(_zoom_tween):
+		_zoom_tween.kill()
+	_zoom_tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_zoom_tween.tween_property(camera, "zoom", Vector2.ONE * ZOOM, 0.8)
+	_zoom_tween.tween_property(camera, "offset", shift, 0.8)
+	return true
+
+
+func _zoom_out() -> void:
+	var camera: PopochiuMainCamera = E.camera
+	if not is_instance_valid(camera):
+		return
+	if is_instance_valid(_zoom_tween):
+		_zoom_tween.kill()
+	_zoom_tween = create_tween().set_parallel().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_zoom_tween.tween_property(camera, "zoom", Vector2.ONE, 0.6)
+	_zoom_tween.tween_property(camera, "offset", Vector2.ZERO, 0.6)
+	await _zoom_tween.finished
+
+
 func _load_lines() -> void:
 	var file := FileAccess.open(LINES_PATH, FileAccess.READ)
 

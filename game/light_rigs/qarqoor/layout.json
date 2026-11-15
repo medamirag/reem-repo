@@ -1,0 +1,59 @@
+{
+  "source": "assets/art/characters/qarqoor/qarqoor_base.png",
+  "canvas": [
+    1097,
+    1434
+  ],
+  "speaker": "Qarqoor",
+  "eyes_box": [
+    279,
+    252,
+    554,
+    452
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py.",
+  "mouth_box": [
+    308,
+    476,
+    442,
+    558
+  ],
+  "extra_anchor": [
+    768,
+    889
+  ],
+  "extra_mask": [
+    [
+      724,
+      545
+    ],
+    [
+      932,
+      430
+    ],
+    [
+      1075,
+      516
+    ],
+    [
+      1031,
+      703
+    ],
+    [
+      856,
+      674
+    ],
+    [
+      900,
+      817
+    ],
+    [
+      834,
+      903
+    ],
+    [
+      724,
+      918
+    ]
+  ]
+}

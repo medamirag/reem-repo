@@ -1,0 +1,47 @@
+{
+  "source": "assets/art/characters/ghazlana/ghazlana_base.png",
+  "canvas": [
+    1184,
+    1328
+  ],
+  "speaker": "Ghazlana",
+  "eyes_box": [
+    730,
+    243,
+    895,
+    388
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py.",
+  "mouth_box": [
+    868,
+    387,
+    972,
+    466
+  ],
+  "extra_anchor": [
+    189,
+    677
+  ],
+  "extra_mask": [
+    [
+      24,
+      637
+    ],
+    [
+      189,
+      611
+    ],
+    [
+      260,
+      730
+    ],
+    [
+      154,
+      850
+    ],
+    [
+      18,
+      797
+    ]
+  ]
+}

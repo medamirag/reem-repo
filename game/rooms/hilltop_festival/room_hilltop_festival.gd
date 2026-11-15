@@ -111,6 +111,7 @@ func _sync_festival() -> void:
 	if complete:
 		_place_jad(false)
 	FoxRig.dress(self)
+	LightRig.dress(self)
 
 
 func _sprite(layer_node: Node2D, path: String, feet: Vector2, height: float) -> Sprite2D:

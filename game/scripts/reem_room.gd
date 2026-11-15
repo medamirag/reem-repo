@@ -57,6 +57,8 @@ func _on_room_entered() -> void:
 	# Thaaloob looks and moves the same in every room, also where he is a plain prop.
 	FoxRig.dress(self)
 	_setup_room()
+	# Shahd and the valley animals stay one picture each, with blinking, breathing and a tail.
+	LightRig.dress(self)
 	if not has_node("ProceduralEffects"):
 		var effects := ReemEffects.new()
 		effects.name = "ProceduralEffects"
@@ -122,7 +124,10 @@ func _on_item_used_on(_obj: PopochiuClickable, _item: PopochiuInventoryItem) -> 
 #region Public #####################################################################################
 ## Called by RoomProp / RoomHotspot / NpcCharacter. Not meant to be overridden.
 func object_clicked(obj: PopochiuClickable) -> void:
+	# The clicked friend listens (small bounce) while the lines of this click play.
+	LightRig.talk_with(obj)
 	await _on_object_clicked(obj)
+	LightRig.talk_with(null)
 
 
 ## Called by RoomProp / RoomHotspot / NpcCharacter. Not meant to be overridden.

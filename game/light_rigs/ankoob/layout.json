@@ -1,0 +1,15 @@
+{
+  "source": "assets/art/characters/ankoob/ankoob_body.png",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "speaker": "Ankoob",
+  "eyes_box": [
+    409,
+    787,
+    837,
+    1006
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py."
+}

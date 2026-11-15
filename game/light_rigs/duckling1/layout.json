@@ -1,0 +1,41 @@
+{
+  "source": "assets/cut/stream/duckling1.png",
+  "canvas": [
+    274,
+    323
+  ],
+  "speaker": "",
+  "eyes_box": [
+    157,
+    37,
+    225,
+    111
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py.",
+  "extra_anchor": [
+    52,
+    197
+  ],
+  "extra_mask": [
+    [
+      0,
+      139
+    ],
+    [
+      47,
+      155
+    ],
+    [
+      77,
+      181
+    ],
+    [
+      55,
+      226
+    ],
+    [
+      8,
+      213
+    ]
+  ]
+}

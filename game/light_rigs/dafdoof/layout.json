@@ -1,0 +1,15 @@
+{
+  "source": "assets/art/characters/dafdoof/dafdoof_base.png",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "speaker": "Dafdoof",
+  "eyes_box": [
+    503,
+    104,
+    679,
+    328
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py."
+}

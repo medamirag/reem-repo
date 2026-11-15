@@ -1,0 +1,43 @@
+{
+  "source": "assets/art/characters/qunfood/qunfood_base.png",
+  "canvas": [
+    1312,
+    1199
+  ],
+  "speaker": "Qunfood",
+  "eyes_box": [
+    836,
+    320,
+    971,
+    488
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py.",
+  "mouth_box": [
+    925,
+    467,
+    1080,
+    578
+  ],
+  "extra_anchor": [
+    669,
+    342
+  ],
+  "extra_mask": [
+    [
+      585,
+      174
+    ],
+    [
+      766,
+      180
+    ],
+    [
+      768,
+      360
+    ],
+    [
+      589,
+      367
+    ]
+  ]
+}

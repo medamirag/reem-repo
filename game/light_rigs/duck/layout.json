@@ -1,0 +1,41 @@
+{
+  "source": "assets/cut/stream/duck.png",
+  "canvas": [
+    450,
+    584
+  ],
+  "speaker": "Duck",
+  "eyes_box": [
+    293,
+    55,
+    376,
+    155
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py.",
+  "extra_anchor": [
+    90,
+    374
+  ],
+  "extra_mask": [
+    [
+      0,
+      274
+    ],
+    [
+      72,
+      280
+    ],
+    [
+      126,
+      339
+    ],
+    [
+      90,
+      444
+    ],
+    [
+      0,
+      403
+    ]
+  ]
+}

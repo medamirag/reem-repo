@@ -90,6 +90,16 @@ func _run() -> void:
 		_log("DONE fox_animation")
 		get_tree().quit()
 		return
+	if _path == "light_sheet":
+		await _light_sheet()
+		_log("DONE light_sheet")
+		get_tree().quit()
+		return
+	if _path == "light_rigs":
+		await _light_rigs_path()
+		_log("DONE light_rigs")
+		get_tree().quit()
+		return
 	if _path == "rigs_everywhere":
 		await _rigs_everywhere_path()
 		_log("DONE rigs_everywhere")
@@ -2742,6 +2752,106 @@ func _fox_animation_path() -> void:
 
 ## Focused check that Thaaloob and Grandpa use their rigs where they are plain pictures: the
 ## NarrowPass prop (mood, mouth and the walk when he steps free), one pack prop, the festival.
+## Review picture of every light rig: rest, blink, talking and tail/ears to both sides, at about
+## game size. Saved to docs/rigs/light_review/sheet_<n>.png (needs a window: it draws).
+func _light_sheet() -> void:
+	LightRig.dress(self)
+	var names: Array = LightRig._known.values()
+	names.sort()
+	var poses := [{}, {"blink": true, "breath": 1.0, "sway": -1.0}, {"mouth": "half", "hop": .5, "sway": 0.0},
+			{"mouth": "open", "hop": 1.0, "sway": 1.0}]
+	var cell := Vector2(330, 330)
+	for page in 3:
+		var view := SubViewport.new()
+		view.size = Vector2i(int(cell.x) * poses.size(), int(cell.y) * 5)
+		view.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+		add_child(view)
+		var paper := ColorRect.new()
+		paper.color = Color("fff4de")
+		paper.size = view.size
+		view.add_child(paper)
+		for row in 5:
+			var index := page * 5 + row
+			if index >= names.size():
+				break
+			var path: String = LightRig._known.find_key(names[index])
+			for column in poses.size():
+				var picture := Sprite2D.new()
+				picture.texture = load(path)
+				var size := picture.texture.get_size()
+				picture.scale = Vector2.ONE * (290.0 / maxf(size.x, size.y))
+				picture.position = Vector2(column + .5, row + .5) * cell
+				view.add_child(picture)
+				LightRig.dress(picture.get_parent())
+				(picture.get_node("LightRig") as LightRig).pose_for_review(poses[column])
+		for frame in 4:
+			await get_tree().process_frame
+		await RenderingServer.frame_post_draw
+		view.get_texture().get_image().save_png("res://docs/rigs/light_review/sheet_%d.png" % (page + 1))
+		view.queue_free()
+
+
+## Step 2: Shahd and the valley animals stay one picture each, with a LightRig (blink, mouth,
+## breathing, listening bounce, tail or ears).
+func _light_rigs_path() -> void:
+	R.goto_room("OakForest")
+	await _wait_room("OakForest")
+	var squirrel := R.current.get_node_or_null("Props/Sinjoob/Sprite2D/LightRig") as LightRig
+	_expect(squirrel != null, "Sinjoob has a light rig")
+	_expect(R.current.get_node_or_null("Props/Qunfood/Sprite2D/LightRig") != null, "Qunfood has a light rig")
+	if squirrel == null:
+		return
+	var picture := squirrel.get_parent() as Sprite2D
+	var place := picture.position
+	var material := picture.material as ShaderMaterial
+	await _shot("oak_rest")
+	squirrel.blink()
+	var closed := false
+	for frame in 30:
+		await get_tree().process_frame
+		closed = closed or float(material.get_shader_parameter("blink")) > .9
+	_expect(closed, "Sinjoob blinks")
+	await get_tree().create_timer(.3).timeout
+	squirrel.set_talking(true)
+	await get_tree().create_timer(.45).timeout
+	_expect(float(material.get_shader_parameter("lift")) > 0.0, "Sinjoob bounces while talking")
+	squirrel._show_mouth("open")
+	squirrel._mouth_wait = 1.0
+	await _shot("oak_talking")
+	squirrel.set_talking(false)
+	await get_tree().create_timer(.4).timeout
+	_expect(is_zero_approx(float(material.get_shader_parameter("mouth_on"))), "his mouth closes after talking")
+	_expect(is_zero_approx(float(material.get_shader_parameter("lift"))), "he stands still again")
+	LightRig.talk_with(R.current.get_node("Props/Sinjoob"))
+	Lines.say("reem_oak_search")
+	await get_tree().create_timer(.6).timeout
+	_expect(float(material.get_shader_parameter("lift")) > 0.0, "Sinjoob listens with a small bounce while Reem speaks to him")
+	_expect(is_zero_approx(float(material.get_shader_parameter("mouth_on"))), "his mouth stays closed on Reem's voice")
+	while Lines.busy:
+		await get_tree().process_frame
+	LightRig.talk_with(null)
+	_expect(picture.position == place, "the room's own picture is not moved")
+	_expect(float(material.get_shader_parameter("extra_on")) > .5, "his tail sways")
+
+	R.goto_room("Stream")
+	await _wait_room("Stream")
+	var ducks := 0
+	for rig in R.current.find_children("LightRig", "", true, false):
+		if (rig as LightRig).character.begins_with("duck"):
+			ducks += 1
+	_expect(ducks == 4, "the duck and her three ducklings have light rigs (found %d)" % ducks)
+	await _shot("stream_ducks")
+
+	R.goto_room("BigTree")
+	await _wait_room("BigTree")
+	var bee := C.get_character("Shahd").get_node_or_null("Sprite2D/LightRig") as LightRig
+	_expect(bee != null, "Shahd has a light rig")
+	if bee:
+		bee.blink()
+		await get_tree().create_timer(.1).timeout
+		await _shot("shahd_blink")
+
+
 func _rigs_everywhere_path() -> void:
 	Engine.time_scale = 1.0 if _real or not _shots_dir.is_empty() else 4.0
 	await Globals.new_game()

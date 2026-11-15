@@ -1,0 +1,55 @@
+{
+  "source": "assets/art/characters/sinjoob/sinjoob_base.png",
+  "canvas": [
+    1086,
+    1448
+  ],
+  "speaker": "Sinjoob",
+  "eyes_box": [
+    803,
+    257,
+    967,
+    451
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py.",
+  "mouth_box": [
+    915,
+    445,
+    1015,
+    546
+  ],
+  "extra_anchor": [
+    489,
+    1014
+  ],
+  "extra_mask": [
+    [
+      0,
+      217
+    ],
+    [
+      467,
+      159
+    ],
+    [
+      597,
+      492
+    ],
+    [
+      434,
+      985
+    ],
+    [
+      521,
+      1144
+    ],
+    [
+      326,
+      1231
+    ],
+    [
+      109,
+      1100
+    ]
+  ]
+}

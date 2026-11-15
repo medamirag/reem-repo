@@ -1,0 +1,37 @@
+{
+  "source": "assets/art/characters/arnoob/arnoob_base.png",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "speaker": "Arnoob",
+  "eyes_box": [
+    774,
+    333,
+    909,
+    459
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_light_faces.py.",
+  "extra_anchor": [
+    783,
+    307
+  ],
+  "extra_mask": [
+    [
+      607,
+      0
+    ],
+    [
+      860,
+      0
+    ],
+    [
+      889,
+      307
+    ],
+    [
+      660,
+      348
+    ]
+  ]
+}

@@ -80,6 +80,11 @@ func _run() -> void:
 		_log("DONE reem_animation")
 		get_tree().quit()
 		return
+	if _path == "grandpa_animation":
+		await _grandpa_animation_path()
+		_log("DONE grandpa_animation")
+		get_tree().quit()
+		return
 	if _path == "stream_bridge":
 		await _stream_bridge_path()
 		_log("DONE stream_bridge")
@@ -2625,3 +2630,46 @@ func _mirror_ui_path() -> void:
 			for frame in 5:
 				await get_tree().process_frame
 			_expect(bar.text_label.get_line_count() <= 2 and bar.text_label.get_visible_line_count() == bar.text_label.get_line_count(), "longest dialogue fits at text size %d" % font_size)
+
+
+## Focused check of Grandpa's seated rig in the Yard: rig replaces the picture, blink, talking
+## mouth driven by the voice, mouth closed afterwards, expressions and the greeting gesture.
+func _grandpa_animation_path() -> void:
+	Engine.time_scale = 1.0 if _real or not _shots_dir.is_empty() else 4.0
+	await Globals.new_game()
+	R.goto_room("Yard")
+	await _wait_room("Yard")
+	var jad: PopochiuCharacter = C.get_character("Jad")
+	var rig := jad.get_node_or_null("Rig") as GrandpaRig
+	_expect(rig != null, "Grandpa has his seated rig")
+	if rig == null:
+		return
+	var picture: Sprite2D = jad.get_node("Sprite2D")
+	_expect(rig.visible and not picture.visible, "rig replaces the still picture")
+	_expect(rig.scale.is_equal_approx(picture.scale) and rig.position.is_equal_approx(picture.position), "rig has the picture's size, place and facing")
+	_expect(rig.get_node("Skeleton2D/Root/Chest/Head") is Bone2D, "chest and head bones exist")
+	await _shot("idle")
+	rig.blink()
+	await get_tree().create_timer(.09).timeout
+	_expect(rig._blinking and rig._closed_eyes.visible, "blink closes eyes")
+	await _shot("blink")
+	await get_tree().create_timer(.3).timeout
+	_expect(not rig._blinking and not rig._closed_eyes.visible, "blink reopens eyes")
+	Lines.say("jad_s1_011")
+	await get_tree().create_timer(.5).timeout
+	_expect(rig.talking, "voice drives Grandpa's mouth")
+	_expect(rig._hand_lift > 0.0, "greeting lifts his hand")
+	await _shot("talking_greeting")
+	await get_tree().create_timer(.4).timeout
+	await _shot("talking_2")
+	while Lines.busy:
+		await get_tree().process_frame
+	_expect(not rig.talking and not rig._mouth.visible, "mouth closes after the voice")
+	for mood in ["sad", "surprised"]:
+		jad.animate_line(mood, "")
+		await get_tree().create_timer(.4).timeout
+		_expect(rig.expression == mood and rig._mouth.visible, "line tone drives " + mood)
+		await _shot(mood)
+	await get_tree().create_timer(1.6).timeout
+	_expect(rig.expression == "happy" and not rig._mouth.visible, "smile returns after the line")
+	await _shot("smile_again")

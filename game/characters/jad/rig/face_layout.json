@@ -1,0 +1,20 @@
+{
+  "source": "assets/cut/grandpa_bench/grandpa_seated.png",
+  "canvas": [
+    604,
+    982
+  ],
+  "eyes_box": [
+    256,
+    108,
+    376,
+    172
+  ],
+  "mouth_box": [
+    286,
+    194,
+    394,
+    262
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_grandpa_face.py."
+}

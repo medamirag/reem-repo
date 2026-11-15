@@ -16,5 +16,16 @@
     612,
     452
   ],
-  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_grandpa_festival_face.py."
+  "arm_box": [
+    270,
+    640,
+    720,
+    1010
+  ],
+  "elbow": [
+    330,
+    905
+  ],
+  "arm_rest_angle": 34.0,
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. arm_fore.png is drawn raised (hand on heart); turning it arm_rest_angle degrees clockwise around `elbow` lays it back towards his lap. Made by tools/build_grandpa_festival_face.py."
 }

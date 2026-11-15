@@ -2807,3 +2807,12 @@ func _rigs_everywhere_path() -> void:
 	while Lines.busy:
 		await get_tree().process_frame
 	_expect(not grandpa.talking and not grandpa._mouth.visible, "mouth closes after the voice")
+	_expect(not grandpa._forearm.visible, "his hands stay in his lap on an ordinary line")
+	Lines.say("jad_festival_arrive")
+	await get_tree().create_timer(.9).timeout
+	_expect(grandpa._forearm.visible and grandpa._heart > .95, "the greeting of peace puts his hand on his heart")
+	await _shot("festival_grandpa_greeting")
+	while Lines.busy:
+		await get_tree().process_frame
+	await get_tree().create_timer(1.6).timeout
+	_expect(not grandpa._forearm.visible, "his hand returns to his lap after the greeting")

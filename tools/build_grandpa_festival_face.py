@@ -26,6 +26,27 @@ SMILE = [(452, 361), (460, 364.5), (470, 368), (480, 371.5), (490, 375), (500, 3
          (520, 382.5), (530, 383.5), (540, 383.5), (550, 382.5), (560, 381), (570, 378), (580, 374),
          (588, 370), (595, 366)]
 
+# Greeting arm (hand on heart): his right forearm, drawn raised, with the picture's own hand.
+ARM_BOX = (270, 640, 720, 1010)
+ELBOW = (330, 905)
+# Degrees clockwise that lay the raised forearm back towards his lap (where it fades out).
+ARM_REST_ANGLE = 34.0
+# The loose sleeve: under side (it hangs a little), cuff, upper side. All three are outlined.
+SLEEVE_UNDER = [(336, 992), (382, 995), (428, 978), (468, 938), (502, 884), (531, 826), (556, 782)]
+SLEEVE_CUFF = [(556, 782), (538, 746), (508, 720)]
+SLEEVE_UPPER = [(508, 720), (462, 752), (414, 790)]
+# Inside his upper sleeve there is no line: the same cloth, blended softly.
+SLEEVE_BACK = [(380, 812), (336, 842), (320, 900), (324, 966)]
+# His upper hand in the picture (wrist on the left), reused turned on his chest.
+HAND_AREA = [(374, 952), (379, 926), (392, 906), (418, 893), (455, 888), (500, 887), (536, 895), (556, 918),
+             (567, 956), (561, 988), (544, 1002), (518, 1009), (494, 1016), (468, 1012), (444, 994),
+             (420, 990), (398, 990), (383, 978)]
+HAND_BOX = (360, 876, 580, 1026)
+HAND_WRIST = (392, 950)
+HAND_TO = (540, 748)
+HAND_TURN = 42.0
+HAND_SCALE = 0.92
+
 
 def build():
     OUT.mkdir(parents=True, exist_ok=True)
@@ -57,21 +78,69 @@ def build():
         mouth.stroke(top, 7.4, line)
         mouth.save(name)
 
+    build_heart_arm(src, line)
+
     layout = {
         "source": "assets/art/characters/grandpa/grandpa_festival_seated.png",
         "canvas": list(src.size),
         "eyes_box": list(EYES_BOX),
         "mouth_box": list(MOUTH_BOX),
-        "note": "Boxes are [left, top, right, bottom] in the picture's pixels."
-                " Made by tools/build_grandpa_festival_face.py.",
+        "arm_box": list(ARM_BOX),
+        "elbow": list(ELBOW),
+        "arm_rest_angle": ARM_REST_ANGLE,
+        "note": "Boxes are [left, top, right, bottom] in the picture's pixels. arm_fore.png is drawn raised"
+                " (hand on heart); turning it arm_rest_angle degrees clockwise around `elbow` lays it back"
+                " towards his lap. Made by tools/build_grandpa_festival_face.py.",
     }
     (OUT / "face_layout.json").write_text(json.dumps(layout, indent=2) + "\n", encoding="utf-8")
+
+
+def build_heart_arm(src, line):
+    """The greeting: his right forearm lifts and the hand rests on his heart.
+
+    arm_fore.png is the forearm in its raised pose; the rig turns it around the elbow. Nothing of
+    the picture is hidden: his other hand stays in his lap, partly behind the hanging sleeve.
+    """
+    dark, light = kit.sample(src, 335, 890, 4), kit.sample(src, 380, 700, 3)
+    sleeve = tuple((dark[k] + 2 * light[k]) // 3 for k in range(3))
+    fold = kit.sample(src, 352, 780, 2)
+    arm = kit.Layer(ARM_BOX)
+
+    hand_layer = kit.Layer(HAND_BOX)
+    hand = hand_layer.cut(src, hand_layer.mask_polygon(HAND_AREA), feather=0.3)
+    # Same maths as Layer.place, between two layers of different boxes.
+    import math
+    px, py = hand_layer.pt(HAND_WRIST)
+    tx, ty = arm.pt(HAND_TO)
+    a = math.radians(HAND_TURN)
+    c, s = math.cos(a) / HAND_SCALE, math.sin(a) / HAND_SCALE
+    matrix = (c, -s, px - c * tx + s * ty, s, c, py - s * tx - c * ty)
+    arm.image.alpha_composite(hand.convert("RGBa").transform(arm.size, Image.AFFINE, matrix, Image.BICUBIC).convert("RGBA"))
+
+    under = kit.smooth(SLEEVE_UNDER)
+    cuff = kit.smooth(SLEEVE_CUFF, 2)
+    upper = kit.smooth(SLEEVE_UPPER)
+    shape = under + cuff + upper + SLEEVE_BACK
+    back = arm.mask_polygon([(270, 770), (416, 770), (404, 860), (352, 1005), (270, 1005)])
+    arm.fill(shape, sleeve, feather=6.0, clip=back)
+    arm.fill(under + cuff + upper + [(400, 818), (348, 850), (331, 900), (334, 968)], sleeve)
+    inside = arm.mask_polygon(shape)
+    arm.stroke(kit.smooth([(392, 930), (432, 898), (470, 846)]), 6.0, fold, clip=inside)
+    arm.stroke(kit.smooth([(440, 800), (478, 790), (512, 766)]), 5.0, fold, clip=inside)
+    arm.stroke(under + cuff + upper, 7.0, line)
+    arm.save("arm_fore.png")
 
 
 def review(path):
     """Original and every patch over the picture, 3x, for checking by eye."""
     src = Image.open(SOURCE).convert("RGBA")
     box = (400, 170, 720, 480)
+    if "arm" in path:
+        frame = Image.new("RGBA", src.size, (255, 244, 222, 255))
+        frame.alpha_composite(src)
+        frame.alpha_composite(Image.open(OUT / "arm_fore.png"), ARM_BOX[:2])
+        frame.crop((200, 150, 950, 1100)).convert("RGB").save(path)
+        return
     sets = [[], ["eyes_closed"], ["mouth_half"], ["mouth_open"]]
     boxes = {"eyes": EYES_BOX, "mouth": MOUTH_BOX}
     z = 2

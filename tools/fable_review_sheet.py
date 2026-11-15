@@ -64,7 +64,7 @@ def main(name):
     small = sorted(folder.glob("[0-9]_*_100.png"))
     big = sorted(folder.glob("[0-9]_*_400.png"))
     labels = titles(small)
-    columns = 3 if len(small) == 6 else 4
+    columns = 3 if len(small) in (6, 9) else 4
     sheet(opened(small), [l + " - 100%" for l in labels], columns, folder / "poses_game_100pct.png", 15)
     sheet(opened(big), [l + " - 400%" for l in labels], columns, folder / "poses_400pct.png", 40)
     sheet([i.crop(crop) for i in opened(big)], [l + " - face 400%" for l in labels], columns,

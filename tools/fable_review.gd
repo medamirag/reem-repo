@@ -45,6 +45,9 @@ func _config() -> Dictionary:
 					["4_talk_half", {"mouth": "half", "head": -0.012}],
 					["5_talk_open", {"mouth": "open", "lean": -0.01, "head": 0.018}],
 					["6_nod", {"head": -0.05}],
+					["7_arm_rising", {"heart": 0.5}],
+					["8_hand_on_heart", {"heart": 1.0, "head": -0.04}],
+					["9_greeting", {"heart": 1.0, "mouth": "open", "breath": 0.6}],
 				],
 			}
 		"fox":

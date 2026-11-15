@@ -6,8 +6,9 @@ extends Node2D
 ## approved picture is ONE flexible sheet that two invisible "bones" bend gently.
 ##   Chest: breathing and a small lean while he talks.
 ##   Head:  nods, slow sway and the talking bob. The eye and mouth patches ride on it.
-## His legs and his hands in his lap never move. The festival lines are all warm, so this
-## picture has blink and talking mouths only (no sad or surprised face).
+## His legs never move. The festival lines are all warm, so this picture has blink and talking
+## mouths only (no sad or surprised face), plus the greeting: his right hand on his heart
+## (arm_fore.png, drawn raised, fades in while it turns up around the elbow).
 ##
 ## Patches come from tools/build_grandpa_festival_face.py (game/characters/jad/festival_rig/).
 
@@ -56,6 +57,11 @@ var _idle_wait := 6.0
 var _rng := RandomNumberGenerator.new()
 var _blink_tween: Tween
 var _nod_tween: Tween
+var _forearm: Node2D
+var _arm_rest_angle := 0.0
+## 0 = arm as in the picture, 1 = hand on his heart.
+var _heart := 0.0
+var _heart_tween: Tween
 
 
 func _ready() -> void:
@@ -181,6 +187,22 @@ func _build_face() -> void:
 	_mouth = _patch("Mouth", "mouth_open", layout.mouth_box)
 	for shape in ["half", "open"]:
 		_mouths[shape] = load(PARTS + "mouth_%s.png" % shape)
+	# Greeting arm: it rides on the chest, so the hand stays on his heart while he breathes.
+	var arm_at := Vector2(layout.arm_box[0], layout.arm_box[1])
+	var elbow := Vector2(layout.elbow[0], layout.elbow[1])
+	_arm_rest_angle = deg_to_rad(layout.arm_rest_angle)
+	_forearm = Node2D.new()
+	_forearm.name = "Forearm"
+	_forearm.position = elbow - CHEST_PIVOT
+	_forearm.hide()
+	_chest.add_child(_forearm)
+	_chest.move_child(_forearm, 0)
+	var fore := Sprite2D.new()
+	fore.name = "Sleeve"
+	fore.texture = load(PARTS + "arm_fore.png")
+	fore.centered = false
+	fore.position = arm_at - elbow
+	_forearm.add_child(fore)
 
 
 func _patch(node_name: String, file: String, box: Array) -> Sprite2D:
@@ -231,6 +253,16 @@ func _apply() -> void:
 	var sway := sin(_time * TAU / 7.3) * 0.010 if idle_life else 0.0
 	_head.rotation = sway * (1.0 - _talk_weight) - _nod - 0.022 * talk_bob * _talk_weight * talk_energy
 	_head.position.y = (HEAD_PIVOT - CHEST_PIVOT).y - breathing * 0.25 * breath
+	_show_heart_arm(_heart)
+
+
+## The greeting arm: hidden at 0 (the picture shows his hands in his lap), on his heart at 1.
+func _show_heart_arm(amount: float) -> void:
+	_forearm.visible = amount > 0.001
+	_forearm.modulate.a = smoothstep(0.0, 0.3, amount)
+	_forearm.rotation = _arm_rest_angle * (1.0 - amount)
+	# The chest swells a little with each breath; the arm must not.
+	_forearm.scale = Vector2.ONE / _chest.scale
 
 
 func set_talking(value: bool) -> void:
@@ -244,9 +276,36 @@ func set_talking(value: bool) -> void:
 		_talk_time = 0.0
 
 
-## Called by Lines.say() just before the voice starts: a kind nod opens most of his lines.
-func react_to_line(_tone: String, _text := "") -> void:
-	nod(0.05, 0.4)
+## Called by Lines.say() just before the voice starts: the greeting of peace puts his hand on
+## his heart; a kind nod opens his other lines.
+func react_to_line(tone: String, text := "") -> void:
+	if tone.to_lower().contains("greet") or _is_greeting(text):
+		greet()
+	else:
+		nod(0.05, 0.4)
+
+
+## Greeting of peace: his right hand rises to his heart, with a small nod.
+func greet() -> void:
+	if is_instance_valid(_heart_tween):
+		_heart_tween.kill()
+	_heart_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_heart_tween.tween_property(self, "_heart", 1.0, 0.5)
+	_heart_tween.tween_callback(nod.bind(0.05, 0.4))
+	_heart_tween.tween_interval(1.7)
+	_heart_tween.tween_property(self, "_heart", 0.0, 0.55)
+
+
+## True when the line holds the greeting of peace (same check as character_jad.gd: diacritics
+## are skipped while comparing, the text itself is never changed).
+func _is_greeting(text: String) -> bool:
+	var plain := ""
+	for index in text.length():
+		var code := text.unicode_at(index)
+		if (code >= 0x064B and code <= 0x0652) or code == 0x0670 or code == 0x0640:
+			continue
+		plain += String.chr(code)
+	return plain.contains(String.chr(0x0627) + String.chr(0x0644) + String.chr(0x0633) + String.chr(0x0644) + String.chr(0x0627) + String.chr(0x0645))
 
 
 func blink() -> void:
@@ -287,7 +346,7 @@ func _show_mouth(shape: String) -> void:
 ## Freezes the rig in one exact pose, for the review pictures (tools/fable_review.gd).
 func pose_for_review(pose: Dictionary) -> void:
 	set_process(false)
-	for tween in [_blink_tween, _nod_tween]:
+	for tween in [_blink_tween, _nod_tween, _heart_tween]:
 		if is_instance_valid(tween):
 			tween.kill()
 	var breath := float(pose.get("breath", 0.0))
@@ -297,6 +356,7 @@ func pose_for_review(pose: Dictionary) -> void:
 	_chest.rotation = float(pose.get("lean", 0.0))
 	_head.position = HEAD_PIVOT - CHEST_PIVOT
 	_head.rotation = float(pose.get("head", 0.0))
+	_show_heart_arm(float(pose.get("heart", 0.0)))
 	_closed_eyes.visible = bool(pose.get("blink", false))
 	_closed_eyes.modulate.a = 1.0
 	var mouth := str(pose.get("mouth", "closed"))

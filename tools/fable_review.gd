@@ -34,6 +34,19 @@ func _config() -> Dictionary:
 					["8_surprised", {"face": "surprised", "mouth": "surprised", "head": -0.035, "rise": 3.0}],
 				],
 			}
+		"grandpa_festival":
+			return {
+				"script": "res://game/characters/jad/grandpa_festival_rig.gd",
+				"canvas": Vector2(1143, 1376), "feet": Vector2(571.5, 1376), "scale": 0.29,
+				"poses": [
+					["1_rest", {}],
+					["2_breath_in", {"breath": 1.0}],
+					["3_blink", {"blink": true, "breath": 0.5}],
+					["4_talk_half", {"mouth": "half", "head": -0.012}],
+					["5_talk_open", {"mouth": "open", "lean": -0.01, "head": 0.018}],
+					["6_nod", {"head": -0.05}],
+				],
+			}
 		"fox":
 			var poses := []
 			var labels := ["contact", "down", "passing", "up", "contact", "down", "passing", "up"]

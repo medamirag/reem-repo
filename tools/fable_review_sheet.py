@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PAPER = (255, 244, 222)
 INK = (70, 45, 30)
 # Face box in picture pixels, and the scale the character has in the game.
-FACES = {"grandpa": ((95, 0, 420, 320), 0.438, 24), "fox": ((420, 0, 900, 540), 0.3617, 24)}
+FACES = {"grandpa": ((95, 0, 420, 320), 0.438, 24), "fox": ((420, 0, 900, 540), 0.3617, 24),
+         "grandpa_festival": ((360, 0, 800, 560), 0.29, 24)}
 
 
 def font(size):
@@ -63,9 +64,10 @@ def main(name):
     small = sorted(folder.glob("[0-9]_*_100.png"))
     big = sorted(folder.glob("[0-9]_*_400.png"))
     labels = titles(small)
-    sheet(opened(small), [l + " - 100%" for l in labels], 4, folder / "poses_game_100pct.png", 15)
-    sheet(opened(big), [l + " - 400%" for l in labels], 4, folder / "poses_400pct.png", 40)
-    sheet([i.crop(crop) for i in opened(big)], [l + " - face 400%" for l in labels], 4,
+    columns = 3 if len(small) == 6 else 4
+    sheet(opened(small), [l + " - 100%" for l in labels], columns, folder / "poses_game_100pct.png", 15)
+    sheet(opened(big), [l + " - 400%" for l in labels], columns, folder / "poses_400pct.png", 40)
+    sheet([i.crop(crop) for i in opened(big)], [l + " - face 400%" for l in labels], columns,
           folder / "face_closeup.png", 26)
     if name == "grandpa":
         # The three expressions the user asked to see: upper body, cut from the 4x render.

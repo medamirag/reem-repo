@@ -110,6 +110,7 @@ func _sync_festival() -> void:
 	$UnlitShading.modulate.a = 1.0
 	if complete:
 		_place_jad(false)
+	FoxRig.dress(self)
 
 
 func _sprite(layer_node: Node2D, path: String, feet: Vector2, height: float) -> Sprite2D:
@@ -146,9 +147,9 @@ func _place_jad(animate: bool) -> void:
 	# close to that instead of shrinking to doll size (docs/BUGS.md #6).
 	if Globals.orchard.get("carrier", false):
 		_sprite($Bearer, DUBB, Vector2.ZERO, 300)
-		_sprite($Bearer, JAD, Vector2(19, -150), 300)
+		GrandpaFestivalRig.attach(_sprite($Bearer, JAD, Vector2(19, -150), 300))
 	else:
-		_sprite($Bearer, JAD, Vector2.ZERO, 400)
+		GrandpaFestivalRig.attach(_sprite($Bearer, JAD, Vector2.ZERO, 400))
 
 
 func _light_festival() -> void:

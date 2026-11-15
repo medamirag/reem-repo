@@ -90,6 +90,11 @@ func _run() -> void:
 		_log("DONE fox_animation")
 		get_tree().quit()
 		return
+	if _path == "rigs_everywhere":
+		await _rigs_everywhere_path()
+		_log("DONE rigs_everywhere")
+		get_tree().quit()
+		return
 	if _path == "stream_bridge":
 		await _stream_bridge_path()
 		_log("DONE stream_bridge")
@@ -2733,3 +2738,72 @@ func _fox_animation_path() -> void:
 	_expect(not rig.walking and is_zero_approx(rig._lift), "the walk stops when he stops")
 	await _shot("stopped")
 	fox.position = start
+
+
+## Focused check that Thaaloob and Grandpa use their rigs where they are plain pictures: the
+## NarrowPass prop (mood, mouth and the walk when he steps free), one pack prop, the festival.
+func _rigs_everywhere_path() -> void:
+	Engine.time_scale = 1.0 if _real or not _shots_dir.is_empty() else 4.0
+	await Globals.new_game()
+	Globals.narrow_pass["introduced"] = true
+	R.goto_room("NarrowPass")
+	await _wait_room("NarrowPass")
+	var prop: Node2D = R.current.get_node("Props/Thaaloob")
+	var rig := prop.get_node_or_null("Rig") as FoxRig
+	_expect(rig != null and not prop.get_node("Sprite2D").visible, "NarrowPass prop is drawn by the rig")
+	if rig == null:
+		return
+	_expect(rig.scale.x < 0 and absf(rig.position.y) < 1.0, "rig stands on the prop's feet, facing left")
+	_expect(rig.tail_still, "tail is held still under the rock")
+	Lines.say("fox_pass_help")
+	await get_tree().create_timer(.5).timeout
+	_expect(rig.talking and rig.expression == "sad", "his voice moves the prop's mouth, worried face")
+	await _shot("pass_talking")
+	while Lines.busy:
+		await get_tree().process_frame
+	_expect(not rig.talking and rig._mouth.texture == rig._mouths["sad"], "talking stops after the voice, worried mouth stays a moment")
+	Globals.narrow_pass["help"] = true
+	R.current.call("_free_fox")
+	var walked := false
+	while not Globals.narrow_pass.get("fox_joins", false):
+		walked = walked or rig.walking
+		if rig.walking and rig._lift > 0.8:
+			await _shot("pass_stepping_free")
+		await get_tree().process_frame
+	_expect(walked and not rig.tail_still, "he steps free with his walk, tail released")
+	await _wait_idle()
+	await _shot("pass_free")
+
+	R.goto_room("ScaleCourtyard")
+	await _wait_room("ScaleCourtyard")
+	prop = R.current.get_node("Props/MarketFox")
+	rig = prop.get_node_or_null("Rig") as FoxRig
+	_expect(rig != null and not prop.get_node("Sprite2D").visible, "market prop is drawn by the rig")
+	if rig:
+		_expect(rig.get_index() < prop.get_node("Apron").get_index(), "his apron stays over him")
+		_expect(absf(rig.position.y) < 1.0, "rig stands on the prop's feet")
+	await _shot("market_fox")
+
+	Globals.festival["introduced"] = true
+	Globals.festival["completed"] = true
+	R.goto_room("HilltopFestival")
+	await _wait_room("HilltopFestival")
+	var guest := R.current.get_node_or_null("Gathering/Rig") as FoxRig
+	_expect(guest != null, "festival guest Thaaloob is drawn by the rig")
+	var grandpa := R.current.get_node_or_null("Bearer/GrandpaRig") as GrandpaFestivalRig
+	_expect(grandpa != null, "festival Grandpa is drawn by his rig")
+	if grandpa == null:
+		return
+	await _shot("festival")
+	grandpa.blink()
+	await get_tree().create_timer(.09).timeout
+	_expect(grandpa._closed_eyes.visible, "festival Grandpa blinks")
+	await get_tree().create_timer(.3).timeout
+	Lines.say("jad_festival_thanks")
+	await get_tree().create_timer(.5).timeout
+	_expect(grandpa.talking, "his voice moves festival Grandpa's mouth")
+	_expect(guest == null or not guest.talking, "Thaaloob stays quiet while Grandpa speaks")
+	await _shot("festival_grandpa_talking")
+	while Lines.busy:
+		await get_tree().process_frame
+	_expect(not grandpa.talking and not grandpa._mouth.visible, "mouth closes after the voice")

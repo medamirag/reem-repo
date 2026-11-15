@@ -12,6 +12,11 @@ extends Node2D
 ## It starts by itself whenever the character moves sideways (a Popochiu walk or a tween).
 
 const PARTS := "res://game/characters/thaaloob/rig/"
+## The approved picture. Wherever a room shows it, FoxRig.dress() puts this rig in its place.
+const PICTURE := "res://assets/art/characters/fox/fox_base.png"
+## Lines.say() looks in this group for someone to animate when the speaker is not a Popochiu
+## character of the room (Thaaloob is a plain prop in several rooms).
+const ACTOR_GROUP := "line_actor_Thaaloob"
 const CELL := 14.0
 # Eight keyed poses per step cycle (contact, down, passing, up, then the other leg), as for Reem.
 const THIGH := [25.0, 15.0, 0.0, -15.0, -25.0, -15.0, 15.0, 25.0]
@@ -28,7 +33,10 @@ const SWING := [1.0, 0.7, 0.0, -0.7, -1.0, -0.7, 0.0, 0.7]
 @export var idle_life := true
 ## How strongly head and body move while he talks.
 @export_range(0.0, 2.0) var talk_energy := 1.0
+## Keeps the tail exactly as in the picture (NarrowPass: it is caught under the rock).
+@export var tail_still := false
 
+var _picture: Sprite2D
 var walking := false
 var talking := false
 var expression := "happy"
@@ -83,6 +91,7 @@ var _face_tween: Tween
 
 func _ready() -> void:
 	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	add_to_group(ACTOR_GROUP)
 	_rng.randomize()
 	_layout = JSON.parse_string(FileAccess.get_file_as_string(PARTS + "layout.json"))
 	_feet = _point(_layout.feet)
@@ -96,10 +105,53 @@ func _ready() -> void:
 	_apply(0.0)
 
 
-## Same size, place and facing as the old picture (a negative scale.x means "faces left").
+## Same size, place and facing as the old picture (a negative scale.x or flip_h means "faces
+## left"). The rig's own origin is the bottom centre of the picture (his feet).
 func match_picture(picture: Sprite2D) -> void:
-	position = picture.position
+	_picture = picture
 	scale = Vector2(picture.scale.x * (-1.0 if picture.flip_h else 1.0), picture.scale.y)
+	var size := picture.texture.get_size() if picture.texture else Vector2.ZERO
+	var feet := picture.offset + (Vector2(0, size.y / 2.0) if picture.centered else Vector2(size.x / 2.0, size.y))
+	position = picture.position + feet * picture.scale
+
+
+## Replaces one still picture of Thaaloob by a rig of the same size, in the same place.
+static func attach(picture: Sprite2D) -> FoxRig:
+	var rig := FoxRig.new()
+	rig.name = "Rig"
+	var holder := picture.get_parent()
+	holder.add_child(rig)
+	# Right above the picture, so anything drawn over him (an apron, a lantern) stays over him.
+	holder.move_child(rig, picture.get_index() + 1)
+	rig.match_picture(picture)
+	picture.hide()
+	picture.set_meta("rigged", true)
+	return rig
+
+
+## Finds every still picture of Thaaloob under `root` (props, festival guests) and rigs it.
+static func dress(root: Node) -> void:
+	for node in root.find_children("*", "Sprite2D", true, false):
+		var picture := node as Sprite2D
+		if picture.texture == null or picture.texture.resource_path != PICTURE or picture.has_meta("rigged"):
+			continue
+		var holder := picture.get_parent()
+		# Not twice, and not where the character's "Use Rig" box was unticked.
+		if holder.has_node("Rig") or holder.get("use_rig") == false:
+			continue
+		attach(picture)
+
+
+## Sets his face for a line from its tone (called just before the voice starts).
+func react_to_line(tone: String, _text := "") -> void:
+	var feeling := tone.to_lower()
+	var mood := "happy"
+	if feeling.contains("sad") or feeling.contains("worried") or feeling.contains("sorry") \
+			or feeling.contains("embarrass") or feeling.contains("asham"):
+		mood = "sad"
+	elif feeling.contains("surpris") or feeling.contains("amazed"):
+		mood = "surprised"
+	set_expression(mood)
 
 
 #region Building ####################################################################################
@@ -356,7 +408,7 @@ func _travel_x() -> float:
 
 #region Idle, talk, face ############################################################################
 func _process(delta: float) -> void:
-	var picture := get_parent().get_node_or_null("Sprite2D") as Sprite2D
+	var picture := _picture if is_instance_valid(_picture) else get_parent().get_node_or_null("Sprite2D") as Sprite2D
 	if picture:
 		match_picture(picture)
 	_time += delta
@@ -411,6 +463,9 @@ func _apply(weight: float) -> void:
 	_bones["Tail"].rotation += sin(_time * TAU / 2.9) * 0.045 * calm
 	_bones["TailTip"].rotation += sin(_time * TAU / 2.9 - 0.9) * 0.08 * calm
 	_bones["ScarfEnd"].rotation += sin(_time * TAU / 4.3) * 0.02 * calm
+	if tail_still:
+		_bones["Tail"].rotation = 0.0
+		_bones["TailTip"].rotation = 0.0
 	# While talking his near forearm comes up a little, with small beats.
 	var beat := maxf(0.0, sin(_talk_time * 4.3)) * 0.10 * _talk_weight
 	_bones["Elbow_near"].rotation -= (0.42 * _gesture + beat * _gesture) * calm

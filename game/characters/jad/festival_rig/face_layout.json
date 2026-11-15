@@ -1,0 +1,20 @@
+{
+  "source": "assets/art/characters/grandpa/grandpa_festival_seated.png",
+  "canvas": [
+    1143,
+    1376
+  ],
+  "eyes_box": [
+    456,
+    205,
+    650,
+    320
+  ],
+  "mouth_box": [
+    436,
+    340,
+    612,
+    452
+  ],
+  "note": "Boxes are [left, top, right, bottom] in the picture's pixels. Made by tools/build_grandpa_festival_face.py."
+}

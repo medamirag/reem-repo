@@ -79,6 +79,14 @@ func say(line_id: String, narrate := false) -> void:
 
 	if character != null and character.has_method("animate_line"):
 		character.animate_line(str(line.get("tone", "")), text)
+	# The speaker may be in the room as a plain prop with a rig (Thaaloob in several rooms,
+	# Grandpa at the festival): the rig still shows the mood and moves its mouth.
+	var actors: Array[Node] = []
+	if character == null and not speaker.is_empty():
+		actors = get_tree().get_nodes_in_group("line_actor_" + speaker)
+	for actor in actors:
+		actor.react_to_line(str(line.get("tone", "")), text)
+		actor.set_talking(true)
 	var voice_length := _start_voice(str(line.get("audio", "")))
 	# Unrecorded text must remain readable, rather than vanish after 0.3 seconds.
 	if voice_length <= 0.0:
@@ -95,6 +103,9 @@ func say(line_id: String, narrate := false) -> void:
 		_voice.stop()
 	if character != null and character.has_method("_set_mouth_talking"):
 		character._set_mouth_talking(false)
+	for actor in actors:
+		if is_instance_valid(actor):
+			actor.set_talking(false)
 	busy = false
 
 

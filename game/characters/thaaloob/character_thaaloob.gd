@@ -42,11 +42,4 @@ func _set_mouth_talking(value: bool) -> void:
 func animate_line(tone: String, _text: String) -> void:
 	if not is_instance_valid(_rig):
 		return
-	var feeling := tone.to_lower()
-	var mood := "happy"
-	if feeling.contains("sad") or feeling.contains("worried") or feeling.contains("sorry") \
-			or feeling.contains("embarrass") or feeling.contains("asham"):
-		mood = "sad"
-	elif feeling.contains("surpris") or feeling.contains("amazed"):
-		mood = "surprised"
-	_rig.set_expression(mood)
+	_rig.react_to_line(tone)

@@ -29,6 +29,8 @@ func _on_restore_from_savegame() -> void:
 
 
 func _sync_stone() -> void:
+	# While the rock lies on his tail, the tail does not sway.
+	_hold_tail(not Globals.narrow_pass.get("fox_joins", false))
 	if Globals.narrow_pass.get("fox_joins", false):
 		$Props/LooseStone.position = stone_open
 		$Props/LooseStone/Sprite2D.rotation = stone_roll
@@ -36,6 +38,12 @@ func _sync_stone() -> void:
 		$Props/LooseStone/Sprite2D.z_index = 0
 		$Props/Thaaloob.position = fox_free
 		$Props/FoxTail.position = fox_free + TAIL_OFFSET
+
+
+func _hold_tail(value: bool) -> void:
+	var rig := get_node_or_null("Props/Thaaloob/Rig") as FoxRig
+	if rig:
+		rig.tail_still = value
 
 
 func is_exit_open(exit_name: String) -> bool:
@@ -86,6 +94,7 @@ func _free_fox() -> void:
 	tween.tween_property($Props/LooseStone, "position", stone_open, 0.9).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.parallel().tween_property($Props/LooseStone/Sprite2D, "rotation", stone_roll, 0.9).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(func() -> void: $Props/LooseStone/Sprite2D.z_index = 0)
+	tween.tween_callback(_hold_tail.bind(false))
 	tween.tween_property($Props/Thaaloob, "position", fox_free, 0.4)
 	tween.parallel().tween_property($Props/FoxTail, "position", fox_free + TAIL_OFFSET, 0.4)
 	await tween.finished

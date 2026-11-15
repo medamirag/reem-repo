@@ -54,6 +54,8 @@ func _on_room_entered() -> void:
 	Globals.notebook_hint = Callable()
 
 	_add_exit_arrows()
+	# Thaaloob looks and moves the same in every room, also where he is a plain prop.
+	FoxRig.dress(self)
 	_setup_room()
 	if not has_node("ProceduralEffects"):
 		var effects := ReemEffects.new()
